@@ -11,38 +11,36 @@ Future newCustomAction(
   DocumentReference userRef,
   DocumentReference document,
 ) async {
+  // Versuche, das Dokument zu lesen.
   DocumentSnapshot documentSnapshot = await document.get();
+
   if (documentSnapshot.exists) {
-    List<dynamic> assignees = documentSnapshot.data()['assignee'] ?? [];
+    // Daten des Dokuments als Map extrahieren.
+    Map<String, dynamic> data = documentSnapshot.data() as Map<String, dynamic>;
 
-    // Prüfe, ob die userRef bereits in der Liste ist
-    bool isAssigned = assignees.any((item) => item['ref'] == userRef.id);
+    // Hole die aktuelle Liste der zugewiesenen Benutzer, default ist eine leere Liste.
+    List<dynamic> assignees = data['assignees'] ?? [];
 
+    // Überprüfe, ob der Benutzer bereits zugewiesen ist.
+    bool isAssigned = assignees.contains(userRef.id);
+
+    // Füge den Benutzer hinzu oder entferne ihn, basierend auf seiner aktuellen Zustand.
     if (isAssigned) {
-      // Entferne den Benutzer aus der Liste
-      document.update({
-        'assignee': FieldValue.arrayRemove([
-          {'ref': userRef.id}
-        ])
-      }).then((_) {
-        print('Benutzer entfernt');
-      }).catchError((error) {
-        print('Fehler beim Entfernen des Benutzers: $error');
+      // Entferne den Benutzer aus der Liste, wenn er bereits zugewiesen ist.
+      await document.update({
+        'assignees': FieldValue.arrayRemove([userRef.id])
       });
+      print('Benutzer entfernt.');
     } else {
-      // Füge den Benutzer zur Liste hinzu
-      document.update({
-        'assignee': FieldValue.arrayUnion([
-          {'ref': userRef.id}
-        ])
-      }).then((_) {
-        print('Benutzer hinzugefügt');
-      }).catchError((error) {
-        print('Fehler beim Hinzufügen des Benutzers: $error');
+      // Füge den Benutzer zur Liste hinzu, wenn er noch nicht zugewiesen ist.
+      await document.update({
+        'assignees': FieldValue.arrayUnion([userRef.id])
       });
+      print('Benutzer hinzugefügt.');
     }
   } else {
-    print('Das Dokument existiert nicht');
+    // Das Dokument existiert nicht.
+    print('Das angeforderte Dokument existiert nicht.');
   }
 
   // Add your function code here!
