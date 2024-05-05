@@ -11,7 +11,7 @@ import 'schema/language_record.dart';
 import 'schema/it_skills_record.dart';
 import 'schema/itskills_record.dart';
 import 'schema/customer_case_record.dart';
-import 'schema/topics_record.dart';
+import 'schema/customer_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -28,7 +28,7 @@ export 'schema/language_record.dart';
 export 'schema/it_skills_record.dart';
 export 'schema/itskills_record.dart';
 export 'schema/customer_case_record.dart';
-export 'schema/topics_record.dart';
+export 'schema/customer_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -506,57 +506,53 @@ Future<FFFirestorePage<CustomerCaseRecord>> queryCustomerCaseRecordPage({
       return page;
     });
 
-/// Functions to query TopicsRecords (as a Stream and as a Future).
-Future<int> queryTopicsRecordCount({
-  DocumentReference? parent,
+/// Functions to query CustomerRecords (as a Stream and as a Future).
+Future<int> queryCustomerRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      TopicsRecord.collection(parent),
+      CustomerRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<TopicsRecord>> queryTopicsRecord({
-  DocumentReference? parent,
+Stream<List<CustomerRecord>> queryCustomerRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      TopicsRecord.collection(parent),
-      TopicsRecord.fromSnapshot,
+      CustomerRecord.collection,
+      CustomerRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<TopicsRecord>> queryTopicsRecordOnce({
-  DocumentReference? parent,
+Future<List<CustomerRecord>> queryCustomerRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      TopicsRecord.collection(parent),
-      TopicsRecord.fromSnapshot,
+      CustomerRecord.collection,
+      CustomerRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
-Future<FFFirestorePage<TopicsRecord>> queryTopicsRecordPage({
-  DocumentReference? parent,
+Future<FFFirestorePage<CustomerRecord>> queryCustomerRecordPage({
   Query Function(Query)? queryBuilder,
   DocumentSnapshot? nextPageMarker,
   required int pageSize,
   required bool isStream,
-  required PagingController<DocumentSnapshot?, TopicsRecord> controller,
+  required PagingController<DocumentSnapshot?, CustomerRecord> controller,
   List<StreamSubscription?>? streamSubscriptions,
 }) =>
     queryCollectionPage(
-      TopicsRecord.collection(parent),
-      TopicsRecord.fromSnapshot,
+      CustomerRecord.collection,
+      CustomerRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,
@@ -568,7 +564,7 @@ Future<FFFirestorePage<TopicsRecord>> queryTopicsRecordPage({
       );
       if (isStream) {
         final streamSubscription =
-            (page.dataStream)?.listen((List<TopicsRecord> data) {
+            (page.dataStream)?.listen((List<CustomerRecord> data) {
           for (var item in data) {
             final itemIndexes = controller.itemList!
                 .asMap()

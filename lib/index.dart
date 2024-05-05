@@ -12,3 +12,4 @@ export '/profile/language_settings/language_settings_widget.dart'
 export '/customer/customer/customer_widget.dart' show CustomerWidget;
 export '/customer/customers/customers_widget.dart' show CustomersWidget;
 export '/employees/employees_widget.dart' show EmployeesWidget;
+export '/customer/create_case/create_case_widget.dart' show CreateCaseWidget;

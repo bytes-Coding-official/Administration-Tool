@@ -373,88 +373,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Customer
   {
-    'yix1awk9': {
-      'de': 'Product name...',
+    'qyg5rts9': {
+      'de': 'Title...',
       'en': '',
     },
-    'vhquvd2c': {
-      'de': 'Description...',
+    'migz0exf': {
+      'de':
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      'en': '',
+    },
+    'eha3lwhp': {
+      'de': 'Name',
+      'en': '',
+    },
+    'wt64dvtx': {
+      'de': 'Mail',
+      'en': '',
+    },
+    'tgm21eu4': {
+      'de': 'Adress',
       'en': '',
     },
     'axtj90b9': {
       'de': 'Themes',
       'en': '',
     },
-    'tjdtg14u': {
-      'de': 'Tops',
-      'en': '',
-    },
-    'f94dkstp': {
-      'de': 'Bottoms',
-      'en': '',
-    },
-    'x33w3gyx': {
-      'de': 'Outerwear',
-      'en': '',
-    },
-    'cej8m009': {
-      'de': 'Jewelry',
-      'en': '',
-    },
-    'ot8r8vne': {
-      'de': 'Accessories',
-      'en': '',
-    },
-    'ircrqxrt': {
-      'de': 'Hats',
-      'en': '',
-    },
-    'a6xv382d': {
-      'de': 'Shoes',
-      'en': '',
-    },
     'g1yaqs68': {
       'de': 'Languages',
       'en': '',
     },
-    'js6wh9sw': {
-      'de': 'Tops',
-      'en': '',
-    },
-    'ugu5kd9w': {
-      'de': 'Bottoms',
-      'en': '',
-    },
-    'pvujdu8w': {
-      'de': 'Outerwear',
-      'en': '',
-    },
-    '8k3yhasm': {
-      'de': 'Jewelry',
-      'en': '',
-    },
-    'curbqob2': {
-      'de': 'Accessories',
-      'en': '',
-    },
-    '2q8jgkqf': {
-      'de': 'Hats',
-      'en': '',
-    },
-    'qayclep4': {
-      'de': 'Shoes',
-      'en': '',
-    },
     '25ri13hc': {
       'de': 'Revenue',
-      'en': '',
-    },
-    'p5pr0j42': {
-      'de': '\$50.00',
-      'en': '',
-    },
-    '7x7wvbt2': {
-      'de': 'Active',
       'en': '',
     },
     '95wxc4pw': {
@@ -469,12 +418,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Tutor',
       'en': '',
     },
-    '19mp5eus': {
-      'de': 'Current Case',
+    '62ehxcsa': {
+      'de': 'ID:',
       'en': '',
     },
-    'xgtypdl0': {
-      'de': 'All of the Information given to the employee by the customer',
+    '19mp5eus': {
+      'de': 'Current Case',
       'en': '',
     },
     '8ygcmc94': {
@@ -544,12 +493,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Add',
       'en': '',
     },
-    'jap3znfe': {
+    '1qivza4a': {
       'de': 'Filters',
       'en': '',
     },
-    'gqmlyr0e': {
-      'de': 'Active',
+    'uxxu1zq6': {
+      'de': 'Filter here...',
+      'en': '',
+    },
+    '54ojwsmq': {
+      'de': 'Filter here...',
+      'en': '',
+    },
+    'e8tdlwf3': {
+      'de': 'All',
       'en': '',
     },
     'dfuin8ot': {
@@ -564,8 +521,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Closed',
       'en': '',
     },
-    'o1dfc1vc': {
-      'de': 'Active',
+    'j8sei0b2': {
+      'de': 'All',
+      'en': '',
+    },
+    'zuywtys3': {
+      'de': 'Filter here...',
+      'en': '',
+    },
+    'ozcdxd3f': {
+      'de': 'Filter here...',
       'en': '',
     },
     'f7e4mtfu': {
@@ -672,6 +637,133 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'hf9u76zz': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // CreateCase
+  {
+    'iqrsdxs5': {
+      'de': 'Title...',
+      'en': '',
+    },
+    '9ke520cp': {
+      'de': 'Title...',
+      'en': '',
+    },
+    'vhquvd2c': {
+      'de': 'Description...',
+      'en': '',
+    },
+    'tx2fqnwx': {
+      'de': 'Name',
+      'en': '',
+    },
+    '089n8s8q': {
+      'de': 'Hello World',
+      'en': '',
+    },
+    'qj46dz59': {
+      'de': 'Themes',
+      'en': '',
+    },
+    'tjdtg14u': {
+      'de': 'Tops',
+      'en': '',
+    },
+    'f94dkstp': {
+      'de': 'Bottoms',
+      'en': '',
+    },
+    'x33w3gyx': {
+      'de': 'Outerwear',
+      'en': '',
+    },
+    'cej8m009': {
+      'de': 'Jewelry',
+      'en': '',
+    },
+    'ot8r8vne': {
+      'de': 'Accessories',
+      'en': '',
+    },
+    'ircrqxrt': {
+      'de': 'Hats',
+      'en': '',
+    },
+    'a6xv382d': {
+      'de': 'Shoes',
+      'en': '',
+    },
+    '1utnfn3e': {
+      'de': 'Languages',
+      'en': '',
+    },
+    'js6wh9sw': {
+      'de': 'Tops',
+      'en': '',
+    },
+    'ugu5kd9w': {
+      'de': 'Bottoms',
+      'en': '',
+    },
+    'pvujdu8w': {
+      'de': 'Outerwear',
+      'en': '',
+    },
+    '8k3yhasm': {
+      'de': 'Jewelry',
+      'en': '',
+    },
+    'curbqob2': {
+      'de': 'Accessories',
+      'en': '',
+    },
+    '2q8jgkqf': {
+      'de': 'Hats',
+      'en': '',
+    },
+    'qayclep4': {
+      'de': 'Shoes',
+      'en': '',
+    },
+    'q8qllymp': {
+      'de': 'Revenue',
+      'en': '',
+    },
+    'p5pr0j42': {
+      'de': '\$50.00',
+      'en': '',
+    },
+    '7x7wvbt2': {
+      'de': 'Active',
+      'en': '',
+    },
+    'xgy2vyfo': {
+      'de': 'Claim Customer',
+      'en': '',
+    },
+    'hju0o2ac': {
+      'de': 'Hours',
+      'en': '',
+    },
+    '1hfol1ya': {
+      'de': 'Tutor',
+      'en': '',
+    },
+    '8k9rojnc': {
+      'de': 'ID:',
+      'en': '',
+    },
+    'wegkpkxz': {
+      'de': 'ID:',
+      'en': '',
+    },
+    '2clstymj': {
+      'de': 'Current Case',
+      'en': '',
+    },
+    '083tfgc1': {
       'de': 'Home',
       'en': '',
     },

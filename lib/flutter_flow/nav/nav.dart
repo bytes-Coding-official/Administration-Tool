@@ -125,6 +125,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Employees',
           path: '/employees',
           builder: (context, params) => const EmployeesWidget(),
+        ),
+        FFRoute(
+          name: 'CreateCase',
+          path: '/createCase',
+          builder: (context, params) => const CreateCaseWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

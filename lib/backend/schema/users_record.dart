@@ -65,6 +65,11 @@ class UsersRecord extends FirestoreRecord {
   String get country => _country ?? '';
   bool hasCountry() => _country != null;
 
+  // "administrator" field.
+  bool? _administrator;
+  bool get administrator => _administrator ?? false;
+  bool hasAdministrator() => _administrator != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -76,6 +81,7 @@ class UsersRecord extends FirestoreRecord {
     _town = snapshotData['town'] as String?;
     _street = snapshotData['street'] as String?;
     _country = snapshotData['country'] as String?;
+    _administrator = snapshotData['administrator'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -122,6 +128,7 @@ Map<String, dynamic> createUsersRecordData({
   String? town,
   String? street,
   String? country,
+  bool? administrator,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -135,6 +142,7 @@ Map<String, dynamic> createUsersRecordData({
       'town': town,
       'street': street,
       'country': country,
+      'administrator': administrator,
     }.withoutNulls,
   );
 
@@ -155,7 +163,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.zip == e2?.zip &&
         e1?.town == e2?.town &&
         e1?.street == e2?.street &&
-        e1?.country == e2?.country;
+        e1?.country == e2?.country &&
+        e1?.administrator == e2?.administrator;
   }
 
   @override
@@ -169,7 +178,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.zip,
         e?.town,
         e?.street,
-        e?.country
+        e?.country,
+        e?.administrator
       ]);
 
   @override

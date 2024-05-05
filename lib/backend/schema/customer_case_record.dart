@@ -41,12 +41,24 @@ class CustomerCaseRecord extends FirestoreRecord {
   List<DocumentReference> get assignee => _assignee ?? const [];
   bool hasAssignee() => _assignee != null;
 
+  // "topics" field.
+  List<DocumentReference>? _topics;
+  List<DocumentReference> get topics => _topics ?? const [];
+  bool hasTopics() => _topics != null;
+
+  // "customer" field.
+  DocumentReference? _customer;
+  DocumentReference? get customer => _customer;
+  bool hasCustomer() => _customer != null;
+
   void _initializeFields() {
     _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
     _description = snapshotData['description'] as String?;
     _revenue = castToType<double>(snapshotData['revenue']);
     _assignee = getDataList(snapshotData['assignee']);
+    _topics = getDataList(snapshotData['topics']);
+    _customer = snapshotData['customer'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -88,6 +100,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
   String? title,
   String? description,
   double? revenue,
+  DocumentReference? customer,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -95,6 +108,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
       'title': title,
       'description': description,
       'revenue': revenue,
+      'customer': customer,
     }.withoutNulls,
   );
 
@@ -112,12 +126,21 @@ class CustomerCaseRecordDocumentEquality
         e1?.title == e2?.title &&
         e1?.description == e2?.description &&
         e1?.revenue == e2?.revenue &&
-        listEquality.equals(e1?.assignee, e2?.assignee);
+        listEquality.equals(e1?.assignee, e2?.assignee) &&
+        listEquality.equals(e1?.topics, e2?.topics) &&
+        e1?.customer == e2?.customer;
   }
 
   @override
-  int hash(CustomerCaseRecord? e) => const ListEquality()
-      .hash([e?.caseid, e?.title, e?.description, e?.revenue, e?.assignee]);
+  int hash(CustomerCaseRecord? e) => const ListEquality().hash([
+        e?.caseid,
+        e?.title,
+        e?.description,
+        e?.revenue,
+        e?.assignee,
+        e?.topics,
+        e?.customer
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is CustomerCaseRecord;
