@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "663901949622",
+    "project_id": "gravity-4nci7k",
+    "storage_bucket": "gravity-4nci7k.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663901949622:android:2fcddfd856072bbdaae017",
+        "android_client_info": {
+          "package_name": "com.carinaschoppe.bytescoding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663901949622-mjqhbs1iu5e0p5c799r5raio0v301d54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carinaschoppe.bytescoding",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "663901949622-9au1ndu8v70arj48ebmhhsdm5krnl6gf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd9oywg1Fz1COn6NuwJgAyn-grp40xafA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663901949622-9au1ndu8v70arj48ebmhhsdm5krnl6gf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "663901949622-0vd7istdhg1bo2f15mmsahdrvimv418n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.carinaschoppe.bytescoding"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
