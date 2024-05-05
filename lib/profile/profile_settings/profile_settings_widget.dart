@@ -52,9 +52,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -561,6 +561,12 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                     ),
                   ],
                 ),
+              ),
+              Divider(
+                thickness: 10.0,
+                indent: 50.0,
+                endIndent: 50.0,
+                color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),

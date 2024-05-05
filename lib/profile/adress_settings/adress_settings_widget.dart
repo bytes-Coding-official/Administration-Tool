@@ -55,9 +55,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -141,6 +141,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
+                                autofillHints: const [
+                                  AutofillHints.fullStreetAddress
+                                ],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -153,6 +156,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                                         fontFamily: 'Inter',
                                         letterSpacing: 0.0,
                                       ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'qnq3d7xm' /* Street */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
@@ -218,6 +224,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController2,
                                 focusNode: _model.textFieldFocusNode2,
+                                autofillHints: const [AutofillHints.addressCity],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -231,7 +238,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '4x4h5un1' /* Email */,
+                                    '4x4h5un1' /* Town */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -299,6 +306,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController3,
                                 focusNode: _model.textFieldFocusNode3,
+                                autofillHints: const [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -312,7 +320,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'pexa8nuc' /* Phone */,
+                                    'pexa8nuc' /* Zip */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -380,6 +388,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController4,
                                 focusNode: _model.textFieldFocusNode4,
+                                autofillHints: const [AutofillHints.countryName],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -393,7 +402,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'nlo21lck' /* Phone */,
+                                    'nlo21lck' /* Country */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -461,6 +470,21 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                     street: _model.textController1.text,
                     country: _model.textController4.text,
                   ));
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        title: const Text('Success'),
+                        content: const Text('Successfully saved new data!'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: const Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
                 text: FFLocalizations.of(context).getText(
                   'nfrkcmwc' /* Save Changes */,

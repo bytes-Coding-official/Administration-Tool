@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -71,20 +70,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const ProfileWidget() : const AuthenticationWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const CustomersWidget()
+          : const AuthenticationWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const ProfileWidget()
+              ? const CustomersWidget()
               : const AuthenticationWidget(),
-        ),
-        FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
           name: 'Authentication',
@@ -115,6 +110,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Language-Settings',
           path: '/languageSettings',
           builder: (context, params) => const LanguageSettingsWidget(),
+        ),
+        FFRoute(
+          name: 'Customer',
+          path: '/customer',
+          builder: (context, params) => const CustomerWidget(),
+        ),
+        FFRoute(
+          name: 'Customers',
+          path: '/customers',
+          builder: (context, params) => const CustomersWidget(),
+        ),
+        FFRoute(
+          name: 'Employees',
+          path: '/employees',
+          builder: (context, params) => const EmployeesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -299,15 +309,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/Logo_schwarz_mit_Hintergrund_mit_URL.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

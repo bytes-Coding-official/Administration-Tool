@@ -105,17 +105,6 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // HomePage
-  {
-    'm514q8so': {
-      'de': 'Page Title',
-      'en': '',
-    },
-    '0v62fwsh': {
-      'de': 'Home',
-      'en': '',
-    },
-  },
   // Authentication
   {
     'fnkl9nxv': {
@@ -159,7 +148,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'uq3ff74n': {
-      'de': 'Continue with Apple',
+      'de': 'Continue with Github',
       'en': '',
     },
     'rhkl6yxv': {
@@ -217,14 +206,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Timetable',
       'en': '',
     },
-    '37c905vg': {
-      'de': 'Country',
-      'en': '',
-    },
-    '44os3vxa': {
-      'de': 'Notification Settings',
-      'en': '',
-    },
     'd20oaw05': {
       'de': 'Edit Profile',
       'en': '',
@@ -234,15 +215,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '1p8chce6': {
-      'de': 'Support',
+      'de': 'Logout',
       'en': '',
     },
     'kwyg0nyc': {
       'de': 'Terms of Service',
-      'en': '',
-    },
-    'qz690jdk': {
-      'de': 'Invite Collegues',
       'en': '',
     },
     'kxza41l3': {
@@ -327,12 +304,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Street and Number',
       'en': '',
     },
+    'qnq3d7xm': {
+      'de': 'Street',
+      'en': '',
+    },
     'eotg8j1f': {
       'de': 'Town',
       'en': '',
     },
     '4x4h5un1': {
-      'de': 'Email',
+      'de': 'Town',
       'en': '',
     },
     'vzfhr9w9': {
@@ -340,7 +321,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'pexa8nuc': {
-      'de': 'Phone',
+      'de': 'Zip',
       'en': '',
     },
     '1lm3p2x9': {
@@ -348,7 +329,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'nlo21lck': {
-      'de': 'Phone',
+      'de': 'Country',
       'en': '',
     },
     'nfrkcmwc': {
@@ -370,10 +351,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Your IT-Skills',
       'en': '',
     },
-    '0juprkks': {
-      'de': 'Save Changes',
-      'en': '',
-    },
     'qjwf369n': {
       'de': 'Home',
       'en': '',
@@ -389,17 +366,326 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Your Languages',
       'en': '',
     },
-    '5nfihc9y': {
-      'de': 'Save Changes',
+    'osdekkxt': {
+      'de': 'Home',
       'en': '',
     },
-    'osdekkxt': {
+  },
+  // Customer
+  {
+    'yix1awk9': {
+      'de': 'Product name...',
+      'en': '',
+    },
+    'vhquvd2c': {
+      'de': 'Description...',
+      'en': '',
+    },
+    'axtj90b9': {
+      'de': 'Themes',
+      'en': '',
+    },
+    'tjdtg14u': {
+      'de': 'Tops',
+      'en': '',
+    },
+    'f94dkstp': {
+      'de': 'Bottoms',
+      'en': '',
+    },
+    'x33w3gyx': {
+      'de': 'Outerwear',
+      'en': '',
+    },
+    'cej8m009': {
+      'de': 'Jewelry',
+      'en': '',
+    },
+    'ot8r8vne': {
+      'de': 'Accessories',
+      'en': '',
+    },
+    'ircrqxrt': {
+      'de': 'Hats',
+      'en': '',
+    },
+    'a6xv382d': {
+      'de': 'Shoes',
+      'en': '',
+    },
+    'g1yaqs68': {
+      'de': 'Languages',
+      'en': '',
+    },
+    'js6wh9sw': {
+      'de': 'Tops',
+      'en': '',
+    },
+    'ugu5kd9w': {
+      'de': 'Bottoms',
+      'en': '',
+    },
+    'pvujdu8w': {
+      'de': 'Outerwear',
+      'en': '',
+    },
+    '8k3yhasm': {
+      'de': 'Jewelry',
+      'en': '',
+    },
+    'curbqob2': {
+      'de': 'Accessories',
+      'en': '',
+    },
+    '2q8jgkqf': {
+      'de': 'Hats',
+      'en': '',
+    },
+    'qayclep4': {
+      'de': 'Shoes',
+      'en': '',
+    },
+    '25ri13hc': {
+      'de': 'Revenue',
+      'en': '',
+    },
+    'p5pr0j42': {
+      'de': '\$50.00',
+      'en': '',
+    },
+    '7x7wvbt2': {
+      'de': 'Active',
+      'en': '',
+    },
+    '95wxc4pw': {
+      'de': 'Claim Customer',
+      'en': '',
+    },
+    'krqhv353': {
+      'de': 'Hours',
+      'en': '',
+    },
+    'n13sf1jv': {
+      'de': 'Tutor',
+      'en': '',
+    },
+    '19mp5eus': {
+      'de': 'Current Case',
+      'en': '',
+    },
+    'xgtypdl0': {
+      'de': 'All of the Information given to the employee by the customer',
+      'en': '',
+    },
+    '8ygcmc94': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // Customers
+  {
+    'hzxm9f18': {
+      'de': 'bytes Coding',
+      'en': '',
+    },
+    '5dcz22gg': {
+      'de': 'Platform Navigation',
+      'en': '',
+    },
+    'tml29jty': {
+      'de': 'Dashboard',
+      'en': '',
+    },
+    'hjkywpp1': {
+      'de': '12',
+      'en': '',
+    },
+    'zk0e1z2t': {
+      'de': 'Chats',
+      'en': '',
+    },
+    '2bvioldg': {
+      'de': '12',
+      'en': '',
+    },
+    'z2x5lboo': {
+      'de': 'Create Project',
+      'en': '',
+    },
+    'rk90e529': {
+      'de': 'Settings',
+      'en': '',
+    },
+    'ifen802c': {
+      'de': 'Billing',
+      'en': '',
+    },
+    'k8t3ovqk': {
+      'de': 'Members',
+      'en': '',
+    },
+    'xtpzsf2b': {
+      'de': 'Light Mode',
+      'en': '',
+    },
+    'jopjv8qi': {
+      'de': 'Dark Mode',
+      'en': '',
+    },
+    '2rw5cdyd': {
+      'de': 'Projects Overview',
+      'en': '',
+    },
+    'glvznqhy': {
+      'de': 'Review the details below of all current projects.',
+      'en': '',
+    },
+    '4h5sn5jf': {
+      'de': 'Add',
+      'en': '',
+    },
+    'jap3znfe': {
+      'de': 'Filters',
+      'en': '',
+    },
+    'gqmlyr0e': {
+      'de': 'Active',
+      'en': '',
+    },
+    'dfuin8ot': {
+      'de': 'Own Projects',
+      'en': '',
+    },
+    '4gqpjoml': {
+      'de': 'Others',
+      'en': '',
+    },
+    'prxpz9q7': {
+      'de': 'Closed',
+      'en': '',
+    },
+    'o1dfc1vc': {
+      'de': 'Active',
+      'en': '',
+    },
+    'f7e4mtfu': {
+      'de': 'ID#: ',
+      'en': '',
+    },
+    '1905b1ks': {
+      'de': 'ID#: ',
+      'en': '',
+    },
+    'yze6pz6w': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // Employees
+  {
+    'xrg0fp1k': {
+      'de': 'Search for patients...',
+      'en': '',
+    },
+    'y9l5y0r2': {
+      'de': 'Patients matching search',
+      'en': '',
+    },
+    '5w45opxu': {
+      'de': '24',
+      'en': '',
+    },
+    'tpowc0we': {
+      'de': 'Randy Rudolph',
+      'en': '',
+    },
+    'ldmdm6fs': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    '84bntqor': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    'ajqg2pgg': {
+      'de': 'Randie Mcmullens',
+      'en': '',
+    },
+    'vj1arhx9': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    '7y52a5qy': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    'eskpjx6s': {
+      'de': 'Raney Bold',
+      'en': '',
+    },
+    'msbw5uhr': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    'yy5ibrrk': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    '6ii0iuq5': {
+      'de': 'Ragina Smith',
+      'en': '',
+    },
+    'f0coqdj5': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    'jkaqrey3': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    '2gvu0zx3': {
+      'de': 'Ra Kuo',
+      'en': '',
+    },
+    'f023736l': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    'mam14bp1': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    '8watn2fr': {
+      'de': 'Raku Davis',
+      'en': '',
+    },
+    'qo4of08f': {
+      'de': '(123) 456-7890',
+      'en': '',
+    },
+    'a4ybosim': {
+      'de': 'name@domain.com',
+      'en': '',
+    },
+    'trveb2nf': {
+      'de': 'Search patients',
+      'en': '',
+    },
+    'hf9u76zz': {
       'de': 'Home',
       'en': '',
     },
   },
   // Miscellaneous
   {
+    'b7nmo9h5': {
+      'de': '',
+      'en': '',
+    },
+    'xmayfjdy': {
+      'de': '',
+      'en': '',
+    },
     '4hucjyt3': {
       'de': '',
       'en': '',

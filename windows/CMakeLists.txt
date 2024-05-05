@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(bytes_coding LANGUAGES CXX)
+project(bytes_coding_admin_panel LANGUAGES CXX)
 
-set(BINARY_NAME "bytes_coding")
+set(BINARY_NAME "bytes_coding_admin_panel")
 
 cmake_policy(SET CMP0063 NEW)
 

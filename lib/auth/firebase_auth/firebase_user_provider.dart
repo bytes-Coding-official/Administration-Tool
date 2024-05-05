@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class BytesCodingFirebaseUser extends BaseAuthUser {
-  BytesCodingFirebaseUser(this.user);
+class BytesCodingAdminPanelFirebaseUser extends BaseAuthUser {
+  BytesCodingAdminPanelFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -55,17 +55,18 @@ class BytesCodingFirebaseUser extends BaseAuthUser {
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
   static BaseAuthUser fromFirebaseUser(User? user) =>
-      BytesCodingFirebaseUser(user);
+      BytesCodingAdminPanelFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> bytesCodingFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> bytesCodingAdminPanelFirebaseUserStream() =>
+    FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = BytesCodingFirebaseUser(user);
+        currentUser = BytesCodingAdminPanelFirebaseUser(user);
         return currentUser!;
       },
     );

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -47,9 +46,9 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -70,7 +69,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
           ),
           style: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Inter',
-                fontSize: 24.0,
+                fontSize: 22.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w500,
               ),
@@ -85,17 +84,24 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'skc9rwus' /* Your Languages */,
-                  ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Readex Pro',
-                        letterSpacing: 0.0,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'skc9rwus' /* Your Languages */,
                       ),
-                ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
+                    ),
+                  ),
+                ],
               ),
               PagedListView<DocumentSnapshot<Object?>?, LanguageRecord>(
                 pagingController: _model.setListViewController(
@@ -188,36 +194,6 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
                       ),
                     );
                   },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    '5nfihc9y' /* Save Changes */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 270.0,
-                    height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                        ),
-                    elevation: 3.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
                 ),
               ),
             ],

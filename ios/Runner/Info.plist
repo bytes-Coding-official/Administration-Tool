@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>bytes Coding</string>
+	<string>bytes Coding Admin Panel</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>bytes Coding</string>
+	<string>bytes Coding Admin Panel</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleLocalizations</key>
@@ -33,7 +33,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.663901949622-0vd7istdhg1bo2f15mmsahdrvimv418n</string>
+                <string>com.googleusercontent.apps.663901949622-b90a7ce1dnfsit0t0ct55elret7lgp6d</string>
                 
             </array>
         </dict>
@@ -42,10 +42,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>bytescoding.com</string>
+        <string>bytescodingadminpanel.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>bytescoding</string>
+        <string>bytescodingadminpanel</string>
         </array>
         </dict>
     </array>

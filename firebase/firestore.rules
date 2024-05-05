@@ -40,5 +40,24 @@ service cloud.firestore {
       allow write: if true;
       allow delete: if true;
     }
+
+    match /customer-case/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /customer-case/{parent}/topics/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/topics/{document} {
+      allow read: if true;
+    }
+
   }
 }

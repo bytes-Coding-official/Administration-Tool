@@ -1,4 +1,4 @@
-# bytes Coding
+# bytes Coding Admin Panel
 
 A new Flutter project.
 
