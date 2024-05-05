@@ -89,7 +89,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  '2clstymj' /* Current Case */,
+                  '19mp5eus' /* Current Case */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Inter',
@@ -958,7 +958,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
-                                                'xgy2vyfo' /* Claim Customer */,
+                                                '95wxc4pw' /* Claim Customer */,
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,

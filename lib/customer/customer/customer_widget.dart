@@ -123,15 +123,6 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                       ),
                     ],
                   ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      '19mp5eus' /* Current Case */,
-                    ),
-                    style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Inter',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
                 ].divide(const SizedBox(height: 4.0)),
               ),
               actions: [
@@ -891,57 +882,6 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                 ],
                                               ),
                                             ),
-                                            if (responsiveVisibility(
-                                              context: context,
-                                              phone: false,
-                                              tablet: false,
-                                            ))
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 12.0, 16.0, 12.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
-                                                  },
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '95wxc4pw' /* Claim Customer */,
-                                                  ),
-                                                  options: FFButtonOptions(
-                                                    width: double.infinity,
-                                                    height: 48.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    elevation: 3.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                ),
-                                              ),
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.0),

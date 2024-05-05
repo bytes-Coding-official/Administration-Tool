@@ -406,10 +406,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Revenue',
       'en': '',
     },
-    '95wxc4pw': {
-      'de': 'Claim Customer',
-      'en': '',
-    },
     'krqhv353': {
       'de': 'Hours',
       'en': '',
@@ -420,10 +416,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '62ehxcsa': {
       'de': 'ID:',
-      'en': '',
-    },
-    '19mp5eus': {
-      'de': 'Current Case',
       'en': '',
     },
     '8ygcmc94': {
@@ -739,7 +731,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Active',
       'en': '',
     },
-    'xgy2vyfo': {
+    '95wxc4pw': {
       'de': 'Claim Customer',
       'en': '',
     },
@@ -759,7 +751,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'ID:',
       'en': '',
     },
-    '2clstymj': {
+    '19mp5eus': {
       'de': 'Current Case',
       'en': '',
     },
