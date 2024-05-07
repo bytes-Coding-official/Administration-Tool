@@ -99,7 +99,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          '62ehxcsa' /* ID: */,
+                          'e1jwqeb7' /* ID: */,
                         ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -194,7 +194,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'qyg5rts9' /* Title... */,
+                                                '2ocbfjlu' /* Title... */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -210,7 +210,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'migz0exf' /* Lorem ipsum dolor sit amet, co... */,
+                                                'aajxmq64' /* Lorem ipsum dolor sit amet, co... */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -277,7 +277,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'eha3lwhp' /* Name */,
+                                                          'zoky65cv' /* Name */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -331,7 +331,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'wt64dvtx' /* Mail */,
+                                                          'e7pptfw3' /* Mail */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -385,7 +385,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'tgm21eu4' /* Adress */,
+                                                          'zuo79meh' /* Adress */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.start,
@@ -495,7 +495,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'axtj90b9' /* Themes */,
+                                                'hm1mdep4' /* Themes */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -589,7 +589,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'g1yaqs68' /* Languages */,
+                                                '5by36n0f' /* Languages */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -726,7 +726,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '25ri13hc' /* Revenue */,
+                                                          '1orw18k3' /* Revenue */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -892,6 +892,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                     customerCustomerCaseRecord
                                                         .reference,
                                                   );
+                                                  setState(() {});
                                                 },
                                                 text: customerCustomerCaseRecord
                                                         .assignee
@@ -1022,7 +1023,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'krqhv353' /* Hours */,
+                                                                  '8okubqr7' /* Hours */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1048,7 +1049,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'n13sf1jv' /* Tutor */,
+                                                                  't85p1c33' /* Tutor */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -70,26 +71,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const CustomersWidget()
-          : const AuthenticationWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const CustomersWidget() : const Auth2LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? const CustomersWidget()
-              : const AuthenticationWidget(),
-        ),
-        FFRoute(
-          name: 'Authentication',
-          path: '/authentication',
-          builder: (context, params) => const AuthenticationWidget(),
-        ),
-        FFRoute(
-          name: 'Profile',
-          path: '/profile',
-          builder: (context, params) => const ProfileWidget(),
+              : const Auth2LoginWidget(),
         ),
         FFRoute(
           name: 'ProfileSettings',
@@ -130,6 +120,60 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateCase',
           path: '/createCase',
           builder: (context, params) => const CreateCaseWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Create',
+          path: '/auth2Create',
+          builder: (context, params) => const Auth2CreateWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Login',
+          path: '/auth2Login',
+          builder: (context, params) => const Auth2LoginWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_ForgotPassword',
+          path: '/auth2ForgotPassword',
+          builder: (context, params) => const Auth2ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_createProfile',
+          path: '/auth2CreateProfile',
+          builder: (context, params) => const Auth2CreateProfileWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_Profile',
+          path: '/auth2Profile',
+          builder: (context, params) => const Auth2ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'auth_2_EditProfile',
+          path: '/auth2EditProfile',
+          builder: (context, params) => const Auth2EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'support_TicketList',
+          path: '/supportTicketList',
+          builder: (context, params) => const SupportTicketListWidget(),
+        ),
+        FFRoute(
+          name: 'support_SubmitTicket',
+          path: '/supportSubmitTicket',
+          builder: (context, params) => const SupportSubmitTicketWidget(),
+        ),
+        FFRoute(
+          name: 'support_TicketDetails',
+          path: '/supportTicketDetails',
+          asyncParams: {
+            'ticketRef':
+                getDoc(['supportTickets'], SupportTicketsRecord.fromSnapshot),
+          },
+          builder: (context, params) => SupportTicketDetailsWidget(
+            ticketRef: params.getParam(
+              'ticketRef',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -300,7 +344,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/authentication';
+            return '/auth2Login';
           }
           return null;
         },

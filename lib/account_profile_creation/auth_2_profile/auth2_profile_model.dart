@@ -1,15 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profile_widget.dart' show ProfileWidget;
+import 'auth2_profile_widget.dart' show Auth2ProfileWidget;
 import 'package:flutter/material.dart';
 
-class ProfileModel extends FlutterFlowModel<ProfileWidget> {
+class Auth2ProfileModel extends FlutterFlowModel<Auth2ProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

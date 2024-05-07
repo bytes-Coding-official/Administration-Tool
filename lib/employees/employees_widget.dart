@@ -64,7 +64,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'trveb2nf' /* Search patients */,
+              'a89yjpln' /* Search patients */,
             ),
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Readex Pro',
@@ -90,7 +90,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                   decoration: InputDecoration(
                     isDense: false,
                     labelText: FFLocalizations.of(context).getText(
-                      'xrg0fp1k' /* Search for patients... */,
+                      'oitchqzi' /* Search for patients... */,
                     ),
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
@@ -150,7 +150,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'y9l5y0r2' /* Patients matching search */,
+                        'jdtid1h4' /* Patients matching search */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -163,7 +163,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                         const EdgeInsetsDirectional.fromSTEB(4.0, 12.0, 16.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '5w45opxu' /* 24 */,
+                        'xi6lsjxk' /* 24 */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
@@ -224,7 +224,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'tpowc0we' /* Randy Rudolph */,
+                                            'a928yqj7' /* Randy Rudolph */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -247,7 +247,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'ldmdm6fs' /* (123) 456-7890 */,
+                                                  '0ws9ixo3' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -264,7 +264,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '84bntqor' /* name@domain.com */,
+                                                  'mmtfwxqt' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -351,7 +351,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'ajqg2pgg' /* Randie Mcmullens */,
+                                            'x8zjvcu8' /* Randie Mcmullens */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -374,7 +374,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'vj1arhx9' /* (123) 456-7890 */,
+                                                  'jiaqr3co' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -391,7 +391,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '7y52a5qy' /* name@domain.com */,
+                                                  '2xihw8x2' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -478,7 +478,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'eskpjx6s' /* Raney Bold */,
+                                            '8ndafcnt' /* Raney Bold */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -501,7 +501,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'msbw5uhr' /* (123) 456-7890 */,
+                                                  '8p391s9o' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -518,7 +518,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'yy5ibrrk' /* name@domain.com */,
+                                                  'n5ndrk9e' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -605,7 +605,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '6ii0iuq5' /* Ragina Smith */,
+                                            'v2gsrfq1' /* Ragina Smith */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -628,7 +628,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'f0coqdj5' /* (123) 456-7890 */,
+                                                  '9e3bvech' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -645,7 +645,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'jkaqrey3' /* name@domain.com */,
+                                                  '34lsg6hz' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -732,7 +732,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '2gvu0zx3' /* Ra Kuo */,
+                                            '1uc50j53' /* Ra Kuo */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -755,7 +755,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'f023736l' /* (123) 456-7890 */,
+                                                  '47x7m173' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -772,7 +772,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'mam14bp1' /* name@domain.com */,
+                                                  'jlx2jbz5' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -859,7 +859,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '8watn2fr' /* Raku Davis */,
+                                            'uu3be3mp' /* Raku Davis */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -882,7 +882,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'qo4of08f' /* (123) 456-7890 */,
+                                                  'b9dxuh6x' /* (123) 456-7890 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -899,7 +899,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'a4ybosim' /* name@domain.com */,
+                                                  '52tthw4b' /* name@domain.com */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)

@@ -68,7 +68,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      '8k9rojnc' /* ID: */,
+                      'itkl3s28' /* ID: */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Readex Pro',
@@ -77,7 +77,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'wegkpkxz' /* ID: */,
+                      'nm85wl6m' /* ID: */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Readex Pro',
@@ -86,15 +86,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                         ),
                   ),
                 ],
-              ),
-              Text(
-                FFLocalizations.of(context).getText(
-                  '19mp5eus' /* Current Case */,
-                ),
-                style: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
               ),
             ].divide(const SizedBox(height: 4.0)),
           ),
@@ -176,7 +167,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'iqrsdxs5' /* Title... */,
+                                              'yum0goyu' /* Title... */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -192,7 +183,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '9ke520cp' /* Title... */,
+                                              '0futkmof' /* Title... */,
                                             ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -288,7 +279,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'vhquvd2c' /* Description... */,
+                                              'sn5ieevs' /* Description... */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -402,7 +393,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'tx2fqnwx' /* Name */,
+                                                'ps6f6xgl' /* Name */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -415,7 +406,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '089n8s8q' /* Hello World */,
+                                                '5b0e56vs' /* Hello World */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -446,7 +437,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'qj46dz59' /* Themes */,
+                                            'yr01hol0' /* Themes */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -459,31 +450,31 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                           options: [
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'tjdtg14u' /* Tops */,
+                                              'td2ccaoc' /* Tops */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'f94dkstp' /* Bottoms */,
+                                              'lv5wv85i' /* Bottoms */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'x33w3gyx' /* Outerwear */,
+                                              'ic7843p4' /* Outerwear */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'cej8m009' /* Jewelry */,
+                                              'ubvxeoe2' /* Jewelry */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'ot8r8vne' /* Accessories */,
+                                              'it126slb' /* Accessories */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'ircrqxrt' /* Hats */,
+                                              'f9icxw38' /* Hats */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'a6xv382d' /* Shoes */,
+                                              'bzarioym' /* Shoes */,
                                             ))
                                           ],
                                           onChanged: (val) => setState(() =>
@@ -554,7 +545,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                         ),
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            '1utnfn3e' /* Languages */,
+                                            'fpj6ym4v' /* Languages */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -567,31 +558,31 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                           options: [
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'js6wh9sw' /* Tops */,
+                                              'lop6o23k' /* Tops */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'ugu5kd9w' /* Bottoms */,
+                                              'kdcezire' /* Bottoms */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'pvujdu8w' /* Outerwear */,
+                                              '8qt1rbpe' /* Outerwear */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              '8k3yhasm' /* Jewelry */,
+                                              'd3loqrqz' /* Jewelry */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'curbqob2' /* Accessories */,
+                                              'bnsrwgth' /* Accessories */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              '2q8jgkqf' /* Hats */,
+                                              '7w584kej' /* Hats */,
                                             )),
                                             ChipData(FFLocalizations.of(context)
                                                 .getText(
-                                              'qayclep4' /* Shoes */,
+                                              'uprtdynr' /* Shoes */,
                                             ))
                                           ],
                                           onChanged: (val) => setState(() =>
@@ -672,7 +663,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'q8qllymp' /* Revenue */,
+                                                      'hbxggzge' /* Revenue */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -697,7 +688,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'p5pr0j42' /* $50.00 */,
+                                                        '15uo150c' /* $50.00 */,
                                                       ),
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
@@ -927,7 +918,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '7x7wvbt2' /* Active */,
+                                                        '1qkfg3ms' /* Active */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -958,7 +949,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
-                                                '95wxc4pw' /* Claim Customer */,
+                                                'n6dvlpwe' /* Claim Customer */,
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
@@ -1064,7 +1055,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'hju0o2ac' /* Hours */,
+                                                              'z8iu5aur' /* Hours */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1089,7 +1080,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              '1hfol1ya' /* Tutor */,
+                                                              'msv6ljoz' /* Tutor */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)

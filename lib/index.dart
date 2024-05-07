@@ -1,15 +1,31 @@
 // Export pages
-export '/authentication/authentication_widget.dart' show AuthenticationWidget;
-export '/profile/profile/profile_widget.dart' show ProfileWidget;
 export '/profile/profile_settings/profile_settings_widget.dart'
     show ProfileSettingsWidget;
-export '/profile/adress_settings/adress_settings_widget.dart'
+export '/account_profile_creation/adress_settings/adress_settings_widget.dart'
     show AdressSettingsWidget;
-export '/profile/i_t_skills_settings/i_t_skills_settings_widget.dart'
+export '/account_profile_creation/i_t_skills_settings/i_t_skills_settings_widget.dart'
     show ITSkillsSettingsWidget;
-export '/profile/language_settings/language_settings_widget.dart'
+export '/account_profile_creation/language_settings/language_settings_widget.dart'
     show LanguageSettingsWidget;
 export '/customer/customer/customer_widget.dart' show CustomerWidget;
 export '/customer/customers/customers_widget.dart' show CustomersWidget;
 export '/employees/employees_widget.dart' show EmployeesWidget;
 export '/customer/create_case/create_case_widget.dart' show CreateCaseWidget;
+export '/account_profile_creation/auth_2_create/auth2_create_widget.dart'
+    show Auth2CreateWidget;
+export '/account_profile_creation/auth_2_login/auth2_login_widget.dart'
+    show Auth2LoginWidget;
+export '/account_profile_creation/auth_2_forgot_password/auth2_forgot_password_widget.dart'
+    show Auth2ForgotPasswordWidget;
+export '/account_profile_creation/auth_2_create_profile/auth2_create_profile_widget.dart'
+    show Auth2CreateProfileWidget;
+export '/account_profile_creation/auth_2_profile/auth2_profile_widget.dart'
+    show Auth2ProfileWidget;
+export '/account_profile_creation/auth_2_edit_profile/auth2_edit_profile_widget.dart'
+    show Auth2EditProfileWidget;
+export '/support_ticket/support_ticket_list/support_ticket_list_widget.dart'
+    show SupportTicketListWidget;
+export '/support_ticket/support_submit_ticket/support_submit_ticket_widget.dart'
+    show SupportSubmitTicketWidget;
+export '/support_ticket/support_ticket_details/support_ticket_details_widget.dart'
+    show SupportTicketDetailsWidget;

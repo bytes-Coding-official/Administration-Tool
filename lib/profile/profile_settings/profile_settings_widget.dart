@@ -35,9 +35,6 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
     _model.textController3 ??= TextEditingController(text: currentPhoneNumber);
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -66,7 +63,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
             size: 25.0,
           ),
           onPressed: () async {
-            context.pushNamed('Profile');
+            context.safePop();
           },
         ),
         title: Text(
@@ -137,6 +134,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
+                                autofillHints: const [AutofillHints.name],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -213,6 +211,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                             child: TextFormField(
                               controller: _model.textController2,
                               focusNode: _model.textFieldFocusNode2,
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -291,6 +290,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                               builder: (context) => TextFormField(
                                 controller: _model.textController3,
                                 focusNode: _model.textFieldFocusNode3,
+                                autofillHints: const [AutofillHints.telephoneNumber],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -356,84 +356,6 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                 validator: _model.textController3Validator
                                     .asValidator(context),
                               ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 16.0, 0.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController4,
-                              focusNode: _model.textFieldFocusNode4,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  'gyiikshj' /* Password */,
-                                ),
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'qvnk2ruz' /* Password */,
-                                ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: const Color(0xFFDBE2E7),
-                                    letterSpacing: 0.0,
-                                  ),
-                              keyboardType: TextInputType.visiblePassword,
-                              validator: _model.textController4Validator
-                                  .asValidator(context),
                             ),
                           ),
                         ),
@@ -576,6 +498,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       email: currentUserEmail,
                       displayName: _model.textController1.text,
                       phoneNumber: _model.textController3.text,
+                      photoUrl: '',
                     ));
                   },
                   text: FFLocalizations.of(context).getText(

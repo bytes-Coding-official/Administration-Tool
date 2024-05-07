@@ -12,6 +12,7 @@ import 'schema/it_skills_record.dart';
 import 'schema/itskills_record.dart';
 import 'schema/customer_case_record.dart';
 import 'schema/customer_record.dart';
+import 'schema/support_tickets_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -29,6 +30,7 @@ export 'schema/it_skills_record.dart';
 export 'schema/itskills_record.dart';
 export 'schema/customer_case_record.dart';
 export 'schema/customer_record.dart';
+export 'schema/support_tickets_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -565,6 +567,84 @@ Future<FFFirestorePage<CustomerRecord>> queryCustomerRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<CustomerRecord> data) {
+          for (var item in data) {
+            final itemIndexes = controller.itemList!
+                .asMap()
+                .map((k, v) => MapEntry(v.reference.id, k));
+            final index = itemIndexes[item.reference.id];
+            final items = controller.itemList!;
+            if (index != null) {
+              items.replaceRange(index, index + 1, [item]);
+              controller.itemList = {
+                for (var item in items) item.reference: item
+              }.values.toList();
+            }
+          }
+        });
+        streamSubscriptions?.add(streamSubscription);
+      }
+      return page;
+    });
+
+/// Functions to query SupportTicketsRecords (as a Stream and as a Future).
+Future<int> querySupportTicketsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SupportTicketsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SupportTicketsRecord>> querySupportTicketsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SupportTicketsRecord.collection,
+      SupportTicketsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SupportTicketsRecord>> querySupportTicketsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SupportTicketsRecord.collection,
+      SupportTicketsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+Future<FFFirestorePage<SupportTicketsRecord>> querySupportTicketsRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+  required PagingController<DocumentSnapshot?, SupportTicketsRecord> controller,
+  List<StreamSubscription?>? streamSubscriptions,
+}) =>
+    queryCollectionPage(
+      SupportTicketsRecord.collection,
+      SupportTicketsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    ).then((page) {
+      controller.appendPage(
+        page.data,
+        page.nextPageMarker,
+      );
+      if (isStream) {
+        final streamSubscription =
+            (page.dataStream)?.listen((List<SupportTicketsRecord> data) {
           for (var item in data) {
             final itemIndexes = controller.itemList!
                 .asMap()

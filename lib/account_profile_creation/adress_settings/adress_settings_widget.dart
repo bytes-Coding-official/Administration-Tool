@@ -157,7 +157,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'qnq3d7xm' /* Street */,
+                                    '61fgwpm7' /* Street */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
