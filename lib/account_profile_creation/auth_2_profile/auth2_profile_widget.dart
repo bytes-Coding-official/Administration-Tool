@@ -216,7 +216,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      '67eg41cr' /* Your Account */,
+                      'fuly3wvy' /* Your Account */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
@@ -272,7 +272,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'h9okw7xu' /* Edit Profile */,
+                                  '7kmtotah' /* Edit Profile */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -347,7 +347,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '51otaa4t' /* Edit Adress */,
+                                  '5l6voay2' /* Edit Adress */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -422,7 +422,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '8flv38yc' /* Edit Languages */,
+                                  'douzf5oo' /* Edit Languages */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -497,7 +497,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'jiygqzfl' /* Edit IT-Skills */,
+                                  'ugwcgkhb' /* Edit IT-Skills */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -528,7 +528,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      '81s7l6n7' /* App Settings */,
+                      'mp5x1zrt' /* App Settings */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
@@ -584,7 +584,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'wl4orsum' /* Support */,
+                                  '327g1hyy' /* Support */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -651,7 +651,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '1xc2obhy' /* Terms of Service */,
+                                'peqeskan' /* Terms of Service */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -691,7 +691,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         context.goNamedAuth('auth_2_Login', context.mounted);
                       },
                       text: FFLocalizations.of(context).getText(
-                        '1yf59ecs' /* Log Out */,
+                        '1igniz2j' /* Log Out */,
                       ),
                       options: FFButtonOptions(
                         width: 150.0,

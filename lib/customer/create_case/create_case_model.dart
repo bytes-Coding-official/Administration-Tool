@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'create_case_widget.dart' show CreateCaseWidget;
@@ -17,6 +16,9 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   FocusNode? descriptionFocusNode;
   TextEditingController? descriptionTextController;
   String? Function(BuildContext, String?)? descriptionTextControllerValidator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController1;
   String? get choiceChipsValue1 =>
@@ -33,8 +35,6 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   FocusNode? salesPriceFocusNode;
   TextEditingController? salesPriceTextController;
   String? Function(BuildContext, String?)? salesPriceTextControllerValidator;
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController = FlutterFlowDataTableController<int>();
 
   @override
   void initState(BuildContext context) {}

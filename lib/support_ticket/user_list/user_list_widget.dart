@@ -75,7 +75,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 4.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'uhwbn3ks' /* Assign User */,
+                        'mxdlcfad' /* Assign User */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
@@ -89,7 +89,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'whilbxvn' /* Select a user from the list be... */,
+                        '530qmefy' /* Select a user from the list be... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -204,7 +204,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                                       12.0, 16.0, 12.0, 16.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'ufrre5ch' /* Close */,
+                                      'o1uyt24f' /* Close */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)

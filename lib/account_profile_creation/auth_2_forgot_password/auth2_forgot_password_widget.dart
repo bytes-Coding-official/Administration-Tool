@@ -132,7 +132,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'sl49pfh9' /* flow.io */,
+                            'htxvbys4' /* flow.io */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
@@ -204,7 +204,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'v2ytta2j' /* Forgot Password */,
+                                  'xfhm9acx' /* Forgot Password */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -220,7 +220,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '6yt0e05d' /* Please fill out your email bel... */,
+                                  'c0vj5c7t' /* Please fill out your email bel... */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -245,7 +245,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '3is8gh11' /* Email */,
+                                      'zrqe42ho' /* Email */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -327,7 +327,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '1c01a9sr' /* Send Reset Link */,
+                                  'wb31fe17' /* Send Reset Link */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,

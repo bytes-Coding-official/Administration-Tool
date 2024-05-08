@@ -73,7 +73,12 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                 height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent1,
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(10.0),
+                    bottomRight: Radius.circular(10.0),
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                  ),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).primary,
                     width: 2.0,
@@ -149,7 +154,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                           const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'l6ejmsde' /* ME */,
+                          'fh4ei39y' /* ME */,
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(

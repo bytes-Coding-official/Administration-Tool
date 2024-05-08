@@ -51,7 +51,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
           automaticallyImplyLeading: false,
           title: Text(
             FFLocalizations.of(context).getText(
-              'ps6htu39' /* Support Tickets */,
+              'uc1usyqa' /* Support Tickets */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Readex Pro',
@@ -91,7 +91,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'ch7c14oh' /* Below are a list of recent tic... */,
+                    'y1cphusm' /* Below are a list of recent tic... */,
                   ),
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -178,6 +178,10 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                                   'ticketRef': listViewSupportTicketsRecord,
                                 },
                               );
+                            },
+                            onLongPress: () async {
+                              await listViewSupportTicketsRecord.reference
+                                  .delete();
                             },
                             child: Container(
                               width: double.infinity,
@@ -460,7 +464,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '0hb5jtal' /* Ticket #:  */,
+                                                        'jn2h1hyf' /* Ticket #:  */,
                                                       ),
                                                       style: const TextStyle(),
                                                     ),

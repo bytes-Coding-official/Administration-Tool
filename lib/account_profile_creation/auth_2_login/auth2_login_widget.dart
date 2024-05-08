@@ -134,7 +134,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'tunmqm6z' /* flow.io */,
+                            'q0fsxzm0' /* flow.io */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
@@ -179,7 +179,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                '2xpne95q' /* Welcome Back */,
+                                'uzd52rew' /* Welcome Back */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -194,7 +194,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '3v8lwvfi' /* Fill out the information below... */,
+                                  'fhmtz06t' /* Fill out the information below... */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -219,7 +219,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '6rxnvn6s' /* Email */,
+                                      '521io5z7' /* Email */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -292,7 +292,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '4vwkcx2o' /* Password */,
+                                      'rvjwy9hf' /* Password */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -386,7 +386,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       'Customers', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '4dxvqkfl' /* Sign In */,
+                                  '7s7u7cio' /* Sign In */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
@@ -419,7 +419,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'nfqasnkr' /* Or sign in with */,
+                                    'eiuumfyd' /* Or sign in with */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -447,7 +447,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       'Customers', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'uyjfjuk9' /* Continue with Google */,
+                                  'krmr3dq1' /* Continue with Google */,
                                 ),
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
@@ -500,7 +500,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             'Customers', context.mounted);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '8m4s57q1' /* Continue with Apple */,
+                                        'phyy4jez' /* Continue with Apple */,
                                       ),
                                       icon: const FaIcon(
                                         FontAwesomeIcons.apple,
@@ -571,14 +571,14 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'st99cvx3' /* Don't have an account?   */,
+                                            '13iifah5' /* Don't have an account?   */,
                                           ),
                                           style: const TextStyle(),
                                         ),
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'agur70lw' /* Create Account */,
+                                            'sli3162u' /* Create Account */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -611,7 +611,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   context.pushNamed('auth_2_ForgotPassword');
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'rzvjqjea' /* Forgot password? */,
+                                  'qnek1332' /* Forgot password? */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,

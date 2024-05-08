@@ -162,7 +162,7 @@ class _SupportTicketDetailsWidgetState
                                                   12.0, 4.0, 12.0, 4.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'ovoy1m3o' /* Ticket Details */,
+                                              'n7i4xuvy' /* Ticket Details */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -199,7 +199,7 @@ class _SupportTicketDetailsWidgetState
                                           TextSpan(
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              'b8a9z9un' /* Ticket #:  */,
+                                              'aaa8gjph' /* Ticket #:  */,
                                             ),
                                             style: const TextStyle(),
                                           ),
@@ -304,7 +304,7 @@ class _SupportTicketDetailsWidgetState
                                 16.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'r7wydz5j' /* Below are the details of this ... */,
+                                'sgn8hh6c' /* Below are the details of this ... */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -367,7 +367,7 @@ class _SupportTicketDetailsWidgetState
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'qwayzhto' /* Description */,
+                                      'vxgf4rp2' /* Description */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -454,7 +454,7 @@ class _SupportTicketDetailsWidgetState
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'iyt1617b' /* Submitted on */,
+                                        '47dgq5a3' /* Submitted on */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -492,7 +492,7 @@ class _SupportTicketDetailsWidgetState
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'vq5g5tku' /* Last Edited */,
+                                          '9i7ujk20' /* Last Edited */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -538,7 +538,7 @@ class _SupportTicketDetailsWidgetState
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '18aawzy7' /* Status */,
+                                            'trxtjtsw' /* Status */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -563,16 +563,16 @@ class _SupportTicketDetailsWidgetState
                                           ),
                                           options: [
                                             FFLocalizations.of(context).getText(
-                                              '8w1ckree' /* Pending */,
+                                              '173cgq1c' /* Pending */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'qlw2fquk' /* In Progress */,
+                                              '8ew7tviv' /* In Progress */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'tag7b1ei' /* Complete */,
+                                              'u06jy42q' /* Complete */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'g98azts8' /* Submitted */,
+                                              'l0j8onis' /* Submitted */,
                                             )
                                           ],
                                           onChanged: (val) => setState(
@@ -588,7 +588,7 @@ class _SupportTicketDetailsWidgetState
                                                   ),
                                           hintText: FFLocalizations.of(context)
                                               .getText(
-                                            'p1u4kwv6' /* Please select... */,
+                                            'v3ywnmpi' /* Please select... */,
                                           ),
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
@@ -628,7 +628,7 @@ class _SupportTicketDetailsWidgetState
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '9on18hk2' /* Assigned to */,
+                                                  'ls2xotzx' /* Assigned to */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -811,7 +811,7 @@ class _SupportTicketDetailsWidgetState
                                             0.0, 4.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'eg6oxhun' /* Submitted By */,
+                                            '7522lg0r' /* Submitted By */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -970,63 +970,6 @@ class _SupportTicketDetailsWidgetState
                                           },
                                         ),
                                       ),
-                                      Container(
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent3,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            width: 2.0,
-                                          ),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '6xgh7974' /* Developer Note (delete this) */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '13qm4jk2' /* You will have to change the re... */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -1121,7 +1064,7 @@ class _SupportTicketDetailsWidgetState
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'zc6vonnm' /* Assign */,
+                                                  '190ycife' /* Assign */,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,
@@ -1204,7 +1147,7 @@ class _SupportTicketDetailsWidgetState
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'cvpjy9ag' /* Update Ticket */,
+                                                  '5o57gj4w' /* Update Ticket */,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,

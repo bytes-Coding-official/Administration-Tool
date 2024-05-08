@@ -135,7 +135,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'v1yq5rin' /* flow.io */,
+                            '6n418bnp' /* flow.io */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
@@ -180,7 +180,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'sl8p0kt1' /* Get Started */,
+                                '2yjwqo8g' /* Get Started */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -195,7 +195,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'l91wcety' /* Create an account by using the... */,
+                                  'ac6qy2gi' /* Create an account by using the... */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -220,7 +220,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '3nug8tpv' /* Email */,
+                                      '5k2pip8v' /* Email */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -293,7 +293,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'ekp4kiig' /* Password */,
+                                      '0j6aq2uv' /* Password */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -387,7 +387,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       'auth_2_createProfile', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'iq9hzrcl' /* Create Account */,
+                                  'r63zssnl' /* Create Account */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
@@ -420,7 +420,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'vlfty2br' /* Or sign up with */,
+                                    'gnjjbz2r' /* Or sign up with */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -448,7 +448,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       'Customers', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'wigq2u7g' /* Continue with Google */,
+                                  'q0hcm3f4' /* Continue with Google */,
                                 ),
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
@@ -501,7 +501,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                             'Customers', context.mounted);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '4atgil5m' /* Continue with Apple */,
+                                        'iruoh91b' /* Continue with Apple */,
                                       ),
                                       icon: const FaIcon(
                                         FontAwesomeIcons.apple,
@@ -572,14 +572,14 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'egmf3i7n' /* Already have an account?  */,
+                                            'weopfjnz' /* Already have an account?  */,
                                           ),
                                           style: const TextStyle(),
                                         ),
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'zcm9f1ou' /* Sign in here */,
+                                            'rb2zcnqj' /* Sign in here */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

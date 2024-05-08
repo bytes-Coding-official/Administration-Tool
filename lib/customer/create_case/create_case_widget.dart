@@ -1,5 +1,6 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_data_table.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
 
@@ -48,6 +50,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -75,15 +79,35 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'nm85wl6m' /* ID: */,
-                    ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).primary,
-                          letterSpacing: 0.0,
-                        ),
+                  FutureBuilder<int>(
+                    future: queryCustomerCaseRecordCount(),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      int textCount = snapshot.data!;
+                      return Text(
+                        random_data.randomInteger(textCount, 999999).toString(),
+                        style: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .override(
+                              fontFamily: 'Readex Pro',
+                              color: FlutterFlowTheme.of(context).primary,
+                              letterSpacing: 0.0,
+                            ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -387,40 +411,94 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ps6f6xgl' /* Name */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
+                                            StreamBuilder<List<CustomerRecord>>(
+                                              stream: queryCustomerRecord(),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                        ),
                                                       ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '5b0e56vs' /* Hello World */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<CustomerRecord>
+                                                    dropDownCustomerRecordList =
+                                                    snapshot.data!;
+                                                return FlutterFlowDropDown<
+                                                    String>(
+                                                  controller: _model
+                                                          .dropDownValueController ??=
+                                                      FormFieldController<
+                                                          String>(
+                                                    _model.dropDownValue ??=
+                                                        dropDownCustomerRecordList
+                                                            .first.name,
+                                                  ),
+                                                  options:
+                                                      dropDownCustomerRecordList
+                                                          .map((e) => e.name)
+                                                          .toList(),
+                                                  onChanged: (val) => setState(
+                                                      () => _model
+                                                          .dropDownValue = val),
+                                                  width: 300.0,
+                                                  height: 56.0,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'szpwo165' /* Customer Name */,
+                                                  ),
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  borderWidth: 2.0,
+                                                  borderRadius: 8.0,
+                                                  margin: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 4.0, 16.0, 4.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: true,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
+                                                );
+                                              },
                                             ),
                                           ],
-                                        ),
-                                        const Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [],
                                         ),
                                       ],
                                     ),
@@ -446,102 +524,106 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'td2ccaoc' /* Tops */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'lv5wv85i' /* Bottoms */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'ic7843p4' /* Outerwear */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'ubvxeoe2' /* Jewelry */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'it126slb' /* Accessories */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'f9icxw38' /* Hats */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'bzarioym' /* Shoes */,
-                                            ))
-                                          ],
-                                          onChanged: (val) => setState(() =>
-                                              _model.choiceChipsValue1 =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor: const Color(0x00000000),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                        StreamBuilder<List<ItskillsRecord>>(
+                                          stream: queryItskillsRecord(),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<ItskillsRecord>
+                                                choiceChipsItskillsRecordList =
+                                                snapshot.data!;
+                                            return FlutterFlowChoiceChips(
+                                              options:
+                                                  choiceChipsItskillsRecordList
+                                                      .map((e) => e.name)
+                                                      .toList()
+                                                      .map((label) =>
+                                                          ChipData(label))
+                                                      .toList(),
+                                              onChanged: (val) => setState(() =>
+                                                  _model.choiceChipsValue1 =
+                                                      val?.firstOrNull),
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    const Color(0x00000000),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 8.0,
-                                          multiselect: false,
-                                          alignment: WrapAlignment.start,
-                                          controller: _model
-                                                  .choiceChipsValueController1 ??=
-                                              FormFieldController<List<String>>(
-                                            [],
-                                          ),
-                                          wrapped: true,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              chipSpacing: 8.0,
+                                              rowSpacing: 8.0,
+                                              multiselect: false,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController1 ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [],
+                                              ),
+                                              wrapped: true,
+                                            );
+                                          },
                                         ),
                                         Text(
                                           FFLocalizations.of(context).getText(
@@ -554,102 +636,106 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'lop6o23k' /* Tops */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'kdcezire' /* Bottoms */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              '8qt1rbpe' /* Outerwear */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'd3loqrqz' /* Jewelry */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'bnsrwgth' /* Accessories */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              '7w584kej' /* Hats */,
-                                            )),
-                                            ChipData(FFLocalizations.of(context)
-                                                .getText(
-                                              'uprtdynr' /* Shoes */,
-                                            ))
-                                          ],
-                                          onChanged: (val) => setState(() =>
-                                              _model.choiceChipsValue2 =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor: const Color(0x00000000),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                        StreamBuilder<List<LanguagesRecord>>(
+                                          stream: queryLanguagesRecord(),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<LanguagesRecord>
+                                                choiceChipsLanguagesRecordList =
+                                                snapshot.data!;
+                                            return FlutterFlowChoiceChips(
+                                              options:
+                                                  choiceChipsLanguagesRecordList
+                                                      .map((e) => e.name)
+                                                      .toList()
+                                                      .map((label) =>
+                                                          ChipData(label))
+                                                      .toList(),
+                                              onChanged: (val) => setState(() =>
+                                                  _model.choiceChipsValue2 =
+                                                      val?.firstOrNull),
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    const Color(0x00000000),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            iconColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                            iconSize: 18.0,
-                                            elevation: 0.0,
-                                            borderColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderWidth: 2.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 8.0,
-                                          multiselect: false,
-                                          alignment: WrapAlignment.start,
-                                          controller: _model
-                                                  .choiceChipsValueController2 ??=
-                                              FormFieldController<List<String>>(
-                                            [],
-                                          ),
-                                          wrapped: true,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 2.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              chipSpacing: 8.0,
+                                              rowSpacing: 8.0,
+                                              multiselect: false,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController2 ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [],
+                                              ),
+                                              wrapped: true,
+                                            );
+                                          },
                                         ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -807,133 +893,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             ),
                                           ].divide(const SizedBox(width: 12.0)),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 12.0, 12.0, 8.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent1,
-                                                      shape: BoxShape.circle,
-                                                      border: Border.all(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(2.0),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(40.0),
-                                                        child: Image.network(
-                                                          'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                                          width: 60.0,
-                                                          height: 60.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent1,
-                                                      shape: BoxShape.circle,
-                                                      border: Border.all(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(2.0),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(40.0),
-                                                        child: Image.network(
-                                                          'https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHVzZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60',
-                                                          width: 60.0,
-                                                          height: 60.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ].divide(const SizedBox(width: 4.0)),
-                                              ),
-                                              Container(
-                                                height: 32.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .accent2,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondary,
-                                                    width: 2.0,
-                                                  ),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 0.0,
-                                                                8.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '1qkfg3ms' /* Active */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
                                         if (responsiveVisibility(
                                           context: context,
                                           phone: false,
@@ -944,12 +903,29 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 12.0, 16.0, 12.0),
                                             child: FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
+                                              onPressed: () async {
+                                                await CustomerCaseRecord
+                                                    .collection
+                                                    .doc()
+                                                    .set(
+                                                        createCustomerCaseRecordData(
+                                                      caseid:
+                                                          FFAppState().caseid,
+                                                      title: _model
+                                                          .productNameTextController
+                                                          .text,
+                                                      description: _model
+                                                          .descriptionTextController
+                                                          .text,
+                                                      revenue: double.tryParse(
+                                                          _model
+                                                              .salesPriceTextController
+                                                              .text),
+                                                    ));
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
-                                                'n6dvlpwe' /* Claim Customer */,
+                                                'n6dvlpwe' /* Add Case */,
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
@@ -997,169 +973,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                               maxWidth: 1270.0,
                             ),
                             decoration: const BoxDecoration(),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 12.0, 16.0, 0.0),
-                              child: Wrap(
-                                spacing: 16.0,
-                                runSpacing: 16.0,
-                                alignment: WrapAlignment.start,
-                                crossAxisAlignment: WrapCrossAlignment.start,
-                                direction: Axis.horizontal,
-                                runAlignment: WrapAlignment.center,
-                                verticalDirection: VerticalDirection.down,
-                                clipBehavior: Clip.none,
-                                children: [
-                                  ListView(
-                                    padding: EdgeInsets.zero,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.vertical,
-                                    children: [
-                                      Container(
-                                        width: 100.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Expanded(
-                                              child: Builder(
-                                                builder: (context) {
-                                                  final test = List.generate(
-                                                      random_data.randomInteger(
-                                                          0, 0),
-                                                      (index) => random_data
-                                                          .randomInteger(
-                                                              0, 10)).toList();
-                                                  return FlutterFlowDataTable<
-                                                      int>(
-                                                    controller: _model
-                                                        .paginatedDataTableController,
-                                                    data: test,
-                                                    numRows:
-                                                        valueOrDefault<int>(
-                                                      random_data.randomInteger(
-                                                          12, 10),
-                                                      3,
-                                                    ),
-                                                    columnsBuilder:
-                                                        (onSortChanged) => [
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'z8iu5aur' /* Hours */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      DataColumn2(
-                                                        label: DefaultTextStyle
-                                                            .merge(
-                                                          softWrap: true,
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'msv6ljoz' /* Tutor */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                    dataRowBuilder: (testItem,
-                                                            testIndex,
-                                                            selected,
-                                                            onSelectChanged) =>
-                                                        DataRow(
-                                                      color:
-                                                          MaterialStateProperty
-                                                              .all(
-                                                        testIndex % 2 == 0
-                                                            ? FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondary
-                                                            : FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondary,
-                                                      ),
-                                                      cells: [
-                                                        Container(),
-                                                        Container(),
-                                                      ]
-                                                          .map((c) =>
-                                                              DataCell(c))
-                                                          .toList(),
-                                                    ),
-                                                    paginated: true,
-                                                    selectable: false,
-                                                    hidePaginator: false,
-                                                    showFirstLastButtons: false,
-                                                    headingRowHeight: 56.0,
-                                                    dataRowHeight: 48.0,
-                                                    columnSpacing: 20.0,
-                                                    headingRowColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    addHorizontalDivider: true,
-                                                    addTopAndBottomDivider:
-                                                        false,
-                                                    hideDefaultHorizontalDivider:
-                                                        false,
-                                                    horizontalDividerColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate,
-                                                    horizontalDividerThickness:
-                                                        1.0,
-                                                    addVerticalDivider: false,
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
                           ),
                         ),
                       ],

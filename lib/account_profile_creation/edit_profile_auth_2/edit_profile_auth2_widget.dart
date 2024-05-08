@@ -84,7 +84,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
-                'kc4k6xn5' /* Adjust the content below to up... */,
+                'o0a4x7xt' /* Adjust the content below to up... */,
               ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
                     fontFamily: 'Inter',
@@ -210,7 +210,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   }
                 },
                 text: FFLocalizations.of(context).getText(
-                  'yqqhk5lm' /* Change Photo */,
+                  'tama5wuy' /* Change Photo */,
                 ),
                 options: FFButtonOptions(
                   width: 130.0,
@@ -244,14 +244,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: FFLocalizations.of(context).getText(
-                    '5ysb493n' /* Full Name */,
+                    'p1q6p9gx' /* Full Name */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
-                    'lmwhn9dg' /* Your full name... */,
+                    'z3y8xvd7' /* Your full name... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -316,19 +316,19 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 options: [
                   FFLocalizations.of(context).getText(
-                    'ufyrtear' /* Owner/Founder */,
+                    '6x72ltl3' /* Owner/Founder */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'w9c3r79b' /* Director */,
+                    'zlz2iu8t' /* Director */,
                   ),
                   FFLocalizations.of(context).getText(
-                    '4heerxr3' /* Manager */,
+                    'aexke9an' /* Manager */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'ct11apau' /* Mid-Manager */,
+                    '0s6428wk' /* Mid-Manager */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'tqcn3iqb' /* Employee */,
+                    '1x9s91rw' /* Employee */,
                   )
                 ],
                 onChanged: (val) => setState(() => _model.dropDownValue = val),
@@ -339,7 +339,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       letterSpacing: 0.0,
                     ),
                 hintText: FFLocalizations.of(context).getText(
-                  'czubqpfu' /* Your Role */,
+                  'imthgpev' /* Your Role */,
                 ),
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
@@ -368,14 +368,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: FFLocalizations.of(context).getText(
-                    'jjx4hkkb' /* Short Description */,
+                    'qd33kojz' /* Short Description */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
-                    '6w5edafv' /* A little about you... */,
+                    'mv5hcw0x' /* A little about you... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',

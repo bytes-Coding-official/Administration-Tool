@@ -882,61 +882,127 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                 ],
                                               ),
                                             ),
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  await actions.newCustomAction(
-                                                    currentUserReference!,
-                                                    customerCustomerCaseRecord
-                                                        .reference,
-                                                  );
-                                                  setState(() {});
-                                                },
-                                                text: customerCustomerCaseRecord
-                                                        .assignee
-                                                        .contains(
-                                                            currentUserReference)
-                                                    ? 'Remove from case'
-                                                    : 'Claim case',
-                                                options: FFButtonOptions(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
-                                                  height: 50.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
+                                            if (valueOrDefault<bool>(
+                                              customerCustomerCaseRecord
+                                                      .assignee
+                                                      .contains(
+                                                          currentUserReference) ==
+                                                  false,
+                                              false,
+                                            ))
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    await actions.addUserToList(
+                                                      customerCustomerCaseRecord
+                                                          .reference,
+                                                      currentUserReference,
+                                                    );
+                                                  },
+                                                  text: FFLocalizations.of(
                                                           context)
-                                                      .tertiary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderSide: const BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
+                                                      .getText(
+                                                    '4t8xqign' /* Claim Case */,
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                  options: FFButtonOptions(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: 50.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .tertiary,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                            if (customerCustomerCaseRecord
+                                                    .assignee
+                                                    .contains(
+                                                        currentUserReference) ==
+                                                false)
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    await actions
+                                                        .removeUserFromList(
+                                                      customerCustomerCaseRecord
+                                                          .assignee
+                                                          .toList(),
+                                                      currentUserReference!,
+                                                    );
+                                                  },
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'gy7e31nj' /* Remove From Case */,
+                                                  ),
+                                                  options: FFButtonOptions(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: 50.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .tertiary,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                              ),
                                             Divider(
                                               thickness: 5.0,
                                               indent: 10.0,

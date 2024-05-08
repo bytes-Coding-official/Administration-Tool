@@ -354,7 +354,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'smp1ka36' /* Create a Ticket */,
+                                  'yhztxyu8' /* Create a Ticket */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -370,7 +370,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                   16.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'c8w2gylx' /* Fill out the form below to sub... */,
+                                  'vj2kin4a' /* Fill out the form below to sub... */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -404,7 +404,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                             onTap: () async {
                                               await launchUrl(Uri(
                                                 scheme: 'tel',
-                                                path: '(000) 000-0000',
+                                                path: '(049) 175 5738757',
                                               ));
                                             },
                                             child: Container(
@@ -457,7 +457,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '1ty41etm' /* Call Us */,
+                                                          '8a83o12g' /* Call Us */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.center,
@@ -494,7 +494,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                             onTap: () async {
                                               await launchUrl(Uri(
                                                   scheme: 'mailto',
-                                                  path: 'test@test.com',
+                                                  path: 'info@bytes-coding.com',
                                                   query: {
                                                     'subject':
                                                         'I am in need of support for your application.',
@@ -556,7 +556,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'rmyp0ht9' /* Email Us */,
+                                                          'txl8rzat' /* Email Us */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.center,
@@ -590,7 +590,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     decoration: InputDecoration(
                                       labelText:
                                           FFLocalizations.of(context).getText(
-                                        'a3kzhhme' /* What is going on? */,
+                                        'ricp38cm' /* What is going on? */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -673,7 +673,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '42e2lqwe' /* Short Description of what is g... */,
+                                        '0l26gje2' /* Short Description of what is g... */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -737,7 +737,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                       'textFieldOnPageLoadAnimation2']!),
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'sfbkp7rz' /* Choose a priority level */,
+                                      'eyq6jort' /* Choose a priority level */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -751,19 +751,19 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     options: [
                                       ChipData(
                                           FFLocalizations.of(context).getText(
-                                        '69k71avu' /* Emergency */,
+                                        'nj4gxq7y' /* Emergency */,
                                       )),
                                       ChipData(
                                           FFLocalizations.of(context).getText(
-                                        'jrqh0v78' /* High */,
+                                        'nxn0qt7g' /* High */,
                                       )),
                                       ChipData(
                                           FFLocalizations.of(context).getText(
-                                        'ylosck7b' /* Medium */,
+                                        '36ar5gt0' /* Medium */,
                                       )),
                                       ChipData(
                                           FFLocalizations.of(context).getText(
-                                        'r1u5a8wf' /* Low */,
+                                        'xbub19mw' /* Low */,
                                       ))
                                     ],
                                     onChanged: (val) => setState(() => _model
@@ -826,7 +826,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                             FormFieldController<List<String>>(
                                       [
                                         FFLocalizations.of(context).getText(
-                                          'c43g8i01' /* Low */,
+                                          'udk6s772' /* Low */,
                                         )
                                       ],
                                     ),
@@ -954,7 +954,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'twkfvpnd' /* Upload Screenshot */,
+                                                    'ngxigtui' /* Upload Screenshot */,
                                                   ),
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
@@ -973,176 +973,198 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     ).animateOnPageLoad(animationsMap[
                                         'containerOnPageLoadAnimation3']!),
                                   ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'aq9mxt9y' /* Assign User */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
+                                  if (valueOrDefault<bool>(
+                                          currentUserDocument?.administrator,
+                                          false) ==
+                                      true)
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0.0, -1.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9furp0rw' /* Assign User */,
                                               ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent4,
-                                                barrierColor:
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 12.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
                                                     Colors.transparent,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () => _model
-                                                            .unfocusNode
-                                                            .canRequestFocus
-                                                        ? FocusScope.of(context)
-                                                            .requestFocus(_model
-                                                                .unfocusNode)
-                                                        : FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: const UserListWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) => safeSetState(
-                                                  () => _model.userRefSelected =
-                                                      value));
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                    barrierColor:
+                                                        Colors.transparent,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () => _model
+                                                                .unfocusNode
+                                                                .canRequestFocus
+                                                            ? FocusScope.of(
+                                                                    context)
+                                                                .requestFocus(_model
+                                                                    .unfocusNode)
+                                                            : FocusScope.of(
+                                                                    context)
+                                                                .unfocus(),
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              const UserListWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() => _model
+                                                              .userRefSelected =
+                                                          value));
 
-                                              setState(() {});
-                                            },
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              child: Container(
-                                                width: double.infinity,
-                                                constraints: const BoxConstraints(
-                                                  maxWidth: 500.0,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  setState(() {});
+                                                },
+                                                child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12.0),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    width: 2.0,
-                                                  ),
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    children: [
-                                                      if (_model.userRefSelected
-                                                              ?.reference !=
-                                                          null)
-                                                        Expanded(
-                                                          child: wrapWithModel(
-                                                            model: _model
-                                                                .userListSmallModel,
-                                                            updateCallback:
-                                                                () => setState(
-                                                                    () {}),
-                                                            updateOnChange:
-                                                                true,
-                                                            child:
-                                                                UserListSmallWidget(
-                                                              userRef: _model
-                                                                  .userRefSelected,
-                                                              action:
-                                                                  () async {},
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    constraints: const BoxConstraints(
+                                                      maxWidth: 500.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12.0),
+                                                      border: Border.all(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(8.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          if (_model
+                                                                  .userRefSelected
+                                                                  ?.reference !=
+                                                              null)
+                                                            Expanded(
+                                                              child:
+                                                                  wrapWithModel(
+                                                                model: _model
+                                                                    .userListSmallModel,
+                                                                updateCallback:
+                                                                    () => setState(
+                                                                        () {}),
+                                                                updateOnChange:
+                                                                    true,
+                                                                child:
+                                                                    UserListSmallWidget(
+                                                                  userRef: _model
+                                                                      .userRefSelected,
+                                                                  action:
+                                                                      () async {},
+                                                                ),
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ),
-                                                      if (_model.userRefSelected
-                                                              ?.reference ==
-                                                          null)
-                                                        Expanded(
-                                                          child: Padding(
+                                                          if (_model
+                                                                  .userRefSelected
+                                                                  ?.reference ==
+                                                              null)
+                                                            Expanded(
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'zdl3izxa' /* Add User */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
                                                                         12.0,
-                                                                        0.0,
-                                                                        0.0,
                                                                         0.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'i9o991kg' /* Add User */,
-                                                              ),
-                                                              style: FlutterFlowTheme
+                                                            child: Icon(
+                                                              Icons
+                                                                  .mode_edit_outline,
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
+                                                                  .primary,
+                                                              size: 32.0,
                                                             ),
                                                           ),
-                                                        ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        child: Icon(
-                                                          Icons
-                                                              .mode_edit_outline,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 32.0,
-                                                        ),
+                                                        ],
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'containerOnPageLoadAnimation4']!),
                                             ),
-                                          ).animateOnPageLoad(animationsMap[
-                                              'containerOnPageLoadAnimation4']!),
-                                        ),
-                                      ],
-                                    ).animateOnPageLoad(animationsMap[
-                                        'columnOnPageLoadAnimation']!),
-                                  ),
+                                          ],
+                                        ).animateOnPageLoad(animationsMap[
+                                            'columnOnPageLoadAnimation']!),
+                                      ),
+                                    ),
                                 ].divide(const SizedBox(height: 12.0)),
                               ),
                             ),
@@ -1196,7 +1218,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           context.safePop();
                         },
                         text: FFLocalizations.of(context).getText(
-                          'lwt2obdb' /* Submit Ticket */,
+                          '0sjmvj9o' /* Submit Ticket */,
                         ),
                         icon: const Icon(
                           Icons.receipt_long,

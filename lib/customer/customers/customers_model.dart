@@ -88,7 +88,7 @@ class CustomersModel extends FlutterFlowModel<CustomersWidget> {
           nextPageMarker: nextPageMarker,
           streamSubscriptions: mobileViewStreamSubscriptions,
           controller: controller,
-          pageSize: 25,
+          pageSize: 15,
           isStream: true,
         ),
       );

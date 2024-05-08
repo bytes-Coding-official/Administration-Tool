@@ -29,3 +29,10 @@ export '/support_ticket/support_submit_ticket/support_submit_ticket_widget.dart'
     show SupportSubmitTicketWidget;
 export '/support_ticket/support_ticket_details/support_ticket_details_widget.dart'
     show SupportTicketDetailsWidget;
+export '/billing/billing_widget.dart' show BillingWidget;
+export '/calendar/calendar_widget.dart' show CalendarWidget;
+export '/chat/chat_2_details/chat2_details_widget.dart' show Chat2DetailsWidget;
+export '/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
+export '/chat/chat_2_invite_users/chat2_invite_users_widget.dart'
+    show Chat2InviteUsersWidget;
+export '/chat/image_details/image_details_widget.dart' show ImageDetailsWidget;
