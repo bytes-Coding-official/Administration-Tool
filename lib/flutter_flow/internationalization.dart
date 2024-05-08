@@ -1117,6 +1117,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Below are your chats and group chats',
       'en': '',
     },
+    '74g4kc50': {
+      'de': 'Add Chat',
+      'en': '',
+    },
     'rhcw9ekk': {
       'de': 'Group Chat',
       'en': '',

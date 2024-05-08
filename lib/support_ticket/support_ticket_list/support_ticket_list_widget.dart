@@ -68,12 +68,12 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                 buttonSize: 40.0,
                 fillColor: FlutterFlowTheme.of(context).accent1,
                 icon: Icon(
-                  Icons.post_add_rounded,
+                  Icons.chevron_left,
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed('support_SubmitTicket');
+                  context.pushNamed('Customers');
                 },
               ),
             ),

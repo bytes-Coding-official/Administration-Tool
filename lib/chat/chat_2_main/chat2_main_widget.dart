@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'chat2_main_model.dart';
@@ -66,21 +67,12 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                 buttonSize: 40.0,
                 fillColor: FlutterFlowTheme.of(context).accent1,
                 icon: Icon(
-                  Icons.add_comment,
+                  Icons.chevron_left,
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed(
-                    'chat_2_InviteUsers',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.bottomToTop,
-                        duration: Duration(milliseconds: 270),
-                      ),
-                    },
-                  );
+                  context.pushNamed('Customers');
                 },
               ),
             ),
@@ -94,17 +86,52 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    '4jhf6wsl' /* Below are your chats and group... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '4jhf6wsl' /* Below are your chats and group... */,
                       ),
-                ),
+                      style: FlutterFlowTheme.of(context).labelMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                  FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed('chat_2_InviteUsers');
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      '74g4kc50' /* Add Chat */,
+                    ),
+                    options: FFButtonOptions(
+                      height: 40.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Inter',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                              ),
+                      elevation: 3.0,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ],
               ),
               Expanded(
                 child: StreamBuilder<List<ChatsRecord>>(

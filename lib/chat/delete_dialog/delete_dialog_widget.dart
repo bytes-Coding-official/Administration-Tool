@@ -324,18 +324,30 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'd2yt76l7' /* Delete */,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('chat_2_main');
+
+                                  await widget.chatList!.reference.delete();
+                                },
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'd2yt76l7' /* Delete */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: FlutterFlowTheme.of(context).error,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
                               ),
                             ),
                           ],
