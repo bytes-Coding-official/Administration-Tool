@@ -37,7 +37,7 @@ class _AddMeetingToCustomerWidgetState
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.durationTextController?.text =
               FFLocalizations.of(context).getText(
-            'mhet6khp' /* 0.0 */,
+            'dm5dydjl' /* 0.0 */,
           );
         }));
   }

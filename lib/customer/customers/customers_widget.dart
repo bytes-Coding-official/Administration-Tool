@@ -1375,103 +1375,147 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.administrator,
-                                      false) ==
-                                  true)
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => FFButtonWidget(
-                                      onPressed: () async {
-                                        context.pushNamed('createCustomer');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'q3yd9c6w' /* Add Customer */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 150.0,
-                                        height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 15.0, 10.0, 15.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed('sideNav');
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'q3yd9c6w' /* Navigation */,
+                              ),
+                              options: FFButtonOptions(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 40.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 15.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.administrator,
+                                        false) ==
+                                    true)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => FFButtonWidget(
+                                        onPressed: () async {
+                                          context.pushNamed('createCustomer');
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'tmf3yzsp' /* Add Customer */,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        options: FFButtonOptions(
+                                          width: 150.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter',
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.administrator,
-                                      false) ==
-                                  true)
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => FFButtonWidget(
-                                      onPressed: () async {
-                                        setState(() {
-                                          FFAppState().caseid = random_data
-                                              .randomInteger(1, 9999999)
-                                              .toString();
-                                        });
+                                if (valueOrDefault<bool>(
+                                        currentUserDocument?.administrator,
+                                        false) ==
+                                    true)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => FFButtonWidget(
+                                        onPressed: () async {
+                                          setState(() {
+                                            FFAppState().caseid = random_data
+                                                .randomInteger(1, 9999999)
+                                                .toString();
+                                          });
 
-                                        context.pushNamed('CreateCase');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'hhyl29jb' /* Add Case */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 150.0,
-                                        height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
+                                          context.pushNamed('CreateCase');
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'ju1pli0v' /* Add Case */,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        options: FFButtonOptions(
+                                          width: 150.0,
+                                          height: 40.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter',
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                            ],
+                              ],
+                            ),
                           ),
                           if (responsiveVisibility(
                             context: context,

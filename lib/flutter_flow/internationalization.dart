@@ -415,10 +415,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'q3yd9c6w': {
+      'de': 'Navigation',
+      'en': '',
+    },
+    'tmf3yzsp': {
       'de': 'Add Customer',
       'en': '',
     },
-    'hhyl29jb': {
+    'ju1pli0v': {
       'de': 'Add Case',
       'en': '',
     },
@@ -520,7 +524,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Add Case',
       'en': '',
     },
-    'akuvxsis': {
+    'y8a4g1j8': {
       'de': 'Create Case',
       'en': '',
     },
@@ -809,7 +813,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Submit Ticket',
       'en': '',
     },
-    'msd7orz7': {
+    '6m96v7d4': {
       'de': 'Create a Ticket',
       'en': '',
     },
@@ -1284,7 +1288,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Tutor',
       'en': '',
     },
-    'w2j7a4li': {
+    'r14ffmw1': {
       'de': 'Search for an item...',
       'en': '',
     },
@@ -1296,7 +1300,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'duration',
       'en': '',
     },
-    'mhet6khp': {
+    'dm5dydjl': {
       'de': '0.0',
       'en': '',
     },
@@ -1349,6 +1353,77 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'c6npx1ws': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // sideNav
+  {
+    'e0uy5mgi': {
+      'de': 'bytes Coding',
+      'en': '',
+    },
+    'pp11v2d7': {
+      'de': 'Platform Navigation',
+      'en': '',
+    },
+    'gswosf21': {
+      'de': 'Dashboard',
+      'en': '',
+    },
+    'vubzw4fn': {
+      'de': '12',
+      'en': '',
+    },
+    'hlllwdgt': {
+      'de': 'Chats',
+      'en': '',
+    },
+    'uzhek3wf': {
+      'de': '12',
+      'en': '',
+    },
+    'v0595r9p': {
+      'de': 'Support Tickets',
+      'en': '',
+    },
+    's25u60xs': {
+      'de': '12',
+      'en': '',
+    },
+    'duxefwbe': {
+      'de': 'Calendar',
+      'en': '',
+    },
+    'l58wwlw0': {
+      'de': 'Settings',
+      'en': '',
+    },
+    '89bbkkhb': {
+      'de': 'Billing',
+      'en': '',
+    },
+    'qasu6joo': {
+      'de': 'Members',
+      'en': '',
+    },
+    'yf7y8732': {
+      'de': 'Light Mode',
+      'en': '',
+    },
+    'lhgm48cm': {
+      'de': 'Dark Mode',
+      'en': '',
+    },
+    'pcy905jw': {
+      'de': 'Navigationsmenu',
+      'en': '',
+    },
+    'we3txrli': {
+      'de': 'For navigating between screens',
+      'en': '',
+    },
+    '6dtqlh1d': {
       'de': 'Home',
       'en': '',
     },

@@ -303,7 +303,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'msd7orz7' /* Create a Ticket */,
+              '6m96v7d4' /* Create a Ticket */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Readex Pro',

@@ -81,7 +81,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'akuvxsis' /* Create Case */,
+                  'y8a4g1j8' /* Create Case */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
