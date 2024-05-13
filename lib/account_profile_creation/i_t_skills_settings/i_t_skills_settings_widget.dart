@@ -4,14 +4,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'i_t_skills_settings_model.dart';
 export 'i_t_skills_settings_model.dart';
 
@@ -95,7 +90,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
             ),
           ],
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -110,7 +105,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'iqb97wxp' /* Your IT-Skills */,
@@ -171,7 +166,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: ToggleIcon(
                               onPressed: () async {
@@ -199,7 +194,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               listViewItSkillsRecord.name,

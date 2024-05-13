@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class CustomerCaseRecord extends FirestoreRecord {
   CustomerCaseRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -51,6 +51,11 @@ class CustomerCaseRecord extends FirestoreRecord {
   DocumentReference? get customer => _customer;
   bool hasCustomer() => _customer != null;
 
+  // "closed" field.
+  bool? _closed;
+  bool get closed => _closed ?? false;
+  bool hasClosed() => _closed != null;
+
   void _initializeFields() {
     _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
@@ -59,6 +64,7 @@ class CustomerCaseRecord extends FirestoreRecord {
     _assignee = getDataList(snapshotData['assignee']);
     _topics = getDataList(snapshotData['topics']);
     _customer = snapshotData['customer'] as DocumentReference?;
+    _closed = snapshotData['closed'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -101,6 +107,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
   String? description,
   double? revenue,
   DocumentReference? customer,
+  bool? closed,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -109,6 +116,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
       'description': description,
       'revenue': revenue,
       'customer': customer,
+      'closed': closed,
     }.withoutNulls,
   );
 
@@ -128,7 +136,8 @@ class CustomerCaseRecordDocumentEquality
         e1?.revenue == e2?.revenue &&
         listEquality.equals(e1?.assignee, e2?.assignee) &&
         listEquality.equals(e1?.topics, e2?.topics) &&
-        e1?.customer == e2?.customer;
+        e1?.customer == e2?.customer &&
+        e1?.closed == e2?.closed;
   }
 
   @override
@@ -139,7 +148,8 @@ class CustomerCaseRecordDocumentEquality
         e?.revenue,
         e?.assignee,
         e?.topics,
-        e?.customer
+        e?.customer,
+        e?.closed
       ]);
 
   @override

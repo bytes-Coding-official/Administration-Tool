@@ -1,20 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'customers_widget.dart' show CustomersWidget;
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 
 class CustomersModel extends FlutterFlowModel<CustomersWidget> {
   ///  State fields for stateful widgets in this page.
@@ -60,10 +49,14 @@ class CustomersModel extends FlutterFlowModel<CustomersWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    mobileViewStreamSubscriptions.forEach((s) => s?.cancel());
+    for (var s in mobileViewStreamSubscriptions) {
+      s?.cancel();
+    }
     mobileViewPagingController?.dispose();
 
-    tabletDesktopViewStreamSubscriptions.forEach((s) => s?.cancel());
+    for (var s in tabletDesktopViewStreamSubscriptions) {
+      s?.cancel();
+    }
     tabletDesktopViewPagingController?.dispose();
   }
 

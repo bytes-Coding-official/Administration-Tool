@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -26,14 +24,14 @@ class FFAppState extends ChangeNotifier {
 
   String _caseid = '';
   String get caseid => _caseid;
-  set caseid(String _value) {
-    _caseid = _value;
+  set caseid(String value) {
+    _caseid = value;
   }
 
   String _customerRef = '';
   String get customerRef => _customerRef;
-  set customerRef(String _value) {
-    _customerRef = _value;
+  set customerRef(String value) {
+    _customerRef = value;
   }
 
   final _userDocQueryManager = FutureRequestManager<UsersRecord>();
