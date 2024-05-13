@@ -1100,6 +1100,83 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                   ),
                                                 ),
                                               ),
+                                            if (valueOrDefault<bool>(
+                                                    currentUserDocument
+                                                        ?.administrator,
+                                                    false) ==
+                                                true)
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await customerCustomerCaseRecord
+                                                          .reference
+                                                          .update(
+                                                              createCustomerCaseRecordData(
+                                                        closed:
+                                                            customerCustomerCaseRecord
+                                                                    .closed ==
+                                                                true,
+                                                      ));
+                                                    },
+                                                    text:
+                                                        customerCustomerCaseRecord
+                                                                .closed
+                                                            ? 'open Case'
+                                                            : 'close Case',
+                                                    options: FFButtonOptions(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.5,
+                                                      height: 50.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiary,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
                                             Divider(
                                               thickness: 5.0,
                                               indent: 10.0,

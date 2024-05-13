@@ -1449,7 +1449,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                           'tmf3yzsp' /* Add Customer */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 150.0,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.2,
                                           height: 40.0,
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -1495,7 +1497,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                           'ju1pli0v' /* Add Case */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 150.0,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.2,
                                           height: 40.0,
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -2027,6 +2031,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                             } else if (mobileViewCustomerCaseRecord
                                                                     .assignee.isEmpty) {
                                                               return 'Open';
+                                                            } else if (mobileViewCustomerCaseRecord
+                                                                .closed) {
+                                                              return 'closed';
                                                             } else {
                                                               return 'Other';
                                                             }
@@ -2590,6 +2597,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                               } else if (tabletDesktopViewCustomerCaseRecord
                                                                       .assignee.isEmpty) {
                                                                 return 'Open';
+                                                              } else if (tabletDesktopViewCustomerCaseRecord
+                                                                  .closed) {
+                                                                return 'Closed';
                                                               } else {
                                                                 return 'Other';
                                                               }
