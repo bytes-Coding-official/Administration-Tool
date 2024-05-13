@@ -4,10 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'profile_settings_model.dart';
 export 'profile_settings_model.dart';
 
@@ -83,19 +80,22 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                     letterSpacing: 0.0,
                   ),
             ),
-            Text(
-              FFLocalizations.of(context).getText(
-                'nwmcg0k4' /* Complete your Profile-Settings */,
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+              child: Text(
+                FFLocalizations.of(context).getText(
+                  'nwmcg0k4' /* Complete your Profile-Settings */,
+                ),
+                textAlign: TextAlign.start,
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
               ),
-              textAlign: TextAlign.start,
-              style: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Inter',
-                    letterSpacing: 0.0,
-                  ),
             ),
           ],
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -120,7 +120,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -138,7 +138,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,13 +148,13 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
-                                autofillHints: [AutofillHints.name],
+                                autofillHints: const [AutofillHints.name],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -226,12 +226,12 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController2,
                               focusNode: _model.textFieldFocusNode2,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -289,7 +289,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFFDBE2E7),
+                                    color: const Color(0xFFDBE2E7),
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textController2Validator
@@ -304,13 +304,13 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController3,
                                 focusNode: _model.textFieldFocusNode3,
-                                autofillHints: [AutofillHints.telephoneNumber],
+                                autofillHints: const [AutofillHints.telephoneNumber],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -370,7 +370,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: Color(0xFFDBE2E7),
+                                      color: const Color(0xFFDBE2E7),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -386,7 +386,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -398,9 +398,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -411,7 +411,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -426,7 +426,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -438,9 +438,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -451,7 +451,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -466,7 +466,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -478,9 +478,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -491,7 +491,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -511,7 +511,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await currentUserReference!.update(createUsersRecordData(
@@ -527,9 +527,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.7,
                     height: 50.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -537,7 +537,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

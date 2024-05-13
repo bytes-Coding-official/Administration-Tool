@@ -536,7 +536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_Create
   {
     '6n418bnp': {
-      'de': 'bytes Coding GmbH',
+      'de': 'bytes Coding',
       'en': '',
     },
     '2yjwqo8g': {
@@ -587,7 +587,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_Login
   {
     'q0fsxzm0': {
-      'de': 'bytes Coding GmbH',
+      'de': 'bytes Coding',
       'en': '',
     },
     'uzd52rew': {
@@ -642,7 +642,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_ForgotPassword
   {
     'htxvbys4': {
-      'de': 'bytes Coding GmbH',
+      'de': 'bytes Coding',
       'en': '',
     },
     'xfhm9acx': {
@@ -670,7 +670,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_createProfile
   {
     'hbab0oa4': {
-      'de': 'bytes Coding GmbH',
+      'de': 'bytes Coding',
       'en': '',
     },
     'jy4o2t2o': {
