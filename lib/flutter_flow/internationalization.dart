@@ -899,12 +899,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Below is a summary of your activity.',
       'en': '',
     },
-    '8i06a33i': {
+    'zqnhft9d': {
       'de': '16',
       'en': '',
     },
-    'q052w4ks': {
-      'de': 'Total Customers',
+    'erv5taj4': {
+      'de': 'Money Earned',
       'en': '',
     },
     '09047uef': {
@@ -915,12 +915,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Average Billing',
       'en': '',
     },
-    'zqnhft9d': {
+    '8i06a33i': {
       'de': '16',
       'en': '',
     },
-    'erv5taj4': {
-      'de': 'Money Earned',
+    'q052w4ks': {
+      'de': 'Total Customers',
       'en': '',
     },
     '7r9fetyx': {

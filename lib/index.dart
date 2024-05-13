@@ -40,4 +40,4 @@ export '/customer/create_customer/create_customer_widget.dart'
     show CreateCustomerWidget;
 export '/customer/add_meeting_to_customer/add_meeting_to_customer_widget.dart'
     show AddMeetingToCustomerWidget;
-export '/side_nav/side_nav_widget.dart' show SideNavWidget;
+export '/extra/side_nav/side_nav_widget.dart' show SideNavWidget;

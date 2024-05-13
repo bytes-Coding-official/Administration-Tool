@@ -1,8 +1,23 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_charts.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'billing_widget.dart' show BillingWidget;
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 
 class BillingModel extends FlutterFlowModel<BillingWidget> {
   ///  State fields for stateful widgets in this page.
@@ -11,9 +26,9 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      listViewPagingController;
-  Query? listViewPagingQuery;
-  List<StreamSubscription?> listViewStreamSubscriptions = [];
+      listViewPagingController2;
+  Query? listViewPagingQuery2;
+  List<StreamSubscription?> listViewStreamSubscriptions2 = [];
 
   @override
   void initState(BuildContext context) {}
@@ -21,27 +36,26 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    for (var s in listViewStreamSubscriptions) {
-      s?.cancel();
-    }
-    listViewPagingController?.dispose();
+    listViewStreamSubscriptions2.forEach((s) => s?.cancel());
+    listViewPagingController2?.dispose();
   }
 
   /// Additional helper methods.
-  PagingController<DocumentSnapshot?, CustomerCaseRecord> setListViewController(
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>
+      setListViewController2(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
-    listViewPagingController ??= _createListViewController(query, parent);
-    if (listViewPagingQuery != query) {
-      listViewPagingQuery = query;
-      listViewPagingController?.refresh();
+    listViewPagingController2 ??= _createListViewController2(query, parent);
+    if (listViewPagingQuery2 != query) {
+      listViewPagingQuery2 = query;
+      listViewPagingController2?.refresh();
     }
-    return listViewPagingController!;
+    return listViewPagingController2!;
   }
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createListViewController(
+      _createListViewController2(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
@@ -50,9 +64,9 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => listViewPagingQuery ??= query,
+          queryBuilder: (_) => listViewPagingQuery2 ??= query,
           nextPageMarker: nextPageMarker,
-          streamSubscriptions: listViewStreamSubscriptions,
+          streamSubscriptions: listViewStreamSubscriptions2,
           controller: controller,
           pageSize: 25,
           isStream: true,
