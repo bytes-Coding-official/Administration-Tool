@@ -516,8 +516,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Add Case',
       'en': '',
     },
-    'w6pgkv45': {
-      'de': 'Add new Case',
+    'akuvxsis': {
+      'de': 'Create Case',
+      'en': '',
+    },
+    'q8cpu5z1': {
+      'de': 'Create a new case with this form',
       'en': '',
     },
     'l3cxbukz': {
