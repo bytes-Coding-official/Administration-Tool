@@ -891,6 +891,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Billing
   {
+    'k2rauewg': {
+      'de': 'Customer-Information',
+      'en': '',
+    },
     'zjlnvley': {
       'de': 'Below is a summary of your activity.',
       'en': '',
@@ -920,19 +924,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '7r9fetyx': {
-      'de': 'Current Route',
+      'de': 'Customer-Information',
       'en': '',
     },
     '2a6qa21y': {
-      'de': 'An overview of your route.',
+      'de': 'An overview of your customer jobs.',
       'en': '',
     },
     '7555kkz0': {
-      'de': '15/26',
+      'de': '15',
       'en': '',
     },
     'l7ujfjr3': {
-      'de': 'Route progress',
+      'de': 'current customers',
       'en': '',
     },
     'zh2k5qza': {
@@ -940,7 +944,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'b7abegxd': {
-      'de': 'Tasks to be completed',
+      'de': 'completed customers',
       'en': '',
     },
     '4lyb5w7t': {
@@ -976,7 +980,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'qffzuink': {
-      'de': 'Launches',
+      'de': 'active',
       'en': '',
     },
     'n5enl3o2': {
@@ -984,11 +988,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'wz1he5cw': {
-      'de': 'Avg. Grade',
-      'en': '',
-    },
-    '15s2dq8x': {
-      'de': 'Dashboard',
+      'de': 'average',
       'en': '',
     },
     'yfmi94wv': {
@@ -1270,7 +1270,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // addMeetingToCustomer
+  // AddMeetingToCustomer
   {
     '5c37n68o': {
       'de': 'ID:',

@@ -1035,7 +1035,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                       });
 
                                                       context.pushNamed(
-                                                        'addMeetingToCustomer',
+                                                        'AddMeetingToCustomer',
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
