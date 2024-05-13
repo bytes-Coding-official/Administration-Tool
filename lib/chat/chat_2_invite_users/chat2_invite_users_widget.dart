@@ -80,7 +80,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  '3la16lry' /* Invite Friends */,
+                  'v2t6kg15' /* Invite Friends */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',
@@ -91,7 +91,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'ghgaw8z2' /* Select users from below to sta... */,
+                    'hztshrjj' /* Select users from below to sta... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
                         fontFamily: 'Inter',
@@ -142,7 +142,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '8i8knm80' /* Invite Friends */,
+                              '7mh427w4' /* Invite Friends */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -175,7 +175,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                             const EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'w0uljm33' /* Selected */,
+                            'rrcmh2eo' /* Selected */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

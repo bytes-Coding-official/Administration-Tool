@@ -50,7 +50,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
           automaticallyImplyLeading: false,
           title: Text(
             FFLocalizations.of(context).getText(
-              'e7fx6lvc' /* My Chats */,
+              'h9lmzpdm' /* My Chats */,
             ),
             style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Readex Pro',
@@ -95,7 +95,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '4jhf6wsl' /* Below are your chats and group... */,
+                        'tpy6ziya' /* Below are your chats and group... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -108,7 +108,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                       context.pushNamed('chat_2_InviteUsers');
                     },
                     text: FFLocalizations.of(context).getText(
-                      '74g4kc50' /* Add Chat */,
+                      '4wmr0r8x' /* Add Chat */,
                     ),
                     options: FFButtonOptions(
                       height: 40.0,
@@ -726,7 +726,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'rhcw9ekk' /* Group Chat */,
+                                                                    'pk6vja86' /* Group Chat */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign

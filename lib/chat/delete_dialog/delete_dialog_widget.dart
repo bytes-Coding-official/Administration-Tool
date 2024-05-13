@@ -107,7 +107,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      '1l6xo6oa' /* Options */,
+                      '13iobm9v' /* Options */,
                     ),
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -163,7 +163,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '36sm2ra1' /* Invite Users */,
+                                    't9z0aabu' /* Invite Users */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -233,7 +233,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'm20qoxrt' /* Delete Chat */,
+                                    'zwifs52e' /* Delete Chat */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -292,7 +292,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                         12.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'md3y1khs' /* Confirm Delete */,
+                                        'bhuh3tfe' /* Confirm Delete */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -308,7 +308,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'yy4ty6kq' /* You can't undo this action. */,
+                                        'orxp2pwr' /* You can't undo this action. */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -336,7 +336,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 },
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'd2yt76l7' /* Delete */,
+                                    'asgxxrtn' /* Delete */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium

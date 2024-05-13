@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'employees_model.dart';
 export 'employees_model.dart';
 
@@ -206,125 +207,147 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                           return Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 1.0),
-                            child: Container(
-                              width: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 0.0,
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    offset: const Offset(
-                                      0.0,
-                                      1.0,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        listViewUsersRecord.photoUrl,
-                                        width: 60.0,
-                                        height: 60.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              listViewUsersRecord.displayName,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 4.0, 0.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    listViewUsersRecord
-                                                        .phoneNumber,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    listViewUsersRecord.email,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Card(
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await launchUrl(Uri(
+                                    scheme: 'mailto',
+                                    path: listViewUsersRecord.email,
+                                    query: {
+                                      'subject':
+                                          'Hey, im [MY NAME] from bytes Coding GmbH and I would like to contact you',
+                                    }
+                                        .entries
+                                        .map((MapEntry<String, String> e) =>
+                                            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                        .join('&')));
+                              },
+                              child: Container(
+                                width: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 0.0,
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      elevation: 1.0,
-                                      shape: RoundedRectangleBorder(
+                                          .alternate,
+                                      offset: const Offset(
+                                        0.0,
+                                        1.0,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(40.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Icon(
-                                          Icons.keyboard_arrow_right_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
+                                        child: Image.network(
+                                          listViewUsersRecord.photoUrl,
+                                          width: 60.0,
+                                          height: 60.0,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                listViewUsersRecord.displayName,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      listViewUsersRecord
+                                                          .phoneNumber,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      listViewUsersRecord.email,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Card(
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        elevation: 1.0,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Icon(
+                                            Icons.keyboard_arrow_right_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

@@ -86,7 +86,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       children: [
                         TextSpan(
                           text: FFLocalizations.of(context).getText(
-                            'wm58eznh' /* Group Chat ID:  */,
+                            'u7433v0d' /* Group Chat ID:  */,
                           ),
                           style: const TextStyle(),
                         ),
@@ -112,7 +112,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'a3ymb64w' /* In this chat */,
+                      'ssykg4s6' /* In this chat */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Readex Pro',
@@ -258,7 +258,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       Navigator.pop(context);
                     },
                     text: FFLocalizations.of(context).getText(
-                      'hsmpjhl5' /* Close */,
+                      'bsezz6gy' /* Close */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

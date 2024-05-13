@@ -192,9 +192,10 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '2ocbfjlu' /* Title... */,
+                                              valueOrDefault<String>(
+                                                customerCustomerCaseRecord
+                                                    ?.title,
+                                                'no title set',
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -208,9 +209,10 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                   ),
                                             ),
                                             Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'aajxmq64' /* Lorem ipsum dolor sit amet, co... */,
+                                              valueOrDefault<String>(
+                                                customerCustomerCaseRecord
+                                                    ?.description,
+                                                'no description set',
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1062,7 +1064,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                       final test = List.generate(
                                                           random_data
                                                               .randomInteger(
-                                                                  0, 0),
+                                                                  5, 5),
                                                           (index) => random_data
                                                               .randomInteger(0,
                                                                   10)).toList();

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future newCustomAction(
+Future removeAssigneesOrAdd(
   DocumentReference userRef,
   DocumentReference document,
 ) async {

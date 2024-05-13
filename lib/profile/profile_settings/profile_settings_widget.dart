@@ -376,7 +376,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                               'qic8hq3l' /* Change Adress */,
                             ),
                             options: FFButtonOptions(
-                              width: 270.0,
+                              width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
@@ -416,7 +416,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                               'kn9f5n0p' /* Change IT-Skills */,
                             ),
                             options: FFButtonOptions(
-                              width: 270.0,
+                              width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
@@ -456,7 +456,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                               'gfb94uh4' /* Change Languages */,
                             ),
                             options: FFButtonOptions(
-                              width: 270.0,
+                              width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
@@ -505,7 +505,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                     'c9pjt2by' /* Save Changes */,
                   ),
                   options: FFButtonOptions(
-                    width: 270.0,
+                    width: MediaQuery.sizeOf(context).width * 0.7,
                     height: 50.0,
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:

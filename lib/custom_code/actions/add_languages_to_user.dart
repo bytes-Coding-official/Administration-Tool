@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future newCustomAction2(DocumentReference userRef) async {
+Future addLanguagesToUser(DocumentReference userRef) async {
   QuerySnapshot existingLanguages = await userRef.collection('language').get();
 
 // Erstellen eines Sets mit allen vorhandenen Sprachnamen

@@ -1,12 +1,11 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'create_case_model.dart';
@@ -98,7 +97,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                       }
                       int textCount = snapshot.data!;
                       return Text(
-                        random_data.randomInteger(textCount, 999999).toString(),
+                        FFAppState().caseid,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -404,104 +403,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                       maxWidth: 570.0,
                                     ),
                                     decoration: const BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            StreamBuilder<List<CustomerRecord>>(
-                                              stream: queryCustomerRecord(),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<CustomerRecord>
-                                                    dropDownCustomerRecordList =
-                                                    snapshot.data!;
-                                                return FlutterFlowDropDown<
-                                                    String>(
-                                                  controller: _model
-                                                          .dropDownValueController ??=
-                                                      FormFieldController<
-                                                          String>(
-                                                    _model.dropDownValue ??=
-                                                        dropDownCustomerRecordList
-                                                            .first.name,
-                                                  ),
-                                                  options:
-                                                      dropDownCustomerRecordList
-                                                          .map((e) => e.name)
-                                                          .toList(),
-                                                  onChanged: (val) => setState(
-                                                      () => _model
-                                                          .dropDownValue = val),
-                                                  width: 300.0,
-                                                  height: 56.0,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'szpwo165' /* Customer Name */,
-                                                  ),
-                                                  icon: Icon(
-                                                    Icons
-                                                        .keyboard_arrow_down_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
-                                                  elevation: 2.0,
-                                                  borderColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
-                                                  borderWidth: 2.0,
-                                                  borderRadius: 8.0,
-                                                  margin: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
-                                                  hidesUnderline: true,
-                                                  isOverButton: true,
-                                                  isSearchable: false,
-                                                  isMultiSelect: false,
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
                                   ),
                                   Container(
                                     constraints: const BoxConstraints(
@@ -547,87 +448,78 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                               );
                                             }
                                             List<ItskillsRecord>
-                                                choiceChipsItskillsRecordList =
+                                                dropDownItskillsRecordList =
                                                 snapshot.data!;
-                                            return FlutterFlowChoiceChips(
-                                              options:
-                                                  choiceChipsItskillsRecordList
+                                            return FlutterFlowDropDown<String>(
+                                              multiSelectController: _model
+                                                      .dropDownValueController1 ??=
+                                                  FormFieldController<
+                                                          List<String>>(
+                                                      _model.dropDownValue1 ??=
+                                                          List<String>.from(
+                                                dropDownItskillsRecordList
+                                                        .take(1)
+                                                        .toList()
+                                                        .map((e) =>
+                                                            e.reference.id)
+                                                        .toList() ??
+                                                    [],
+                                              )),
+                                              options: List<String>.from(
+                                                  dropDownItskillsRecordList
+                                                      .map(
+                                                          (e) => e.reference.id)
+                                                      .toList()),
+                                              optionLabels:
+                                                  dropDownItskillsRecordList
                                                       .map((e) => e.name)
-                                                      .toList()
-                                                      .map((label) =>
-                                                          ChipData(label))
                                                       .toList(),
-                                              onChanged: (val) => setState(() =>
-                                                  _model.choiceChipsValue1 =
-                                                      val?.firstOrNull),
-                                              selectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    const Color(0x00000000),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                              height: 56.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '4p7p7c12' /* Topics */,
                                               ),
-                                              unselectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                iconColor:
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                size: 24.0,
                                               ),
-                                              chipSpacing: 8.0,
-                                              rowSpacing: 8.0,
-                                              multiselect: false,
-                                              alignment: WrapAlignment.start,
-                                              controller: _model
-                                                      .choiceChipsValueController1 ??=
-                                                  FormFieldController<
-                                                      List<String>>(
-                                                [],
-                                              ),
-                                              wrapped: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              elevation: 2.0,
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              borderWidth: 2.0,
+                                              borderRadius: 8.0,
+                                              margin: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 4.0, 16.0, 4.0),
+                                              hidesUnderline: true,
+                                              isOverButton: true,
+                                              isSearchable: false,
+                                              isMultiSelect: true,
+                                              onMultiSelectChanged: (val) =>
+                                                  setState(() => _model
+                                                      .dropDownValue1 = val),
                                             );
                                           },
                                         ),
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'fpj6ym4v' /* Languages */,
+                                            'fpj6ym4v' /* Customer */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -636,8 +528,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        StreamBuilder<List<LanguagesRecord>>(
-                                          stream: queryLanguagesRecord(),
+                                        StreamBuilder<List<CustomerRecord>>(
+                                          stream: queryCustomerRecord(),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -658,82 +550,63 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 ),
                                               );
                                             }
-                                            List<LanguagesRecord>
-                                                choiceChipsLanguagesRecordList =
+                                            List<CustomerRecord>
+                                                dropDownCustomerRecordList =
                                                 snapshot.data!;
-                                            return FlutterFlowChoiceChips(
-                                              options:
-                                                  choiceChipsLanguagesRecordList
+                                            return FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropDownValueController2 ??=
+                                                  FormFieldController<String>(
+                                                _model.dropDownValue2 ??= '',
+                                              ),
+                                              options: List<String>.from(
+                                                  dropDownCustomerRecordList
+                                                      .map(
+                                                          (e) => e.reference.id)
+                                                      .toList()),
+                                              optionLabels:
+                                                  dropDownCustomerRecordList
                                                       .map((e) => e.name)
-                                                      .toList()
-                                                      .map((label) =>
-                                                          ChipData(label))
                                                       .toList(),
                                               onChanged: (val) => setState(() =>
-                                                  _model.choiceChipsValue2 =
-                                                      val?.firstOrNull),
-                                              selectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    const Color(0x00000000),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                  _model.dropDownValue2 = val),
+                                              height: 56.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'z25h7e01' /* Customer Name */,
                                               ),
-                                              unselectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                iconColor:
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                size: 24.0,
                                               ),
-                                              chipSpacing: 8.0,
-                                              rowSpacing: 8.0,
-                                              multiselect: false,
-                                              alignment: WrapAlignment.start,
-                                              controller: _model
-                                                      .choiceChipsValueController2 ??=
-                                                  FormFieldController<
-                                                      List<String>>(
-                                                [],
-                                              ),
-                                              wrapped: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              elevation: 2.0,
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              borderWidth: 2.0,
+                                              borderRadius: 8.0,
+                                              margin: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 4.0, 16.0, 4.0),
+                                              hidesUnderline: true,
+                                              isOverButton: true,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
                                             );
                                           },
                                         ),
@@ -774,7 +647,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '15uo150c' /* $50.00 */,
+                                                        '15uo150c' /* Price per hour */,
                                                       ),
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
@@ -787,6 +660,12 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                                     0.0,
                                                               ),
                                                       alignLabelWithHint: true,
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'nmjdqvm2' /* 50 */,
+                                                      ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -893,71 +772,115 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             ),
                                           ].divide(const SizedBox(width: 12.0)),
                                         ),
-                                        if (responsiveVisibility(
-                                          context: context,
-                                          phone: false,
-                                          tablet: false,
-                                        ))
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 12.0, 16.0, 12.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                await CustomerCaseRecord
-                                                    .collection
-                                                    .doc()
-                                                    .set(
-                                                        createCustomerCaseRecordData(
-                                                      caseid:
-                                                          FFAppState().caseid,
-                                                      title: _model
-                                                          .productNameTextController
-                                                          .text,
-                                                      description: _model
-                                                          .descriptionTextController
-                                                          .text,
-                                                      revenue: double.tryParse(
-                                                          _model
-                                                              .salesPriceTextController
-                                                              .text),
-                                                    ));
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'n6dvlpwe' /* Add Case */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                width: double.infinity,
-                                                height: 48.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 12.0, 16.0, 12.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              _model.customer = await actions
+                                                  .getCustomerFromDocRef(
+                                                _model.dropDownValue2!,
+                                              );
+                                              _model.itskills = await actions
+                                                  .getITSkillsFromDocRefs(
+                                                _model.dropDownValue1!.toList(),
+                                              );
+
+                                              await CustomerCaseRecord
+                                                  .collection
+                                                  .doc()
+                                                  .set({
+                                                ...createCustomerCaseRecordData(
+                                                  caseid: FFAppState().caseid,
+                                                  title: _model
+                                                      .productNameTextController
+                                                      .text,
+                                                  description: _model
+                                                      .descriptionTextController
+                                                      .text,
+                                                  revenue: double.tryParse(_model
+                                                      .salesPriceTextController
+                                                      .text),
+                                                  customer: _model.customer,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'topics': _model.itskills,
+                                                  },
+                                                ),
+                                              });
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text('Case added'),
+                                                    content: const Text(
+                                                        'Case was added to the database'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+
+                                              context.pushNamed(
+                                                'Customers',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .bottomToTop,
+                                                    duration: Duration(
+                                                        milliseconds: 350),
+                                                  ),
+                                                },
+                                              );
+
+                                              setState(() {});
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'n6dvlpwe' /* Add Case */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  1.0,
+                                              height: 48.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: const BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
+                                        ),
                                       ].divide(const SizedBox(height: 12.0)),
                                     ),
                                   ),

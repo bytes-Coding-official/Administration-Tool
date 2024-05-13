@@ -448,7 +448,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'ktn9eiyc' /* Start typing here... */,
+                                        'skbrxgwm' /* Start typing here... */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelSmall

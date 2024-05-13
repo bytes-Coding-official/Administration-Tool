@@ -239,15 +239,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Customer
   {
-    '2ocbfjlu': {
-      'de': 'Title...',
-      'en': '',
-    },
-    'aajxmq64': {
-      'de':
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-      'en': '',
-    },
     'zoky65cv': {
       'de': 'Name',
       'en': '',
@@ -363,10 +354,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Review the details below of all current projects.',
       'en': '',
     },
-    'q3yd9c6w': {
-      'de': 'Add',
-      'en': '',
-    },
     'sphwk62r': {
       'de': 'Filters',
       'en': '',
@@ -405,6 +392,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dxw866zo': {
       'de': 'Filter here...',
+      'en': '',
+    },
+    'q3yd9c6w': {
+      'de': 'Add Customer',
+      'en': '',
+    },
+    'hhyl29jb': {
+      'de': 'Add Case',
       'en': '',
     },
     'h6it9ajd': {
@@ -457,80 +452,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Description...',
       'en': '',
     },
-    'qxm3fyf5': {
-      'de': 'Option 1',
-      'en': '',
-    },
-    'szpwo165': {
-      'de': 'Customer Name',
-      'en': '',
-    },
-    'v7plhg0s': {
-      'de': 'Search for an item...',
-      'en': '',
-    },
     'yr01hol0': {
       'de': 'Themes',
       'en': '',
     },
-    'td2ccaoc': {
-      'de': 'Tops',
+    'nj7jldg9': {
+      'de': 'Option 1',
       'en': '',
     },
-    'lv5wv85i': {
-      'de': 'Bottoms',
+    '4p7p7c12': {
+      'de': 'Topics',
       'en': '',
     },
-    'ic7843p4': {
-      'de': 'Outerwear',
-      'en': '',
-    },
-    'ubvxeoe2': {
-      'de': 'Jewelry',
-      'en': '',
-    },
-    'it126slb': {
-      'de': 'Accessories',
-      'en': '',
-    },
-    'f9icxw38': {
-      'de': 'Hats',
-      'en': '',
-    },
-    'bzarioym': {
-      'de': 'Shoes',
+    'h2xc900z': {
+      'de': 'Search for an item...',
       'en': '',
     },
     'fpj6ym4v': {
-      'de': 'Languages',
+      'de': 'Customer',
       'en': '',
     },
-    'lop6o23k': {
-      'de': 'Tops',
+    'xf9ydg3j': {
+      'de': 'Option 1',
       'en': '',
     },
-    'kdcezire': {
-      'de': 'Bottoms',
+    'z25h7e01': {
+      'de': 'Customer Name',
       'en': '',
     },
-    '8qt1rbpe': {
-      'de': 'Outerwear',
-      'en': '',
-    },
-    'd3loqrqz': {
-      'de': 'Jewelry',
-      'en': '',
-    },
-    'bnsrwgth': {
-      'de': 'Accessories',
-      'en': '',
-    },
-    '7w584kej': {
-      'de': 'Hats',
-      'en': '',
-    },
-    'uprtdynr': {
-      'de': 'Shoes',
+    'h13kg7qr': {
+      'de': 'Search for an item...',
       'en': '',
     },
     'hbxggzge': {
@@ -538,7 +489,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '15uo150c': {
-      'de': '\$50.00',
+      'de': 'Price per hour',
+      'en': '',
+    },
+    'nmjdqvm2': {
+      'de': '50',
       'en': '',
     },
     'n6dvlpwe': {
@@ -912,63 +867,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Billing
   {
-    'qg7r9z4t': {
+    'zjlnvley': {
       'de': 'Below is a summary of your activity.',
       'en': '',
     },
-    '98trd057': {
+    '8i06a33i': {
       'de': '16',
       'en': '',
     },
-    'jiq94s7n': {
+    'q052w4ks': {
       'de': 'Total Customers',
       'en': '',
     },
-    '9ivafdyy': {
+    '09047uef': {
       'de': '16',
       'en': '',
     },
-    '1mnn70y3': {
+    'v8r4lbgu': {
       'de': 'Average Billing',
       'en': '',
     },
-    'n8paaju7': {
+    'zqnhft9d': {
       'de': '16',
       'en': '',
     },
-    'ua1sbi37': {
+    'erv5taj4': {
       'de': 'Money Earned',
       'en': '',
     },
-    'md5xu1oi': {
+    '7r9fetyx': {
       'de': 'Current Route',
       'en': '',
     },
-    '6ru0pmlz': {
+    '2a6qa21y': {
       'de': 'An overview of your route.',
       'en': '',
     },
-    'p0nmmn3j': {
+    '7555kkz0': {
       'de': '15/26',
       'en': '',
     },
-    's5x8veyc': {
+    'l7ujfjr3': {
       'de': 'Route progress',
       'en': '',
     },
-    'lj3545ej': {
+    'zh2k5qza': {
       'de': '12',
       'en': '',
     },
-    '2q3c1uge': {
+    'b7abegxd': {
       'de': 'Tasks to be completed',
       'en': '',
     },
-    'ggsyxcez': {
+    '4lyb5w7t': {
       'de': 'Current Customer-Cases',
       'en': '',
     },
-    '27wzltln': {
+    'gcjeqtnc': {
       'de': 'A summary of your current customer-cases',
       'en': '',
     },
@@ -980,114 +935,114 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Own',
       'en': '',
     },
-    '8cv8i4lg': {
+    'tbl1a9zo': {
       'de': 'Recent Activity',
       'en': '',
     },
-    'xt5fq7mw': {
+    'lt3eh3lg': {
       'de': 'Below is an overview of tasks & activity completed.',
       'en': '',
     },
-    '13eujvui': {
+    'o9pxfyek': {
       'de': 'Tasks',
       'en': '',
     },
-    'oakiikua': {
+    'k004vzd6': {
       'de': 'Completed',
       'en': '',
     },
-    'j7k9m0ql': {
+    'qffzuink': {
       'de': 'Launches',
       'en': '',
     },
-    'yonunvvv': {
+    'n5enl3o2': {
       'de': 'Last 30 Days',
       'en': '',
     },
-    'oave3sqv': {
+    'wz1he5cw': {
       'de': 'Avg. Grade',
       'en': '',
     },
-    '88fk6sq3': {
+    '15s2dq8x': {
       'de': 'Dashboard',
       'en': '',
     },
-    '1byh2jsg': {
+    'yfmi94wv': {
       'de': 'Home',
       'en': '',
     },
   },
   // Calendar
   {
-    't2t7iuf2': {
+    'xu9q5cio': {
       'de': 'Month',
       'en': '',
     },
-    'atq81cto': {
+    'wxps8tuv': {
       'de': 'Coming Up',
       'en': '',
     },
-    'j9mxsc2w': {
+    '5ccmynim': {
       'de': 'Doctors Check In',
       'en': '',
     },
-    'eauurlye': {
+    'sw4pw48g': {
       'de': '2:20pm',
       'en': '',
     },
-    'yrps7a6e': {
+    'wdev5dhi': {
       'de': 'Wed, 03/08/2022',
       'en': '',
     },
-    'a5zd8pl4': {
+    'jgxhfbhe': {
       'de': 'Past Due',
       'en': '',
     },
-    '4kitvb1v': {
+    'jmtgnyoh': {
       'de': 'Check In',
       'en': '',
     },
-    'l6fu6w2c': {
+    'vh23bftg': {
       'de': '2:20pm',
       'en': '',
     },
-    'xhtouap1': {
+    '2577pbkf': {
       'de': 'Wed, 03/08/2022',
       'en': '',
     },
-    'ycmg00wr': {
+    'j2njabrk': {
       'de': 'Week',
       'en': '',
     },
-    'nqt7n1vb': {
+    'ns7nx344': {
       'de': 'Coming Up',
       'en': '',
     },
-    '4e770o8r': {
+    'yu7jdcag': {
       'de': 'Doctors Check In',
       'en': '',
     },
-    '62ypd83p': {
+    'k35kg3t8': {
       'de': '2:20pm',
       'en': '',
     },
-    'j5667s2s': {
+    'z02qprzb': {
       'de': 'Wed, 03/08/2022',
       'en': '',
     },
-    'uxyau7v6': {
+    '13kr3qsc': {
       'de': 'Past Due',
       'en': '',
     },
-    'gmrcf2gj': {
+    '6xiv0o9j': {
       'de': 'Check In',
       'en': '',
     },
-    '2mxgm047': {
+    '7egp6ak9': {
       'de': '2:20pm',
       'en': '',
     },
-    's2wv07wh': {
+    '2gzae0et': {
       'de': 'Wed, 03/08/2022',
       'en': '',
     },
@@ -1095,71 +1050,198 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Your Calender',
       'en': '',
     },
-    '6dtqlh1d': {
+    'dr5994wq': {
       'de': 'Home',
       'en': '',
     },
   },
   // chat_2_Details
   {
-    'xp6rsyeo': {
+    '7txc8mi4': {
       'de': 'Group Chat',
       'en': '',
     },
-    'f56hjqgo': {
+    '5ej9zapx': {
       'de': 'Home',
       'en': '',
     },
   },
   // chat_2_main
   {
-    '4jhf6wsl': {
+    'tpy6ziya': {
       'de': 'Below are your chats and group chats',
       'en': '',
     },
-    '74g4kc50': {
+    '4wmr0r8x': {
       'de': 'Add Chat',
       'en': '',
     },
-    'rhcw9ekk': {
+    'pk6vja86': {
       'de': 'Group Chat',
       'en': '',
     },
-    'e7fx6lvc': {
+    'h9lmzpdm': {
       'de': 'My Chats',
       'en': '',
     },
-    'qu8p3z23': {
+    'ka2wrnvr': {
       'de': '__',
       'en': '',
     },
   },
   // chat_2_InviteUsers
   {
-    '8i8knm80': {
+    '7mh427w4': {
       'de': 'Invite Friends',
       'en': '',
     },
-    'w0uljm33': {
+    'rrcmh2eo': {
       'de': 'Selected',
       'en': '',
     },
-    '3la16lry': {
+    'v2t6kg15': {
       'de': 'Invite Friends',
       'en': '',
     },
-    'ghgaw8z2': {
+    'hztshrjj': {
       'de': 'Select users from below to start a chat.',
       'en': '',
     },
-    '51wadp85': {
+    'pi0dfjv1': {
       'de': 'Home',
       'en': '',
     },
   },
   // image_Details
   {
-    '333yw0i9': {
+    '365ngbkk': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // createCustomer
+  {
+    '6nvy4qzi': {
+      'de': 'Full name',
+      'en': '',
+    },
+    'd27sf1vu': {
+      'de': 'Name',
+      'en': '',
+    },
+    'o2sem55m': {
+      'de': 'Phone number',
+      'en': '',
+    },
+    'fpi8iadm': {
+      'de': 'Phone Number',
+      'en': '',
+    },
+    'cu1rz8hq': {
+      'de': 'E-Mail',
+      'en': '',
+    },
+    '583kgs1g': {
+      'de': 'E-Mail',
+      'en': '',
+    },
+    'dz8s1veo': {
+      'de': 'Street',
+      'en': '',
+    },
+    '0iclgnnb': {
+      'de': 'Street',
+      'en': '',
+    },
+    'vl5t2xru': {
+      'de': 'City',
+      'en': '',
+    },
+    '9k22ximd': {
+      'de': 'City',
+      'en': '',
+    },
+    'as64pn2v': {
+      'de': 'Zip',
+      'en': '',
+    },
+    'gikzvxv7': {
+      'de': 'Zip',
+      'en': '',
+    },
+    'naeu1u2u': {
+      'de': 'Country',
+      'en': '',
+    },
+    '51pdt1a5': {
+      'de': 'Country',
+      'en': '',
+    },
+    'plywg53q': {
+      'de': 'Languages',
+      'en': '',
+    },
+    'nh1r0238': {
+      'de': 'Option 1',
+      'en': '',
+    },
+    'xwrgxre7': {
+      'de': 'Customer Languages',
+      'en': '',
+    },
+    'v7plhg0s': {
+      'de': 'Search for an item...',
+      'en': '',
+    },
+    'offuqx3a': {
+      'de': 'Add Customer',
+      'en': '',
+    },
+    'cgezdoty': {
+      'de': 'Please enter the patients full name.',
+      'en': '',
+    },
+    '907lm1aq': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '9pssjjc2': {
+      'de': 'Please enter an age for the patient.',
+      'en': '',
+    },
+    'xe22w63f': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '64q2zitj': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '1vh4b221': {
+      'de': 'Please enter the date of birth of the patient.',
+      'en': '',
+    },
+    'c52m76pd': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'uh9k52fb': {
+      'de': 'Field is required',
+      'en': '',
+    },
+    'xropqng0': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '6lhoujzg': {
+      'de': 'Patient Intake form',
+      'en': '',
+    },
+    'sxwzbsjz': {
+      'de': 'Please fill out the form below to continue.',
+      'en': '',
+    },
+    '1byh2jsg': {
       'de': 'Home',
       'en': '',
     },
@@ -1266,64 +1348,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // chat_DetailsOverlay
   {
-    'wm58eznh': {
+    'u7433v0d': {
       'de': 'Group Chat ID: ',
       'en': '',
     },
-    'a3ymb64w': {
+    'ssykg4s6': {
       'de': 'In this chat',
       'en': '',
     },
-    'hsmpjhl5': {
+    'bsezz6gy': {
       'de': 'Close',
       'en': '',
     },
   },
   // chat_ThreadComponent
   {
-    'ktn9eiyc': {
+    'skbrxgwm': {
       'de': 'Start typing here...',
       'en': '',
     },
-    'ch6pg2gx': {
+    'g534y60a': {
       'de': 'You must enter a message...',
       'en': '',
     },
-    'lj4iyozs': {
+    'axxavshr': {
       'de': 'Please choose an option from the dropdown',
       'en': '',
     },
   },
   // user_ListSmall_1
   {
-    'l6ejmsde': {
+    '2lghugn7': {
       'de': 'ME',
       'en': '',
     },
   },
   // deleteDialog
   {
-    '1l6xo6oa': {
+    '13iobm9v': {
       'de': 'Options',
       'en': '',
     },
-    '36sm2ra1': {
+    't9z0aabu': {
       'de': 'Invite Users',
       'en': '',
     },
-    'm20qoxrt': {
+    'zwifs52e': {
       'de': 'Delete Chat',
       'en': '',
     },
-    'md3y1khs': {
+    'bhuh3tfe': {
       'de': 'Confirm Delete',
       'en': '',
     },
-    'yy4ty6kq': {
+    'orxp2pwr': {
       'de': 'You can\'t undo this action.',
       'en': '',
     },
-    'd2yt76l7': {
+    'asgxxrtn': {
       'de': 'Delete',
       'en': '',
     },

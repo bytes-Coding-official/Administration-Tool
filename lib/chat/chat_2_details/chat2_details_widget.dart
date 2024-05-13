@@ -338,7 +338,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'xp6rsyeo' /* Group Chat */,
+                                  '7txc8mi4' /* Group Chat */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
