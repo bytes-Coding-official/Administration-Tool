@@ -111,7 +111,6 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
                   child: Container(
-                    width: 200.0,
                     height: 70.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
@@ -132,7 +131,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'htxvbys4' /* flow.io */,
+                            'htxvbys4' /* bytes Coding GmbH */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall

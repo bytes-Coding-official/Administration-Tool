@@ -63,16 +63,30 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
             context.pushNamed('ProfileSettings');
           },
         ),
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'vbw4hfm6' /* Complete Language Settings */,
-          ),
-          style: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
-                fontSize: 22.0,
-                letterSpacing: 0.0,
-                fontWeight: FontWeight.w500,
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              FFLocalizations.of(context).getText(
+                'z0f4qgea' /* Complete Languages */,
               ),
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+            ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'z16bbiuc' /* Complete your languages */,
+              ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
+            ),
+          ],
         ),
         actions: const [],
         centerTitle: false,

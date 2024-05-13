@@ -111,6 +111,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Complete Profile',
       'en': '',
     },
+    'nwmcg0k4': {
+      'de': 'Complete your Profile-Settings',
+      'en': '',
+    },
     '9fqt11ur': {
       'de': 'Your information',
       'en': '',
@@ -158,8 +162,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Adress-Settings
   {
-    'jlnldmnh': {
+    '4ndy7tw1': {
       'de': 'Complete Adress',
+      'en': '',
+    },
+    'e38kgxol': {
+      'de': 'Complete your adress information',
       'en': '',
     },
     'st4qpz84': {
@@ -213,6 +221,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Complete IT-Skills',
       'en': '',
     },
+    'je1wgwap': {
+      'de': 'Complete your IT-Skills',
+      'en': '',
+    },
     'iqb97wxp': {
       'de': 'Your IT-Skills',
       'en': '',
@@ -224,8 +236,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Language-Settings
   {
-    'vbw4hfm6': {
-      'de': 'Complete Language Settings',
+    'z0f4qgea': {
+      'de': 'Complete Languages',
+      'en': '',
+    },
+    'z16bbiuc': {
+      'de': 'Complete your languages',
       'en': '',
     },
     'skc9rwus': {
@@ -492,7 +508,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Price per hour',
       'en': '',
     },
-    'nmjdqvm2': {
+    'l9wsq9un': {
       'de': '50',
       'en': '',
     },
@@ -500,8 +516,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Add Case',
       'en': '',
     },
-    'itkl3s28': {
-      'de': 'ID:',
+    'w6pgkv45': {
+      'de': 'Add new Case',
       'en': '',
     },
     'l3cxbukz': {
@@ -512,7 +528,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_Create
   {
     '6n418bnp': {
-      'de': 'flow.io',
+      'de': 'bytes Coding GmbH',
       'en': '',
     },
     '2yjwqo8g': {
@@ -563,7 +579,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_Login
   {
     'q0fsxzm0': {
-      'de': 'flow.io',
+      'de': 'bytes Coding GmbH',
       'en': '',
     },
     'uzd52rew': {
@@ -618,7 +634,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_ForgotPassword
   {
     'htxvbys4': {
-      'de': 'flow.io',
+      'de': 'bytes Coding GmbH',
       'en': '',
     },
     'xfhm9acx': {
@@ -646,7 +662,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // auth_2_createProfile
   {
     'hbab0oa4': {
-      'de': 'flow.io',
+      'de': 'bytes Coding GmbH',
       'en': '',
     },
     'jy4o2t2o': {
@@ -725,10 +741,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // support_SubmitTicket
   {
-    'yhztxyu8': {
-      'de': 'Create a Ticket',
-      'en': '',
-    },
     'vj2kin4a': {
       'de': 'Fill out the form below to submit a ticket.',
       'en': '',
@@ -787,6 +799,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0sjmvj9o': {
       'de': 'Submit Ticket',
+      'en': '',
+    },
+    'msd7orz7': {
+      'de': 'Create a Ticket',
       'en': '',
     },
     '9wh28y2u': {
@@ -1125,7 +1141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Full name',
       'en': '',
     },
-    'd27sf1vu': {
+    'rij8io9s': {
       'de': 'Name',
       'en': '',
     },
@@ -1133,7 +1149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Phone number',
       'en': '',
     },
-    'fpi8iadm': {
+    's0aksne6': {
       'de': 'Phone Number',
       'en': '',
     },
@@ -1141,7 +1157,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'E-Mail',
       'en': '',
     },
-    '583kgs1g': {
+    'vdzc35iz': {
       'de': 'E-Mail',
       'en': '',
     },
@@ -1149,7 +1165,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Street',
       'en': '',
     },
-    '0iclgnnb': {
+    '4kvp5cnu': {
       'de': 'Street',
       'en': '',
     },
@@ -1157,7 +1173,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'City',
       'en': '',
     },
-    '9k22ximd': {
+    '8m7j9wso': {
       'de': 'City',
       'en': '',
     },
@@ -1165,7 +1181,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zip',
       'en': '',
     },
-    'gikzvxv7': {
+    'sqb1k3ec': {
       'de': 'Zip',
       'en': '',
     },
@@ -1173,7 +1189,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Country',
       'en': '',
     },
-    '51pdt1a5': {
+    's6h1wnxo': {
       'de': 'Country',
       'en': '',
     },

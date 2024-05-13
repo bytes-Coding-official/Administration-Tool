@@ -45,7 +45,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
@@ -180,8 +180,39 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                               );
                             },
                             onLongPress: () async {
-                              await listViewSupportTicketsRecord.reference
-                                  .delete();
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title:
+                                                const Text('Delete Support Ticket'),
+                                            content: const Text(
+                                                'Do you want to delete the support ticket?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('Confirm'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              if (confirmDialogResponse) {
+                                await listViewSupportTicketsRecord.reference
+                                    .delete();
+
+                                context.pushNamed('support_TicketList');
+                              } else {
+                                return;
+                              }
                             },
                             child: Container(
                               width: double.infinity,

@@ -51,7 +51,7 @@ class _UserListWidgetState extends State<UserListWidget> {
               maxHeight: 500.0,
             ),
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryBackground,
               boxShadow: const [
                 BoxShadow(
                   blurRadius: 4.0,

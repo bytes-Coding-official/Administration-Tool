@@ -66,14 +66,31 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
             context.safePop();
           },
         ),
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'ripwkxbx' /* Complete Profile */,
-          ),
-          style: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
-                letterSpacing: 0.0,
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              FFLocalizations.of(context).getText(
+                'ripwkxbx' /* Complete Profile */,
               ),
+              style: FlutterFlowTheme.of(context).titleSmall.override(
+                    fontFamily: 'Inter',
+                    fontSize: 22.0,
+                    letterSpacing: 0.0,
+                  ),
+            ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'nwmcg0k4' /* Complete your Profile-Settings */,
+              ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
+            ),
+          ],
         ),
         actions: const [],
         centerTitle: false,

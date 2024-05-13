@@ -106,7 +106,6 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
                   child: Container(
-                    width: 200.0,
                     height: 70.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
@@ -127,8 +126,9 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'hbab0oa4' /* flow.io */,
+                            'hbab0oa4' /* bytes Coding GmbH */,
                           ),
+                          textAlign: TextAlign.start,
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(

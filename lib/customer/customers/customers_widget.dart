@@ -61,7 +61,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
           child: Row(
@@ -1612,7 +1612,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                           return;
                                         }
 
-                                        setState(() {});
+                                        context.pushNamed('Customers');
                                       } else {
                                         return;
                                       }
@@ -2100,6 +2100,72 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                             ),
                                           },
                                         );
+                                      },
+                                      onLongPress: () async {
+                                        if (valueOrDefault<bool>(
+                                            currentUserDocument?.administrator,
+                                            false)) {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: const Text('Delete'),
+                                                        content: const Text(
+                                                            'Do you want to delete this case?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                const Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                const Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            await tabletDesktopViewCustomerCaseRecord
+                                                .reference
+                                                .delete();
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('Confirmation'),
+                                                  content: const Text(
+                                                      'Deleted the selected customer-case'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          } else {
+                                            return;
+                                          }
+
+                                          context.pushNamed('Customers');
+                                        } else {
+                                          return;
+                                        }
                                       },
                                       child: Container(
                                         width: 700.0,

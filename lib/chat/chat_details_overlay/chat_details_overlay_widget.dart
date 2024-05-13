@@ -54,7 +54,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             boxShadow: const [
               BoxShadow(
                 blurRadius: 4.0,

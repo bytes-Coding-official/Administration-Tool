@@ -63,16 +63,32 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
             context.pushNamed('ProfileSettings');
           },
         ),
-        title: Text(
-          FFLocalizations.of(context).getText(
-            '4em8h9gl' /* Complete IT-Skills */,
-          ),
-          style: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Inter',
-                fontSize: 24.0,
-                letterSpacing: 0.0,
-                fontWeight: FontWeight.w500,
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              FFLocalizations.of(context).getText(
+                '4em8h9gl' /* Complete IT-Skills */,
               ),
+              style: FlutterFlowTheme.of(context).titleSmall.override(
+                    fontFamily: 'Inter',
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'je1wgwap' /* Complete your IT-Skills */,
+              ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
+            ),
+          ],
         ),
         actions: const [],
         centerTitle: false,

@@ -66,7 +66,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
@@ -168,7 +168,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'd27sf1vu' /* Name */,
+                                        'rij8io9s' /* Name */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -262,7 +262,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'fpi8iadm' /* Phone Number */,
+                                        's0aksne6' /* Phone Number */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -355,7 +355,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '583kgs1g' /* E-Mail */,
+                                        'vdzc35iz' /* E-Mail */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -448,7 +448,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '0iclgnnb' /* Street */,
+                                        '4kvp5cnu' /* Street */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -541,7 +541,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '9k22ximd' /* City */,
+                                        '8m7j9wso' /* City */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -634,7 +634,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'gikzvxv7' /* Zip */,
+                                        'sqb1k3ec' /* Zip */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -727,7 +727,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '51pdt1a5' /* Country */,
+                                        's6h1wnxo' /* Country */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium

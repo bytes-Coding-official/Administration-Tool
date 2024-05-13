@@ -50,26 +50,6 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
       'textOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 25.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 25.0.ms,
-            duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 25.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(-30.0, 0.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation2': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
           VisibilityEffect(duration: 100.ms),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -165,7 +145,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation3': AnimationInfo(
+      'textOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 100.ms),
@@ -303,7 +283,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
@@ -312,18 +292,29 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryText,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
               context.pop();
             },
           ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              'msd7orz7' /* Create a Ticket */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Readex Pro',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.0,
+                ),
+          ),
           actions: const [],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -335,7 +326,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                 maxWidth: 770.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
@@ -351,22 +342,6 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           children: [
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'yhztxyu8' /* Create a Ticket */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation1']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -379,7 +354,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                       letterSpacing: 0.0,
                                     ),
                               ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation2']!),
+                                  animationsMap['textOnPageLoadAnimation1']!),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -746,7 +721,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                           letterSpacing: 0.0,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'textOnPageLoadAnimation3']!),
+                                      'textOnPageLoadAnimation2']!),
                                   FlutterFlowChoiceChips(
                                     options: [
                                       ChipData(
