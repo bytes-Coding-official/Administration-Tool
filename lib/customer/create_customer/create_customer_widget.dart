@@ -30,24 +30,24 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
     _model.fullNameTextController ??= TextEditingController();
     _model.fullNameFocusNode ??= FocusNode();
     _model.fullNameFocusNode!.addListener(() => setState(() {}));
-    _model.phoneNumberTextController1 ??= TextEditingController();
-    _model.phoneNumberFocusNode1 ??= FocusNode();
-    _model.phoneNumberFocusNode1!.addListener(() => setState(() {}));
-    _model.phoneNumberTextController2 ??= TextEditingController();
-    _model.phoneNumberFocusNode2 ??= FocusNode();
-    _model.phoneNumberFocusNode2!.addListener(() => setState(() {}));
-    _model.dateOfBirthTextController1 ??= TextEditingController();
-    _model.dateOfBirthFocusNode1 ??= FocusNode();
-    _model.dateOfBirthFocusNode1!.addListener(() => setState(() {}));
-    _model.dateOfBirthTextController2 ??= TextEditingController();
-    _model.dateOfBirthFocusNode2 ??= FocusNode();
-    _model.dateOfBirthFocusNode2!.addListener(() => setState(() {}));
-    _model.dateOfBirthTextController3 ??= TextEditingController();
-    _model.dateOfBirthFocusNode3 ??= FocusNode();
-    _model.dateOfBirthFocusNode3!.addListener(() => setState(() {}));
-    _model.dateOfBirthTextController4 ??= TextEditingController();
-    _model.dateOfBirthFocusNode4 ??= FocusNode();
-    _model.dateOfBirthFocusNode4!.addListener(() => setState(() {}));
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
+    _model.phoneNumberFocusNode!.addListener(() => setState(() {}));
+    _model.mailTextController ??= TextEditingController();
+    _model.mailFocusNode ??= FocusNode();
+    _model.mailFocusNode!.addListener(() => setState(() {}));
+    _model.streetTextController ??= TextEditingController();
+    _model.streetFocusNode ??= FocusNode();
+    _model.streetFocusNode!.addListener(() => setState(() {}));
+    _model.cityTextController ??= TextEditingController();
+    _model.cityFocusNode ??= FocusNode();
+    _model.cityFocusNode!.addListener(() => setState(() {}));
+    _model.zipTextController ??= TextEditingController();
+    _model.zipFocusNode ??= FocusNode();
+    _model.zipFocusNode!.addListener(() => setState(() {}));
+    _model.countryTextController ??= TextEditingController();
+    _model.countryFocusNode ??= FocusNode();
+    _model.countryFocusNode!.addListener(() => setState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -243,8 +243,8 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                   ),
                                   TextFormField(
                                     controller:
-                                        _model.phoneNumberTextController1,
-                                    focusNode: _model.phoneNumberFocusNode1,
+                                        _model.phoneNumberTextController,
+                                    focusNode: _model.phoneNumberFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -331,13 +331,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
-                                        .phoneNumberTextController1Validator
+                                        .phoneNumberTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   TextFormField(
-                                    controller:
-                                        _model.phoneNumberTextController2,
-                                    focusNode: _model.phoneNumberFocusNode2,
+                                    controller: _model.mailTextController,
+                                    focusNode: _model.mailFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -424,13 +423,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
-                                        .phoneNumberTextController2Validator
+                                        .mailTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   TextFormField(
-                                    controller:
-                                        _model.dateOfBirthTextController1,
-                                    focusNode: _model.dateOfBirthFocusNode1,
+                                    controller: _model.streetTextController,
+                                    focusNode: _model.streetFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -517,13 +515,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
-                                        .dateOfBirthTextController1Validator
+                                        .streetTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   TextFormField(
-                                    controller:
-                                        _model.dateOfBirthTextController2,
-                                    focusNode: _model.dateOfBirthFocusNode2,
+                                    controller: _model.cityTextController,
+                                    focusNode: _model.cityFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -610,13 +607,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
-                                        .dateOfBirthTextController2Validator
+                                        .cityTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   TextFormField(
-                                    controller:
-                                        _model.dateOfBirthTextController3,
-                                    focusNode: _model.dateOfBirthFocusNode3,
+                                    controller: _model.zipTextController,
+                                    focusNode: _model.zipFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -702,14 +698,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                         ),
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
-                                    validator: _model
-                                        .dateOfBirthTextController3Validator
+                                    validator: _model.zipTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   TextFormField(
-                                    controller:
-                                        _model.dateOfBirthTextController4,
-                                    focusNode: _model.dateOfBirthFocusNode4,
+                                    controller: _model.countryTextController,
+                                    focusNode: _model.countryFocusNode,
                                     autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -796,7 +790,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
-                                        .dateOfBirthTextController4Validator
+                                        .countryTextControllerValidator
                                         .asValidator(context),
                                   ),
                                   Text(
@@ -909,14 +903,12 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                               await CustomerRecord.collection.doc().set({
                                 ...createCustomerRecordData(
                                   name: _model.fullNameTextController.text,
-                                  phone: _model.phoneNumberTextController1.text,
-                                  zip: _model.dateOfBirthTextController3.text,
-                                  country:
-                                      _model.dateOfBirthTextController4.text,
-                                  city: _model.dateOfBirthTextController2.text,
-                                  street:
-                                      _model.dateOfBirthTextController1.text,
-                                  email: _model.phoneNumberTextController2.text,
+                                  phone: _model.phoneNumberTextController.text,
+                                  zip: _model.zipTextController.text,
+                                  country: _model.countryTextController.text,
+                                  city: _model.cityTextController.text,
+                                  street: _model.streetTextController.text,
+                                  email: _model.mailTextController.text,
                                 ),
                                 ...mapToFirestore(
                                   {

@@ -28,14 +28,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
     super.initState();
     _model = createModel(context, () => CreateCaseModel());
 
-    _model.productNameTextController ??= TextEditingController();
-    _model.productNameFocusNode ??= FocusNode();
+    _model.titleTextController ??= TextEditingController();
+    _model.titleFocusNode ??= FocusNode();
 
     _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
 
-    _model.salesPriceTextController ??= TextEditingController();
-    _model.salesPriceFocusNode ??= FocusNode();
+    _model.revenueTextController ??= TextEditingController();
+    _model.revenueFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -194,9 +194,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                         ),
                                         TextFormField(
                                           controller:
-                                              _model.productNameTextController,
-                                          focusNode:
-                                              _model.productNameFocusNode,
+                                              _model.titleTextController,
+                                          focusNode: _model.titleFocusNode,
                                           autofocus: true,
                                           textCapitalization:
                                               TextCapitalization.words,
@@ -301,7 +300,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primary,
                                           validator: _model
-                                              .productNameTextControllerValidator
+                                              .titleTextControllerValidator
                                               .asValidator(context),
                                         ),
                                         TextFormField(
@@ -649,9 +648,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                   ),
                                                   TextFormField(
                                                     controller: _model
-                                                        .salesPriceTextController,
-                                                    focusNode: _model
-                                                        .salesPriceFocusNode,
+                                                        .revenueTextController,
+                                                    focusNode:
+                                                        _model.revenueFocusNode,
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization
@@ -779,7 +778,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .salesPriceTextControllerValidator
+                                                        .revenueTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ].divide(const SizedBox(height: 4.0)),
@@ -809,14 +808,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                                 ...createCustomerCaseRecordData(
                                                   caseid: FFAppState().caseid,
                                                   title: _model
-                                                      .productNameTextController
-                                                      .text,
+                                                      .titleTextController.text,
                                                   description: _model
                                                       .descriptionTextController
                                                       .text,
-                                                  revenue: double.tryParse(_model
-                                                      .salesPriceTextController
-                                                      .text),
+                                                  revenue: double.tryParse(
+                                                      _model
+                                                          .revenueTextController
+                                                          .text),
                                                   customer: _model.customer,
                                                 ),
                                                 ...mapToFirestore(

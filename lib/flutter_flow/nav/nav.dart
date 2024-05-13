@@ -234,6 +234,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'createCustomer',
           path: '/createCustomer',
           builder: (context, params) => const CreateCustomerWidget(),
+        ),
+        FFRoute(
+          name: 'addMeetingToCustomer',
+          path: '/addMeetingToCustomer',
+          builder: (context, params) => const AddMeetingToCustomerWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

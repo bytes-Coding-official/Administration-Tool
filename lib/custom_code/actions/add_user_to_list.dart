@@ -8,19 +8,11 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 Future addUserToList(
-  DocumentReference? assigneeRef,
+  List<DocumentReference> assignees,
   DocumentReference? userRef,
 ) async {
-  if (assigneeRef != null && userRef != null) {
-    // Versuche, das 'customer-case' Dokument zu aktualisieren
-    await assigneeRef.update({
-      'assignee': FieldValue.arrayUnion([userRef.id])
-    }).then((_) {
-      print("Benutzerreferenz hinzugefügt.");
-    }).catchError((error) {
-      print("Fehler beim Hinzufügen der Benutzerreferenz: $error");
-    });
-  } else {
-    print("Fehler: DocumentReference ist null.");
+  // adds the users ref to the assignees list
+  if (userRef != null) {
+    assignees.add(userRef);
   }
 }

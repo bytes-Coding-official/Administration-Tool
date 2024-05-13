@@ -38,3 +38,5 @@ export '/chat/chat_2_invite_users/chat2_invite_users_widget.dart'
 export '/chat/image_details/image_details_widget.dart' show ImageDetailsWidget;
 export '/customer/create_customer/create_customer_widget.dart'
     show CreateCustomerWidget;
+export '/customer/add_meeting_to_customer/add_meeting_to_customer_widget.dart'
+    show AddMeetingToCustomerWidget;

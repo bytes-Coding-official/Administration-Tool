@@ -23,19 +23,18 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   }
 
   // State field(s) for phoneNumber widget.
-  FocusNode? phoneNumberFocusNode1;
-  TextEditingController? phoneNumberTextController1;
-  String? Function(BuildContext, String?)? phoneNumberTextController1Validator;
-  // State field(s) for phoneNumber widget.
-  FocusNode? phoneNumberFocusNode2;
-  TextEditingController? phoneNumberTextController2;
-  String? Function(BuildContext, String?)? phoneNumberTextController2Validator;
-  // State field(s) for dateOfBirth widget.
-  FocusNode? dateOfBirthFocusNode1;
-  TextEditingController? dateOfBirthTextController1;
-  String? Function(BuildContext, String?)? dateOfBirthTextController1Validator;
-  String? _dateOfBirthTextController1Validator(
-      BuildContext context, String? val) {
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for mail widget.
+  FocusNode? mailFocusNode;
+  TextEditingController? mailTextController;
+  String? Function(BuildContext, String?)? mailTextControllerValidator;
+  // State field(s) for street widget.
+  FocusNode? streetFocusNode;
+  TextEditingController? streetTextController;
+  String? Function(BuildContext, String?)? streetTextControllerValidator;
+  String? _streetTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '1vh4b221' /* Please enter the date of birth... */,
@@ -45,18 +44,18 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
     return null;
   }
 
-  // State field(s) for dateOfBirth widget.
-  FocusNode? dateOfBirthFocusNode2;
-  TextEditingController? dateOfBirthTextController2;
-  String? Function(BuildContext, String?)? dateOfBirthTextController2Validator;
-  // State field(s) for dateOfBirth widget.
-  FocusNode? dateOfBirthFocusNode3;
-  TextEditingController? dateOfBirthTextController3;
-  String? Function(BuildContext, String?)? dateOfBirthTextController3Validator;
-  // State field(s) for dateOfBirth widget.
-  FocusNode? dateOfBirthFocusNode4;
-  TextEditingController? dateOfBirthTextController4;
-  String? Function(BuildContext, String?)? dateOfBirthTextController4Validator;
+  // State field(s) for city widget.
+  FocusNode? cityFocusNode;
+  TextEditingController? cityTextController;
+  String? Function(BuildContext, String?)? cityTextControllerValidator;
+  // State field(s) for zip widget.
+  FocusNode? zipFocusNode;
+  TextEditingController? zipTextController;
+  String? Function(BuildContext, String?)? zipTextControllerValidator;
+  // State field(s) for country widget.
+  FocusNode? countryFocusNode;
+  TextEditingController? countryTextController;
+  String? Function(BuildContext, String?)? countryTextControllerValidator;
   // State field(s) for DropDown widget.
   List<String>? dropDownValue;
   FormFieldController<List<String>>? dropDownValueController;
@@ -66,7 +65,7 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   @override
   void initState(BuildContext context) {
     fullNameTextControllerValidator = _fullNameTextControllerValidator;
-    dateOfBirthTextController1Validator = _dateOfBirthTextController1Validator;
+    streetTextControllerValidator = _streetTextControllerValidator;
   }
 
   @override
@@ -75,22 +74,22 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
     fullNameFocusNode?.dispose();
     fullNameTextController?.dispose();
 
-    phoneNumberFocusNode1?.dispose();
-    phoneNumberTextController1?.dispose();
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
-    phoneNumberFocusNode2?.dispose();
-    phoneNumberTextController2?.dispose();
+    mailFocusNode?.dispose();
+    mailTextController?.dispose();
 
-    dateOfBirthFocusNode1?.dispose();
-    dateOfBirthTextController1?.dispose();
+    streetFocusNode?.dispose();
+    streetTextController?.dispose();
 
-    dateOfBirthFocusNode2?.dispose();
-    dateOfBirthTextController2?.dispose();
+    cityFocusNode?.dispose();
+    cityTextController?.dispose();
 
-    dateOfBirthFocusNode3?.dispose();
-    dateOfBirthTextController3?.dispose();
+    zipFocusNode?.dispose();
+    zipTextController?.dispose();
 
-    dateOfBirthFocusNode4?.dispose();
-    dateOfBirthTextController4?.dispose();
+    countryFocusNode?.dispose();
+    countryTextController?.dispose();
   }
 }

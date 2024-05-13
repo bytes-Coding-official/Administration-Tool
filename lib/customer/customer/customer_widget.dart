@@ -899,9 +899,13 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                   onPressed: () async {
                                                     await actions.addUserToList(
                                                       customerCustomerCaseRecord
-                                                          .reference,
+                                                          .assignee
+                                                          .toList(),
                                                       currentUserReference,
                                                     );
+
+                                                    context
+                                                        .pushNamed('Customers');
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)
@@ -962,6 +966,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                           .toList(),
                                                       currentUserReference!,
                                                     );
+
+                                                    context
+                                                        .pushNamed('Customers');
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)
@@ -1002,6 +1009,100 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                  ),
+                                                ),
+                                              ),
+                                            if (valueOrDefault<bool>(
+                                                    currentUserDocument
+                                                        ?.administrator,
+                                                    false) ==
+                                                true)
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      FFButtonWidget(
+                                                    onPressed: () async {
+                                                      setState(() {
+                                                        FFAppState().caseid =
+                                                            customerCustomerCaseRecord
+                                                                .caseid;
+                                                        FFAppState()
+                                                                .customerRef =
+                                                            customerCustomerCaseRecord
+                                                                .reference.id;
+                                                      });
+
+                                                      context.pushNamed(
+                                                        'addMeetingToCustomer',
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              const TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .topToBottom,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    350),
+                                                          ),
+                                                        },
+                                                      );
+                                                    },
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      '4hxa3yz1' /* Add meeting to user */,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      height: 50.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiary,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                      elevation: 3.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
                                                   ),
                                                 ),
                                               ),

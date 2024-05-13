@@ -287,6 +287,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Remove From Case',
       'en': '',
     },
+    '4hxa3yz1': {
+      'de': 'Add meeting to user',
+      'en': '',
+    },
     '8okubqr7': {
       'de': 'Hours',
       'en': '',
@@ -1262,6 +1266,89 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '1byh2jsg': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // addMeetingToCustomer
+  {
+    '5c37n68o': {
+      'de': 'ID:',
+      'en': '',
+    },
+    'qxm3fyf5': {
+      'de': 'Option 1',
+      'en': '',
+    },
+    'vyadd7r7': {
+      'de': 'Tutor',
+      'en': '',
+    },
+    'w2j7a4li': {
+      'de': 'Search for an item...',
+      'en': '',
+    },
+    'hxdjmxda': {
+      'de': 'duration',
+      'en': '',
+    },
+    'ci5rmjhx': {
+      'de': 'duration',
+      'en': '',
+    },
+    'mhet6khp': {
+      'de': '0.0',
+      'en': '',
+    },
+    '9lx2f4td': {
+      'de': 'Save',
+      'en': '',
+    },
+    'kl29b1po': {
+      'de': 'Please enter the patients full name.',
+      'en': '',
+    },
+    'e72x15w9': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'al1466er': {
+      'de': 'Please enter an age for the patient.',
+      'en': '',
+    },
+    'xt4vzwm9': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'oxstlqhc': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'unc56v4p': {
+      'de': 'Please enter the date of birth of the patient.',
+      'en': '',
+    },
+    'xab350ih': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'stkp7ti5': {
+      'de': 'Field is required',
+      'en': '',
+    },
+    '83yl9kkc': {
+      'de': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'h5slg9bs': {
+      'de': 'Add Meeting',
+      'en': '',
+    },
+    '5pa3up8y': {
+      'de': 'Add a meeting to a special customer',
+      'en': '',
+    },
+    'c6npx1ws': {
       'de': 'Home',
       'en': '',
     },

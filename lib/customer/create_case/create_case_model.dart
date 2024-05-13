@@ -8,10 +8,10 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for productName widget.
-  FocusNode? productNameFocusNode;
-  TextEditingController? productNameTextController;
-  String? Function(BuildContext, String?)? productNameTextControllerValidator;
+  // State field(s) for title widget.
+  FocusNode? titleFocusNode;
+  TextEditingController? titleTextController;
+  String? Function(BuildContext, String?)? titleTextControllerValidator;
   // State field(s) for description widget.
   FocusNode? descriptionFocusNode;
   TextEditingController? descriptionTextController;
@@ -22,10 +22,10 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
-  // State field(s) for salesPrice widget.
-  FocusNode? salesPriceFocusNode;
-  TextEditingController? salesPriceTextController;
-  String? Function(BuildContext, String?)? salesPriceTextControllerValidator;
+  // State field(s) for revenue widget.
+  FocusNode? revenueFocusNode;
+  TextEditingController? revenueTextController;
+  String? Function(BuildContext, String?)? revenueTextControllerValidator;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
   DocumentReference? customer;
   // Stores action output result for [Custom Action - getITSkillsFromDocRefs] action in Button widget.
@@ -37,13 +37,13 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    productNameFocusNode?.dispose();
-    productNameTextController?.dispose();
+    titleFocusNode?.dispose();
+    titleTextController?.dispose();
 
     descriptionFocusNode?.dispose();
     descriptionTextController?.dispose();
 
-    salesPriceFocusNode?.dispose();
-    salesPriceTextController?.dispose();
+    revenueFocusNode?.dispose();
+    revenueTextController?.dispose();
   }
 }
