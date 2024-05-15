@@ -565,6 +565,8 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                           child: Text(
                                                             containerItskillsRecord
                                                                 .name,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -688,6 +690,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                                 child: Text(
                                                                   containerLanguagesRecord
                                                                       .name,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium

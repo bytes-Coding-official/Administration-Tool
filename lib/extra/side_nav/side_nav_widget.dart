@@ -66,7 +66,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'pcy905jw' /* Navigationsmenu */,
+                  'rbq7wa74' /* Navigationsmenu */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',

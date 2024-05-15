@@ -1411,7 +1411,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dark Mode',
       'en': '',
     },
-    'pcy905jw': {
+    'rbq7wa74': {
       'de': 'Navigationsmenu',
       'en': '',
     },
