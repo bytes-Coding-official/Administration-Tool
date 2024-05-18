@@ -959,10 +959,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'ID#: ',
       'en': '',
     },
-    '7e2oj4so': {
-      'de': 'Own',
-      'en': '',
-    },
     'tbl1a9zo': {
       'de': 'Recent Activity',
       'en': '',
@@ -1272,35 +1268,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // AddMeetingToCustomer
   {
-    '5c37n68o': {
+    'c67y3q2q': {
       'de': 'ID:',
       'en': '',
     },
-    'qxm3fyf5': {
+    'byhu0a3q': {
       'de': 'Option 1',
       'en': '',
     },
-    'vyadd7r7': {
+    'x52cyluc': {
       'de': 'Tutor',
       'en': '',
     },
-    'r14ffmw1': {
+    '9y29dj0x': {
       'de': 'Search for an item...',
       'en': '',
     },
-    'hxdjmxda': {
+    'q7gadm3b': {
       'de': 'duration',
       'en': '',
     },
-    'ci5rmjhx': {
+    'r6ia2iua': {
       'de': 'duration',
       'en': '',
     },
-    'dm5dydjl': {
+    'va8l0m2g': {
       'de': '0.0',
       'en': '',
     },
-    '9lx2f4td': {
+    'fsnpjj36': {
       'de': 'Save',
       'en': '',
     },

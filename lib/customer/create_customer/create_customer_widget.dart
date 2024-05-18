@@ -126,6 +126,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
             key: _model.formKey,
             autovalidateMode: AutovalidateMode.disabled,
             child: SingleChildScrollView(
+              primary: false,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
