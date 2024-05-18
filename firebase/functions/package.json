@@ -18,10 +18,10 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
-    "serve": "firebase -P gravity-4nci7k emulators:start --only functions",
-    "shell": "firebase -P gravity-4nci7k functions:shell",
+    "serve": "firebase -P bytes-coding-admin-tool emulators:start --only functions",
+    "shell": "firebase -P bytes-coding-admin-tool functions:shell",
     "start": "npm run shell",
-    "logs": "firebase -P gravity-4nci7k functions:log",
+    "logs": "firebase -P bytes-coding-admin-tool functions:log",
     "compile": "cp ../../tsconfig.template.json ./tsconfig-compile.json && tsc --project tsconfig-compile.json"
   },
   "engines": {
