@@ -1061,6 +1061,8 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       FlutterFlowChoiceChips(
                                         options: [
@@ -1136,7 +1138,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                         ),
-                                        chipSpacing: 12.0,
+                                        chipSpacing: 5.0,
                                         rowSpacing: 12.0,
                                         multiselect: false,
                                         initialized:
@@ -1357,7 +1359,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                           ))
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 15.0, 10.0, 15.0),
+                                  0.0, 0.0, 0.0, 5.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed('sideNav');
@@ -1366,7 +1368,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                   'q3yd9c6w' /* Navigation */,
                                 ),
                                 options: FFButtonOptions(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width * 0.8,
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -1394,7 +1396,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                               true)
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 15.0),
+                                  0.0, 5.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1411,7 +1413,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.4,
+                                                0.35,
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
@@ -1452,7 +1454,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.4,
+                                                0.35,
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
