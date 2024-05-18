@@ -403,10 +403,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'xbcdougq': {
-      'de': 'Filter here...',
+      'de': 'Filter',
       'en': '',
     },
-    'dxw866zo': {
+    'fy5ytf4v': {
       'de': 'Filter here...',
       'en': '',
     },
