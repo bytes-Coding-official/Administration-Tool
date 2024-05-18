@@ -60,7 +60,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
             size: 25.0,
           ),
           onPressed: () async {
-            context.pushNamed('ProfileSettings');
+            context.safePop();
           },
         ),
         title: Column(

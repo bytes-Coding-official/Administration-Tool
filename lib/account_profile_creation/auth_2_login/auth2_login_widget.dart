@@ -111,7 +111,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                   child: Container(
                     height: 70.0,
                     decoration: BoxDecoration(

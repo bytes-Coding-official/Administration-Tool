@@ -822,77 +822,15 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                           ],
                                         ),
                                       ),
-                                      if (valueOrDefault<bool>(
-                                        customerCustomerCaseRecord.assignee
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            if (customerCustomerCaseRecord
+                                                .assignee
                                                 .contains(
-                                                    currentUserReference) ==
-                                            false,
-                                        false,
-                                      ))
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              await customerCustomerCaseRecord
-                                                  .reference
-                                                  .update({
-                                                ...mapToFirestore(
-                                                  {
-                                                    'assignee':
-                                                        FieldValue.arrayUnion([
-                                                      currentUserReference
-                                                    ]),
-                                                  },
-                                                ),
-                                              });
-                                              setState(() {});
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '4t8xqign' /* Claim Case */,
-                                            ),
-                                            options: FFButtonOptions(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  0.5,
-                                              height: 50.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                        ),
-                                      if (customerCustomerCaseRecord.assignee
-                                              .contains(
-                                                  currentUserReference) ==
-                                          false)
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
+                                                    currentUserReference)) {
                                               await customerCustomerCaseRecord
                                                   .reference
                                                   .update({
@@ -905,48 +843,65 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                   },
                                                 ),
                                               });
+                                            } else {
+                                              await customerCustomerCaseRecord
+                                                  .reference
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'assignee':
+                                                        FieldValue.arrayUnion([
+                                                      currentUserReference
+                                                    ]),
+                                                  },
+                                                ),
+                                              });
+                                            }
 
-                                              context.pushNamed('Customers');
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'gy7e31nj' /* Remove From Case */,
+                                            setState(() {});
+                                          },
+                                          text: customerCustomerCaseRecord
+                                                      .assignee
+                                                      .contains(
+                                                          currentUserReference) ==
+                                                  true
+                                              ? 'Loose  Case'
+                                              : 'Claim Case',
+                                          options: FFButtonOptions(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.5,
+                                            height: 50.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
                                             ),
-                                            options: FFButtonOptions(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  0.5,
-                                              height: 50.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                              elevation: 3.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
+                                      ),
                                       if (valueOrDefault(
                                               currentUserDocument?.role, '') ==
-                                          'Administrator')
+                                          'Manager')
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),
@@ -1020,7 +975,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                         ),
                                       if (valueOrDefault(
                                               currentUserDocument?.role, '') ==
-                                          'Administrator')
+                                          'Manager')
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),
@@ -1033,10 +988,10 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                                     .update(
                                                         createCustomerCaseRecordData(
                                                   closed:
-                                                      customerCustomerCaseRecord
-                                                              .closed ==
-                                                          true,
+                                                      !customerCustomerCaseRecord
+                                                          .closed,
                                                 ));
+                                                FFAppState().update(() {});
                                               },
                                               text: customerCustomerCaseRecord
                                                       .closed

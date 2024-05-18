@@ -283,14 +283,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Revenue',
       'en': '',
     },
-    '4t8xqign': {
-      'de': 'Claim Case',
-      'en': '',
-    },
-    'gy7e31nj': {
-      'de': 'Remove From Case',
-      'en': '',
-    },
     '4hxa3yz1': {
       'de': 'Add meeting to user',
       'en': '',

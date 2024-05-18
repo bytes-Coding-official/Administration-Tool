@@ -1390,7 +1390,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                               ),
                             ),
                           if (valueOrDefault(currentUserDocument?.role, '') ==
-                              'Administrator')
+                              'Manager')
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
@@ -2019,6 +2019,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                                 child: Text(
                                                                   () {
                                                                     if (mobileViewCustomerCaseRecord
+                                                                        .closed) {
+                                                                      return 'closed';
+                                                                    } else if (mobileViewCustomerCaseRecord
                                                                         .assignee
                                                                         .contains(
                                                                             currentUserReference)) {
@@ -2026,9 +2029,6 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                                     } else if (mobileViewCustomerCaseRecord
                                                                             .assignee.isEmpty) {
                                                                       return 'Open';
-                                                                    } else if (mobileViewCustomerCaseRecord
-                                                                        .closed) {
-                                                                      return 'closed';
                                                                     } else {
                                                                       return 'Other';
                                                                     }
