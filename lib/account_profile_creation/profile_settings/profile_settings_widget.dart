@@ -68,7 +68,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
         ),
         title: Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               FFLocalizations.of(context).getText(
@@ -96,7 +96,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
           ],
         ),
         actions: const [],
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0.0,
       ),
       body: SafeArea(

@@ -181,7 +181,7 @@ class _BillingWidgetState extends State<BillingWidget>
             ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(

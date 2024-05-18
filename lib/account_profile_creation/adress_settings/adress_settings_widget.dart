@@ -102,7 +102,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget> {
           ],
         ),
         actions: const [],
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0.0,
       ),
       body: SafeArea(

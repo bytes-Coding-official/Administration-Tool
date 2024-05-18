@@ -62,24 +62,26 @@ class _SideNavWidgetState extends State<SideNavWidget> {
           ),
           title: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                FFLocalizations.of(context).getText(
-                  'rbq7wa74' /* Navigationsmenu */,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '95y28kz8' /* Navigation */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        letterSpacing: 0.0,
+                      ),
                 ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Readex Pro',
-                      color: Colors.white,
-                      fontSize: 22.0,
-                      letterSpacing: 0.0,
-                    ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'we3txrli' /* For navigating between screens */,
+                    'kwvw1dx0' /* For navigating between screens */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -90,7 +92,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
             ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(

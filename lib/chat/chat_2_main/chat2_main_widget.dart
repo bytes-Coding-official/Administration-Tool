@@ -48,14 +48,30 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'h9lmzpdm' /* My Chats */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  fontFamily: 'Readex Pro',
-                  letterSpacing: 0.0,
+          title: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                FFLocalizations.of(context).getText(
+                  'h9lmzpdm' /* My Chats */,
                 ),
+                style: FlutterFlowTheme.of(context).headlineLarge.override(
+                      fontFamily: 'Readex Pro',
+                      fontSize: 25.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  '52hamp16' /* Below are your chats and group... */,
+                ),
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      fontSize: 14.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+            ],
           ),
           actions: [
             Padding(
@@ -77,7 +93,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
               ),
             ),
           ],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(
@@ -87,19 +103,6 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'tpy6ziya' /* Below are your chats and group... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        fontSize: 16.0,
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: FFButtonWidget(

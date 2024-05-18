@@ -72,7 +72,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
           automaticallyImplyLeading: false,
           title: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -92,6 +92,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                   FFLocalizations.of(context).getText(
                     'sxwzbsjz' /* Please fill out the form below... */,
                   ),
+                  textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
@@ -120,7 +121,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
               ),
             ),
           ],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(

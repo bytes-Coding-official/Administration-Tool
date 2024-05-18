@@ -144,7 +144,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                   ),
                 ),
               ],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(

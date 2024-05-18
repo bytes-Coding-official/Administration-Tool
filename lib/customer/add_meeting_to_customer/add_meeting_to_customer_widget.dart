@@ -109,7 +109,7 @@ class _AddMeetingToCustomerWidgetState
             ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(

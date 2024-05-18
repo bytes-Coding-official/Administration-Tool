@@ -62,18 +62,47 @@ class _SupportTicketDetailsWidgetState
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
               context.pop();
             },
           ),
+          title: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                FFLocalizations.of(context).getText(
+                  'ob8i4jml' /* Ticket */,
+                ),
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Readex Pro',
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'e9znz11p' /* Current Support-Ticket */,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+            ],
+          ),
           actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -85,7 +114,7 @@ class _SupportTicketDetailsWidgetState
                 maxWidth: 770.0,
               ),
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -183,14 +212,15 @@ class _SupportTicketDetailsWidgetState
                             ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 16.0, 0.0),
+                                0.0, 5.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 12.0, 0.0),
+                                        10.0, 0.0, 0.0, 0.0),
                                     child: RichText(
                                       textScaler:
                                           MediaQuery.of(context).textScaler,

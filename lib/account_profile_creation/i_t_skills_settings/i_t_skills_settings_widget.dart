@@ -65,7 +65,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
         ),
         title: Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -97,7 +97,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
           ],
         ),
         actions: const [],
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0.0,
       ),
       body: SafeArea(

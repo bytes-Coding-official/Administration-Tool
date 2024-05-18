@@ -66,17 +66,34 @@ class _CalendarWidgetState extends State<CalendarWidget>
               context.pop();
             },
           ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              '5zbykyxp' /* Your Calender */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineSmall.override(
-                  fontFamily: 'Readex Pro',
-                  letterSpacing: 0.0,
+          title: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                FFLocalizations.of(context).getText(
+                  '5zbykyxp' /* Calender */,
                 ),
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '4ip2ai57' /* Your current Calender */,
+                  ),
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+            ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: Column(

@@ -438,7 +438,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'a89yjpln': {
-      'de': 'Our Team-Members',
+      'de': 'Team-Members',
+      'en': '',
+    },
+    'y7tpy97m': {
+      'de': 'All of our Customers & Employees',
       'en': '',
     },
     '5p3v0m4k': {
@@ -718,16 +722,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // support_TicketList
   {
-    'y1cphusm': {
-      'de': 'Below are a list of recent tickets created',
-      'en': '',
-    },
     'jn2h1hyf': {
       'de': 'Ticket #: ',
       'en': '',
     },
-    'uc1usyqa': {
+    'jgiu5cul': {
       'de': 'Support Tickets',
+      'en': '',
+    },
+    '7wf3jvi6': {
+      'de': 'Below are a list of recent tickets created',
       'en': '',
     },
     '19b4l2eb': {
@@ -738,7 +742,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // support_SubmitTicket
   {
     '6m96v7d4': {
-      'de': 'Create a Ticket',
+      'de': 'Ticket-Creation',
+      'en': '',
+    },
+    'w2ax4dxz': {
+      'de': 'Create a Support-Ticket here',
       'en': '',
     },
     'olovehmu': {
@@ -874,6 +882,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5o57gj4w': {
       'de': 'Update Ticket',
+      'en': '',
+    },
+    'ob8i4jml': {
+      'de': 'Ticket',
+      'en': '',
+    },
+    'e9znz11p': {
+      'de': 'Current Support-Ticket',
       'en': '',
     },
   },
@@ -1055,7 +1071,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '5zbykyxp': {
-      'de': 'Your Calender',
+      'de': 'Calender',
+      'en': '',
+    },
+    '4ip2ai57': {
+      'de': 'Your current Calender',
       'en': '',
     },
     'dr5994wq': {
@@ -1076,10 +1096,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // chat_2_main
   {
-    'tpy6ziya': {
-      'de': 'Below are your chats and group chats',
-      'en': '',
-    },
     '4wmr0r8x': {
       'de': 'Add Chat',
       'en': '',
@@ -1090,6 +1106,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h9lmzpdm': {
       'de': 'My Chats',
+      'en': '',
+    },
+    '52hamp16': {
+      'de': 'Below are your chats and group chats',
       'en': '',
     },
     'ka2wrnvr': {
@@ -1339,6 +1359,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // sideNav
   {
+    '95y28kz8': {
+      'de': 'Navigation',
+      'en': '',
+    },
+    'kwvw1dx0': {
+      'de': 'For navigating between screens',
+      'en': '',
+    },
     'e0uy5mgi': {
       'de': 'bytes Coding',
       'en': '',
@@ -1393,14 +1421,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lhgm48cm': {
       'de': 'Dark Mode',
-      'en': '',
-    },
-    'rbq7wa74': {
-      'de': 'Navigationsmenu',
-      'en': '',
-    },
-    'we3txrli': {
-      'de': 'For navigating between screens',
       'en': '',
     },
     '6dtqlh1d': {

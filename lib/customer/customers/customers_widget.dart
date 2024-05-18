@@ -1000,7 +1000,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                 ))
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
+                                        5.0, 0.0, 5.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -1023,7 +1023,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1044,7 +1044,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                         FFLocalizations.of(context).getText(
                                           'bgi47c1l' /* Review the details below of al... */,
                                         ),
-                                        textAlign: TextAlign.start,
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1085,96 +1085,103 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      FlutterFlowChoiceChips(
-                                        options: [
-                                          ChipData(FFLocalizations.of(context)
-                                              .getText(
-                                            'apwtdsiq' /* All */,
-                                          )),
-                                          ChipData(FFLocalizations.of(context)
-                                              .getText(
-                                            '4x13kefg' /* Own Projects */,
-                                          )),
-                                          ChipData(FFLocalizations.of(context)
-                                              .getText(
-                                            'mb94ajo3' /* Others */,
-                                          )),
-                                          ChipData(FFLocalizations.of(context)
-                                              .getText(
-                                            'vt6ohljs' /* Closed */,
-                                          ))
-                                        ],
-                                        onChanged: (val) => setState(() =>
-                                            _model.choiceChipsValue =
-                                                val?.firstOrNull),
-                                        selectedChipStyle: ChipStyle(
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .accent2,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          iconColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                          iconSize: 18.0,
-                                          elevation: 0.0,
-                                          borderColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                          borderWidth: 1.0,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        unselectedChipStyle: ChipStyle(
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          iconColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryText,
-                                          iconSize: 18.0,
-                                          elevation: 0.0,
-                                          borderColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderWidth: 1.0,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        chipSpacing: 5.0,
-                                        rowSpacing: 12.0,
-                                        multiselect: false,
-                                        initialized:
-                                            _model.choiceChipsValue != null,
-                                        alignment: WrapAlignment.start,
-                                        controller: _model
-                                                .choiceChipsValueController ??=
-                                            FormFieldController<List<String>>(
-                                          [
-                                            FFLocalizations.of(context).getText(
-                                              '30m9wopn' /* All */,
-                                            )
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: FlutterFlowChoiceChips(
+                                          options: [
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              'apwtdsiq' /* All */,
+                                            )),
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              '4x13kefg' /* Own Projects */,
+                                            )),
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              'mb94ajo3' /* Others */,
+                                            )),
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              'vt6ohljs' /* Closed */,
+                                            ))
                                           ],
+                                          onChanged: (val) => setState(() =>
+                                              _model.choiceChipsValue =
+                                                  val?.firstOrNull),
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .accent2,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                            iconSize: 18.0,
+                                            elevation: 0.0,
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderWidth: 1.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          chipSpacing: 5.0,
+                                          rowSpacing: 12.0,
+                                          multiselect: false,
+                                          initialized:
+                                              _model.choiceChipsValue != null,
+                                          alignment: WrapAlignment.start,
+                                          controller: _model
+                                                  .choiceChipsValueController ??=
+                                              FormFieldController<List<String>>(
+                                            [
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '30m9wopn' /* All */,
+                                              )
+                                            ],
+                                          ),
+                                          wrapped: false,
                                         ),
-                                        wrapped: false,
                                       ),
                                       if (responsiveVisibility(
                                         context: context,
@@ -1291,6 +1298,11 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                       child: TextFormField(
                                         controller: _model.textController2,
                                         focusNode: _model.textFieldFocusNode2,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.textController2',
+                                          const Duration(milliseconds: 150),
+                                          () => setState(() {}),
+                                        ),
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

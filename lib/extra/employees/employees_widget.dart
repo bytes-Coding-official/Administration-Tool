@@ -65,17 +65,34 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
               context.pop();
             },
           ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'a89yjpln' /* Our Team-Members */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineSmall.override(
-                  fontFamily: 'Readex Pro',
-                  letterSpacing: 0.0,
+          title: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                FFLocalizations.of(context).getText(
+                  'a89yjpln' /* Team-Members */,
                 ),
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'y7tpy97m' /* All of our Customers & Employe... */,
+                  ),
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+            ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(

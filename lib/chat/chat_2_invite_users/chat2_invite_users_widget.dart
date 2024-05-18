@@ -76,7 +76,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
           automaticallyImplyLeading: false,
           title: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 FFLocalizations.of(context).getText(
@@ -121,7 +121,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
               ),
             ),
           ],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: Stack(

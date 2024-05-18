@@ -301,19 +301,37 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
               context.pop();
             },
           ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              '6m96v7d4' /* Create a Ticket */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Readex Pro',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
+          title: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                FFLocalizations.of(context).getText(
+                  '6m96v7d4' /* Ticket-Creation */,
                 ),
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Readex Pro',
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'w2ax4dxz' /* Create a Support-Ticket here */,
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+            ],
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(

@@ -65,7 +65,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
         ),
         title: Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               FFLocalizations.of(context).getText(
@@ -92,7 +92,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
           ],
         ),
         actions: const [],
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0.0,
       ),
       body: SafeArea(
