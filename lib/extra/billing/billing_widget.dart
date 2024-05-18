@@ -580,7 +580,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '4lyb5w7t' /* Current Customer-Cases */,
+                                        '4lyb5w7t' /* Customer-Cases */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall

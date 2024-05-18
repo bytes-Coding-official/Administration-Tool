@@ -952,7 +952,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '4lyb5w7t': {
-      'de': 'Current Customer-Cases',
+      'de': 'Customer-Cases',
       'en': '',
     },
     'gcjeqtnc': {

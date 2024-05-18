@@ -152,23 +152,28 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                 children: [
                                   Align(
                                     alignment: const AlignmentDirectional(-1.0, 1.0),
-                                    child: FlutterFlowIconButton(
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).accent4,
-                                      borderRadius: 12.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).accent4,
-                                      icon: Icon(
-                                        Icons.arrow_back_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 5.0, 5.0),
+                                      child: FlutterFlowIconButton(
+                                        borderColor:
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                        borderRadius: 12.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 40.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .accent4,
+                                        icon: Icon(
+                                          Icons.arrow_back_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          context.pushNamed('Customers');
+                                        },
                                       ),
-                                      onPressed: () async {
-                                        context.safePop();
-                                      },
                                     ),
                                   ),
                                 ],
@@ -738,7 +743,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 15.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           GoRouter.of(context).prepareAuthEvent();
