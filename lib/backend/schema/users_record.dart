@@ -65,11 +65,6 @@ class UsersRecord extends FirestoreRecord {
   String get country => _country ?? '';
   bool hasCountry() => _country != null;
 
-  // "administrator" field.
-  bool? _administrator;
-  bool get administrator => _administrator ?? false;
-  bool hasAdministrator() => _administrator != null;
-
   // "shortDescription" field.
   String? _shortDescription;
   String get shortDescription => _shortDescription ?? '';
@@ -101,7 +96,6 @@ class UsersRecord extends FirestoreRecord {
     _town = snapshotData['town'] as String?;
     _street = snapshotData['street'] as String?;
     _country = snapshotData['country'] as String?;
-    _administrator = snapshotData['administrator'] as bool?;
     _shortDescription = snapshotData['shortDescription'] as String?;
     _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
     _role = snapshotData['role'] as String?;
@@ -152,7 +146,6 @@ Map<String, dynamic> createUsersRecordData({
   String? town,
   String? street,
   String? country,
-  bool? administrator,
   String? shortDescription,
   DateTime? lastActiveTime,
   String? role,
@@ -170,7 +163,6 @@ Map<String, dynamic> createUsersRecordData({
       'town': town,
       'street': street,
       'country': country,
-      'administrator': administrator,
       'shortDescription': shortDescription,
       'last_active_time': lastActiveTime,
       'role': role,
@@ -196,7 +188,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.town == e2?.town &&
         e1?.street == e2?.street &&
         e1?.country == e2?.country &&
-        e1?.administrator == e2?.administrator &&
         e1?.shortDescription == e2?.shortDescription &&
         e1?.lastActiveTime == e2?.lastActiveTime &&
         e1?.role == e2?.role &&
@@ -215,7 +206,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.town,
         e?.street,
         e?.country,
-        e?.administrator,
         e?.shortDescription,
         e?.lastActiveTime,
         e?.role,

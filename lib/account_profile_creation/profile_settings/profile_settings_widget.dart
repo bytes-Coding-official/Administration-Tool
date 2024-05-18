@@ -63,7 +63,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
             size: 25.0,
           ),
           onPressed: () async {
-            context.safePop();
+            context.pushNamed('auth_2_Profile');
           },
         ),
         title: Column(

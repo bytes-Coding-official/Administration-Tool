@@ -749,68 +749,68 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // support_SubmitTicket
   {
-    'vj2kin4a': {
+    '6m96v7d4': {
+      'de': 'Create a Ticket',
+      'en': '',
+    },
+    'olovehmu': {
       'de': 'Fill out the form below to submit a ticket.',
       'en': '',
     },
-    '8a83o12g': {
+    'fc45tfhc': {
       'de': 'Call Us',
       'en': '',
     },
-    'txl8rzat': {
+    '7qh0t2to': {
       'de': 'Email Us',
       'en': '',
     },
-    'ricp38cm': {
+    'svyi7a7w': {
       'de': 'What is going on?',
       'en': '',
     },
-    '0l26gje2': {
+    'gw93g4go': {
       'de': 'Short Description of what is going on...',
       'en': '',
     },
-    'eyq6jort': {
+    'v168fglt': {
       'de': 'Choose a priority level',
       'en': '',
     },
-    'nj4gxq7y': {
+    '5xk37c9i': {
       'de': 'Emergency',
       'en': '',
     },
-    'nxn0qt7g': {
+    '29wadrsz': {
       'de': 'High',
       'en': '',
     },
-    '36ar5gt0': {
+    '7sze9zop': {
       'de': 'Medium',
       'en': '',
     },
-    'xbub19mw': {
+    'lu4z3zyl': {
       'de': 'Low',
       'en': '',
     },
-    'udk6s772': {
+    'qp64btls': {
       'de': 'Low',
       'en': '',
     },
-    'ngxigtui': {
+    '13s53xsn': {
       'de': 'Upload Screenshot',
       'en': '',
     },
-    '9furp0rw': {
+    '04h9y5pj': {
       'de': 'Assign User',
       'en': '',
     },
-    'zdl3izxa': {
+    '3ttsymfp': {
       'de': 'Add User',
       'en': '',
     },
-    '0sjmvj9o': {
+    'ypiicayo': {
       'de': 'Submit Ticket',
-      'en': '',
-    },
-    '6m96v7d4': {
-      'de': 'Create a Ticket',
       'en': '',
     },
     '9wh28y2u': {

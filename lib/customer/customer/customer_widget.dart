@@ -944,11 +944,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (valueOrDefault<bool>(
-                                              currentUserDocument
-                                                  ?.administrator,
-                                              false) ==
-                                          true)
+                                      if (valueOrDefault(
+                                              currentUserDocument?.role, '') ==
+                                          'Administrator')
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),
@@ -1020,11 +1018,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (valueOrDefault<bool>(
-                                              currentUserDocument
-                                                  ?.administrator,
-                                              false) ==
-                                          true)
+                                      if (valueOrDefault(
+                                              currentUserDocument?.role, '') ==
+                                          'Administrator')
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),

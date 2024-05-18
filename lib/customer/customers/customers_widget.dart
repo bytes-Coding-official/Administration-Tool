@@ -318,10 +318,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                   ),
                                 ),
                               ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.administrator,
-                                      false) ==
-                                  true)
+                              if (valueOrDefault(
+                                      currentUserDocument?.role, '') ==
+                                  'Administrator')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -426,10 +425,9 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                     ),
                                   ),
                                 ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.administrator,
-                                      false) ==
-                                  true)
+                              if (valueOrDefault(
+                                      currentUserDocument?.role, '') ==
+                                  'Administrator')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -1391,9 +1389,8 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                 ),
                               ),
                             ),
-                          if (valueOrDefault<bool>(
-                                  currentUserDocument?.administrator, false) ==
-                              true)
+                          if (valueOrDefault(currentUserDocument?.role, '') ==
+                              'Administrator')
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
@@ -1565,9 +1562,10 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                         );
                                       },
                                       onLongPress: () async {
-                                        if (valueOrDefault<bool>(
-                                            currentUserDocument?.administrator,
-                                            false)) {
+                                        if (valueOrDefault(
+                                                currentUserDocument?.role,
+                                                '') ==
+                                            'Administrator') {
                                           var confirmDialogResponse =
                                               await showDialog<bool>(
                                                     context: context,
@@ -2160,9 +2158,10 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                         );
                                       },
                                       onLongPress: () async {
-                                        if (valueOrDefault<bool>(
-                                            currentUserDocument?.administrator,
-                                            false)) {
+                                        if (valueOrDefault(
+                                                currentUserDocument?.role,
+                                                '') ==
+                                            'Administrator') {
                                           var confirmDialogResponse =
                                               await showDialog<bool>(
                                                     context: context,
