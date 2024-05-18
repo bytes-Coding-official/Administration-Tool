@@ -8,6 +8,12 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  List<CustomerMeetingRecord>? textPreviousSnapshot1;
+  // Stores action output result for [Custom Action - totalRevenue] action in Text widget.
+  String? totalRev;
+  List<CustomerMeetingRecord>? textPreviousSnapshot2;
+  // Stores action output result for [Custom Action - avgRevenue] action in Text widget.
+  String? avgRev;
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?

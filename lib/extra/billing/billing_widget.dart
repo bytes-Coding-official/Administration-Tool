@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -236,18 +237,72 @@ class _BillingWidgetState extends State<BillingWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'zqnhft9d' /* 16 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          letterSpacing: 0.0,
+                                  StreamBuilder<List<CustomerMeetingRecord>>(
+                                    stream: queryCustomerMeetingRecord(
+                                      queryBuilder: (customerMeetingRecord) =>
+                                          customerMeetingRecord.where(
+                                        'assignee',
+                                        arrayContains: currentUserReference,
+                                      ),
+                                    )..listen((snapshot) async {
+                                        List<CustomerMeetingRecord>
+                                            textCustomerMeetingRecordList =
+                                            snapshot;
+                                        if (_model.textPreviousSnapshot1 !=
+                                                null &&
+                                            !const ListEquality(
+                                                    CustomerMeetingRecordDocumentEquality())
+                                                .equals(
+                                                    textCustomerMeetingRecordList,
+                                                    _model
+                                                        .textPreviousSnapshot1)) {
+                                          _model.totalRev =
+                                              await actions.totalRevenue(
+                                            textCustomerMeetingRecordList
+                                                .map((e) => e.reference)
+                                                .toList(),
+                                          );
+
+                                          setState(() {});
+                                        }
+                                        _model.textPreviousSnapshot1 = snapshot;
+                                      }),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<CustomerMeetingRecord>
+                                          textCustomerMeetingRecordList =
+                                          snapshot.data!;
+                                      return Text(
+                                        valueOrDefault<String>(
+                                          _model.totalRev,
+                                          '0',
                                         ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      );
+                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -289,18 +344,72 @@ class _BillingWidgetState extends State<BillingWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '09047uef' /* 16 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiary,
-                                          letterSpacing: 0.0,
+                                  StreamBuilder<List<CustomerMeetingRecord>>(
+                                    stream: queryCustomerMeetingRecord(
+                                      queryBuilder: (customerMeetingRecord) =>
+                                          customerMeetingRecord.where(
+                                        'assignee',
+                                        arrayContains: currentUserReference,
+                                      ),
+                                    )..listen((snapshot) async {
+                                        List<CustomerMeetingRecord>
+                                            textCustomerMeetingRecordList =
+                                            snapshot;
+                                        if (_model.textPreviousSnapshot2 !=
+                                                null &&
+                                            !const ListEquality(
+                                                    CustomerMeetingRecordDocumentEquality())
+                                                .equals(
+                                                    textCustomerMeetingRecordList,
+                                                    _model
+                                                        .textPreviousSnapshot2)) {
+                                          _model.avgRev =
+                                              await actions.avgRevenue(
+                                            textCustomerMeetingRecordList
+                                                .map((e) => e.reference)
+                                                .toList(),
+                                          );
+
+                                          setState(() {});
+                                        }
+                                        _model.textPreviousSnapshot2 = snapshot;
+                                      }),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<CustomerMeetingRecord>
+                                          textCustomerMeetingRecordList =
+                                          snapshot.data!;
+                                      return Text(
+                                        valueOrDefault<String>(
+                                          _model.avgRev,
+                                          '0',
                                         ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      );
+                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -342,16 +451,42 @@ class _BillingWidgetState extends State<BillingWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '8i06a33i' /* 16 */,
+                                  FutureBuilder<int>(
+                                    future: queryCustomerCaseRecordCount(
+                                      queryBuilder: (customerCaseRecord) =>
+                                          customerCaseRecord.where(
+                                        'assignee',
+                                        arrayContains: currentUserReference,
+                                      ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          letterSpacing: 0.0,
-                                        ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      int textCount = snapshot.data!;
+                                      return Text(
+                                        textCount.toString(),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      );
+                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -464,16 +599,50 @@ class _BillingWidgetState extends State<BillingWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          '7555kkz0' /* 15 */,
+                                      FutureBuilder<int>(
+                                        future: queryCustomerCaseRecordCount(
+                                          queryBuilder: (customerCaseRecord) =>
+                                              customerCaseRecord
+                                                  .where(
+                                                    'assignee',
+                                                    arrayContains:
+                                                        currentUserReference,
+                                                  )
+                                                  .where(
+                                                    'closed',
+                                                    isEqualTo: false,
+                                                  ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          int textCount = snapshot.data!;
+                                          return Text(
+                                            textCount.toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          );
+                                        },
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -503,16 +672,52 @@ class _BillingWidgetState extends State<BillingWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'zh2k5qza' /* 12 */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
+                                      FutureBuilder<int>(
+                                        future: queryCustomerCaseRecordCount(
+                                          queryBuilder: (customerCaseRecord) =>
+                                              customerCaseRecord
+                                                  .where(Filter.or(
+                                            Filter(
+                                              'assignee',
+                                              arrayContains:
+                                                  currentUserReference,
                                             ),
+                                            Filter(
+                                              'closed',
+                                              isEqualTo: true,
+                                            ),
+                                          )),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          int textCount = snapshot.data!;
+                                          return Text(
+                                            textCount.toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          );
+                                        },
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1093,297 +1298,305 @@ class _BillingWidgetState extends State<BillingWidget>
                   ).animateOnPageLoad(
                       animationsMap['containerOnPageLoadAnimation5']!),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 24.0),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
-                        BoxShadow(
-                          blurRadius: 3.0,
-                          color: Color(0x33000000),
-                          offset: Offset(
-                            0.0,
-                            1.0,
-                          ),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'tbl1a9zo' /* Recent Activity */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    letterSpacing: 0.0,
-                                  ),
+                if (false)
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 24.0),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        boxShadow: const [
+                          BoxShadow(
+                            blurRadius: 3.0,
+                            color: Color(0x33000000),
+                            offset: Offset(
+                              0.0,
+                              1.0,
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'lt3eh3lg' /* Below is an overview of tasks ... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 32.0,
-                                  constraints: const BoxConstraints(
-                                    maxHeight: 32.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.radio_button_checked_sharp,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 20.0,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'o9pxfyek' /* Tasks */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  height: 32.0,
-                                  constraints: const BoxConstraints(
-                                    maxHeight: 32.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.radio_button_checked_sharp,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
-                                          size: 20.0,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'k004vzd6' /* Completed */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  height: 32.0,
-                                  constraints: const BoxConstraints(
-                                    maxHeight: 32.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.radio_button_checked_sharp,
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiary,
-                                          size: 20.0,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'qffzuink' /* active */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 16.0, 0.0),
-                            child: SizedBox(
-                              width: double.infinity,
-                              height: 200.0,
-                              child: FlutterFlowLineChart(
-                                data: [
-                                  FFLineChartData(
-                                    xData: List.generate(
-                                        random_data.randomInteger(5, 5),
-                                        (index) =>
-                                            random_data.randomInteger(0, 10)),
-                                    yData: List.generate(
-                                        random_data.randomInteger(5, 5),
-                                        (index) =>
-                                            random_data.randomInteger(0, 10)),
-                                    settings: LineChartBarData(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      barWidth: 2.0,
-                                      isCurved: true,
-                                      preventCurveOverShooting: true,
-                                      dotData: FlDotData(show: false),
-                                      belowBarData: BarAreaData(
-                                        show: true,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                      ),
-                                    ),
-                                  ),
-                                  FFLineChartData(
-                                    xData: List.generate(
-                                        random_data.randomInteger(5, 5),
-                                        (index) =>
-                                            random_data.randomInteger(0, 200)),
-                                    yData: List.generate(
-                                        random_data.randomInteger(5, 5),
-                                        (index) =>
-                                            random_data.randomInteger(0, 200)),
-                                    settings: LineChartBarData(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      barWidth: 2.0,
-                                      isCurved: true,
-                                      preventCurveOverShooting: true,
-                                      dotData: FlDotData(show: false),
-                                      belowBarData: BarAreaData(
-                                        show: true,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent2,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                                chartStylingInfo: ChartStylingInfo(
-                                  enableTooltip: true,
-                                  backgroundColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  showBorder: false,
-                                ),
-                                axisBounds: const AxisBounds(),
-                                xAxisLabelInfo: AxisLabelInfo(
-                                  title: FFLocalizations.of(context).getText(
-                                    'n5enl3o2' /* Last 30 Days */,
-                                  ),
-                                  titleTextStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                yAxisLabelInfo: AxisLabelInfo(
-                                  title: FFLocalizations.of(context).getText(
-                                    'wz1he5cw' /* average */,
-                                  ),
-                                  titleTextStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          )
                         ],
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                  ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation6']!),
-                ),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'tbl1a9zo' /* Recent Activity */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'lt3eh3lg' /* Below is an overview of tasks ... */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 32.0,
+                                    constraints: const BoxConstraints(
+                                      maxHeight: 32.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.radio_button_checked_sharp,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 20.0,
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'o9pxfyek' /* Tasks */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 32.0,
+                                    constraints: const BoxConstraints(
+                                      maxHeight: 32.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.radio_button_checked_sharp,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            size: 20.0,
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'k004vzd6' /* Completed */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 32.0,
+                                    constraints: const BoxConstraints(
+                                      maxHeight: 32.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.radio_button_checked_sharp,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiary,
+                                            size: 20.0,
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'qffzuink' /* active */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 16.0, 16.0, 0.0),
+                              child: SizedBox(
+                                width: double.infinity,
+                                height: 200.0,
+                                child: FlutterFlowLineChart(
+                                  data: [
+                                    FFLineChartData(
+                                      xData: List.generate(
+                                          random_data.randomInteger(5, 5),
+                                          (index) =>
+                                              random_data.randomInteger(0, 10)),
+                                      yData: List.generate(
+                                          random_data.randomInteger(5, 5),
+                                          (index) =>
+                                              random_data.randomInteger(0, 10)),
+                                      settings: LineChartBarData(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        barWidth: 2.0,
+                                        isCurved: true,
+                                        preventCurveOverShooting: true,
+                                        dotData: FlDotData(show: false),
+                                        belowBarData: BarAreaData(
+                                          show: true,
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent1,
+                                        ),
+                                      ),
+                                    ),
+                                    FFLineChartData(
+                                      xData: List.generate(
+                                          random_data.randomInteger(5, 5),
+                                          (index) => random_data.randomInteger(
+                                              0, 200)),
+                                      yData: List.generate(
+                                          random_data.randomInteger(5, 5),
+                                          (index) => random_data.randomInteger(
+                                              0, 200)),
+                                      settings: LineChartBarData(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        barWidth: 2.0,
+                                        isCurved: true,
+                                        preventCurveOverShooting: true,
+                                        dotData: FlDotData(show: false),
+                                        belowBarData: BarAreaData(
+                                          show: true,
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent2,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                  chartStylingInfo: ChartStylingInfo(
+                                    enableTooltip: true,
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                    showBorder: false,
+                                  ),
+                                  axisBounds: const AxisBounds(),
+                                  xAxisLabelInfo: AxisLabelInfo(
+                                    title: FFLocalizations.of(context).getText(
+                                      'n5enl3o2' /* Last 30 Days */,
+                                    ),
+                                    titleTextStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  yAxisLabelInfo: AxisLabelInfo(
+                                    title: FFLocalizations.of(context).getText(
+                                      'wz1he5cw' /* average */,
+                                    ),
+                                    titleTextStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ).animateOnPageLoad(
+                        animationsMap['containerOnPageLoadAnimation6']!),
+                  ),
               ],
             ),
           ),

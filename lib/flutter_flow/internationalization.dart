@@ -429,14 +429,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Search for patients...',
       'en': '',
     },
-    'jdtid1h4': {
-      'de': 'Users matching search',
-      'en': '',
-    },
-    'xi6lsjxk': {
-      'de': '24',
-      'en': '',
-    },
     'a89yjpln': {
       'de': 'Team-Members',
       'en': '',
@@ -903,24 +895,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Below is a summary of your activity.',
       'en': '',
     },
-    'zqnhft9d': {
-      'de': '16',
-      'en': '',
-    },
     'erv5taj4': {
       'de': 'Money Earned',
       'en': '',
     },
-    '09047uef': {
-      'de': '16',
-      'en': '',
-    },
     'v8r4lbgu': {
       'de': 'Average Billing',
-      'en': '',
-    },
-    '8i06a33i': {
-      'de': '16',
       'en': '',
     },
     'q052w4ks': {
@@ -935,16 +915,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'An overview of your customer jobs.',
       'en': '',
     },
-    '7555kkz0': {
-      'de': '15',
-      'en': '',
-    },
     'l7ujfjr3': {
       'de': 'current customers',
-      'en': '',
-    },
-    'zh2k5qza': {
-      'de': '12',
       'en': '',
     },
     'b7abegxd': {

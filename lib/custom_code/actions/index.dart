@@ -7,3 +7,5 @@ export 'get_customer_from_doc_ref.dart' show getCustomerFromDocRef;
 export 'get_users_from_ref.dart' show getUsersFromRef;
 export 'get_i_t_skills_from_doc_refs.dart' show getITSkillsFromDocRefs;
 export 'get_languages_from_doc_refs.dart' show getLanguagesFromDocRefs;
+export 'avg_revenue.dart' show avgRevenue;
+export 'total_revenue.dart' show totalRevenue;
