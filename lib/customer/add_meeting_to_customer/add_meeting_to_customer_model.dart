@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -23,6 +24,8 @@ class AddMeetingToCustomerModel
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
   DocumentReference? customer;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CustomerMeetingRecord? caseID;
 
   @override
   void initState(BuildContext context) {

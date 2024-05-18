@@ -34,12 +34,7 @@ class _AddMeetingToCustomerWidgetState
     _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
     _model.durationFocusNode!.addListener(() => setState(() {}));
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.durationTextController?.text =
-              FFLocalizations.of(context).getText(
-            'va8l0m2g' /* 0.0 */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -307,7 +302,7 @@ class _AddMeetingToCustomerWidgetState
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'r6ia2iua' /* duration */,
+                                      'r6ia2iua' /* 0.0 */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -399,7 +394,9 @@ class _AddMeetingToCustomerWidgetState
                           FFAppState().customerRef,
                         );
 
-                        await CustomerMeetingRecord.collection.doc().set({
+                        var customerMeetingRecordReference =
+                            CustomerMeetingRecord.collection.doc();
+                        await customerMeetingRecordReference.set({
                           ...createCustomerMeetingRecordData(
                             customer: _model.customer,
                             date: _model.calendarSelectedDay?.start,
@@ -409,6 +406,29 @@ class _AddMeetingToCustomerWidgetState
                           ...mapToFirestore(
                             {
                               'assignee': _model.tutors,
+                            },
+                          ),
+                        });
+                        _model.caseID =
+                            CustomerMeetingRecord.getDocumentFromData({
+                          ...createCustomerMeetingRecordData(
+                            customer: _model.customer,
+                            date: _model.calendarSelectedDay?.start,
+                            duration: double.tryParse(
+                                _model.durationTextController.text),
+                          ),
+                          ...mapToFirestore(
+                            {
+                              'assignee': _model.tutors,
+                            },
+                          ),
+                        }, customerMeetingRecordReference);
+
+                        await FFAppState().caseRef!.update({
+                          ...mapToFirestore(
+                            {
+                              'meetings': FieldValue.arrayUnion(
+                                  [_model.caseID?.reference]),
                             },
                           ),
                         });

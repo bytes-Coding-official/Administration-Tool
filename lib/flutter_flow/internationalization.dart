@@ -259,40 +259,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'ID:',
       'en': '',
     },
-    'zoky65cv': {
+    'zth6pmrx': {
       'de': 'Name',
       'en': '',
     },
-    'e7pptfw3': {
+    'zcky4q27': {
       'de': 'Mail',
       'en': '',
     },
-    'zuo79meh': {
+    '3vdj5xao': {
       'de': 'Adress',
       'en': '',
     },
-    'hm1mdep4': {
+    'ijf50jfa': {
       'de': 'Themes',
       'en': '',
     },
-    '5by36n0f': {
+    'u66lonhl': {
       'de': 'Languages',
       'en': '',
     },
-    '1orw18k3': {
+    '3kybzbsy': {
       'de': 'Revenue',
       'en': '',
     },
-    '4hxa3yz1': {
+    '9om6blwi': {
       'de': 'Add meeting to user',
       'en': '',
     },
-    '8okubqr7': {
-      'de': 'Hours',
+    'eneerc8o': {
+      'de': 'Case Duration',
       'en': '',
     },
-    't85p1c33': {
-      'de': 'Tutor',
+    '55ok6p95': {
+      'de': 'Case Betreuer',
       'en': '',
     },
     'ld5qx0de': {
@@ -876,7 +876,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Update Ticket',
       'en': '',
     },
-    'ob8i4jml': {
+    'oo1fqm48': {
       'de': 'Ticket',
       'en': '',
     },
@@ -1269,10 +1269,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'r6ia2iua': {
-      'de': 'duration',
-      'en': '',
-    },
-    'va8l0m2g': {
       'de': '0.0',
       'en': '',
     },

@@ -1554,7 +1554,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                         if (valueOrDefault(
                                                 currentUserDocument?.role,
                                                 '') ==
-                                            'Administrator') {
+                                            'Manager') {
                                           var confirmDialogResponse =
                                               await showDialog<bool>(
                                                     context: context,
@@ -2150,7 +2150,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                         if (valueOrDefault(
                                                 currentUserDocument?.role,
                                                 '') ==
-                                            'Administrator') {
+                                            'Manager') {
                                           var confirmDialogResponse =
                                               await showDialog<bool>(
                                                     context: context,

@@ -56,6 +56,11 @@ class CustomerCaseRecord extends FirestoreRecord {
   bool get closed => _closed ?? false;
   bool hasClosed() => _closed != null;
 
+  // "meetings" field.
+  List<DocumentReference>? _meetings;
+  List<DocumentReference> get meetings => _meetings ?? const [];
+  bool hasMeetings() => _meetings != null;
+
   void _initializeFields() {
     _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
@@ -65,6 +70,7 @@ class CustomerCaseRecord extends FirestoreRecord {
     _topics = getDataList(snapshotData['topics']);
     _customer = snapshotData['customer'] as DocumentReference?;
     _closed = snapshotData['closed'] as bool?;
+    _meetings = getDataList(snapshotData['meetings']);
   }
 
   static CollectionReference get collection =>
@@ -137,7 +143,8 @@ class CustomerCaseRecordDocumentEquality
         listEquality.equals(e1?.assignee, e2?.assignee) &&
         listEquality.equals(e1?.topics, e2?.topics) &&
         e1?.customer == e2?.customer &&
-        e1?.closed == e2?.closed;
+        e1?.closed == e2?.closed &&
+        listEquality.equals(e1?.meetings, e2?.meetings);
   }
 
   @override
@@ -149,7 +156,8 @@ class CustomerCaseRecordDocumentEquality
         e?.assignee,
         e?.topics,
         e?.customer,
-        e?.closed
+        e?.closed,
+        e?.meetings
       ]);
 
   @override

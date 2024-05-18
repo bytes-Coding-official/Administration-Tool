@@ -34,6 +34,12 @@ class FFAppState extends ChangeNotifier {
     _customerRef = value;
   }
 
+  DocumentReference? _caseRef;
+  DocumentReference? get caseRef => _caseRef;
+  set caseRef(DocumentReference? value) {
+    _caseRef = value;
+  }
+
   final _userDocQueryManager = FutureRequestManager<UsersRecord>();
   Future<UsersRecord> userDocQuery({
     String? uniqueQueryKey,

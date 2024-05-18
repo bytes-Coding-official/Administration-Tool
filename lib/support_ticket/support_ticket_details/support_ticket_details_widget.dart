@@ -76,7 +76,7 @@ class _SupportTicketDetailsWidgetState
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'ob8i4jml' /* Ticket */,
+                  'oo1fqm48' /* Ticket */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
