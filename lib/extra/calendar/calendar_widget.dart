@@ -168,6 +168,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                         .secondaryText,
                                     weekFormat: false,
                                     weekStartsMonday: true,
+                                    initialDate: getCurrentTimestamp,
                                     onChange: (DateTimeRange? newSelectedDate) {
                                       setState(() =>
                                           _model.calendarSelectedDay1 =

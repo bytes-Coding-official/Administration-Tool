@@ -98,6 +98,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
+          primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -120,97 +121,103 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget> {
                   ),
                 ],
               ),
-              PagedListView<DocumentSnapshot<Object?>?, LanguageRecord>(
-                pagingController: _model.setListViewController(
-                    LanguageRecord.collection(currentUserReference),
-                    parent: currentUserReference),
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                reverse: false,
-                scrollDirection: Axis.vertical,
-                builderDelegate: PagedChildBuilderDelegate<LanguageRecord>(
-                  // Customize what your widget looks like when it's loading the first page.
-                  firstPageProgressIndicatorBuilder: (_) => Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                child:
+                    PagedListView<DocumentSnapshot<Object?>?, LanguageRecord>(
+                  pagingController: _model.setListViewController(
+                      LanguageRecord.collection(currentUserReference),
+                      parent: currentUserReference),
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  reverse: false,
+                  scrollDirection: Axis.vertical,
+                  builderDelegate: PagedChildBuilderDelegate<LanguageRecord>(
+                    // Customize what your widget looks like when it's loading the first page.
+                    firstPageProgressIndicatorBuilder: (_) => Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  // Customize what your widget looks like when it's loading another page.
-                  newPageProgressIndicatorBuilder: (_) => Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
+                    // Customize what your widget looks like when it's loading another page.
+                    newPageProgressIndicatorBuilder: (_) => Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
                         ),
                       ),
                     ),
-                  ),
 
-                  itemBuilder: (context, _, listViewIndex) {
-                    final listViewLanguageRecord = _model
-                        .listViewPagingController!.itemList![listViewIndex];
-                    return Container(
-                      width: 100.0,
-                      height: 50.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: ToggleIcon(
-                              onPressed: () async {
-                                await listViewLanguageRecord.reference.update({
-                                  ...mapToFirestore(
-                                    {
-                                      'selected':
-                                          !listViewLanguageRecord.selected,
-                                    },
-                                  ),
-                                });
-                              },
-                              value: listViewLanguageRecord.selected,
-                              onIcon: Icon(
-                                Icons.check_box,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 25.0,
-                              ),
-                              offIcon: Icon(
-                                Icons.check_box_outline_blank,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 25.0,
+                    itemBuilder: (context, _, listViewIndex) {
+                      final listViewLanguageRecord = _model
+                          .listViewPagingController!.itemList![listViewIndex];
+                      return Container(
+                        width: 100.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: ToggleIcon(
+                                onPressed: () async {
+                                  await listViewLanguageRecord.reference
+                                      .update({
+                                    ...mapToFirestore(
+                                      {
+                                        'selected':
+                                            !listViewLanguageRecord.selected,
+                                      },
+                                    ),
+                                  });
+                                },
+                                value: listViewLanguageRecord.selected,
+                                onIcon: Icon(
+                                  Icons.check_box,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 25.0,
+                                ),
+                                offIcon: Icon(
+                                  Icons.check_box_outline_blank,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 25.0,
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              listViewLanguageRecord.name,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                listViewLanguageRecord.name,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],

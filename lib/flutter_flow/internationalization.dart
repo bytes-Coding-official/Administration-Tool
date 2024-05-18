@@ -255,6 +255,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Customer
   {
+    'e1jwqeb7': {
+      'de': 'ID:',
+      'en': '',
+    },
     'zoky65cv': {
       'de': 'Name',
       'en': '',
@@ -297,10 +301,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't85p1c33': {
       'de': 'Tutor',
-      'en': '',
-    },
-    'e1jwqeb7': {
-      'de': 'ID:',
       'en': '',
     },
     'ld5qx0de': {

@@ -1,5 +1,5 @@
 // Export pages
-export '/profile/profile_settings/profile_settings_widget.dart'
+export '/account_profile_creation/profile_settings/profile_settings_widget.dart'
     show ProfileSettingsWidget;
 export '/account_profile_creation/adress_settings/adress_settings_widget.dart'
     show AdressSettingsWidget;

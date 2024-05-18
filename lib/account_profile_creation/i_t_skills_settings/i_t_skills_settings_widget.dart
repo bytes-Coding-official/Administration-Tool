@@ -103,6 +103,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget> {
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
+          primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

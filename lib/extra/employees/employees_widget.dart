@@ -199,6 +199,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                           snapshot.data!;
                       return ListView.builder(
                         padding: EdgeInsets.zero,
+                        shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         itemCount: listViewUsersRecordList.length,
                         itemBuilder: (context, listViewIndex) {
