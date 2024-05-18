@@ -30,6 +30,8 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
     super.initState();
     _model = createModel(context, () => ProfileSettingsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'ProfileSettings'});
     _model.textController1 ??=
         TextEditingController(text: currentUserDisplayName);
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -83,6 +85,9 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
             size: 25.0,
           ),
           onPressed: () async {
+            logFirebaseEvent('PROFILE_SETTINGS_arrow_back_rounded_ICN_');
+            logFirebaseEvent('IconButton_navigate_to');
+
             context.pushNamed('auth_2_Profile');
           },
         ),
@@ -92,7 +97,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                'ripwkxbx' /* Complete Profile */,
+                'fcx17xnl' /* Complete Profile */,
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Inter',
@@ -104,7 +109,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'nwmcg0k4' /* Complete your Profile-Settings */,
+                  '50p3dqj6' /* Complete your Profile-Settings */,
                 ),
                 textAlign: TextAlign.start,
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -146,7 +151,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        '9fqt11ur' /* Your information */,
+                        'dkq1ryfg' /* Your information */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
@@ -179,7 +184,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'xvmlg8yu' /* Your Name */,
+                                    'xt634rup' /* Your Name */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -255,7 +260,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '0bk2fxt7' /* Email */,
+                                  'zx5xaek7' /* Email */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -264,7 +269,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'yhne5pu7' /* Email */,
+                                  'svckxjk7' /* Email */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -335,7 +340,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'soor353d' /* Phone */,
+                                    'ka02yxp3' /* Phone */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -344,7 +349,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '79iw0yb3' /* Phone */,
+                                    '58pt8dru' /* Phone */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -410,10 +415,14 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               0.0, 15.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'PROFILE_SETTINGS_CHANGE_ADRESS_BTN_ON_TA');
+                              logFirebaseEvent('Button_navigate_to');
+
                               context.pushNamed('Adress-Settings');
                             },
                             text: FFLocalizations.of(context).getText(
-                              'qic8hq3l' /* Change Adress */,
+                              'oaa48gll' /* Change Adress */,
                             ),
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
@@ -450,10 +459,14 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               0.0, 10.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'PROFILE_SETTINGS_CHANGE_I_T_SKILLS_BTN_O');
+                              logFirebaseEvent('Button_navigate_to');
+
                               context.pushNamed('IT-Skills-Settings');
                             },
                             text: FFLocalizations.of(context).getText(
-                              'kn9f5n0p' /* Change IT-Skills */,
+                              'w9gnwzri' /* Change IT-Skills */,
                             ),
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
@@ -490,10 +503,14 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               0.0, 10.0, 0.0, 10.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'PROFILE_SETTINGS_CHANGE_LANGUAGES_BTN_ON');
+                              logFirebaseEvent('Button_navigate_to');
+
                               context.pushNamed('Language-Settings');
                             },
                             text: FFLocalizations.of(context).getText(
-                              'gfb94uh4' /* Change Languages */,
+                              'ohebf1ur' /* Change Languages */,
                             ),
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.7,
@@ -534,6 +551,10 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'PROFILE_SETTINGS_SAVE_CHANGES_BTN_ON_TAP');
+                    logFirebaseEvent('Button_backend_call');
+
                     await currentUserReference!.update(createUsersRecordData(
                       email: currentUserEmail,
                       displayName: _model.textController1.text,
@@ -542,7 +563,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                     ));
                   },
                   text: FFLocalizations.of(context).getText(
-                    'c9pjt2by' /* Save Changes */,
+                    'e9h4u4e3' /* Save Changes */,
                   ),
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.7,

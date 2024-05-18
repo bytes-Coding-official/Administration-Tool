@@ -32,6 +32,8 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
     super.initState();
     _model = createModel(context, () => CreateCustomerModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'createCustomer'});
     _model.fullNameTextController ??= TextEditingController();
     _model.fullNameFocusNode ??= FocusNode();
     _model.fullNameFocusNode!.addListener(() => setState(() {}));
@@ -98,7 +100,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '6lhoujzg' /* Patient Intake form */,
+                    'x0gktab6' /* Patient Intake form */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Readex Pro',
@@ -110,7 +112,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'sxwzbsjz' /* Please fill out the form to co... */,
+                    '2ilwg7d0' /* Please fill out the form to co... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -136,6 +138,9 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   size: 24.0,
                 ),
                 onPressed: () async {
+                  logFirebaseEvent('CREATE_CUSTOMER_close_rounded_ICN_ON_TAP');
+                  logFirebaseEvent('IconButton_navigate_to');
+
                   context.pushNamed('Customers');
                 },
               ),
@@ -185,7 +190,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '6nvy4qzi' /* Full name */,
+                                    'ebpqrveb' /* Full name */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -197,7 +202,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'rij8io9s' /* Name */,
+                                    'wl53zgkt' /* Name */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -273,7 +278,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'o2sem55m' /* Phone number */,
+                                    '1qwq52s2' /* Phone number */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -282,7 +287,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    's0aksne6' /* Phone Number */,
+                                    'k42rx09i' /* Phone Number */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -357,7 +362,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'cu1rz8hq' /* E-Mail */,
+                                    'vdzc35iz' /* E-Mail */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -366,7 +371,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'vdzc35iz' /* E-Mail */,
+                                    'cu1rz8hq' /* E-Mail */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -440,7 +445,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'dz8s1veo' /* Street */,
+                                    'w83v5p9g' /* Street */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -449,7 +454,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '4kvp5cnu' /* Street */,
+                                    'dz8s1veo' /* Street */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -523,7 +528,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'vl5t2xru' /* City */,
+                                    '8m7j9wso' /* City */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -532,7 +537,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '8m7j9wso' /* City */,
+                                    'vl5t2xru' /* City */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -606,7 +611,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'as64pn2v' /* Zip */,
+                                    'vkwdzh8z' /* Zip */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -615,7 +620,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'sqb1k3ec' /* Zip */,
+                                    'as64pn2v' /* Zip */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -689,7 +694,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'naeu1u2u' /* Country */,
+                                    'hgyxigwg' /* Country */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -698,7 +703,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    's6h1wnxo' /* Country */,
+                                    'naeu1u2u' /* Country */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -765,7 +770,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'plywg53q' /* Languages */,
+                                  'qzvdq8bg' /* Languages */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -825,7 +830,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'xwrgxre7' /* Customer Languages */,
+                                      '7kfa0wi0' /* Customer Languages */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -864,10 +869,14 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'CREATE_CUSTOMER_ADD_CUSTOMER_BTN_ON_TAP');
+                        logFirebaseEvent('Button_custom_action');
                         _model.languages =
                             await actions.getLanguagesFromDocRefs(
                           _model.dropDownValue!.toList(),
                         );
+                        logFirebaseEvent('Button_backend_call');
 
                         await CustomerRecord.collection.doc().set({
                           ...createCustomerRecordData(
@@ -885,6 +894,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             },
                           ),
                         });
+                        logFirebaseEvent('Button_alert_dialog');
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
@@ -902,12 +912,13 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button_update_app_state');
                         FFAppState().update(() {});
 
                         setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
-                        'offuqx3a' /* Add Customer */,
+                        'hb047u9p' /* Add Customer */,
                       ),
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.5,

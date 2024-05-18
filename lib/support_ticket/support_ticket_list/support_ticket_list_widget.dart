@@ -32,6 +32,8 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
     super.initState();
     _model = createModel(context, () => SupportTicketListModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'support_TicketList'});
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -80,6 +82,8 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('SUPPORT_TICKET_LIST_arrow_back_rounded_I');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -88,7 +92,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'jgiu5cul' /* Support Tickets */,
+                  'b5m54jpy' /* Support Tickets */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -99,7 +103,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '7wf3jvi6' /* Below are a list of recent tic... */,
+                    'y1cphusm' /* Below are a list of recent tic... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -158,6 +162,10 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                 'Ah, you are in luck, none of your support tickets exist.',
                             buttonText: 'Create Ticket',
                             buttonAction: () async {
+                              logFirebaseEvent(
+                                  'SUPPORT_TICKET_LIST_ListView_tr6khhng_CA');
+                              logFirebaseEvent('ListView_navigate_to');
+
                               context.pushNamed('support_SubmitTicket');
                             },
                           ),
@@ -186,6 +194,10 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'SUPPORT_TICKET_LIST_listContainer_ON_TAP');
+                              logFirebaseEvent('listContainer_navigate_to');
+
                               context.pushNamed(
                                 'support_TicketDetails',
                                 queryParameters: {
@@ -200,6 +212,9 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                               );
                             },
                             onLongPress: () async {
+                              logFirebaseEvent(
+                                  'SUPPORT_TICKET_LIST_listContainer_ON_LON');
+                              logFirebaseEvent('listContainer_alert_dialog');
                               var confirmDialogResponse =
                                   await showDialog<bool>(
                                         context: context,
@@ -226,8 +241,10 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                       ) ??
                                       false;
                               if (confirmDialogResponse) {
+                                logFirebaseEvent('listContainer_backend_call');
                                 await listViewSupportTicketsRecord.reference
                                     .delete();
+                                logFirebaseEvent('listContainer_navigate_to');
 
                                 context.pushNamed('support_TicketList');
                               } else {
@@ -515,7 +532,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'jn2h1hyf' /* Ticket #:  */,
+                                                        '8tf2yxr2' /* Ticket #:  */,
                                                       ),
                                                       style: const TextStyle(),
                                                     ),

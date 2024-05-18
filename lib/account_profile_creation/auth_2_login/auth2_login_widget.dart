@@ -29,6 +29,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
     super.initState();
     _model = createModel(context, () => Auth2LoginModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'auth_2_Login'});
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
@@ -133,7 +135,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'q0fsxzm0' /* bytes Coding */,
+                            'b1a1m656' /* bytes Coding */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
@@ -178,7 +180,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'uzd52rew' /* Welcome Back */,
+                                'wc6vlb88' /* Welcome Back */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -193,7 +195,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'fhmtz06t' /* Fill out the information below... */,
+                                  '8yhirh5p' /* Fill out the information below... */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -218,7 +220,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '521io5z7' /* Email */,
+                                      '8ucnopf5' /* Email */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -291,7 +293,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'rvjwy9hf' /* Password */,
+                                      'petfhqha' /* Password */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -369,6 +371,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'AUTH_2_LOGIN_PAGE_SIGN_IN_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_auth');
                                   GoRouter.of(context).prepareAuthEvent();
 
                                   final user =
@@ -385,7 +390,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       'Customers', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '7s7u7cio' /* Sign In */,
+                                  'p3xaauvg' /* Sign In */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
@@ -418,7 +423,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'eiuumfyd' /* Or sign in with */,
+                                    '08btyait' /* Or sign in with */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -436,6 +441,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'AUTH_2_LOGIN_CONTINUE_WITH_GOOGLE_BTN_ON');
+                                    logFirebaseEvent('Button_auth');
                                     GoRouter.of(context).prepareAuthEvent();
                                     final user = await authManager
                                         .signInWithGoogle(context);
@@ -447,7 +455,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         'Customers', context.mounted);
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'krmr3dq1' /* Continue with Google */,
+                                    'pmg4jacf' /* Continue with Google */,
                                   ),
                                   icon: const FaIcon(
                                     FontAwesomeIcons.google,
@@ -490,6 +498,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
+                                          logFirebaseEvent(
+                                              'AUTH_2_LOGIN_CONTINUE_WITH_APPLE_BTN_ON_');
+                                          logFirebaseEvent('Button_auth');
                                           GoRouter.of(context)
                                               .prepareAuthEvent();
                                           final user = await authManager
@@ -503,7 +514,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'phyy4jez' /* Continue with Apple */,
+                                          'lhcickgn' /* Continue with Apple */,
                                         ),
                                         icon: const FaIcon(
                                           FontAwesomeIcons.apple,
@@ -557,6 +568,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'AUTH_2_LOGIN_RichText_011aq0j1_ON_TAP');
+                                    logFirebaseEvent('RichText_navigate_to');
+
                                     context.pushNamed(
                                       'auth_2_Create',
                                       extra: <String, dynamic>{
@@ -577,14 +592,14 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            '13iifah5' /* Don't have an account?   */,
+                                            '8pwvx02e' /* Don't have an account?   */,
                                           ),
                                           style: const TextStyle(),
                                         ),
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'sli3162u' /* Create Account */,
+                                            'mk06lsbv' /* Create Account */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -614,10 +629,14 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   0.0, 16.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'AUTH_2_LOGIN_FORGOT_PASSWORD?_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed('auth_2_ForgotPassword');
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'qnek1332' /* Forgot password? */,
+                                  'ak2gtbko' /* Forgot password? */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,

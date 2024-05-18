@@ -32,8 +32,12 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
     super.initState();
     _model = createModel(context, () => LanguageSettingsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'Language-Settings'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('LANGUAGE_SETTINGS_Language-Settings_ON_I');
+      logFirebaseEvent('Language-Settings_firestore_query');
       await queryLanguagesRecordOnce();
     });
 
@@ -80,6 +84,8 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
             size: 25.0,
           ),
           onPressed: () async {
+            logFirebaseEvent('LANGUAGE_SETTINGS_arrow_back_rounded_ICN');
+            logFirebaseEvent('IconButton_navigate_back');
             context.safePop();
           },
         ),
@@ -89,7 +95,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                'z0f4qgea' /* Complete Languages */,
+                '4bq07mgn' /* Complete Languages */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Readex Pro',
@@ -100,7 +106,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'z16bbiuc' /* Complete your languages */,
+                  'whlv0la7' /* Complete your languages */,
                 ),
                 textAlign: TextAlign.start,
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -130,7 +136,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                         const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'skc9rwus' /* Your Languages */,
+                        'z797zvs5' /* Your Languages */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(

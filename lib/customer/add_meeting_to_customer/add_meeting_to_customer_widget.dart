@@ -35,6 +35,8 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
     super.initState();
     _model = createModel(context, () => AddMeetingToCustomerModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'AddMeetingToCustomer'});
     _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
     _model.durationFocusNode!.addListener(() => setState(() {}));
@@ -88,6 +90,8 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('ADD_MEETING_TO_CUSTOMER_arrow_back_round');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -98,7 +102,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'ndfk8kcd' /* Add Meeting */,
+                    '142c9phq' /* Add Meeting */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Readex Pro',
@@ -112,7 +116,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'r2xd0lgq' /* Add a meeting to a special cus... */,
+                    '6ak09n8d' /* Add a meeting to a special cus... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -158,7 +162,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'c67y3q2q' /* ID: */,
+                                      'fq1mmuz6' /* ID: */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -230,7 +234,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'x52cyluc' /* Tutor */,
+                                      'i5paqfsq' /* Tutor */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -311,7 +315,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'q7gadm3b' /* duration */,
+                                      '22nnbou1' /* duration */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -321,7 +325,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'r6ia2iua' /* 0.0 */,
+                                      'dm5dydjl' /* 0.0 */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -406,12 +410,17 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ADD_MEETING_TO_CUSTOMER_SAVE_BTN_ON_TAP');
+                        logFirebaseEvent('Button_custom_action');
                         _model.tutors = await actions.getUsersFromRef(
                           _model.tutorValue!.toList(),
                         );
+                        logFirebaseEvent('Button_custom_action');
                         _model.customer = await actions.getCustomerFromDocRef(
                           FFAppState().customerRef,
                         );
+                        logFirebaseEvent('Button_backend_call');
 
                         var customerMeetingRecordReference =
                             CustomerMeetingRecord.collection.doc();
@@ -442,6 +451,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             },
                           ),
                         }, customerMeetingRecordReference);
+                        logFirebaseEvent('Button_backend_call');
 
                         await FFAppState().caseRef!.update({
                           ...mapToFirestore(
@@ -451,6 +461,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             },
                           ),
                         });
+                        logFirebaseEvent('Button_alert_dialog');
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
@@ -467,13 +478,14 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.pushNamed('Customer');
 
                         setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
-                        'fsnpjj36' /* Save */,
+                        '0hi0scef' /* Save */,
                       ),
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.5,

@@ -29,6 +29,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
     super.initState();
     _model = createModel(context, () => SideNavModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'sideNav'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -77,6 +78,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('SIDE_NAV_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -87,7 +90,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '95y28kz8' /* Navigation */,
+                    'an40yt0k' /* Navigation */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Readex Pro',
@@ -101,7 +104,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'kwvw1dx0' /* For navigating between screens */,
+                    'r60f84h5' /* For navigating between screens */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -154,7 +157,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'e0uy5mgi' /* bytes Coding */,
+                                    's5ry5cyk' /* bytes Coding */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -183,7 +186,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       16.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'pp11v2d7' /* Platform Navigation */,
+                                      'naqnbvxd' /* Platform Navigation */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -227,7 +230,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'gswosf21' /* Dashboard */,
+                                                  'ryazebh4' /* Dashboard */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -258,7 +261,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'vubzw4fn' /* 12 */,
+                                                    'pb71eaaj' /* 12 */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -289,6 +292,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'SIDE_NAV_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
+
                                       context.pushNamed('chat_2_main');
                                     },
                                     child: AnimatedContainer(
@@ -324,7 +332,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'hlllwdgt' /* Chats */,
+                                                    '9q77itrm' /* Chats */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -355,7 +363,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'uzhek3wf' /* 12 */,
+                                                      'zv4sd9zz' /* 12 */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -390,6 +398,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'SIDE_NAV_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
                                           context
                                               .pushNamed('support_TicketList');
                                         },
@@ -429,7 +442,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'v0595r9p' /* Support Tickets */,
+                                                        '2xnm6fps' /* Support Tickets */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -467,7 +480,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          's25u60xs' /* 12 */,
+                                                          'feent0lc' /* 12 */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -503,6 +516,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'SIDE_NAV_PAGE_contentView_1_ON_TAP');
+                                        logFirebaseEvent(
+                                            'contentView_1_navigate_to');
+
                                         context.pushNamed('Calendar');
                                       },
                                       child: AnimatedContainer(
@@ -527,6 +545,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'SIDE_NAV_PAGE_Row_3zctsocj_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Row_navigate_to');
+
                                               context.pushNamed('Calendar');
                                             },
                                             child: Row(
@@ -549,7 +572,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'duxefwbe' /* Calendar */,
+                                                        '9js2z9y7' /* Calendar */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -573,7 +596,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'l58wwlw0' /* Settings */,
+                                      '8tlki912' /* Settings */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -596,6 +619,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'SIDE_NAV_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
                                           context.pushNamed('Billing');
                                         },
                                         child: AnimatedContainer(
@@ -631,7 +659,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '89bbkkhb' /* Billing */,
+                                                      '5zra02cb' /* Billing */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -658,6 +686,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'SIDE_NAV_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
+
                                       context.pushNamed('Employees');
                                     },
                                     child: AnimatedContainer(
@@ -692,7 +725,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'qasu6joo' /* Members */,
+                                                  'm9ww17s0' /* Members */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -750,6 +783,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'SIDE_NAV_PAGE_Container_1tljlsml_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Container_set_dark_mode_settings');
                                               setDarkModeSetting(
                                                   context, ThemeMode.light);
                                             },
@@ -812,7 +849,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'yf7y8732' /* Light Mode */,
+                                                        '411g996a' /* Light Mode */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -845,6 +882,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'SIDE_NAV_PAGE_Container_dnl95du7_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Container_set_dark_mode_settings');
                                               setDarkModeSetting(
                                                   context, ThemeMode.dark);
                                             },
@@ -907,7 +948,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'lhgm48cm' /* Dark Mode */,
+                                                        'mc7klcgc' /* Dark Mode */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -954,6 +995,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'SIDE_NAV_PAGE_Row_awqyzx0v_ON_TAP');
+                              logFirebaseEvent('Row_navigate_to');
+
                               context.pushNamed('auth_2_Profile');
                             },
                             child: Row(

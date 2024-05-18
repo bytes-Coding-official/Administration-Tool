@@ -106,7 +106,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                       children: [
                         TextSpan(
                           text: FFLocalizations.of(context).getText(
-                            'u7433v0d' /* Group Chat ID:  */,
+                            'a0loq5a6' /* Group Chat ID:  */,
                           ),
                           style: const TextStyle(),
                         ),
@@ -132,7 +132,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'ssykg4s6' /* In this chat */,
+                      'hspne3ym' /* In this chat */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Readex Pro',
@@ -208,7 +208,12 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                         child: DeleteDialogWidget(
                           chatList: widget.chatRef,
                           action: () async {
+                            logFirebaseEvent(
+                                'CHAT_DETAILS_OVERLAY_Container_3qg1tygj_');
+                            logFirebaseEvent(
+                                'deleteDialog_close_dialog,_drawer,_etc');
                             Navigator.pop(context);
+                            logFirebaseEvent('deleteDialog_navigate_to');
 
                             context.pushNamed(
                               'chat_2_InviteUsers',
@@ -230,7 +235,11 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                             );
                           },
                           deleteAction: () async {
+                            logFirebaseEvent(
+                                'CHAT_DETAILS_OVERLAY_Container_3qg1tygj_');
+                            logFirebaseEvent('deleteDialog_backend_call');
                             await widget.chatRef!.reference.delete();
+                            logFirebaseEvent('deleteDialog_show_snack_bar');
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -249,6 +258,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                                     FlutterFlowTheme.of(context).error,
                               ),
                             );
+                            logFirebaseEvent('deleteDialog_navigate_to');
 
                             context.pushNamed(
                               'chat_2_main',
@@ -276,10 +286,12 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                       const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 44.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('CHAT_DETAILS_OVERLAY_CLOSE_BTN_ON_TAP');
+                      logFirebaseEvent('Button_bottom_sheet');
                       Navigator.pop(context);
                     },
                     text: FFLocalizations.of(context).getText(
-                      'bsezz6gy' /* Close */,
+                      '50akzqka' /* Close */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

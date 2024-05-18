@@ -30,6 +30,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
     super.initState();
     _model = createModel(context, () => EmployeesModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Employees'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -81,6 +82,8 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('EMPLOYEES_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -89,7 +92,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'a89yjpln' /* Team-Members */,
+                  'j34sl75v' /* Team-Members */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',
@@ -100,7 +103,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'y7tpy97m' /* All of our Customers & Employe... */,
+                    '73o0o7i4' /* All of our Customers & Employe... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -135,7 +138,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                   decoration: InputDecoration(
                     isDense: false,
                     labelText: FFLocalizations.of(context).getText(
-                      'oitchqzi' /* Search for patients... */,
+                      'lefjjtu5' /* Search for patients... */,
                     ),
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
@@ -225,6 +228,9 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'EMPLOYEES_PAGE_Container_d6fdwkqn_ON_TAP');
+                                logFirebaseEvent('Container_send_email');
                                 await launchUrl(Uri(
                                     scheme: 'mailto',
                                     path: listViewUsersRecord.email,

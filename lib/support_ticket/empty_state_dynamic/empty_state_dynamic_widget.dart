@@ -89,6 +89,8 @@ class _EmptyStateDynamicWidgetState extends State<EmptyStateDynamicWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
+                logFirebaseEvent('EMPTY_STATE_DYNAMIC_FIND_FRIENDS_BTN_ON_');
+                logFirebaseEvent('Button_execute_callback');
                 await widget.buttonAction?.call();
               },
               text: widget.buttonText,

@@ -41,16 +41,21 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
     super.initState();
     _model = createModel(context, () => Chat2InviteUsersModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'chat_2_InviteUsers'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('CHAT_2_INVITE_USERS_chat_2_InviteUsers_O');
       if (widget.chatRef != null) {
         // addChatUsers_ToList
+        logFirebaseEvent('chat_2_InviteUsers_addChatUsers_ToList');
         setState(() {
           _model.friendsList =
               widget.chatRef!.users.toList().cast<DocumentReference>();
         });
       } else {
         // addUser_ToList
+        logFirebaseEvent('chat_2_InviteUsers_addUser_ToList');
         setState(() {
           _model.addToFriendsList(currentUserReference!);
         });
@@ -100,7 +105,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'v2t6kg15' /* Invite Friends */,
+                  'va53uv9s' /* Invite Friends */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',
@@ -111,7 +116,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'hztshrjj' /* Select users from below to sta... */,
+                    '23ic11yf' /* Select users from below to sta... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
                         fontFamily: 'Inter',
@@ -136,6 +141,8 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                   size: 24.0,
                 ),
                 onPressed: () async {
+                  logFirebaseEvent('CHAT_2_INVITE_USERS_close_rounded_ICN_ON');
+                  logFirebaseEvent('IconButton_navigate_back');
                   context.safePop();
                 },
               ),
@@ -162,7 +169,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '7mh427w4' /* Invite Friends */,
+                              'hopvi9vs' /* Invite Friends */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -195,7 +202,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                             const EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'rrcmh2eo' /* Selected */,
+                            'ql4fu98g' /* Selected */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -353,14 +360,22 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                                         listViewUsersRecord] =
                                                     newValue!);
                                             if (newValue!) {
+                                              logFirebaseEvent(
+                                                  'CHAT_2_INVITE_USERS_CheckboxListTile_rf5');
                                               // addUser
+                                              logFirebaseEvent(
+                                                  'CheckboxListTile_addUser');
                                               setState(() {
                                                 _model.addToFriendsList(
                                                     listViewUsersRecord
                                                         .reference);
                                               });
                                             } else {
+                                              logFirebaseEvent(
+                                                  'CHAT_2_INVITE_USERS_CheckboxListTile_rf5');
                                               // removeUsser
+                                              logFirebaseEvent(
+                                                  'CheckboxListTile_removeUsser');
                                               setState(() {
                                                 _model.removeFromFriendsList(
                                                     listViewUsersRecord
@@ -450,9 +465,12 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'CHAT_2_INVITE_USERS_SEND_INVITES_BTN_ON_');
                       if (_model.friendsList.length >= 2) {
                         if (widget.chatRef != null) {
                           // updateChat
+                          logFirebaseEvent('Button_updateChat');
 
                           await widget.chatRef!.reference.update({
                             ...mapToFirestore(
@@ -462,6 +480,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                             ),
                           });
                           // updateChat
+                          logFirebaseEvent('Button_updateChat');
                           _model.updatedChatThread = await queryChatsRecordOnce(
                             queryBuilder: (chatsRecord) => chatsRecord.where(
                               'group_chat_id',
@@ -469,6 +488,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                             ),
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
+                          logFirebaseEvent('Button_navigate_to');
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
@@ -486,6 +506,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                           );
                         } else {
                           // newChat
+                          logFirebaseEvent('Button_newChat');
 
                           var chatsRecordReference =
                               ChatsRecord.collection.doc();
@@ -522,6 +543,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                               },
                             ),
                           }, chatsRecordReference);
+                          logFirebaseEvent('Button_navigate_to');
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
@@ -539,6 +561,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                           );
                         }
                       } else {
+                        logFirebaseEvent('Button_show_snack_bar');
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(

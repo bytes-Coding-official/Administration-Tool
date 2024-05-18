@@ -31,6 +31,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
     super.initState();
     _model = createModel(context, () => Chat2MainModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'chat_2_main'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -73,7 +74,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'h9lmzpdm' /* My Chats */,
+                  'rebbm36n' /* My Chats */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                       fontFamily: 'Readex Pro',
@@ -83,7 +84,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  '52hamp16' /* Below are your chats and group... */,
+                  'u78r69oe' /* Below are your chats and group... */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Inter',
@@ -108,6 +109,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                   size: 24.0,
                 ),
                 onPressed: () async {
+                  logFirebaseEvent('CHAT_2_MAIN_PAGE_chevron_left_ICN_ON_TAP');
+                  logFirebaseEvent('IconButton_navigate_to');
+
                   context.pushNamed('Customers');
                 },
               ),
@@ -127,10 +131,13 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent('CHAT_2_MAIN_PAGE_ADD_CHAT_BTN_ON_TAP');
+                    logFirebaseEvent('Button_navigate_to');
+
                     context.pushNamed('chat_2_InviteUsers');
                   },
                   text: FFLocalizations.of(context).getText(
-                    '4wmr0r8x' /* Add Chat */,
+                    '3nlz1j90' /* Add Chat */,
                   ),
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.5,
@@ -196,6 +203,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'CHAT_2_MAIN_Container_o6k4e0od_ON_TAP');
+                              logFirebaseEvent('Container_navigate_to');
+
                               context.pushNamed(
                                 'chat_2_Details',
                                 queryParameters: {
@@ -747,7 +758,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'pk6vja86' /* Group Chat */,
+                                                                    'j81ilpuq' /* Group Chat */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign

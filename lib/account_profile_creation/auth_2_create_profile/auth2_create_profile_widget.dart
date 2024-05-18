@@ -28,6 +28,8 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
     super.initState();
     _model = createModel(context, () => Auth2CreateProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'auth_2_createProfile'});
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -126,7 +128,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'hbab0oa4' /* bytes Coding */,
+                            'erspxmah' /* bytes Coding */,
                           ),
                           textAlign: TextAlign.start,
                           style: FlutterFlowTheme.of(context)
@@ -173,6 +175,10 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                           title: 'Create Profile',
                           confirmButtonText: 'Save & Continue',
                           navigateAction: () async {
+                            logFirebaseEvent(
+                                'AUTH_2_CREATE_PROFILE_Container_ulq8ny8b');
+                            logFirebaseEvent('editProfile_auth_2_navigate_to');
+
                             context.pushNamed('auth_2_Profile');
                           },
                         ),

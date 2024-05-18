@@ -43,6 +43,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('DELETE_DIALOG_deleteDialog_ON_INIT_STATE');
+      logFirebaseEvent('deleteDialog_update_component_state');
       setState(() {
         _model.showDelete = false;
       });
@@ -107,7 +109,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      '13iobm9v' /* Options */,
+                      '3q0utb1e' /* Options */,
                     ),
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -131,6 +133,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('DELETE_DIALOG_COMP_wrapWidget_ON_TAP');
+                      logFirebaseEvent('wrapWidget_execute_callback');
                       await widget.action?.call();
                     },
                     child: AnimatedContainer(
@@ -163,7 +167,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    't9z0aabu' /* Invite Users */,
+                                    '73scs9a0' /* Invite Users */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -199,6 +203,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('DELETE_DIALOG_COMP_component_ON_TAP');
+                      logFirebaseEvent('component_update_component_state');
                       setState(() {
                         _model.showDelete = true;
                       });
@@ -233,7 +239,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'zwifs52e' /* Delete Chat */,
+                                    'av9xz4qx' /* Delete Chat */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -292,7 +298,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                         12.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'bhuh3tfe' /* Confirm Delete */,
+                                        '41tv38n3' /* Confirm Delete */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -308,7 +314,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'orxp2pwr' /* You can't undo this action. */,
+                                        's2cbswob' /* You can't undo this action. */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -330,13 +336,18 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'DELETE_DIALOG_COMP_Text_ucrm0qdq_ON_TAP');
+                                  logFirebaseEvent('Text_navigate_to');
+
                                   context.pushNamed('chat_2_main');
 
+                                  logFirebaseEvent('Text_backend_call');
                                   await widget.chatList!.reference.delete();
                                 },
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'asgxxrtn' /* Delete */,
+                                    'z54qbopv' /* Delete */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium

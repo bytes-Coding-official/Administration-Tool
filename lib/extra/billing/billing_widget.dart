@@ -34,6 +34,7 @@ class _BillingWidgetState extends State<BillingWidget>
     super.initState();
     _model = createModel(context, () => BillingModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Billing'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -160,6 +161,8 @@ class _BillingWidgetState extends State<BillingWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('BILLING_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -169,7 +172,7 @@ class _BillingWidgetState extends State<BillingWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'k2rauewg' /* Customer-Information */,
+                  '8zdbsdy4' /* Customer-Information */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -178,7 +181,7 @@ class _BillingWidgetState extends State<BillingWidget>
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  'zjlnvley' /* Below is a summary of your act... */,
+                  '2mghmw6b' /* Below is a summary of your act... */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Inter',
@@ -262,6 +265,10 @@ class _BillingWidgetState extends State<BillingWidget>
                                                     textCustomerMeetingRecordList,
                                                     _model
                                                         .textPreviousSnapshot1)) {
+                                          logFirebaseEvent(
+                                              'BILLING_Text_1ftk445p_ON_DATA_CHANGE');
+                                          logFirebaseEvent(
+                                              'Text_custom_action');
                                           _model.totalRev =
                                               await actions.totalRevenue(
                                             textCustomerMeetingRecordList
@@ -315,7 +322,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'erv5taj4' /* Money Earned */,
+                                        'joipmprf' /* Money Earned */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -369,6 +376,10 @@ class _BillingWidgetState extends State<BillingWidget>
                                                     textCustomerMeetingRecordList,
                                                     _model
                                                         .textPreviousSnapshot2)) {
+                                          logFirebaseEvent(
+                                              'BILLING_Text_ru1otrw6_ON_DATA_CHANGE');
+                                          logFirebaseEvent(
+                                              'Text_custom_action');
                                           _model.avgRev =
                                               await actions.avgRevenue(
                                             textCustomerMeetingRecordList
@@ -422,7 +433,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'v8r4lbgu' /* Average Billing */,
+                                        'bvrj937a' /* Average Billing */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -499,7 +510,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'q052w4ks' /* Total Customers */,
+                                        'ucngtba5' /* Total Customers */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -562,7 +573,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          '7r9fetyx' /* Customer-Information */,
+                                          'dbqutbci' /* Customer-Information */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -576,7 +587,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '2a6qa21y' /* An overview of your customer j... */,
+                                            'llfx7g5q' /* An overview of your customer j... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -655,7 +666,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'l7ujfjr3' /* current customers */,
+                                            'fxfdsogo' /* current customers */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -730,7 +741,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'b7abegxd' /* completed customers */,
+                                            '6l634rov' /* completed customers */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -791,7 +802,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '4lyb5w7t' /* Customer-Cases */,
+                                        '82u69mor' /* Customer-Cases */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
@@ -805,7 +816,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'gcjeqtnc' /* A summary of your current cust... */,
+                                          'fnw01e3l' /* A summary of your current cust... */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -911,7 +922,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                                     text: FFLocalizations.of(
                                                             context)
                                                         .getText(
-                                                      '850spocz' /* ID#:  */,
+                                                      'msp77w1m' /* ID#:  */,
                                                     ),
                                                     style: const TextStyle(),
                                                   ),
@@ -1336,7 +1347,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   16.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'tbl1a9zo' /* Recent Activity */,
+                                  'w0tdj7p3' /* Recent Activity */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -1351,7 +1362,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   16.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'lt3eh3lg' /* Below is an overview of tasks ... */,
+                                  '17ihzxhi' /* Below is an overview of tasks ... */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -1399,7 +1410,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'o9pxfyek' /* Tasks */,
+                                                'fcxcsakp' /* Tasks */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1445,7 +1456,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'k004vzd6' /* Completed */,
+                                                '0nc0tkvo' /* Completed */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1491,7 +1502,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'qffzuink' /* active */,
+                                                '2dixago6' /* active */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1574,7 +1585,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   axisBounds: const AxisBounds(),
                                   xAxisLabelInfo: AxisLabelInfo(
                                     title: FFLocalizations.of(context).getText(
-                                      'n5enl3o2' /* Last 30 Days */,
+                                      'p31pafw5' /* Last 30 Days */,
                                     ),
                                     titleTextStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1585,7 +1596,7 @@ class _BillingWidgetState extends State<BillingWidget>
                                   ),
                                   yAxisLabelInfo: AxisLabelInfo(
                                     title: FFLocalizations.of(context).getText(
-                                      'wz1he5cw' /* average */,
+                                      't6p8ypnx' /* average */,
                                     ),
                                     titleTextStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium

@@ -37,6 +37,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
     super.initState();
     _model = createModel(context, () => CustomersModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Customers'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -122,7 +123,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'zqwo0dd7' /* bytes Coding */,
+                                    '3xmp7l5l' /* bytes Coding */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -150,7 +151,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'esd39a7g' /* Platform Navigation */,
+                                    'ugt68zzx' /* Platform Navigation */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -193,7 +194,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'psigi6xv' /* Dashboard */,
+                                                '15s2dq8x' /* Dashboard */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -222,7 +223,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'r8d3kqyy' /* 12 */,
+                                                  '6g8wo7v3' /* 12 */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -252,6 +253,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                    logFirebaseEvent(
+                                        'contentView_1_navigate_to');
+
                                     context.pushNamed('chat_2_main');
                                   },
                                   child: AnimatedContainer(
@@ -285,7 +291,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'hxcz1jc2' /* Chats */,
+                                                  'lusq685u' /* Chats */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -316,7 +322,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'l0k9ix61' /* 12 */,
+                                                    '5zyogc9t' /* 12 */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -352,6 +358,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                        logFirebaseEvent(
+                                            'contentView_1_navigate_to');
+
                                         context.pushNamed('support_TicketList');
                                       },
                                       child: AnimatedContainer(
@@ -388,7 +399,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'e8jrr9q8' /* Support Tickets */,
+                                                      'uc1usyqa' /* Support Tickets */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -423,7 +434,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'lqrw1yo4' /* 12 */,
+                                                        'uuz9xwx4' /* 12 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -456,6 +467,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
+
                                       context.pushNamed('Calendar');
                                     },
                                     child: AnimatedContainer(
@@ -479,6 +495,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
+                                            logFirebaseEvent(
+                                                'CUSTOMERS_PAGE_Row_t8mhk7ba_ON_TAP');
+                                            logFirebaseEvent('Row_navigate_to');
+
                                             context.pushNamed('Calendar');
                                           },
                                           child: Row(
@@ -499,7 +519,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'yqwk5rl1' /* Calendar */,
+                                                      'mzevq165' /* Calendar */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -523,7 +543,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'sjcq2pi2' /* Settings */,
+                                    '12tpf17h' /* Settings */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -546,6 +566,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                        logFirebaseEvent(
+                                            'contentView_1_navigate_to');
+
                                         context.pushNamed('Billing');
                                       },
                                       child: AnimatedContainer(
@@ -581,7 +606,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'c0ayt1nh' /* Billing */,
+                                                    'xahmx4lz' /* Billing */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -608,6 +633,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                    logFirebaseEvent(
+                                        'contentView_1_navigate_to');
+
                                     context.pushNamed('Employees');
                                   },
                                   child: AnimatedContainer(
@@ -640,7 +670,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'k0goh3x6' /* Members */,
+                                                'azmu0lbt' /* Members */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -697,6 +727,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'CUSTOMERS_PAGE_Container_ab26ogw8_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Container_set_dark_mode_settings');
                                               setDarkModeSetting(
                                                   context, ThemeMode.light);
                                             },
@@ -759,7 +793,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'gc74imeq' /* Light Mode */,
+                                                        'nllrgk2r' /* Light Mode */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -792,6 +826,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'CUSTOMERS_PAGE_Container_rmc3g7in_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Container_set_dark_mode_settings');
                                               setDarkModeSetting(
                                                   context, ThemeMode.dark);
                                             },
@@ -854,7 +892,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'xkgmf9zq' /* Dark Mode */,
+                                                        'jncjn9nc' /* Dark Mode */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -901,6 +939,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'CUSTOMERS_PAGE_Row_b7epma2c_ON_TAP');
+                              logFirebaseEvent('Row_navigate_to');
+
                               context.pushNamed(
                                 'auth_2_Profile',
                                 extra: <String, dynamic>{
@@ -1036,6 +1078,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         size: 24.0,
                                       ),
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'CUSTOMERS_PAGE_add_ICN_ON_TAP');
+                                        logFirebaseEvent(
+                                            'IconButton_navigate_to');
+
                                         context.pushNamed('sideNav');
                                       },
                                     ),
@@ -1051,7 +1098,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'phwjo5xq' /* Projects Overview */,
+                                            'tmoj32d1' /* Projects Overview */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -1063,7 +1110,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'bgi47c1l' /* Review the details below of al... */,
+                                          'ohbxki3q' /* Review the details below of al... */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -1120,22 +1167,22 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'apwtdsiq' /* All */,
+                                                  'p942dt14' /* All */,
                                                 )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '4x13kefg' /* Own Projects */,
+                                                  'ntn7402o' /* Own Projects */,
                                                 )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'mb94ajo3' /* Others */,
+                                                  'o6dzwlaw' /* Others */,
                                                 )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'vt6ohljs' /* Closed */,
+                                                  '4zt58o1s' /* Closed */,
                                                 ))
                                               ],
                                               onChanged: (val) => setState(() =>
@@ -1207,7 +1254,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 [
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '30m9wopn' /* All */,
+                                                    'mzguga2z' /* All */,
                                                   )
                                                 ],
                                               ),
@@ -1240,7 +1287,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'sphwk62r' /* Filters */,
+                                                    'xzbp5c59' /* Filters */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -1253,7 +1300,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'rhek6d4j' /* Filter here... */,
+                                                    'ahzd947o' /* Filter here... */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -1356,7 +1403,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'xbcdougq' /* Filter */,
+                                                '73gv4wgu' /* Filter */,
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
@@ -1368,7 +1415,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               hintText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'h2vputm1' /* Filter here... */,
+                                                'efbd6j4b' /* Filter here... */,
                                               ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
@@ -1451,10 +1498,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
+                                        logFirebaseEvent('Button_navigate_to');
+
                                         context.pushNamed('createCustomer');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'tmf3yzsp' /* Add Customer */,
+                                        'hv1ie1b8' /* Add Customer */,
                                       ),
                                       options: FFButtonOptions(
                                         width:
@@ -1486,16 +1537,21 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'CUSTOMERS_PAGE_ADD_CASE_BTN_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Button_update_app_state');
                                         setState(() {
                                           FFAppState().caseid = random_data
                                               .randomInteger(1, 9999999)
                                               .toString();
                                         });
+                                        logFirebaseEvent('Button_navigate_to');
 
                                         context.pushNamed('CreateCase');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'ju1pli0v' /* Add Case */,
+                                        'l9lhumzm' /* Add Case */,
                                       ),
                                       options: FFButtonOptions(
                                         width:
@@ -1597,11 +1653,17 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_PAGE_listContainer_ON_TAP');
+                                          logFirebaseEvent(
+                                              'listContainer_update_app_state');
                                           setState(() {
                                             FFAppState().caseid =
                                                 mobileViewCustomerCaseRecord
                                                     .caseid;
                                           });
+                                          logFirebaseEvent(
+                                              'listContainer_navigate_to');
 
                                           context.pushNamed(
                                             'Customer',
@@ -1618,10 +1680,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           );
                                         },
                                         onLongPress: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_listContainer_ON_LONG_PRESS');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
                                                   '') ==
                                               'Manager') {
+                                            logFirebaseEvent(
+                                                'listContainer_alert_dialog');
                                             var confirmDialogResponse =
                                                 await showDialog<bool>(
                                                       context: context,
@@ -1654,9 +1720,13 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                     ) ??
                                                     false;
                                             if (confirmDialogResponse) {
+                                              logFirebaseEvent(
+                                                  'listContainer_backend_call');
                                               await mobileViewCustomerCaseRecord
                                                   .reference
                                                   .delete();
+                                              logFirebaseEvent(
+                                                  'listContainer_alert_dialog');
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
@@ -1678,6 +1748,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             } else {
                                               return;
                                             }
+
+                                            logFirebaseEvent(
+                                                'listContainer_navigate_to');
 
                                             context.pushNamed('Customers');
                                           } else {
@@ -1723,7 +1796,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'h6it9ajd' /* ID#:  */,
+                                                            'n9qnpbyi' /* ID#:  */,
                                                           ),
                                                           style: const TextStyle(),
                                                         ),
@@ -2199,9 +2272,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_PAGE_listContainer_ON_TAP');
+                                          logFirebaseEvent(
+                                              'listContainer_update_app_state');
                                           FFAppState().caseid =
                                               tabletDesktopViewCustomerCaseRecord
                                                   .caseid;
+                                          logFirebaseEvent(
+                                              'listContainer_navigate_to');
 
                                           context.pushNamed(
                                             'Customer',
@@ -2218,10 +2297,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           );
                                         },
                                         onLongPress: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_listContainer_ON_LONG_PRESS');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
                                                   '') ==
                                               'Manager') {
+                                            logFirebaseEvent(
+                                                'listContainer_alert_dialog');
                                             var confirmDialogResponse =
                                                 await showDialog<bool>(
                                                       context: context,
@@ -2254,9 +2337,13 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                     ) ??
                                                     false;
                                             if (confirmDialogResponse) {
+                                              logFirebaseEvent(
+                                                  'listContainer_backend_call');
                                               await tabletDesktopViewCustomerCaseRecord
                                                   .reference
                                                   .delete();
+                                              logFirebaseEvent(
+                                                  'listContainer_alert_dialog');
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
@@ -2278,6 +2365,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             } else {
                                               return;
                                             }
+
+                                            logFirebaseEvent(
+                                                'listContainer_navigate_to');
 
                                             context.pushNamed('Customers');
                                           } else {
@@ -2323,7 +2413,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'rk1pftl5' /* ID#:  */,
+                                                            'nhxrq5ni' /* ID#:  */,
                                                           ),
                                                           style: const TextStyle(),
                                                         ),

@@ -103,8 +103,12 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                       !const ListEquality(ChatMessagesRecordDocumentEquality())
                           .equals(listViewChatMessagesRecordList,
                               _model.listViewPreviousSnapshot)) {
+                    logFirebaseEvent(
+                        'CHAT_THREAD_COMPONENT_ListView_3pui1c5c_');
                     if (!widget.chatRef!.lastMessageSeenBy
                         .contains(currentUserReference)) {
+                      logFirebaseEvent('ListView_backend_call');
+
                       await widget.chatRef!.reference.update({
                         ...mapToFirestore(
                           {
@@ -256,6 +260,10 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                       size: 24.0,
                                     ),
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CHAT_THREAD_COMPONENT_delete_outline_rou');
+                                      logFirebaseEvent(
+                                          'IconButton_clear_uploaded_data');
                                       setState(() {
                                         _model.isDataUploading = false;
                                         _model.uploadedLocalFile =
@@ -299,6 +307,10 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                             size: 24.0,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'CHAT_THREAD_COMPONENT_add_rounded_ICN_ON');
+                            logFirebaseEvent(
+                                'IconButton_upload_media_to_firebase');
                             final selectedMedia =
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
@@ -365,6 +377,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                             }
 
                             if (_model.uploadedFileUrl != '') {
+                              logFirebaseEvent(
+                                  'IconButton_update_component_state');
                               setState(() {
                                 _model.addToImagesUploaded(
                                     _model.uploadedFileUrl);
@@ -384,12 +398,18 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
                                     onFieldSubmitted: (_) async {
+                                      logFirebaseEvent(
+                                          'CHAT_THREAD_COMPONENT_TextField_wr5s4gxy');
+                                      logFirebaseEvent(
+                                          'TextField_validate_form');
                                       if (_model.formKey.currentState == null ||
                                           !_model.formKey.currentState!
                                               .validate()) {
                                         return;
                                       }
                                       // newChatMessage
+                                      logFirebaseEvent(
+                                          'TextField_newChatMessage');
 
                                       var chatMessagesRecordReference =
                                           ChatMessagesRecord.collection.doc();
@@ -413,14 +433,19 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                               ),
                                               chatMessagesRecordReference);
                                       // clearUsers
+                                      logFirebaseEvent('TextField_clearUsers');
                                       _model.lastSeenBy = [];
                                       // In order to add a single user reference to a list of user references we are adding our current user reference to a page state.
                                       //
                                       // We will then set the value of the user reference list from this page state.
                                       // addMyUserToList
+                                      logFirebaseEvent(
+                                          'TextField_addMyUserToList');
                                       _model.addToLastSeenBy(
                                           currentUserReference!);
                                       // updateChatDocument
+                                      logFirebaseEvent(
+                                          'TextField_updateChatDocument');
 
                                       await widget.chatRef!.reference.update({
                                         ...createChatsRecordData(
@@ -437,9 +462,13 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                           },
                                         ),
                                       });
+                                      logFirebaseEvent(
+                                          'TextField_clear_text_fields_pin_codes');
                                       setState(() {
                                         _model.textController?.clear();
                                       });
+                                      logFirebaseEvent(
+                                          'TextField_clear_uploaded_data');
                                       setState(() {
                                         _model.isDataUploading = false;
                                         _model.uploadedLocalFile =
@@ -448,6 +477,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                         _model.uploadedFileUrl = '';
                                       });
 
+                                      logFirebaseEvent(
+                                          'TextField_update_component_state');
                                       setState(() {
                                         _model.imagesUploaded = [];
                                       });
@@ -468,7 +499,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'skbrxgwm' /* Start typing here... */,
+                                        'gj24j4e2' /* Start typing here... */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -560,9 +591,13 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                       size: 20.0,
                                     ),
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CHAT_THREAD_COMPONENT_send_rounded_ICN_O');
                                       final firestoreBatch =
                                           FirebaseFirestore.instance.batch();
                                       try {
+                                        logFirebaseEvent(
+                                            'IconButton_validate_form');
                                         if (_model.formKey.currentState ==
                                                 null ||
                                             !_model.formKey.currentState!
@@ -570,6 +605,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                           return;
                                         }
                                         // newChatMessage
+                                        logFirebaseEvent(
+                                            'IconButton_newChatMessage');
 
                                         var chatMessagesRecordReference =
                                             ChatMessagesRecord.collection.doc();
@@ -596,14 +633,20 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                                 ),
                                                 chatMessagesRecordReference);
                                         // clearUsers
+                                        logFirebaseEvent(
+                                            'IconButton_clearUsers');
                                         _model.lastSeenBy = [];
                                         // In order to add a single user reference to a list of user references we are adding our current user reference to a page state.
                                         //
                                         // We will then set the value of the user reference list from this page state.
                                         // addMyUserToList
+                                        logFirebaseEvent(
+                                            'IconButton_addMyUserToList');
                                         _model.addToLastSeenBy(
                                             currentUserReference!);
                                         // updateChatDocument
+                                        logFirebaseEvent(
+                                            'IconButton_updateChatDocument');
 
                                         firestoreBatch
                                             .update(widget.chatRef!.reference, {
@@ -622,9 +665,13 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                             },
                                           ),
                                         });
+                                        logFirebaseEvent(
+                                            'IconButton_clear_text_fields_pin_codes');
                                         setState(() {
                                           _model.textController?.clear();
                                         });
+                                        logFirebaseEvent(
+                                            'IconButton_clear_uploaded_data');
                                         setState(() {
                                           _model.isDataUploading = false;
                                           _model.uploadedLocalFile =
@@ -634,6 +681,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                           _model.uploadedFileUrl = '';
                                         });
 
+                                        logFirebaseEvent(
+                                            'IconButton_update_component_state');
                                         setState(() {
                                           _model.imagesUploaded = [];
                                         });

@@ -29,6 +29,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
     super.initState();
     _model = createModel(context, () => CalendarModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Calendar'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -82,6 +83,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('CALENDAR_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -90,7 +93,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  '5zbykyxp' /* Calender */,
+                  '64srsupd' /* Calender */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',
@@ -101,7 +104,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '4ip2ai57' /* Your current Calender */,
+                    'a04niafv' /* Your current Calender */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -151,12 +154,12 @@ class _CalendarWidgetState extends State<CalendarWidget>
                       tabs: [
                         Tab(
                           text: FFLocalizations.of(context).getText(
-                            'xu9q5cio' /* Month */,
+                            '6zjihlff' /* Month */,
                           ),
                         ),
                         Tab(
                           text: FFLocalizations.of(context).getText(
-                            'j2njabrk' /* Week */,
+                            'k3g0z96l' /* Week */,
                           ),
                         ),
                       ],
@@ -255,7 +258,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                           16.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'wxps8tuv' /* Coming Up */,
+                                          '3jt8agg3' /* Coming Up */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -328,7 +331,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              '5ccmynim' /* Doctors Check In */,
+                                                              'rpyeywpy' /* Doctors Check In */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -388,7 +391,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'sw4pw48g' /* 2:20pm */,
+                                                                        'gef1c0qv' /* 2:20pm */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -409,7 +412,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'wdev5dhi' /* Wed, 03/08/2022 */,
+                                                                  'zb3rbquu' /* Wed, 03/08/2022 */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -439,7 +442,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                           16.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'jgxhfbhe' /* Past Due */,
+                                          '1slthe9b' /* Past Due */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -512,7 +515,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'jmtgnyoh' /* Check In */,
+                                                              'z2wyjgaj' /* Check In */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -562,7 +565,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'vh23bftg' /* 2:20pm */,
+                                                                      'kedy7xvu' /* 2:20pm */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -591,7 +594,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  '2577pbkf' /* Wed, 03/08/2022 */,
+                                                                  'mkjfy7eg' /* Wed, 03/08/2022 */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -706,7 +709,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                           16.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'ns7nx344' /* Coming Up */,
+                                          'djbai917' /* Coming Up */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -779,7 +782,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'yu7jdcag' /* Doctors Check In */,
+                                                              'u0ze832q' /* Doctors Check In */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -839,7 +842,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'k35kg3t8' /* 2:20pm */,
+                                                                        'kgan1xq6' /* 2:20pm */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -860,7 +863,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'z02qprzb' /* Wed, 03/08/2022 */,
+                                                                  'kmrpccrv' /* Wed, 03/08/2022 */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -922,7 +925,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                           16.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          '13kr3qsc' /* Past Due */,
+                                          't0pw8ab7' /* Past Due */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -995,7 +998,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              '6xiv0o9j' /* Check In */,
+                                                              'wjge1m95' /* Check In */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1045,7 +1048,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '7egp6ak9' /* 2:20pm */,
+                                                                      'of37b0s3' /* 2:20pm */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1074,7 +1077,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  '2gzae0et' /* Wed, 03/08/2022 */,
+                                                                  'k2fe4c49' /* Wed, 03/08/2022 */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)

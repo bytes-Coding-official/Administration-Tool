@@ -28,6 +28,8 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
     super.initState();
     _model = createModel(context, () => Auth2EditProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'auth_2_EditProfile'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -134,6 +136,9 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
                           size: 24.0,
                         ),
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'AUTH_2_EDIT_PROFILE_arrow_back_rounded_I');
+                          logFirebaseEvent('IconButton_navigate_back');
                           context.safePop();
                         },
                       ),
@@ -160,6 +165,9 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
                     title: 'Edit Profile',
                     confirmButtonText: 'Save Changes',
                     navigateAction: () async {
+                      logFirebaseEvent(
+                          'AUTH_2_EDIT_PROFILE_Container_emtut33s_C');
+                      logFirebaseEvent('editProfile_auth_2_navigate_back');
                       context.safePop();
                     },
                   ),

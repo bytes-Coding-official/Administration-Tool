@@ -104,7 +104,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
-                'o0a4x7xt' /* Adjust the content below to up... */,
+                'i42hhvws' /* Adjust the content below to up... */,
               ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
                     fontFamily: 'Inter',
@@ -176,6 +176,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 32.0),
               child: FFButtonWidget(
                 onPressed: () async {
+                  logFirebaseEvent('EDIT_PROFILE_AUTH_2_CHANGE_PHOTO_BTN_ON_');
+                  logFirebaseEvent('Button_upload_media_to_firebase');
                   final selectedMedia = await selectMedia(
                     mediaSource: MediaSource.photoGallery,
                     multiImage: false,
@@ -230,7 +232,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                   }
                 },
                 text: FFLocalizations.of(context).getText(
-                  'tama5wuy' /* Change Photo */,
+                  'cb6me508' /* Change Photo */,
                 ),
                 options: FFButtonOptions(
                   width: 130.0,
@@ -264,14 +266,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: FFLocalizations.of(context).getText(
-                    'p1q6p9gx' /* Full Name */,
+                    'kzae2g7n' /* Full Name */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
-                    'z3y8xvd7' /* Your full name... */,
+                    '7vgor3b8' /* Your full name... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -336,13 +338,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                 ),
                 options: [
                   FFLocalizations.of(context).getText(
-                    '6x72ltl3' /* Manager */,
+                    '8w40lg9d' /* Manager */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'zlz2iu8t' /* Betreuer */,
+                    'yensxgmy' /* Betreuer */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'aexke9an' /* Kunde */,
+                    'o6w537y6' /* Kunde */,
                   )
                 ],
                 onChanged: (val) => setState(() => _model.dropDownValue = val),
@@ -353,7 +355,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       letterSpacing: 0.0,
                     ),
                 hintText: FFLocalizations.of(context).getText(
-                  'imthgpev' /* Your Role */,
+                  'wk1gzwl6' /* Your Role */,
                 ),
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
@@ -382,14 +384,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: FFLocalizations.of(context).getText(
-                    'qd33kojz' /* Short Description */,
+                    'mv1hv80o' /* Short Description */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
-                    'mv5hcw0x' /* A little about you... */,
+                    'bc8lb6wd' /* A little about you... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -451,11 +453,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
+                  logFirebaseEvent('EDIT_PROFILE_AUTH_2_Button-Login_ON_TAP');
+                  logFirebaseEvent('Button-Login_validate_form');
                   if (_model.formKey.currentState == null ||
                       !_model.formKey.currentState!.validate()) {
                     return;
                   }
                   // updateUserInfo
+                  logFirebaseEvent('Button-Login_updateUserInfo');
 
                   await currentUserReference!.update(createUsersRecordData(
                     displayName: _model.yourNameTextController.text,
@@ -466,6 +471,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     lastActiveTime: getCurrentTimestamp,
                     role: _model.dropDownValue,
                   ));
+                  logFirebaseEvent('Button-Login_show_snack_bar');
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
@@ -480,6 +486,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       backgroundColor: FlutterFlowTheme.of(context).primary,
                     ),
                   );
+                  logFirebaseEvent('Button-Login_execute_callback');
                   await widget.navigateAction?.call();
                 },
                 text: widget.confirmButtonText,

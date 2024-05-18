@@ -15,7 +15,7 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   String? _fullNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'cgezdoty' /* Please enter the patients full... */,
+        'a90yebyy' /* Please enter the patients full... */,
       );
     }
 
@@ -37,7 +37,7 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   String? _streetTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '1vh4b221' /* Please enter the date of birth... */,
+        'ul8umbka' /* Please enter the date of birth... */,
       );
     }
 

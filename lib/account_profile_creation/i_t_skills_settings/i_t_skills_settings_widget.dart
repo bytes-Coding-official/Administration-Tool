@@ -32,8 +32,12 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
     super.initState();
     _model = createModel(context, () => ITSkillsSettingsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'IT-Skills-Settings'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('I_T_SKILLS_SETTINGS_IT-Skills-Settings_O');
+      logFirebaseEvent('IT-Skills-Settings_firestore_query');
       await queryLanguagesRecordOnce();
     });
 
@@ -80,6 +84,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
             size: 25.0,
           ),
           onPressed: () async {
+            logFirebaseEvent('I_T_SKILLS_SETTINGS_arrow_back_rounded_I');
+            logFirebaseEvent('IconButton_navigate_back');
             context.safePop();
           },
         ),
@@ -91,7 +97,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  '4em8h9gl' /* Complete IT-Skills */,
+                  'th69fh0p' /* Complete IT-Skills */,
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Inter',
@@ -105,7 +111,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'je1wgwap' /* Complete your IT-Skills */,
+                  'zwdp76ds' /* Complete your IT-Skills */,
                 ),
                 textAlign: TextAlign.start,
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -135,7 +141,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                         const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'iqb97wxp' /* Your IT-Skills */,
+                        'shhe1ydw' /* Your IT-Skills */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(

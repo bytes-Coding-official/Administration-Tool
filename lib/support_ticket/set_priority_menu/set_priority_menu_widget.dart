@@ -75,7 +75,7 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                         const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '7gx4gxjo' /* Set Priority Level */,
+                        '4g1xmiy1' /* Set Priority Level */,
                       ),
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -115,7 +115,7 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                                     8.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'nrnuw7yh' /* Emergency */,
+                                    'ceeouso2' /* Emergency */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -168,7 +168,7 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'houi4n5x' /* High */,
+                                  'jnz7a7nx' /* High */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -219,7 +219,7 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'nlrhd594' /* Medium */,
+                                  'oorxhq9x' /* Medium */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -270,7 +270,7 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'kioearxv' /* Low */,
+                                  'na0320sa' /* Low */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium

@@ -12,7 +12,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations)!;
 
-  static List<String> languages() => ['de', 'en'];
+  static List<String> languages() => ['en', 'de'];
 
   static late SharedPreferences _prefs;
   static Future initialize() async =>
@@ -37,10 +37,10 @@ class FFLocalizations {
       (kTranslationsMap[key] ?? {})[locale.toString()] ?? '';
 
   String getVariableText({
-    String? deText = '',
     String? enText = '',
+    String? deText = '',
   }) =>
-      [deText, enText][languageIndex] ?? '';
+      [enText, deText][languageIndex] ?? '';
 
   static const Set<String> _languagesWithShortCode = {
     'ar',
@@ -107,1564 +107,1573 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // ProfileSettings
   {
-    'ripwkxbx': {
-      'de': 'Complete Profile',
-      'en': '',
+    'fcx17xnl': {
+      'en': 'Complete Profile',
+      'de': 'Vollständiges Profil',
     },
-    'nwmcg0k4': {
-      'de': 'Complete your Profile-Settings',
-      'en': '',
+    '50p3dqj6': {
+      'en': 'Complete your Profile-Settings',
+      'de': 'Vervollständige deine Profileinstellungen',
     },
-    '9fqt11ur': {
-      'de': 'Your information',
-      'en': '',
+    'dkq1ryfg': {
+      'en': 'Your information',
+      'de': 'Ihre Informationen',
     },
-    'xvmlg8yu': {
-      'de': 'Your Name',
-      'en': '',
+    'xt634rup': {
+      'en': 'Your Name',
+      'de': 'Ihr Name',
     },
-    '0bk2fxt7': {
+    'zx5xaek7': {
+      'en': 'Email',
       'de': 'Email',
-      'en': '',
     },
-    'yhne5pu7': {
+    'svckxjk7': {
+      'en': 'Email',
       'de': 'Email',
-      'en': '',
     },
-    'soor353d': {
-      'de': 'Phone',
-      'en': '',
+    'ka02yxp3': {
+      'en': 'Phone',
+      'de': 'Telefon',
     },
-    '79iw0yb3': {
-      'de': 'Phone',
-      'en': '',
+    '58pt8dru': {
+      'en': 'Phone',
+      'de': 'Telefon',
     },
-    'qic8hq3l': {
-      'de': 'Change Adress',
-      'en': '',
+    'oaa48gll': {
+      'en': 'Change Adress',
+      'de': 'Adresse ändern',
     },
-    'kn9f5n0p': {
-      'de': 'Change IT-Skills',
-      'en': '',
+    'w9gnwzri': {
+      'en': 'Change IT-Skills',
+      'de': 'IT-Kenntnisse ändern',
     },
-    'gfb94uh4': {
-      'de': 'Change Languages',
-      'en': '',
+    'ohebf1ur': {
+      'en': 'Change Languages',
+      'de': 'Sprachen ändern',
     },
-    'c9pjt2by': {
-      'de': 'Save Changes',
-      'en': '',
+    'e9h4u4e3': {
+      'en': 'Save Changes',
+      'de': 'Änderungen speichern',
     },
-    'bzme900o': {
-      'de': 'Home',
-      'en': '',
+    'yfmi94wv': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Adress-Settings
   {
-    '4ndy7tw1': {
-      'de': 'Complete Adress',
-      'en': '',
+    'xvk3q9k4': {
+      'en': 'Complete Adress',
+      'de': 'Vollständige Adresse',
     },
-    'e38kgxol': {
-      'de': 'Complete your adress information',
-      'en': '',
+    'ivwsse2p': {
+      'en': 'Complete your adress information',
+      'de': 'Vervollständigen Sie Ihre Adressdaten',
     },
-    'st4qpz84': {
-      'de': 'Your information',
-      'en': '',
+    'pqv49jgr': {
+      'en': 'Your information',
+      'de': 'Ihre Informationen',
     },
-    '2oqvc2lc': {
-      'de': 'Street and Number',
-      'en': '',
+    '0e9c64ob': {
+      'en': 'Street and Number',
+      'de': 'Straße und Nummer',
     },
-    '61fgwpm7': {
-      'de': 'Street',
-      'en': '',
+    '4kvp5cnu': {
+      'en': 'Street',
+      'de': 'Straße',
     },
-    'eotg8j1f': {
-      'de': 'Town',
-      'en': '',
+    'vv98yz02': {
+      'en': 'Town',
+      'de': 'Stadt',
     },
-    '4x4h5un1': {
-      'de': 'Town',
-      'en': '',
+    'tl7vy8f9': {
+      'en': 'Town',
+      'de': 'Stadt',
     },
-    'vzfhr9w9': {
-      'de': 'Zip',
-      'en': '',
+    'sqb1k3ec': {
+      'en': 'Zip',
+      'de': 'Reißverschluss',
     },
-    'pexa8nuc': {
-      'de': 'Zip',
-      'en': '',
+    'yxwo7j7o': {
+      'en': 'Zip',
+      'de': 'Reißverschluss',
     },
-    '1lm3p2x9': {
-      'de': 'Country',
-      'en': '',
+    's6h1wnxo': {
+      'en': 'Country',
+      'de': 'Land',
     },
-    'nlo21lck': {
-      'de': 'Country',
-      'en': '',
+    '0g14koc1': {
+      'en': 'Country',
+      'de': 'Land',
     },
-    'nfrkcmwc': {
-      'de': 'Save Changes',
-      'en': '',
+    'mpk8lics': {
+      'en': 'Save Changes',
+      'de': 'Änderungen speichern',
     },
-    'ohvtate0': {
-      'de': 'Home',
-      'en': '',
+    'dr5994wq': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // IT-Skills-Settings
   {
-    '4em8h9gl': {
-      'de': 'Complete IT-Skills',
-      'en': '',
+    'th69fh0p': {
+      'en': 'Complete IT-Skills',
+      'de': 'Umfassende IT-Kenntnisse',
     },
-    'je1wgwap': {
-      'de': 'Complete your IT-Skills',
-      'en': '',
+    'zwdp76ds': {
+      'en': 'Complete your IT-Skills',
+      'de': 'Vervollständigen Sie Ihre IT-Kenntnisse',
     },
-    'iqb97wxp': {
-      'de': 'Your IT-Skills',
-      'en': '',
+    'shhe1ydw': {
+      'en': 'Your IT-Skills',
+      'de': 'Deine IT-Kenntnisse',
     },
-    'qjwf369n': {
-      'de': 'Home',
-      'en': '',
+    '5ej9zapx': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Language-Settings
   {
-    'z0f4qgea': {
-      'de': 'Complete Languages',
-      'en': '',
+    '4bq07mgn': {
+      'en': 'Complete Languages',
+      'de': 'Komplette Sprachen',
     },
-    'z16bbiuc': {
-      'de': 'Complete your languages',
-      'en': '',
+    'whlv0la7': {
+      'en': 'Complete your languages',
+      'de': 'Vervollständigen Sie Ihre Sprachen',
     },
-    'skc9rwus': {
-      'de': 'Your Languages',
-      'en': '',
+    'z797zvs5': {
+      'en': 'Your Languages',
+      'de': 'Ihre Sprachen',
     },
-    'osdekkxt': {
-      'de': 'Home',
-      'en': '',
+    'pi0dfjv1': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Customer
   {
-    'e1jwqeb7': {
-      'de': 'ID:',
-      'en': '',
+    'en3up8db': {
+      'en': 'ID:',
+      'de': 'AUSWEIS:',
     },
-    'zth6pmrx': {
+    'fwglq52i': {
+      'en': 'Name',
       'de': 'Name',
-      'en': '',
     },
-    'zcky4q27': {
+    '6fgimpch': {
+      'en': 'Mail',
       'de': 'Mail',
-      'en': '',
     },
-    '3vdj5xao': {
-      'de': 'Adress',
-      'en': '',
+    'igthvfrg': {
+      'en': 'Adress',
+      'de': 'Ein Kleid',
     },
-    'ijf50jfa': {
-      'de': 'Themes',
-      'en': '',
+    'pfk6zl6k': {
+      'en': 'Themes',
+      'de': 'Themen',
     },
-    'u66lonhl': {
-      'de': 'Languages',
-      'en': '',
+    'w9rexsje': {
+      'en': 'Languages',
+      'de': 'Sprachen',
     },
-    '3kybzbsy': {
-      'de': 'Revenue',
-      'en': '',
+    '91qmu550': {
+      'en': 'Revenue',
+      'de': 'Einnahmen',
     },
-    'wam4j4d1': {
+    'xf3hox2c': {
+      'en': 'Status',
       'de': 'Status',
-      'en': '',
     },
-    '9om6blwi': {
-      'de': 'Add meeting to user',
-      'en': '',
+    'mzuncnhu': {
+      'en': 'Add meeting to user',
+      'de': 'Meeting dem Benutzer hinzufügen',
     },
-    'eneerc8o': {
-      'de': 'Duration',
-      'en': '',
+    '955no1if': {
+      'en': 'Duration',
+      'de': 'Dauer',
     },
-    '55ok6p95': {
+    'g13pqfbb': {
+      'en': 'Betreuer',
       'de': 'Betreuer',
-      'en': '',
     },
-    'ld5qx0de': {
-      'de': 'Home',
-      'en': '',
+    '365ngbkk': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Customers
   {
-    'zqwo0dd7': {
-      'de': 'bytes Coding',
-      'en': '',
+    '3xmp7l5l': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    'esd39a7g': {
+    'ugt68zzx': {
+      'en': 'Platform Navigation',
       'de': 'Platform Navigation',
-      'en': '',
     },
-    'psigi6xv': {
-      'de': 'Dashboard',
-      'en': '',
+    '15s2dq8x': {
+      'en': 'Dashboard',
+      'de': 'Armaturenbrett',
     },
-    'r8d3kqyy': {
+    '6g8wo7v3': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'hxcz1jc2': {
+    'lusq685u': {
+      'en': 'Chats',
       'de': 'Chats',
-      'en': '',
     },
-    'l0k9ix61': {
+    '5zyogc9t': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'e8jrr9q8': {
-      'de': 'Support Tickets',
-      'en': '',
+    'uc1usyqa': {
+      'en': 'Support Tickets',
+      'de': 'Support-Tickets',
     },
-    'lqrw1yo4': {
+    'uuz9xwx4': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'yqwk5rl1': {
-      'de': 'Calendar',
-      'en': '',
+    'mzevq165': {
+      'en': 'Calendar',
+      'de': 'Kalender',
     },
-    'sjcq2pi2': {
-      'de': 'Settings',
-      'en': '',
+    '12tpf17h': {
+      'en': 'Settings',
+      'de': 'Einstellungen',
     },
-    'c0ayt1nh': {
-      'de': 'Billing',
-      'en': '',
+    'xahmx4lz': {
+      'en': 'Billing',
+      'de': 'Abrechnung',
     },
-    'k0goh3x6': {
-      'de': 'Members',
-      'en': '',
+    'azmu0lbt': {
+      'en': 'Members',
+      'de': 'Mitglieder',
     },
-    'gc74imeq': {
-      'de': 'Light Mode',
-      'en': '',
+    'nllrgk2r': {
+      'en': 'Light Mode',
+      'de': 'Lichtmodus',
     },
-    'xkgmf9zq': {
-      'de': 'Dark Mode',
-      'en': '',
+    'jncjn9nc': {
+      'en': 'Dark Mode',
+      'de': 'Dunkler Modus',
     },
-    'phwjo5xq': {
-      'de': 'Projects Overview',
-      'en': '',
+    'tmoj32d1': {
+      'en': 'Projects Overview',
+      'de': 'Projekte Übersicht',
     },
-    'bgi47c1l': {
-      'de': 'Review the details below of all current projects.',
-      'en': '',
+    'ohbxki3q': {
+      'en': 'Review the details below of all current projects.',
+      'de': 'Sehen Sie sich unten die Details aller aktuellen Projekte an.',
     },
-    'apwtdsiq': {
-      'de': 'All',
-      'en': '',
+    'p942dt14': {
+      'en': 'All',
+      'de': 'Alle',
     },
-    '4x13kefg': {
-      'de': 'Own Projects',
-      'en': '',
+    'ntn7402o': {
+      'en': 'Own Projects',
+      'de': 'Eigene Projekte',
     },
-    'mb94ajo3': {
-      'de': 'Others',
-      'en': '',
+    'o6dzwlaw': {
+      'en': 'Others',
+      'de': 'Andere',
     },
-    'vt6ohljs': {
-      'de': 'Closed',
-      'en': '',
+    '4zt58o1s': {
+      'en': 'Closed',
+      'de': 'Geschlossen',
     },
-    '30m9wopn': {
-      'de': 'All',
-      'en': '',
+    'mzguga2z': {
+      'en': 'All',
+      'de': 'Alle',
     },
-    'sphwk62r': {
-      'de': 'Filters',
-      'en': '',
-    },
-    'rhek6d4j': {
-      'de': 'Filter here...',
-      'en': '',
-    },
-    'xbcdougq': {
+    'xzbp5c59': {
+      'en': 'Filters',
       'de': 'Filter',
-      'en': '',
     },
-    'h2vputm1': {
-      'de': 'Filter here...',
-      'en': '',
+    'ahzd947o': {
+      'en': 'Filter here...',
+      'de': 'Hier filtern...',
     },
-    'tmf3yzsp': {
-      'de': 'Add Customer',
-      'en': '',
+    '73gv4wgu': {
+      'en': 'Filter',
+      'de': 'Filter',
     },
-    'ju1pli0v': {
-      'de': 'Add Case',
-      'en': '',
+    'efbd6j4b': {
+      'en': 'Filter here...',
+      'de': 'Hier filtern...',
     },
-    'h6it9ajd': {
-      'de': 'ID#: ',
-      'en': '',
+    'hv1ie1b8': {
+      'en': 'Add Customer',
+      'de': 'Kunden hinzufügen',
     },
-    'rk1pftl5': {
-      'de': 'ID#: ',
-      'en': '',
+    'l9lhumzm': {
+      'en': 'Add Case',
+      'de': 'Fall hinzufügen',
     },
-    '7bggovi0': {
-      'de': 'Home',
-      'en': '',
+    'n9qnpbyi': {
+      'en': 'ID#: ',
+      'de': 'AUSWEIS#:',
+    },
+    'nhxrq5ni': {
+      'en': 'ID#: ',
+      'de': 'AUSWEIS#:',
+    },
+    'u27w6351': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Employees
   {
-    'oitchqzi': {
-      'de': 'Search for patients...',
-      'en': '',
+    'lefjjtu5': {
+      'en': 'Search for patients...',
+      'de': 'Patientensuche...',
     },
-    'a89yjpln': {
-      'de': 'Team-Members',
-      'en': '',
+    'j34sl75v': {
+      'en': 'Team-Members',
+      'de': 'Team-Mitglieder',
     },
-    'y7tpy97m': {
-      'de': 'All of our Customers & Employees',
-      'en': '',
+    '73o0o7i4': {
+      'en': 'All of our Customers & Employees',
+      'de': 'Alle unsere Kunden und Mitarbeiter',
     },
-    '5p3v0m4k': {
-      'de': 'Home',
-      'en': '',
+    'l72xtc1b': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // CreateCase
   {
-    'yum0goyu': {
-      'de': 'Title...',
-      'en': '',
+    'y00zbz7g': {
+      'en': 'Title...',
+      'de': 'Titel...',
     },
-    '0futkmof': {
-      'de': 'Title...',
-      'en': '',
+    'eaxq1etl': {
+      'en': 'Title...',
+      'de': 'Titel...',
     },
-    'sn5ieevs': {
-      'de': 'Description...',
-      'en': '',
+    'zrh50pvf': {
+      'en': 'Description...',
+      'de': 'Beschreibung...',
     },
-    'yr01hol0': {
-      'de': 'Themes',
-      'en': '',
+    'zboepkw1': {
+      'en': 'Themes',
+      'de': 'Themen',
     },
-    'nj7jldg9': {
+    'nh1r0238': {
+      'en': 'Option 1',
       'de': 'Option 1',
-      'en': '',
     },
-    '4p7p7c12': {
-      'de': 'Topics',
-      'en': '',
-    },
-    'h2xc900z': {
-      'de': 'Search for an item...',
-      'en': '',
-    },
-    'fpj6ym4v': {
-      'de': 'Customer',
-      'en': '',
-    },
-    'xf9ydg3j': {
-      'de': 'Option 1',
-      'en': '',
-    },
-    'z25h7e01': {
-      'de': 'Customer Name',
-      'en': '',
+    'u3h0qui2': {
+      'en': 'Topics',
+      'de': 'Themen',
     },
     'h13kg7qr': {
-      'de': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
     },
-    'hbxggzge': {
-      'de': 'Revenue',
-      'en': '',
+    'sx3ty69v': {
+      'en': 'Customer',
+      'de': 'Kunde',
     },
-    '15uo150c': {
-      'de': 'Price per hour',
-      'en': '',
+    'osvnesbh': {
+      'en': 'Option 1',
+      'de': 'Option 1',
     },
-    'l9wsq9un': {
+    'psh6ke1p': {
+      'en': 'Customer Name',
+      'de': 'Kundenname',
+    },
+    'jfcys0av': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
+    },
+    '1m1enuc4': {
+      'en': 'Revenue',
+      'de': 'Einnahmen',
+    },
+    'imvqflfb': {
+      'en': 'Price per hour',
+      'de': 'Preis pro Stunde',
+    },
+    'zy0j4m21': {
+      'en': '50',
       'de': '50',
-      'en': '',
     },
-    'n6dvlpwe': {
-      'de': 'Add Case',
-      'en': '',
+    'p25f6cpa': {
+      'en': 'Add Case',
+      'de': 'Fall hinzufügen',
     },
-    'y8a4g1j8': {
-      'de': 'Create Case',
-      'en': '',
+    '0rdy80es': {
+      'en': 'Create Case',
+      'de': 'Fall erstellen',
     },
-    'q8cpu5z1': {
-      'de': 'Create a new case with this form',
-      'en': '',
+    'brd4f1fu': {
+      'en': 'Create a new case with this form',
+      'de': 'Erstellen Sie mit diesem Formular einen neuen Fall',
     },
-    'l3cxbukz': {
-      'de': 'Home',
-      'en': '',
+    'vvddebob': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_Create
   {
-    '6n418bnp': {
-      'de': 'bytes Coding',
-      'en': '',
+    '7g15vrub': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    '2yjwqo8g': {
-      'de': 'Get Started',
-      'en': '',
+    'yuf6qyzb': {
+      'en': 'Get Started',
+      'de': 'Loslegen',
     },
-    'ac6qy2gi': {
-      'de': 'Create an account by using the form below.',
-      'en': '',
+    'n8xp8945': {
+      'en': 'Create an account by using the form below.',
+      'de': 'Erstellen Sie mithilfe des untenstehenden Formulars ein Konto.',
     },
-    '5k2pip8v': {
+    'hxdqv67a': {
+      'en': 'Email',
       'de': 'Email',
-      'en': '',
     },
-    '0j6aq2uv': {
-      'de': 'Password',
-      'en': '',
+    'k3t8iv0d': {
+      'en': 'Password',
+      'de': 'Passwort',
     },
-    'r63zssnl': {
-      'de': 'Create Account',
-      'en': '',
+    'am9thlup': {
+      'en': 'Create Account',
+      'de': 'Benutzerkonto erstellen',
     },
-    'gnjjbz2r': {
-      'de': 'Or sign up with',
-      'en': '',
+    'cp9wwxhh': {
+      'en': 'Or sign up with',
+      'de': 'Oder registrieren Sie sich mit',
     },
-    'q0hcm3f4': {
-      'de': 'Continue with Google',
-      'en': '',
+    'zohwxmwa': {
+      'en': 'Continue with Google',
+      'de': 'Weiter mit Google',
     },
-    'iruoh91b': {
-      'de': 'Continue with Apple',
-      'en': '',
+    'l8nmxfqe': {
+      'en': 'Continue with Apple',
+      'de': 'Weiter mit Apple',
     },
-    'weopfjnz': {
-      'de': 'Already have an account? ',
-      'en': '',
+    '4o69hz8n': {
+      'en': 'Already have an account? ',
+      'de': 'Sie haben bereits ein Konto?',
     },
-    'rb2zcnqj': {
-      'de': 'Sign in here',
-      'en': '',
+    'p5d43lji': {
+      'en': 'Sign in here',
+      'de': 'Hier anmelden',
     },
-    'sauzmy7r': {
-      'de': 'Home',
-      'en': '',
+    '9fj3ed5h': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_Login
   {
-    'q0fsxzm0': {
-      'de': 'bytes Coding',
-      'en': '',
+    'b1a1m656': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    'uzd52rew': {
-      'de': 'Welcome Back',
-      'en': '',
+    'wc6vlb88': {
+      'en': 'Welcome Back',
+      'de': 'Willkommen zurück',
     },
-    'fhmtz06t': {
-      'de': 'Fill out the information below in order to access your account.',
-      'en': '',
+    '8yhirh5p': {
+      'en': 'Fill out the information below in order to access your account.',
+      'de':
+          'Füllen Sie die folgenden Informationen aus, um auf Ihr Konto zuzugreifen.',
     },
-    '521io5z7': {
+    '8ucnopf5': {
+      'en': 'Email',
       'de': 'Email',
-      'en': '',
     },
-    'rvjwy9hf': {
-      'de': 'Password',
-      'en': '',
+    'petfhqha': {
+      'en': 'Password',
+      'de': 'Passwort',
     },
-    '7s7u7cio': {
-      'de': 'Sign In',
-      'en': '',
+    'p3xaauvg': {
+      'en': 'Sign In',
+      'de': 'Anmelden',
     },
-    'eiuumfyd': {
-      'de': 'Or sign in with',
-      'en': '',
+    '08btyait': {
+      'en': 'Or sign in with',
+      'de': 'Oder melden Sie sich an mit',
     },
-    'krmr3dq1': {
-      'de': 'Continue with Google',
-      'en': '',
+    'pmg4jacf': {
+      'en': 'Continue with Google',
+      'de': 'Weiter mit Google',
     },
-    'phyy4jez': {
-      'de': 'Continue with Apple',
-      'en': '',
+    'lhcickgn': {
+      'en': 'Continue with Apple',
+      'de': 'Weiter mit Apple',
     },
-    '13iifah5': {
-      'de': 'Don\'t have an account?  ',
-      'en': '',
+    '8pwvx02e': {
+      'en': 'Don\'t have an account?  ',
+      'de': 'Sie haben noch kein Konto?',
     },
-    'sli3162u': {
-      'de': 'Create Account',
-      'en': '',
+    'mk06lsbv': {
+      'en': 'Create Account',
+      'de': 'Benutzerkonto erstellen',
     },
-    'qnek1332': {
-      'de': 'Forgot password?',
-      'en': '',
+    'ak2gtbko': {
+      'en': 'Forgot password?',
+      'de': 'Passwort vergessen?',
     },
-    'x5uzyw3v': {
-      'de': 'Home',
-      'en': '',
+    'vf342axe': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_ForgotPassword
   {
-    'htxvbys4': {
-      'de': 'bytes Coding',
-      'en': '',
+    '2gddz9zm': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    'xfhm9acx': {
-      'de': 'Forgot Password',
-      'en': '',
+    'ngxwdtah': {
+      'en': 'Forgot Password',
+      'de': 'Passwort vergessen',
     },
-    'c0vj5c7t': {
-      'de':
+    'rcdhs0gf': {
+      'en':
           'Please fill out your email belo in order to recieve a reset password link.',
-      'en': '',
+      'de':
+          'Bitte geben Sie unten Ihre E-Mail-Adresse ein, um einen Link zum Zurücksetzen des Passworts zu erhalten.',
     },
-    'zrqe42ho': {
+    'mzhbas81': {
+      'en': 'Email',
       'de': 'Email',
-      'en': '',
     },
-    'wb31fe17': {
-      'de': 'Send Reset Link',
-      'en': '',
+    'cw6tl9xj': {
+      'en': 'Send Reset Link',
+      'de': 'Link zum Zurücksetzen senden',
     },
-    'z9dcgfkq': {
-      'de': 'Home',
-      'en': '',
+    'wlesa9ou': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_createProfile
   {
-    'hbab0oa4': {
-      'de': 'bytes Coding',
-      'en': '',
+    'erspxmah': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    'jy4o2t2o': {
-      'de': 'Home',
-      'en': '',
+    'x7tuflp8': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_Profile
   {
-    'fuly3wvy': {
-      'de': 'Your Account',
-      'en': '',
+    '3gvgvwg1': {
+      'en': 'Your Account',
+      'de': 'Ihr Konto',
     },
-    '7kmtotah': {
-      'de': 'Edit Profile',
-      'en': '',
+    'od94gyfg': {
+      'en': 'Edit Profile',
+      'de': 'Profil bearbeiten',
     },
-    '5l6voay2': {
-      'de': 'Edit Adress',
-      'en': '',
+    '3bqy4rph': {
+      'en': 'Edit Adress',
+      'de': 'Adresse bearbeiten',
     },
-    'douzf5oo': {
-      'de': 'Edit Languages',
-      'en': '',
+    'v8wpgdwz': {
+      'en': 'Edit Languages',
+      'de': 'Sprachen bearbeiten',
     },
-    'ugwcgkhb': {
-      'de': 'Edit IT-Skills',
-      'en': '',
+    'k9gh52ok': {
+      'en': 'Edit IT-Skills',
+      'de': 'IT-Kenntnisse bearbeiten',
     },
-    'mp5x1zrt': {
-      'de': 'App Settings',
-      'en': '',
+    'yf1kh2jt': {
+      'en': 'App Settings',
+      'de': 'App Einstellungen',
     },
-    '327g1hyy': {
-      'de': 'Support',
-      'en': '',
+    'z84qmaed': {
+      'en': 'Support',
+      'de': 'Unterstützung',
     },
-    'peqeskan': {
-      'de': 'Terms of Service',
-      'en': '',
+    'dodyl2fx': {
+      'en': 'Terms of Service',
+      'de': 'Nutzungsbedingungen',
     },
-    '1igniz2j': {
-      'de': 'Log Out',
-      'en': '',
+    'zhg4cl4u': {
+      'en': 'Log Out',
+      'de': 'Ausloggen',
     },
-    'itj2r1tk': {
-      'de': 'Home',
-      'en': '',
+    'bommisgd': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // auth_2_EditProfile
   {
-    'nh0ufuee': {
-      'de': 'Home',
-      'en': '',
+    'xs06iv32': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // support_TicketList
   {
-    'jn2h1hyf': {
-      'de': 'Ticket #: ',
-      'en': '',
+    '8tf2yxr2': {
+      'en': 'Ticket #: ',
+      'de': 'Fahrkarte #:',
     },
-    'jgiu5cul': {
-      'de': 'Support Tickets',
-      'en': '',
+    'b5m54jpy': {
+      'en': 'Support Tickets',
+      'de': 'Support-Tickets',
     },
-    '7wf3jvi6': {
-      'de': 'Below are a list of recent tickets created',
-      'en': '',
+    'y1cphusm': {
+      'en': 'Below are a list of recent tickets created',
+      'de': 'Unten finden Sie eine Liste der zuletzt erstellten Tickets',
     },
-    '19b4l2eb': {
-      'de': 'Home',
-      'en': '',
+    '8bi66y39': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // support_SubmitTicket
   {
-    '6m96v7d4': {
-      'de': 'Ticket-Creation',
-      'en': '',
+    'aekkeure': {
+      'en': 'Ticket-Creation',
+      'de': 'Ticket-Erstellung',
     },
-    'w2ax4dxz': {
-      'de': 'Create a Support-Ticket here',
-      'en': '',
+    'th2f4v4n': {
+      'en': 'Create a Support-Ticket here',
+      'de': 'Hier Support-Ticket erstellen',
     },
-    'olovehmu': {
-      'de': 'Fill out the form below to submit a ticket.',
-      'en': '',
+    'vj2kin4a': {
+      'en': 'Fill out the form below to submit a ticket.',
+      'de':
+          'Füllen Sie das untenstehende Formular aus, um ein Ticket einzureichen.',
     },
-    'fc45tfhc': {
-      'de': 'Call Us',
-      'en': '',
+    '8a83o12g': {
+      'en': 'Call Us',
+      'de': 'Rufen Sie uns an',
     },
-    '7qh0t2to': {
-      'de': 'Email Us',
-      'en': '',
+    'txl8rzat': {
+      'en': 'Email Us',
+      'de': 'Schreiben Sie uns eine E-Mail',
     },
-    'svyi7a7w': {
-      'de': 'What is going on?',
-      'en': '',
+    'ricp38cm': {
+      'en': 'What is going on?',
+      'de': 'Was ist los?',
     },
-    'gw93g4go': {
-      'de': 'Short Description of what is going on...',
-      'en': '',
+    '0l26gje2': {
+      'en': 'Short Description of what is going on...',
+      'de': 'Kurze Beschreibung dessen, was los ist ...',
     },
-    'v168fglt': {
-      'de': 'Choose a priority level',
-      'en': '',
+    'eyq6jort': {
+      'en': 'Choose a priority level',
+      'de': 'Wählen Sie eine Prioritätsstufe',
     },
-    '5xk37c9i': {
-      'de': 'Emergency',
-      'en': '',
+    'nj4gxq7y': {
+      'en': 'Emergency',
+      'de': 'Notfall',
     },
-    '29wadrsz': {
-      'de': 'High',
-      'en': '',
+    'nxn0qt7g': {
+      'en': 'High',
+      'de': 'Hoch',
     },
-    '7sze9zop': {
-      'de': 'Medium',
-      'en': '',
+    '36ar5gt0': {
+      'en': 'Medium',
+      'de': 'Mittel',
     },
-    'lu4z3zyl': {
-      'de': 'Low',
-      'en': '',
+    'xbub19mw': {
+      'en': 'Low',
+      'de': 'Niedrig',
     },
-    'qp64btls': {
-      'de': 'Low',
-      'en': '',
+    'udk6s772': {
+      'en': 'Low',
+      'de': 'Niedrig',
     },
-    '13s53xsn': {
-      'de': 'Upload Screenshot',
-      'en': '',
+    'ngxigtui': {
+      'en': 'Upload Screenshot',
+      'de': 'Screenshot hochladen',
     },
-    '04h9y5pj': {
-      'de': 'Assign User',
-      'en': '',
+    '9furp0rw': {
+      'en': 'Assign User',
+      'de': 'Benutzer zuweisen',
     },
-    '3ttsymfp': {
-      'de': 'Add User',
-      'en': '',
+    'zdl3izxa': {
+      'en': 'Add User',
+      'de': 'Benutzer hinzufügen',
     },
-    'ypiicayo': {
-      'de': 'Submit Ticket',
-      'en': '',
+    '0sjmvj9o': {
+      'en': 'Submit Ticket',
+      'de': 'Ticket übermitteln',
     },
-    '9wh28y2u': {
-      'de': 'Home',
-      'en': '',
+    'h5odabcw': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // support_TicketDetails
   {
-    'n7i4xuvy': {
-      'de': 'Ticket Details',
-      'en': '',
+    'mscspqqu': {
+      'en': 'Ticket Details',
+      'de': 'Ticketdetails',
     },
-    'aaa8gjph': {
-      'de': 'Ticket #: ',
-      'en': '',
+    'ss89pb28': {
+      'en': 'Ticket #: ',
+      'de': 'Fahrkarte #:',
     },
-    'sgn8hh6c': {
-      'de': 'Below are the details of this support ticket.',
-      'en': '',
+    'istektt5': {
+      'en': 'Below are the details of this support ticket.',
+      'de': 'Nachfolgend finden Sie die Einzelheiten zu diesem Support-Ticket.',
     },
-    'vxgf4rp2': {
-      'de': 'Description',
-      'en': '',
+    'zuqhc7rn': {
+      'en': 'Description',
+      'de': 'Beschreibung',
     },
-    '47dgq5a3': {
-      'de': 'Submitted on',
-      'en': '',
+    '2a7z81xx': {
+      'en': 'Submitted on',
+      'de': 'Eingereicht am',
     },
-    '9i7ujk20': {
-      'de': 'Last Edited',
-      'en': '',
+    '3b2i6hgq': {
+      'en': 'Last Edited',
+      'de': 'Zuletzt bearbeitet',
     },
-    'trxtjtsw': {
+    'h1lawcol': {
+      'en': 'Status',
       'de': 'Status',
-      'en': '',
     },
-    '173cgq1c': {
-      'de': 'Pending',
-      'en': '',
+    '915sp9a8': {
+      'en': 'Pending',
+      'de': 'Ausstehend',
     },
-    '8ew7tviv': {
-      'de': 'In Progress',
-      'en': '',
+    'zv37t5tt': {
+      'en': 'In Progress',
+      'de': 'Im Gange',
     },
-    'u06jy42q': {
-      'de': 'Complete',
-      'en': '',
+    'fbik18u7': {
+      'en': 'Complete',
+      'de': 'Vollständig',
     },
-    'l0j8onis': {
-      'de': 'Submitted',
-      'en': '',
+    'l9ecv4xv': {
+      'en': 'Submitted',
+      'de': 'Gesendet',
     },
-    'v3ywnmpi': {
-      'de': 'Please select...',
-      'en': '',
+    '5g50y16u': {
+      'en': 'Please select...',
+      'de': 'Bitte auswählen...',
     },
-    '2wam3gac': {
-      'de': 'Search for an item...',
-      'en': '',
+    '74vmywjv': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
     },
-    'ls2xotzx': {
-      'de': 'Assigned to',
-      'en': '',
+    'yy7xpy7w': {
+      'en': 'Assigned to',
+      'de': 'Zugewiesen an',
     },
-    '7522lg0r': {
-      'de': 'Submitted By',
-      'en': '',
+    'jvimk02l': {
+      'en': 'Submitted By',
+      'de': 'Eingereicht von',
     },
-    '190ycife': {
-      'de': 'Assign',
-      'en': '',
+    'sacl5x8e': {
+      'en': 'Assign',
+      'de': 'Zuordnen',
     },
-    '5o57gj4w': {
-      'de': 'Update Ticket',
-      'en': '',
+    'x5s786v4': {
+      'en': 'Update Ticket',
+      'de': 'Ticket aktualisieren',
     },
-    'oo1fqm48': {
-      'de': 'Ticket',
-      'en': '',
+    'yqpe5xlu': {
+      'en': 'Ticket',
+      'de': 'Fahrkarte',
     },
-    'e9znz11p': {
-      'de': 'Current Support-Ticket',
-      'en': '',
+    'x6ddm1u4': {
+      'en': 'Current Support-Ticket',
+      'de': 'Aktuelles Support-Ticket',
     },
   },
   // Billing
   {
-    'k2rauewg': {
-      'de': 'Customer-Information',
-      'en': '',
+    '8zdbsdy4': {
+      'en': 'Customer-Information',
+      'de': 'Kundeninformation',
     },
-    'zjlnvley': {
-      'de': 'Below is a summary of your activity.',
-      'en': '',
+    '2mghmw6b': {
+      'en': 'Below is a summary of your activity.',
+      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
     },
-    'erv5taj4': {
-      'de': 'Money Earned',
-      'en': '',
+    'joipmprf': {
+      'en': 'Money Earned',
+      'de': 'Verdientes Geld',
     },
-    'v8r4lbgu': {
-      'de': 'Average Billing',
-      'en': '',
+    'bvrj937a': {
+      'en': 'Average Billing',
+      'de': 'Durchschnittliche Abrechnung',
     },
-    'q052w4ks': {
-      'de': 'Total Customers',
-      'en': '',
+    'ucngtba5': {
+      'en': 'Total Customers',
+      'de': 'Kunden gesamt',
     },
-    '7r9fetyx': {
-      'de': 'Customer-Information',
-      'en': '',
+    'dbqutbci': {
+      'en': 'Customer-Information',
+      'de': 'Kundeninformation',
     },
-    '2a6qa21y': {
-      'de': 'An overview of your customer jobs.',
-      'en': '',
+    'llfx7g5q': {
+      'en': 'An overview of your customer jobs.',
+      'de': 'Eine Übersicht Ihrer Kundenaufträge.',
     },
-    'l7ujfjr3': {
-      'de': 'current customers',
-      'en': '',
+    'fxfdsogo': {
+      'en': 'current customers',
+      'de': 'derzeitige Kunden',
     },
-    'b7abegxd': {
-      'de': 'completed customers',
-      'en': '',
+    '6l634rov': {
+      'en': 'completed customers',
+      'de': 'abgeschlossene Kunden',
     },
-    '4lyb5w7t': {
-      'de': 'Customer-Cases',
-      'en': '',
+    '82u69mor': {
+      'en': 'Customer-Cases',
+      'de': 'Kunden-Cases',
     },
-    'gcjeqtnc': {
-      'de': 'A summary of your current customer-cases',
-      'en': '',
+    'fnw01e3l': {
+      'en': 'A summary of your current customer-cases',
+      'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
     },
-    '850spocz': {
-      'de': 'ID#: ',
-      'en': '',
+    'msp77w1m': {
+      'en': 'ID#: ',
+      'de': 'AUSWEIS#:',
     },
-    'tbl1a9zo': {
-      'de': 'Recent Activity',
-      'en': '',
+    'w0tdj7p3': {
+      'en': 'Recent Activity',
+      'de': 'Letzte Aktivität',
     },
-    'lt3eh3lg': {
-      'de': 'Below is an overview of tasks & activity completed.',
-      'en': '',
+    '17ihzxhi': {
+      'en': 'Below is an overview of tasks & activity completed.',
+      'de':
+          'Nachfolgend finden Sie eine Übersicht über die abgeschlossenen Aufgaben und Aktivitäten.',
     },
-    'o9pxfyek': {
-      'de': 'Tasks',
-      'en': '',
+    'fcxcsakp': {
+      'en': 'Tasks',
+      'de': 'Aufgaben',
     },
-    'k004vzd6': {
-      'de': 'Completed',
-      'en': '',
+    '0nc0tkvo': {
+      'en': 'Completed',
+      'de': 'Vollendet',
     },
-    'qffzuink': {
-      'de': 'active',
-      'en': '',
+    '2dixago6': {
+      'en': 'active',
+      'de': 'aktiv',
     },
-    'n5enl3o2': {
-      'de': 'Last 30 Days',
-      'en': '',
+    'p31pafw5': {
+      'en': 'Last 30 Days',
+      'de': 'Letzte 30 Tage',
     },
-    'wz1he5cw': {
-      'de': 'average',
-      'en': '',
+    't6p8ypnx': {
+      'en': 'average',
+      'de': 'Durchschnitt',
     },
-    'yfmi94wv': {
-      'de': 'Home',
-      'en': '',
+    'sauzmy7r': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // Calendar
   {
-    'xu9q5cio': {
-      'de': 'Month',
-      'en': '',
+    '6zjihlff': {
+      'en': 'Month',
+      'de': 'Monat',
     },
-    'wxps8tuv': {
-      'de': 'Coming Up',
-      'en': '',
+    '3jt8agg3': {
+      'en': 'Coming Up',
+      'de': 'Demnächst',
     },
-    '5ccmynim': {
-      'de': 'Doctors Check In',
-      'en': '',
+    'rpyeywpy': {
+      'en': 'Doctors Check In',
+      'de': 'Ärzte checken ein',
     },
-    'sw4pw48g': {
-      'de': '2:20pm',
-      'en': '',
+    'gef1c0qv': {
+      'en': '2:20pm',
+      'de': '14:20 Uhr',
     },
-    'wdev5dhi': {
-      'de': 'Wed, 03/08/2022',
-      'en': '',
+    'zb3rbquu': {
+      'en': 'Wed, 03/08/2022',
+      'de': 'Mi., 08.03.2022',
     },
-    'jgxhfbhe': {
-      'de': 'Past Due',
-      'en': '',
+    '1slthe9b': {
+      'en': 'Past Due',
+      'de': 'Überfällig',
     },
-    'jmtgnyoh': {
-      'de': 'Check In',
-      'en': '',
+    'z2wyjgaj': {
+      'en': 'Check In',
+      'de': 'Einchecken',
     },
-    'vh23bftg': {
-      'de': '2:20pm',
-      'en': '',
+    'kedy7xvu': {
+      'en': '2:20pm',
+      'de': '14:20 Uhr',
     },
-    '2577pbkf': {
-      'de': 'Wed, 03/08/2022',
-      'en': '',
+    'mkjfy7eg': {
+      'en': 'Wed, 03/08/2022',
+      'de': 'Mi., 08.03.2022',
     },
-    'j2njabrk': {
-      'de': 'Week',
-      'en': '',
+    'k3g0z96l': {
+      'en': 'Week',
+      'de': 'Woche',
     },
-    'ns7nx344': {
-      'de': 'Coming Up',
-      'en': '',
+    'djbai917': {
+      'en': 'Coming Up',
+      'de': 'Demnächst',
     },
-    'yu7jdcag': {
-      'de': 'Doctors Check In',
-      'en': '',
+    'u0ze832q': {
+      'en': 'Doctors Check In',
+      'de': 'Ärzte checken ein',
     },
-    'k35kg3t8': {
-      'de': '2:20pm',
-      'en': '',
+    'kgan1xq6': {
+      'en': '2:20pm',
+      'de': '14:20 Uhr',
     },
-    'z02qprzb': {
-      'de': 'Wed, 03/08/2022',
-      'en': '',
+    'kmrpccrv': {
+      'en': 'Wed, 03/08/2022',
+      'de': 'Mi., 08.03.2022',
     },
-    '13kr3qsc': {
-      'de': 'Past Due',
-      'en': '',
+    't0pw8ab7': {
+      'en': 'Past Due',
+      'de': 'Überfällig',
     },
-    '6xiv0o9j': {
-      'de': 'Check In',
-      'en': '',
+    'wjge1m95': {
+      'en': 'Check In',
+      'de': 'Einchecken',
     },
-    '7egp6ak9': {
-      'de': '2:20pm',
-      'en': '',
+    'of37b0s3': {
+      'en': '2:20pm',
+      'de': '14:20 Uhr',
     },
-    '2gzae0et': {
-      'de': 'Wed, 03/08/2022',
-      'en': '',
+    'k2fe4c49': {
+      'en': 'Wed, 03/08/2022',
+      'de': 'Mi., 08.03.2022',
     },
-    '5zbykyxp': {
-      'de': 'Calender',
-      'en': '',
+    '64srsupd': {
+      'en': 'Calender',
+      'de': 'Kalander',
     },
-    '4ip2ai57': {
-      'de': 'Your current Calender',
-      'en': '',
+    'a04niafv': {
+      'en': 'Your current Calender',
+      'de': 'Ihr aktueller Kalender',
     },
-    'dr5994wq': {
-      'de': 'Home',
-      'en': '',
+    'x5uzyw3v': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // chat_2_Details
   {
-    '7txc8mi4': {
-      'de': 'Group Chat',
-      'en': '',
+    'fmeem6gz': {
+      'en': 'Group Chat',
+      'de': 'Gruppenchat',
     },
-    '5ej9zapx': {
-      'de': 'Home',
-      'en': '',
+    'z9dcgfkq': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // chat_2_main
   {
-    '4wmr0r8x': {
-      'de': 'Add Chat',
-      'en': '',
+    '3nlz1j90': {
+      'en': 'Add Chat',
+      'de': 'Chat hinzufügen',
     },
-    'pk6vja86': {
-      'de': 'Group Chat',
-      'en': '',
+    'j81ilpuq': {
+      'en': 'Group Chat',
+      'de': 'Gruppenchat',
     },
-    'h9lmzpdm': {
-      'de': 'My Chats',
-      'en': '',
+    'rebbm36n': {
+      'en': 'My Chats',
+      'de': 'Meine Chats',
     },
-    '52hamp16': {
-      'de': 'Below are your chats and group chats',
-      'en': '',
+    'u78r69oe': {
+      'en': 'Below are your chats and group chats',
+      'de': 'Unten sind Ihre Chats und Gruppenchats',
     },
-    'ka2wrnvr': {
+    'wfh3loj4': {
+      'en': '__',
       'de': '__',
-      'en': '',
     },
   },
   // chat_2_InviteUsers
   {
-    '7mh427w4': {
-      'de': 'Invite Friends',
-      'en': '',
+    'hopvi9vs': {
+      'en': 'Invite Friends',
+      'de': 'Freunde einladen',
     },
-    'rrcmh2eo': {
-      'de': 'Selected',
-      'en': '',
+    'ql4fu98g': {
+      'en': 'Selected',
+      'de': 'Ausgewählt',
     },
-    'v2t6kg15': {
-      'de': 'Invite Friends',
-      'en': '',
+    'va53uv9s': {
+      'en': 'Invite Friends',
+      'de': 'Freunde einladen',
     },
-    'hztshrjj': {
-      'de': 'Select users from below to start a chat.',
-      'en': '',
+    '23ic11yf': {
+      'en': 'Select users from below to start a chat.',
+      'de': 'Wählen Sie unten Benutzer aus, um einen Chat zu starten.',
     },
-    'pi0dfjv1': {
-      'de': 'Home',
-      'en': '',
+    'jy4o2t2o': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // image_Details
   {
-    '365ngbkk': {
-      'de': 'Home',
-      'en': '',
+    'itj2r1tk': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // createCustomer
   {
-    '6nvy4qzi': {
-      'de': 'Full name',
-      'en': '',
+    'ebpqrveb': {
+      'en': 'Full name',
+      'de': 'Vollständiger Name',
     },
-    'rij8io9s': {
+    'wl53zgkt': {
+      'en': 'Name',
       'de': 'Name',
-      'en': '',
     },
-    'o2sem55m': {
-      'de': 'Phone number',
-      'en': '',
+    '1qwq52s2': {
+      'en': 'Phone number',
+      'de': 'Telefonnummer',
     },
-    's0aksne6': {
-      'de': 'Phone Number',
-      'en': '',
-    },
-    'cu1rz8hq': {
-      'de': 'E-Mail',
-      'en': '',
+    'k42rx09i': {
+      'en': 'Phone Number',
+      'de': 'Telefonnummer',
     },
     'vdzc35iz': {
-      'de': 'E-Mail',
-      'en': '',
+      'en': 'E-Mail',
+      'de': 'Email',
+    },
+    'cu1rz8hq': {
+      'en': 'E-Mail',
+      'de': 'Email',
+    },
+    'w83v5p9g': {
+      'en': 'Street',
+      'de': 'Straße',
     },
     'dz8s1veo': {
-      'de': 'Street',
-      'en': '',
-    },
-    '4kvp5cnu': {
-      'de': 'Street',
-      'en': '',
-    },
-    'vl5t2xru': {
-      'de': 'City',
-      'en': '',
+      'en': 'Street',
+      'de': 'Straße',
     },
     '8m7j9wso': {
-      'de': 'City',
-      'en': '',
+      'en': 'City',
+      'de': 'Stadt',
+    },
+    'vl5t2xru': {
+      'en': 'City',
+      'de': 'Stadt',
+    },
+    'vkwdzh8z': {
+      'en': 'Zip',
+      'de': 'Reißverschluss',
     },
     'as64pn2v': {
-      'de': 'Zip',
-      'en': '',
+      'en': 'Zip',
+      'de': 'Reißverschluss',
     },
-    'sqb1k3ec': {
-      'de': 'Zip',
-      'en': '',
+    'hgyxigwg': {
+      'en': 'Country',
+      'de': 'Land',
     },
     'naeu1u2u': {
-      'de': 'Country',
-      'en': '',
+      'en': 'Country',
+      'de': 'Land',
     },
-    's6h1wnxo': {
-      'de': 'Country',
-      'en': '',
+    'qzvdq8bg': {
+      'en': 'Languages',
+      'de': 'Sprachen',
     },
-    'plywg53q': {
-      'de': 'Languages',
-      'en': '',
-    },
-    'nh1r0238': {
+    'xf9ydg3j': {
+      'en': 'Option 1',
       'de': 'Option 1',
-      'en': '',
     },
-    'xwrgxre7': {
-      'de': 'Customer Languages',
-      'en': '',
+    '7kfa0wi0': {
+      'en': 'Customer Languages',
+      'de': 'Kundensprachen',
     },
-    'v7plhg0s': {
-      'de': 'Search for an item...',
-      'en': '',
+    'zwexgz3e': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
     },
-    'offuqx3a': {
-      'de': 'Add Customer',
-      'en': '',
+    'hb047u9p': {
+      'en': 'Add Customer',
+      'de': 'Kunden hinzufügen',
     },
-    'cgezdoty': {
-      'de': 'Please enter the patients full name.',
-      'en': '',
+    'a90yebyy': {
+      'en': 'Please enter the patients full name.',
+      'de': 'Bitte geben Sie den vollständigen Namen des Patienten ein.',
     },
-    '907lm1aq': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'axxavshr': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    '9pssjjc2': {
-      'de': 'Please enter an age for the patient.',
-      'en': '',
+    'vwdmt5ow': {
+      'en': 'Please enter an age for the patient.',
+      'de': 'Bitte geben Sie das Alter des Patienten ein.',
     },
-    'xe22w63f': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'rytsrrvh': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    '64q2zitj': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'bez1h19z': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    '1vh4b221': {
-      'de': 'Please enter the date of birth of the patient.',
-      'en': '',
+    'ul8umbka': {
+      'en': 'Please enter the date of birth of the patient.',
+      'de': 'Bitte geben Sie das Geburtsdatum des Patienten ein.',
     },
-    'c52m76pd': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    '29498g7f': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'uh9k52fb': {
-      'de': 'Field is required',
-      'en': '',
+    'tndhfkcj': {
+      'en': 'Field is required',
+      'de': 'Das Feld ist erforderlich',
     },
-    'xropqng0': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'vf77bs9f': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    '6lhoujzg': {
-      'de': 'Patient Intake form',
-      'en': '',
+    'x0gktab6': {
+      'en': 'Patient Intake form',
+      'de': 'Patientenaufnahmeformular',
     },
-    'sxwzbsjz': {
-      'de': 'Please fill out the form to continue.',
-      'en': '',
+    '2ilwg7d0': {
+      'en': 'Please fill out the form to continue.',
+      'de': 'Bitte füllen Sie das Formular aus, um fortzufahren.',
     },
-    '1byh2jsg': {
-      'de': 'Home',
-      'en': '',
+    'jx8qgyjd': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // AddMeetingToCustomer
   {
-    'c67y3q2q': {
-      'de': 'ID:',
-      'en': '',
+    'fq1mmuz6': {
+      'en': 'ID:',
+      'de': 'AUSWEIS:',
     },
-    'byhu0a3q': {
+    'et2esaos': {
+      'en': 'Option 1',
       'de': 'Option 1',
-      'en': '',
     },
-    'x52cyluc': {
+    'i5paqfsq': {
+      'en': 'Tutor',
       'de': 'Tutor',
-      'en': '',
     },
-    '9y29dj0x': {
-      'de': 'Search for an item...',
-      'en': '',
+    'ccl67tsf': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
     },
-    'q7gadm3b': {
-      'de': 'duration',
-      'en': '',
+    '22nnbou1': {
+      'en': 'duration',
+      'de': 'Dauer',
     },
-    'r6ia2iua': {
-      'de': '0.0',
-      'en': '',
+    'dm5dydjl': {
+      'en': '0.0',
+      'de': '0,0',
     },
-    'fsnpjj36': {
-      'de': 'Save',
-      'en': '',
+    '0hi0scef': {
+      'en': 'Save',
+      'de': 'Speichern',
     },
-    'kl29b1po': {
-      'de': 'Please enter the patients full name.',
-      'en': '',
+    'd4r08dbo': {
+      'en': 'Please enter the patients full name.',
+      'de': 'Bitte geben Sie den vollständigen Namen des Patienten ein.',
     },
-    'e72x15w9': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'scajuol5': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'al1466er': {
-      'de': 'Please enter an age for the patient.',
-      'en': '',
+    'nk8m3ef2': {
+      'en': 'Please enter an age for the patient.',
+      'de': 'Bitte geben Sie das Alter des Patienten ein.',
     },
-    'xt4vzwm9': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'yv7pqmtb': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'oxstlqhc': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    '548halmr': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'unc56v4p': {
-      'de': 'Please enter the date of birth of the patient.',
-      'en': '',
+    'krymuidf': {
+      'en': 'Please enter the date of birth of the patient.',
+      'de': 'Bitte geben Sie das Geburtsdatum des Patienten ein.',
     },
-    'xab350ih': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'n82mxek3': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'stkp7ti5': {
-      'de': 'Field is required',
-      'en': '',
+    'iw5emeyr': {
+      'en': 'Field is required',
+      'de': 'Das Feld ist erforderlich',
     },
-    '83yl9kkc': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    'eesji8y9': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'ndfk8kcd': {
-      'de': 'Add Meeting',
-      'en': '',
+    '142c9phq': {
+      'en': 'Add Meeting',
+      'de': 'Meeting hinzufügen',
     },
-    'r2xd0lgq': {
-      'de': 'Add a meeting to a special customer',
-      'en': '',
+    '6ak09n8d': {
+      'en': 'Add a meeting to a special customer',
+      'de': 'Einem besonderen Kunden ein Meeting hinzufügen',
     },
-    'c6npx1ws': {
-      'de': 'Home',
-      'en': '',
+    'h77ncpzt': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // sideNav
   {
-    '95y28kz8': {
+    'an40yt0k': {
+      'en': 'Navigation',
       'de': 'Navigation',
-      'en': '',
     },
-    'kwvw1dx0': {
-      'de': 'For navigating between screens',
-      'en': '',
+    'r60f84h5': {
+      'en': 'For navigating between screens',
+      'de': 'Zur Navigation zwischen Bildschirmen',
     },
-    'e0uy5mgi': {
-      'de': 'bytes Coding',
-      'en': '',
+    's5ry5cyk': {
+      'en': 'bytes Coding',
+      'de': 'Bytes Kodierung',
     },
-    'pp11v2d7': {
+    'naqnbvxd': {
+      'en': 'Platform Navigation',
       'de': 'Platform Navigation',
-      'en': '',
     },
-    'gswosf21': {
-      'de': 'Dashboard',
-      'en': '',
+    'ryazebh4': {
+      'en': 'Dashboard',
+      'de': 'Armaturenbrett',
     },
-    'vubzw4fn': {
+    'pb71eaaj': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'hlllwdgt': {
+    '9q77itrm': {
+      'en': 'Chats',
       'de': 'Chats',
-      'en': '',
     },
-    'uzhek3wf': {
+    'zv4sd9zz': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'v0595r9p': {
-      'de': 'Support Tickets',
-      'en': '',
+    '2xnm6fps': {
+      'en': 'Support Tickets',
+      'de': 'Support-Tickets',
     },
-    's25u60xs': {
+    'feent0lc': {
+      'en': '12',
       'de': '12',
-      'en': '',
     },
-    'duxefwbe': {
-      'de': 'Calendar',
-      'en': '',
+    '9js2z9y7': {
+      'en': 'Calendar',
+      'de': 'Kalender',
     },
-    'l58wwlw0': {
-      'de': 'Settings',
-      'en': '',
+    '8tlki912': {
+      'en': 'Settings',
+      'de': 'Einstellungen',
     },
-    '89bbkkhb': {
-      'de': 'Billing',
-      'en': '',
+    '5zra02cb': {
+      'en': 'Billing',
+      'de': 'Abrechnung',
     },
-    'qasu6joo': {
-      'de': 'Members',
-      'en': '',
+    'm9ww17s0': {
+      'en': 'Members',
+      'de': 'Mitglieder',
     },
-    'yf7y8732': {
-      'de': 'Light Mode',
-      'en': '',
+    '411g996a': {
+      'en': 'Light Mode',
+      'de': 'Lichtmodus',
     },
-    'lhgm48cm': {
-      'de': 'Dark Mode',
-      'en': '',
+    'mc7klcgc': {
+      'en': 'Dark Mode',
+      'de': 'Dunkler Modus',
     },
-    '6dtqlh1d': {
-      'de': 'Home',
-      'en': '',
+    '0qj8uewa': {
+      'en': 'Home',
+      'de': 'Heim',
     },
   },
   // editProfile_auth_2
   {
-    'o0a4x7xt': {
-      'de': 'Adjust the content below to update your profile.',
-      'en': '',
+    'i42hhvws': {
+      'en': 'Adjust the content below to update your profile.',
+      'de': 'Passen Sie den Inhalt unten an, um Ihr Profil zu aktualisieren.',
     },
-    'tama5wuy': {
-      'de': 'Change Photo',
-      'en': '',
+    'cb6me508': {
+      'en': 'Change Photo',
+      'de': 'Foto ändern',
     },
-    'p1q6p9gx': {
-      'de': 'Full Name',
-      'en': '',
+    'kzae2g7n': {
+      'en': 'Full Name',
+      'de': 'Vollständiger Name',
     },
-    'z3y8xvd7': {
-      'de': 'Your full name...',
-      'en': '',
+    '7vgor3b8': {
+      'en': 'Your full name...',
+      'de': 'Ihr vollständiger Name...',
     },
-    '6x72ltl3': {
+    '8w40lg9d': {
+      'en': 'Manager',
       'de': 'Manager',
-      'en': '',
     },
-    'zlz2iu8t': {
+    'yensxgmy': {
+      'en': 'Betreuer',
       'de': 'Betreuer',
-      'en': '',
     },
-    'aexke9an': {
+    'o6w537y6': {
+      'en': 'Kunde',
       'de': 'Kunde',
-      'en': '',
     },
-    'imthgpev': {
-      'de': 'Your Role',
-      'en': '',
+    'wk1gzwl6': {
+      'en': 'Your Role',
+      'de': 'Deine Rolle',
     },
-    'jfcys0av': {
-      'de': 'Search for an item...',
-      'en': '',
+    'r14ffmw1': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
     },
-    'qd33kojz': {
-      'de': 'Short Description',
-      'en': '',
+    'mv1hv80o': {
+      'en': 'Short Description',
+      'de': 'kurze Beschreibung',
     },
-    'mv5hcw0x': {
-      'de': 'A little about you...',
-      'en': '',
+    'bc8lb6wd': {
+      'en': 'A little about you...',
+      'de': 'Ein bisschen über Sie …',
     },
   },
   // setPriority_Menu
   {
-    '7gx4gxjo': {
-      'de': 'Set Priority Level',
-      'en': '',
+    '4g1xmiy1': {
+      'en': 'Set Priority Level',
+      'de': 'Prioritätsstufe festlegen',
     },
-    'nrnuw7yh': {
-      'de': 'Emergency',
-      'en': '',
+    'ceeouso2': {
+      'en': 'Emergency',
+      'de': 'Notfall',
     },
-    'houi4n5x': {
-      'de': 'High',
-      'en': '',
+    'jnz7a7nx': {
+      'en': 'High',
+      'de': 'Hoch',
     },
-    'nlrhd594': {
-      'de': 'Medium',
-      'en': '',
+    'oorxhq9x': {
+      'en': 'Medium',
+      'de': 'Mittel',
     },
-    'kioearxv': {
-      'de': 'Low',
-      'en': '',
+    'na0320sa': {
+      'en': 'Low',
+      'de': 'Niedrig',
     },
   },
   // user_ListSmall
   {
-    'fh4ei39y': {
-      'de': 'ME',
-      'en': '',
+    '2lghugn7': {
+      'en': 'ME',
+      'de': 'MICH',
     },
   },
   // user_List
   {
-    'mxdlcfad': {
-      'de': 'Assign User',
-      'en': '',
+    'c7r5aq7h': {
+      'en': 'Assign User',
+      'de': 'Benutzer zuweisen',
     },
-    '530qmefy': {
-      'de': 'Select a user from the list below to continue.',
-      'en': '',
+    '1fert8cu': {
+      'en': 'Select a user from the list below to continue.',
+      'de':
+          'Wählen Sie einen Benutzer aus der Liste unten aus, um fortzufahren.',
     },
-    'o1uyt24f': {
-      'de': 'Close',
-      'en': '',
+    't9l5esbd': {
+      'en': 'Close',
+      'de': 'Schließen',
     },
   },
   // chat_DetailsOverlay
   {
-    'u7433v0d': {
-      'de': 'Group Chat ID: ',
-      'en': '',
+    'a0loq5a6': {
+      'en': 'Group Chat ID: ',
+      'de': 'Gruppenchat-ID:',
     },
-    'ssykg4s6': {
-      'de': 'In this chat',
-      'en': '',
+    'hspne3ym': {
+      'en': 'In this chat',
+      'de': 'In diesem Chat',
     },
-    'bsezz6gy': {
-      'de': 'Close',
-      'en': '',
+    '50akzqka': {
+      'en': 'Close',
+      'de': 'Schließen',
     },
   },
   // chat_ThreadComponent
   {
-    'skbrxgwm': {
-      'de': 'Start typing here...',
-      'en': '',
+    'gj24j4e2': {
+      'en': 'Start typing here...',
+      'de': 'Beginnen Sie hier mit der Eingabe ...',
     },
-    'g534y60a': {
-      'de': 'You must enter a message...',
-      'en': '',
+    'ur37thf2': {
+      'en': 'You must enter a message...',
+      'de': 'Sie müssen eine Nachricht eingeben...',
     },
-    'axxavshr': {
-      'de': 'Please choose an option from the dropdown',
-      'en': '',
+    '907lm1aq': {
+      'en': 'Please choose an option from the dropdown',
+      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
   },
   // user_ListSmall_1
   {
-    '2lghugn7': {
-      'de': 'ME',
-      'en': '',
+    'fh4ei39y': {
+      'en': 'ME',
+      'de': 'MICH',
     },
   },
   // deleteDialog
   {
-    '13iobm9v': {
-      'de': 'Options',
-      'en': '',
+    '3q0utb1e': {
+      'en': 'Options',
+      'de': 'Optionen',
     },
-    't9z0aabu': {
-      'de': 'Invite Users',
-      'en': '',
+    '73scs9a0': {
+      'en': 'Invite Users',
+      'de': 'Benutzer einladen',
     },
-    'zwifs52e': {
-      'de': 'Delete Chat',
-      'en': '',
+    'av9xz4qx': {
+      'en': 'Delete Chat',
+      'de': 'Chat löschen',
     },
-    'bhuh3tfe': {
-      'de': 'Confirm Delete',
-      'en': '',
+    '41tv38n3': {
+      'en': 'Confirm Delete',
+      'de': 'Löschen bestätigen',
     },
-    'orxp2pwr': {
-      'de': 'You can\'t undo this action.',
-      'en': '',
+    's2cbswob': {
+      'en': 'You can\'t undo this action.',
+      'de': 'Sie können diese Aktion nicht rückgängig machen.',
     },
-    'asgxxrtn': {
-      'de': 'Delete',
-      'en': '',
+    'z54qbopv': {
+      'en': 'Delete',
+      'de': 'Löschen',
     },
   },
   // Miscellaneous
   {
     'b7nmo9h5': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'xmayfjdy': {
-      'de': '',
       'en': '',
+      'de': '',
+    },
+    'rreotz6t': {
+      'en': '',
+      'de': '',
     },
     '4hucjyt3': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'pe8bwhny': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'ayl7ml95': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'cj4pi052': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'p3lm87a3': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'hac7gowh': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'hq7117qt': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'iej24wiy': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     '4dk1neen': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'oymp1cmr': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'tezxva0s': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     '3fjb95pu': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'ybkbd0h9': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'tsufngwo': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     '0uulr27y': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'lieon019': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'waotbjhx': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'pbn6f25j': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     '804gd7i9': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'j4z3yl1s': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     '525aerw5': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'xm7jo5yr': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'guzgv3lj': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'vodnos5o': {
-      'de': '',
       'en': '',
+      'de': '',
     },
     'fwchmphj': {
-      'de': '',
       'en': '',
+      'de': '',
     },
   },
 ].reduce((a, b) => a..addAll(b));

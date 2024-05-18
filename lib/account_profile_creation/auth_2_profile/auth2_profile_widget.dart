@@ -31,6 +31,8 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
     super.initState();
     _model = createModel(context, () => Auth2ProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'auth_2_Profile'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -183,6 +185,11 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                           size: 24.0,
                                         ),
                                         onPressed: () async {
+                                          logFirebaseEvent(
+                                              'AUTH_2_PROFILE_arrow_back_rounded_ICN_ON');
+                                          logFirebaseEvent(
+                                              'IconButton_navigate_to');
+
                                           context.pushNamed('Customers');
                                         },
                                       ),
@@ -268,7 +275,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'fuly3wvy' /* Your Account */,
+                        '3gvgvwg1' /* Your Account */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -285,6 +292,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                        logFirebaseEvent('contentView_1_navigate_to');
+
                         context.pushNamed('auth_2_EditProfile');
                       },
                       child: Container(
@@ -326,7 +337,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '7kmtotah' /* Edit Profile */,
+                                    'od94gyfg' /* Edit Profile */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -362,6 +373,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                        logFirebaseEvent('contentView_1_navigate_to');
+
                         context.pushNamed('Adress-Settings');
                       },
                       child: Container(
@@ -403,7 +418,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '5l6voay2' /* Edit Adress */,
+                                    '3bqy4rph' /* Edit Adress */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -439,6 +454,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                        logFirebaseEvent('contentView_1_navigate_to');
+
                         context.pushNamed('Language-Settings');
                       },
                       child: Container(
@@ -480,7 +499,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'douzf5oo' /* Edit Languages */,
+                                    'v8wpgdwz' /* Edit Languages */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -518,6 +537,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent(
+                                'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                            logFirebaseEvent('contentView_1_navigate_to');
+
                             context.pushNamed('IT-Skills-Settings');
                           },
                           child: Container(
@@ -559,7 +582,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ugwcgkhb' /* Edit IT-Skills */,
+                                        'k9gh52ok' /* Edit IT-Skills */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -592,7 +615,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'mp5x1zrt' /* App Settings */,
+                        'yf1kh2jt' /* App Settings */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -609,6 +632,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                        logFirebaseEvent('contentView_1_navigate_to');
+
                         context.pushNamed('support_SubmitTicket');
                       },
                       child: Container(
@@ -650,7 +677,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '327g1hyy' /* Support */,
+                                    'z84qmaed' /* Support */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -686,6 +713,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'AUTH_2_PROFILE_PAGE_contentView_1_ON_TAP');
+                        logFirebaseEvent('contentView_1_launch_u_r_l');
                         await launchURL('https://bytes-coding.com/agbs');
                       },
                       child: Container(
@@ -727,7 +757,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'peqeskan' /* Terms of Service */,
+                                    'dodyl2fx' /* Terms of Service */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -761,6 +791,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 15.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'AUTH_2_PROFILE_PAGE_LOG_OUT_BTN_ON_TAP');
+                          logFirebaseEvent('Button_auth');
                           GoRouter.of(context).prepareAuthEvent();
                           await authManager.signOut();
                           GoRouter.of(context).clearRedirectLocation();
@@ -768,7 +801,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           context.goNamedAuth('auth_2_Login', context.mounted);
                         },
                         text: FFLocalizations.of(context).getText(
-                          '1igniz2j' /* Log Out */,
+                          'zhg4cl4u' /* Log Out */,
                         ),
                         options: FFButtonOptions(
                           width: 150.0,

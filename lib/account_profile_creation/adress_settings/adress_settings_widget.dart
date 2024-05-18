@@ -30,6 +30,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
     super.initState();
     _model = createModel(context, () => AdressSettingsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'Adress-Settings'});
     _model.textController1 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.street, ''));
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -89,6 +91,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
             size: 25.0,
           ),
           onPressed: () async {
+            logFirebaseEvent('ADRESS_SETTINGS_arrow_back_rounded_ICN_O');
+            logFirebaseEvent('IconButton_navigate_back');
             context.safePop();
           },
         ),
@@ -99,7 +103,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                '4ndy7tw1' /* Complete Adress */,
+                'xvk3q9k4' /* Complete Adress */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Readex Pro',
@@ -110,7 +114,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'e38kgxol' /* Complete your adress informati... */,
+                  'ivwsse2p' /* Complete your adress informati... */,
                 ),
                 textAlign: TextAlign.start,
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -138,7 +142,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        'st4qpz84' /* Your information */,
+                        'pqv49jgr' /* Your information */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
@@ -173,7 +177,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '2oqvc2lc' /* Street and Number */,
+                                    '0e9c64ob' /* Street and Number */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -182,7 +186,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '61fgwpm7' /* Street */,
+                                    '4kvp5cnu' /* Street */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -254,7 +258,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'eotg8j1f' /* Town */,
+                                    'vv98yz02' /* Town */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -263,7 +267,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '4x4h5un1' /* Town */,
+                                    'tl7vy8f9' /* Town */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -336,7 +340,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'vzfhr9w9' /* Zip */,
+                                    'sqb1k3ec' /* Zip */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -345,7 +349,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'pexa8nuc' /* Zip */,
+                                    'yxwo7j7o' /* Zip */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -418,7 +422,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '1lm3p2x9' /* Country */,
+                                    's6h1wnxo' /* Country */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -427,7 +431,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'nlo21lck' /* Country */,
+                                    '0g14koc1' /* Country */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -491,12 +495,16 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent('ADRESS_SETTINGS_SAVE_CHANGES_BTN_ON_TAP');
+                    logFirebaseEvent('Button_backend_call');
+
                     await currentUserReference!.update(createUsersRecordData(
                       zip: _model.textController3.text,
                       town: _model.textController2.text,
                       street: _model.textController1.text,
                       country: _model.textController4.text,
                     ));
+                    logFirebaseEvent('Button_alert_dialog');
                     await showDialog(
                       context: context,
                       builder: (alertDialogContext) {
@@ -515,7 +523,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     );
                   },
                   text: FFLocalizations.of(context).getText(
-                    'nfrkcmwc' /* Save Changes */,
+                    'mpk8lics' /* Save Changes */,
                   ),
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.5,

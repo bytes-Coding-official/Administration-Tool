@@ -35,6 +35,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
     super.initState();
     _model = createModel(context, () => ImageDetailsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'image_Details'});
     animationsMap.addAll({
       'imageOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -125,6 +127,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('IMAGE_DETAILS_arrow_back_rounded_ICN_ON_');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

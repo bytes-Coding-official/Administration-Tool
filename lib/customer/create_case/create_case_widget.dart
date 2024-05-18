@@ -33,6 +33,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
     super.initState();
     _model = createModel(context, () => CreateCaseModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'CreateCase'});
     _model.titleTextController ??= TextEditingController();
     _model.titleFocusNode ??= FocusNode();
 
@@ -92,6 +93,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('CREATE_CASE_arrow_back_rounded_ICN_ON_TA');
+              logFirebaseEvent('IconButton_navigate_to');
+
               context.pushNamed('Customers');
             },
           ),
@@ -103,7 +107,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'y8a4g1j8' /* Create Case */,
+                    '0rdy80es' /* Create Case */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Readex Pro',
@@ -117,7 +121,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'q8cpu5z1' /* Create a new case with this fo... */,
+                    'brd4f1fu' /* Create a new case with this fo... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -218,7 +222,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                     decoration: InputDecoration(
                                       labelText:
                                           FFLocalizations.of(context).getText(
-                                        'yum0goyu' /* Title... */,
+                                        'y00zbz7g' /* Title... */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -230,7 +234,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '0futkmof' /* Title... */,
+                                        'eaxq1etl' /* Title... */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -313,7 +317,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                     decoration: InputDecoration(
                                       labelText:
                                           FFLocalizations.of(context).getText(
-                                        'sn5ieevs' /* Description... */,
+                                        'zrh50pvf' /* Description... */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -414,7 +418,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'yr01hol0' /* Themes */,
+                                      'zboepkw1' /* Themes */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -474,7 +478,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '4p7p7c12' /* Topics */,
+                                          'u3h0qui2' /* Topics */,
                                         ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -503,7 +507,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                   ),
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'fpj6ym4v' /* Customer */,
+                                      'sx3ty69v' /* Customer */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -558,7 +562,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'z25h7e01' /* Customer Name */,
+                                          'psh6ke1p' /* Customer Name */,
                                         ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -595,7 +599,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'hbxggzge' /* Revenue */,
+                                                '1m1enuc4' /* Revenue */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -618,7 +622,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                 labelText:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '15uo150c' /* Price per hour */,
+                                                  'imvqflfb' /* Price per hour */,
                                                 ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
@@ -631,7 +635,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                 hintText:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'l9wsq9un' /* 50 */,
+                                                  'zy0j4m21' /* 50 */,
                                                 ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
@@ -733,14 +737,21 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                         16.0, 12.0, 16.0, 12.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'CREATE_CASE_PAGE_ADD_CASE_BTN_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Button_custom_action');
                                         _model.customer =
                                             await actions.getCustomerFromDocRef(
                                           _model.dropDownValue2!,
                                         );
+                                        logFirebaseEvent(
+                                            'Button_custom_action');
                                         _model.itskills = await actions
                                             .getITSkillsFromDocRefs(
                                           _model.dropDownValue1!.toList(),
                                         );
+                                        logFirebaseEvent('Button_backend_call');
 
                                         await CustomerCaseRecord.collection
                                             .doc()
@@ -761,6 +772,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             },
                                           ),
                                         });
+                                        logFirebaseEvent('Button_alert_dialog');
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
@@ -779,12 +791,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             );
                                           },
                                         );
+                                        logFirebaseEvent(
+                                            'Button_update_app_state');
                                         FFAppState().update(() {});
 
                                         setState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'n6dvlpwe' /* Add Case */,
+                                        'p25f6cpa' /* Add Case */,
                                       ),
                                       options: FFButtonOptions(
                                         width:

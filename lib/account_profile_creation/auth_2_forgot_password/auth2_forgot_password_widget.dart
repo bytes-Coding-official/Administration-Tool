@@ -30,6 +30,8 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
     super.initState();
     _model = createModel(context, () => Auth2ForgotPasswordModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'auth_2_ForgotPassword'});
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
@@ -131,7 +133,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'htxvbys4' /* bytes Coding */,
+                            '2gddz9zm' /* bytes Coding */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
@@ -193,6 +195,10 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'AUTH_2_FORGOT_PASSWORD_arrow_back_rounde');
+                                    logFirebaseEvent(
+                                        'IconButton_navigate_back');
                                     context.safePop();
                                   },
                                 ),
@@ -203,7 +209,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'xfhm9acx' /* Forgot Password */,
+                                  'ngxwdtah' /* Forgot Password */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -219,7 +225,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'c0vj5c7t' /* Please fill out your email bel... */,
+                                  'rcdhs0gf' /* Please fill out your email bel... */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -244,7 +250,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'zrqe42ho' /* Email */,
+                                      'mzhbas81' /* Email */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -308,6 +314,9 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'AUTH_2_FORGOT_PASSWORD_SEND_RESET_LINK_B');
+                                  logFirebaseEvent('Button_auth');
                                   if (_model.emailAddressTextController.text
                                       .isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -326,7 +335,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'wb31fe17' /* Send Reset Link */,
+                                  'cw6tl9xj' /* Send Reset Link */,
                                 ),
                                 options: FFButtonOptions(
                                   width: double.infinity,

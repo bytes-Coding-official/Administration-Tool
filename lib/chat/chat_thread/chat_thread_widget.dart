@@ -234,6 +234,11 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'CHAT_THREAD_MediaDisplay_ng5y6pep_ON_TAP');
+                                        logFirebaseEvent(
+                                            'MediaDisplay_navigate_to');
+
                                         context.pushNamed(
                                           'image_Details',
                                           queryParameters: {
@@ -437,6 +442,11 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'CHAT_THREAD_MediaDisplay_btysk8lc_ON_TAP');
+                                    logFirebaseEvent(
+                                        'MediaDisplay_navigate_to');
+
                                     context.pushNamed(
                                       'image_Details',
                                       queryParameters: {

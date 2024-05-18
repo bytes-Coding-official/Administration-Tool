@@ -75,7 +75,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 4.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'mxdlcfad' /* Assign User */,
+                        'c7r5aq7h' /* Assign User */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
@@ -89,7 +89,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '530qmefy' /* Select a user from the list be... */,
+                        '1fert8cu' /* Select a user from the list be... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
@@ -137,6 +137,9 @@ class _UserListWidgetState extends State<UserListWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'USER_LIST_COMP_Container_zkmg0cok_ON_TAP');
+                                logFirebaseEvent('user_ListSmall_bottom_sheet');
                                 Navigator.pop(context, listViewUsersRecord);
                               },
                               child: wrapWithModel(
@@ -180,6 +183,9 @@ class _UserListWidgetState extends State<UserListWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'USER_LIST_COMP_convertComponent_ON_TAP');
+                        logFirebaseEvent('convertComponent_bottom_sheet');
                         Navigator.pop(context);
                       },
                       child: AnimatedContainer(
@@ -204,7 +210,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                                       12.0, 16.0, 12.0, 16.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'o1uyt24f' /* Close */,
+                                      't9l5esbd' /* Close */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)

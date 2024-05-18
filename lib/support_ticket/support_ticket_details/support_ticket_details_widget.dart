@@ -39,6 +39,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
     super.initState();
     _model = createModel(context, () => SupportTicketDetailsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'support_TicketDetails'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -87,6 +89,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('SUPPORT_TICKET_DETAILS_arrow_back_rounde');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -95,7 +99,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'oo1fqm48' /* Ticket */,
+                  'yqpe5xlu' /* Ticket */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -108,7 +112,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'e9znz11p' /* Current Support-Ticket */,
+                    'x6ddm1u4' /* Current Support-Ticket */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -210,7 +214,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                   12.0, 4.0, 12.0, 4.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'n7i4xuvy' /* Ticket Details */,
+                                              'mscspqqu' /* Ticket Details */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -248,7 +252,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                           TextSpan(
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              'aaa8gjph' /* Ticket #:  */,
+                                              'ss89pb28' /* Ticket #:  */,
                                             ),
                                             style: const TextStyle(),
                                           ),
@@ -353,7 +357,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                 16.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'sgn8hh6c' /* Below are the details of this ... */,
+                                'istektt5' /* Below are the details of this ... */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -416,7 +420,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'vxgf4rp2' /* Description */,
+                                      'zuqhc7rn' /* Description */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -454,6 +458,9 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'SUPPORT_TICKET_DETAILS_Image_ctwsq02z_ON');
+                                        logFirebaseEvent('Image_expand_image');
                                         await Navigator.push(
                                           context,
                                           PageTransition(
@@ -503,7 +510,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '47dgq5a3' /* Submitted on */,
+                                        '2a7z81xx' /* Submitted on */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -541,7 +548,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          '9i7ujk20' /* Last Edited */,
+                                          '3b2i6hgq' /* Last Edited */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -587,7 +594,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'trxtjtsw' /* Status */,
+                                            'h1lawcol' /* Status */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -612,16 +619,16 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                           ),
                                           options: [
                                             FFLocalizations.of(context).getText(
-                                              '173cgq1c' /* Pending */,
+                                              '915sp9a8' /* Pending */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              '8ew7tviv' /* In Progress */,
+                                              'zv37t5tt' /* In Progress */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'u06jy42q' /* Complete */,
+                                              'fbik18u7' /* Complete */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'l0j8onis' /* Submitted */,
+                                              'l9ecv4xv' /* Submitted */,
                                             )
                                           ],
                                           onChanged: (val) => setState(
@@ -637,7 +644,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                   ),
                                           hintText: FFLocalizations.of(context)
                                               .getText(
-                                            'v3ywnmpi' /* Please select... */,
+                                            '5g50y16u' /* Please select... */,
                                           ),
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
@@ -677,7 +684,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'ls2xotzx' /* Assigned to */,
+                                                  'yy7xpy7w' /* Assigned to */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -860,7 +867,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                             0.0, 4.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '7522lg0r' /* Submitted By */,
+                                            'jvimk02l' /* Submitted By */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -1031,6 +1038,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  logFirebaseEvent(
+                                                      'SUPPORT_TICKET_DETAILS_ASSIGN_BTN_ON_TAP');
+                                                  logFirebaseEvent(
+                                                      'Button_bottom_sheet');
                                                   await showModalBottomSheet(
                                                     isScrollControlled: true,
                                                     backgroundColor:
@@ -1071,6 +1082,9 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                       _model.selectedUser
                                                               ?.reference.id !=
                                                           '') {
+                                                    logFirebaseEvent(
+                                                        'Button_backend_call');
+
                                                     await widget
                                                         .ticketRef!.reference
                                                         .update(
@@ -1079,6 +1093,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                           .selectedUser
                                                           ?.reference,
                                                     ));
+                                                    logFirebaseEvent(
+                                                        'Button_show_snack_bar');
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(
@@ -1113,7 +1129,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '190ycife' /* Assign */,
+                                                  'sacl5x8e' /* Assign */,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,
@@ -1156,6 +1172,11 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  logFirebaseEvent(
+                                                      'SUPPORT_TICKET_DETAILS_UPDATE_TICKET_BTN');
+                                                  logFirebaseEvent(
+                                                      'Button_backend_call');
+
                                                   await widget
                                                       .ticketRef!.reference
                                                       .update(
@@ -1165,6 +1186,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                     lastActive:
                                                         getCurrentTimestamp,
                                                   ));
+                                                  logFirebaseEvent(
+                                                      'Button_show_snack_bar');
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
                                                     SnackBar(
@@ -1196,7 +1219,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '5o57gj4w' /* Update Ticket */,
+                                                  'x5s786v4' /* Update Ticket */,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,

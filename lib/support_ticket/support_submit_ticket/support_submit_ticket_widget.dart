@@ -40,6 +40,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
     super.initState();
     _model = createModel(context, () => SupportSubmitTicketModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'support_SubmitTicket'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -310,6 +312,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('SUPPORT_SUBMIT_TICKET_arrow_back_rounded');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -318,7 +322,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  '6m96v7d4' /* Ticket-Creation */,
+                  'aekkeure' /* Ticket-Creation */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -331,7 +335,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'w2ax4dxz' /* Create a Support-Ticket here */,
+                    'th2f4v4n' /* Create a Support-Ticket here */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -357,7 +361,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'olovehmu' /* Fill out the form below to sub... */,
+                      'vj2kin4a' /* Fill out the form below to sub... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily: 'Inter',
@@ -385,6 +389,9 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'SUPPORT_SUBMIT_TICKET_Container_8hnvyrq6');
+                                  logFirebaseEvent('Container_call_number');
                                   await launchUrl(Uri(
                                     scheme: 'tel',
                                     path: '(049) 175 5738757',
@@ -427,7 +434,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'fc45tfhc' /* Call Us */,
+                                              '8a83o12g' /* Call Us */,
                                             ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
@@ -456,6 +463,9 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'SUPPORT_SUBMIT_TICKET_Container_yitd3w6a');
+                                  logFirebaseEvent('Container_send_email');
                                   await launchUrl(Uri(
                                       scheme: 'mailto',
                                       path: 'info@bytes-coding.com',
@@ -505,7 +515,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '7qh0t2to' /* Email Us */,
+                                              'txl8rzat' /* Email Us */,
                                             ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
@@ -533,7 +543,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'svyi7a7w' /* What is going on? */,
+                            'ricp38cm' /* What is going on? */,
                           ),
                           labelStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
@@ -599,7 +609,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     letterSpacing: 0.0,
                                   ),
                           hintText: FFLocalizations.of(context).getText(
-                            'gw93g4go' /* Short Description of what is g... */,
+                            '0l26gje2' /* Short Description of what is g... */,
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
@@ -650,7 +660,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           animationsMap['textFieldOnPageLoadAnimation2']!),
                       Text(
                         FFLocalizations.of(context).getText(
-                          'v168fglt' /* Choose a priority level */,
+                          'eyq6jort' /* Choose a priority level */,
                         ),
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Inter',
@@ -661,16 +671,16 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       FlutterFlowChoiceChips(
                         options: [
                           ChipData(FFLocalizations.of(context).getText(
-                            '5xk37c9i' /* Emergency */,
+                            'nj4gxq7y' /* Emergency */,
                           )),
                           ChipData(FFLocalizations.of(context).getText(
-                            '29wadrsz' /* High */,
+                            'nxn0qt7g' /* High */,
                           )),
                           ChipData(FFLocalizations.of(context).getText(
-                            '7sze9zop' /* Medium */,
+                            '36ar5gt0' /* Medium */,
                           )),
                           ChipData(FFLocalizations.of(context).getText(
-                            'lu4z3zyl' /* Low */,
+                            'xbub19mw' /* Low */,
                           ))
                         ],
                         onChanged: (val) => setState(
@@ -721,7 +731,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             FormFieldController<List<String>>(
                           [
                             FFLocalizations.of(context).getText(
-                              'qp64btls' /* Low */,
+                              'udk6s772' /* Low */,
                             )
                           ],
                         ),
@@ -746,6 +756,10 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent(
+                                'SUPPORT_SUBMIT_TICKET_Container_1oj9byx4');
+                            logFirebaseEvent(
+                                'Container_upload_media_to_firebase');
                             final selectedMedia =
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
@@ -831,7 +845,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '13s53xsn' /* Upload Screenshot */,
+                                        'ngxigtui' /* Upload Screenshot */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -860,7 +874,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '04h9y5pj' /* Assign User */,
+                                    '9furp0rw' /* Assign User */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -878,6 +892,10 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'SUPPORT_SUBMIT_TICKET_Container_z19987yl');
+                                      logFirebaseEvent(
+                                          'Container_bottom_sheet');
                                       await showModalBottomSheet(
                                         isScrollControlled: true,
                                         backgroundColor:
@@ -961,7 +979,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '3ttsymfp' /* Add User */,
+                                                        'zdl3izxa' /* Add User */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -1006,7 +1024,10 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'SUPPORT_SUBMIT_TICKET_SUBMIT_TICKET_BTN_');
                       // createTicket
+                      logFirebaseEvent('Button_createTicket');
 
                       await SupportTicketsRecord.collection
                           .doc()
@@ -1025,6 +1046,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             assignee: _model.userRefSelected?.reference,
                           ));
                       // successMessage
+                      logFirebaseEvent('Button_successMessage');
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -1042,10 +1064,11 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                               FlutterFlowTheme.of(context).secondary,
                         ),
                       );
+                      logFirebaseEvent('Button_navigate_back');
                       context.safePop();
                     },
                     text: FFLocalizations.of(context).getText(
-                      'ypiicayo' /* Submit Ticket */,
+                      '0sjmvj9o' /* Submit Ticket */,
                     ),
                     icon: const Icon(
                       Icons.receipt_long,

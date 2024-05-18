@@ -31,6 +31,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
     super.initState();
     _model = createModel(context, () => CustomerModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Customer'});
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -128,7 +129,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          'e1jwqeb7' /* ID: */,
+                          'en3up8db' /* ID: */,
                         ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -169,6 +170,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                       size: 24.0,
                     ),
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'CUSTOMER_PAGE_close_rounded_ICN_ON_TAP');
+                      logFirebaseEvent('IconButton_navigate_to');
+
                       context.pushNamed('Customers');
                     },
                   ),
@@ -262,7 +267,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'zth6pmrx' /* Name */,
+                                          'fwglq52i' /* Name */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -298,7 +303,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'zcky4q27' /* Mail */,
+                                          '6fgimpch' /* Mail */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -334,7 +339,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          '3vdj5xao' /* Adress */,
+                                          'igthvfrg' /* Adress */,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -405,7 +410,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'ijf50jfa' /* Themes */,
+                                'pfk6zl6k' /* Themes */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -490,7 +495,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'u66lonhl' /* Languages */,
+                                'w9rexsje' /* Languages */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -619,7 +624,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            '3kybzbsy' /* Revenue */,
+                                            '91qmu550' /* Revenue */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -664,7 +669,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'wam4j4d1' /* Status */,
+                                            'xf3hox2c' /* Status */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
@@ -794,8 +799,12 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'CUSTOMER_PAGE_CLAIM_CASE_BTN_ON_TAP');
                                   if (customerCustomerCaseRecord.assignee
                                       .contains(currentUserReference)) {
+                                    logFirebaseEvent('Button_backend_call');
+
                                     await customerCustomerCaseRecord.reference
                                         .update({
                                       ...mapToFirestore(
@@ -806,6 +815,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       ),
                                     });
                                   } else {
+                                    logFirebaseEvent('Button_backend_call');
+
                                     await customerCustomerCaseRecord.reference
                                         .update({
                                       ...mapToFirestore(
@@ -817,6 +828,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     });
                                   }
 
+                                  logFirebaseEvent('Button_update_app_state');
                                   setState(() {});
                                 },
                                 text: customerCustomerCaseRecord.assignee
@@ -855,6 +867,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CUSTOMER_ADD_MEETING_TO_USER_BTN_ON_TAP');
+                                      logFirebaseEvent(
+                                          'Button_update_app_state');
                                       setState(() {
                                         FFAppState().caseid =
                                             customerCustomerCaseRecord.caseid;
@@ -865,6 +881,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             customerCustomerCaseRecord
                                                 .reference;
                                       });
+                                      logFirebaseEvent('Button_navigate_to');
 
                                       context.pushNamed(
                                         'AddMeetingToCustomer',
@@ -880,7 +897,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       );
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      '9om6blwi' /* Add meeting to user */,
+                                      'mzuncnhu' /* Add meeting to user */,
                                     ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
@@ -917,12 +934,18 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CUSTOMER_PAGE_CLOSE_CASE_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_backend_call');
+
                                       await customerCustomerCaseRecord
                                           .reference
                                           .update(createCustomerCaseRecordData(
                                         closed:
                                             !customerCustomerCaseRecord.closed,
                                       ));
+                                      logFirebaseEvent(
+                                          'Button_update_app_state');
                                       FFAppState().update(() {});
                                     },
                                     text: customerCustomerCaseRecord.closed
@@ -968,7 +991,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'eneerc8o' /* Duration */,
+                                    '955no1if' /* Duration */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -981,7 +1004,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ),
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '55ok6p95' /* Betreuer */,
+                                    'g13pqfbb' /* Betreuer */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1047,10 +1070,14 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onLongPress: () async {
+                                              logFirebaseEvent(
+                                                  'CUSTOMER_Container_785ir75p_ON_LONG_PRES');
                                               if (valueOrDefault(
                                                       currentUserDocument?.role,
                                                       '') ==
                                                   'Manager') {
+                                                logFirebaseEvent(
+                                                    'Container_alert_dialog');
                                                 var confirmDialogResponse =
                                                     await showDialog<bool>(
                                                           context: context,
@@ -1084,6 +1111,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                         ) ??
                                                         false;
                                                 if (confirmDialogResponse) {
+                                                  logFirebaseEvent(
+                                                      'Container_backend_call');
                                                   await containerCustomerMeetingRecord
                                                       .reference
                                                       .delete();
@@ -1091,6 +1120,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   return;
                                                 }
 
+                                                logFirebaseEvent(
+                                                    'Container_alert_dialog');
                                                 await showDialog(
                                                   context: context,
                                                   builder:
@@ -1114,7 +1145,11 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                 return;
                                               }
 
+                                              logFirebaseEvent(
+                                                  'Container_update_app_state');
                                               FFAppState().update(() {});
+                                              logFirebaseEvent(
+                                                  'Container_navigate_to');
 
                                               context.pushNamed('Customer');
                                             },
