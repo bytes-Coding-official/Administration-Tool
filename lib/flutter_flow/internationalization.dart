@@ -288,11 +288,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'eneerc8o': {
-      'de': 'Case Duration',
+      'de': 'Duration',
       'en': '',
     },
     '55ok6p95': {
-      'de': 'Case Betreuer',
+      'de': 'Betreuer',
       'en': '',
     },
     'ld5qx0de': {
