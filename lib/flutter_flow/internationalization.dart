@@ -374,14 +374,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Review the details below of all current projects.',
       'en': '',
     },
-    'sphwk62r': {
-      'de': 'Filters',
-      'en': '',
-    },
-    'rhek6d4j': {
-      'de': 'Filter here...',
-      'en': '',
-    },
     'apwtdsiq': {
       'de': 'All',
       'en': '',
@@ -402,11 +394,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'All',
       'en': '',
     },
+    'sphwk62r': {
+      'de': 'Filters',
+      'en': '',
+    },
+    'rhek6d4j': {
+      'de': 'Filter here...',
+      'en': '',
+    },
     'xbcdougq': {
       'de': 'Filter',
       'en': '',
     },
-    'fy5ytf4v': {
+    'h2vputm1': {
       'de': 'Filter here...',
       'en': '',
     },

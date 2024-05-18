@@ -11,9 +11,9 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      listViewPagingController2;
-  Query? listViewPagingQuery2;
-  List<StreamSubscription?> listViewStreamSubscriptions2 = [];
+      listViewPagingController;
+  Query? listViewPagingQuery;
+  List<StreamSubscription?> listViewStreamSubscriptions = [];
 
   @override
   void initState(BuildContext context) {}
@@ -21,28 +21,27 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    for (var s in listViewStreamSubscriptions2) {
+    for (var s in listViewStreamSubscriptions) {
       s?.cancel();
     }
-    listViewPagingController2?.dispose();
+    listViewPagingController?.dispose();
   }
 
   /// Additional helper methods.
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setListViewController2(
+  PagingController<DocumentSnapshot?, CustomerCaseRecord> setListViewController(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
-    listViewPagingController2 ??= _createListViewController2(query, parent);
-    if (listViewPagingQuery2 != query) {
-      listViewPagingQuery2 = query;
-      listViewPagingController2?.refresh();
+    listViewPagingController ??= _createListViewController(query, parent);
+    if (listViewPagingQuery != query) {
+      listViewPagingQuery = query;
+      listViewPagingController?.refresh();
     }
-    return listViewPagingController2!;
+    return listViewPagingController!;
   }
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createListViewController2(
+      _createListViewController(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
@@ -51,9 +50,9 @@ class BillingModel extends FlutterFlowModel<BillingWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => listViewPagingQuery2 ??= query,
+          queryBuilder: (_) => listViewPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
-          streamSubscriptions: listViewStreamSubscriptions2,
+          streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,
           pageSize: 25,
           isStream: true,

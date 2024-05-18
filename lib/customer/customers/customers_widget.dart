@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'customers_model.dart';
@@ -67,7 +68,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                 tablet: false,
               ))
                 Container(
-                  width: 270.0,
+                  width: 232.0,
                   height: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
@@ -1056,246 +1057,204 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          if (responsiveVisibility(
-                                            context: context,
-                                            phone: false,
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      FlutterFlowChoiceChips(
+                                        options: [
+                                          ChipData(FFLocalizations.of(context)
+                                              .getText(
+                                            'apwtdsiq' /* All */,
+                                          )),
+                                          ChipData(FFLocalizations.of(context)
+                                              .getText(
+                                            '4x13kefg' /* Own Projects */,
+                                          )),
+                                          ChipData(FFLocalizations.of(context)
+                                              .getText(
+                                            'mb94ajo3' /* Others */,
+                                          )),
+                                          ChipData(FFLocalizations.of(context)
+                                              .getText(
+                                            'vt6ohljs' /* Closed */,
                                           ))
-                                            Expanded(
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller:
-                                                      _model.textController1,
-                                                  focusNode: _model
-                                                      .textFieldFocusNode1,
-                                                  autofocus: true,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    labelText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'sphwk62r' /* Filters */,
-                                                    ),
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'rhek6d4j' /* Filter here... */,
-                                                    ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
+                                        ],
+                                        onChanged: (val) => setState(() =>
+                                            _model.choiceChipsValue =
+                                                val?.firstOrNull),
+                                        selectedChipStyle: ChipStyle(
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .accent2,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          iconColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 18.0,
+                                          elevation: 0.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                          borderWidth: 1.0,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        unselectedChipStyle: ChipStyle(
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          iconColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          iconSize: 18.0,
+                                          elevation: 0.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderWidth: 1.0,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        chipSpacing: 12.0,
+                                        rowSpacing: 12.0,
+                                        multiselect: false,
+                                        initialized:
+                                            _model.choiceChipsValue != null,
+                                        alignment: WrapAlignment.start,
+                                        controller: _model
+                                                .choiceChipsValueController ??=
+                                            FormFieldController<List<String>>(
+                                          [
+                                            FFLocalizations.of(context).getText(
+                                              '30m9wopn' /* All */,
+                                            )
+                                          ],
+                                        ),
+                                        wrapped: false,
+                                      ),
+                                      if (responsiveVisibility(
+                                        context: context,
+                                        phone: false,
+                                        tablet: false,
+                                      ))
+                                        SizedBox(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.35,
+                                          child: TextFormField(
+                                            controller: _model.textController1,
+                                            focusNode:
+                                                _model.textFieldFocusNode1,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              '_model.textController1',
+                                              const Duration(milliseconds: 150),
+                                              () => setState(() {}),
+                                            ),
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'sphwk62r' /* Filters */,
+                                              ),
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         letterSpacing: 0.0,
                                                       ),
-                                                  validator: _model
-                                                      .textController1Validator
-                                                      .asValidator(context),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'rhek6d4j' /* Filter here... */,
+                                              ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  width: 2.0,
                                                 ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
-                                          SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                FlutterFlowChoiceChips(
-                                                  options: [
-                                                    ChipData(FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'apwtdsiq' /* All */,
-                                                    )),
-                                                    ChipData(FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      '4x13kefg' /* Own Projects */,
-                                                    )),
-                                                    ChipData(FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'mb94ajo3' /* Others */,
-                                                    )),
-                                                    ChipData(FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'vt6ohljs' /* Closed */,
-                                                    ))
-                                                  ],
-                                                  onChanged: (val) => setState(
-                                                      () => _model
-                                                              .choiceChipsValue =
-                                                          val?.firstOrNull),
-                                                  selectedChipStyle: ChipStyle(
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .accent2,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    iconColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                    iconSize: 18.0,
-                                                    elevation: 0.0,
-                                                    borderColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondary,
-                                                    borderWidth: 1.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  unselectedChipStyle:
-                                                      ChipStyle(
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    iconColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    iconSize: 18.0,
-                                                    elevation: 0.0,
-                                                    borderColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate,
-                                                    borderWidth: 1.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  chipSpacing: 12.0,
-                                                  rowSpacing: 12.0,
-                                                  multiselect: false,
-                                                  initialized:
-                                                      _model.choiceChipsValue !=
-                                                          null,
-                                                  alignment:
-                                                      WrapAlignment.start,
-                                                  controller: _model
-                                                          .choiceChipsValueController ??=
-                                                      FormFieldController<
-                                                          List<String>>(
-                                                    [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '30m9wopn' /* All */,
-                                                      )
-                                                    ],
-                                                  ),
-                                                  wrapped: false,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
                                                 ),
-                                              ],
-                                            ),
+                                            validator: _model
+                                                .textController1Validator
+                                                .asValidator(context),
                                           ),
-                                        ],
-                                      ),
-                                    ),
+                                        ),
+                                    ],
                                   ),
                                   if (responsiveVisibility(
                                     context: context,
@@ -1325,7 +1284,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                   ),
                                           hintText: FFLocalizations.of(context)
                                               .getText(
-                                            'fy5ytf4v' /* Filter here... */,
+                                            'h2vputm1' /* Filter here... */,
                                           ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
@@ -1887,215 +1846,216 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 12.0, 8.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Builder(
-                                                      builder: (context) {
-                                                        final assigneesMobile =
-                                                            mobileViewCustomerCaseRecord
-                                                                .assignee
-                                                                .map((e) => e)
-                                                                .toList();
-                                                        return SingleChildScrollView(
-                                                          scrollDirection:
-                                                              Axis.horizontal,
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .end,
-                                                            children: List.generate(
-                                                                    assigneesMobile
-                                                                        .length,
-                                                                    (assigneesMobileIndex) {
-                                                              final assigneesMobileItem =
-                                                                  assigneesMobile[
-                                                                      assigneesMobileIndex];
-                                                              return StreamBuilder<
-                                                                  UsersRecord>(
-                                                                stream: UsersRecord
-                                                                    .getDocument(
-                                                                        assigneesMobileItem),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
+                                                child: SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) {
+                                                          final assigneesMobile =
+                                                              mobileViewCustomerCaseRecord
+                                                                  .assignee
+                                                                  .map((e) => e)
+                                                                  .toList();
+                                                          return SingleChildScrollView(
+                                                            scrollDirection:
+                                                                Axis.horizontal,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .end,
+                                                              children: List.generate(
+                                                                      assigneesMobile
+                                                                          .length,
+                                                                      (assigneesMobileIndex) {
+                                                                final assigneesMobileItem =
+                                                                    assigneesMobile[
+                                                                        assigneesMobileIndex];
+                                                                return StreamBuilder<
+                                                                    UsersRecord>(
+                                                                  stream: UsersRecord
+                                                                      .getDocument(
+                                                                          assigneesMobileItem),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
                                                                         child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          child:
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    final containerUsersRecord =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Container(
+                                                                      width:
+                                                                          40.0,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .accent1,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        border:
+                                                                            Border.all(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(40.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            containerUsersRecord.photoUrl,
+                                                                            width:
+                                                                                60.0,
+                                                                            height:
+                                                                                60.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     );
-                                                                  }
-                                                                  final containerUsersRecord =
-                                                                      snapshot
-                                                                          .data!;
-                                                                  return Container(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent1,
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                    ),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding:
-                                                                          const EdgeInsets.all(
-                                                                              2.0),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(40.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          containerUsersRecord
-                                                                              .photoUrl,
-                                                                          width:
-                                                                              60.0,
-                                                                          height:
-                                                                              60.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              );
-                                                            })
-                                                                .divide(const SizedBox(
-                                                                    width: 5.0))
-                                                                .around(const SizedBox(
-                                                                    width:
-                                                                        5.0)),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ),
-                                                    Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets.all(6.0),
-                                                        child: Container(
-                                                          height: 32.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: mobileViewCustomerCaseRecord
-                                                                    .assignee
-                                                                    .contains(
-                                                                        currentUserReference)
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .accent1
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        12.0),
-                                                            border: Border.all(
+                                                                  },
+                                                                );
+                                                              })
+                                                                  .divide(const SizedBox(
+                                                                      width:
+                                                                          5.0))
+                                                                  .around(const SizedBox(
+                                                                      width:
+                                                                          5.0)),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  6.0),
+                                                          child: Container(
+                                                            height: 32.0,
+                                                            decoration:
+                                                                BoxDecoration(
                                                               color: mobileViewCustomerCaseRecord
                                                                       .assignee
                                                                       .contains(
                                                                           currentUserReference)
                                                                   ? FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary
+                                                                      .accent1
                                                                   : FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondary,
-                                                              width: 2.0,
+                                                                      .alternate,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: mobileViewCustomerCaseRecord
+                                                                        .assignee
+                                                                        .contains(
+                                                                            currentUserReference)
+                                                                    ? FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary
+                                                                    : FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                width: 2.0,
+                                                              ),
                                                             ),
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                const AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                () {
-                                                                  if (mobileViewCustomerCaseRecord
-                                                                      .assignee
-                                                                      .contains(
-                                                                          currentUserReference)) {
-                                                                    return 'Own';
-                                                                  } else if (mobileViewCustomerCaseRecord
-                                                                          .assignee.isEmpty) {
-                                                                    return 'Open';
-                                                                  } else if (mobileViewCustomerCaseRecord
-                                                                      .closed) {
-                                                                    return 'closed';
-                                                                  } else {
-                                                                    return 'Other';
-                                                                  }
-                                                                }(),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: mobileViewCustomerCaseRecord.assignee.contains(
-                                                                              currentUserReference)
-                                                                          ? FlutterFlowTheme.of(context)
-                                                                              .primaryText
-                                                                          : FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  () {
+                                                                    if (mobileViewCustomerCaseRecord
+                                                                        .assignee
+                                                                        .contains(
+                                                                            currentUserReference)) {
+                                                                      return 'Own';
+                                                                    } else if (mobileViewCustomerCaseRecord
+                                                                            .assignee.isEmpty) {
+                                                                      return 'Open';
+                                                                    } else if (mobileViewCustomerCaseRecord
+                                                                        .closed) {
+                                                                      return 'closed';
+                                                                    } else {
+                                                                      return 'Other';
+                                                                    }
+                                                                  }(),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: mobileViewCustomerCaseRecord.assignee.contains(currentUserReference)
+                                                                            ? FlutterFlowTheme.of(context).primaryText
+                                                                            : FlutterFlowTheme.of(context).primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ],
