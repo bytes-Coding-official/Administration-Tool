@@ -5,8 +5,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'adress_settings_model.dart';
 export 'adress_settings_model.dart';
 
@@ -111,7 +116,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                   ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'ivwsse2p' /* Complete your adress informati... */,
@@ -125,7 +130,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
             ),
           ],
         ),
-        actions: const [],
+        actions: [],
         centerTitle: true,
         elevation: 0.0,
       ),
@@ -136,7 +141,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -154,7 +159,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,13 +169,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
-                                autofillHints: const [
+                                autofillHints: [
                                   AutofillHints.fullStreetAddress
                                 ],
                                 obscureText: false,
@@ -247,13 +252,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController2,
                                 focusNode: _model.textFieldFocusNode2,
-                                autofillHints: const [AutofillHints.addressCity],
+                                autofillHints: [AutofillHints.addressCity],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -313,7 +318,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: Color(0xFFDBE2E7),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController2Validator
@@ -329,13 +334,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController3,
                                 focusNode: _model.textFieldFocusNode3,
-                                autofillHints: const [AutofillHints.email],
+                                autofillHints: [AutofillHints.email],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -395,7 +400,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: Color(0xFFDBE2E7),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -411,13 +416,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => TextFormField(
                                 controller: _model.textController4,
                                 focusNode: _model.textFieldFocusNode4,
-                                autofillHints: const [AutofillHints.countryName],
+                                autofillHints: [AutofillHints.countryName],
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -477,7 +482,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: Color(0xFFDBE2E7),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController4Validator
@@ -492,7 +497,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('ADRESS_SETTINGS_SAVE_CHANGES_BTN_ON_TAP');
@@ -509,13 +514,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                       context: context,
                       builder: (alertDialogContext) {
                         return AlertDialog(
-                          title: const Text('Success'),
-                          content: const Text('Successfully saved new data!'),
+                          title: Text('Success'),
+                          content: Text('Successfully saved new data!'),
                           actions: [
                             TextButton(
                               onPressed: () =>
                                   Navigator.pop(alertDialogContext),
-                              child: const Text('Ok'),
+                              child: Text('Ok'),
                             ),
                           ],
                         );
@@ -528,9 +533,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                   options: FFButtonOptions(
                     width: MediaQuery.sizeOf(context).width * 0.5,
                     height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -538,7 +543,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

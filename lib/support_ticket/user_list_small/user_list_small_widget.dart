@@ -3,6 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_list_small_model.dart';
 export 'user_list_small_model.dart';
 
@@ -49,22 +51,16 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
-      onEnter: ((event) async {
-        setState(() => _model.iuserHovered = true);
-      }),
-      onExit: ((event) async {
-        setState(() => _model.iuserHovered = false);
-      }),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
+        duration: Duration(milliseconds: 150),
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
-          color: _model.iuserHovered
+          color: _model.iuserHovered!
               ? FlutterFlowTheme.of(context).primaryBackground
               : FlutterFlowTheme.of(context).secondaryBackground,
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+          padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -73,7 +69,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                 height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent1,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10.0),
                     bottomRight: Radius.circular(10.0),
                     topLeft: Radius.circular(10.0),
@@ -85,7 +81,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(2.0),
+                  padding: EdgeInsets.all(2.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
@@ -99,7 +95,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +114,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             widget.userRef?.role,
@@ -148,10 +144,10 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                     ),
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '2lghugn7' /* ME */,
@@ -169,6 +165,12 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
           ),
         ),
       ),
+      onEnter: ((event) async {
+        setState(() => _model.iuserHovered = true);
+      }),
+      onExit: ((event) async {
+        setState(() => _model.iuserHovered = false);
+      }),
     );
   }
 }

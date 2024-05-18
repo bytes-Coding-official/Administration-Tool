@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -6,9 +7,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
@@ -87,7 +92,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -104,7 +109,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '0rdy80es' /* Create Case */,
@@ -118,7 +123,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'brd4f1fu' /* Create a new case with this fo... */,
@@ -131,7 +136,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -146,14 +151,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 1270.0,
                       ),
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: Wrap(
                           spacing: 16.0,
@@ -166,15 +171,15 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           clipBehavior: Clip.none,
                           children: [
                             Container(
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 570.0,
                               ),
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 15.0),
                                     child: FutureBuilder<int>(
                                       future: queryCustomerCaseRecordCount(),
@@ -291,7 +296,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               16.0, 20.0, 16.0, 20.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -381,7 +386,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               16.0, 16.0, 16.0, 16.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -398,20 +403,20 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                         .descriptionTextControllerValidator
                                         .asValidator(context),
                                   ),
-                                ].divide(const SizedBox(height: 12.0)),
+                                ].divide(SizedBox(height: 12.0)),
                               ),
                             ),
                             Container(
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 570.0,
                               ),
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                             ),
                             Container(
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 570.0,
                               ),
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -494,7 +499,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                 .alternate,
                                         borderWidth: 2.0,
                                         borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -578,7 +583,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                 .alternate,
                                         borderWidth: 2.0,
                                         borderRadius: 8.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -707,7 +712,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(16.0, 16.0,
                                                             16.0, 16.0),
                                               ),
@@ -727,13 +732,13 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                   .revenueTextControllerValidator
                                                   .asValidator(context),
                                             ),
-                                          ].divide(const SizedBox(height: 4.0)),
+                                          ].divide(SizedBox(height: 4.0)),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 12.0)),
+                                    ].divide(SizedBox(width: 12.0)),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -777,15 +782,15 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: const Text('Case added'),
-                                              content: const Text(
+                                              title: Text('Case added'),
+                                              content: Text(
                                                   'Case was added to the database'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             );
@@ -805,10 +810,10 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -820,7 +825,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -829,7 +834,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                       ),
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 12.0)),
+                                ].divide(SizedBox(height: 12.0)),
                               ),
                             ),
                           ],

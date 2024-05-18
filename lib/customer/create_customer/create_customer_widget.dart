@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -6,9 +7,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'create_customer_model.dart';
 export 'create_customer_model.dart';
 
@@ -97,7 +103,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'x0gktab6' /* Patient Intake form */,
@@ -109,7 +115,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '2ilwg7d0' /* Please fill out the form to co... */,
@@ -121,11 +127,11 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                       ),
                 ),
               ),
-            ].divide(const SizedBox(height: 4.0)),
+            ].divide(SizedBox(height: 4.0)),
           ),
           actions: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).alternate,
                 borderRadius: 12.0,
@@ -161,20 +167,20 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 770.0,
                     ),
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 770.0,
                       ),
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
@@ -253,7 +259,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -338,7 +344,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -422,7 +428,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -505,7 +511,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -588,7 +594,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -671,7 +677,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -754,7 +760,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
+                                      EdgeInsetsDirectional.fromSTEB(
                                           16.0, 20.0, 16.0, 20.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -845,7 +851,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -857,8 +863,8 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 },
                               ),
                             ]
-                                .divide(const SizedBox(height: 12.0))
-                                .addToEnd(const SizedBox(height: 32.0)),
+                                .divide(SizedBox(height: 12.0))
+                                .addToEnd(SizedBox(height: 32.0)),
                           ),
                         ),
                       ),
@@ -866,7 +872,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
@@ -899,14 +905,14 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: const Text('Value Added'),
-                              content: const Text(
+                              title: Text('Value Added'),
+                              content: Text(
                                   'Added the propper value to the database'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             );
@@ -923,10 +929,10 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: 48.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -935,7 +941,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

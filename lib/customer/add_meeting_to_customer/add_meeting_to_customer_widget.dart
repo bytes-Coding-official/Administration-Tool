@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
@@ -7,9 +8,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_meeting_to_customer_model.dart';
 export 'add_meeting_to_customer_model.dart';
@@ -84,7 +89,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -99,7 +104,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '142c9phq' /* Add Meeting */,
@@ -113,7 +118,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '6ak09n8d' /* Add a meeting to a special cus... */,
@@ -126,7 +131,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -141,14 +146,14 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 770.0,
                       ),
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 12.0, 10.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
@@ -249,7 +254,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -305,7 +310,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                     FFLocalizations.of(context).languageCode,
                               ),
                               Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: TextFormField(
                                   controller: _model.durationTextController,
                                   focusNode: _model.durationFocusNode,
@@ -378,7 +383,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
+                                        EdgeInsetsDirectional.fromSTEB(
                                             16.0, 20.0, 16.0, 20.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -398,8 +403,8 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 ),
                               ),
                             ]
-                                .divide(const SizedBox(height: 12.0))
-                                .addToEnd(const SizedBox(height: 32.0)),
+                                .divide(SizedBox(height: 12.0))
+                                .addToEnd(SizedBox(height: 32.0)),
                           ),
                         ),
                       ),
@@ -407,7 +412,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
@@ -466,13 +471,13 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: const Text('Done'),
-                              content: const Text('Saved value to database'),
+                              title: Text('Done'),
+                              content: Text('Saved value to database'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             );
@@ -490,10 +495,10 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: 48.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -502,7 +507,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

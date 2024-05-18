@@ -7,13 +7,19 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'customers_model.dart';
 export 'customers_model.dart';
 
@@ -102,13 +108,13 @@ class _CustomersWidgetState extends State<CustomersWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -119,7 +125,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -147,7 +153,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -162,10 +168,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
@@ -175,7 +181,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -189,7 +195,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -216,9 +222,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 4.0, 8.0, 4.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -245,7 +251,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -261,7 +267,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     context.pushNamed('chat_2_main');
                                   },
                                   child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
+                                    duration: Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -272,7 +278,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -285,7 +291,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -313,10 +319,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 4.0, 8.0, 4.0),
                                                 child: Text(
@@ -349,7 +355,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       currentUserDocument?.role, '') ==
                                   'Administrator')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -366,7 +372,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         context.pushNamed('support_TicketList');
                                       },
                                       child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
+                                        duration: Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -379,7 +385,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -393,7 +399,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -423,11 +429,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Text(
@@ -459,7 +465,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               if (false)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -475,7 +481,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       context.pushNamed('Calendar');
                                     },
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 200),
+                                      duration: Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -487,7 +493,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -513,7 +519,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -539,7 +545,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -557,7 +563,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       currentUserDocument?.role, '') !=
                                   'Kunde')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -574,7 +580,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         context.pushNamed('Billing');
                                       },
                                       child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
+                                        duration: Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -587,7 +593,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -600,7 +606,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 size: 24.0,
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -625,7 +631,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -641,7 +647,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     context.pushNamed('Employees');
                                   },
                                   child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
+                                    duration: Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -652,7 +658,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -665,7 +671,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -687,14 +693,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 12.0)),
+                            ].divide(SizedBox(height: 12.0)),
                           ),
                         ),
                         if (false)
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 16.0),
                               child: Container(
                                 width: 250.0,
@@ -714,7 +720,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           Brightness.light) ==
                                       true,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: EdgeInsets.all(4.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -786,7 +792,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -885,7 +891,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -931,7 +937,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -946,7 +952,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                               context.pushNamed(
                                 'auth_2_Profile',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 350),
@@ -962,7 +968,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   height: 50.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0),
                                       topLeft: Radius.circular(10.0),
@@ -975,16 +981,16 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              const Duration(milliseconds: 500),
+                                              Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              const Duration(milliseconds: 500),
+                                              Duration(milliseconds: 500),
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
@@ -996,7 +1002,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1037,12 +1043,12 @@ class _CustomersWidgetState extends State<CustomersWidget>
                 ),
               Expanded(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Container(
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 1170.0,
                     ),
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: SingleChildScrollView(
                       primary: false,
                       child: Column(
@@ -1050,7 +1056,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1062,7 +1068,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor:
@@ -1072,7 +1078,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       buttonSize: 40.0,
                                       fillColor:
                                           FlutterFlowTheme.of(context).tertiary,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.add,
                                         color: Colors.white,
                                         size: 24.0,
@@ -1094,7 +1100,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -1123,15 +1129,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     ],
                                   ),
                                 ),
-                              ].divide(const SizedBox(width: 15.0)),
+                              ].divide(SizedBox(width: 15.0)),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                             child: Container(
                               width: double.infinity,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: double.infinity,
                               ),
                               decoration: BoxDecoration(
@@ -1161,7 +1167,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 5.0, 0.0, 0.0),
                                               child: FlutterFlowChoiceChips(
                                                 options: [
@@ -1278,7 +1284,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               phone: false,
                                               tablet: false,
                                             ))
-                                              SizedBox(
+                                              Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
@@ -1291,7 +1297,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    const Duration(milliseconds: 150),
+                                                    Duration(milliseconds: 150),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -1399,7 +1405,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       ))
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.textController2,
@@ -1408,7 +1414,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController2',
-                                              const Duration(milliseconds: 150),
+                                              Duration(milliseconds: 150),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -1502,7 +1508,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                           if (valueOrDefault(currentUserDocument?.role, '') ==
                               'Manager')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Row(
@@ -1526,10 +1532,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 0.35,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1541,7 +1547,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1572,10 +1578,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 0.35,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1587,7 +1593,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1607,7 +1613,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 desktop: false,
                               ))
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedListView<
@@ -1623,7 +1629,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 10.0),
+                                      SizedBox(height: 10.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -1683,7 +1689,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             'Customer',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1708,8 +1714,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: const Text('Delete'),
-                                                          content: const Text(
+                                                          title: Text('Delete'),
+                                                          content: Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -1717,7 +1723,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -1725,7 +1731,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -1745,15 +1751,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: const Text('Confirmation'),
-                                                    content: const Text(
+                                                    title: Text('Confirmation'),
+                                                    content: Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -1774,7 +1780,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         child: Container(
                                           width: 700.0,
                                           height: 250.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -1790,14 +1796,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
+                                            padding: EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -1812,7 +1818,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               .getText(
                                                             'n9qnpbyi' /* ID#:  */,
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -1838,7 +1844,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -1858,7 +1864,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 16.0),
                                                     child: Text(
@@ -1875,7 +1881,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
@@ -1970,9 +1976,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               },
                                                             );
                                                           })
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   width: 15.0))
-                                                              .around(const SizedBox(
+                                                              .around(SizedBox(
                                                                   width: 15.0)),
                                                         ),
                                                       );
@@ -1987,7 +1993,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -2077,7 +2083,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(2.0),
+                                                                              EdgeInsets.all(2.0),
                                                                           child:
                                                                               ClipRRect(
                                                                             borderRadius:
@@ -2094,8 +2100,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                       );
                                                                     },
                                                                   );
-                                                                }).divide(const SizedBox(width: 5.0)).around(
-                                                                    const SizedBox(
+                                                                }).divide(SizedBox(width: 5.0)).around(
+                                                                    SizedBox(
                                                                         width:
                                                                             5.0)),
                                                               ),
@@ -2104,11 +2110,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     6.0),
                                                             child: Container(
                                                               height: 32.0,
@@ -2145,11 +2151,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2166,7 +2172,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (mobileViewCustomerCaseRecord
-                                                                              .assignee.isEmpty) {
+                                                                              .assignee
+                                                                              .length ==
+                                                                          0) {
                                                                         return 'Open';
                                                                       } else {
                                                                         return 'Other';
@@ -2215,7 +2223,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 tablet: false,
                               ))
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedGridView<
@@ -2226,14 +2234,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     CustomerCaseRecord.collection
                                         .orderBy('caseid', descending: true),
                                   ),
-                                  padding: const EdgeInsets.fromLTRB(
+                                  padding: EdgeInsets.fromLTRB(
                                     0,
                                     10.0,
                                     0,
                                     10.0,
                                   ),
                                   gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                      SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -2300,7 +2308,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             'Customer',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2325,8 +2333,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: const Text('Delete'),
-                                                          content: const Text(
+                                                          title: Text('Delete'),
+                                                          content: Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -2334,7 +2342,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -2342,7 +2350,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -2362,15 +2370,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: const Text('Confirmation'),
-                                                    content: const Text(
+                                                    title: Text('Confirmation'),
+                                                    content: Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -2391,7 +2399,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         child: Container(
                                           width: 700.0,
                                           height: 350.0,
-                                          constraints: const BoxConstraints(
+                                          constraints: BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -2407,14 +2415,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
+                                            padding: EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -2429,7 +2437,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               .getText(
                                                             'nhxrq5ni' /* ID#:  */,
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -2455,7 +2463,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -2475,7 +2483,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 16.0),
                                                     child: Text(
@@ -2581,7 +2589,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               );
                                                             },
                                                           );
-                                                        }).divide(const SizedBox(
+                                                        }).divide(SizedBox(
                                                             width: 5.0)),
                                                       ),
                                                     );
@@ -2595,7 +2603,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: Row(
@@ -2681,7 +2689,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               2.0),
                                                                       child:
                                                                           ClipRRect(
@@ -2703,7 +2711,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   );
                                                                 },
                                                               );
-                                                            }).divide(const SizedBox(
+                                                            }).divide(SizedBox(
                                                                 width: 4.0)),
                                                           );
                                                         },
@@ -2743,11 +2751,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -2761,7 +2769,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                         currentUserReference)) {
                                                                   return 'Own';
                                                                 } else if (tabletDesktopViewCustomerCaseRecord
-                                                                        .assignee.isEmpty) {
+                                                                        .assignee
+                                                                        .length ==
+                                                                    0) {
                                                                   return 'Open';
                                                                 } else if (tabletDesktopViewCustomerCaseRecord
                                                                     .closed) {

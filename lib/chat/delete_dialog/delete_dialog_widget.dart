@@ -2,9 +2,12 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'delete_dialog_model.dart';
 export 'delete_dialog_model.dart';
 
@@ -66,8 +69,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.524, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.524, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -89,10 +92,10 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
       mainAxisSize: MainAxisSize.min,
       children: [
         AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: Duration(milliseconds: 200),
           curve: Curves.easeInOut,
           width: double.infinity,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
@@ -100,13 +103,13 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '3q0utb1e' /* Options */,
@@ -121,12 +124,6 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                 MouseRegion(
                   opaque: false,
                   cursor: MouseCursor.defer ?? MouseCursor.defer,
-                  onEnter: ((event) async {
-                    setState(() => _model.mouseRegionHovered1 = true);
-                  }),
-                  onExit: ((event) async {
-                    setState(() => _model.mouseRegionHovered1 = false);
-                  }),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -138,22 +135,22 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       await widget.action?.call();
                     },
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered1
+                        color: _model.mouseRegionHovered1!
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.group_add_rounded,
@@ -163,7 +160,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -183,6 +180,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       ),
                     ),
                   ),
+                  onEnter: ((event) async {
+                    setState(() => _model.mouseRegionHovered1 = true);
+                  }),
+                  onExit: ((event) async {
+                    setState(() => _model.mouseRegionHovered1 = false);
+                  }),
                 ),
                 Divider(
                   thickness: 1.0,
@@ -191,12 +194,6 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                 MouseRegion(
                   opaque: false,
                   cursor: MouseCursor.defer ?? MouseCursor.defer,
-                  onEnter: ((event) async {
-                    setState(() => _model.mouseRegionHovered2 = true);
-                  }),
-                  onExit: ((event) async {
-                    setState(() => _model.mouseRegionHovered2 = false);
-                  }),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -210,22 +207,22 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       });
                     },
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered2
+                        color: _model.mouseRegionHovered2!
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.delete_outline_rounded,
@@ -235,7 +232,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -257,6 +254,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       ),
                     ),
                   ),
+                  onEnter: ((event) async {
+                    setState(() => _model.mouseRegionHovered2 = true);
+                  }),
+                  onExit: ((event) async {
+                    setState(() => _model.mouseRegionHovered2 = false);
+                  }),
                 ),
                 if (_model.showDelete == true)
                   Divider(
@@ -267,24 +270,18 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   MouseRegion(
                     opaque: false,
                     cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      setState(() => _model.mouseRegionHovered3 = true);
-                    }),
-                    onExit: ((event) async {
-                      setState(() => _model.mouseRegionHovered3 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered3
+                        color: _model.mouseRegionHovered3!
                             ? FlutterFlowTheme.of(context).primaryBackground
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -294,7 +291,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -310,7 +307,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -328,7 +325,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -365,6 +362,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      setState(() => _model.mouseRegionHovered3 = true);
+                    }),
+                    onExit: ((event) async {
+                      setState(() => _model.mouseRegionHovered3 = false);
+                    }),
                   ).animateOnPageLoad(
                       animationsMap['mouseRegionOnPageLoadAnimation']!),
               ],

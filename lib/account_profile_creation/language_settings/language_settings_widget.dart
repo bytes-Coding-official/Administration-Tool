@@ -5,10 +5,16 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'language_settings_model.dart';
 export 'language_settings_model.dart';
 
@@ -103,7 +109,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                   ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'whlv0la7' /* Complete your languages */,
@@ -117,7 +123,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
             ),
           ],
         ),
-        actions: const [],
+        actions: [],
         centerTitle: true,
         elevation: 0.0,
       ),
@@ -133,7 +139,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'z797zvs5' /* Your Languages */,
@@ -148,7 +154,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                 child:
                     PagedListView<DocumentSnapshot<Object?>?, LanguageRecord>(
                   pagingController: _model.setListViewController(
@@ -198,7 +204,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: ToggleIcon(
                                 onPressed: () async {
@@ -227,7 +233,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 listViewLanguageRecord.name,

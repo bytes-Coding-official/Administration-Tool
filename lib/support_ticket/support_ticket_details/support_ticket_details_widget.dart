@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -8,8 +9,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/support_ticket/user_list/user_list_widget.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 import 'support_ticket_details_model.dart';
 export 'support_ticket_details_model.dart';
 
@@ -83,7 +91,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -109,7 +117,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                     ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'x6ddm1u4' /* Current Support-Ticket */,
@@ -123,17 +131,17 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 770.0,
               ),
               decoration: BoxDecoration(
@@ -145,10 +153,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                   children: [
                     Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 1170.0,
                       ),
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +167,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                             tablet: false,
                           ))
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 0.0, 12.0),
                               child: SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
@@ -167,7 +175,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 2.0, 0.0, 2.0),
                                       child: FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
@@ -186,7 +194,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: Icon(
                                         Icons.chevron_right_rounded,
@@ -196,7 +204,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 16.0, 8.0),
                                       child: Container(
                                         height: 32.0,
@@ -207,10 +215,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                               BorderRadius.circular(8.0),
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 4.0, 12.0, 4.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -234,7 +242,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                               ),
                             ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -242,7 +250,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: RichText(
                                       textScaler:
@@ -254,12 +262,12 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 .getText(
                                               'ss89pb28' /* Ticket #:  */,
                                             ),
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           ),
                                           TextSpan(
                                             text: valueOrDefault<String>(
                                               widget.ticketRef?.ticketID
-                                                  .toString(),
+                                                  ?.toString(),
                                               '--',
                                             ),
                                             style: TextStyle(
@@ -281,7 +289,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Container(
                                     width: 12.0,
@@ -290,7 +298,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       color: () {
                                         if (widget.ticketRef?.priorityLevel ==
                                             'High') {
-                                          return const Color(0x4CFF5963);
+                                          return Color(0x4CFF5963);
                                         } else if (widget
                                                 .ticketRef?.priorityLevel ==
                                             'Medium') {
@@ -334,7 +342,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -353,7 +361,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -371,18 +379,18 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(16.0),
                         child: Container(
                           width: double.infinity,
-                          constraints: const BoxConstraints(
+                          constraints: BoxConstraints(
                             maxWidth: 1170.0,
                           ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x33000000),
@@ -398,7 +406,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(16.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -416,7 +424,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -432,7 +440,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -450,7 +458,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                 if (widget.ticketRef?.image != null &&
                                     widget.ticketRef?.image != '')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -494,7 +502,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 16.0),
                                   child: Divider(
                                     height: 2.0,
@@ -539,7 +547,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -582,7 +590,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
 
                                 // Create this as a component if you want to use it best.
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -590,7 +598,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -605,7 +613,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller:
@@ -662,7 +670,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -679,7 +687,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 8.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -696,7 +704,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: FutureBuilder<UsersRecord>(
@@ -750,7 +758,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(8.0),
+                                                          EdgeInsets.all(8.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -776,7 +784,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(2.0),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -797,7 +805,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -828,7 +836,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                                       ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -863,7 +871,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                           ],
                                         ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 8.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -878,7 +886,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: FutureBuilder<UsersRecord>(
                                           future: UsersRecord.getDocumentOnce(
@@ -921,7 +929,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(8.0),
+                                                padding: EdgeInsets.all(8.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -944,7 +952,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(2.0),
+                                                            EdgeInsets.all(2.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
@@ -962,7 +970,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -993,7 +1001,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -1033,7 +1041,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -1067,7 +1075,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                               .viewInsetsOf(
                                                                   context),
                                                           child:
-                                                              const UserListWidget(),
+                                                              UserListWidget(),
                                                         ),
                                                       );
                                                     },
@@ -1114,7 +1122,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                                     0.0,
                                                               ),
                                                         ),
-                                                        duration: const Duration(
+                                                        duration: Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -1133,11 +1141,11 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1167,7 +1175,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -1207,7 +1215,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                                       0.0,
                                                                 ),
                                                       ),
-                                                      duration: const Duration(
+                                                      duration: Duration(
                                                           milliseconds: 4000),
                                                       backgroundColor:
                                                           FlutterFlowTheme.of(
@@ -1223,11 +1231,11 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 48.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1249,7 +1257,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 16.0)),
+                                        ].divide(SizedBox(width: 16.0)),
                                       ),
                                     ],
                                   ),
