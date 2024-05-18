@@ -72,7 +72,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed('Customers');
             },
           ),
           title: Column(
@@ -759,19 +759,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                             );
                                           },
                                         );
-
-                                        context.pushNamed(
-                                          'Customers',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .bottomToTop,
-                                              duration:
-                                                  Duration(milliseconds: 350),
-                                            ),
-                                          },
-                                        );
+                                        FFAppState().update(() {});
 
                                         setState(() {});
                                       },

@@ -90,7 +90,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'sxwzbsjz' /* Please fill out the form below... */,
+                    'sxwzbsjz' /* Please fill out the form to co... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -116,7 +116,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  context.safePop();
+                  context.pushNamed('Customers');
                 },
               ),
             ),
@@ -882,8 +882,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
                             );
                           },
                         );
-
-                        context.pushNamed('Customers');
+                        FFAppState().update(() {});
 
                         setState(() {});
                       },

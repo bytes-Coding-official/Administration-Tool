@@ -283,6 +283,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Revenue',
       'en': '',
     },
+    'wam4j4d1': {
+      'de': 'Status',
+      'en': '',
+    },
     '9om6blwi': {
       'de': 'Add meeting to user',
       'en': '',
@@ -1238,7 +1242,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'sxwzbsjz': {
-      'de': 'Please fill out the form below to continue.',
+      'de': 'Please fill out the form to continue.',
       'en': '',
     },
     '1byh2jsg': {

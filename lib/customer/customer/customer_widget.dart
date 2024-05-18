@@ -137,7 +137,7 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.safePop();
+                      context.pushNamed('Customers');
                     },
                   ),
                 ),
@@ -606,7 +606,54 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                               .labelLarge
                                               .override(
                                                 fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ].divide(const SizedBox(height: 4.0)),
+                                    ),
+                                  ),
+                                ),
+                              ].divide(const SizedBox(width: 12.0)),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 5.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'wam4j4d1' /* Status */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Text(
+                                          customerCustomerCaseRecord.closed
+                                              ? 'CLOSED'
+                                              : 'OPEN',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.bold,
                                               ),
                                         ),
                                       ].divide(const SizedBox(height: 4.0)),
@@ -1036,6 +1083,8 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                                               }
 
                                               FFAppState().update(() {});
+
+                                              context.pushNamed('Customer');
                                             },
                                             child: Container(
                                               width: 100.0,
