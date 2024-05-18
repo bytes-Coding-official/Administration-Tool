@@ -200,7 +200,10 @@ class _AddMeetingToCustomerWidgetState
                                               .toList() ??
                                           [],
                                     )),
-                                    options: List<String>.from(['Option 1']),
+                                    options: List<String>.from(
+                                        tutorUsersRecordList
+                                            .map((e) => e.reference.id)
+                                            .toList()),
                                     optionLabels: tutorUsersRecordList
                                         .map((e) => e.displayName)
                                         .toList(),
