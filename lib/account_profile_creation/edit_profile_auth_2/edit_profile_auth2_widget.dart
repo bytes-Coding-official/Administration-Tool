@@ -316,19 +316,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 ),
                 options: [
                   FFLocalizations.of(context).getText(
-                    '6x72ltl3' /* Owner/Founder */,
+                    '6x72ltl3' /* Manager */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'zlz2iu8t' /* Director */,
+                    'zlz2iu8t' /* Betreuer */,
                   ),
                   FFLocalizations.of(context).getText(
-                    'aexke9an' /* Manager */,
-                  ),
-                  FFLocalizations.of(context).getText(
-                    '0s6428wk' /* Mid-Manager */,
-                  ),
-                  FFLocalizations.of(context).getText(
-                    '1x9s91rw' /* Employee */,
+                    'aexke9an' /* Kunde */,
                   )
                 ],
                 onChanged: (val) => setState(() => _model.dropDownValue = val),

@@ -1439,23 +1439,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '6x72ltl3': {
-      'de': 'Owner/Founder',
-      'en': '',
-    },
-    'zlz2iu8t': {
-      'de': 'Director',
-      'en': '',
-    },
-    'aexke9an': {
       'de': 'Manager',
       'en': '',
     },
-    '0s6428wk': {
-      'de': 'Mid-Manager',
+    'zlz2iu8t': {
+      'de': 'Betreuer',
       'en': '',
     },
-    '1x9s91rw': {
-      'de': 'Employee',
+    'aexke9an': {
+      'de': 'Kunde',
       'en': '',
     },
     'imthgpev': {
