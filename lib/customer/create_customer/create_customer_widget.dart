@@ -74,17 +74,20 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                FFLocalizations.of(context).getText(
-                  '6lhoujzg' /* Patient Intake form */,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '6lhoujzg' /* Patient Intake form */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'sxwzbsjz' /* Please fill out the form below... */,

@@ -402,10 +402,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Filter here...',
       'en': '',
     },
-    'q3yd9c6w': {
-      'de': 'Navigation',
-      'en': '',
-    },
     'tmf3yzsp': {
       'de': 'Add Customer',
       'en': '',
@@ -1328,11 +1324,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'h5slg9bs': {
+    'ndfk8kcd': {
       'de': 'Add Meeting',
       'en': '',
     },
-    '5pa3up8y': {
+    'r2xd0lgq': {
       'de': 'Add a meeting to a special customer',
       'en': '',
     },

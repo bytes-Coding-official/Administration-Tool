@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -987,11 +988,37 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 16.0, 0.0),
+                                5.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
+                                if (responsiveVisibility(
+                                  context: context,
+                                  tabletLandscape: false,
+                                  desktop: false,
+                                ))
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: FlutterFlowIconButton(
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      borderRadius: 20.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 40.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      icon: const Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        context.pushNamed('sideNav');
+                                      },
+                                    ),
+                                  ),
                                 Expanded(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -1000,7 +1027,7 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            25.0, 10.0, 0.0, 0.0),
+                                            0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'phwjo5xq' /* Projects Overview */,
@@ -1013,26 +1040,22 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                                               ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            25.0, 5.0, 0.0, 10.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'bgi47c1l' /* Review the details below of al... */,
-                                          ),
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bgi47c1l' /* Review the details below of al... */,
                                         ),
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ],
                                   ),
                                 ),
-                              ],
+                              ].divide(const SizedBox(width: 15.0)),
                             ),
                           ),
                           Padding(
@@ -1350,45 +1373,6 @@ class _CustomersWidgetState extends State<CustomersWidget> {
                               ),
                             ),
                           ),
-                          if (responsiveVisibility(
-                            context: context,
-                            tabletLandscape: false,
-                            desktop: false,
-                          ))
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 5.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed('sideNav');
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'q3yd9c6w' /* Navigation */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: MediaQuery.sizeOf(context).width * 0.8,
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).tertiary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        color: Colors.white,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
                           if (valueOrDefault(currentUserDocument?.role, '') ==
                               'Manager')
                             Padding(

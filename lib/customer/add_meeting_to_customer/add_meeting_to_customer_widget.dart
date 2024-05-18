@@ -63,24 +63,42 @@ class _AddMeetingToCustomerWidgetState
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
           title: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                FFLocalizations.of(context).getText(
-                  'h5slg9bs' /* Add Meeting */,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    'ndfk8kcd' /* Add Meeting */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: Colors.white,
+                        fontSize: 22.0,
+                        letterSpacing: 0.0,
+                      ),
                 ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '5pa3up8y' /* Add a meeting to a special cus... */,
+                    'r2xd0lgq' /* Add a meeting to a special cus... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
@@ -88,30 +106,11 @@ class _AddMeetingToCustomerWidgetState
                       ),
                 ),
               ),
-            ].divide(const SizedBox(height: 4.0)),
+            ],
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
-              child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
-                borderRadius: 12.0,
-                borderWidth: 1.0,
-                buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                icon: Icon(
-                  Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  context.safePop();
-                },
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
