@@ -1,10 +1,12 @@
 import '/backend/backend.dart';
 import '/chat/delete_dialog/delete_dialog_widget.dart';
 import '/chat/user_list_small_1/user_list_small1_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'chat_details_overlay_model.dart';
 export 'chat_details_overlay_model.dart';
 
@@ -21,8 +23,11 @@ class ChatDetailsOverlayWidget extends StatefulWidget {
       _ChatDetailsOverlayWidgetState();
 }
 
-class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
+class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
+    with TickerProviderStateMixin {
   late ChatDetailsOverlayModel _model;
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -34,6 +39,21 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ChatDetailsOverlayModel());
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -294,7 +314,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
               ],
             ),
           ),
-        ),
+        ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
       ],
     );
   }

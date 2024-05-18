@@ -32,6 +32,18 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
     _model = createModel(context, () => Auth2ProfileModel());
 
     animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -781,7 +793,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                   ),
                 ],
               ),
-            ),
+            ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
           ),
         ),
       ),

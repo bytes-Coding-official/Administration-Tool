@@ -29,6 +29,18 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
     _model = createModel(context, () => Auth2EditProfileModel());
 
     animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -155,7 +167,7 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
               ),
             ),
           ],
-        ),
+        ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
@@ -18,10 +20,13 @@ class CreateCaseWidget extends StatefulWidget {
   State<CreateCaseWidget> createState() => _CreateCaseWidgetState();
 }
 
-class _CreateCaseWidgetState extends State<CreateCaseWidget> {
+class _CreateCaseWidgetState extends State<CreateCaseWidget>
+    with TickerProviderStateMixin {
   late CreateCaseModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -36,6 +41,21 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
 
     _model.revenueTextController ??= TextEditingController();
     _model.revenueFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -805,7 +825,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                   ),
                 ],
               ),
-            ),
+            ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'add_meeting_to_customer_model.dart';
 export 'add_meeting_to_customer_model.dart';
@@ -20,11 +22,13 @@ class AddMeetingToCustomerWidget extends StatefulWidget {
       _AddMeetingToCustomerWidgetState();
 }
 
-class _AddMeetingToCustomerWidgetState
-    extends State<AddMeetingToCustomerWidget> {
+class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
+    with TickerProviderStateMixin {
   late AddMeetingToCustomerModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -34,6 +38,21 @@ class _AddMeetingToCustomerWidgetState
     _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
     _model.durationFocusNode!.addListener(() => setState(() {}));
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -481,7 +500,7 @@ class _AddMeetingToCustomerWidgetState
                   ),
                 ],
               ),
-            ),
+            ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
           ),
         ),
       ),

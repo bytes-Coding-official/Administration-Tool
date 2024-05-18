@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/chat/chat_details_overlay/chat_details_overlay_widget.dart';
 import '/chat/chat_thread_component/chat_thread_component_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,6 +11,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'chat2_details_model.dart';
 export 'chat2_details_model.dart';
 
@@ -25,10 +27,13 @@ class Chat2DetailsWidget extends StatefulWidget {
   State<Chat2DetailsWidget> createState() => _Chat2DetailsWidgetState();
 }
 
-class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
+class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
+    with TickerProviderStateMixin {
   late Chat2DetailsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -49,6 +54,21 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
           });
         }(),
       );
+    });
+
+    animationsMap.addAll({
+      'chatThreadComponentOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -426,7 +446,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             child: ChatThreadComponentWidget(
               chatRef: widget.chatRef,
             ),
-          ),
+          ).animateOnPageLoad(
+              animationsMap['chatThreadComponentOnPageLoadAnimation']!),
         ),
       ),
     );

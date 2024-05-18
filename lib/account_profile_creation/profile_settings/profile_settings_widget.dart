@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'profile_settings_model.dart';
 export 'profile_settings_model.dart';
 
@@ -15,10 +17,13 @@ class ProfileSettingsWidget extends StatefulWidget {
   State<ProfileSettingsWidget> createState() => _ProfileSettingsWidgetState();
 }
 
-class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
+class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
+    with TickerProviderStateMixin {
   late ProfileSettingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -34,6 +39,21 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
 
     _model.textController3 ??= TextEditingController(text: currentPhoneNumber);
     _model.textFieldFocusNode3 ??= FocusNode();
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -547,7 +567,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
               ),
             ],
           ),
-        ),
+        ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
       ),
     );
   }

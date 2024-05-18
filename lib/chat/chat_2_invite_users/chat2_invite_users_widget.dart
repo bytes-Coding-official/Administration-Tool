@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/chat/empty_state_simple/empty_state_simple_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,6 +11,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'chat2_invite_users_model.dart';
 export 'chat2_invite_users_model.dart';
@@ -26,10 +28,13 @@ class Chat2InviteUsersWidget extends StatefulWidget {
   State<Chat2InviteUsersWidget> createState() => _Chat2InviteUsersWidgetState();
 }
 
-class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
+class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
+    with TickerProviderStateMixin {
   late Chat2InviteUsersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -50,6 +55,21 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
           _model.addToFriendsList(currentUserReference!);
         });
       }
+    });
+
+    animationsMap.addAll({
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -403,7 +423,8 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                           );
                         },
                       ),
-                    ),
+                    ).animateOnPageLoad(
+                            animationsMap['listViewOnPageLoadAnimation']!),
                   ),
                 ),
               ],

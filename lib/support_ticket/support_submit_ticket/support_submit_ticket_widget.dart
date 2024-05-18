@@ -47,6 +47,18 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
     _model.textFieldFocusNode2 ??= FocusNode();
 
     animationsMap.addAll({
+      'columnOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
       'textOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -204,7 +216,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
           ),
         ],
       ),
-      'columnOnPageLoadAnimation': AnimationInfo(
+      'columnOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 300.ms),
@@ -983,7 +995,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 ),
                               ],
                             ).animateOnPageLoad(
-                                animationsMap['columnOnPageLoadAnimation']!),
+                                animationsMap['columnOnPageLoadAnimation2']!),
                           ),
                         ),
                     ].divide(const SizedBox(height: 12.0)),
@@ -1064,7 +1076,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                 ),
               ].addToEnd(const SizedBox(height: 32.0)),
             ),
-          ),
+          ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation1']!),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,6 +7,7 @@ import '/support_ticket/empty_state_dynamic/empty_state_dynamic_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'support_ticket_list_model.dart';
 export 'support_ticket_list_model.dart';
 
@@ -17,15 +19,33 @@ class SupportTicketListWidget extends StatefulWidget {
       _SupportTicketListWidgetState();
 }
 
-class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
+class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
+    with TickerProviderStateMixin {
   late SupportTicketListModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => SupportTicketListModel());
+
+    animationsMap.addAll({
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -633,7 +653,8 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget> {
                           ),
                         );
                       },
-                    );
+                    ).animateOnPageLoad(
+                        animationsMap['listViewOnPageLoadAnimation']!);
                   },
                 ),
               ),

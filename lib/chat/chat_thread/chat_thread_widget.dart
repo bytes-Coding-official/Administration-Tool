@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'chat_thread_model.dart';
 export 'chat_thread_model.dart';
 
@@ -22,8 +24,11 @@ class ChatThreadWidget extends StatefulWidget {
   State<ChatThreadWidget> createState() => _ChatThreadWidgetState();
 }
 
-class _ChatThreadWidgetState extends State<ChatThreadWidget> {
+class _ChatThreadWidgetState extends State<ChatThreadWidget>
+    with TickerProviderStateMixin {
   late ChatThreadModel _model;
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -35,6 +40,21 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ChatThreadModel());
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -468,6 +488,6 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
           ),
         ),
       ],
-    );
+    ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!);
   }
 }

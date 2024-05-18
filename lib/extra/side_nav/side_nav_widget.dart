@@ -1,9 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'side_nav_model.dart';
 export 'side_nav_model.dart';
 
@@ -14,15 +16,33 @@ class SideNavWidget extends StatefulWidget {
   State<SideNavWidget> createState() => _SideNavWidgetState();
 }
 
-class _SideNavWidgetState extends State<SideNavWidget> {
+class _SideNavWidgetState extends State<SideNavWidget>
+    with TickerProviderStateMixin {
   late SideNavModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => SideNavModel());
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -1008,7 +1028,8 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                           ),
                         ),
                       ],
-                    ),
+                    ).animateOnPageLoad(
+                        animationsMap['columnOnPageLoadAnimation']!),
                   ),
                 ),
               ),

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/support_ticket/user_list/user_list_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'support_ticket_details_model.dart';
 export 'support_ticket_details_model.dart';
 
@@ -24,16 +26,33 @@ class SupportTicketDetailsWidget extends StatefulWidget {
       _SupportTicketDetailsWidgetState();
 }
 
-class _SupportTicketDetailsWidgetState
-    extends State<SupportTicketDetailsWidget> {
+class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
+    with TickerProviderStateMixin {
   late SupportTicketDetailsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => SupportTicketDetailsModel());
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -109,7 +128,7 @@ class _SupportTicketDetailsWidgetState
           child: Align(
             alignment: const AlignmentDirectional(0.0, -1.0),
             child: Container(
-              width: double.infinity,
+              width: MediaQuery.sizeOf(context).width * 1.0,
               constraints: const BoxConstraints(
                 maxWidth: 770.0,
               ),
@@ -1220,7 +1239,7 @@ class _SupportTicketDetailsWidgetState
                     ),
                   ],
                 ),
-              ),
+              ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
             ),
           ),
         ),
