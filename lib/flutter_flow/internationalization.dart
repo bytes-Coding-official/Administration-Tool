@@ -320,7 +320,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '3xmp7l5l': {
       'en': 'bytes Coding',
-      'de': 'Bytes Kodierung',
+      'de': 'bytes Coding',
     },
     'ugt68zzx': {
       'en': 'Platform Navigation',
@@ -541,7 +541,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '7g15vrub': {
       'en': 'bytes Coding',
-      'de': 'Bytes Kodierung',
+      'de': 'bytes Coding',
     },
     'yuf6qyzb': {
       'en': 'Get Started',
@@ -592,7 +592,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'b1a1m656': {
       'en': 'bytes Coding',
-      'de': 'Bytes Kodierung',
+      'de': 'bytes Coding',
     },
     'wc6vlb88': {
       'en': 'Welcome Back',
@@ -648,7 +648,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '2gddz9zm': {
       'en': 'bytes Coding',
-      'de': 'Bytes Kodierung',
+      'de': 'bytes Coding',
     },
     'ngxwdtah': {
       'en': 'Forgot Password',
@@ -677,7 +677,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'erspxmah': {
       'en': 'bytes Coding',
-      'de': 'Bytes Kodierung',
+      'de': 'bytes Coding',
     },
     'x7tuflp8': {
       'en': 'Home',
