@@ -633,11 +633,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               child: FFButtonWidget(
                 onPressed: () async {
                   logFirebaseEvent('EDIT_PROFILE_AUTH_2_Button-Login_ON_TAP');
-                  logFirebaseEvent('Button-Login_validate_form');
-                  if (_model.formKey.currentState == null ||
-                      !_model.formKey.currentState!.validate()) {
-                    return;
-                  }
                   if (_model.yourRoleTextController.text ==
                       'Administrator-2023') {
                     logFirebaseEvent('Button-Login_backend_call');
