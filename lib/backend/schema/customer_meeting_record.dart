@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class CustomerMeetingRecord extends FirestoreRecord {
   CustomerMeetingRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -36,11 +36,17 @@ class CustomerMeetingRecord extends FirestoreRecord {
   double get duration => _duration ?? 0.0;
   bool hasDuration() => _duration != null;
 
+  // "costs" field.
+  double? _costs;
+  double get costs => _costs ?? 0.0;
+  bool hasCosts() => _costs != null;
+
   void _initializeFields() {
     _assignee = getDataList(snapshotData['assignee']);
     _customer = snapshotData['customer'] as DocumentReference?;
     _date = snapshotData['date'] as DateTime?;
     _duration = castToType<double>(snapshotData['duration']);
+    _costs = castToType<double>(snapshotData['costs']);
   }
 
   static CollectionReference get collection =>
@@ -81,12 +87,14 @@ Map<String, dynamic> createCustomerMeetingRecordData({
   DocumentReference? customer,
   DateTime? date,
   double? duration,
+  double? costs,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'customer': customer,
       'date': date,
       'duration': duration,
+      'costs': costs,
     }.withoutNulls,
   );
 
@@ -103,12 +111,13 @@ class CustomerMeetingRecordDocumentEquality
     return listEquality.equals(e1?.assignee, e2?.assignee) &&
         e1?.customer == e2?.customer &&
         e1?.date == e2?.date &&
-        e1?.duration == e2?.duration;
+        e1?.duration == e2?.duration &&
+        e1?.costs == e2?.costs;
   }
 
   @override
   int hash(CustomerMeetingRecord? e) => const ListEquality()
-      .hash([e?.assignee, e?.customer, e?.date, e?.duration]);
+      .hash([e?.assignee, e?.customer, e?.date, e?.duration, e?.costs]);
 
   @override
   bool isValidKey(Object? o) => o is CustomerMeetingRecord;

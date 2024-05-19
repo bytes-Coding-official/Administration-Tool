@@ -295,6 +295,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Duration',
       'de': 'Dauer',
     },
+    '8c86p3v1': {
+      'en': 'Costs',
+      'de': 'Dauer',
+    },
     'g13pqfbb': {
       'en': 'Betreuer',
       'de': 'Betreuer',
@@ -354,11 +358,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Members',
       'de': 'Mitglieder',
     },
-    'nllrgk2r': {
+    'v3wuo8gh': {
       'en': 'Light Mode',
       'de': 'Lichtmodus',
     },
-    'jncjn9nc': {
+    '1m01zim9': {
       'en': 'Dark Mode',
       'de': 'Dunkler Modus',
     },
@@ -892,7 +896,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aktuelles Support-Ticket',
     },
   },
-  // Billing
+  // EmployeeBilling
   {
     '8zdbsdy4': {
       'en': 'Customer-Information',
@@ -1400,6 +1404,82 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dunkler Modus',
     },
     '0qj8uewa': {
+      'en': 'Home',
+      'de': 'Heim',
+    },
+  },
+  // CustomerBilling
+  {
+    'brait1y8': {
+      'en': 'Customer-Information',
+      'de': 'Kundeninformation',
+    },
+    'odno4o2l': {
+      'en': 'Below is a summary of your activity.',
+      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
+    },
+    'xxc5wt2v': {
+      'en': 'Money Spend',
+      'de': 'Verdientes Geld',
+    },
+    'xrcnzlbf': {
+      'en': 'Average Costs',
+      'de': 'Durchschnittliche Abrechnung',
+    },
+    'azw44sx6': {
+      'en': 'Total Customers',
+      'de': 'Kunden gesamt',
+    },
+    'd35fb2ze': {
+      'en': 'Customer-Meetings',
+      'de': 'Kunden-Cases',
+    },
+    '4stawemd': {
+      'en': 'A summary of your meetings',
+      'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
+    },
+    '72cuvxfy': {
+      'en': 'Duration',
+      'de': 'Dauer',
+    },
+    '0drowsmc': {
+      'en': 'Costs',
+      'de': 'Dauer',
+    },
+    'libsyzti': {
+      'en': 'Betreuer',
+      'de': 'Betreuer',
+    },
+    '8c0dhi8u': {
+      'en': 'Recent Activity',
+      'de': 'Letzte Aktivität',
+    },
+    '9l3zb0oq': {
+      'en': 'Below is an overview of tasks & activity completed.',
+      'de':
+          'Nachfolgend finden Sie eine Übersicht über die abgeschlossenen Aufgaben und Aktivitäten.',
+    },
+    'dcaewooa': {
+      'en': 'Tasks',
+      'de': 'Aufgaben',
+    },
+    '52zat9vf': {
+      'en': 'Completed',
+      'de': 'Vollendet',
+    },
+    'mwnhrn33': {
+      'en': 'active',
+      'de': 'aktiv',
+    },
+    'uxb09uyj': {
+      'en': 'Last 30 Days',
+      'de': 'Letzte 30 Tage',
+    },
+    'd03ypani': {
+      'en': 'average',
+      'de': 'Durchschnitt',
+    },
+    'cddgguhy': {
       'en': 'Home',
       'de': 'Heim',
     },

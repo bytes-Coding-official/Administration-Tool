@@ -6,13 +6,12 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
-import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -86,6 +85,11 @@ class UsersRecord extends FirestoreRecord {
   String get title => _title ?? '';
   bool hasTitle() => _title != null;
 
+  // "customer" field.
+  DocumentReference? _customer;
+  DocumentReference? get customer => _customer;
+  bool hasCustomer() => _customer != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -101,6 +105,7 @@ class UsersRecord extends FirestoreRecord {
     _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
     _role = snapshotData['role'] as String?;
     _title = snapshotData['title'] as String?;
+    _customer = snapshotData['customer'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -151,6 +156,7 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? lastActiveTime,
   String? role,
   String? title,
+  DocumentReference? customer,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -168,6 +174,7 @@ Map<String, dynamic> createUsersRecordData({
       'last_active_time': lastActiveTime,
       'role': role,
       'title': title,
+      'customer': customer,
     }.withoutNulls,
   );
 
@@ -192,7 +199,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.shortDescription == e2?.shortDescription &&
         e1?.lastActiveTime == e2?.lastActiveTime &&
         e1?.role == e2?.role &&
-        e1?.title == e2?.title;
+        e1?.title == e2?.title &&
+        e1?.customer == e2?.customer;
   }
 
   @override
@@ -210,7 +218,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.shortDescription,
         e?.lastActiveTime,
         e?.role,
-        e?.title
+        e?.title,
+        e?.customer
       ]);
 
   @override

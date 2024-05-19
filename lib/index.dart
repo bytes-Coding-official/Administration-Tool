@@ -29,7 +29,8 @@ export '/support_ticket/support_submit_ticket/support_submit_ticket_widget.dart'
     show SupportSubmitTicketWidget;
 export '/support_ticket/support_ticket_details/support_ticket_details_widget.dart'
     show SupportTicketDetailsWidget;
-export '/extra/billing/billing_widget.dart' show BillingWidget;
+export '/extra/employee_billing/employee_billing_widget.dart'
+    show EmployeeBillingWidget;
 export '/extra/calendar/calendar_widget.dart' show CalendarWidget;
 export '/chat/chat_2_details/chat2_details_widget.dart' show Chat2DetailsWidget;
 export '/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
@@ -41,3 +42,5 @@ export '/customer/create_customer/create_customer_widget.dart'
 export '/customer/add_meeting_to_customer/add_meeting_to_customer_widget.dart'
     show AddMeetingToCustomerWidget;
 export '/extra/side_nav/side_nav_widget.dart' show SideNavWidget;
+export '/extra/customer_billing/customer_billing_widget.dart'
+    show CustomerBillingWidget;

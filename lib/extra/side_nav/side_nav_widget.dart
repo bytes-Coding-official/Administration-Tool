@@ -3,14 +3,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'side_nav_model.dart';
 export 'side_nav_model.dart';
 
@@ -77,7 +73,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -92,7 +88,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'an40yt0k' /* Navigation */,
@@ -106,7 +102,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'r60f84h5' /* For navigating between screens */,
@@ -119,7 +115,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -141,13 +137,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -158,7 +154,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -187,7 +183,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -202,10 +198,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -216,7 +212,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -229,7 +225,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -257,10 +253,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 4.0, 8.0, 4.0),
                                                 child: Text(
@@ -289,7 +285,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -305,7 +301,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       context.pushNamed('chat_2_main');
                                     },
                                     child: AnimatedContainer(
-                                      duration: Duration(milliseconds: 200),
+                                      duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -317,7 +313,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -331,7 +327,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -359,10 +355,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   child: Text(
@@ -394,7 +390,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') ==
                                     'Manager')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -412,7 +408,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               .pushNamed('support_TicketList');
                                         },
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -425,7 +421,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -440,7 +436,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -471,11 +467,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -513,7 +509,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 if (false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -529,7 +525,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         context.pushNamed('Calendar');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -542,7 +538,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -570,7 +566,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -597,7 +593,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -615,7 +611,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') !=
                                     'Kunde')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -629,10 +625,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           logFirebaseEvent(
                                               'contentView_1_navigate_to');
 
-                                          context.pushNamed('Billing');
+                                          context.pushNamed('EmployeeBilling');
                                         },
                                         child: AnimatedContainer(
-                                          duration: Duration(milliseconds: 200),
+                                          duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -645,7 +641,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -658,7 +654,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   size: 24.0,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -683,7 +679,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -699,7 +695,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       context.pushNamed('Employees');
                                     },
                                     child: AnimatedContainer(
-                                      duration: Duration(milliseconds: 200),
+                                      duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -711,7 +707,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -724,7 +720,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -747,252 +743,245 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 12.0)),
+                              ].divide(const SizedBox(height: 12.0)),
                             ),
                           ),
                         ),
-                        if (false)
-                          Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 16.0),
-                              child: Container(
-                                width: 250.0,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  border: Border.all(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 1.0,
-                                  ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 16.0),
+                            child: Container(
+                              width: 250.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: BorderRadius.circular(12.0),
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 1.0,
                                 ),
-                                child: Visibility(
-                                  visible: (Theme.of(context).brightness ==
-                                          Brightness.light) ==
-                                      true,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'SIDE_NAV_PAGE_Container_1tljlsml_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Container_set_dark_mode_settings');
-                                              setDarkModeSetting(
-                                                  context, ThemeMode.light);
-                                            },
-                                            child: Container(
-                                              width: 115.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                            .brightness ==
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'SIDE_NAV_PAGE_Container_1tljlsml_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Container_set_dark_mode_settings');
+                                          setDarkModeSetting(
+                                              context, ThemeMode.light);
+                                        },
+                                        child: Container(
+                                          width: 115.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context)
+                                                        .brightness ==
+                                                    Brightness.light
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            border: Border.all(
+                                              color: valueOrDefault<Color>(
+                                                Theme.of(context).brightness ==
                                                         Brightness.light
                                                     ? FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground
+                                                        .alternate
                                                     : FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                border: Border.all(
-                                                  color: valueOrDefault<Color>(
-                                                    Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.light
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                  ),
-                                                  width: 1.0,
-                                                ),
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.wb_sunny_rounded,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.light
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
+                                              width: 1.0,
+                                            ),
+                                          ),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.wb_sunny_rounded,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.light
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        '411g996a' /* Light Mode */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .light
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          4.0, 0.0, 0.0, 0.0),
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '411g996a' /* Light Mode */,
                                                     ),
+                                                    style:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color: Theme.of(context)
+                                                                          .brightness ==
+                                                                      Brightness
+                                                                          .light
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'SIDE_NAV_PAGE_Container_dnl95du7_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Container_set_dark_mode_settings');
-                                              setDarkModeSetting(
-                                                  context, ThemeMode.dark);
-                                            },
-                                            child: Container(
-                                              width: 115.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                            .brightness ==
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'SIDE_NAV_PAGE_Container_dnl95du7_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Container_set_dark_mode_settings');
+                                          setDarkModeSetting(
+                                              context, ThemeMode.dark);
+                                        },
+                                        child: Container(
+                                          width: 115.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context)
+                                                        .brightness ==
+                                                    Brightness.dark
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            border: Border.all(
+                                              color: valueOrDefault<Color>(
+                                                Theme.of(context).brightness ==
                                                         Brightness.dark
                                                     ? FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground
+                                                        .alternate
                                                     : FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                border: Border.all(
-                                                  color: valueOrDefault<Color>(
-                                                    Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                  ),
-                                                  width: 1.0,
-                                                ),
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.nightlight_round,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
+                                              width: 1.0,
+                                            ),
+                                          ),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.nightlight_round,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.dark
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        'mc7klcgc' /* Dark Mode */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .dark
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          4.0, 0.0, 0.0, 0.0),
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'mc7klcgc' /* Dark Mode */,
                                                     ),
+                                                    style:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color: Theme.of(context)
+                                                                          .brightness ==
+                                                                      Brightness
+                                                                          .dark
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ].divide(const SizedBox(width: 5.0)),
                                   ),
                                 ),
                               ),
                             ),
                           ),
+                        ),
                         Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -1014,7 +1003,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   height: 50.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0),
                                       topLeft: Radius.circular(10.0),
@@ -1027,16 +1016,16 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
@@ -1048,7 +1037,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

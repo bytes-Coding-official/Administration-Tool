@@ -7,19 +7,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'customers_model.dart';
 export 'customers_model.dart';
 
@@ -108,38 +102,41 @@ class _CustomersWidgetState extends State<CustomersWidget>
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.rocket_launch,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 32.0,
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '3xmp7l5l' /* bytes Coding */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
-                                      ),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Icon(
+                                  Icons.rocket_launch,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 32.0,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '3xmp7l5l' /* bytes Coding */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Divider(
@@ -153,7 +150,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -168,10 +165,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
+                                  duration: const Duration(milliseconds: 200),
                                   curve: Curves.easeInOut,
                                   width: double.infinity,
                                   height: 44.0,
@@ -181,7 +178,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 6.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -195,7 +192,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -222,9 +219,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 4.0, 8.0, 4.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -251,7 +248,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -267,7 +264,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     context.pushNamed('chat_2_main');
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -278,7 +275,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -291,7 +288,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -319,10 +316,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 4.0, 8.0, 4.0),
                                                 child: Text(
@@ -355,7 +352,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       currentUserDocument?.role, '') ==
                                   'Administrator')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -372,7 +369,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         context.pushNamed('support_TicketList');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -385,7 +382,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -399,7 +396,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -429,11 +426,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Text(
@@ -465,7 +462,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               if (false)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -481,7 +478,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       context.pushNamed('Calendar');
                                     },
                                     child: AnimatedContainer(
-                                      duration: Duration(milliseconds: 200),
+                                      duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -493,7 +490,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -519,7 +516,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -545,7 +542,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -563,7 +560,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       currentUserDocument?.role, '') !=
                                   'Kunde')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -574,13 +571,23 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       onTap: () async {
                                         logFirebaseEvent(
                                             'CUSTOMERS_PAGE_contentView_1_ON_TAP');
-                                        logFirebaseEvent(
-                                            'contentView_1_navigate_to');
+                                        if (valueOrDefault(
+                                                currentUserDocument?.role,
+                                                '') ==
+                                            'Kunde') {
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
 
-                                        context.pushNamed('Billing');
+                                          context.pushNamed('CustomerBilling');
+                                        } else {
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context.pushNamed('EmployeeBilling');
+                                        }
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -593,7 +600,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -606,7 +613,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 size: 24.0,
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -631,7 +638,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -647,7 +654,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     context.pushNamed('Employees');
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -658,7 +665,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -671,7 +678,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -693,251 +700,244 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(height: 12.0)),
+                            ].divide(const SizedBox(height: 12.0)),
                           ),
                         ),
-                        if (false)
-                          Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 16.0),
-                              child: Container(
-                                width: 250.0,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  border: Border.all(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 1.0,
-                                  ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 16.0),
+                            child: Container(
+                              width: 250.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: BorderRadius.circular(12.0),
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  width: 1.0,
                                 ),
-                                child: Visibility(
-                                  visible: (Theme.of(context).brightness ==
-                                          Brightness.light) ==
-                                      true,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'CUSTOMERS_PAGE_Container_ab26ogw8_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Container_set_dark_mode_settings');
-                                              setDarkModeSetting(
-                                                  context, ThemeMode.light);
-                                            },
-                                            child: Container(
-                                              width: 115.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                            .brightness ==
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_PAGE_Container_fve8vl5s_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Container_set_dark_mode_settings');
+                                          setDarkModeSetting(
+                                              context, ThemeMode.light);
+                                        },
+                                        child: Container(
+                                          width: 115.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context)
+                                                        .brightness ==
+                                                    Brightness.light
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            border: Border.all(
+                                              color: valueOrDefault<Color>(
+                                                Theme.of(context).brightness ==
                                                         Brightness.light
                                                     ? FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground
+                                                        .alternate
                                                     : FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                border: Border.all(
-                                                  color: valueOrDefault<Color>(
-                                                    Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.light
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                  ),
-                                                  width: 1.0,
-                                                ),
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.wb_sunny_rounded,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.light
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
+                                              width: 1.0,
+                                            ),
+                                          ),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.wb_sunny_rounded,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.light
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        'nllrgk2r' /* Light Mode */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .light
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          4.0, 0.0, 0.0, 0.0),
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'v3wuo8gh' /* Light Mode */,
                                                     ),
+                                                    style:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color: Theme.of(context)
+                                                                          .brightness ==
+                                                                      Brightness
+                                                                          .light
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'CUSTOMERS_PAGE_Container_rmc3g7in_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Container_set_dark_mode_settings');
-                                              setDarkModeSetting(
-                                                  context, ThemeMode.dark);
-                                            },
-                                            child: Container(
-                                              width: 115.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                            .brightness ==
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'CUSTOMERS_PAGE_Container_591m1phd_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Container_set_dark_mode_settings');
+                                          setDarkModeSetting(
+                                              context, ThemeMode.dark);
+                                        },
+                                        child: Container(
+                                          width: 115.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context)
+                                                        .brightness ==
+                                                    Brightness.dark
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            border: Border.all(
+                                              color: valueOrDefault<Color>(
+                                                Theme.of(context).brightness ==
                                                         Brightness.dark
                                                     ? FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground
+                                                        .alternate
                                                     : FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                border: Border.all(
-                                                  color: valueOrDefault<Color>(
-                                                    Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                  ),
-                                                  width: 1.0,
-                                                ),
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.nightlight_round,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
+                                              width: 1.0,
+                                            ),
+                                          ),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.nightlight_round,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.dark
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        'jncjn9nc' /* Dark Mode */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .dark
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          4.0, 0.0, 0.0, 0.0),
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1m01zim9' /* Dark Mode */,
                                                     ),
+                                                    style:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color: Theme.of(context)
+                                                                          .brightness ==
+                                                                      Brightness
+                                                                          .dark
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ].divide(const SizedBox(width: 5.0)),
                                   ),
                                 ),
                               ),
                             ),
                           ),
+                        ),
                         Divider(
                           height: 12.0,
                           thickness: 2.0,
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -952,7 +952,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                               context.pushNamed(
                                 'auth_2_Profile',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 350),
@@ -968,7 +968,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   height: 50.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0),
                                       topLeft: Radius.circular(10.0),
@@ -981,16 +981,16 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
@@ -1002,7 +1002,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1043,12 +1043,12 @@ class _CustomersWidgetState extends State<CustomersWidget>
                 ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Container(
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 1170.0,
                     ),
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
                       primary: false,
                       child: Column(
@@ -1056,7 +1056,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1068,7 +1068,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor:
@@ -1078,7 +1078,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       buttonSize: 40.0,
                                       fillColor:
                                           FlutterFlowTheme.of(context).tertiary,
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add,
                                         color: Colors.white,
                                         size: 24.0,
@@ -1100,7 +1100,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -1129,15 +1129,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     ],
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 15.0)),
+                              ].divide(const SizedBox(width: 15.0)),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                             child: Container(
                               width: double.infinity,
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 maxWidth: double.infinity,
                               ),
                               decoration: BoxDecoration(
@@ -1162,129 +1162,114 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                              child: FlutterFlowChoiceChips(
-                                                options: [
-                                                  ChipData(FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'p942dt14' /* All */,
-                                                  )),
-                                                  ChipData(FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'ntn7402o' /* Own Projects */,
-                                                  )),
-                                                  ChipData(FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'o6dzwlaw' /* Others */,
-                                                  )),
-                                                  ChipData(FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '4zt58o1s' /* Closed */,
-                                                  ))
-                                                ],
-                                                onChanged: (val) => setState(
-                                                    () => _model
-                                                            .choiceChipsValue =
-                                                        val?.firstOrNull),
-                                                selectedChipStyle: ChipStyle(
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent2,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  iconColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                  iconSize: 18.0,
-                                                  elevation: 0.0,
-                                                  borderColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondary,
-                                                  borderWidth: 1.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                unselectedChipStyle: ChipStyle(
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  iconColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  iconSize: 18.0,
-                                                  elevation: 0.0,
-                                                  borderColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
-                                                  borderWidth: 1.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                chipSpacing: 5.0,
-                                                rowSpacing: 12.0,
-                                                multiselect: false,
-                                                initialized:
-                                                    _model.choiceChipsValue !=
-                                                        null,
-                                                alignment: WrapAlignment.start,
-                                                controller: _model
-                                                        .choiceChipsValueController ??=
-                                                    FormFieldController<
-                                                        List<String>>(
-                                                  [
+                                            FlutterFlowChoiceChips(
+                                              options: [
+                                                ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'mzguga2z' /* All */,
-                                                    )
-                                                  ],
-                                                ),
-                                                wrapped: false,
+                                                  'p942dt14' /* All */,
+                                                )),
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ntn7402o' /* Own Projects */,
+                                                )),
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'o6dzwlaw' /* Others */,
+                                                )),
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '4zt58o1s' /* Closed */,
+                                                ))
+                                              ],
+                                              onChanged: (val) => setState(() =>
+                                                  _model.choiceChipsValue =
+                                                      val?.firstOrNull),
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent2,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                                borderWidth: 1.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderWidth: 1.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              chipSpacing: 5.0,
+                                              rowSpacing: 12.0,
+                                              multiselect: false,
+                                              initialized:
+                                                  _model.choiceChipsValue !=
+                                                      null,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mzguga2z' /* All */,
+                                                  )
+                                                ],
+                                              ),
+                                              wrapped: false,
                                             ),
                                             if (responsiveVisibility(
                                               context: context,
                                               phone: false,
                                               tablet: false,
                                             ))
-                                              Container(
+                                              SizedBox(
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
@@ -1297,7 +1282,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    Duration(milliseconds: 150),
+                                                    const Duration(milliseconds: 150),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -1394,7 +1379,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       .asValidator(context),
                                                 ),
                                               ),
-                                          ],
+                                          ].divide(const SizedBox(width: 7.0)),
                                         ),
                                       ),
                                       if (responsiveVisibility(
@@ -1405,7 +1390,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.textController2,
@@ -1414,7 +1399,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController2',
-                                              Duration(milliseconds: 150),
+                                              const Duration(milliseconds: 150),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -1508,7 +1493,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                           if (valueOrDefault(currentUserDocument?.role, '') ==
                               'Manager')
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Row(
@@ -1532,10 +1517,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 0.35,
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1547,7 +1532,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1578,10 +1563,10 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 0.35,
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1593,7 +1578,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -1613,7 +1598,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 desktop: false,
                               ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedListView<
@@ -1629,7 +1614,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(height: 10.0),
+                                      const SizedBox(height: 10.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -1689,7 +1674,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             'Customer',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1714,8 +1699,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -1723,7 +1708,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -1731,7 +1716,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -1751,15 +1736,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -1780,7 +1765,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         child: Container(
                                           width: 700.0,
                                           height: 250.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -1796,14 +1781,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -1818,7 +1803,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               .getText(
                                                             'n9qnpbyi' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -1844,7 +1829,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -1864,7 +1849,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 16.0),
                                                     child: Text(
@@ -1881,7 +1866,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
@@ -1976,9 +1961,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               },
                                                             );
                                                           })
-                                                              .divide(SizedBox(
+                                                              .divide(const SizedBox(
                                                                   width: 15.0))
-                                                              .around(SizedBox(
+                                                              .around(const SizedBox(
                                                                   width: 15.0)),
                                                         ),
                                                       );
@@ -1993,7 +1978,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -2083,7 +2068,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(2.0),
+                                                                              const EdgeInsets.all(2.0),
                                                                           child:
                                                                               ClipRRect(
                                                                             borderRadius:
@@ -2100,8 +2085,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                       );
                                                                     },
                                                                   );
-                                                                }).divide(SizedBox(width: 5.0)).around(
-                                                                    SizedBox(
+                                                                }).divide(const SizedBox(width: 5.0)).around(
+                                                                    const SizedBox(
                                                                         width:
                                                                             5.0)),
                                                               ),
@@ -2110,11 +2095,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     6.0),
                                                             child: Container(
                                                               height: 32.0,
@@ -2151,11 +2136,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2172,9 +2157,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (mobileViewCustomerCaseRecord
-                                                                              .assignee
-                                                                              .length ==
-                                                                          0) {
+                                                                              .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else {
                                                                         return 'Other';
@@ -2223,7 +2206,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 tablet: false,
                               ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedGridView<
@@ -2234,14 +2217,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     CustomerCaseRecord.collection
                                         .orderBy('caseid', descending: true),
                                   ),
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     0,
                                     10.0,
                                     0,
                                     10.0,
                                   ),
                                   gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -2308,7 +2291,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             'Customer',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2333,8 +2316,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -2342,7 +2325,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -2350,7 +2333,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -2370,15 +2353,15 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -2399,7 +2382,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         child: Container(
                                           width: 700.0,
                                           height: 350.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -2415,14 +2398,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -2437,7 +2420,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               .getText(
                                                             'nhxrq5ni' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -2463,7 +2446,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -2483,7 +2466,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 16.0),
                                                     child: Text(
@@ -2589,7 +2572,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                               );
                                                             },
                                                           );
-                                                        }).divide(SizedBox(
+                                                        }).divide(const SizedBox(
                                                             width: 5.0)),
                                                       ),
                                                     );
@@ -2603,7 +2586,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: Row(
@@ -2689,7 +2672,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               2.0),
                                                                       child:
                                                                           ClipRRect(
@@ -2711,7 +2694,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                   );
                                                                 },
                                                               );
-                                                            }).divide(SizedBox(
+                                                            }).divide(const SizedBox(
                                                                 width: 4.0)),
                                                           );
                                                         },
@@ -2751,11 +2734,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -2769,9 +2752,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                                         currentUserReference)) {
                                                                   return 'Own';
                                                                 } else if (tabletDesktopViewCustomerCaseRecord
-                                                                        .assignee
-                                                                        .length ==
-                                                                    0) {
+                                                                        .assignee.isEmpty) {
                                                                   return 'Open';
                                                                 } else if (tabletDesktopViewCustomerCaseRecord
                                                                     .closed) {
