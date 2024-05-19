@@ -134,7 +134,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              '9s6zefy3' /* Image Details */,
+              'r61wss33' /* Image Details */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Readex Pro',

@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -1139,29 +1138,72 @@ class _CustomersWidgetState extends State<CustomersWidget>
                               ].divide(const SizedBox(width: 15.0)),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 16.0, 12.0),
-                            child: Container(
-                              width: double.infinity,
-                              constraints: const BoxConstraints(
-                                maxWidth: double.infinity,
-                              ),
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                borderRadius: BorderRadius.circular(8.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  width: 1.0,
+                          if (valueOrDefault(currentUserDocument?.role, '') ==
+                              'Kunde')
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => FFButtonWidget(
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'CUSTOMERS_HERE_IS_NOTHING_YOU_SHOULD_SEE');
+                                    logFirebaseEvent('Button_navigate_to');
+
+                                    context.pushNamed('CustomerBilling');
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    '4utzg0s0' /* Here is nothing you should see... */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 400.0,
+                                    height: 100.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          fontSize: 24.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 3.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(14.0),
+                                  ),
                                 ),
                               ),
-                              child: Visibility(
-                                visible: valueOrDefault(
-                                        currentUserDocument?.role, '') !=
-                                    'Kunde',
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Column(
+                            ),
+                          if (valueOrDefault(currentUserDocument?.role, '') !=
+                              'Kunde')
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 16.0, 12.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Container(
+                                  width: double.infinity,
+                                  constraints: const BoxConstraints(
+                                    maxWidth: double.infinity,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                  child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       SingleChildScrollView(
@@ -1496,7 +1538,6 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                             ),
-                          ),
                           if (valueOrDefault(currentUserDocument?.role, '') ==
                               'Manager')
                             Padding(
@@ -1550,20 +1591,13 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_ADD_CASE_BTN_ON_TAP');
-                                        logFirebaseEvent(
-                                            'Button_update_app_state');
-                                        setState(() {
-                                          FFAppState().caseid = random_data
-                                              .randomInteger(1, 9999999)
-                                              .toString();
-                                        });
+                                            'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
                                         logFirebaseEvent('Button_navigate_to');
 
-                                        context.pushNamed('CreateCase');
+                                        context.pushNamed('createCustomer');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'l9lhumzm' /* Add Case */,
+                                        'aaep28x3' /* Add Customer */,
                                       ),
                                       options: FFButtonOptions(
                                         width:
@@ -2596,198 +2630,205 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Builder(
-                                                        builder: (context) {
-                                                          final assignees =
-                                                              tabletDesktopViewCustomerCaseRecord
-                                                                  .assignee
-                                                                  .map((e) => e)
-                                                                  .toList()
-                                                                  .take(3)
-                                                                  .toList();
-                                                          return Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .end,
-                                                            children: List.generate(
-                                                                assignees
-                                                                    .length,
-                                                                (assigneesIndex) {
-                                                              final assigneesItem =
-                                                                  assignees[
-                                                                      assigneesIndex];
-                                                              return StreamBuilder<
-                                                                  UsersRecord>(
-                                                                stream: UsersRecord
-                                                                    .getDocument(
-                                                                        assigneesItem),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
+                                                  child: SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Builder(
+                                                          builder: (context) {
+                                                            final assignees =
+                                                                tabletDesktopViewCustomerCaseRecord
+                                                                    .assignee
+                                                                    .map((e) =>
+                                                                        e)
+                                                                    .toList()
+                                                                    .take(3)
+                                                                    .toList();
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .end,
+                                                              children: List.generate(
+                                                                  assignees
+                                                                      .length,
+                                                                  (assigneesIndex) {
+                                                                final assigneesItem =
+                                                                    assignees[
+                                                                        assigneesIndex];
+                                                                return StreamBuilder<
+                                                                    UsersRecord>(
+                                                                  stream: UsersRecord
+                                                                      .getDocument(
+                                                                          assigneesItem),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
                                                                         child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          child:
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    final containerUsersRecord =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Container(
+                                                                      width:
+                                                                          40.0,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .accent1,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        border:
+                                                                            Border.all(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(40.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            containerUsersRecord.photoUrl,
+                                                                            width:
+                                                                                60.0,
+                                                                            height:
+                                                                                60.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     );
-                                                                  }
-                                                                  final containerUsersRecord =
-                                                                      snapshot
-                                                                          .data!;
-                                                                  return Container(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent1,
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                    ),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding:
-                                                                          const EdgeInsets.all(
-                                                                              2.0),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(40.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          containerUsersRecord
-                                                                              .photoUrl,
-                                                                          width:
-                                                                              60.0,
-                                                                          height:
-                                                                              60.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              );
-                                                            }).divide(const SizedBox(
-                                                                width: 4.0)),
-                                                          );
-                                                        },
-                                                      ),
-                                                      Container(
-                                                        height: 32.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: tabletDesktopViewCustomerCaseRecord
-                                                                  .assignee
-                                                                  .contains(
-                                                                      currentUserReference)
-                                                              ? FlutterFlowTheme
-                                                                      .of(
-                                                                          context)
-                                                                  .accent1
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          border: Border.all(
-                                                            color: tabletDesktopViewCustomerCaseRecord
-                                                                    .assignee
-                                                                    .contains(
-                                                                        currentUserReference)
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                            width: 2.0,
-                                                          ),
+                                                                  },
+                                                                );
+                                                              }).divide(
+                                                                  const SizedBox(
+                                                                      width:
+                                                                          4.0)),
+                                                            );
+                                                          },
                                                         ),
-                                                        child: Align(
-                                                          alignment:
-                                                              const AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8.0,
-                                                                        0.0,
-                                                                        8.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              () {
-                                                                if (tabletDesktopViewCustomerCaseRecord
-                                                                    .assignee
-                                                                    .contains(
-                                                                        currentUserReference)) {
-                                                                  return 'Own';
-                                                                } else if (tabletDesktopViewCustomerCaseRecord
-                                                                        .assignee.isEmpty) {
-                                                                  return 'Open';
-                                                                } else if (tabletDesktopViewCustomerCaseRecord
-                                                                    .closed) {
-                                                                  return 'Closed';
-                                                                } else {
-                                                                  return 'Other';
-                                                                }
-                                                              }(),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    color: tabletDesktopViewCustomerCaseRecord.assignee.contains(
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Container(
+                                                              height: 32.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: tabletDesktopViewCustomerCaseRecord
+                                                                        .assignee
+                                                                        .contains(
                                                                             currentUserReference)
-                                                                        ? FlutterFlowTheme.of(context)
-                                                                            .primaryText
-                                                                        : FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                    letterSpacing:
+                                                                    ? FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent1
+                                                                    : FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: tabletDesktopViewCustomerCaseRecord
+                                                                          .assignee
+                                                                          .contains(
+                                                                              currentUserReference)
+                                                                      ? FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                  width: 2.0,
+                                                                ),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
                                                                         0.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    () {
+                                                                      if (tabletDesktopViewCustomerCaseRecord
+                                                                          .assignee
+                                                                          .contains(
+                                                                              currentUserReference)) {
+                                                                        return 'Own';
+                                                                      } else if (tabletDesktopViewCustomerCaseRecord
+                                                                              .assignee.isEmpty) {
+                                                                        return 'Open';
+                                                                      } else if (tabletDesktopViewCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
+                                                                      } else {
+                                                                        return 'Other';
+                                                                      }
+                                                                    }(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Inter',
+                                                                          color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference)
+                                                                              ? FlutterFlowTheme.of(context).primaryText
+                                                                              : FlutterFlowTheme.of(context).primary,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                   ),
+                                                                ),
+                                                              ),
                                                             ),
-                                                          ),
+                                                          ],
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -2800,29 +2841,6 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                             ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'l266jhch' /* Here is nothing you can see! */,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        fontSize: 32.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
                         ],
                       ),
                     ),

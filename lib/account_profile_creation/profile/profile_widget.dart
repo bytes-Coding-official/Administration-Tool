@@ -286,7 +286,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '0f1glrr4' /* Mail */,
+                                                      'wnodt0nu' /* Mail */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -355,7 +355,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '4n4ff3qs' /* Call */,
+                                                      'kmtjql97' /* Call */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -381,7 +381,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'iwzejlky' /* Biography */,
+                                      'pu04pfxz' /* Biography */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall

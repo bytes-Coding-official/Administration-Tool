@@ -301,11 +301,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8c86p3v1': {
       'en': 'Costs',
-      'de': 'Dauer',
+      'de': 'Kosten',
     },
     'g13pqfbb': {
       'en': 'Supervisor',
-      'de': 'Betreuer',
+      'de': 'Aufsicht',
     },
     'w6upyuwo': {
       'en': 'ID:',
@@ -382,6 +382,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Review the details below of all current projects.',
       'de': 'Sehen Sie sich unten die Details aller aktuellen Projekte an.',
     },
+    '4utzg0s0': {
+      'en': 'Here is nothing you should see!',
+      'de': 'Hier gibt es nichts, was Sie sehen sollten!',
+    },
     'p942dt14': {
       'en': 'All',
       'de': 'Alle',
@@ -422,9 +426,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Customer',
       'de': 'Kunden hinzufügen',
     },
-    'l9lhumzm': {
-      'en': 'Add Case',
-      'de': 'Fall hinzufügen',
+    'aaep28x3': {
+      'en': 'Add Customer',
+      'de': 'Kunden hinzufügen',
     },
     'n9qnpbyi': {
       'en': 'ID#: ',
@@ -433,10 +437,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'nhxrq5ni': {
       'en': 'ID#: ',
       'de': 'AUSWEIS#:',
-    },
-    'l266jhch': {
-      'en': 'Here is nothing you can see!',
-      'de': '',
     },
     'u27w6351': {
       'en': 'Home',
@@ -916,7 +916,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2mghmw6b': {
       'en': 'Below is a summary of your activity',
-      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
+      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivitäten',
     },
     'joipmprf': {
       'en': 'Money Earned',
@@ -1125,7 +1125,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2b5fgo9t': {
       'en': 'Invite Users',
-      'de': 'Freunde einladen',
+      'de': 'Benutzer einladen',
     },
     'pdl3903c': {
       'en': 'Select users from below to start a chat.',
@@ -1138,9 +1138,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // image_Details
   {
-    '9s6zefy3': {
+    'r61wss33': {
       'en': 'Image Details',
-      'de': '',
+      'de': 'Bilddetails',
     },
     'itj2r1tk': {
       'en': 'Home',
@@ -1432,15 +1432,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'odno4o2l': {
       'en': 'Below is a summary of your activity',
-      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
+      'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivitäten',
     },
     'xxc5wt2v': {
       'en': 'Money Spend',
-      'de': 'Verdientes Geld',
+      'de': 'Geld ausgeben',
     },
     'xrcnzlbf': {
       'en': 'Average Costs',
-      'de': 'Durchschnittliche Abrechnung',
+      'de': 'Durchschnittliche Kosten',
     },
     'azw44sx6': {
       'en': 'Total Customers',
@@ -1448,11 +1448,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd35fb2ze': {
       'en': 'Customer-Meetings',
-      'de': 'Kunden-Cases',
+      'de': 'Kunden-Meetings',
     },
     '4stawemd': {
       'en': 'A summary of your meetings',
-      'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
+      'de': 'Eine Zusammenfassung Ihrer Meetings',
     },
     '72cuvxfy': {
       'en': 'Duration',
@@ -1460,11 +1460,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0drowsmc': {
       'en': 'Costs',
-      'de': 'Dauer',
+      'de': 'Kosten',
     },
     'libsyzti': {
       'en': 'Supervisor',
-      'de': 'Betreuer',
+      'de': 'Aufsicht',
     },
     '8c0dhi8u': {
       'en': 'Recent Activity',
@@ -1502,17 +1502,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Profile
   {
-    '0f1glrr4': {
+    'wnodt0nu': {
       'en': 'Mail',
-      'de': '',
+      'de': 'Mail',
     },
-    '4n4ff3qs': {
+    'kmtjql97': {
       'en': 'Call',
-      'de': '',
+      'de': 'Anruf',
     },
-    'iwzejlky': {
+    'pu04pfxz': {
       'en': 'Biography',
-      'de': '',
+      'de': 'Biografie',
     },
     'jxgl8tmv': {
       'en': 'Money Earned',
@@ -1544,11 +1544,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f49vqwjs': {
       'en': 'Customer-Meetings',
-      'de': 'Kunden-Cases',
+      'de': 'Kunden-Meetings',
     },
     '77i9y8d1': {
       'en': 'A summary of their meetings',
-      'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
+      'de': 'Eine Zusammenfassung ihrer Treffen',
     },
     'j8agtzis': {
       'en': 'Duration',
@@ -1556,23 +1556,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fl675kqg': {
       'en': 'Costs',
-      'de': 'Dauer',
+      'de': 'Kosten',
     },
     '5tnjst8t': {
       'en': 'Supervisor',
-      'de': 'Betreuer',
+      'de': 'Aufsicht',
     },
     '79sv2fvf': {
       'en': 'User Profile',
-      'de': 'Komplette Sprachen',
+      'de': 'Benutzerprofil',
     },
     'np02awzv': {
       'en': 'Complete selected User Profile',
-      'de': 'Vervollständigen Sie Ihre Sprachen',
+      'de': 'Ausgewähltes Benutzerprofil vervollständigen',
     },
     '1byh2jsg': {
       'en': 'Home',
-      'de': '',
+      'de': 'Heim',
     },
   },
   // editProfile_auth_2
@@ -1595,11 +1595,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kmiy5qxl': {
       'en': 'User Role',
-      'de': 'Vollständiger Name',
+      'de': 'Benutzer-Rolle',
     },
     'wkjljldr': {
       'en': 'Your role...',
-      'de': 'Ihr vollständiger Name...',
+      'de': 'Deine Rolle...',
     },
     'mv1hv80o': {
       'en': 'Short Description',
