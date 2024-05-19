@@ -418,6 +418,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
+                                    textAlign: TextAlign.center,
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     validator: _model
@@ -508,6 +509,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
+                                    textAlign: TextAlign.center,
                                     maxLines: 9,
                                     minLines: 5,
                                     cursorColor:

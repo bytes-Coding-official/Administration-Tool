@@ -312,7 +312,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController2Validator
@@ -394,7 +395,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController3Validator
@@ -476,7 +478,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFDBE2E7),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model.textController4Validator

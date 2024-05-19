@@ -416,6 +416,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
+                                      textAlign: TextAlign.center,
                                       keyboardType:
                                           const TextInputType.numberWithOptions(
                                               decimal: true),
