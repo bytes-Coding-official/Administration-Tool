@@ -69,12 +69,28 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              logFirebaseEvent('CHAT_2_MAIN_arrow_back_rounded_ICN_ON_TA');
+              logFirebaseEvent('IconButton_navigate_back');
+              context.pop();
+            },
+          ),
           title: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'rebbm36n' /* My Chats */,
+                  'oq6hlue0' /* My Chats */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                       fontFamily: 'Readex Pro',
@@ -84,7 +100,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  'u78r69oe' /* Below are your chats and group... */,
+                  'qwk0a6ke' /* Below are your chats and group... */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Inter',
@@ -94,31 +110,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
               ),
             ],
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
-              child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
-                borderRadius: 12.0,
-                borderWidth: 1.0,
-                buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).accent1,
-                icon: Icon(
-                  Icons.chevron_left,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('CHAT_2_MAIN_PAGE_chevron_left_ICN_ON_TAP');
-                  logFirebaseEvent('IconButton_navigate_to');
-
-                  context.pushNamed('Customers');
-                },
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: true,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -128,7 +122,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('CHAT_2_MAIN_PAGE_ADD_CHAT_BTN_ON_TAP');

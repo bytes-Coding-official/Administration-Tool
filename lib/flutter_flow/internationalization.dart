@@ -1088,11 +1088,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Group Chat',
       'de': 'Gruppenchat',
     },
-    'rebbm36n': {
+    'oq6hlue0': {
       'en': 'My Chats',
       'de': 'Meine Chats',
     },
-    'u78r69oe': {
+    'qwk0a6ke': {
       'en': 'Below are your chats and group chats',
       'de': 'Unten sind Ihre Chats und Gruppenchats',
     },
@@ -1111,11 +1111,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Selected',
       'de': 'Ausgewählt',
     },
-    'va53uv9s': {
+    '2b5fgo9t': {
       'en': 'Invite Users',
       'de': 'Freunde einladen',
     },
-    '23ic11yf': {
+    'pdl3903c': {
       'en': 'Select users from below to start a chat.',
       'de': 'Wählen Sie unten Benutzer aus, um einen Chat zu starten.',
     },
@@ -1126,6 +1126,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // image_Details
   {
+    '9s6zefy3': {
+      'en': 'Image Details',
+      'de': '',
+    },
     'itj2r1tk': {
       'en': 'Home',
       'de': 'Heim',
@@ -1337,7 +1341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Heim',
     },
   },
-  // sideNav
+  // SideNav
   {
     'an40yt0k': {
       'en': 'Navigation',
@@ -1484,7 +1488,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Heim',
     },
   },
-  // profile
+  // Profile
   {
     '0f1glrr4': {
       'en': 'Mail',
@@ -1494,8 +1498,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Call',
       'de': '',
     },
-    '6icrb8no': {
-      'en': 'Bio',
+    'iwzejlky': {
+      'en': 'Biography',
       'de': '',
     },
     'jxgl8tmv': {

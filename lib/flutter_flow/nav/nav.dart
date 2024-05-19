@@ -241,7 +241,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AddMeetingToCustomerWidget(),
         ),
         FFRoute(
-          name: 'sideNav',
+          name: 'SideNav',
           path: '/sideNav',
           builder: (context, params) => const SideNavWidget(),
         ),
@@ -251,7 +251,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CustomerBillingWidget(),
         ),
         FFRoute(
-          name: 'profile',
+          name: 'Profile',
           path: '/profile',
           builder: (context, params) => ProfileWidget(
             employee: params.getParam(

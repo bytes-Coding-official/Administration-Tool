@@ -121,9 +121,9 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
@@ -132,9 +132,20 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
               context.pop();
             },
           ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              '9s6zefy3' /* Image Details */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Readex Pro',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.0,
+                ),
+          ),
           actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,

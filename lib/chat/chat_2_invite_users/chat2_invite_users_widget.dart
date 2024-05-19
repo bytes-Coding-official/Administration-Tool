@@ -99,16 +99,33 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              logFirebaseEvent('CHAT_2_INVITE_USERS_arrow_back_rounded_I');
+              logFirebaseEvent('IconButton_navigate_back');
+              context.pop();
+            },
+          ),
           title: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'va53uv9s' /* Invite Users */,
+                  '2b5fgo9t' /* Invite Users */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',
+                      fontSize: 25.0,
                       letterSpacing: 0.0,
                     ),
               ),
@@ -116,7 +133,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '23ic11yf' /* Select users from below to sta... */,
+                    'pdl3903c' /* Select users from below to sta... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
                         fontFamily: 'Inter',
@@ -126,30 +143,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
               ),
             ],
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
-              child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
-                borderRadius: 12.0,
-                borderWidth: 1.0,
-                buttonSize: 44.0,
-                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                icon: Icon(
-                  Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('CHAT_2_INVITE_USERS_close_rounded_ICN_ON');
-                  logFirebaseEvent('IconButton_navigate_back');
-                  context.safePop();
-                },
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: true,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: Stack(
           children: [

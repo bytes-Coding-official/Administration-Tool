@@ -443,7 +443,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
               ),
             ),
           ],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(

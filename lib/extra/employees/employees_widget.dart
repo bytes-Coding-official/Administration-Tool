@@ -83,8 +83,9 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('EMPLOYEES_arrow_back_rounded_ICN_ON_TAP');
-              logFirebaseEvent('IconButton_navigate_back');
-              context.pop();
+              logFirebaseEvent('IconButton_navigate_to');
+
+              context.pushNamed('Customers');
             },
           ),
           title: Column(
@@ -233,7 +234,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                 logFirebaseEvent('Container_navigate_to');
 
                                 context.pushNamed(
-                                  'profile',
+                                  'Profile',
                                   queryParameters: {
                                     'employee': serializeParam(
                                       listViewUsersRecord.reference,

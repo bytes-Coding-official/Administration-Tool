@@ -244,6 +244,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                 0.0, 0.0, 16.0, 8.0),
                             child: Container(
                               width: 150.0,
+                              constraints: BoxConstraints(
+                                maxWidth:
+                                    MediaQuery.sizeOf(context).width * 0.15,
+                                maxHeight:
+                                    MediaQuery.sizeOf(context).height * 0.15,
+                              ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -365,6 +371,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                 0.0, 0.0, 8.0, 8.0),
                             child: Container(
                               width: 130.0,
+                              constraints: BoxConstraints(
+                                maxWidth:
+                                    MediaQuery.sizeOf(context).width * 0.15,
+                                maxHeight:
+                                    MediaQuery.sizeOf(context).height * 0.15,
+                              ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -486,6 +498,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                 16.0, 0.0, 8.0, 8.0),
                             child: Container(
                               width: 130.0,
+                              constraints: BoxConstraints(
+                                maxWidth:
+                                    MediaQuery.sizeOf(context).width * 0.15,
+                                maxHeight:
+                                    MediaQuery.sizeOf(context).height * 0.15,
+                              ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -621,7 +639,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 12.0, 15.0),
+                                0.0, 0.0, 0.0, 5.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
@@ -677,51 +695,55 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '72cuvxfy' /* Duration */,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '72cuvxfy' /* Duration */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '0drowsmc' /* Costs */,
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '0drowsmc' /* Costs */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'libsyzti' /* Betreuer */,
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'libsyzti' /* Betreuer */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                                 AuthUserStreamWidget(
                                   builder: (context) => StreamBuilder<

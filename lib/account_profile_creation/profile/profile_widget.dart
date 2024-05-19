@@ -37,7 +37,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
     super.initState();
     _model = createModel(context, () => ProfileModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'profile'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Profile'});
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -362,12 +362,13 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '6icrb8no' /* Bio */,
+                                      'iwzejlky' /* Biography */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
                                           fontFamily: 'Inter',
+                                          fontSize: 24.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -384,6 +385,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Inter',
+                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -410,6 +412,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   0.0, 0.0, 16.0, 8.0),
                               child: Container(
                                 width: 150.0,
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.sizeOf(context).width * 0.15,
+                                  maxHeight:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -534,6 +542,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   0.0, 0.0, 8.0, 8.0),
                               child: Container(
                                 width: 130.0,
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.sizeOf(context).width * 0.15,
+                                  maxHeight:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -658,6 +672,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   16.0, 0.0, 8.0, 8.0),
                               child: Container(
                                 width: 130.0,
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.sizeOf(context).width * 0.15,
+                                  maxHeight:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -765,7 +785,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 12.0, 0.0),
+                                        0.0, 0.0, 0.0, 5.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -831,84 +851,87 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 12.0, 0.0, 12.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              FutureBuilder<int>(
-                                                future:
-                                                    queryCustomerCaseRecordCount(
-                                                  queryBuilder:
-                                                      (customerCaseRecord) =>
-                                                          customerCaseRecord
-                                                              .where(
-                                                                'assignee',
-                                                                arrayContains:
-                                                                    widget
-                                                                        .employee,
-                                                              )
-                                                              .where(
-                                                                'closed',
-                                                                isEqualTo:
-                                                                    false,
-                                                              ),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                          child: SingleChildScrollView(
+                                            primary: false,
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                FutureBuilder<int>(
+                                                  future:
+                                                      queryCustomerCaseRecordCount(
+                                                    queryBuilder:
+                                                        (customerCaseRecord) =>
+                                                            customerCaseRecord
+                                                                .where(
+                                                                  'assignee',
+                                                                  arrayContains:
+                                                                      widget
+                                                                          .employee,
+                                                                )
+                                                                .where(
+                                                                  'closed',
+                                                                  isEqualTo:
+                                                                      false,
+                                                                ),
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
+                                                      );
+                                                    }
+                                                    int textCount =
+                                                        snapshot.data!;
+                                                    return Text(
+                                                      textCount.toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .displaySmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            fontSize: 26.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     );
-                                                  }
-                                                  int textCount =
-                                                      snapshot.data!;
-                                                  return Text(
-                                                    textCount.toString(),
+                                                  },
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'nxmksly7' /* current customers */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .displaySmall
+                                                        .labelMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          fontSize: 26.0,
+                                                          fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                  );
-                                                },
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'nxmksly7' /* current customers */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -917,84 +940,88 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              FutureBuilder<int>(
-                                                future:
-                                                    queryCustomerCaseRecordCount(
-                                                  queryBuilder:
-                                                      (customerCaseRecord) =>
-                                                          customerCaseRecord
-                                                              .where(Filter.or(
-                                                    Filter(
-                                                      'assignee',
-                                                      arrayContains:
-                                                          widget.employee,
-                                                    ),
-                                                    Filter(
-                                                      'closed',
-                                                      isEqualTo: true,
-                                                    ),
-                                                  )),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                          child: SingleChildScrollView(
+                                            primary: false,
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                FutureBuilder<int>(
+                                                  future:
+                                                      queryCustomerCaseRecordCount(
+                                                    queryBuilder:
+                                                        (customerCaseRecord) =>
+                                                            customerCaseRecord
+                                                                .where(
+                                                                    Filter.or(
+                                                      Filter(
+                                                        'assignee',
+                                                        arrayContains:
+                                                            widget.employee,
+                                                      ),
+                                                      Filter(
+                                                        'closed',
+                                                        isEqualTo: true,
+                                                      ),
+                                                    )),
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
+                                                      );
+                                                    }
+                                                    int textCount =
+                                                        snapshot.data!;
+                                                    return Text(
+                                                      textCount.toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .displaySmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            fontSize: 26.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     );
-                                                  }
-                                                  int textCount =
-                                                      snapshot.data!;
-                                                  return Text(
-                                                    textCount.toString(),
+                                                  },
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'jj0tni5e' /* completed customers */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .displaySmall
+                                                        .labelMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          fontSize: 26.0,
+                                                          fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                  );
-                                                },
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'jj0tni5e' /* completed customers */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -1062,51 +1089,55 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'j8agtzis' /* Duration */,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'j8agtzis' /* Duration */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'fl675kqg' /* Costs */,
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'fl675kqg' /* Costs */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '5tnjst8t' /* Betreuer */,
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '5tnjst8t' /* Betreuer */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                                 StreamBuilder<List<CustomerMeetingRecord>>(
                                   stream: queryCustomerMeetingRecord(
