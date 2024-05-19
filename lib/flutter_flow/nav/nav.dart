@@ -449,8 +449,8 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/Logo_schwarz_mit_Hintergrund_mit_URL.png',
-                    fit: BoxFit.cover,
+                    'assets/images/Logo_squared.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;

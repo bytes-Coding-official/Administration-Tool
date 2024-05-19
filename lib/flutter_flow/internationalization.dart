@@ -1589,25 +1589,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your full name...',
       'de': 'Ihr vollständiger Name...',
     },
-    '8w40lg9d': {
-      'en': 'Manager',
-      'de': 'Manager',
+    'kmiy5qxl': {
+      'en': 'User Role',
+      'de': 'Vollständiger Name',
     },
-    'yensxgmy': {
-      'en': 'Betreuer',
-      'de': 'Betreuer',
-    },
-    'o6w537y6': {
-      'en': 'Kunde',
-      'de': 'Kunde',
-    },
-    'wk1gzwl6': {
-      'en': 'Your Role',
-      'de': 'Deine Rolle',
-    },
-    'r14ffmw1': {
-      'en': 'Search for an item...',
-      'de': 'Nach einem Artikel suchen...',
+    'wkjljldr': {
+      'en': 'Your role...',
+      'de': 'Ihr vollständiger Name...',
     },
     'mv1hv80o': {
       'en': 'Short Description',

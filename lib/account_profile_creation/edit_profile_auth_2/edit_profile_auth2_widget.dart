@@ -2,15 +2,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
 
@@ -52,6 +51,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
         TextEditingController(text: currentUserDisplayName);
     _model.yourNameFocusNode ??= FocusNode();
 
+    _model.yourRoleTextController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.role, ''));
+    _model.yourRoleFocusNode ??= FocusNode();
+
     _model.myBioTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.shortDescription, ''));
     _model.myBioFocusNode ??= FocusNode();
@@ -83,6 +86,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Form(
       key: _model.formKey,
       autovalidateMode: AutovalidateMode.disabled,
@@ -330,47 +335,72 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
             child: AuthUserStreamWidget(
-              builder: (context) => FlutterFlowDropDown<String>(
-                controller: _model.dropDownValueController ??=
-                    FormFieldController<String>(
-                  _model.dropDownValue ??=
-                      valueOrDefault(currentUserDocument?.role, ''),
+              builder: (context) => TextFormField(
+                controller: _model.yourRoleTextController,
+                focusNode: _model.yourRoleFocusNode,
+                autofillHints: const [AutofillHints.name],
+                textCapitalization: TextCapitalization.words,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: FFLocalizations.of(context).getText(
+                    'kmiy5qxl' /* User Role */,
+                  ),
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                  hintText: FFLocalizations.of(context).getText(
+                    'wkjljldr' /* Your role... */,
+                  ),
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                  errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: FlutterFlowTheme.of(context).error,
+                        letterSpacing: 0.0,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  contentPadding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
-                options: [
-                  FFLocalizations.of(context).getText(
-                    '8w40lg9d' /* Manager */,
-                  ),
-                  FFLocalizations.of(context).getText(
-                    'yensxgmy' /* Betreuer */,
-                  ),
-                  FFLocalizations.of(context).getText(
-                    'o6w537y6' /* Kunde */,
-                  )
-                ],
-                onChanged: (val) => setState(() => _model.dropDownValue = val),
-                width: double.infinity,
-                height: 44.0,
-                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Inter',
                       letterSpacing: 0.0,
                     ),
-                hintText: FFLocalizations.of(context).getText(
-                  'wk1gzwl6' /* Your Role */,
-                ),
-                icon: Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 24.0,
-                ),
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                elevation: 2.0,
-                borderColor: FlutterFlowTheme.of(context).alternate,
-                borderWidth: 2.0,
-                borderRadius: 8.0,
-                margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                hidesUnderline: true,
-                isSearchable: false,
-                isMultiSelect: false,
+                cursorColor: FlutterFlowTheme.of(context).primary,
+                validator:
+                    _model.yourRoleTextControllerValidator.asValidator(context),
               ),
             ),
           ),
@@ -459,6 +489,20 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       !_model.formKey.currentState!.validate()) {
                     return;
                   }
+                  if (_model.yourRoleTextController.text ==
+                      'administrator2023') {
+                    logFirebaseEvent('Button-Login_update_app_state');
+                    FFAppState().userRole = 'Manager';
+                  } else {
+                    if (_model.yourRoleTextController.text == 'Employee2023') {
+                      logFirebaseEvent('Button-Login_update_app_state');
+                      FFAppState().userRole = 'Employee';
+                    } else {
+                      logFirebaseEvent('Button-Login_update_app_state');
+                      FFAppState().userRole = 'Kunde';
+                    }
+                  }
+
                   // updateUserInfo
                   logFirebaseEvent('Button-Login_updateUserInfo');
 
@@ -469,7 +513,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                         : currentUserPhoto,
                     shortDescription: _model.myBioTextController.text,
                     lastActiveTime: getCurrentTimestamp,
-                    role: _model.dropDownValue,
+                    role: FFAppState().userRole,
                   ));
                   logFirebaseEvent('Button-Login_show_snack_bar');
                   ScaffoldMessenger.of(context).showSnackBar(

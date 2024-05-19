@@ -40,6 +40,12 @@ class FFAppState extends ChangeNotifier {
     _caseRef = value;
   }
 
+  String _userRole = '';
+  String get userRole => _userRole;
+  set userRole(String value) {
+    _userRole = value;
+  }
+
   final _userDocQueryManager = FutureRequestManager<UsersRecord>();
   Future<UsersRecord> userDocQuery({
     String? uniqueQueryKey,
