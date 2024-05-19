@@ -296,7 +296,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
     },
     'g13pqfbb': {
-      'en': 'Betreuer',
+      'en': 'Supervisor',
       'de': 'Betreuer',
     },
     'w6upyuwo': {
@@ -903,7 +903,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundeninformation',
     },
     '2mghmw6b': {
-      'en': 'Below is a summary of your activity.',
+      'en': 'Below is a summary of your activity',
       'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
     },
     'joipmprf': {
@@ -1419,7 +1419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundeninformation',
     },
     'odno4o2l': {
-      'en': 'Below is a summary of your activity.',
+      'en': 'Below is a summary of your activity',
       'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivität.',
     },
     'xxc5wt2v': {
@@ -1451,7 +1451,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
     },
     'libsyzti': {
-      'en': 'Betreuer',
+      'en': 'Supervisor',
       'de': 'Betreuer',
     },
     '8c0dhi8u': {
@@ -1547,7 +1547,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
     },
     '5tnjst8t': {
-      'en': 'Betreuer',
+      'en': 'Supervisor',
       'de': 'Betreuer',
     },
     '79sv2fvf': {

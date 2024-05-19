@@ -1001,7 +1001,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ),
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'g13pqfbb' /* Betreuer */,
+                                    'g13pqfbb' /* Supervisor */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1156,7 +1156,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
+                                                MainAxisAlignment.spaceAround,
                                             children: [
                                               Text(
                                                 listViewCustomerMeetingRecord
@@ -1290,9 +1290,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   );
                                                 },
                                               ),
-                                            ]
-                                                .divide(const SizedBox(width: 0.0))
-                                                .around(const SizedBox(width: 0.0)),
+                                            ],
                                           ),
                                         ),
                                       );

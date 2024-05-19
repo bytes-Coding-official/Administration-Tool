@@ -179,7 +179,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
           ),
           title: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 FFLocalizations.of(context).getText(
@@ -243,8 +243,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 8.0),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.15,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              width: 150.0,
+                              height: 150.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -365,8 +365,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 8.0, 8.0),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.15,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              width: 150.0,
+                              height: 150.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -487,8 +487,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 8.0, 8.0),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.15,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              width: 150.0,
+                              height: 150.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -716,7 +716,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'libsyzti' /* Betreuer */,
+                                          'libsyzti' /* Supervisor */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
