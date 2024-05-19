@@ -44,3 +44,4 @@ export '/customer/add_meeting_to_customer/add_meeting_to_customer_widget.dart'
 export '/extra/side_nav/side_nav_widget.dart' show SideNavWidget;
 export '/extra/customer_billing/customer_billing_widget.dart'
     show CustomerBillingWidget;
+export '/extra/profile/profile_widget.dart' show ProfileWidget;

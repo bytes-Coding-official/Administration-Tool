@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'employees_model.dart';
 export 'employees_model.dart';
 
@@ -230,18 +229,17 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                               onTap: () async {
                                 logFirebaseEvent(
                                     'EMPLOYEES_PAGE_Container_d6fdwkqn_ON_TAP');
-                                logFirebaseEvent('Container_send_email');
-                                await launchUrl(Uri(
-                                    scheme: 'mailto',
-                                    path: listViewUsersRecord.email,
-                                    query: {
-                                      'subject':
-                                          'Hey, im [MY NAME] from bytes Coding GmbH and I would like to contact you',
-                                    }
-                                        .entries
-                                        .map((MapEntry<String, String> e) =>
-                                            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                        .join('&')));
+                                logFirebaseEvent('Container_navigate_to');
+
+                                context.pushNamed(
+                                  'profile',
+                                  queryParameters: {
+                                    'employee': serializeParam(
+                                      listViewUsersRecord.reference,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
                               },
                               child: Container(
                                 width: 100.0,

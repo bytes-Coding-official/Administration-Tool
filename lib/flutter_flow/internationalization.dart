@@ -1112,7 +1112,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewählt',
     },
     'va53uv9s': {
-      'en': 'Invite Friends',
+      'en': 'Invite Users',
       'de': 'Freunde einladen',
     },
     '23ic11yf': {
@@ -1482,6 +1482,77 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'cddgguhy': {
       'en': 'Home',
       'de': 'Heim',
+    },
+  },
+  // profile
+  {
+    '0f1glrr4': {
+      'en': 'Mail',
+      'de': '',
+    },
+    '4n4ff3qs': {
+      'en': 'Call',
+      'de': '',
+    },
+    '6icrb8no': {
+      'en': 'Bio',
+      'de': '',
+    },
+    'jxgl8tmv': {
+      'en': 'Money Earned',
+      'de': 'Verdientes Geld',
+    },
+    '1sovajv3': {
+      'en': 'Average Billing',
+      'de': 'Durchschnittliche Abrechnung',
+    },
+    'amq25o7c': {
+      'en': 'Total Customers',
+      'de': 'Kunden gesamt',
+    },
+    'j5z2op8x': {
+      'en': 'Customer-Information',
+      'de': 'Kundeninformation',
+    },
+    'yv1tophe': {
+      'en': 'An overview of your customer jobs.',
+      'de': 'Eine Übersicht Ihrer Kundenaufträge.',
+    },
+    'nxmksly7': {
+      'en': 'current customers',
+      'de': 'derzeitige Kunden',
+    },
+    'jj0tni5e': {
+      'en': 'completed customers',
+      'de': 'abgeschlossene Kunden',
+    },
+    'f49vqwjs': {
+      'en': 'Customer-Meetings',
+      'de': 'Kunden-Cases',
+    },
+    '77i9y8d1': {
+      'en': 'A summary of their meetings',
+      'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
+    },
+    'j8agtzis': {
+      'en': 'Duration',
+      'de': 'Dauer',
+    },
+    'fl675kqg': {
+      'en': 'Costs',
+      'de': 'Dauer',
+    },
+    '5tnjst8t': {
+      'en': 'Betreuer',
+      'de': 'Betreuer',
+    },
+    'a2q17rmd': {
+      'en': 'Details',
+      'de': '',
+    },
+    '1byh2jsg': {
+      'en': 'Home',
+      'de': '',
     },
   },
   // editProfile_auth_2

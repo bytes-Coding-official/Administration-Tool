@@ -105,7 +105,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'va53uv9s' /* Invite Friends */,
+                  'va53uv9s' /* Invite Users */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Readex Pro',

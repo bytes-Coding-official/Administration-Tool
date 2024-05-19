@@ -323,6 +323,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              fontSize: 26.0,
                                               letterSpacing: 0.0,
                                             ),
                                       );
@@ -434,6 +435,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
+                                              fontSize: 26.0,
                                               letterSpacing: 0.0,
                                             ),
                                       );
@@ -511,6 +513,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                             .displaySmall
                                             .override(
                                               fontFamily: 'Readex Pro',
+                                              fontSize: 26.0,
                                               letterSpacing: 0.0,
                                             ),
                                       );
@@ -584,6 +587,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: SingleChildScrollView(
+                      primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -849,7 +853,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          fontSize: 24.0,
+                                                          fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -865,7 +869,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          fontSize: 24.0,
+                                                          fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
