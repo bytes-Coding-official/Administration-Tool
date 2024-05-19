@@ -306,6 +306,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
+                          showLoadingIndicator: true,
                           onPressed: () async {
                             logFirebaseEvent(
                                 'CHAT_THREAD_COMPONENT_add_rounded_ICN_ON');
@@ -314,6 +315,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                             final selectedMedia =
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
+                              maxWidth: 1280.00,
+                              maxHeight: 720.00,
                               allowPhoto: true,
                               allowVideo: true,
                               backgroundColor: FlutterFlowTheme.of(context)

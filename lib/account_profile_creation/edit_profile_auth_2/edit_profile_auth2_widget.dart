@@ -184,6 +184,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                   logFirebaseEvent('EDIT_PROFILE_AUTH_2_CHANGE_PHOTO_BTN_ON_');
                   logFirebaseEvent('Button_upload_media_to_firebase');
                   final selectedMedia = await selectMedia(
+                    maxWidth: 1280.00,
+                    maxHeight: 720.00,
                     mediaSource: MediaSource.photoGallery,
                     multiImage: false,
                   );

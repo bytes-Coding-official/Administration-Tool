@@ -1169,7 +1169,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         .titleMedium
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          fontSize: 24.0,
+                                          fontSize: 22.0,
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
