@@ -388,6 +388,9 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 onTap: () async {
                                   logFirebaseEvent(
                                       'SUPPORT_SUBMIT_TICKET_Container_8hnvyrq6');
+                                  if (isWeb) {
+                                    return;
+                                  }
                                   logFirebaseEvent('Container_call_number');
                                   await launchUrl(Uri(
                                     scheme: 'tel',

@@ -351,7 +351,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'smmwaui7' /* new Language */,
+                                  'pnbjiyri' /* new Language */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -360,7 +360,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ici7wvtd' /* Add Language here */,
+                                  'ujxa03re' /* Add Language here */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -422,7 +422,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                   ));
                             },
                             text: FFLocalizations.of(context).getText(
-                              '3656cc55' /* Add */,
+                              'rfcncdh0' /* Add */,
                             ),
                             options: FFButtonOptions(
                               width: 150.0,

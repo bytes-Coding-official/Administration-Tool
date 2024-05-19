@@ -348,7 +348,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '8yhdfhkx' /* new IT-Skills  */,
+                                  'w70117by' /* new IT-Skills  */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -357,7 +357,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'etljn53m' /* Add IT Skills here */,
+                                  'awk15nmc' /* Add IT Skills here */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -418,7 +418,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                   ));
                             },
                             text: FFLocalizations.of(context).getText(
-                              'fj20fvo5' /* Add */,
+                              'ocq5kvbi' /* Add */,
                             ),
                             options: FFButtonOptions(
                               width: 150.0,

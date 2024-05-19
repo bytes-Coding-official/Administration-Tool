@@ -323,6 +323,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                             onTap: () async {
                                               logFirebaseEvent(
                                                   'PROFILE_PAGE_Row_kqsu46co_ON_TAP');
+                                              if (isWeb) {
+                                                return;
+                                              }
                                               logFirebaseEvent(
                                                   'Row_call_number');
                                               await launchUrl(Uri(
