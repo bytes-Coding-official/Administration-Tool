@@ -13,6 +13,11 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
   Query? listViewPagingQuery;
   List<StreamSubscription?> listViewStreamSubscriptions = [];
 
+  // State field(s) for newlangauge widget.
+  FocusNode? newlangaugeFocusNode;
+  TextEditingController? newlangaugeTextController;
+  String? Function(BuildContext, String?)? newlangaugeTextControllerValidator;
+
   @override
   void initState(BuildContext context) {}
 
@@ -22,6 +27,9 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
       s?.cancel();
     }
     listViewPagingController?.dispose();
+
+    newlangaugeFocusNode?.dispose();
+    newlangaugeTextController?.dispose();
   }
 
   /// Additional helper methods.

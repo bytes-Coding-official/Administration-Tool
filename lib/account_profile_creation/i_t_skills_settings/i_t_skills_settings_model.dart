@@ -13,6 +13,11 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
   Query? listViewPagingQuery;
   List<StreamSubscription?> listViewStreamSubscriptions = [];
 
+  // State field(s) for newskill widget.
+  FocusNode? newskillFocusNode;
+  TextEditingController? newskillTextController;
+  String? Function(BuildContext, String?)? newskillTextControllerValidator;
+
   @override
   void initState(BuildContext context) {}
 
@@ -22,6 +27,9 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
       s?.cancel();
     }
     listViewPagingController?.dispose();
+
+    newskillFocusNode?.dispose();
+    newskillTextController?.dispose();
   }
 
   /// Additional helper methods.

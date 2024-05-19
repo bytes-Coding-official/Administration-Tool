@@ -233,6 +233,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Save Changes',
       'de': 'Änderungen speichern',
     },
+    '8yhdfhkx': {
+      'en': 'new IT-Skills ',
+      'de': '',
+    },
+    'etljn53m': {
+      'en': 'Add IT Skills here',
+      'de': '',
+    },
+    'fj20fvo5': {
+      'en': 'Add',
+      'de': '',
+    },
     '5ej9zapx': {
       'en': 'Home',
       'de': 'Heim',
@@ -255,6 +267,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '9umukc55': {
       'en': 'Save Changes',
       'de': 'Änderungen speichern',
+    },
+    'smmwaui7': {
+      'en': 'new Language',
+      'de': '',
+    },
+    'ici7wvtd': {
+      'en': 'Add Language here',
+      'de': '',
+    },
+    '3656cc55': {
+      'en': 'Add',
+      'de': '',
     },
     'pi0dfjv1': {
       'en': 'Home',
@@ -1591,6 +1615,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7vgor3b8': {
       'en': 'Your full name...',
+      'de': 'Ihr vollständiger Name...',
+    },
+    'zmpduv5f': {
+      'en': 'Phone-Number',
+      'de': 'Vollständiger Name',
+    },
+    'ylu1rmoi': {
+      'en': 'Your Phone-Number...',
+      'de': 'Ihr vollständiger Name...',
+    },
+    '9kyh4fuc': {
+      'en': 'Email-Adress',
+      'de': 'Vollständiger Name',
+    },
+    '1pkkrkac': {
+      'en': 'Your Phone-Number...',
       'de': 'Ihr vollständiger Name...',
     },
     'kmiy5qxl': {

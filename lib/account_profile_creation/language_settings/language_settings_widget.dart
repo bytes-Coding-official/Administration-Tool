@@ -42,6 +42,9 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
       await queryLanguagesRecordOnce();
     });
 
+    _model.newlangaugeTextController ??= TextEditingController();
+    _model.newlangaugeFocusNode ??= FocusNode();
+
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -187,59 +190,108 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     itemBuilder: (context, _, listViewIndex) {
                       final listViewLanguageRecord = _model
                           .listViewPagingController!.itemList![listViewIndex];
-                      return Container(
-                        width: 100.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: ToggleIcon(
-                                onPressed: () async {
-                                  await listViewLanguageRecord.reference
-                                      .update({
-                                    ...mapToFirestore(
-                                      {
-                                        'selected':
-                                            !listViewLanguageRecord.selected,
-                                      },
-                                    ),
-                                  });
-                                },
-                                value: listViewLanguageRecord.selected,
-                                onIcon: Icon(
-                                  Icons.check_box,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 25.0,
-                                ),
-                                offIcon: Icon(
-                                  Icons.check_box_outline_blank,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 25.0,
+                      return InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onLongPress: () async {
+                          logFirebaseEvent(
+                              'LANGUAGE_SETTINGS_Container_14ckmjfy_ON_');
+                          if (valueOrDefault(currentUserDocument?.role, '') ==
+                              'Manager') {
+                            logFirebaseEvent('Container_alert_dialog');
+                            var confirmDialogResponse = await showDialog<bool>(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: const Text('Delete Value'),
+                                      content: const Text(
+                                          'Do you really want to delete that value?'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, false),
+                                          child: const Text('Cancel'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, true),
+                                          child: const Text('Confirm'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ) ??
+                                false;
+                            if (confirmDialogResponse) {
+                              logFirebaseEvent('Container_backend_call');
+                              await listViewLanguageRecord.reference.delete();
+                            } else {
+                              return;
+                            }
+
+                            logFirebaseEvent('Container_navigate_to');
+
+                            context.pushNamed('Language-Settings');
+                          } else {
+                            return;
+                          }
+                        },
+                        child: Container(
+                          width: 100.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: ToggleIcon(
+                                  onPressed: () async {
+                                    await listViewLanguageRecord.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'selected':
+                                              !listViewLanguageRecord.selected,
+                                        },
+                                      ),
+                                    });
+                                  },
+                                  value: listViewLanguageRecord.selected,
+                                  onIcon: Icon(
+                                    Icons.check_box,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 25.0,
+                                  ),
+                                  offIcon: Icon(
+                                    Icons.check_box_outline_blank,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 25.0,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                listViewLanguageRecord.name,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  listViewLanguageRecord.name,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -276,6 +328,130 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                   ),
                 ),
               ),
+              if (valueOrDefault(currentUserDocument?.role, '') == 'Manager')
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                  child: AuthUserStreamWidget(
+                    builder: (context) => Container(
+                      width: 500.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: TextFormField(
+                              controller: _model.newlangaugeTextController,
+                              focusNode: _model.newlangaugeFocusNode,
+                              autofocus: true,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  'smmwaui7' /* new Language */,
+                                ),
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'ici7wvtd' /* Add Language here */,
+                                ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              validator: _model
+                                  .newlangaugeTextControllerValidator
+                                  .asValidator(context),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'LANGUAGE_SETTINGS_PAGE_ADD_BTN_ON_TAP');
+                              logFirebaseEvent('Button_backend_call');
+
+                              await LanguagesRecord.collection
+                                  .doc()
+                                  .set(createLanguagesRecordData(
+                                    name: _model.newlangaugeTextController.text,
+                                  ));
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              '3656cc55' /* Add */,
+                            ),
+                            options: FFButtonOptions(
+                              width: 150.0,
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
         ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),

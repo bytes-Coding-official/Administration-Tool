@@ -51,6 +51,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
         TextEditingController(text: currentUserDisplayName);
     _model.yourNameFocusNode ??= FocusNode();
 
+    _model.phoneNumberTextController ??=
+        TextEditingController(text: currentPhoneNumber);
+    _model.phoneNumberFocusNode ??= FocusNode();
+
+    _model.emailAdressTextController ??=
+        TextEditingController(text: currentUserEmail);
+    _model.emailAdressFocusNode ??= FocusNode();
+
     _model.yourRoleTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.role, ''));
     _model.yourRoleFocusNode ??= FocusNode();
@@ -338,6 +346,148 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
             padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
             child: AuthUserStreamWidget(
               builder: (context) => TextFormField(
+                controller: _model.phoneNumberTextController,
+                focusNode: _model.phoneNumberFocusNode,
+                autofillHints: const [AutofillHints.name],
+                textCapitalization: TextCapitalization.words,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: FFLocalizations.of(context).getText(
+                    'zmpduv5f' /* Phone-Number */,
+                  ),
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                  hintText: FFLocalizations.of(context).getText(
+                    'ylu1rmoi' /* Your Phone-Number... */,
+                  ),
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
+                      ),
+                  errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: FlutterFlowTheme.of(context).error,
+                        letterSpacing: 0.0,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  contentPadding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
+                cursorColor: FlutterFlowTheme.of(context).primary,
+                validator: _model.phoneNumberTextControllerValidator
+                    .asValidator(context),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+            child: TextFormField(
+              controller: _model.emailAdressTextController,
+              focusNode: _model.emailAdressFocusNode,
+              autofillHints: const [AutofillHints.name],
+              textCapitalization: TextCapitalization.words,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  '9kyh4fuc' /* Email-Adress */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
+                hintText: FFLocalizations.of(context).getText(
+                  '1pkkrkac' /* Your Phone-Number... */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
+                errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      color: FlutterFlowTheme.of(context).error,
+                      letterSpacing: 0.0,
+                    ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).alternate,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).primary,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).error,
+                    width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
+              cursorColor: FlutterFlowTheme.of(context).primary,
+              validator: _model.emailAdressTextControllerValidator
+                  .asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+            child: AuthUserStreamWidget(
+              builder: (context) => TextFormField(
                 controller: _model.yourRoleTextController,
                 focusNode: _model.yourRoleFocusNode,
                 autofillHints: const [AutofillHints.name],
@@ -516,6 +666,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     shortDescription: _model.myBioTextController.text,
                     lastActiveTime: getCurrentTimestamp,
                     role: FFAppState().userRole,
+                    email: _model.emailAdressTextController.text,
+                    phoneNumber: _model.phoneNumberTextController.text,
                   ));
                   logFirebaseEvent('Button-Login_show_snack_bar');
                   ScaffoldMessenger.of(context).showSnackBar(

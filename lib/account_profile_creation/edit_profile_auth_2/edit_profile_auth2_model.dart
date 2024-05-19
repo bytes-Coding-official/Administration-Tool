@@ -15,6 +15,14 @@ class EditProfileAuth2Model extends FlutterFlowModel<EditProfileAuth2Widget> {
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameTextController;
   String? Function(BuildContext, String?)? yourNameTextControllerValidator;
+  // State field(s) for PhoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for EmailAdress widget.
+  FocusNode? emailAdressFocusNode;
+  TextEditingController? emailAdressTextController;
+  String? Function(BuildContext, String?)? emailAdressTextControllerValidator;
   // State field(s) for yourRole widget.
   FocusNode? yourRoleFocusNode;
   TextEditingController? yourRoleTextController;
@@ -31,6 +39,12 @@ class EditProfileAuth2Model extends FlutterFlowModel<EditProfileAuth2Widget> {
   void dispose() {
     yourNameFocusNode?.dispose();
     yourNameTextController?.dispose();
+
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
+
+    emailAdressFocusNode?.dispose();
+    emailAdressTextController?.dispose();
 
     yourRoleFocusNode?.dispose();
     yourRoleTextController?.dispose();
