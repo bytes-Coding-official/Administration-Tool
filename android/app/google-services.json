@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "321124574130",
+    "firebase_url": "https://bytes-coding-admin-tool-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "bytes-coding-admin-tool",
     "storage_bucket": "bytes-coding-admin-tool.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.bytescoding.administration"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "321124574130-stsajem6jdosnvisq2pjr6ep1egja34l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bytescoding.administration",
+            "certificate_hash": "cc77f86e1cec413fc2f01ceac28854e15617e8e7"
+          }
+        },
+        {
+          "client_id": "321124574130-6am3ckgta0o3s93c72ogokkigv9ntuun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAyuHOYYQxK34kmb_WkcoQGsKYfNxe7zwQ"
@@ -20,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321124574130-6am3ckgta0o3s93c72ogokkigv9ntuun.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "321124574130-bv7fut8oq5ruoa3dho6edllvn56u4m93.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bytescoding.administration"
+              }
+            }
+          ]
         }
       }
     }
