@@ -8,6 +8,10 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  // State field(s) for CaseID widget.
+  FocusNode? caseIDFocusNode;
+  TextEditingController? caseIDTextController;
+  String? Function(BuildContext, String?)? caseIDTextControllerValidator;
   // State field(s) for title widget.
   FocusNode? titleFocusNode;
   TextEditingController? titleTextController;
@@ -37,6 +41,9 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    caseIDFocusNode?.dispose();
+    caseIDTextController?.dispose();
+
     titleFocusNode?.dispose();
     titleTextController?.dispose();
 

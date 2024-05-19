@@ -25,7 +25,7 @@ class AddMeetingToCustomerModel
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
   DocumentReference? customer;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  CustomerMeetingRecord? caseID;
+  CustomerMeetingRecord? newmeeting;
 
   @override
   void initState(BuildContext context) {

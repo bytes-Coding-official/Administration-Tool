@@ -9,7 +9,6 @@ import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
 
@@ -94,8 +93,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Form(
       key: _model.formKey,
       autovalidateMode: AutovalidateMode.disabled,
@@ -643,15 +640,24 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                   }
                   if (_model.yourRoleTextController.text ==
                       'Administrator-2023') {
-                    logFirebaseEvent('Button-Login_update_app_state');
-                    FFAppState().userRole = 'Manager';
+                    logFirebaseEvent('Button-Login_backend_call');
+
+                    await currentUserReference!.update(createUsersRecordData(
+                      role: 'Manager',
+                    ));
                   } else {
                     if (_model.yourRoleTextController.text == 'Employee-2023') {
-                      logFirebaseEvent('Button-Login_update_app_state');
-                      FFAppState().userRole = 'Member';
+                      logFirebaseEvent('Button-Login_backend_call');
+
+                      await currentUserReference!.update(createUsersRecordData(
+                        role: 'Employee',
+                      ));
                     } else {
-                      logFirebaseEvent('Button-Login_update_app_state');
-                      FFAppState().userRole = 'Kunde';
+                      logFirebaseEvent('Button-Login_backend_call');
+
+                      await currentUserReference!.update(createUsersRecordData(
+                        role: 'Kunde',
+                      ));
                     }
                   }
 
@@ -665,7 +671,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                         : currentUserPhoto,
                     shortDescription: _model.myBioTextController.text,
                     lastActiveTime: getCurrentTimestamp,
-                    role: FFAppState().userRole,
                     email: _model.emailAdressTextController.text,
                     phoneNumber: _model.phoneNumberTextController.text,
                   ));

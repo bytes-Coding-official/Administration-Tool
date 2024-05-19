@@ -7,9 +7,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
 
@@ -34,6 +34,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
     _model = createModel(context, () => CreateCaseModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'CreateCase'});
+
+    _model.caseIDFocusNode ??= FocusNode();
+
     _model.titleTextController ??= TextEditingController();
     _model.titleFocusNode ??= FocusNode();
 
@@ -70,8 +73,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -167,20 +168,167 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 15.0),
-                                    child: Text(
-                                      FFAppState().caseid,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'qshtje0b' /* ID */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 22.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                      Expanded(
+                                        child: StreamBuilder<
+                                            List<CustomerCaseRecord>>(
+                                          stream: queryCustomerCaseRecord(),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<CustomerCaseRecord>
+                                                caseIDCustomerCaseRecordList =
+                                                snapshot.data!;
+                                            return SizedBox(
+                                              width: 100.0,
+                                              child: TextFormField(
+                                                controller: _model
+                                                        .caseIDTextController ??=
+                                                    TextEditingController(
+                                                  text: random_data
+                                                      .randomInteger(
+                                                          caseIDCustomerCaseRecordList
+                                                              .length,
+                                                          99999)
+                                                      .toString(),
+                                                ),
+                                                focusNode:
+                                                    _model.caseIDFocusNode,
+                                                autofocus: true,
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'o1dltl7p' /* Case ID */,
+                                                  ),
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '2x1w3yiq' /* Case ID... */,
+                                                  ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  enabledBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
+                                                  errorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 22.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                textAlign: TextAlign.center,
+                                                validator: _model
+                                                    .caseIDTextControllerValidator
+                                                    .asValidator(context),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   TextFormField(
                                     controller: _model.titleTextController,
@@ -727,7 +875,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             .doc()
                                             .set({
                                           ...createCustomerCaseRecordData(
-                                            caseid: FFAppState().caseid,
+                                            caseid: _model
+                                                .caseIDTextController.text,
                                             title:
                                                 _model.titleTextController.text,
                                             description: _model
@@ -761,9 +910,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                             );
                                           },
                                         );
-                                        logFirebaseEvent(
-                                            'Button_update_app_state');
-                                        FFAppState().update(() {});
 
                                         setState(() {});
                                       },

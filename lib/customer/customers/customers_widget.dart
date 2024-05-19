@@ -1703,17 +1703,17 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           logFirebaseEvent(
                                               'CUSTOMERS_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
-                                              'listContainer_update_app_state');
-                                          setState(() {
-                                            FFAppState().caseid =
-                                                mobileViewCustomerCaseRecord
-                                                    .caseid;
-                                          });
-                                          logFirebaseEvent(
                                               'listContainer_navigate_to');
 
                                           context.pushNamed(
                                             'Customer',
+                                            queryParameters: {
+                                              'customercase': serializeParam(
+                                                mobileViewCustomerCaseRecord
+                                                    .reference,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   const TransitionInfo(
@@ -2322,15 +2322,17 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           logFirebaseEvent(
                                               'CUSTOMERS_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
-                                              'listContainer_update_app_state');
-                                          FFAppState().caseid =
-                                              tabletDesktopViewCustomerCaseRecord
-                                                  .caseid;
-                                          logFirebaseEvent(
                                               'listContainer_navigate_to');
 
                                           context.pushNamed(
                                             'Customer',
+                                            queryParameters: {
+                                              'customercase': serializeParam(
+                                                tabletDesktopViewCustomerCaseRecord
+                                                    .reference,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   const TransitionInfo(

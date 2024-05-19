@@ -811,12 +811,10 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                               }
 
                                               logFirebaseEvent(
-                                                  'Container_update_app_state');
-                                              FFAppState().update(() {});
-                                              logFirebaseEvent(
                                                   'Container_navigate_to');
 
-                                              context.pushNamed('Customer');
+                                              context
+                                                  .pushNamed('CustomerBilling');
                                             },
                                             child: Container(
                                               width: 100.0,

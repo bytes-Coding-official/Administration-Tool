@@ -7,12 +7,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
 import 'customer_model.dart';
 export 'customer_model.dart';
 
 class CustomerWidget extends StatefulWidget {
-  const CustomerWidget({super.key});
+  const CustomerWidget({
+    super.key,
+    required this.customercase,
+  });
+
+  final DocumentReference? customercase;
 
   @override
   State<CustomerWidget> createState() => _CustomerWidgetState();
@@ -71,16 +75,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
-    return StreamBuilder<List<CustomerCaseRecord>>(
-      stream: queryCustomerCaseRecord(
-        queryBuilder: (customerCaseRecord) => customerCaseRecord.where(
-          'caseid',
-          isEqualTo: FFAppState().caseid,
-        ),
-        singleRecord: true,
-      ),
+    return StreamBuilder<CustomerCaseRecord>(
+      stream: CustomerCaseRecord.getDocument(widget.customercase!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -99,16 +95,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
             ),
           );
         }
-        List<CustomerCaseRecord> customerCustomerCaseRecordList =
-            snapshot.data!;
-        // Return an empty Container when the item does not exist.
-        if (snapshot.data!.isEmpty) {
-          return Container();
-        }
-        final customerCustomerCaseRecord =
-            customerCustomerCaseRecordList.isNotEmpty
-                ? customerCustomerCaseRecordList.first
-                : null;
+        final customerCustomerCaseRecord = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -150,7 +137,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   ),
                   Text(
                     valueOrDefault<String>(
-                      customerCustomerCaseRecord?.caseid,
+                      customerCustomerCaseRecord.caseid,
                       'NULL',
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -184,7 +171,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                           children: [
                             Text(
                               valueOrDefault<String>(
-                                customerCustomerCaseRecord?.title,
+                                customerCustomerCaseRecord.title,
                                 'no title set',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -198,7 +185,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             ),
                             Text(
                               valueOrDefault<String>(
-                                customerCustomerCaseRecord?.description,
+                                customerCustomerCaseRecord.description,
                                 'no description set',
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -215,7 +202,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                       ),
                       StreamBuilder<CustomerRecord>(
                         stream: CustomerRecord.getDocument(
-                            customerCustomerCaseRecord!.customer!),
+                            customerCustomerCaseRecord.customer!),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -405,12 +392,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             ),
                             Builder(
                               builder: (context) {
-                                final topics = customerCustomerCaseRecord
-                                        .topics
-                                        .map((e) => e)
-                                        .toList()
-                                        .toList() ??
-                                    [];
+                                final topics = customerCustomerCaseRecord.topics
+                                    .map((e) => e)
+                                    .toList();
                                 return SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
@@ -695,10 +679,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     builder: (context) {
                                       final assigneesMobile =
                                           customerCustomerCaseRecord.assignee
-                                                  .map((e) => e)
-                                                  .toList()
-                                                  .toList() ??
-                                              [];
+                                              .map((e) => e)
+                                              .toList();
                                       return SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                         child: Row(
@@ -811,9 +793,6 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       ),
                                     });
                                   }
-
-                                  logFirebaseEvent('Button_update_app_state');
-                                  setState(() {});
                                 },
                                 text: customerCustomerCaseRecord.assignee
                                             .contains(currentUserReference) ==
@@ -853,22 +832,16 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'CUSTOMER_ADD_MEETING_TO_USER_BTN_ON_TAP');
-                                      logFirebaseEvent(
-                                          'Button_update_app_state');
-                                      setState(() {
-                                        FFAppState().caseid =
-                                            customerCustomerCaseRecord.caseid;
-                                        FFAppState().customerRef =
-                                            customerCustomerCaseRecord
-                                                .reference.id;
-                                        FFAppState().caseRef =
-                                            customerCustomerCaseRecord
-                                                .reference;
-                                      });
                                       logFirebaseEvent('Button_navigate_to');
 
                                       context.pushNamed(
                                         'AddMeetingToCustomer',
+                                        queryParameters: {
+                                          'customercase': serializeParam(
+                                            widget.customercase,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
@@ -922,15 +895,11 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           'CUSTOMER_PAGE_CLOSE_CASE_BTN_ON_TAP');
                                       logFirebaseEvent('Button_backend_call');
 
-                                      await customerCustomerCaseRecord
-                                          .reference
+                                      await customerCustomerCaseRecord.reference
                                           .update(createCustomerCaseRecordData(
                                         closed:
                                             !customerCustomerCaseRecord.closed,
                                       ));
-                                      logFirebaseEvent(
-                                          'Button_update_app_state');
-                                      FFAppState().update(() {});
                                     },
                                     text: customerCustomerCaseRecord.closed
                                         ? 'open Case'
@@ -1139,12 +1108,17 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           }
 
                                           logFirebaseEvent(
-                                              'Container_update_app_state');
-                                          FFAppState().update(() {});
-                                          logFirebaseEvent(
                                               'Container_navigate_to');
 
-                                          context.pushNamed('Customer');
+                                          context.pushNamed(
+                                            'Customer',
+                                            queryParameters: {
+                                              'customercase': serializeParam(
+                                                widget.customercase,
+                                                ParamType.DocumentReference,
+                                              ),
+                                            }.withoutNulls,
+                                          );
                                         },
                                         child: Container(
                                           width: 100.0,

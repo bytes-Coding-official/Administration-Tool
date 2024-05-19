@@ -671,6 +671,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // CreateCase
   {
+    'qshtje0b': {
+      'en': 'ID',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'o1dltl7p': {
+      'en': 'Case ID',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    '2x1w3yiq': {
+      'en': 'Case ID...',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
     'y00zbz7g': {
       'en': 'Title...',
       'de': 'Titel...',

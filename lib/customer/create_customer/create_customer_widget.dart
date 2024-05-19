@@ -900,8 +900,6 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             );
                           },
                         );
-                        logFirebaseEvent('Button_update_app_state');
-                        FFAppState().update(() {});
 
                         setState(() {});
                       },

@@ -1224,12 +1224,17 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                             }
 
                                             logFirebaseEvent(
-                                                'Container_update_app_state');
-                                            FFAppState().update(() {});
-                                            logFirebaseEvent(
                                                 'Container_navigate_to');
 
-                                            context.pushNamed('Customer');
+                                            context.pushNamed(
+                                              'Profile',
+                                              queryParameters: {
+                                                'employee': serializeParam(
+                                                  widget.employee,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                           child: Container(
                                             width: 100.0,

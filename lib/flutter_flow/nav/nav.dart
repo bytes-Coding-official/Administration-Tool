@@ -104,7 +104,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Customer',
           path: '/customer',
-          builder: (context, params) => const CustomerWidget(),
+          builder: (context, params) => CustomerWidget(
+            customercase: params.getParam(
+              'customercase',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['customer-case'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'Customers',
@@ -238,7 +245,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AddMeetingToCustomer',
           path: '/addMeetingToCustomer',
-          builder: (context, params) => const AddMeetingToCustomerWidget(),
+          builder: (context, params) => AddMeetingToCustomerWidget(
+            customercase: params.getParam(
+              'customercase',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['customer-case'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'SideNav',
