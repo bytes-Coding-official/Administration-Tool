@@ -81,8 +81,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('CHAT_2_MAIN_arrow_back_rounded_ICN_ON_TA');
-              logFirebaseEvent('IconButton_navigate_back');
-              context.pop();
+              logFirebaseEvent('IconButton_navigate_to');
+
+              context.pushNamed('Customers');
             },
           ),
           title: Column(
