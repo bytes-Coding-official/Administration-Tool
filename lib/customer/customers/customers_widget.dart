@@ -726,7 +726,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       InkWell(
                                         splashColor: Colors.transparent,
