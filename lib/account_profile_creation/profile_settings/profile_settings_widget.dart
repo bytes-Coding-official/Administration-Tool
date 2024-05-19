@@ -81,7 +81,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
           buttonSize: 48.0,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).info,
+            color: FlutterFlowTheme.of(context).primaryText,
             size: 25.0,
           ),
           onPressed: () async {
@@ -101,6 +101,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Inter',
+                    color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 22.0,
                     letterSpacing: 0.0,
                   ),

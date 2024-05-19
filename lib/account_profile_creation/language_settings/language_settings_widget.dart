@@ -84,8 +84,8 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
           buttonSize: 48.0,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).info,
-            size: 25.0,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 30.0,
           ),
           onPressed: () async {
             logFirebaseEvent('LANGUAGE_SETTINGS_arrow_back_rounded_ICN');

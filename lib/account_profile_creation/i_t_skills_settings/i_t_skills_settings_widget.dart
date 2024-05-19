@@ -84,8 +84,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
           buttonSize: 48.0,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).info,
-            size: 25.0,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 30.0,
           ),
           onPressed: () async {
             logFirebaseEvent('I_T_SKILLS_SETTINGS_arrow_back_rounded_I');
@@ -103,6 +103,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Inter',
+                    color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 22.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
