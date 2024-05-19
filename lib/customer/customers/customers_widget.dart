@@ -1592,13 +1592,13 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
+                                            'CUSTOMERS_PAGE_ADD_CASE_BTN_ON_TAP');
                                         logFirebaseEvent('Button_navigate_to');
 
-                                        context.pushNamed('createCustomer');
+                                        context.pushNamed('CreateCase');
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'aaep28x3' /* Add Customer */,
+                                        'aaep28x3' /* Add Case */,
                                       ),
                                       options: FFButtonOptions(
                                         width:

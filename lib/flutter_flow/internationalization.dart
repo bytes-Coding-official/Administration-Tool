@@ -427,8 +427,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden hinzufügen',
     },
     'aaep28x3': {
-      'en': 'Add Customer',
-      'de': 'Kunden hinzufügen',
+      'en': 'Add Case',
+      'de': 'Fall hinzufügen',
     },
     'n9qnpbyi': {
       'en': 'ID#: ',
