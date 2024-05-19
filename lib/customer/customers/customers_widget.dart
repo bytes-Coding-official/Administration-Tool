@@ -1156,7 +1156,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     '4utzg0s0' /* Here is nothing you should see... */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 400.0,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     height: 100.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
