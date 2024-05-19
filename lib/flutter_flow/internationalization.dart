@@ -671,23 +671,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // CreateCase
   {
-    'qshtje0b': {
+    '63tpu80q': {
       'en': 'ID',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'AUSWEIS',
+      'es': 'IDENTIFICACIÓN',
+      'fr': 'IDENTIFIANT',
     },
-    'o1dltl7p': {
+    '91f8nfh0': {
       'en': 'Case ID',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Fall-ID',
+      'es': 'Identificación del caso',
+      'fr': 'Numéro de cas',
     },
-    '2x1w3yiq': {
+    'q2qhf2ce': {
       'en': 'Case ID...',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Fall-ID...',
+      'es': 'Identificación del caso...',
+      'fr': 'Numéro d\'identification du cas...',
     },
     'y00zbz7g': {
       'en': 'Title...',
@@ -2091,13 +2091,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '411g996a': {
       'en': 'Light Mode',
-      'de': 'Lichtmodus',
+      'de': 'Light Mode',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
     },
     'mc7klcgc': {
       'en': 'Dark Mode',
-      'de': 'Dunkler Modus',
+      'de': 'Dark Mode',
       'es': 'Modo oscuro',
       'fr': 'Mode sombre',
     },
@@ -2446,7 +2446,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '2lghugn7': {
       'en': 'ME',
       'de': 'ICH',
-      'es': 'A MÍ',
+      'es': 'YO',
       'fr': 'MOI',
     },
   },
@@ -2520,7 +2520,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'fh4ei39y': {
       'en': 'ME',
       'de': 'ICH',
-      'es': 'A MÍ',
+      'es': 'YO',
       'fr': 'MOI',
     },
   },

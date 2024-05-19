@@ -174,7 +174,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'qshtje0b' /* ID */,
+                                          '63tpu80q' /* ID */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -233,7 +233,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'o1dltl7p' /* Case ID */,
+                                                    '91f8nfh0' /* Case ID */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -246,7 +246,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '2x1w3yiq' /* Case ID... */,
+                                                    'q2qhf2ce' /* Case ID... */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
