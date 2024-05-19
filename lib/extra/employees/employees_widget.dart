@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -240,6 +241,57 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                     ),
                                   }.withoutNulls,
                                 );
+                              },
+                              onLongPress: () async {
+                                logFirebaseEvent(
+                                    'EMPLOYEES_Container_d6fdwkqn_ON_LONG_PRE');
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') ==
+                                    'Manager') {
+                                  logFirebaseEvent('Container_alert_dialog');
+                                  var confirmDialogResponse =
+                                      await showDialog<bool>(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: const Text('Delete User'),
+                                                content: const Text(
+                                                    'Do you relly want to delete this user'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            false),
+                                                    child: const Text('Cancel'),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            true),
+                                                    child: const Text('Confirm'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ) ??
+                                          false;
+                                  if (confirmDialogResponse) {
+                                    logFirebaseEvent('Container_backend_call');
+                                    await listViewUsersRecord.reference
+                                        .delete();
+                                    logFirebaseEvent('Container_navigate_to');
+
+                                    context.pushNamed('Employees');
+                                  } else {
+                                    return;
+                                  }
+
+                                  return;
+                                } else {
+                                  return;
+                                }
                               },
                               child: Container(
                                 width: 100.0,
