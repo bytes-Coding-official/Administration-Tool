@@ -434,6 +434,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'ID#: ',
       'de': 'AUSWEIS#:',
     },
+    'l266jhch': {
+      'en': 'Here is nothing you can see!',
+      'de': '',
+    },
     'u27w6351': {
       'en': 'Home',
       'de': 'Heim',

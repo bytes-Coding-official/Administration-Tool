@@ -354,7 +354,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                               ),
                               if (valueOrDefault(
                                       currentUserDocument?.role, '') ==
-                                  'Administrator')
+                                  'Manager')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -2800,6 +2800,29 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 ),
                               ),
                             ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'l266jhch' /* Here is nothing you can see! */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        fontSize: 32.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),

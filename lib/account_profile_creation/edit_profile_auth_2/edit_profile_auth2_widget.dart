@@ -490,13 +490,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     return;
                   }
                   if (_model.yourRoleTextController.text ==
-                      'administrator2023') {
+                      'Administrator2023') {
                     logFirebaseEvent('Button-Login_update_app_state');
                     FFAppState().userRole = 'Manager';
                   } else {
                     if (_model.yourRoleTextController.text == 'Employee2023') {
                       logFirebaseEvent('Button-Login_update_app_state');
-                      FFAppState().userRole = 'Employee';
+                      FFAppState().userRole = 'Member';
                     } else {
                       logFirebaseEvent('Button-Login_update_app_state');
                       FFAppState().userRole = 'Kunde';
