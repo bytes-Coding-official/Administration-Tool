@@ -196,7 +196,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '15s2dq8x' /* Dashboard */,
+                                                '15s2dq8x' /* Main-Menu */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -807,7 +807,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                   child: AutoSizeText(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'v3wuo8gh' /* Light Mode */,
+                                                      'v3wuo8gh' /* Light-Mode */,
                                                     ),
                                                     style:
                                                         FlutterFlowTheme.of(

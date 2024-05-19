@@ -136,7 +136,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                   decoration: InputDecoration(
                     isDense: false,
                     labelText: FFLocalizations.of(context).getText(
-                      'lefjjtu5' /* Search for patients... */,
+                      'lefjjtu5' /* Search for people... */,
                     ),
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(

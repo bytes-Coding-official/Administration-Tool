@@ -384,7 +384,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'pu04pfxz' /* Biography */,
+                                      'pu04pfxz' /* User-Description */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall

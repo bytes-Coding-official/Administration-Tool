@@ -163,7 +163,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'hopvi9vs' /* Invite Friends */,
+                              'hopvi9vs' /* Invite Users */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium

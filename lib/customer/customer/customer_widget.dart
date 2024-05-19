@@ -323,7 +323,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'igthvfrg' /* Adress */,
+                                          'igthvfrg' /* Customer-Adress */,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)

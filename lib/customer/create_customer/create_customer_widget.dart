@@ -599,7 +599,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'vkwdzh8z' /* Zip */,
+                                    'vkwdzh8z' /* Postal-Code */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -608,7 +608,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'as64pn2v' /* Zip */,
+                                    'as64pn2v' /* Postal-Code */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium

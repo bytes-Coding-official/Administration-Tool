@@ -339,7 +339,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'sqb1k3ec' /* Zip */,
+                                    'sqb1k3ec' /* Postal-Code */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
