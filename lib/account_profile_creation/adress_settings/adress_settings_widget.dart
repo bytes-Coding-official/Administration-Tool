@@ -132,12 +132,14 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                    child: Text(
                       FFLocalizations.of(context).getText(
                         'pqv49jgr' /* Your information */,
                       ),
@@ -147,8 +149,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                 letterSpacing: 0.0,
                               ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
@@ -489,7 +491,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('ADRESS_SETTINGS_SAVE_CHANGES_BTN_ON_TAP');

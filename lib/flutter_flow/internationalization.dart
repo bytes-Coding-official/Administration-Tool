@@ -229,6 +229,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your IT-Skills',
       'de': 'Deine IT-Kenntnisse',
     },
+    'o9puwj76': {
+      'en': 'Save Changes',
+      'de': 'Änderungen speichern',
+    },
     '5ej9zapx': {
       'en': 'Home',
       'de': 'Heim',
@@ -247,6 +251,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'z797zvs5': {
       'en': 'Your Languages',
       'de': 'Ihre Sprachen',
+    },
+    '9umukc55': {
+      'en': 'Save Changes',
+      'de': 'Änderungen speichern',
     },
     'pi0dfjv1': {
       'en': 'Home',
