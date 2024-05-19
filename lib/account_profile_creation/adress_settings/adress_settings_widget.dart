@@ -99,7 +99,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
         title: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               FFLocalizations.of(context).getText(
@@ -110,18 +110,15 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     letterSpacing: 0.0,
                   ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  'ivwsse2p' /* Complete your adress informati... */,
-                ),
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'ivwsse2p' /* Complete your adress informati... */,
               ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
             ),
           ],
         ),

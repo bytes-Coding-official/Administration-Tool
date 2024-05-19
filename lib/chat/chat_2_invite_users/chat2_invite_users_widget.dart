@@ -129,17 +129,15 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'pdl3903c' /* Select users from below to sta... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelSmall.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'pdl3903c' /* Select users from below to sta... */,
                 ),
+                style: FlutterFlowTheme.of(context).labelSmall.override(
+                      fontFamily: 'Inter',
+                      fontSize: 14.0,
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),

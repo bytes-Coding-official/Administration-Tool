@@ -103,31 +103,25 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    '0rdy80es' /* Create Case */,
-                  ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Readex Pro',
-                        color: Colors.white,
-                        fontSize: 22.0,
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  '0rdy80es' /* Create Case */,
                 ),
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Readex Pro',
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      letterSpacing: 0.0,
+                    ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'brd4f1fu' /* Create a new case with this fo... */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'brd4f1fu' /* Create a new case with this fo... */,
                 ),
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),

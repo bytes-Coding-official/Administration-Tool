@@ -93,32 +93,26 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  'th69fh0p' /* Complete IT-Skills */,
-                ),
-                style: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Inter',
-                      fontSize: 24.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w500,
-                    ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'th69fh0p' /* Complete IT-Skills */,
               ),
+              style: FlutterFlowTheme.of(context).titleSmall.override(
+                    fontFamily: 'Inter',
+                    fontSize: 22.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                  ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  'zwdp76ds' /* Complete your IT-Skills */,
-                ),
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'zwdp76ds' /* Complete your IT-Skills */,
               ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
             ),
           ],
         ),

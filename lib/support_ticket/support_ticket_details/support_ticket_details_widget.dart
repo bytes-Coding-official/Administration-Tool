@@ -108,18 +108,15 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'x6ddm1u4' /* Current Support-Ticket */,
-                  ),
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'x6ddm1u4' /* Current Support-Ticket */,
                 ),
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),

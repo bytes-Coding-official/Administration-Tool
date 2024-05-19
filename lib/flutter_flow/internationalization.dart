@@ -255,10 +255,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Customer
   {
-    'en3up8db': {
-      'en': 'ID:',
-      'de': 'AUSWEIS:',
-    },
     'fwglq52i': {
       'en': 'Name',
       'de': 'Name',
@@ -302,6 +298,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'g13pqfbb': {
       'en': 'Betreuer',
       'de': 'Betreuer',
+    },
+    'w6upyuwo': {
+      'en': 'ID:',
+      'de': 'AUSWEIS:',
     },
     '365ngbkk': {
       'en': 'Home',
@@ -1249,11 +1249,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
     },
-    'x0gktab6': {
+    'the8au5f': {
       'en': 'Patient Intake form',
       'de': 'Patientenaufnahmeformular',
     },
-    '2ilwg7d0': {
+    'ic0u8pqs': {
       'en': 'Please fill out the form to continue.',
       'de': 'Bitte füllen Sie das Formular aus, um fortzufahren.',
     },
@@ -1550,9 +1550,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Betreuer',
       'de': 'Betreuer',
     },
-    'a2q17rmd': {
-      'en': 'Details',
-      'de': '',
+    '79sv2fvf': {
+      'en': 'User Profile',
+      'de': 'Komplette Sprachen',
+    },
+    'np02awzv': {
+      'en': 'Complete selected User Profile',
+      'de': 'Vervollständigen Sie Ihre Sprachen',
     },
     '1byh2jsg': {
       'en': 'Home',

@@ -100,17 +100,14 @@ class _CalendarWidgetState extends State<CalendarWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'a04niafv' /* Your current Calender */,
-                  ),
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'a04niafv' /* Your current Calender */,
                 ),
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),

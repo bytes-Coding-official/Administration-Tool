@@ -331,18 +331,15 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'th2f4v4n' /* Create a Support-Ticket here */,
-                  ),
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        letterSpacing: 0.0,
-                      ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'th2f4v4n' /* Create a Support-Ticket here */,
                 ),
+                textAlign: TextAlign.center,
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),

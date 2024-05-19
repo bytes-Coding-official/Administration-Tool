@@ -99,21 +99,19 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Readex Pro',
+                    fontSize: 22.0,
                     letterSpacing: 0.0,
                   ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  'whlv0la7' /* Complete your languages */,
-                ),
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'whlv0la7' /* Complete your languages */,
               ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
             ),
           ],
         ),

@@ -105,18 +105,15 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                     letterSpacing: 0.0,
                   ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-              child: Text(
-                FFLocalizations.of(context).getText(
-                  '50p3dqj6' /* Complete your Profile-Settings */,
-                ),
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
-                      letterSpacing: 0.0,
-                    ),
+            Text(
+              FFLocalizations.of(context).getText(
+                '50p3dqj6' /* Complete your Profile-Settings */,
               ),
+              textAlign: TextAlign.start,
+              style: FlutterFlowTheme.of(context).labelMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
             ),
           ],
         ),

@@ -94,7 +94,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                       fontFamily: 'Readex Pro',
-                      fontSize: 25.0,
+                      fontSize: 22.0,
                       letterSpacing: 0.0,
                     ),
               ),

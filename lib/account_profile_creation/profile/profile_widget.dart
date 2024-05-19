@@ -113,17 +113,34 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   context.pushNamed('Employees');
                 },
               ),
-              title: Text(
-                FFLocalizations.of(context).getText(
-                  'a2q17rmd' /* Details */,
-                ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
+              title: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    FFLocalizations.of(context).getText(
+                      '79sv2fvf' /* User Profile */,
                     ),
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Readex Pro',
+                          fontSize: 22.0,
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                  Text(
+                    FFLocalizations.of(context).getText(
+                      'np02awzv' /* Complete selected User Profile */,
+                    ),
+                    textAlign: TextAlign.start,
+                    style: FlutterFlowTheme.of(context).labelMedium.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ],
               ),
               actions: const [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
