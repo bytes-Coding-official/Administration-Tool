@@ -243,13 +243,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 8.0),
                             child: Container(
-                              width: 150.0,
-                              constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.sizeOf(context).width * 0.15,
-                                maxHeight:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                              ),
+                              width: MediaQuery.sizeOf(context).width * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -370,13 +365,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 8.0, 8.0),
                             child: Container(
-                              width: 130.0,
-                              constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.sizeOf(context).width * 0.15,
-                                maxHeight:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                              ),
+                              width: MediaQuery.sizeOf(context).width * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -497,13 +487,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 8.0, 8.0),
                             child: Container(
-                              width: 130.0,
-                              constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.sizeOf(context).width * 0.15,
-                                maxHeight:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                              ),
+                              width: MediaQuery.sizeOf(context).width * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
