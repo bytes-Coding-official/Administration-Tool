@@ -416,25 +416,26 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 24.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '08btyait' /* Or sign in with */,
+                            if (false)
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 24.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '08btyait' /* Or sign in with */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
                                 ),
                               ),
-                            ),
                             if (false)
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
