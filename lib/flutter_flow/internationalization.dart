@@ -2030,7 +2030,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Navigation sur la plateforme',
     },
     'ryazebh4': {
-      'en': 'Dashboard',
+      'en': 'Main-Menu',
       'de': 'Dashboard',
       'es': '',
       'fr': '',
