@@ -190,7 +190,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                           logFirebaseEvent(
                                               'IconButton_navigate_to');
 
-                                          context.pushNamed('Customers');
+                                          context.pushNamed('Main');
                                         },
                                       ),
                                     ),

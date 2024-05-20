@@ -8,7 +8,7 @@ export '/account_profile_creation/i_t_skills_settings/i_t_skills_settings_widget
 export '/account_profile_creation/language_settings/language_settings_widget.dart'
     show LanguageSettingsWidget;
 export '/customer/customer/customer_widget.dart' show CustomerWidget;
-export '/customer/customers/customers_widget.dart' show CustomersWidget;
+export '/customer/main/main_widget.dart' show MainWidget;
 export '/extra/employees/employees_widget.dart' show EmployeesWidget;
 export '/customer/create_case/create_case_widget.dart' show CreateCaseWidget;
 export '/account_profile_creation/auth_2_create/auth2_create_widget.dart'

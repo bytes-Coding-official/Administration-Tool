@@ -108,9 +108,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 ),
                 onPressed: () async {
                   logFirebaseEvent('PROFILE_arrow_back_rounded_ICN_ON_TAP');
-                  logFirebaseEvent('IconButton_navigate_to');
-
-                  context.pushNamed('Employees');
+                  logFirebaseEvent('IconButton_navigate_back');
+                  context.safePop();
                 },
               ),
               title: Column(

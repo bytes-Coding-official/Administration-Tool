@@ -113,11 +113,12 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'i42hhvws' /* Adjust the content below to up... */,
                 ),
+                textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: 'Inter',
                       letterSpacing: 0.0,
@@ -658,9 +659,37 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('EDIT_PROFILE_AUTH_2_Button-Login_ON_TAP');
+                    // updateUserInfo
+                    logFirebaseEvent('Button-Login_updateUserInfo');
+
+                    await currentUserReference!.update(createUsersRecordData(
+                      displayName: _model.yourNameTextController.text,
+                      shortDescription: _model.myBioTextController.text,
+                      lastActiveTime: getCurrentTimestamp,
+                      email: _model.emailAdressTextController.text,
+                      phoneNumber: _model.phoneNumberTextController.text,
+                    ));
+                    logFirebaseEvent('Button-Login_show_snack_bar');
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Profile has been updated!',
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context).info,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                        duration: const Duration(milliseconds: 4000),
+                        backgroundColor: FlutterFlowTheme.of(context).primary,
+                      ),
+                    );
                     if ((_model.yourRoleTextController.text == 'Manager') ||
                         (_model.yourRoleTextController.text == 'Kunde') ||
                         (_model.yourRoleTextController.text == 'Employee')) {
+                      logFirebaseEvent('Button-Login_execute_callback');
+                      await widget.navigateAction?.call();
                       return;
                     }
                     if (_model.yourRoleTextController.text ==
@@ -689,32 +718,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       }
                     }
 
-                    // updateUserInfo
-                    logFirebaseEvent('Button-Login_updateUserInfo');
-
-                    await currentUserReference!.update(createUsersRecordData(
-                      displayName: _model.yourNameTextController.text,
-                      shortDescription: _model.myBioTextController.text,
-                      lastActiveTime: getCurrentTimestamp,
-                      email: _model.emailAdressTextController.text,
-                      phoneNumber: _model.phoneNumberTextController.text,
-                    ));
-                    logFirebaseEvent('Button-Login_show_snack_bar');
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          'Profile has been updated!',
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context).info,
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                        duration: const Duration(milliseconds: 4000),
-                        backgroundColor: FlutterFlowTheme.of(context).primary,
-                      ),
-                    );
                     logFirebaseEvent('Button-Login_execute_callback');
                     await widget.navigateAction?.call();
                   },

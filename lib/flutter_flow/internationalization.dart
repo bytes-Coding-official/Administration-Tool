@@ -452,7 +452,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // Customers
+  // Main
   {
     '3xmp7l5l': {
       'en': 'bytes Coding',

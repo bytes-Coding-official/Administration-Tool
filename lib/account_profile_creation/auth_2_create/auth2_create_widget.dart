@@ -457,7 +457,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     }
 
                                     context.goNamedAuth(
-                                        'Customers', context.mounted);
+                                        'Main', context.mounted);
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'zohwxmwa' /* Continue with Google */,
@@ -515,7 +515,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           }
 
                                           context.goNamedAuth(
-                                              'Customers', context.mounted);
+                                              'Main', context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

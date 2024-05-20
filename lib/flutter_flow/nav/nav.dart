@@ -72,14 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const CustomersWidget() : const Auth2LoginWidget(),
+          appStateNotifier.loggedIn ? const MainWidget() : const Auth2LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const CustomersWidget()
-              : const Auth2LoginWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const MainWidget() : const Auth2LoginWidget(),
         ),
         FFRoute(
           name: 'ProfileSettings',
@@ -114,9 +113,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Customers',
-          path: '/customers',
-          builder: (context, params) => const CustomersWidget(),
+          name: 'Main',
+          path: '/main',
+          builder: (context, params) => const MainWidget(),
         ),
         FFRoute(
           name: 'Employees',

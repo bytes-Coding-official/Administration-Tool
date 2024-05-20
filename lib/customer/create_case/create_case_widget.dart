@@ -97,7 +97,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
               logFirebaseEvent('CREATE_CASE_arrow_back_rounded_ICN_ON_TA');
               logFirebaseEvent('IconButton_navigate_to');
 
-              context.pushNamed('Customers');
+              context.pushNamed('Main');
             },
           ),
           title: Column(

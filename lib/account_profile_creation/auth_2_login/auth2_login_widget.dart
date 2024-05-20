@@ -386,8 +386,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth(
-                                      'Customers', context.mounted);
+                                  context.goNamedAuth('Main', context.mounted);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'p3xaauvg' /* Sign In */,
@@ -453,7 +452,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     }
 
                                     context.goNamedAuth(
-                                        'Customers', context.mounted);
+                                        'Main', context.mounted);
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'pmg4jacf' /* Continue with Google */,
@@ -511,7 +510,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                           }
 
                                           context.goNamedAuth(
-                                              'Customers', context.mounted);
+                                              'Main', context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

@@ -13,19 +13,18 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'customers_model.dart';
-export 'customers_model.dart';
+import 'main_model.dart';
+export 'main_model.dart';
 
-class CustomersWidget extends StatefulWidget {
-  const CustomersWidget({super.key});
+class MainWidget extends StatefulWidget {
+  const MainWidget({super.key});
 
   @override
-  State<CustomersWidget> createState() => _CustomersWidgetState();
+  State<MainWidget> createState() => _MainWidgetState();
 }
 
-class _CustomersWidgetState extends State<CustomersWidget>
-    with TickerProviderStateMixin {
-  late CustomersModel _model;
+class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
+  late MainModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,9 +33,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CustomersModel());
+    _model = createModel(context, () => MainModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Customers'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Main'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -173,11 +172,11 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                        'MAIN_PAGE_contentView_1_ON_TAP');
                                     logFirebaseEvent(
                                         'contentView_1_navigate_to');
 
-                                    context.pushNamed('Customers');
+                                    context.pushNamed('Main');
                                   },
                                   child: AnimatedContainer(
                                     duration: const Duration(milliseconds: 200),
@@ -274,7 +273,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                        'MAIN_PAGE_contentView_1_ON_TAP');
                                     logFirebaseEvent(
                                         'contentView_1_navigate_to');
 
@@ -379,7 +378,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                            'MAIN_PAGE_contentView_1_ON_TAP');
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
@@ -495,7 +494,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       logFirebaseEvent(
-                                          'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                          'MAIN_PAGE_contentView_1_ON_TAP');
                                       logFirebaseEvent(
                                           'contentView_1_navigate_to');
 
@@ -523,7 +522,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'CUSTOMERS_PAGE_Row_t8mhk7ba_ON_TAP');
+                                                'MAIN_PAGE_Row_t8mhk7ba_ON_TAP');
                                             logFirebaseEvent('Row_navigate_to');
 
                                             context.pushNamed('Calendar');
@@ -594,7 +593,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                            'MAIN_PAGE_contentView_1_ON_TAP');
                                         if (valueOrDefault(
                                                 currentUserDocument?.role,
                                                 '') ==
@@ -671,7 +670,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'CUSTOMERS_PAGE_contentView_1_ON_TAP');
+                                        'MAIN_PAGE_contentView_1_ON_TAP');
                                     logFirebaseEvent(
                                         'contentView_1_navigate_to');
 
@@ -759,7 +758,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_PAGE_Container_fve8vl5s_ON_TAP');
+                                              'MAIN_PAGE_Container_fve8vl5s_ON_TAP');
                                           logFirebaseEvent(
                                               'Container_set_dark_mode_settings');
                                           setDarkModeSetting(
@@ -857,7 +856,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_PAGE_Container_591m1phd_ON_TAP');
+                                              'MAIN_PAGE_Container_591m1phd_ON_TAP');
                                           logFirebaseEvent(
                                               'Container_set_dark_mode_settings');
                                           setDarkModeSetting(
@@ -969,8 +968,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              logFirebaseEvent(
-                                  'CUSTOMERS_PAGE_Row_b7epma2c_ON_TAP');
+                              logFirebaseEvent('MAIN_PAGE_Row_b7epma2c_ON_TAP');
                               logFirebaseEvent('Row_navigate_to');
 
                               context.pushNamed(
@@ -1097,19 +1095,19 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     child: FlutterFlowIconButton(
                                       borderColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      borderRadius: 20.0,
-                                      borderWidth: 1.0,
+                                      borderRadius: 5.0,
+                                      borderWidth: 2.5,
                                       buttonSize: 40.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).tertiary,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       icon: const Icon(
-                                        Icons.add,
+                                        Icons.notes,
                                         color: Colors.white,
                                         size: 24.0,
                                       ),
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_add_ICN_ON_TAP');
+                                            'MAIN_PAGE_notes_ICN_ON_TAP');
                                         logFirebaseEvent(
                                             'IconButton_navigate_to');
 
@@ -1161,7 +1159,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                 builder: (context) => FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'CUSTOMERS_HERE_IS_NOTHING_YOU_SHOULD_SEE');
+                                        'MAIN_HERE_IS_NOTHING_YOU_SHOULD_SEE!_BTN');
                                     logFirebaseEvent('Button_navigate_to');
 
                                     context.pushNamed('CustomerBilling');
@@ -1569,7 +1567,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
+                                            'MAIN_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
                                         logFirebaseEvent('Button_navigate_to');
 
                                         context.pushNamed('createCustomer');
@@ -1608,7 +1606,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'CUSTOMERS_PAGE_ADD_CASE_BTN_ON_TAP');
+                                            'MAIN_PAGE_ADD_CASE_BTN_ON_TAP');
                                         logFirebaseEvent('Button_navigate_to');
 
                                         context.pushNamed('CreateCase');
@@ -1717,7 +1715,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_PAGE_listContainer_ON_TAP');
+                                              'MAIN_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
                                               'listContainer_navigate_to');
 
@@ -1744,7 +1742,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         },
                                         onLongPress: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_listContainer_ON_LONG_PRESS');
+                                              'MAIN_PAGE_listContainer_ON_LONG_PRESS');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
                                                   '') ==
@@ -1815,7 +1813,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             logFirebaseEvent(
                                                 'listContainer_navigate_to');
 
-                                            context.pushNamed('Customers');
+                                            context.pushNamed('Main');
                                           } else {
                                             return;
                                           }
@@ -2336,7 +2334,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_PAGE_listContainer_ON_TAP');
+                                              'MAIN_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
                                               'listContainer_navigate_to');
 
@@ -2363,7 +2361,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         },
                                         onLongPress: () async {
                                           logFirebaseEvent(
-                                              'CUSTOMERS_listContainer_ON_LONG_PRESS');
+                                              'MAIN_PAGE_listContainer_ON_LONG_PRESS');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
                                                   '') ==
@@ -2434,7 +2432,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             logFirebaseEvent(
                                                 'listContainer_navigate_to');
 
-                                            context.pushNamed('Customers');
+                                            context.pushNamed('Main');
                                           } else {
                                             return;
                                           }

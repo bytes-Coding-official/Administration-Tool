@@ -83,9 +83,8 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('EMPLOYEES_arrow_back_rounded_ICN_ON_TAP');
-              logFirebaseEvent('IconButton_navigate_to');
-
-              context.pushNamed('Customers');
+              logFirebaseEvent('IconButton_navigate_back');
+              context.safePop();
             },
           ),
           title: Column(
