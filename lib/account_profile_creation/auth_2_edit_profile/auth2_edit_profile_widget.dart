@@ -84,98 +84,88 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-              child: Container(
-                width: double.infinity,
-                height: 130.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      FlutterFlowTheme.of(context).primary,
-                      FlutterFlowTheme.of(context).error,
-                      FlutterFlowTheme.of(context).tertiary
-                    ],
-                    stops: const [0.0, 0.5, 1.0],
-                    begin: const AlignmentDirectional(-1.0, -1.0),
-                    end: const AlignmentDirectional(1.0, 1.0),
-                  ),
-                ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: Container(
-                  width: 100.0,
-                  height: 200.0,
+                  width: double.infinity,
+                  height: 130.0,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        const Color(0x00FFFFFF),
-                        FlutterFlowTheme.of(context).secondaryBackground
+                        FlutterFlowTheme.of(context).primary,
+                        FlutterFlowTheme.of(context).error,
+                        FlutterFlowTheme.of(context).tertiary
                       ],
-                      stops: const [0.0, 1.0],
-                      begin: const AlignmentDirectional(0.0, -1.0),
-                      end: const AlignmentDirectional(0, 1.0),
+                      stops: const [0.0, 0.5, 1.0],
+                      begin: const AlignmentDirectional(-1.0, -1.0),
+                      end: const AlignmentDirectional(1.0, 1.0),
                     ),
                   ),
-                  child: Align(
-                    alignment: const AlignmentDirectional(-1.0, 1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
-                      child: FlutterFlowIconButton(
-                        borderColor: FlutterFlowTheme.of(context).accent4,
-                        borderRadius: 12.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).accent4,
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
-                        ),
-                        onPressed: () async {
-                          logFirebaseEvent(
-                              'AUTH_2_EDIT_PROFILE_arrow_back_rounded_I');
-                          logFirebaseEvent('IconButton_navigate_to');
+                  child: Container(
+                    width: 100.0,
+                    height: 200.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0x00FFFFFF),
+                          FlutterFlowTheme.of(context).secondaryBackground
+                        ],
+                        stops: const [0.0, 1.0],
+                        begin: const AlignmentDirectional(0.0, -1.0),
+                        end: const AlignmentDirectional(0, 1.0),
+                      ),
+                    ),
+                    child: Align(
+                      alignment: const AlignmentDirectional(-1.0, 1.0),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 0.0, 24.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: FlutterFlowTheme.of(context).accent4,
+                          borderRadius: 12.0,
+                          borderWidth: 1.0,
+                          buttonSize: 40.0,
+                          fillColor: FlutterFlowTheme.of(context).accent4,
+                          icon: Icon(
+                            Icons.arrow_back_rounded,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'AUTH_2_EDIT_PROFILE_arrow_back_rounded_I');
+                            logFirebaseEvent('IconButton_navigate_to');
 
-                          context.pushNamed('Customers');
-                        },
+                            context.pushNamed('Customers');
+                          },
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ).animateOnPageLoad(
-                  animationsMap['containerOnPageLoadAnimation']!),
-            ),
-            Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
-              child: Container(
-                width: double.infinity,
-                constraints: const BoxConstraints(
-                  maxWidth: 770.0,
-                ),
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: wrapWithModel(
-                  model: _model.editProfileAuth2Model,
-                  updateCallback: () => setState(() {}),
-                  child: EditProfileAuth2Widget(
-                    title: 'Edit Profile',
-                    confirmButtonText: 'Save Changes',
-                    navigateAction: () async {
-                      logFirebaseEvent(
-                          'AUTH_2_EDIT_PROFILE_Container_emtut33s_C');
-                      logFirebaseEvent('editProfile_auth_2_navigate_back');
-                      context.safePop();
-                    },
-                  ),
+                ).animateOnPageLoad(
+                    animationsMap['containerOnPageLoadAnimation']!),
+              ),
+              wrapWithModel(
+                model: _model.editProfileAuth2Model,
+                updateCallback: () => setState(() {}),
+                child: EditProfileAuth2Widget(
+                  title: 'Edit Profile',
+                  confirmButtonText: 'Save Changes',
+                  navigateAction: () async {
+                    logFirebaseEvent(
+                        'AUTH_2_EDIT_PROFILE_Container_emtut33s_C');
+                    logFirebaseEvent('editProfile_auth_2_navigate_back');
+                    context.safePop();
+                  },
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
       ),
     );

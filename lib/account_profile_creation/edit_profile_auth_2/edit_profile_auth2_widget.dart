@@ -97,6 +97,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
       key: _model.formKey,
       autovalidateMode: AutovalidateMode.disabled,
       child: SingleChildScrollView(
+        primary: false,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
