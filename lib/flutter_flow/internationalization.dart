@@ -642,7 +642,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // Employees
+  // Users
   {
     'lefjjtu5': {
       'en': 'Search for people...',
@@ -2135,7 +2135,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Coûts moyens',
     },
     'azw44sx6': {
-      'en': 'Total Customers',
+      'en': 'Total Meetings',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
       'fr': 'Clients totaux',
@@ -2222,7 +2222,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // Profile
+  // ProfileEmployee
   {
     'wnodt0nu': {
       'en': 'Mail',
@@ -2267,7 +2267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Informations client',
     },
     'yv1tophe': {
-      'en': 'An overview of your customer jobs.',
+      'en': 'An overview of their customer jobs.',
       'de': 'Eine Übersicht Ihrer Kundenaufträge.',
       'es': 'Una descripción general de los trabajos de sus clientes.',
       'fr': 'Un aperçu de vos tâches clients.',
@@ -2327,6 +2327,93 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Compléter le profil utilisateur sélectionné',
     },
     '1byh2jsg': {
+      'en': 'Home',
+      'de': 'Home',
+      'es': '',
+      'fr': '',
+    },
+  },
+  // ProfileUser
+  {
+    'm6b8boxn': {
+      'en': 'Mail',
+      'de': 'Mail',
+      'es': 'Correo',
+      'fr': 'Mail',
+    },
+    't8vz9hvc': {
+      'en': 'Call',
+      'de': 'Anruf',
+      'es': 'Llamar',
+      'fr': 'Appel',
+    },
+    '0boaf6k3': {
+      'en': 'User-Description',
+      'de': 'Benutzer-Beschreibung',
+      'es': 'Descripción de usuario',
+      'fr': 'Description de l\'utilisateur',
+    },
+    '6111v0jh': {
+      'en': 'Money Spend',
+      'de': 'Geld ausgeben',
+      'es': 'Gasto de dinero',
+      'fr': 'Dépense d\'argent',
+    },
+    'w1wt2vr6': {
+      'en': 'Average Costs',
+      'de': 'Durchschnittliche Kosten',
+      'es': 'Costos promedio',
+      'fr': 'Coûts moyens',
+    },
+    'wxdt7dec': {
+      'en': 'Total Meetings',
+      'de': 'Kunden gesamt',
+      'es': 'Clientes totales',
+      'fr': 'Clients totaux',
+    },
+    'dpos0v43': {
+      'en': 'Customer-Meetings',
+      'de': 'Kunden-Meetings',
+      'es': 'Reuniones con clientes',
+      'fr': 'Rendez-vous clients',
+    },
+    'cpabnexa': {
+      'en': 'A summary of their meetings',
+      'de': 'Eine Zusammenfassung Ihrer Meetings',
+      'es': 'Un resumen de sus reuniones',
+      'fr': 'Un résumé de vos réunions',
+    },
+    'rtwqlk4h': {
+      'en': 'Duration',
+      'de': 'Dauer',
+      'es': 'Duración',
+      'fr': 'Durée',
+    },
+    'tmkn04zx': {
+      'en': 'Costs',
+      'de': 'Kosten',
+      'es': 'Costos',
+      'fr': 'Frais',
+    },
+    'dt34ieih': {
+      'en': 'Supervisor',
+      'de': 'Aufsicht',
+      'es': 'Supervisor',
+      'fr': 'Superviseur',
+    },
+    'ersuo796': {
+      'en': 'User Profile',
+      'de': 'Benutzerprofil',
+      'es': 'Perfil del usuario',
+      'fr': 'Profil de l\'utilisateur',
+    },
+    'nrav9y19': {
+      'en': 'Complete selected User Profile',
+      'de': 'Ausgewähltes Benutzerprofil vervollständigen',
+      'es': 'Completar el perfil de usuario seleccionado',
+      'fr': 'Compléter le profil utilisateur sélectionné',
+    },
+    't6mioyok': {
       'en': 'Home',
       'de': 'Home',
       'es': '',

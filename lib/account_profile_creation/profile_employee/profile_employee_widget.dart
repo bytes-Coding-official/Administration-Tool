@@ -9,11 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'profile_model.dart';
-export 'profile_model.dart';
+import 'profile_employee_model.dart';
+export 'profile_employee_model.dart';
 
-class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({
+class ProfileEmployeeWidget extends StatefulWidget {
+  const ProfileEmployeeWidget({
     super.key,
     required this.employee,
   });
@@ -21,12 +21,12 @@ class ProfileWidget extends StatefulWidget {
   final DocumentReference? employee;
 
   @override
-  State<ProfileWidget> createState() => _ProfileWidgetState();
+  State<ProfileEmployeeWidget> createState() => _ProfileEmployeeWidgetState();
 }
 
-class _ProfileWidgetState extends State<ProfileWidget>
+class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
     with TickerProviderStateMixin {
-  late ProfileModel _model;
+  late ProfileEmployeeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -35,9 +35,10 @@ class _ProfileWidgetState extends State<ProfileWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProfileModel());
+    _model = createModel(context, () => ProfileEmployeeModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Profile'});
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'ProfileEmployee'});
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -85,7 +86,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
             ),
           );
         }
-        final profileUsersRecord = snapshot.data!;
+        final profileEmployeeUsersRecord = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -107,7 +108,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  logFirebaseEvent('PROFILE_arrow_back_rounded_ICN_ON_TAP');
+                  logFirebaseEvent('PROFILE_EMPLOYEE_arrow_back_rounded_ICN_');
                   logFirebaseEvent('IconButton_navigate_back');
                   context.safePop();
                 },
@@ -154,7 +155,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(
-                          profileUsersRecord.photoUrl,
+                          profileEmployeeUsersRecord.photoUrl,
                           width: double.infinity,
                           height: 330.0,
                           fit: BoxFit.cover,
@@ -184,7 +185,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 8.0),
                                   child: Text(
-                                    profileUsersRecord.displayName,
+                                    profileEmployeeUsersRecord.displayName,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -194,7 +195,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                   ),
                                 ),
                                 Text(
-                                  profileUsersRecord.role,
+                                  profileEmployeeUsersRecord.role,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -253,12 +254,13 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'PROFILE_PAGE_Row_eosa03fj_ON_TAP');
+                                                  'PROFILE_EMPLOYEE_Row_eosa03fj_ON_TAP');
                                               logFirebaseEvent(
                                                   'Row_send_email');
                                               await launchUrl(Uri(
                                                 scheme: 'mailto',
-                                                path: profileUsersRecord.email,
+                                                path: profileEmployeeUsersRecord
+                                                    .email,
                                               ));
                                             },
                                             child: Row(
@@ -321,7 +323,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'PROFILE_PAGE_Row_kqsu46co_ON_TAP');
+                                                  'PROFILE_EMPLOYEE_Row_kqsu46co_ON_TAP');
                                               if (isWeb) {
                                                 return;
                                               }
@@ -329,7 +331,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   'Row_call_number');
                                               await launchUrl(Uri(
                                                 scheme: 'tel',
-                                                path: profileUsersRecord
+                                                path: profileEmployeeUsersRecord
                                                     .phoneNumber,
                                               ));
                                             },
@@ -408,7 +410,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 12.0),
                                     child: Text(
-                                      profileUsersRecord.shortDescription,
+                                      profileEmployeeUsersRecord
+                                          .shortDescription,
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -478,7 +481,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                         _model
                                                             .textPreviousSnapshot1)) {
                                               logFirebaseEvent(
-                                                  'PROFILE_Text_w1jkfd4v_ON_DATA_CHANGE');
+                                                  'PROFILE_EMPLOYEE_Text_w1jkfd4v_ON_DATA_C');
                                               logFirebaseEvent(
                                                   'Text_custom_action');
                                               _model.totalRev =
@@ -600,7 +603,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                         _model
                                                             .textPreviousSnapshot2)) {
                                               logFirebaseEvent(
-                                                  'PROFILE_Text_ctu9jm2p_ON_DATA_CHANGE');
+                                                  'PROFILE_EMPLOYEE_Text_ctu9jm2p_ON_DATA_C');
                                               logFirebaseEvent(
                                                   'Text_custom_action');
                                               _model.avgRev =
@@ -806,7 +809,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'yv1tophe' /* An overview of your customer j... */,
+                                              'yv1tophe' /* An overview of their customer ... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
@@ -1176,7 +1179,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           highlightColor: Colors.transparent,
                                           onLongPress: () async {
                                             logFirebaseEvent(
-                                                'PROFILE_Container_npflzo9d_ON_LONG_PRESS');
+                                                'PROFILE_EMPLOYEE_Container_npflzo9d_ON_L');
                                             if (valueOrDefault(
                                                     currentUserDocument?.role,
                                                     '') ==
@@ -1253,7 +1256,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                 'Container_navigate_to');
 
                                             context.pushNamed(
-                                              'Profile',
+                                              'ProfileEmployee',
                                               queryParameters: {
                                                 'employee': serializeParam(
                                                   widget.employee,

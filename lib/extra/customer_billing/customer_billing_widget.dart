@@ -73,32 +73,6 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation5': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          TiltEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
-          ),
-        ],
-      ),
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -111,7 +85,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation6': AnimationInfo(
+      'containerOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -479,51 +453,56 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    FutureBuilder<int>(
-                                      future: queryCustomerCaseRecordCount(
-                                        queryBuilder: (customerCaseRecord) =>
-                                            customerCaseRecord.where(
-                                          'assignee',
-                                          arrayContains: currentUserReference,
+                                    AuthUserStreamWidget(
+                                      builder: (context) => FutureBuilder<int>(
+                                        future: queryCustomerMeetingRecordCount(
+                                          queryBuilder:
+                                              (customerMeetingRecord) =>
+                                                  customerMeetingRecord.where(
+                                            'customer',
+                                            isEqualTo:
+                                                currentUserDocument?.customer,
+                                          ),
                                         ),
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                            );
+                                          }
+                                          int textCount = snapshot.data!;
+                                          return Text(
+                                            textCount.toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 26.0,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           );
-                                        }
-                                        int textCount = snapshot.data!;
-                                        return Text(
-                                          textCount.toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 26.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        );
-                                      },
+                                        },
+                                      ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'azw44sx6' /* Total Customers */,
+                                          'azw44sx6' /* Total Meetings */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -544,28 +523,6 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                           .around(const SizedBox(width: 25.0)),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
-                        BoxShadow(
-                          blurRadius: 3.0,
-                          color: Color(0x33000000),
-                          offset: Offset(
-                            0.0,
-                            1.0,
-                          ),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation4']!),
                 ),
                 Padding(
                   padding:
@@ -987,7 +944,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                       ),
                     ),
                   ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation5']!),
+                      animationsMap['containerOnPageLoadAnimation4']!),
                 ),
                 if (false)
                   Padding(
@@ -1286,7 +1243,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                         ),
                       ),
                     ).animateOnPageLoad(
-                        animationsMap['containerOnPageLoadAnimation6']!),
+                        animationsMap['containerOnPageLoadAnimation5']!),
                   ),
               ],
             ),

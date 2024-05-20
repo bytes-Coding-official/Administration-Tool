@@ -9,7 +9,7 @@ export '/account_profile_creation/language_settings/language_settings_widget.dar
     show LanguageSettingsWidget;
 export '/customer/customer/customer_widget.dart' show CustomerWidget;
 export '/customer/main/main_widget.dart' show MainWidget;
-export '/extra/employees/employees_widget.dart' show EmployeesWidget;
+export '/extra/users/users_widget.dart' show UsersWidget;
 export '/customer/create_case/create_case_widget.dart' show CreateCaseWidget;
 export '/account_profile_creation/auth_2_create/auth2_create_widget.dart'
     show Auth2CreateWidget;
@@ -44,5 +44,7 @@ export '/customer/add_meeting_to_customer/add_meeting_to_customer_widget.dart'
 export '/extra/side_nav/side_nav_widget.dart' show SideNavWidget;
 export '/extra/customer_billing/customer_billing_widget.dart'
     show CustomerBillingWidget;
-export '/account_profile_creation/profile/profile_widget.dart'
-    show ProfileWidget;
+export '/account_profile_creation/profile_employee/profile_employee_widget.dart'
+    show ProfileEmployeeWidget;
+export '/account_profile_creation/profile_user/profile_user_widget.dart'
+    show ProfileUserWidget;

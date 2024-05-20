@@ -118,9 +118,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MainWidget(),
         ),
         FFRoute(
-          name: 'Employees',
-          path: '/employees',
-          builder: (context, params) => const EmployeesWidget(),
+          name: 'Users',
+          path: '/users',
+          builder: (context, params) => const UsersWidget(),
         ),
         FFRoute(
           name: 'CreateCase',
@@ -264,11 +264,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CustomerBillingWidget(),
         ),
         FFRoute(
-          name: 'Profile',
-          path: '/profile',
-          builder: (context, params) => ProfileWidget(
+          name: 'ProfileEmployee',
+          path: '/profileEmployee',
+          builder: (context, params) => ProfileEmployeeWidget(
             employee: params.getParam(
               'employee',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'ProfileUser',
+          path: '/profileUser',
+          builder: (context, params) => ProfileUserWidget(
+            user: params.getParam(
+              'user',
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users'],

@@ -7,19 +7,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'employees_model.dart';
-export 'employees_model.dart';
+import 'users_model.dart';
+export 'users_model.dart';
 
-class EmployeesWidget extends StatefulWidget {
-  const EmployeesWidget({super.key});
+class UsersWidget extends StatefulWidget {
+  const UsersWidget({super.key});
 
   @override
-  State<EmployeesWidget> createState() => _EmployeesWidgetState();
+  State<UsersWidget> createState() => _UsersWidgetState();
 }
 
-class _EmployeesWidgetState extends State<EmployeesWidget>
+class _UsersWidgetState extends State<UsersWidget>
     with TickerProviderStateMixin {
-  late EmployeesModel _model;
+  late UsersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -28,9 +28,9 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmployeesModel());
+    _model = createModel(context, () => UsersModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Employees'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Users'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -82,7 +82,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
               size: 30.0,
             ),
             onPressed: () async {
-              logFirebaseEvent('EMPLOYEES_arrow_back_rounded_ICN_ON_TAP');
+              logFirebaseEvent('USERS_PAGE_arrow_back_rounded_ICN_ON_TAP');
               logFirebaseEvent('IconButton_navigate_back');
               context.safePop();
             },
@@ -226,22 +226,36 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 logFirebaseEvent(
-                                    'EMPLOYEES_PAGE_Container_d6fdwkqn_ON_TAP');
-                                logFirebaseEvent('Container_navigate_to');
+                                    'USERS_PAGE_Container_d6fdwkqn_ON_TAP');
+                                if (listViewUsersRecord.role == 'Kunde') {
+                                  logFirebaseEvent('Container_navigate_to');
 
-                                context.pushNamed(
-                                  'Profile',
-                                  queryParameters: {
-                                    'employee': serializeParam(
-                                      listViewUsersRecord.reference,
-                                      ParamType.DocumentReference,
-                                    ),
-                                  }.withoutNulls,
-                                );
+                                  context.pushNamed(
+                                    'ProfileUser',
+                                    queryParameters: {
+                                      'user': serializeParam(
+                                        listViewUsersRecord.reference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                } else {
+                                  logFirebaseEvent('Container_navigate_to');
+
+                                  context.pushNamed(
+                                    'ProfileEmployee',
+                                    queryParameters: {
+                                      'employee': serializeParam(
+                                        listViewUsersRecord.reference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                }
                               },
                               onLongPress: () async {
                                 logFirebaseEvent(
-                                    'EMPLOYEES_Container_d6fdwkqn_ON_LONG_PRE');
+                                    'USERS_Container_d6fdwkqn_ON_LONG_PRESS');
                                 if (valueOrDefault(
                                         currentUserDocument?.role, '') ==
                                     'Manager') {
@@ -282,7 +296,7 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
-                                    context.pushNamed('Employees');
+                                    context.pushNamed('Users');
                                   } else {
                                     return;
                                   }
