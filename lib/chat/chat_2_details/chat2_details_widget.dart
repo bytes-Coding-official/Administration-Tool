@@ -195,26 +195,58 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 0.0),
-                                child: AutoSizeText(
-                                  valueOrDefault<String>(
-                                    conditionalBuilderUsersRecord.email,
-                                    'casper@ghost.io',
-                                  ).maybeHandleOverflow(
-                                    maxChars: 40,
-                                    replacement: '…',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        letterSpacing: 0.0,
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: AutoSizeText(
+                                        valueOrDefault<String>(
+                                          conditionalBuilderUsersRecord.email,
+                                          'casper@ghost.io',
+                                        ).maybeHandleOverflow(
+                                          maxChars: 40,
+                                          replacement: '…',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        minFontSize: 10.0,
                                       ),
-                                  minFontSize: 10.0,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: AutoSizeText(
+                                        valueOrDefault<String>(
+                                          conditionalBuilderUsersRecord.role,
+                                          'casper@ghost.io',
+                                        ).maybeHandleOverflow(
+                                          maxChars: 40,
+                                          replacement: '…',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        minFontSize: 10.0,
+                                      ),
+                                    ),
+                                  ].divide(const SizedBox(width: 5.0)),
                                 ),
                               ),
                             ],
