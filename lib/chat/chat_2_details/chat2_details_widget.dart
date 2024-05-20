@@ -109,18 +109,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('CHAT_2_DETAILS_arrow_back_rounded_ICN_ON');
-              logFirebaseEvent('IconButton_navigate_to');
-
-              context.goNamed(
-                'chat_2_main',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.leftToRight,
-                    duration: Duration(milliseconds: 230),
-                  ),
-                },
-              );
+              logFirebaseEvent('IconButton_navigate_back');
+              context.safePop();
             },
           ),
           title: FutureBuilder<UsersRecord>(

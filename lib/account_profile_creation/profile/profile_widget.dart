@@ -379,21 +379,28 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     ),
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'pu04pfxz' /* User-Description */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          fontSize: 24.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'pu04pfxz' /* User-Description */,
                                         ),
-                                  ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 24.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 Align(
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -402,6 +409,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                         0.0, 8.0, 0.0, 12.0),
                                     child: Text(
                                       profileUsersRecord.shortDescription,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -762,6 +770,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                       primary: false,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
@@ -820,6 +829,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           primary: false,
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
@@ -906,6 +917,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           primary: false,
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
@@ -1014,6 +1027,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           FFLocalizations.of(context).getText(
                                             'f49vqwjs' /* Customer-Meetings */,
                                           ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(

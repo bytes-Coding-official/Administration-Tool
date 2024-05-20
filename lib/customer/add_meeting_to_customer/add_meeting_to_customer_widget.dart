@@ -114,8 +114,17 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                 ),
                 onPressed: () async {
                   logFirebaseEvent('ADD_MEETING_TO_CUSTOMER_arrow_back_round');
-                  logFirebaseEvent('IconButton_navigate_back');
-                  context.pop();
+                  logFirebaseEvent('IconButton_navigate_to');
+
+                  context.pushNamed(
+                    'Customer',
+                    queryParameters: {
+                      'customercase': serializeParam(
+                        widget.customercase,
+                        ParamType.DocumentReference,
+                      ),
+                    }.withoutNulls,
+                  );
                 },
               ),
               title: Column(
@@ -513,7 +522,9 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                               },
                             );
                             logFirebaseEvent('Button_navigate_to');
-
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
                             context.pushNamed(
                               'Customer',
                               queryParameters: {

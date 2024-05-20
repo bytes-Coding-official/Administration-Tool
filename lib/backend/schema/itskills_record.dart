@@ -20,8 +20,14 @@ class ItskillsRecord extends FirestoreRecord {
   String get name => _name ?? '';
   bool hasName() => _name != null;
 
+  // "users" field.
+  List<DocumentReference>? _users;
+  List<DocumentReference> get users => _users ?? const [];
+  bool hasUsers() => _users != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
+    _users = getDataList(snapshotData['users']);
   }
 
   static CollectionReference get collection =>
@@ -75,11 +81,12 @@ class ItskillsRecordDocumentEquality implements Equality<ItskillsRecord> {
 
   @override
   bool equals(ItskillsRecord? e1, ItskillsRecord? e2) {
-    return e1?.name == e2?.name;
+    const listEquality = ListEquality();
+    return e1?.name == e2?.name && listEquality.equals(e1?.users, e2?.users);
   }
 
   @override
-  int hash(ItskillsRecord? e) => const ListEquality().hash([e?.name]);
+  int hash(ItskillsRecord? e) => const ListEquality().hash([e?.name, e?.users]);
 
   @override
   bool isValidKey(Object? o) => o is ItskillsRecord;

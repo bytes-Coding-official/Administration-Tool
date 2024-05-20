@@ -9,7 +9,7 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
 
   // State field(s) for ListView widget.
 
-  PagingController<DocumentSnapshot?, ItSkillsRecord>? listViewPagingController;
+  PagingController<DocumentSnapshot?, ItskillsRecord>? listViewPagingController;
   Query? listViewPagingQuery;
   List<StreamSubscription?> listViewStreamSubscriptions = [];
 
@@ -33,7 +33,7 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
   }
 
   /// Additional helper methods.
-  PagingController<DocumentSnapshot?, ItSkillsRecord> setListViewController(
+  PagingController<DocumentSnapshot?, ItskillsRecord> setListViewController(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
@@ -45,16 +45,15 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
     return listViewPagingController!;
   }
 
-  PagingController<DocumentSnapshot?, ItSkillsRecord> _createListViewController(
+  PagingController<DocumentSnapshot?, ItskillsRecord> _createListViewController(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
     final controller =
-        PagingController<DocumentSnapshot?, ItSkillsRecord>(firstPageKey: null);
+        PagingController<DocumentSnapshot?, ItskillsRecord>(firstPageKey: null);
     return controller
       ..addPageRequestListener(
-        (nextPageMarker) => queryItSkillsRecordPage(
-          parent: parent,
+        (nextPageMarker) => queryItskillsRecordPage(
           nextPageMarker: nextPageMarker,
           streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,

@@ -9,7 +9,8 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
 
   // State field(s) for ListView widget.
 
-  PagingController<DocumentSnapshot?, LanguageRecord>? listViewPagingController;
+  PagingController<DocumentSnapshot?, LanguagesRecord>?
+      listViewPagingController;
   Query? listViewPagingQuery;
   List<StreamSubscription?> listViewStreamSubscriptions = [];
 
@@ -33,7 +34,7 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
   }
 
   /// Additional helper methods.
-  PagingController<DocumentSnapshot?, LanguageRecord> setListViewController(
+  PagingController<DocumentSnapshot?, LanguagesRecord> setListViewController(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
@@ -45,16 +46,16 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
     return listViewPagingController!;
   }
 
-  PagingController<DocumentSnapshot?, LanguageRecord> _createListViewController(
+  PagingController<DocumentSnapshot?, LanguagesRecord>
+      _createListViewController(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
-    final controller =
-        PagingController<DocumentSnapshot?, LanguageRecord>(firstPageKey: null);
+    final controller = PagingController<DocumentSnapshot?, LanguagesRecord>(
+        firstPageKey: null);
     return controller
       ..addPageRequestListener(
-        (nextPageMarker) => queryLanguageRecordPage(
-          parent: parent,
+        (nextPageMarker) => queryLanguagesRecordPage(
           nextPageMarker: nextPageMarker,
           streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,

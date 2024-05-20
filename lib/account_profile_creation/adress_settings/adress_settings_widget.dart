@@ -92,8 +92,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
           ),
           onPressed: () async {
             logFirebaseEvent('ADRESS_SETTINGS_arrow_back_rounded_ICN_O');
-            logFirebaseEvent('IconButton_navigate_back');
-            context.safePop();
+            logFirebaseEvent('IconButton_navigate_to');
+
+            context.pushNamed('auth_2_Profile');
           },
         ),
         title: Column(
@@ -349,7 +350,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'yxwo7j7o' /* Zip */,
+                                    'yxwo7j7o' /* Postal-Code */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium

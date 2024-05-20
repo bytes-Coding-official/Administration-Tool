@@ -104,8 +104,9 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('CREATE_CUSTOMER_arrow_back_rounded_ICN_O');
-              logFirebaseEvent('IconButton_navigate_back');
-              context.pop();
+              logFirebaseEvent('IconButton_navigate_to');
+
+              context.pushNamed('Main');
             },
           ),
           title: Column(
@@ -114,7 +115,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'the8au5f' /* Patient Intake form */,
+                  'the8au5f' /* Create Customer */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -123,7 +124,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  'ic0u8pqs' /* Please fill out the form to co... */,
+                  'ic0u8pqs' /* Create new Customer with this ... */,
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelMedium.override(

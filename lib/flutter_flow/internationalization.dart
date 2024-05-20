@@ -239,10 +239,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Code Postal',
     },
     'yxwo7j7o': {
-      'en': 'Zip',
-      'de': 'Reißverschluss',
-      'es': 'Cremallera',
-      'fr': 'Fermeture éclair',
+      'en': 'Postal-Code',
+      'de': 'Postleitzahl',
+      'es': 'Código Postal',
+      'fr': 'Code Postal',
     },
     's6h1wnxo': {
       'en': 'Country',
@@ -672,10 +672,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // CreateCase
   {
     '63tpu80q': {
-      'en': 'ID',
-      'de': 'AUSWEIS',
-      'es': 'IDENTIFICACIÓN',
-      'fr': 'IDENTIFIANT',
+      'en': 'ID:',
+      'de': 'ID:',
+      'es': 'ID:',
+      'fr': 'ID:',
     },
     '91f8nfh0': {
       'en': 'Case ID',
@@ -1868,13 +1868,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
     'the8au5f': {
-      'en': 'Patient Intake form',
+      'en': 'Create Customer',
       'de': 'Patientenaufnahmeformular',
       'es': 'Formulario de admisión del paciente',
       'fr': 'Formulaire d\'admission des patients',
     },
     'ic0u8pqs': {
-      'en': 'Please fill out the form to continue.',
+      'en': 'Create new Customer with this Form',
       'de': 'Bitte füllen Sie das Formular aus, um fortzufahren.',
       'es': 'Por favor complete el formulario para continuar.',
       'fr': 'Veuillez remplir le formulaire pour continuer.',

@@ -72,386 +72,460 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30.0,
-          buttonSize: 48.0,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 30.0,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            buttonSize: 48.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              logFirebaseEvent('I_T_SKILLS_SETTINGS_arrow_back_rounded_I');
+              logFirebaseEvent('IconButton_navigate_back');
+              context.safePop();
+            },
           ),
-          onPressed: () async {
-            logFirebaseEvent('I_T_SKILLS_SETTINGS_arrow_back_rounded_I');
-            logFirebaseEvent('IconButton_navigate_back');
-            context.safePop();
-          },
-        ),
-        title: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              FFLocalizations.of(context).getText(
-                'th69fh0p' /* Complete IT-Skills */,
-              ),
-              style: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Inter',
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    fontSize: 22.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-            ),
-            Text(
-              FFLocalizations.of(context).getText(
-                'zwdp76ds' /* Complete your IT-Skills */,
-              ),
-              textAlign: TextAlign.start,
-              style: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Inter',
-                    letterSpacing: 0.0,
-                  ),
-            ),
-          ],
-        ),
-        actions: const [],
-        centerTitle: true,
-        elevation: 0.0,
-      ),
-      body: SafeArea(
-        top: true,
-        child: SingleChildScrollView(
-          primary: false,
-          child: Column(
+          title: Column(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'shhe1ydw' /* Your IT-Skills */,
-                      ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
+              Text(
+                FFLocalizations.of(context).getText(
+                  'th69fh0p' /* Complete IT-Skills */,
+                ),
+                style: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Inter',
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      fontSize: 22.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ),
-                ],
               ),
-              PagedListView<DocumentSnapshot<Object?>?, ItSkillsRecord>(
-                pagingController: _model.setListViewController(
-                    ItSkillsRecord.collection(currentUserReference),
-                    parent: currentUserReference),
-                padding: EdgeInsets.zero,
-                shrinkWrap: true,
-                reverse: false,
-                scrollDirection: Axis.vertical,
-                builderDelegate: PagedChildBuilderDelegate<ItSkillsRecord>(
-                  // Customize what your widget looks like when it's loading the first page.
-                  firstPageProgressIndicatorBuilder: (_) => Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
+              Text(
+                FFLocalizations.of(context).getText(
+                  'zwdp76ds' /* Complete your IT-Skills */,
+                ),
+                textAlign: TextAlign.start,
+                style: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Inter',
+                      letterSpacing: 0.0,
+                    ),
+              ),
+            ],
+          ),
+          actions: const [],
+          centerTitle: true,
+          elevation: 0.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            primary: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          'shhe1ydw' /* Your IT-Skills */,
+                        ),
+                        style: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ],
+                ),
+                PagedListView<DocumentSnapshot<Object?>?, ItskillsRecord>(
+                  pagingController: _model.setListViewController(
+                    ItskillsRecord.collection,
+                  ),
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  reverse: false,
+                  scrollDirection: Axis.vertical,
+                  builderDelegate: PagedChildBuilderDelegate<ItskillsRecord>(
+                    // Customize what your widget looks like when it's loading the first page.
+                    firstPageProgressIndicatorBuilder: (_) => Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  // Customize what your widget looks like when it's loading another page.
-                  newPageProgressIndicatorBuilder: (_) => Center(
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
+                    // Customize what your widget looks like when it's loading another page.
+                    newPageProgressIndicatorBuilder: (_) => Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
+                          ),
                         ),
                       ),
                     ),
-                  ),
 
-                  itemBuilder: (context, _, listViewIndex) {
-                    final listViewItSkillsRecord = _model
-                        .listViewPagingController!.itemList![listViewIndex];
-                    return InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onLongPress: () async {
-                        logFirebaseEvent(
-                            'I_T_SKILLS_SETTINGS_Container_jqiu0oel_O');
-                        if (valueOrDefault(currentUserDocument?.role, '') ==
-                            'Manager') {
-                          logFirebaseEvent('Container_alert_dialog');
-                          var confirmDialogResponse = await showDialog<bool>(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: const Text('Delete Value'),
-                                    content: const Text(
-                                        'Do you really want to delete that value?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () => Navigator.pop(
-                                            alertDialogContext, false),
-                                        child: const Text('Cancel'),
-                                      ),
-                                      TextButton(
-                                        onPressed: () => Navigator.pop(
-                                            alertDialogContext, true),
-                                        child: const Text('Confirm'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ) ??
-                              false;
-                          if (confirmDialogResponse) {
-                            logFirebaseEvent('Container_backend_call');
-                            await listViewItSkillsRecord.reference.delete();
+                    itemBuilder: (context, _, listViewIndex) {
+                      final listViewItskillsRecord = _model
+                          .listViewPagingController!.itemList![listViewIndex];
+                      return InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onLongPress: () async {
+                          logFirebaseEvent(
+                              'I_T_SKILLS_SETTINGS_Container_jqiu0oel_O');
+                          if (valueOrDefault(currentUserDocument?.role, '') ==
+                              'Manager') {
+                            logFirebaseEvent('Container_alert_dialog');
+                            var confirmDialogResponse = await showDialog<bool>(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: const Text('Delete Value'),
+                                      content: const Text(
+                                          'Do you really want to delete that value?'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, false),
+                                          child: const Text('Cancel'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, true),
+                                          child: const Text('Confirm'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ) ??
+                                false;
+                            if (confirmDialogResponse) {
+                              logFirebaseEvent('Container_backend_call');
+                              await listViewItskillsRecord.reference.delete();
+                            } else {
+                              return;
+                            }
+
+                            logFirebaseEvent('Container_navigate_to');
+
+                            context.pushNamed('IT-Skills-Settings');
                           } else {
                             return;
                           }
-
-                          logFirebaseEvent('Container_navigate_to');
-
-                          context.pushNamed('IT-Skills-Settings');
-                        } else {
-                          return;
-                        }
-                      },
-                      child: Container(
-                        width: 100.0,
-                        height: 50.0,
+                        },
+                        child: Container(
+                          width: 100.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: ToggleIcon(
+                                  onPressed: () async {
+                                    final usersElement = currentUserReference;
+                                    final usersUpdate = listViewItskillsRecord
+                                            .users
+                                            .contains(usersElement)
+                                        ? FieldValue.arrayRemove([usersElement])
+                                        : FieldValue.arrayUnion([usersElement]);
+                                    await listViewItskillsRecord.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'users': usersUpdate,
+                                        },
+                                      ),
+                                    });
+                                  },
+                                  value: listViewItskillsRecord.users
+                                      .contains(currentUserReference),
+                                  onIcon: Icon(
+                                    Icons.check_box,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 25.0,
+                                  ),
+                                  offIcon: Icon(
+                                    Icons.check_box_outline_blank,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 25.0,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  listViewItskillsRecord.name,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      logFirebaseEvent(
+                          'I_T_SKILLS_SETTINGS_SAVE_CHANGES_BTN_ON_');
+                      logFirebaseEvent('Button_show_snack_bar');
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Settings Saved',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          duration: const Duration(milliseconds: 4000),
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondary,
+                        ),
+                      );
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      'o9puwj76' /* Save Changes */,
+                    ),
+                    options: FFButtonOptions(
+                      width: MediaQuery.sizeOf(context).width * 0.5,
+                      height: 50.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Inter',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                              ),
+                      elevation: 3.0,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
+                ),
+                if (valueOrDefault(currentUserDocument?.role, '') == 'Manager')
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 0.0),
+                    child: AuthUserStreamWidget(
+                      builder: (context) => Container(
+                        width: 500.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).alternate,
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: ToggleIcon(
-                                onPressed: () async {
-                                  await listViewItSkillsRecord.reference
-                                      .update({
-                                    ...mapToFirestore(
-                                      {
-                                        'selected':
-                                            !listViewItSkillsRecord.selected,
-                                      },
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: TextFormField(
+                                  controller: _model.newskillTextController,
+                                  focusNode: _model.newskillFocusNode,
+                                  autofocus: true,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'w70117by' /* new IT-Skills  */,
                                     ),
-                                  });
-                                },
-                                value: listViewItSkillsRecord.selected,
-                                onIcon: Icon(
-                                  Icons.check_box,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 25.0,
-                                ),
-                                offIcon: Icon(
-                                  Icons.check_box_outline_blank,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 25.0,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'awk15nmc' /* Add IT Skills here */,
+                                    ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    errorBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedErrorBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  validator: _model
+                                      .newskillTextControllerValidator
+                                      .asValidator(context),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                listViewItSkillsRecord.name,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
+                                  0.0, 0.0, 10.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'I_T_SKILLS_SETTINGS_PAGE_ADD_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_backend_call');
+
+                                  await ItskillsRecord.collection
+                                      .doc()
+                                      .set(createItskillsRecordData(
+                                        name:
+                                            _model.newskillTextController.text,
+                                      ));
+                                  logFirebaseEvent('Button_show_snack_bar');
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Value Added',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
                                     ),
+                                  );
+                                  logFirebaseEvent('Button_navigate_to');
+                                  if (Navigator.of(context).canPop()) {
+                                    context.pop();
+                                  }
+                                  context.pushNamed('IT-Skills-Settings');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'ocq5kvbi' /* Add */,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 150.0,
+                                  height: 40.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'o9puwj76' /* Save Changes */,
-                  ),
-                  options: FFButtonOptions(
-                    width: MediaQuery.sizeOf(context).width * 0.5,
-                    height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                        ),
-                    elevation: 3.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ),
-              if (valueOrDefault(currentUserDocument?.role, '') == 'Manager')
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-                  child: AuthUserStreamWidget(
-                    builder: (context) => Container(
-                      width: 500.0,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        borderRadius: BorderRadius.circular(16.0),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: TextFormField(
-                              controller: _model.newskillTextController,
-                              focusNode: _model.newskillFocusNode,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  'w70117by' /* new IT-Skills  */,
-                                ),
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'awk15nmc' /* Add IT Skills here */,
-                                ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.newskillTextControllerValidator
-                                  .asValidator(context),
-                            ),
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              logFirebaseEvent(
-                                  'I_T_SKILLS_SETTINGS_PAGE_ADD_BTN_ON_TAP');
-                              logFirebaseEvent('Button_backend_call');
-
-                              await ItskillsRecord.collection
-                                  .doc()
-                                  .set(createItskillsRecordData(
-                                    name: _model.newskillTextController.text,
-                                  ));
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'ocq5kvbi' /* Add */,
-                            ),
-                            options: FFButtonOptions(
-                              width: 150.0,
-                              height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
-                ),
-            ],
-          ),
-        ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
+              ],
+            ),
+          ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
+        ),
       ),
     );
   }

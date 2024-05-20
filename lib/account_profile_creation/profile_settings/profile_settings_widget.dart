@@ -559,6 +559,19 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                       phoneNumber: _model.textController3.text,
                       photoUrl: '',
                     ));
+                    logFirebaseEvent('Button_show_snack_bar');
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Values Saved',
+                          style: TextStyle(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                          ),
+                        ),
+                        duration: const Duration(milliseconds: 4000),
+                        backgroundColor: FlutterFlowTheme.of(context).secondary,
+                      ),
+                    );
                   },
                   text: FFLocalizations.of(context).getText(
                     'e9h4u4e3' /* Save Changes */,

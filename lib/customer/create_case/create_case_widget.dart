@@ -170,20 +170,25 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                 children: [
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          '63tpu80q' /* ID */,
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            25.0, 0.0, 25.0, 0.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '63tpu80q' /* ID: */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                fontSize: 22.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              fontSize: 22.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
                                       ),
                                       Expanded(
                                         child: StreamBuilder<
@@ -213,7 +218,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                                 caseIDCustomerCaseRecordList =
                                                 snapshot.data!;
                                             return SizedBox(
-                                              width: 100.0,
+                                              width: 50.0,
                                               child: TextFormField(
                                                 controller: _model
                                                         .caseIDTextController ??=
