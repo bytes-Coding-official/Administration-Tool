@@ -1812,7 +1812,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
 
                                             logFirebaseEvent(
                                                 'listContainer_navigate_to');
-
+                                            if (Navigator.of(context)
+                                                .canPop()) {
+                                              context.pop();
+                                            }
                                             context.pushNamed('Main');
                                           } else {
                                             return;

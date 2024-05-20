@@ -234,7 +234,9 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                             }
 
                             logFirebaseEvent('Container_navigate_to');
-
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
                             context.pushNamed('IT-Skills-Settings');
                           } else {
                             return;

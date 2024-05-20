@@ -1109,7 +1109,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
 
                                           logFirebaseEvent(
                                               'Container_navigate_to');
-
+                                          if (Navigator.of(context).canPop()) {
+                                            context.pop();
+                                          }
                                           context.pushNamed(
                                             'Customer',
                                             queryParameters: {

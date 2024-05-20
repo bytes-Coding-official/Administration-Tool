@@ -279,7 +279,9 @@ class _EmployeesWidgetState extends State<EmployeesWidget>
                                     await listViewUsersRecord.reference
                                         .delete();
                                     logFirebaseEvent('Container_navigate_to');
-
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
                                     context.pushNamed('Employees');
                                   } else {
                                     return;

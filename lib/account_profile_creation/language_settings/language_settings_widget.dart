@@ -232,8 +232,11 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                 logFirebaseEvent('Container_backend_call');
                                 await listViewLanguagesRecord.reference
                                     .delete();
-                                logFirebaseEvent('Container_update_page_state');
-                                setState(() {});
+                                logFirebaseEvent('Container_navigate_to');
+                                if (Navigator.of(context).canPop()) {
+                                  context.pop();
+                                }
+                                context.pushNamed('Language-Settings');
                               } else {
                                 return;
                               }

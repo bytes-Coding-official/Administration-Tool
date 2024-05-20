@@ -867,7 +867,9 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                         );
                         logFirebaseEvent('Button_backend_call');
 
-                        await CustomerRecord.collection.doc().set({
+                        var customerRecordReference =
+                            CustomerRecord.collection.doc();
+                        await customerRecordReference.set({
                           ...createCustomerRecordData(
                             name: _model.fullNameTextController.text,
                             phone: _model.phoneNumberTextController.text,
@@ -883,6 +885,23 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             },
                           ),
                         });
+                        _model.newCustomer =
+                            CustomerRecord.getDocumentFromData({
+                          ...createCustomerRecordData(
+                            name: _model.fullNameTextController.text,
+                            phone: _model.phoneNumberTextController.text,
+                            zip: _model.zipTextController.text,
+                            country: _model.countryTextController.text,
+                            city: _model.cityTextController.text,
+                            street: _model.streetTextController.text,
+                            email: _model.mailTextController.text,
+                          ),
+                          ...mapToFirestore(
+                            {
+                              'language': _model.languages,
+                            },
+                          ),
+                        }, customerRecordReference);
                         logFirebaseEvent('Button_alert_dialog');
                         await showDialog(
                           context: context,

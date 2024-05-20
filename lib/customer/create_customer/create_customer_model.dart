@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'create_customer_widget.dart' show CreateCustomerWidget;
@@ -61,6 +62,8 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   FormFieldController<List<String>>? dropDownValueController;
   // Stores action output result for [Custom Action - getLanguagesFromDocRefs] action in Button widget.
   List<DocumentReference>? languages;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CustomerRecord? newCustomer;
 
   @override
   void initState(BuildContext context) {
