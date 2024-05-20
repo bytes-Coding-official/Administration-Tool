@@ -188,11 +188,11 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                 onPressed: () async {
                   logFirebaseEvent('EDIT_PROFILE_AUTH_2_CHANGE_PHOTO_BTN_ON_');
                   logFirebaseEvent('Button_upload_media_to_firebase');
-                  final selectedMedia = await selectMedia(
+                  final selectedMedia = await selectMediaWithSourceBottomSheet(
+                    context: context,
                     maxWidth: 1280.00,
                     maxHeight: 720.00,
-                    mediaSource: MediaSource.photoGallery,
-                    multiImage: false,
+                    allowPhoto: true,
                   );
                   if (selectedMedia != null &&
                       selectedMedia.every(
@@ -633,6 +633,11 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               child: FFButtonWidget(
                 onPressed: () async {
                   logFirebaseEvent('EDIT_PROFILE_AUTH_2_Button-Login_ON_TAP');
+                  if ((_model.yourRoleTextController.text == 'Manager') ||
+                      (_model.yourRoleTextController.text == 'Kunde') ||
+                      (_model.yourRoleTextController.text == 'Employee')) {
+                    return;
+                  }
                   if (_model.yourRoleTextController.text ==
                       'Administrator-2023') {
                     logFirebaseEvent('Button-Login_backend_call');
