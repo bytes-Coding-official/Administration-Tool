@@ -242,6 +242,12 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       return;
                     }
                   }
+
+                  logFirebaseEvent('Button_backend_call');
+
+                  await currentUserReference!.update(createUsersRecordData(
+                    photoUrl: _model.uploadedFileUrl,
+                  ));
                 },
                 text: FFLocalizations.of(context).getText(
                   'cb6me508' /* Change Photo */,
