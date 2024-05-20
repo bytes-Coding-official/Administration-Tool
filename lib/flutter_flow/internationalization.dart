@@ -552,7 +552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Consultez les détails ci-dessous de tous les projets en cours.',
     },
     '4utzg0s0': {
-      'en': 'Here is nothing you should see!',
+      'en': 'Here is nothing you should see as a Customer!',
       'de': 'Hier gibt es nichts, was Sie sehen sollten!',
       'es': '¡Aquí no hay nada que debas ver!',
       'fr': 'Il n\'y a rien à voir ici !',

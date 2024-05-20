@@ -1150,7 +1150,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 builder: (context) => FFButtonWidget(
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'MAIN_HERE_IS_NOTHING_YOU_SHOULD_SEE!_BTN');
+                                        'MAIN_HERE_IS_NOTHING_YOU_SHOULD_SEE_AS_A');
                                     logFirebaseEvent('Button_navigate_to');
 
                                     context.pushNamed('CustomerBilling');
