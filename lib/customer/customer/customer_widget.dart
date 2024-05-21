@@ -944,7 +944,20 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '955no1if' /* Duration */,
+                                    '955no1if' /* Date */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        fontSize: 20.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'uwi3huii' /* Duration */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1134,6 +1147,25 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceAround,
                                             children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  listViewCustomerMeetingRecord
+                                                      .date
+                                                      ?.toString(),
+                                                  'null',
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
                                               Text(
                                                 listViewCustomerMeetingRecord
                                                     .duration

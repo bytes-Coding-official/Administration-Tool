@@ -422,6 +422,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Ajouter une réunion à l\'utilisateur',
     },
     '955no1if': {
+      'en': 'Date',
+      'de': 'Datum',
+      'es': 'Fecha',
+      'fr': 'Date',
+    },
+    'uwi3huii': {
       'en': 'Duration',
       'de': 'Dauer',
       'es': 'Duración',
@@ -553,9 +559,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4utzg0s0': {
       'en': 'Here is nothing you should see as a Customer!',
-      'de': 'Hier gibt es nichts, was Sie sehen sollten!',
-      'es': '¡Aquí no hay nada que debas ver!',
-      'fr': 'Il n\'y a rien à voir ici !',
+      'de': 'Hier ist nichts, was Sie als Kunde sehen sollten!',
+      'es': '¡Aquí no hay nada que debas ver como Cliente!',
+      'fr': 'Voici rien que vous devriez voir en tant que client !',
     },
     'p942dt14': {
       'en': 'All',
@@ -1231,7 +1237,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del boleto',
+      'es': 'Detalles del billete',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -1417,6 +1423,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'ID#: ',
       'es': '',
       'fr': '',
+    },
+    '1xsokerm': {
+      'en': 'Customer-Meetings',
+      'de': 'Kunden-Meetings',
+      'es': 'Reuniones con clientes',
+      'fr': 'Rendez-vous clients',
+    },
+    'bx7t1x0h': {
+      'en': 'A summary of your meetings',
+      'de': 'Eine Zusammenfassung Ihrer Meetings',
+      'es': 'Un resumen de sus reuniones',
+      'fr': 'Un résumé de vos réunions',
+    },
+    'ymj55p09': {
+      'en': 'Date',
+      'de': 'Datum',
+      'es': 'Fecha',
+      'fr': 'Date',
+    },
+    '9jkwcq7p': {
+      'en': 'Duration',
+      'de': 'Dauer',
+      'es': 'Duración',
+      'fr': 'Durée',
+    },
+    'o52da1js': {
+      'en': 'Costs',
+      'de': 'Kosten',
+      'es': 'Costos',
+      'fr': 'Frais',
+    },
+    'phi510ca': {
+      'en': 'Supervisor',
+      'de': 'Aufsicht',
+      'es': 'Supervisor',
+      'fr': 'Superviseur',
     },
     'w0tdj7p3': {
       'en': 'Recent Activity',
@@ -1869,15 +1911,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'the8au5f': {
       'en': 'Create Customer',
-      'de': 'Patientenaufnahmeformular',
-      'es': 'Formulario de admisión del paciente',
-      'fr': 'Formulaire d\'admission des patients',
+      'de': 'Kunden anlegen',
+      'es': 'Crear cliente',
+      'fr': 'Créer un client',
     },
     'ic0u8pqs': {
       'en': 'Create new Customer with this Form',
-      'de': 'Bitte füllen Sie das Formular aus, um fortzufahren.',
-      'es': 'Por favor complete el formulario para continuar.',
-      'fr': 'Veuillez remplir le formulaire pour continuer.',
+      'de': 'Erstellen Sie mit diesem Formular einen neuen Kunden',
+      'es': 'Crear nuevo Cliente con este Formulario',
+      'fr': 'Créer un nouveau client avec ce formulaire',
     },
     'jx8qgyjd': {
       'en': 'Home',
@@ -2091,13 +2133,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '411g996a': {
       'en': 'Light Mode',
-      'de': 'Light Mode',
+      'de': 'Lichtmodus',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
     },
     'mc7klcgc': {
       'en': 'Dark Mode',
-      'de': 'Dark Mode',
+      'de': 'Dunkler Modus',
       'es': 'Modo oscuro',
       'fr': 'Mode sombre',
     },
@@ -2136,9 +2178,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'azw44sx6': {
       'en': 'Total Meetings',
-      'de': 'Kunden gesamt',
-      'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'de': 'Gesamtzahl der Meetings',
+      'es': 'Total de reuniones',
+      'fr': 'Total des réunions',
     },
     'd35fb2ze': {
       'en': 'Customer-Meetings',
@@ -2153,6 +2195,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Un résumé de vos réunions',
     },
     '72cuvxfy': {
+      'en': 'Date',
+      'de': 'Datum',
+      'es': 'Fecha',
+      'fr': 'Date',
+    },
+    'ff89rf83': {
       'en': 'Duration',
       'de': 'Dauer',
       'es': 'Duración',
@@ -2268,9 +2316,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yv1tophe': {
       'en': 'An overview of their customer jobs.',
-      'de': 'Eine Übersicht Ihrer Kundenaufträge.',
-      'es': 'Una descripción general de los trabajos de sus clientes.',
-      'fr': 'Un aperçu de vos tâches clients.',
+      'de': 'Eine Übersicht ihrer Kundenjobs.',
+      'es': 'Una visión general de los trabajos de sus clientes.',
+      'fr': 'Un aperçu de leurs tâches clients.',
     },
     'nxmksly7': {
       'en': 'current customers',
@@ -2297,6 +2345,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Un résumé de leurs réunions',
     },
     'j8agtzis': {
+      'en': 'Date',
+      'de': 'Datum',
+      'es': 'Fecha',
+      'fr': 'Date',
+    },
+    'tn9ygrs2': {
       'en': 'Duration',
       'de': 'Dauer',
       'es': 'Duración',
@@ -2367,9 +2421,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wxdt7dec': {
       'en': 'Total Meetings',
-      'de': 'Kunden gesamt',
-      'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'de': 'Gesamtzahl der Meetings',
+      'es': 'Total de reuniones',
+      'fr': 'Total des réunions',
     },
     'dpos0v43': {
       'en': 'Customer-Meetings',
@@ -2379,11 +2433,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cpabnexa': {
       'en': 'A summary of their meetings',
-      'de': 'Eine Zusammenfassung Ihrer Meetings',
-      'es': 'Un resumen de sus reuniones',
-      'fr': 'Un résumé de vos réunions',
+      'de': 'Eine Zusammenfassung ihrer Treffen',
+      'es': 'Un resumen de sus reuniones.',
+      'fr': 'Un résumé de leurs réunions',
     },
     'rtwqlk4h': {
+      'en': 'Date',
+      'de': 'Datum',
+      'es': 'Fecha',
+      'fr': 'Date',
+    },
+    '3e8hb6wh': {
       'en': 'Duration',
       'de': 'Dauer',
       'es': 'Duración',

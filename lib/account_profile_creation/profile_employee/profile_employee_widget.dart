@@ -1091,7 +1091,20 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'j8agtzis' /* Duration */,
+                                          'j8agtzis' /* Date */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'tn9ygrs2' /* Duration */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1279,9 +1292,12 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Text(
-                                                  listViewCustomerMeetingRecord
-                                                      .duration
-                                                      .toString(),
+                                                  valueOrDefault<String>(
+                                                    listViewCustomerMeetingRecord
+                                                        .date
+                                                        ?.toString(),
+                                                    'null',
+                                                  ),
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
                                                           context)
