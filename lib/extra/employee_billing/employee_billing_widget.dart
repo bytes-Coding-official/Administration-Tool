@@ -1388,7 +1388,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 16.0, 12.0, 12.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
