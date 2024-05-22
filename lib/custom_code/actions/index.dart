@@ -1,4 +1,3 @@
-export 'add_languages_to_user.dart' show addLanguagesToUser;
 export 'get_all_i_t_skills.dart' show getAllITSkills;
 export 'remove_assignees_or_add.dart' show removeAssigneesOrAdd;
 export 'avg_costs.dart' show avgCosts;
