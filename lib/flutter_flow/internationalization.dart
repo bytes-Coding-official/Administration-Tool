@@ -1237,7 +1237,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del billete',
+      'es': 'Detalles del boleto',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -2310,9 +2310,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j5z2op8x': {
       'en': 'Employee-Information',
-      'de': 'Kundeninformation',
-      'es': 'Información al cliente',
-      'fr': 'Informations client',
+      'de': 'Mitarbeiterinformation',
+      'es': 'Información del empleado',
+      'fr': 'Informations sur les employés',
     },
     'yv1tophe': {
       'en': 'An overview of their customer jobs.',
@@ -2334,15 +2334,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ymhq664h': {
       'en': 'Employee-Skills',
-      'de': 'Kundeninformation',
-      'es': 'Información al cliente',
-      'fr': 'Informations client',
+      'de': 'Mitarbeiter-Skills',
+      'es': 'Habilidades de los empleados',
+      'fr': 'Compétences des employés',
     },
     '3fkffaue': {
       'en': 'Employee-Languages',
-      'de': 'Kundeninformation',
-      'es': 'Información al cliente',
-      'fr': 'Informations client',
+      'de': 'Mitarbeiter-Sprachen',
+      'es': 'Idiomas de los empleados',
+      'fr': 'Langues des employés',
     },
     'f49vqwjs': {
       'en': 'Customer-Meetings',
@@ -2439,15 +2439,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0wr4a1s4': {
       'en': 'Customer-Skills',
-      'de': 'Kundeninformation',
-      'es': 'Información al cliente',
-      'fr': 'Informations client',
+      'de': 'Kunden-Skills',
+      'es': 'Habilidades del cliente',
+      'fr': 'Compétences client',
     },
     'gzahnh8h': {
       'en': 'Customer-Languages',
-      'de': 'Kundeninformation',
-      'es': 'Información al cliente',
-      'fr': 'Informations client',
+      'de': 'Kundensprachen',
+      'es': 'Idiomas del cliente',
+      'fr': 'Langues du client',
     },
     'dpos0v43': {
       'en': 'Customer-Meetings',
