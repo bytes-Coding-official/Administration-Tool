@@ -769,7 +769,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             queryBuilder: (itskillsRecord) =>
                                 itskillsRecord.where(
                               'users',
-                              arrayContains: currentUserReference,
+                              arrayContains: widget.user,
                             ),
                           ),
                           builder: (context, snapshot) {
@@ -851,7 +851,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             queryBuilder: (languagesRecord) =>
                                 languagesRecord.where(
                               'users',
-                              arrayContains: currentUserReference,
+                              arrayContains: widget.user,
                             ),
                           ),
                           builder: (context, snapshot) {
