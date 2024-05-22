@@ -143,16 +143,13 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                   Align(
                     alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      constraints: const BoxConstraints(
-                        maxWidth: 1270.0,
-                      ),
                       decoration: const BoxDecoration(),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: Wrap(
-                          spacing: 16.0,
-                          runSpacing: 16.0,
+                          spacing: 25.0,
+                          runSpacing: 15.0,
                           alignment: WrapAlignment.start,
                           crossAxisAlignment: WrapCrossAlignment.start,
                           direction: Axis.horizontal,
@@ -525,12 +522,6 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                   ),
                                 ].divide(const SizedBox(height: 12.0)),
                               ),
-                            ),
-                            Container(
-                              constraints: const BoxConstraints(
-                                maxWidth: 570.0,
-                              ),
-                              decoration: const BoxDecoration(),
                             ),
                             Container(
                               constraints: const BoxConstraints(

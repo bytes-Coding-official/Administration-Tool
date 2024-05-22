@@ -249,7 +249,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                   borderRadius: BorderRadius.circular(16.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
+                                    width: 1.0,
                                   ),
                                 ),
                                 child: Row(
@@ -378,7 +378,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: 500.0,
-                        height: 100.0,
+                        height: 80.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).alternate,
                           borderRadius: BorderRadius.circular(16.0),

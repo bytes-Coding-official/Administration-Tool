@@ -179,7 +179,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -289,54 +289,63 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                       );
                                     },
                                   ),
-                                  FlutterFlowCalendar(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    weekFormat: false,
-                                    weekStartsMonday: false,
-                                    rowHeight: 64.0,
-                                    onChange: (DateTimeRange? newSelectedDate) {
-                                      setState(() =>
-                                          _model.calendarSelectedDay =
-                                              newSelectedDate);
-                                    },
-                                    titleStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    dateStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                            ),
-                                    inactiveDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                            ),
-                                    locale: FFLocalizations.of(context)
-                                        .languageCode,
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 10.0, 0.0),
+                                    child: FlutterFlowCalendar(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      iconColor: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      weekFormat: false,
+                                      weekStartsMonday: false,
+                                      rowHeight: 64.0,
+                                      onChange:
+                                          (DateTimeRange? newSelectedDate) {
+                                        setState(() =>
+                                            _model.calendarSelectedDay =
+                                                newSelectedDate);
+                                      },
+                                      titleStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      dayOfWeekStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      dateStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      selectedDateStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      inactiveDateStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                   ),
                                   Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.8,
                                     decoration: const BoxDecoration(),
                                     child: TextFormField(
                                       controller: _model.durationTextController,

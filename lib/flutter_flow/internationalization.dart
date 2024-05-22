@@ -386,7 +386,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Mail',
     },
     'igthvfrg': {
-      'en': 'Customer-Adress',
+      'en': 'Adress',
       'de': 'Kunden-Adresse',
       'es': 'Dirección del cliente',
       'fr': 'Adresse du client',
