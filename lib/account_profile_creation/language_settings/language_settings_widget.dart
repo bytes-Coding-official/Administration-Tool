@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'language_settings_model.dart';
 export 'language_settings_model.dart';
 
@@ -153,20 +152,12 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                  child: PagedListView<DocumentSnapshot<Object?>?,
-                      LanguagesRecord>(
-                    pagingController: _model.setListViewController(
-                      LanguagesRecord.collection,
-                    ),
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    reverse: false,
-                    scrollDirection: Axis.vertical,
-                    builderDelegate: PagedChildBuilderDelegate<LanguagesRecord>(
-                      // Customize what your widget looks like when it's loading the first page.
-                      firstPageProgressIndicatorBuilder: (_) => Center(
+                StreamBuilder<List<ItskillsRecord>>(
+                  stream: queryItskillsRecord(),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -176,144 +167,144 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                             ),
                           ),
                         ),
-                      ),
-                      // Customize what your widget looks like when it's loading another page.
-                      newPageProgressIndicatorBuilder: (_) => Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      itemBuilder: (context, _, listViewIndex) {
-                        final listViewLanguagesRecord = _model
-                            .listViewPagingController!.itemList![listViewIndex];
-                        return InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onLongPress: () async {
-                            logFirebaseEvent(
-                                'LANGUAGE_SETTINGS_Container_14ckmjfy_ON_');
-                            if (valueOrDefault(currentUserDocument?.role, '') ==
-                                'Manager') {
-                              logFirebaseEvent('Container_alert_dialog');
-                              var confirmDialogResponse =
-                                  await showDialog<bool>(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: const Text('Delete Value'),
-                                            content: const Text(
-                                                'Do you really want to delete that value?'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: const Text('Cancel'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: const Text('Confirm'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ) ??
-                                      false;
-                              if (confirmDialogResponse) {
-                                logFirebaseEvent('Container_backend_call');
-                                await listViewLanguagesRecord.reference
-                                    .delete();
-                                logFirebaseEvent('Container_navigate_to');
-                                if (Navigator.of(context).canPop()) {
-                                  context.pop();
+                      );
+                    }
+                    List<ItskillsRecord> columnItskillsRecordList =
+                        snapshot.data!;
+                    return SingleChildScrollView(
+                      primary: false,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(columnItskillsRecordList.length,
+                            (columnIndex) {
+                          final columnItskillsRecord =
+                              columnItskillsRecordList[columnIndex];
+                          return InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onLongPress: () async {
+                              logFirebaseEvent(
+                                  'LANGUAGE_SETTINGS_Container_14ckmjfy_ON_');
+                              if (valueOrDefault(
+                                      currentUserDocument?.role, '') ==
+                                  'Manager') {
+                                logFirebaseEvent('Container_alert_dialog');
+                                var confirmDialogResponse =
+                                    await showDialog<bool>(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: const Text('Delete Value'),
+                                              content: const Text(
+                                                  'Do you really want to delete that value?'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          false),
+                                                  child: const Text('Cancel'),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          true),
+                                                  child: const Text('Confirm'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        ) ??
+                                        false;
+                                if (confirmDialogResponse) {
+                                  logFirebaseEvent('Container_backend_call');
+                                  await columnItskillsRecord.reference.delete();
+                                  logFirebaseEvent('Container_navigate_to');
+                                  if (Navigator.of(context).canPop()) {
+                                    context.pop();
+                                  }
+                                  context.pushNamed('Language-Settings');
+                                } else {
+                                  return;
                                 }
-                                context.pushNamed('Language-Settings');
+
+                                return;
                               } else {
                                 return;
                               }
-
-                              return;
-                            } else {
-                              return;
-                            }
-                          },
-                          child: Container(
-                            width: 100.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: ToggleIcon(
-                                    onPressed: () async {
-                                      final usersElement = currentUserReference;
-                                      final usersUpdate =
-                                          listViewLanguagesRecord.users
-                                                  .contains(usersElement)
-                                              ? FieldValue.arrayRemove(
-                                                  [usersElement])
-                                              : FieldValue.arrayUnion(
-                                                  [usersElement]);
-                                      await listViewLanguagesRecord.reference
-                                          .update({
-                                        ...mapToFirestore(
-                                          {
-                                            'users': usersUpdate,
-                                          },
-                                        ),
-                                      });
-                                    },
-                                    value: listViewLanguagesRecord.users
-                                        .contains(currentUserReference),
-                                    onIcon: Icon(
-                                      Icons.check_box,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 25.0,
-                                    ),
-                                    offIcon: Icon(
-                                      Icons.check_box_outline_blank,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 25.0,
+                            },
+                            child: Container(
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: ToggleIcon(
+                                      onPressed: () async {
+                                        final usersElement =
+                                            currentUserReference;
+                                        final usersUpdate = columnItskillsRecord
+                                                .users
+                                                .contains(usersElement)
+                                            ? FieldValue.arrayRemove(
+                                                [usersElement])
+                                            : FieldValue.arrayUnion(
+                                                [usersElement]);
+                                        await columnItskillsRecord.reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'users': usersUpdate,
+                                            },
+                                          ),
+                                        });
+                                      },
+                                      value: columnItskillsRecord.users
+                                          .contains(currentUserReference),
+                                      onIcon: Icon(
+                                        Icons.check_box,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 25.0,
+                                      ),
+                                      offIcon: Icon(
+                                        Icons.check_box_outline_blank,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 25.0,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    listViewLanguagesRecord.name,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      columnItskillsRecord.name,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                          );
+                        }),
+                      ),
+                    );
+                  },
                 ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
