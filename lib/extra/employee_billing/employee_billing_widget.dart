@@ -599,7 +599,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 12.0, 12.0),
+                                0.0, 12.0, 0.0, 12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,

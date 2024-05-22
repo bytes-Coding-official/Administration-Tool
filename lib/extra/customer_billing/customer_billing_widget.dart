@@ -579,7 +579,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 12.0, 12.0),
+                                    0.0, 12.0, 0.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
