@@ -100,12 +100,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
         primary: false,
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 15.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: Text(
                 widget.title,
+                textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       fontFamily: 'Readex Pro',
                       letterSpacing: 0.0,
