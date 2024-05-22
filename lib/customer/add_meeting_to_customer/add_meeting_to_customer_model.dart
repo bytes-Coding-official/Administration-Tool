@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'add_meeting_to_customer_widget.dart' show AddMeetingToCustomerWidget;
@@ -10,12 +9,9 @@ class AddMeetingToCustomerModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  final formKey = GlobalKey<FormState>();
   // State field(s) for tutor widget.
   List<String>? tutorValue;
   FormFieldController<List<String>>? tutorValueController;
-  // State field(s) for Calendar widget.
-  DateTimeRange? calendarSelectedDay;
   // State field(s) for duration widget.
   FocusNode? durationFocusNode;
   TextEditingController? durationTextController;
@@ -24,6 +20,7 @@ class AddMeetingToCustomerModel
   FocusNode? costsFocusNode;
   TextEditingController? costsTextController;
   String? Function(BuildContext, String?)? costsTextControllerValidator;
+  DateTime? datePicked;
   // Stores action output result for [Custom Action - getUsersFromRef] action in Button widget.
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
@@ -32,12 +29,7 @@ class AddMeetingToCustomerModel
   CustomerMeetingRecord? newmeeting;
 
   @override
-  void initState(BuildContext context) {
-    calendarSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {

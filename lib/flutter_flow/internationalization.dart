@@ -1906,89 +1906,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Buscar un elemento...',
       'fr': 'Rechercher un élément...',
     },
-    '22nnbou1': {
+    '4zfw8bwq': {
       'en': 'duration',
       'de': 'Dauer',
       'es': 'duración',
       'fr': 'durée',
     },
-    'dm5dydjl': {
+    '0zdzhdgd': {
       'en': '0.0',
       'de': '0,0',
       'es': '0.0',
       'fr': '0,0',
     },
-    'xp4nfe90': {
+    'cc3dpdox': {
       'en': 'costs',
       'de': 'Dauer',
       'es': 'duración',
       'fr': 'durée',
     },
-    'ao4af596': {
+    'dw97hdcg': {
       'en': '0.0',
       'de': '0,0',
       'es': '0.0',
       'fr': '0,0',
+    },
+    'h3i1xjk3': {
+      'en': 'Select Date',
+      'de': '',
+      'es': '',
+      'fr': '',
     },
     '0hi0scef': {
       'en': 'Save',
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
-    },
-    'd4r08dbo': {
-      'en': 'Please enter the patients full name.',
-      'de': 'Bitte geben Sie den vollständigen Namen des Patienten ein.',
-      'es': 'Por favor ingrese el nombre completo del paciente.',
-      'fr': 'Veuillez saisir le nom complet du patient.',
-    },
-    'scajuol5': {
-      'en': 'Please choose an option from the dropdown',
-      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
-      'es': 'Por favor elija una opción del menú desplegable',
-      'fr': 'Veuillez choisir une option dans la liste déroulante',
-    },
-    'nk8m3ef2': {
-      'en': 'Please enter an age for the patient.',
-      'de': 'Bitte geben Sie das Alter des Patienten ein.',
-      'es': 'Por favor ingrese una edad para el paciente.',
-      'fr': 'Veuillez entrer un âge pour le patient.',
-    },
-    'yv7pqmtb': {
-      'en': 'Please choose an option from the dropdown',
-      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
-      'es': 'Por favor elija una opción del menú desplegable',
-      'fr': 'Veuillez choisir une option dans la liste déroulante',
-    },
-    '548halmr': {
-      'en': 'Please choose an option from the dropdown',
-      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
-      'es': 'Por favor elija una opción del menú desplegable',
-      'fr': 'Veuillez choisir une option dans la liste déroulante',
-    },
-    'krymuidf': {
-      'en': 'Please enter the date of birth of the patient.',
-      'de': 'Bitte geben Sie das Geburtsdatum des Patienten ein.',
-      'es': 'Por favor ingrese la fecha de nacimiento del paciente.',
-      'fr': 'Veuillez saisir la date de naissance du patient.',
-    },
-    'n82mxek3': {
-      'en': 'Please choose an option from the dropdown',
-      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
-      'es': 'Por favor elija una opción del menú desplegable',
-      'fr': 'Veuillez choisir une option dans la liste déroulante',
-    },
-    'iw5emeyr': {
-      'en': 'Field is required',
-      'de': 'Das Feld ist erforderlich',
-      'es': 'Se requiere campo',
-      'fr': 'Champ requis',
-    },
-    'eesji8y9': {
-      'en': 'Please choose an option from the dropdown',
-      'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
-      'es': 'Por favor elija una opción del menú desplegable',
-      'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
     '142c9phq': {
       'en': 'Add Meeting',

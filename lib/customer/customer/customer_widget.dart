@@ -603,6 +603,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   .labelMedium
                                   .override(
                                     fontFamily: 'Inter',
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                   ),
                             ),

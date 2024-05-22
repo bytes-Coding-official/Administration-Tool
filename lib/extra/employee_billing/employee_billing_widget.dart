@@ -698,16 +698,16 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                     FutureBuilder<int>(
                                       future: queryCustomerCaseRecordCount(
                                         queryBuilder: (customerCaseRecord) =>
-                                            customerCaseRecord.where(Filter.or(
-                                          Filter(
-                                            'assignee',
-                                            arrayContains: currentUserReference,
-                                          ),
-                                          Filter(
-                                            'closed',
-                                            isEqualTo: true,
-                                          ),
-                                        )),
+                                            customerCaseRecord
+                                                .where(
+                                                  'assignee',
+                                                  arrayContains:
+                                                      currentUserReference,
+                                                )
+                                                .where(
+                                                  'closed',
+                                                  isEqualTo: true,
+                                                ),
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.

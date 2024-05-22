@@ -662,6 +662,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
+                          fontSize: 16.0,
                           letterSpacing: 0.0,
                         ),
                   ),
