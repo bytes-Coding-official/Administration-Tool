@@ -279,7 +279,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                       ? FlutterFlowTheme.of(context).accent1
                                       : FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                   border: Border.all(
                                     color: _model.friendsList.contains(
                                             listViewUsersRecord.reference)
@@ -586,7 +586,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',
@@ -594,8 +594,8 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                 letterSpacing: 0.0,
                               ),
                       elevation: 2.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(50.0),

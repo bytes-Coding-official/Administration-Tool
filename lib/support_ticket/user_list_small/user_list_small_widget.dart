@@ -62,6 +62,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
           color: _model.iuserHovered
               ? FlutterFlowTheme.of(context).primaryBackground
               : FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
