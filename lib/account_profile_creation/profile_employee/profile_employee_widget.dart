@@ -956,7 +956,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                             16.0, 12.0, 12.0, 12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
