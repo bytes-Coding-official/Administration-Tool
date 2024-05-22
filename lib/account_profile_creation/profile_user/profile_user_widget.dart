@@ -44,12 +44,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       logFirebaseEvent('PROFILE_USER_ProfileUser_ON_INIT_STATE');
       logFirebaseEvent('ProfileUser_backend_call');
-      _model.userRef = await UsersRecord.getDocumentOnce(widget.user!);
+      _model.userReference = await UsersRecord.getDocumentOnce(widget.user!);
       logFirebaseEvent('ProfileUser_firestore_query');
       _model.query = await queryCustomerMeetingRecordOnce(
         queryBuilder: (customerMeetingRecord) => customerMeetingRecord.where(
           'customer',
-          isEqualTo: _model.userRef?.customer,
+          isEqualTo: _model.userReference?.customer,
         ),
       );
       logFirebaseEvent('ProfileUser_custom_action');
@@ -642,7 +642,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             queryBuilder: (itskillsRecord) =>
                                 itskillsRecord.where(
                               'users',
-                              arrayContains: currentUserReference,
+                              arrayContains: widget.user,
                             ),
                           ),
                           builder: (context, snapshot) {
@@ -724,7 +724,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             queryBuilder: (languagesRecord) =>
                                 languagesRecord.where(
                               'users',
-                              arrayContains: currentUserReference,
+                              arrayContains: widget.user,
                             ),
                           ),
                           builder: (context, snapshot) {

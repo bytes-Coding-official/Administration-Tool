@@ -8,7 +8,7 @@ class ProfileUserModel extends FlutterFlowModel<ProfileUserWidget> {
 
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - Read Document] action in ProfileUser widget.
-  UsersRecord? userRef;
+  UsersRecord? userReference;
   // Stores action output result for [Firestore Query - Query a collection] action in ProfileUser widget.
   List<CustomerMeetingRecord>? query;
   // Stores action output result for [Custom Action - avgCosts] action in ProfileUser widget.
