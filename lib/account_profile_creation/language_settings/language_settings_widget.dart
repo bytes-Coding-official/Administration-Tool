@@ -176,7 +176,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: List.generate(columnItskillsRecordList.length,
-                            (columnIndex) {
+                                (columnIndex) {
                           final columnItskillsRecord =
                               columnItskillsRecordList[columnIndex];
                           return InkWell(
@@ -241,6 +241,10 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
+                                borderRadius: BorderRadius.circular(16.0),
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -301,7 +305,9 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                               ),
                             ),
                           );
-                        }),
+                        })
+                            .divide(const SizedBox(height: 5.0))
+                            .around(const SizedBox(height: 5.0)),
                       ),
                     );
                   },
