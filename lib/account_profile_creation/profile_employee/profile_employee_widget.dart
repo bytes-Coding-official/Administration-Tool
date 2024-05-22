@@ -825,16 +825,15 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                   FutureBuilder<int>(
                                     future: queryCustomerCaseRecordCount(
                                       queryBuilder: (customerCaseRecord) =>
-                                          customerCaseRecord.where(Filter.or(
-                                        Filter(
-                                          'assignee',
-                                          arrayContains: widget.employee,
-                                        ),
-                                        Filter(
-                                          'closed',
-                                          isEqualTo: true,
-                                        ),
-                                      )),
+                                          customerCaseRecord
+                                              .where(
+                                                'assignee',
+                                                arrayContains: widget.employee,
+                                              )
+                                              .where(
+                                                'closed',
+                                                isEqualTo: true,
+                                              ),
                                     ),
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
@@ -1262,6 +1261,9 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     return;
                                   }
 
+                                  logFirebaseEvent(
+                                      'Container_update_app_state');
+                                  FFAppState().update(() {});
                                   logFirebaseEvent('Container_navigate_to');
 
                                   context.pushNamed(

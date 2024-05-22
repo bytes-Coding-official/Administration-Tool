@@ -735,6 +735,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           ),
                                         });
                                       }
+
+                                      logFirebaseEvent(
+                                          'Button_update_app_state');
+                                      setState(() {});
                                     },
                                     text: customerCustomerCaseRecord.assignee
                                                 .contains(
@@ -854,6 +858,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           closed: !customerCustomerCaseRecord
                                               .closed,
                                         ));
+                                        logFirebaseEvent(
+                                            'Button_update_app_state');
+                                        FFAppState().update(() {});
                                       },
                                       text: customerCustomerCaseRecord.closed
                                           ? 'open Case'
@@ -1082,6 +1089,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             return;
                                           }
 
+                                          logFirebaseEvent(
+                                              'Container_update_app_state');
+                                          FFAppState().update(() {});
                                           logFirebaseEvent(
                                               'Container_navigate_to');
                                           if (Navigator.of(context).canPop()) {

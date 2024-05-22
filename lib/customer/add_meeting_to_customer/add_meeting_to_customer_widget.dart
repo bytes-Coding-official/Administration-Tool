@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'add_meeting_to_customer_model.dart';
 export 'add_meeting_to_customer_model.dart';
 
@@ -54,6 +55,8 @@ class _AddMeetingToCustomerWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<CustomerCaseRecord>(
       stream: CustomerCaseRecord.getDocument(widget.customercase!),
       builder: (context, snapshot) {
@@ -176,7 +179,12 @@ class _AddMeetingToCustomerWidgetState
                         ],
                       ),
                       StreamBuilder<List<UsersRecord>>(
-                        stream: queryUsersRecord(),
+                        stream: queryUsersRecord(
+                          queryBuilder: (usersRecord) => usersRecord.where(
+                            'role',
+                            isNotEqualTo: FFAppState().Kunde,
+                          ),
+                        ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -461,7 +469,7 @@ class _AddMeetingToCustomerWidgetState
                           'h3i1xjk3' /* Select Date */,
                         ),
                         options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 0.35,
+                          width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 48.0,
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
@@ -481,6 +489,41 @@ class _AddMeetingToCustomerWidgetState
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      RichText(
+                        textScaler: MediaQuery.of(context).textScaler,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: FFLocalizations.of(context).getText(
+                                'xe9lqz5y' /* Selected Date:  */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
+                            TextSpan(
+                              text: valueOrDefault<String>(
+                                _model.datePicked?.toString(),
+                                '0.0.0',
+                              ),
+                              style: const TextStyle(),
+                            )
+                          ],
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -584,7 +627,7 @@ class _AddMeetingToCustomerWidgetState
                             '0hi0scef' /* Save */,
                           ),
                           options: FFButtonOptions(
-                            width: MediaQuery.sizeOf(context).width * 0.35,
+                            width: MediaQuery.sizeOf(context).width * 0.5,
                             height: 48.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),

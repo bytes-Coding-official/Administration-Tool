@@ -1745,7 +1745,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // createCustomer
+  // CreateCustomer
   {
     'ebpqrveb': {
       'en': 'Full name',
@@ -1932,6 +1932,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h3i1xjk3': {
       'en': 'Select Date',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'xe9lqz5y': {
+      'en': 'Selected Date: ',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
+    'f7685vfe': {
+      'en': 'Hello World',
       'de': '',
       'es': '',
       'fr': '',

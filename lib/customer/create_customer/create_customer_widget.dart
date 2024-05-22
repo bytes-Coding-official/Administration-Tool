@@ -33,7 +33,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
     _model = createModel(context, () => CreateCustomerModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'createCustomer'});
+        parameters: {'screen_name': 'CreateCustomer'});
     _model.fullNameTextController ??= TextEditingController();
     _model.fullNameFocusNode ??= FocusNode();
     _model.fullNameFocusNode!.addListener(() => setState(() {}));

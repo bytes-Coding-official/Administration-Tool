@@ -1600,6 +1600,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                             }
 
                                             logFirebaseEvent(
+                                                'Container_update_app_state');
+                                            FFAppState().update(() {});
+                                            logFirebaseEvent(
                                                 'Container_navigate_to');
 
                                             context

@@ -22,6 +22,12 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  String _Kunde = 'Kunde';
+  String get Kunde => _Kunde;
+  set Kunde(String value) {
+    _Kunde = value;
+  }
+
   final _userDocQueryManager = FutureRequestManager<UsersRecord>();
   Future<UsersRecord> userDocQuery({
     String? uniqueQueryKey,

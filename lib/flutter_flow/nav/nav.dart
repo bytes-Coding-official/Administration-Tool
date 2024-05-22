@@ -237,7 +237,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'createCustomer',
+          name: 'CreateCustomer',
           path: '/createCustomer',
           builder: (context, params) => const CreateCustomerWidget(),
         ),

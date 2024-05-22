@@ -1107,6 +1107,9 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       return;
                                     }
 
+                                    logFirebaseEvent(
+                                        'Container_update_app_state');
+                                    FFAppState().update(() {});
                                     logFirebaseEvent('Container_navigate_to');
 
                                     context.pushNamed('CustomerBilling');

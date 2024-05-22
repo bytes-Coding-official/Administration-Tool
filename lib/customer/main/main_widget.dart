@@ -1280,7 +1280,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 1.0, 0.0, 1.0),
+                                                        0.0, 2.0, 0.0, 2.0),
                                                 child: SizedBox(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1407,7 +1407,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 1.0, 8.0, 1.0),
+                                                  5.0, 0.0, 5.0, 2.0),
                                           child: TextFormField(
                                             controller: _model.textController2,
                                             focusNode:
@@ -1525,7 +1525,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           logFirebaseEvent(
                                               'Button_navigate_to');
 
-                                          context.pushNamed('createCustomer');
+                                          context.pushNamed('CreateCustomer');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -1681,6 +1681,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         onTap: () async {
                                           logFirebaseEvent(
                                               'MAIN_PAGE_listContainer_ON_TAP');
+                                          logFirebaseEvent(
+                                              'listContainer_update_app_state');
+                                          setState(() {});
                                           logFirebaseEvent(
                                               'listContainer_navigate_to');
 
