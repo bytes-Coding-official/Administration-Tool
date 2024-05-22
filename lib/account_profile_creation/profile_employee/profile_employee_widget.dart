@@ -1298,8 +1298,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                       children: [
                                         Text(
                                           valueOrDefault<String>(
-                                            listViewCustomerMeetingRecord.date
-                                                ?.toString(),
+                                            listViewCustomerMeetingRecord.date,
                                             'null',
                                           ),
                                           textAlign: TextAlign.center,

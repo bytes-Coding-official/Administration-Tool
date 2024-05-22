@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for newlangauge widget.
   FocusNode? newlangaugeFocusNode;
   TextEditingController? newlangaugeTextController;
@@ -15,6 +16,7 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
 
   @override
   void dispose() {
+    unfocusNode.dispose();
     newlangaugeFocusNode?.dispose();
     newlangaugeTextController?.dispose();
   }

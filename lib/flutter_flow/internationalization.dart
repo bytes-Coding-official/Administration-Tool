@@ -387,9 +387,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'igthvfrg': {
       'en': 'Adress',
-      'de': 'Kunden-Adresse',
-      'es': 'Dirección del cliente',
-      'fr': 'Adresse du client',
+      'de': 'Adresse',
+      'es': 'Dirección',
+      'fr': 'Une robe',
     },
     'pfk6zl6k': {
       'en': 'Themes',
@@ -441,13 +441,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g13pqfbb': {
       'en': 'Supervisor',
-      'de': 'Aufsicht',
+      'de': 'Betreuer',
       'es': 'Supervisor',
       'fr': 'Superviseur',
     },
     'w6upyuwo': {
       'en': 'ID:',
-      'de': 'AUSWEIS:',
+      'de': 'ID:',
       'es': '',
       'fr': '',
     },
@@ -658,9 +658,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm4jj16bz': {
       'en': 'Search for people...',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Suche nach Personen...',
+      'es': 'Búsqueda de personas...',
+      'fr': 'Recherche de personnes...',
     },
     'j34sl75v': {
       'en': 'Team-Members',
@@ -1243,7 +1243,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del boleto',
+      'es': 'Detalles del billete',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -1386,7 +1386,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'fr': 'Nombre total de clients',
     },
     'dbqutbci': {
       'en': 'Customer-Information',
@@ -1920,9 +1920,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cc3dpdox': {
       'en': 'costs',
-      'de': 'Dauer',
-      'es': 'duración',
-      'fr': 'durée',
+      'de': 'Kosten',
+      'es': 'costos',
+      'fr': 'frais',
     },
     'dw97hdcg': {
       'en': '0.0',
@@ -1932,21 +1932,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h3i1xjk3': {
       'en': 'Select Date',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Datum auswählen',
+      'es': 'Seleccione fecha',
+      'fr': 'Sélectionner une date',
     },
     'xe9lqz5y': {
       'en': 'Selected Date: ',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Ausgewähltes Datum:',
+      'es': 'Fecha seleccionada:',
+      'fr': 'Date sélectionnée :',
     },
     'f7685vfe': {
       'en': 'Hello World',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Hallo Welt',
+      'es': 'Hola Mundo',
+      'fr': 'Bonjour le monde',
     },
     '0hi0scef': {
       'en': 'Save',
@@ -2234,7 +2234,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'fr': 'Nombre total de clients',
     },
     'j5z2op8x': {
       'en': 'Employee-Information',

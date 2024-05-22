@@ -399,7 +399,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                               snapshot.data!;
                                           return Text(
                                             valueOrDefault<String>(
-                                              _model.avgCosts,
+                                              _model.avgCosts?.toString(),
                                               '0.0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
@@ -846,8 +846,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                           valueOrDefault<
                                                               String>(
                                                             listViewCustomerMeetingRecord
-                                                                .date
-                                                                ?.toString(),
+                                                                .date,
                                                             'null',
                                                           ),
                                                           textAlign:

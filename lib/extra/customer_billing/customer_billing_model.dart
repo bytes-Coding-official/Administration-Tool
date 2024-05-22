@@ -12,7 +12,7 @@ class CustomerBillingModel extends FlutterFlowModel<CustomerBillingWidget> {
   String? tCosts;
   List<CustomerMeetingRecord>? textPreviousSnapshot2;
   // Stores action output result for [Custom Action - avgCosts] action in Text widget.
-  String? avgCosts;
+  double? avgCosts;
 
   @override
   void initState(BuildContext context) {}

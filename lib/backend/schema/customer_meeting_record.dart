@@ -26,11 +26,6 @@ class CustomerMeetingRecord extends FirestoreRecord {
   DocumentReference? get customer => _customer;
   bool hasCustomer() => _customer != null;
 
-  // "date" field.
-  DateTime? _date;
-  DateTime? get date => _date;
-  bool hasDate() => _date != null;
-
   // "duration" field.
   double? _duration;
   double get duration => _duration ?? 0.0;
@@ -41,12 +36,17 @@ class CustomerMeetingRecord extends FirestoreRecord {
   double get costs => _costs ?? 0.0;
   bool hasCosts() => _costs != null;
 
+  // "date" field.
+  String? _date;
+  String get date => _date ?? '';
+  bool hasDate() => _date != null;
+
   void _initializeFields() {
     _assignee = getDataList(snapshotData['assignee']);
     _customer = snapshotData['customer'] as DocumentReference?;
-    _date = snapshotData['date'] as DateTime?;
     _duration = castToType<double>(snapshotData['duration']);
     _costs = castToType<double>(snapshotData['costs']);
+    _date = snapshotData['date'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -85,16 +85,16 @@ class CustomerMeetingRecord extends FirestoreRecord {
 
 Map<String, dynamic> createCustomerMeetingRecordData({
   DocumentReference? customer,
-  DateTime? date,
   double? duration,
   double? costs,
+  String? date,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'customer': customer,
-      'date': date,
       'duration': duration,
       'costs': costs,
+      'date': date,
     }.withoutNulls,
   );
 
@@ -110,14 +110,14 @@ class CustomerMeetingRecordDocumentEquality
     const listEquality = ListEquality();
     return listEquality.equals(e1?.assignee, e2?.assignee) &&
         e1?.customer == e2?.customer &&
-        e1?.date == e2?.date &&
         e1?.duration == e2?.duration &&
-        e1?.costs == e2?.costs;
+        e1?.costs == e2?.costs &&
+        e1?.date == e2?.date;
   }
 
   @override
   int hash(CustomerMeetingRecord? e) => const ListEquality()
-      .hash([e?.assignee, e?.customer, e?.date, e?.duration, e?.costs]);
+      .hash([e?.assignee, e?.customer, e?.duration, e?.costs, e?.date]);
 
   @override
   bool isValidKey(Object? o) => o is CustomerMeetingRecord;

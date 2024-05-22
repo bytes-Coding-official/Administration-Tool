@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for newskill widget.
   FocusNode? newskillFocusNode;
   TextEditingController? newskillTextController;
@@ -15,6 +16,7 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
 
   @override
   void dispose() {
+    unfocusNode.dispose();
     newskillFocusNode?.dispose();
     newskillTextController?.dispose();
   }

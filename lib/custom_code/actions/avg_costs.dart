@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<String> avgCosts(List<DocumentReference> documents) async {
+Future<double> avgCosts(List<DocumentReference> documents) async {
   // Add your function code here!
-  double totalRevenue = 0.0;
+  double totalCosts = 0.0;
   int count = 0;
 
   for (final docRef in documents) {
@@ -17,7 +17,8 @@ Future<String> avgCosts(List<DocumentReference> documents) async {
       final docSnapshot = await docRef.get();
       final data = docSnapshot.data() as Map<String, dynamic>?;
       if (data != null && data['costs'] != null) {
-        totalRevenue += data['costs'];
+        final cost = data['costs'] as double;
+        totalCosts += cost;
         count++;
       }
     } catch (error) {
@@ -25,6 +26,7 @@ Future<String> avgCosts(List<DocumentReference> documents) async {
     }
   }
 
-  double averageRevenue = count == 0 ? 0.0 : totalRevenue / count;
-  return averageRevenue.toString();
+  double averageCosts = count == 0 ? 0.99 : totalCosts / count;
+  print('Average costs: $averageCosts');
+  return averageCosts;
 }

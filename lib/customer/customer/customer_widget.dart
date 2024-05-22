@@ -1131,8 +1131,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                 Text(
                                                   valueOrDefault<String>(
                                                     listViewCustomerMeetingRecord
-                                                        .date
-                                                        ?.toString(),
+                                                        .date,
                                                     'null',
                                                   ),
                                                   textAlign: TextAlign.center,

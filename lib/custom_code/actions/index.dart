@@ -10,3 +10,4 @@ export 'get_languages_from_doc_refs.dart' show getLanguagesFromDocRefs;
 export 'avg_revenue.dart' show avgRevenue;
 export 'total_revenue.dart' show totalRevenue;
 export 'total_costs.dart' show totalCosts;
+export 'format_date.dart' show formatDate;

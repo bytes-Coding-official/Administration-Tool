@@ -21,6 +21,8 @@ class AddMeetingToCustomerModel
   TextEditingController? costsTextController;
   String? Function(BuildContext, String?)? costsTextControllerValidator;
   DateTime? datePicked;
+  // Stores action output result for [Custom Action - formatDate] action in Button widget.
+  String? dateFormated;
   // Stores action output result for [Custom Action - getUsersFromRef] action in Button widget.
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.

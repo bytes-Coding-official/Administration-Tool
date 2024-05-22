@@ -899,9 +899,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         'EMPLOYEE_BILLING_listContainer_ON_TAP');
                                     logFirebaseEvent(
                                         'listContainer_navigate_to');
-                                    if (Navigator.of(context).canPop()) {
-                                      context.pop();
-                                    }
+
                                     context.pushNamed(
                                       'Customer',
                                       queryParameters: {
@@ -1635,8 +1633,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                   Text(
                                                     valueOrDefault<String>(
                                                       listViewCustomerMeetingRecord
-                                                          .date
-                                                          ?.toString(),
+                                                          .date,
                                                       'null',
                                                     ),
                                                     textAlign: TextAlign.center,

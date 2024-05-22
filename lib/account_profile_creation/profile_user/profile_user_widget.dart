@@ -594,7 +594,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                 snapshot.data!;
                                             return Text(
                                               valueOrDefault<String>(
-                                                _model.avgCosts,
+                                                _model.avgCosts?.toString(),
                                                 '0.0',
                                               ),
                                               style: FlutterFlowTheme.of(
@@ -1132,12 +1132,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             valueOrDefault<String>(
-                                              listViewCustomerMeetingRecord.date
-                                                  ?.toString(),
+                                              listViewCustomerMeetingRecord
+                                                  .date,
                                               'null',
                                             ),
                                             textAlign: TextAlign.center,
