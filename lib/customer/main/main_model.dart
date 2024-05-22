@@ -26,16 +26,9 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   // State field(s) for mobileView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      mobileViewPagingController1;
-  Query? mobileViewPagingQuery1;
-  List<StreamSubscription?> mobileViewStreamSubscriptions1 = [];
-
-  // State field(s) for mobileView widget.
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      mobileViewPagingController2;
-  Query? mobileViewPagingQuery2;
-  List<StreamSubscription?> mobileViewStreamSubscriptions2 = [];
+      mobileViewPagingController;
+  Query? mobileViewPagingQuery;
+  List<StreamSubscription?> mobileViewStreamSubscriptions = [];
 
   // State field(s) for tablet_DesktopView widget.
 
@@ -63,15 +56,10 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    for (var s in mobileViewStreamSubscriptions1) {
+    for (var s in mobileViewStreamSubscriptions) {
       s?.cancel();
     }
-    mobileViewPagingController1?.dispose();
-
-    for (var s in mobileViewStreamSubscriptions2) {
-      s?.cancel();
-    }
-    mobileViewPagingController2?.dispose();
+    mobileViewPagingController?.dispose();
 
     for (var s in tabletDesktopViewStreamSubscriptions1) {
       s?.cancel();
@@ -86,20 +74,20 @@ class MainModel extends FlutterFlowModel<MainWidget> {
 
   /// Additional helper methods.
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setMobileViewController1(
+      setMobileViewController(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
-    mobileViewPagingController1 ??= _createMobileViewController1(query, parent);
-    if (mobileViewPagingQuery1 != query) {
-      mobileViewPagingQuery1 = query;
-      mobileViewPagingController1?.refresh();
+    mobileViewPagingController ??= _createMobileViewController(query, parent);
+    if (mobileViewPagingQuery != query) {
+      mobileViewPagingQuery = query;
+      mobileViewPagingController?.refresh();
     }
-    return mobileViewPagingController1!;
+    return mobileViewPagingController!;
   }
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createMobileViewController1(
+      _createMobileViewController(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
@@ -108,42 +96,9 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => mobileViewPagingQuery1 ??= query,
+          queryBuilder: (_) => mobileViewPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
-          streamSubscriptions: mobileViewStreamSubscriptions1,
-          controller: controller,
-          pageSize: 15,
-          isStream: true,
-        ),
-      );
-  }
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setMobileViewController2(
-    Query query, {
-    DocumentReference<Object?>? parent,
-  }) {
-    mobileViewPagingController2 ??= _createMobileViewController2(query, parent);
-    if (mobileViewPagingQuery2 != query) {
-      mobileViewPagingQuery2 = query;
-      mobileViewPagingController2?.refresh();
-    }
-    return mobileViewPagingController2!;
-  }
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createMobileViewController2(
-    Query query,
-    DocumentReference<Object?>? parent,
-  ) {
-    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
-        firstPageKey: null);
-    return controller
-      ..addPageRequestListener(
-        (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => mobileViewPagingQuery2 ??= query,
-          nextPageMarker: nextPageMarker,
-          streamSubscriptions: mobileViewStreamSubscriptions2,
+          streamSubscriptions: mobileViewStreamSubscriptions,
           controller: controller,
           pageSize: 15,
           isStream: true,

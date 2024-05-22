@@ -178,7 +178,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                         padding: const EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
@@ -199,7 +199,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                 FFLocalizations.of(context).getText(
                                   'n8xp8945' /* Create an account by using the... */,
                                 ),
-                                textAlign: TextAlign.start,
+                                textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(

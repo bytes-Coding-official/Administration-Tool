@@ -153,7 +153,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                   letterSpacing: 0.0,
                                 ),
                         hintText: FFLocalizations.of(context).getText(
-                          '9jdv7fmi' /* Search for people... */,
+                          'm4jj16bz' /* Search for people... */,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -341,7 +341,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                         ),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(16.0),
                                     border: Border.all(
                                       color:
                                           FlutterFlowTheme.of(context).primary,

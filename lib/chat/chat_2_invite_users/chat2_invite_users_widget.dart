@@ -279,7 +279,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                       ? FlutterFlowTheme.of(context).accent1
                                       : FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
                                     color: _model.friendsList.contains(
                                             listViewUsersRecord.reference)

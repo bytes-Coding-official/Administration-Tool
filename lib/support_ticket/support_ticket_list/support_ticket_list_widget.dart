@@ -258,7 +258,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(16.0),
                                 border: Border.all(
-                                  color: FlutterFlowTheme.of(context).alternate,
+                                  color: FlutterFlowTheme.of(context).primary,
                                   width: 2.0,
                                 ),
                               ),

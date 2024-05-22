@@ -44,6 +44,9 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
     _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
     _model.durationFocusNode!.addListener(() => setState(() {}));
+    _model.costsTextController ??= TextEditingController();
+    _model.costsFocusNode ??= FocusNode();
+    _model.costsFocusNode!.addListener(() => setState(() {}));
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -445,6 +448,108 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                           .asValidator(context),
                                     ),
                                   ),
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.8,
+                                    decoration: const BoxDecoration(),
+                                    child: TextFormField(
+                                      controller: _model.costsTextController,
+                                      focusNode: _model.costsFocusNode,
+                                      autofocus: true,
+                                      textCapitalization:
+                                          TextCapitalization.words,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'xp4nfe90' /* costs */,
+                                        ),
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'ao4af596' /* 0.0 */,
+                                        ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        errorStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        contentPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                16.0, 20.0, 16.0, 20.0),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      textAlign: TextAlign.center,
+                                      keyboardType:
+                                          const TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      cursorColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      validator: _model
+                                          .costsTextControllerValidator
+                                          .asValidator(context),
+                                    ),
+                                  ),
                                 ]
                                     .divide(const SizedBox(height: 12.0))
                                     .addToEnd(const SizedBox(height: 32.0)),
@@ -480,6 +585,8 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 date: _model.calendarSelectedDay?.start,
                                 duration: double.tryParse(
                                     _model.durationTextController.text),
+                                costs: double.tryParse(
+                                    _model.costsTextController.text),
                               ),
                               ...mapToFirestore(
                                 {
@@ -494,6 +601,8 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 date: _model.calendarSelectedDay?.start,
                                 duration: double.tryParse(
                                     _model.durationTextController.text),
+                                costs: double.tryParse(
+                                    _model.costsTextController.text),
                               ),
                               ...mapToFirestore(
                                 {
@@ -550,7 +659,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             '0hi0scef' /* Save */,
                           ),
                           options: FFButtonOptions(
-                            width: MediaQuery.sizeOf(context).width * 0.5,
+                            width: MediaQuery.sizeOf(context).width * 0.35,
                             height: 48.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),

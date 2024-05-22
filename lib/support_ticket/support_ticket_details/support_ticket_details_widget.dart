@@ -1152,7 +1152,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primary,
+                                                        .alternate,
                                                     width: 2.0,
                                                   ),
                                                   borderRadius:
@@ -1239,11 +1239,6 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                  ),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12.0),

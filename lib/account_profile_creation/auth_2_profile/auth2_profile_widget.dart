@@ -122,7 +122,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
                       height: 180.0,

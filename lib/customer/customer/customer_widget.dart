@@ -174,7 +174,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   }
                   final containerCustomerRecord = snapshot.data!;
                   return Container(
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                    ),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 5.0),

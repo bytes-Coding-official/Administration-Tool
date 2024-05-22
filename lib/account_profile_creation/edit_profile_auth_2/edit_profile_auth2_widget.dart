@@ -106,7 +106,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: Text(
                 widget.title,
-                textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       fontFamily: 'Readex Pro',
                       letterSpacing: 0.0,
@@ -729,14 +728,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(12.0),

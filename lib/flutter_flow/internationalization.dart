@@ -629,12 +629,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
       'fr': '',
     },
-    't3isdaat': {
-      'en': 'ID#: ',
-      'de': 'ID#: ',
-      'es': '',
-      'fr': '',
-    },
     'nhxrq5ni': {
       'en': 'ID#: ',
       'de': 'ID#: ',
@@ -662,7 +656,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Búsqueda de personas...',
       'fr': 'Recherche de personnes...',
     },
-    '9jdv7fmi': {
+    'm4jj16bz': {
       'en': 'Search for people...',
       'de': '',
       'es': '',
@@ -1919,6 +1913,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'durée',
     },
     'dm5dydjl': {
+      'en': '0.0',
+      'de': '0,0',
+      'es': '0.0',
+      'fr': '0,0',
+    },
+    'xp4nfe90': {
+      'en': 'costs',
+      'de': 'Dauer',
+      'es': 'duración',
+      'fr': 'durée',
+    },
+    'ao4af596': {
       'en': '0.0',
       'de': '0,0',
       'es': '0.0',

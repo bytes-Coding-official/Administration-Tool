@@ -377,7 +377,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: 500.0,
-                        height: 80.0,
+                        height: 70.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).alternate,
                           borderRadius: BorderRadius.circular(16.0),

@@ -807,7 +807,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                         'hb047u9p' /* Add Customer */,
                       ),
                       options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 0.7,
+                        width: MediaQuery.sizeOf(context).width * 0.5,
                         height: 48.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),

@@ -704,7 +704,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                         'p25f6cpa' /* Add Case */,
                       ),
                       options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 0.5,
+                        width: MediaQuery.sizeOf(context).width * 0.35,
                         height: 48.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),

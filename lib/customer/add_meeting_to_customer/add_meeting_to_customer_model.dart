@@ -20,6 +20,10 @@ class AddMeetingToCustomerModel
   FocusNode? durationFocusNode;
   TextEditingController? durationTextController;
   String? Function(BuildContext, String?)? durationTextControllerValidator;
+  // State field(s) for costs widget.
+  FocusNode? costsFocusNode;
+  TextEditingController? costsTextController;
+  String? Function(BuildContext, String?)? costsTextControllerValidator;
   // Stores action output result for [Custom Action - getUsersFromRef] action in Button widget.
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
@@ -40,5 +44,8 @@ class AddMeetingToCustomerModel
     unfocusNode.dispose();
     durationFocusNode?.dispose();
     durationTextController?.dispose();
+
+    costsFocusNode?.dispose();
+    costsTextController?.dispose();
   }
 }
