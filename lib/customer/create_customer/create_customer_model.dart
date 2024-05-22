@@ -8,21 +8,10 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  final formKey = GlobalKey<FormState>();
   // State field(s) for fullName widget.
   FocusNode? fullNameFocusNode;
   TextEditingController? fullNameTextController;
   String? Function(BuildContext, String?)? fullNameTextControllerValidator;
-  String? _fullNameTextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'a90yebyy' /* Please enter the patients full... */,
-      );
-    }
-
-    return null;
-  }
-
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
@@ -35,16 +24,6 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   FocusNode? streetFocusNode;
   TextEditingController? streetTextController;
   String? Function(BuildContext, String?)? streetTextControllerValidator;
-  String? _streetTextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'ul8umbka' /* Please enter the date of birth... */,
-      );
-    }
-
-    return null;
-  }
-
   // State field(s) for city widget.
   FocusNode? cityFocusNode;
   TextEditingController? cityTextController;
@@ -66,10 +45,7 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   CustomerRecord? newCustomer;
 
   @override
-  void initState(BuildContext context) {
-    fullNameTextControllerValidator = _fullNameTextControllerValidator;
-    streetTextControllerValidator = _streetTextControllerValidator;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {

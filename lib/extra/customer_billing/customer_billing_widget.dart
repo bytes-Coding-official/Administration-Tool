@@ -1368,7 +1368,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                         ).animateOnPageLoad(
                             animationsMap['containerOnPageLoadAnimation5']!),
                       ),
-                  ],
+                  ].divide(const SizedBox(height: 5.0)),
                 ),
               ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
             ),

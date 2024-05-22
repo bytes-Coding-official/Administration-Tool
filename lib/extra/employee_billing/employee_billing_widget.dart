@@ -593,221 +593,193 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                       ],
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 12.0, 12.0, 12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                16.0, 12.0, 12.0, 12.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'dbqutbci' /* Customer-Information */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'dbqutbci' /* Customer-Information */,
+                                      'llfx7g5q' /* An overview of your customer j... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
+                                        .labelMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'llfx7g5q' /* An overview of your customer j... */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        FutureBuilder<int>(
-                                          future: queryCustomerCaseRecordCount(
-                                            queryBuilder:
-                                                (customerCaseRecord) =>
-                                                    customerCaseRecord
-                                                        .where(
-                                                          'assignee',
-                                                          arrayContains:
-                                                              currentUserReference,
-                                                        )
-                                                        .where(
-                                                          'closed',
-                                                          isEqualTo: false,
-                                                        ),
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            int textCount = snapshot.data!;
-                                            return Text(
-                                              textCount.toString(),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        fontSize: 26.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            );
-                                          },
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'fxfdsogo' /* current customers */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 5.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        FutureBuilder<int>(
-                                          future: queryCustomerCaseRecordCount(
-                                            queryBuilder:
-                                                (customerCaseRecord) =>
-                                                    customerCaseRecord
-                                                        .where(Filter.or(
-                                              Filter(
-                                                'assignee',
-                                                arrayContains:
-                                                    currentUserReference,
-                                              ),
-                                              Filter(
-                                                'closed',
-                                                isEqualTo: true,
-                                              ),
-                                            )),
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            int textCount = snapshot.data!;
-                                            return Text(
-                                              textCount.toString(),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        fontSize: 26.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            );
-                                          },
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '6l634rov' /* completed customers */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 5.0)),
-                        ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    FutureBuilder<int>(
+                                      future: queryCustomerCaseRecordCount(
+                                        queryBuilder: (customerCaseRecord) =>
+                                            customerCaseRecord
+                                                .where(
+                                                  'assignee',
+                                                  arrayContains:
+                                                      currentUserReference,
+                                                )
+                                                .where(
+                                                  'closed',
+                                                  isEqualTo: false,
+                                                ),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        int textCount = snapshot.data!;
+                                        return Text(
+                                          textCount.toString(),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 26.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'fxfdsogo' /* current customers */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    FutureBuilder<int>(
+                                      future: queryCustomerCaseRecordCount(
+                                        queryBuilder: (customerCaseRecord) =>
+                                            customerCaseRecord.where(Filter.or(
+                                          Filter(
+                                            'assignee',
+                                            arrayContains: currentUserReference,
+                                          ),
+                                          Filter(
+                                            'closed',
+                                            isEqualTo: true,
+                                          ),
+                                        )),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        int textCount = snapshot.data!;
+                                        return Text(
+                                          textCount.toString(),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 26.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          '6l634rov' /* completed customers */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ].divide(const SizedBox(height: 5.0)),
                       ),
                     ),
                   ).animateOnPageLoad(
@@ -2119,7 +2091,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                     ).animateOnPageLoad(
                         animationsMap['containerOnPageLoadAnimation7']!),
                   ),
-              ],
+              ].divide(const SizedBox(height: 5.0)),
             ),
           ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
         ),
