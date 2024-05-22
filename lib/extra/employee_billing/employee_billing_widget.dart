@@ -9,6 +9,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'employee_billing_model.dart';
@@ -36,6 +37,26 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'EmployeeBilling'});
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('EMPLOYEE_BILLING_EmployeeBilling_ON_INIT');
+      logFirebaseEvent('EmployeeBilling_firestore_query');
+      _model.queryResult = await queryCustomerMeetingRecordOnce(
+        queryBuilder: (customerMeetingRecord) => customerMeetingRecord.where(
+          'assignee',
+          arrayContains: currentUserReference,
+        ),
+      );
+      logFirebaseEvent('EmployeeBilling_custom_action');
+      _model.total = await actions.totalRevenue(
+        _model.queryResult!.map((e) => e.reference).toList().toList(),
+      );
+      logFirebaseEvent('EmployeeBilling_custom_action');
+      _model.avg = await actions.avgCosts(
+        _model.queryResult!.map((e) => e.reference).toList().toList(),
+      );
+    });
+
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -270,77 +291,20 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  StreamBuilder<List<CustomerMeetingRecord>>(
-                                    stream: queryCustomerMeetingRecord(
-                                      queryBuilder: (customerMeetingRecord) =>
-                                          customerMeetingRecord.where(
-                                        'assignee',
-                                        arrayContains: currentUserReference,
-                                      ),
-                                    )..listen((snapshot) async {
-                                        List<CustomerMeetingRecord>
-                                            textCustomerMeetingRecordList =
-                                            snapshot;
-                                        if (_model.textPreviousSnapshot1 !=
-                                                null &&
-                                            !const ListEquality(
-                                                    CustomerMeetingRecordDocumentEquality())
-                                                .equals(
-                                                    textCustomerMeetingRecordList,
-                                                    _model
-                                                        .textPreviousSnapshot1)) {
-                                          logFirebaseEvent(
-                                              'EMPLOYEE_BILLING_Text_1ftk445p_ON_DATA_C');
-                                          logFirebaseEvent(
-                                              'Text_custom_action');
-                                          _model.totalRev =
-                                              await actions.totalRevenue(
-                                            textCustomerMeetingRecordList
-                                                .map((e) => e.reference)
-                                                .toList(),
-                                          );
-
-                                          setState(() {});
-                                        }
-                                        _model.textPreviousSnapshot1 = snapshot;
-                                      }),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<CustomerMeetingRecord>
-                                          textCustomerMeetingRecordList =
-                                          snapshot.data!;
-                                      return Text(
-                                        valueOrDefault<String>(
-                                          _model.totalRev,
-                                          '0',
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.total?.toString(),
+                                      '0.00',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          fontSize: 26.0,
+                                          letterSpacing: 0.0,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              fontSize: 26.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      );
-                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -383,77 +347,20 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  StreamBuilder<List<CustomerMeetingRecord>>(
-                                    stream: queryCustomerMeetingRecord(
-                                      queryBuilder: (customerMeetingRecord) =>
-                                          customerMeetingRecord.where(
-                                        'assignee',
-                                        arrayContains: currentUserReference,
-                                      ),
-                                    )..listen((snapshot) async {
-                                        List<CustomerMeetingRecord>
-                                            textCustomerMeetingRecordList =
-                                            snapshot;
-                                        if (_model.textPreviousSnapshot2 !=
-                                                null &&
-                                            !const ListEquality(
-                                                    CustomerMeetingRecordDocumentEquality())
-                                                .equals(
-                                                    textCustomerMeetingRecordList,
-                                                    _model
-                                                        .textPreviousSnapshot2)) {
-                                          logFirebaseEvent(
-                                              'EMPLOYEE_BILLING_Text_ru1otrw6_ON_DATA_C');
-                                          logFirebaseEvent(
-                                              'Text_custom_action');
-                                          _model.avgRev =
-                                              await actions.avgRevenue(
-                                            textCustomerMeetingRecordList
-                                                .map((e) => e.reference)
-                                                .toList(),
-                                          );
-
-                                          setState(() {});
-                                        }
-                                        _model.textPreviousSnapshot2 = snapshot;
-                                      }),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<CustomerMeetingRecord>
-                                          textCustomerMeetingRecordList =
-                                          snapshot.data!;
-                                      return Text(
-                                        valueOrDefault<String>(
-                                          _model.avgRev,
-                                          '0',
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.avg?.toString(),
+                                      '0.00',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiary,
+                                          fontSize: 26.0,
+                                          letterSpacing: 0.0,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              fontSize: 26.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      );
-                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -843,7 +750,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                         ),
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 0.35,
+                          height: MediaQuery.sizeOf(context).height * 0.3,
                           decoration: const BoxDecoration(),
                           child: PagedListView<DocumentSnapshot<Object?>?,
                               CustomerCaseRecord>.separated(
@@ -1407,398 +1314,407 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 0.35,
                             decoration: const BoxDecoration(),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 5.0),
-                                  child: SingleChildScrollView(
-                                    scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'ymj55p09' /* Date */,
+                            child: SingleChildScrollView(
+                              primary: false,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'ymj55p09' /* Date */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            '9jkwcq7p' /* Duration */,
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '9jkwcq7p' /* Duration */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'o52da1js' /* Costs */,
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'o52da1js' /* Costs */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'phi510ca' /* Supervisor */,
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'phi510ca' /* Supervisor */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ].divide(const SizedBox(width: 15.0)),
+                                        ].divide(const SizedBox(width: 15.0)),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                StreamBuilder<List<CustomerMeetingRecord>>(
-                                  stream: queryCustomerMeetingRecord(
-                                    queryBuilder: (customerMeetingRecord) =>
-                                        customerMeetingRecord.where(
-                                      'assignee',
-                                      arrayContains: currentUserReference,
+                                  StreamBuilder<List<CustomerMeetingRecord>>(
+                                    stream: queryCustomerMeetingRecord(
+                                      queryBuilder: (customerMeetingRecord) =>
+                                          customerMeetingRecord.where(
+                                        'assignee',
+                                        arrayContains: currentUserReference,
+                                      ),
                                     ),
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    }
-                                    List<CustomerMeetingRecord>
-                                        listViewCustomerMeetingRecordList =
-                                        snapshot.data!;
-                                    return ListView.separated(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      itemCount:
-                                          listViewCustomerMeetingRecordList
-                                              .length,
-                                      separatorBuilder: (_, __) =>
-                                          const SizedBox(height: 15.0),
-                                      itemBuilder: (context, listViewIndex) {
-                                        final listViewCustomerMeetingRecord =
-                                            listViewCustomerMeetingRecordList[
-                                                listViewIndex];
-                                        return InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onLongPress: () async {
-                                            logFirebaseEvent(
-                                                'EMPLOYEE_BILLING_Container_0psriqzo_ON_L');
-                                            if (valueOrDefault(
-                                                    currentUserDocument?.role,
-                                                    '') ==
-                                                'Manager') {
+                                        );
+                                      }
+                                      List<CustomerMeetingRecord>
+                                          listViewCustomerMeetingRecordList =
+                                          snapshot.data!;
+                                      return ListView.separated(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount:
+                                            listViewCustomerMeetingRecordList
+                                                .length,
+                                        separatorBuilder: (_, __) =>
+                                            const SizedBox(height: 15.0),
+                                        itemBuilder: (context, listViewIndex) {
+                                          final listViewCustomerMeetingRecord =
+                                              listViewCustomerMeetingRecordList[
+                                                  listViewIndex];
+                                          return InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onLongPress: () async {
                                               logFirebaseEvent(
-                                                  'Container_alert_dialog');
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            title: const Text(
-                                                                'Confirm Delete'),
-                                                            content: const Text(
-                                                                'Do you really want to delete that Meeting?'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        false),
-                                                                child: const Text(
-                                                                    'Cancel'),
-                                                              ),
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        true),
-                                                                child: const Text(
-                                                                    'Confirm'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
+                                                  'EMPLOYEE_BILLING_Container_0psriqzo_ON_L');
+                                              if (valueOrDefault(
+                                                      currentUserDocument?.role,
+                                                      '') ==
+                                                  'Manager') {
                                                 logFirebaseEvent(
-                                                    'Container_backend_call');
-                                                await listViewCustomerMeetingRecord
-                                                    .reference
-                                                    .delete();
+                                                    'Container_alert_dialog');
+                                                var confirmDialogResponse =
+                                                    await showDialog<bool>(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              title: const Text(
+                                                                  'Confirm Delete'),
+                                                              content: const Text(
+                                                                  'Do you really want to delete that Meeting?'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          false),
+                                                                  child: const Text(
+                                                                      'Cancel'),
+                                                                ),
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          true),
+                                                                  child: const Text(
+                                                                      'Confirm'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        ) ??
+                                                        false;
+                                                if (confirmDialogResponse) {
+                                                  logFirebaseEvent(
+                                                      'Container_backend_call');
+                                                  await listViewCustomerMeetingRecord
+                                                      .reference
+                                                      .delete();
+                                                } else {
+                                                  return;
+                                                }
+
+                                                logFirebaseEvent(
+                                                    'Container_alert_dialog');
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: const Text('Done'),
+                                                      content: const Text(
+                                                          'Meeting Deleted'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
                                               } else {
                                                 return;
                                               }
 
                                               logFirebaseEvent(
-                                                  'Container_alert_dialog');
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text('Done'),
-                                                    content:
-                                                        const Text('Meeting Deleted'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            } else {
-                                              return;
-                                            }
+                                                  'Container_update_app_state');
+                                              FFAppState().update(() {});
+                                              logFirebaseEvent(
+                                                  'Container_navigate_to');
 
-                                            logFirebaseEvent(
-                                                'Container_update_app_state');
-                                            FFAppState().update(() {});
-                                            logFirebaseEvent(
-                                                'Container_navigate_to');
-
-                                            context
-                                                .pushNamed('CustomerBilling');
-                                          },
-                                          child: Container(
-                                            width: 100.0,
-                                            height: 100.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                              border: Border.all(
+                                              context
+                                                  .pushNamed('CustomerBilling');
+                                            },
+                                            child: Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 1.0,
+                                                ),
                                               ),
-                                            ),
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      listViewCustomerMeetingRecord
-                                                          .date,
-                                                      'null',
+                                              child: SingleChildScrollView(
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        listViewCustomerMeetingRecord
+                                                            .date,
+                                                        'null',
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 20.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                  Text(
-                                                    listViewCustomerMeetingRecord
-                                                        .duration
-                                                        .toString(),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                  Text(
-                                                    listViewCustomerMeetingRecord
-                                                        .costs
-                                                        .toString(),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                  Builder(
-                                                    builder: (context) {
-                                                      final assignees =
-                                                          listViewCustomerMeetingRecord
-                                                              .assignee
-                                                              .toList();
-                                                      return SingleChildScrollView(
-                                                        scrollDirection:
-                                                            Axis.horizontal,
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .end,
-                                                          children: List.generate(
-                                                              assignees.length,
-                                                              (assigneesIndex) {
-                                                            final assigneesItem =
-                                                                assignees[
-                                                                    assigneesIndex];
-                                                            return StreamBuilder<
-                                                                UsersRecord>(
-                                                              stream: UsersRecord
-                                                                  .getDocument(
-                                                                      assigneesItem),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                    child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
+                                                    Text(
+                                                      listViewCustomerMeetingRecord
+                                                          .duration
+                                                          .toString(),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 20.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                    Text(
+                                                      listViewCustomerMeetingRecord
+                                                          .costs
+                                                          .toString(),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 20.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                    Builder(
+                                                      builder: (context) {
+                                                        final assignees =
+                                                            listViewCustomerMeetingRecord
+                                                                .assignee
+                                                                .toList();
+                                                        return SingleChildScrollView(
+                                                          scrollDirection:
+                                                              Axis.horizontal,
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .end,
+                                                            children: List.generate(
+                                                                assignees
+                                                                    .length,
+                                                                (assigneesIndex) {
+                                                              final assigneesItem =
+                                                                  assignees[
+                                                                      assigneesIndex];
+                                                              return StreamBuilder<
+                                                                  UsersRecord>(
+                                                                stream: UsersRecord
+                                                                    .getDocument(
+                                                                        assigneesItem),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
                                                                       child:
-                                                                          CircularProgressIndicator(
-                                                                        valueColor:
-                                                                            AlwaysStoppedAnimation<Color>(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            CircularProgressIndicator(
+                                                                          valueColor:
+                                                                              AlwaysStoppedAnimation<Color>(
+                                                                            FlutterFlowTheme.of(context).primary,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  final containerUsersRecord =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  return Container(
+                                                                    width: 40.0,
+                                                                    height:
+                                                                        40.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent1,
+                                                                      shape: BoxShape
+                                                                          .circle,
+                                                                      border:
+                                                                          Border
+                                                                              .all(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        width:
+                                                                            2.0,
+                                                                      ),
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding:
+                                                                          const EdgeInsets.all(
+                                                                              2.0),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(40.0),
+                                                                        child: Image
+                                                                            .network(
+                                                                          containerUsersRecord
+                                                                              .photoUrl,
+                                                                          width:
+                                                                              60.0,
+                                                                          height:
+                                                                              60.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   );
-                                                                }
-                                                                final containerUsersRecord =
-                                                                    snapshot
-                                                                        .data!;
-                                                                return Container(
-                                                                  width: 40.0,
-                                                                  height: 40.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent1,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      width:
-                                                                          2.0,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            2.0),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              40.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        containerUsersRecord
-                                                                            .photoUrl,
-                                                                        width:
-                                                                            60.0,
-                                                                        height:
-                                                                            60.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            );
-                                                          }).divide(const SizedBox(
-                                                              width: 4.0)),
-                                                        ),
-                                                      );
-                                                    },
-                                                  ),
-                                                ]
-                                                    .divide(
-                                                        const SizedBox(width: 15.0))
-                                                    .around(
-                                                        const SizedBox(width: 15.0)),
+                                                                },
+                                                              );
+                                                            }).divide(const SizedBox(
+                                                                width: 4.0)),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ),
+                                                  ]
+                                                      .divide(
+                                                          const SizedBox(width: 15.0))
+                                                      .around(const SizedBox(
+                                                          width: 15.0)),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        );
-                                      },
-                                    ).animateOnPageLoad(animationsMap[
-                                        'listViewOnPageLoadAnimation']!);
-                                  },
-                                ),
-                              ],
+                                          );
+                                        },
+                                      ).animateOnPageLoad(animationsMap[
+                                          'listViewOnPageLoadAnimation']!);
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ].divide(const SizedBox(height: 5.0)),

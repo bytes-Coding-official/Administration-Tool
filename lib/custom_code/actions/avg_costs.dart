@@ -12,21 +12,28 @@ Future<double> avgCosts(List<DocumentReference> documents) async {
   double totalCosts = 0.0;
   int count = 0;
 
+  print(
+      'Starting to calculate average costs. Number of documents: ${documents.length}');
+
   for (final docRef in documents) {
     try {
       final docSnapshot = await docRef.get();
       final data = docSnapshot.data() as Map<String, dynamic>?;
-      if (data != null && data['costs'] != null) {
-        final cost = data['costs'] as double;
-        totalCosts += cost;
-        count++;
+
+      if (data != null) {
+        if (data.containsKey('costs') && data.containsKey('duration')) {
+          final cost = data['costs'] as double;
+          final duration = data['duration'] as double;
+          totalCosts += cost * duration;
+          count++;
+        }
       }
     } catch (error) {
       // Handle any errors if necessary
+      return -1.1;
     }
   }
 
-  double averageCosts = count == 0 ? 0.99 : totalCosts / count;
-  print('Average costs: $averageCosts');
+  double averageCosts = count == 0 ? 0.0 : totalCosts / count;
   return averageCosts;
 }

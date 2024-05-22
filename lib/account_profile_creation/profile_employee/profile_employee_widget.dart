@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -40,6 +41,26 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'ProfileEmployee'});
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('PROFILE_EMPLOYEE_ProfileEmployee_ON_INIT');
+      logFirebaseEvent('ProfileEmployee_firestore_query');
+      _model.query = await queryCustomerMeetingRecordOnce(
+        queryBuilder: (customerMeetingRecord) => customerMeetingRecord.where(
+          'assignee',
+          arrayContains: widget.employee,
+        ),
+      );
+      logFirebaseEvent('ProfileEmployee_custom_action');
+      _model.total = await actions.totalRevenue(
+        _model.query!.map((e) => e.reference).toList().toList(),
+      );
+      logFirebaseEvent('ProfileEmployee_custom_action');
+      _model.avg = await actions.avgCosts(
+        _model.query!.map((e) => e.reference).toList().toList(),
+      );
+    });
+
     animationsMap.addAll({
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -403,82 +424,21 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      StreamBuilder<
-                                          List<CustomerMeetingRecord>>(
-                                        stream: queryCustomerMeetingRecord(
-                                          queryBuilder:
-                                              (customerMeetingRecord) =>
-                                                  customerMeetingRecord.where(
-                                            'assignee',
-                                            arrayContains: widget.employee,
-                                          ),
-                                        )..listen((snapshot) async {
-                                            List<CustomerMeetingRecord>
-                                                textCustomerMeetingRecordList =
-                                                snapshot;
-                                            if (_model.textPreviousSnapshot1 !=
-                                                    null &&
-                                                !const ListEquality(
-                                                        CustomerMeetingRecordDocumentEquality())
-                                                    .equals(
-                                                        textCustomerMeetingRecordList,
-                                                        _model
-                                                            .textPreviousSnapshot1)) {
-                                              logFirebaseEvent(
-                                                  'PROFILE_EMPLOYEE_Text_w1jkfd4v_ON_DATA_C');
-                                              logFirebaseEvent(
-                                                  'Text_custom_action');
-                                              _model.totalRev =
-                                                  await actions.totalRevenue(
-                                                textCustomerMeetingRecordList
-                                                    .map((e) => e.reference)
-                                                    .toList(),
-                                              );
-
-                                              setState(() {});
-                                            }
-                                            _model.textPreviousSnapshot1 =
-                                                snapshot;
-                                          }),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          List<CustomerMeetingRecord>
-                                              textCustomerMeetingRecordList =
-                                              snapshot.data!;
-                                          return Text(
-                                            valueOrDefault<String>(
-                                              _model.totalRev,
-                                              '0',
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .displaySmall
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                                      Text(
+                                        valueOrDefault<String>(
+                                          _model.total?.toString(),
+                                          '0.00',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .primary,
-                                                  fontSize: 26.0,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          );
-                                        },
+                                              fontSize: 26.0,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -521,82 +481,21 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      StreamBuilder<
-                                          List<CustomerMeetingRecord>>(
-                                        stream: queryCustomerMeetingRecord(
-                                          queryBuilder:
-                                              (customerMeetingRecord) =>
-                                                  customerMeetingRecord.where(
-                                            'assignee',
-                                            arrayContains: widget.employee,
-                                          ),
-                                        )..listen((snapshot) async {
-                                            List<CustomerMeetingRecord>
-                                                textCustomerMeetingRecordList =
-                                                snapshot;
-                                            if (_model.textPreviousSnapshot2 !=
-                                                    null &&
-                                                !const ListEquality(
-                                                        CustomerMeetingRecordDocumentEquality())
-                                                    .equals(
-                                                        textCustomerMeetingRecordList,
-                                                        _model
-                                                            .textPreviousSnapshot2)) {
-                                              logFirebaseEvent(
-                                                  'PROFILE_EMPLOYEE_Text_ctu9jm2p_ON_DATA_C');
-                                              logFirebaseEvent(
-                                                  'Text_custom_action');
-                                              _model.avgRev =
-                                                  await actions.avgRevenue(
-                                                textCustomerMeetingRecordList
-                                                    .map((e) => e.reference)
-                                                    .toList(),
-                                              );
-
-                                              setState(() {});
-                                            }
-                                            _model.textPreviousSnapshot2 =
-                                                snapshot;
-                                          }),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          List<CustomerMeetingRecord>
-                                              textCustomerMeetingRecordList =
-                                              snapshot.data!;
-                                          return Text(
-                                            valueOrDefault<String>(
-                                              _model.avgRev,
-                                              '0',
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .displaySmall
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                                      Text(
+                                        valueOrDefault<String>(
+                                          _model.avg?.toString(),
+                                          '0.00',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .tertiary,
-                                                  fontSize: 26.0,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          );
-                                        },
+                                              fontSize: 26.0,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(

@@ -625,8 +625,10 @@ class _AddMeetingToCustomerWidgetState
                                 },
                               );
                               logFirebaseEvent('Button_navigate_to');
-
-                              context.goNamed(
+                              if (Navigator.of(context).canPop()) {
+                                context.pop();
+                              }
+                              context.pushNamed(
                                 'Customer',
                                 queryParameters: {
                                   'customercase': serializeParam(

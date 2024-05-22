@@ -7,12 +7,12 @@ class CustomerBillingModel extends FlutterFlowModel<CustomerBillingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  List<CustomerMeetingRecord>? textPreviousSnapshot1;
-  // Stores action output result for [Custom Action - totalCosts] action in Text widget.
-  String? tCosts;
-  List<CustomerMeetingRecord>? textPreviousSnapshot2;
-  // Stores action output result for [Custom Action - avgCosts] action in Text widget.
-  double? avgCosts;
+  // Stores action output result for [Firestore Query - Query a collection] action in CustomerBilling widget.
+  List<CustomerMeetingRecord>? query;
+  // Stores action output result for [Custom Action - avgCosts] action in CustomerBilling widget.
+  double? avg;
+  // Stores action output result for [Custom Action - totalRevenue] action in CustomerBilling widget.
+  double? total;
 
   @override
   void initState(BuildContext context) {}
