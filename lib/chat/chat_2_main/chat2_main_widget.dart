@@ -139,15 +139,15 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.white,
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
