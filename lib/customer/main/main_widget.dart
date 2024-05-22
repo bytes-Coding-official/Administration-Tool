@@ -1542,7 +1542,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .secondaryBackground,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -1552,8 +1552,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -1585,7 +1586,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .secondaryBackground,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -1595,8 +1596,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:

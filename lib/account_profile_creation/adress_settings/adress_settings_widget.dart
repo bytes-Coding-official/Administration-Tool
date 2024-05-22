@@ -526,7 +526,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter',
@@ -534,8 +534,8 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(12.0),

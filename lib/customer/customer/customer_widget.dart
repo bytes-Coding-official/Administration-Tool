@@ -748,8 +748,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).tertiary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -758,8 +758,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             fontWeight: FontWeight.bold,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(16.0),
@@ -809,8 +810,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).tertiary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -819,8 +820,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             fontWeight: FontWeight.bold,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(16.0),
@@ -864,7 +866,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .tertiary,
+                                            .secondaryBackground,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -873,8 +875,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                               fontWeight: FontWeight.bold,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
                                           width: 1.0,
                                         ),
                                         borderRadius:

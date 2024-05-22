@@ -807,13 +807,13 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                         'hb047u9p' /* Add Customer */,
                       ),
                       options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 0.5,
+                        width: MediaQuery.sizeOf(context).width * 0.7,
                         height: 48.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Inter',
@@ -821,8 +821,8 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),

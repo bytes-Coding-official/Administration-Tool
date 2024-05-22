@@ -355,7 +355,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',
@@ -363,8 +363,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(12.0),
@@ -514,7 +514,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                       24.0, 0.0, 24.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -523,8 +524,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).primary,
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
