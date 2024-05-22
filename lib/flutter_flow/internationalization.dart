@@ -387,7 +387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'igthvfrg': {
       'en': 'Adress',
-      'de': 'Adresse',
+      'de': 'Ein Kleid',
       'es': 'Dirección',
       'fr': 'Une robe',
     },
@@ -441,7 +441,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g13pqfbb': {
       'en': 'Supervisor',
-      'de': 'Betreuer',
+      'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
     },
