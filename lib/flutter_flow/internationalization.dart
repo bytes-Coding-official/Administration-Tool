@@ -2309,7 +2309,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Clients totaux',
     },
     'j5z2op8x': {
-      'en': 'Customer-Information',
+      'en': 'Employee-Information',
       'de': 'Kundeninformation',
       'es': 'Información al cliente',
       'fr': 'Informations client',
@@ -2331,6 +2331,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'abgeschlossene Kunden',
       'es': 'clientes completados',
       'fr': 'clients complétés',
+    },
+    'ymhq664h': {
+      'en': 'Employee-Skills',
+      'de': 'Kundeninformation',
+      'es': 'Información al cliente',
+      'fr': 'Informations client',
+    },
+    '3fkffaue': {
+      'en': 'Employee-Languages',
+      'de': 'Kundeninformation',
+      'es': 'Información al cliente',
+      'fr': 'Informations client',
     },
     'f49vqwjs': {
       'en': 'Customer-Meetings',
@@ -2424,6 +2436,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gesamtzahl der Meetings',
       'es': 'Total de reuniones',
       'fr': 'Total des réunions',
+    },
+    '0wr4a1s4': {
+      'en': 'Customer-Skills',
+      'de': 'Kundeninformation',
+      'es': 'Información al cliente',
+      'fr': 'Informations client',
+    },
+    'gzahnh8h': {
+      'en': 'Customer-Languages',
+      'de': 'Kundeninformation',
+      'es': 'Información al cliente',
+      'fr': 'Informations client',
     },
     'dpos0v43': {
       'en': 'Customer-Meetings',
