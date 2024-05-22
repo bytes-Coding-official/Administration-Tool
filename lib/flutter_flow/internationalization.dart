@@ -656,6 +656,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Búsqueda de personas...',
       'fr': 'Recherche de personnes...',
     },
+    '9jdv7fmi': {
+      'en': 'Search for people...',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
     'j34sl75v': {
       'en': 'Team-Members',
       'de': 'Team-Mitglieder',
