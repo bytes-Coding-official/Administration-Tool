@@ -33,9 +33,16 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   // State field(s) for tablet_DesktopView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      tabletDesktopViewPagingController;
-  Query? tabletDesktopViewPagingQuery;
-  List<StreamSubscription?> tabletDesktopViewStreamSubscriptions = [];
+      tabletDesktopViewPagingController1;
+  Query? tabletDesktopViewPagingQuery1;
+  List<StreamSubscription?> tabletDesktopViewStreamSubscriptions1 = [];
+
+  // State field(s) for tablet_DesktopView widget.
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>?
+      tabletDesktopViewPagingController2;
+  Query? tabletDesktopViewPagingQuery2;
+  List<StreamSubscription?> tabletDesktopViewStreamSubscriptions2 = [];
 
   @override
   void initState(BuildContext context) {}
@@ -54,10 +61,15 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     }
     mobileViewPagingController?.dispose();
 
-    for (var s in tabletDesktopViewStreamSubscriptions) {
+    for (var s in tabletDesktopViewStreamSubscriptions1) {
       s?.cancel();
     }
-    tabletDesktopViewPagingController?.dispose();
+    tabletDesktopViewPagingController1?.dispose();
+
+    for (var s in tabletDesktopViewStreamSubscriptions2) {
+      s?.cancel();
+    }
+    tabletDesktopViewPagingController2?.dispose();
   }
 
   /// Additional helper methods.
@@ -95,21 +107,21 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   }
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setTabletDesktopViewController(
+      setTabletDesktopViewController1(
     Query query, {
     DocumentReference<Object?>? parent,
   }) {
-    tabletDesktopViewPagingController ??=
-        _createTabletDesktopViewController(query, parent);
-    if (tabletDesktopViewPagingQuery != query) {
-      tabletDesktopViewPagingQuery = query;
-      tabletDesktopViewPagingController?.refresh();
+    tabletDesktopViewPagingController1 ??=
+        _createTabletDesktopViewController1(query, parent);
+    if (tabletDesktopViewPagingQuery1 != query) {
+      tabletDesktopViewPagingQuery1 = query;
+      tabletDesktopViewPagingController1?.refresh();
     }
-    return tabletDesktopViewPagingController!;
+    return tabletDesktopViewPagingController1!;
   }
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createTabletDesktopViewController(
+      _createTabletDesktopViewController1(
     Query query,
     DocumentReference<Object?>? parent,
   ) {
@@ -118,9 +130,43 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => tabletDesktopViewPagingQuery ??= query,
+          queryBuilder: (_) => tabletDesktopViewPagingQuery1 ??= query,
           nextPageMarker: nextPageMarker,
-          streamSubscriptions: tabletDesktopViewStreamSubscriptions,
+          streamSubscriptions: tabletDesktopViewStreamSubscriptions1,
+          controller: controller,
+          pageSize: 25,
+          isStream: true,
+        ),
+      );
+  }
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>
+      setTabletDesktopViewController2(
+    Query query, {
+    DocumentReference<Object?>? parent,
+  }) {
+    tabletDesktopViewPagingController2 ??=
+        _createTabletDesktopViewController2(query, parent);
+    if (tabletDesktopViewPagingQuery2 != query) {
+      tabletDesktopViewPagingQuery2 = query;
+      tabletDesktopViewPagingController2?.refresh();
+    }
+    return tabletDesktopViewPagingController2!;
+  }
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>
+      _createTabletDesktopViewController2(
+    Query query,
+    DocumentReference<Object?>? parent,
+  ) {
+    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
+        firstPageKey: null);
+    return controller
+      ..addPageRequestListener(
+        (nextPageMarker) => queryCustomerCaseRecordPage(
+          queryBuilder: (_) => tabletDesktopViewPagingQuery2 ??= query,
+          nextPageMarker: nextPageMarker,
+          streamSubscriptions: tabletDesktopViewStreamSubscriptions2,
           controller: controller,
           pageSize: 25,
           isStream: true,

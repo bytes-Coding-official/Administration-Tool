@@ -5,6 +5,20 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "customer",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "caseid",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "customer-case",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "closed",
           "order": "ASCENDING"
         },

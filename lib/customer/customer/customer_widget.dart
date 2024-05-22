@@ -761,68 +761,79 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ],
                               ),
                             ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  logFirebaseEvent(
-                                      'CUSTOMER_PAGE_CLAIM_CASE_BTN_ON_TAP');
-                                  if (customerCustomerCaseRecord.assignee
-                                      .contains(currentUserReference)) {
-                                    logFirebaseEvent('Button_backend_call');
+                            if (valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde')
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CUSTOMER_PAGE_CLAIM_CASE_BTN_ON_TAP');
+                                      if (customerCustomerCaseRecord.assignee
+                                          .contains(currentUserReference)) {
+                                        logFirebaseEvent('Button_backend_call');
 
-                                    await customerCustomerCaseRecord.reference
-                                        .update({
-                                      ...mapToFirestore(
-                                        {
-                                          'assignee': FieldValue.arrayRemove(
-                                              [currentUserReference]),
-                                        },
-                                      ),
-                                    });
-                                  } else {
-                                    logFirebaseEvent('Button_backend_call');
+                                        await customerCustomerCaseRecord
+                                            .reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'assignee':
+                                                  FieldValue.arrayRemove(
+                                                      [currentUserReference]),
+                                            },
+                                          ),
+                                        });
+                                      } else {
+                                        logFirebaseEvent('Button_backend_call');
 
-                                    await customerCustomerCaseRecord.reference
-                                        .update({
-                                      ...mapToFirestore(
-                                        {
-                                          'assignee': FieldValue.arrayUnion(
-                                              [currentUserReference]),
-                                        },
+                                        await customerCustomerCaseRecord
+                                            .reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'assignee': FieldValue.arrayUnion(
+                                                  [currentUserReference]),
+                                            },
+                                          ),
+                                        });
+                                      }
+                                    },
+                                    text: customerCustomerCaseRecord.assignee
+                                                .contains(
+                                                    currentUserReference) ==
+                                            true
+                                        ? 'Loose  Case'
+                                        : 'Claim Case',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.5,
+                                      height: 50.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
-                                    });
-                                  }
-                                },
-                                text: customerCustomerCaseRecord.assignee
-                                            .contains(currentUserReference) ==
-                                        true
-                                    ? 'Loose  Case'
-                                    : 'Claim Case',
-                                options: FFButtonOptions(
-                                  width: MediaQuery.sizeOf(context).width * 0.5,
-                                  height: 50.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).tertiary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                  elevation: 3.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                            ),
                             if (valueOrDefault(currentUserDocument?.role, '') ==
                                 'Manager')
                               Align(

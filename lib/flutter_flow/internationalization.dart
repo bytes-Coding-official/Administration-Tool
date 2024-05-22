@@ -557,12 +557,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Revise los detalles a continuación de todos los proyectos actuales.',
       'fr': 'Consultez les détails ci-dessous de tous les projets en cours.',
     },
-    '4utzg0s0': {
-      'en': 'Here is nothing you should see as a Customer!',
-      'de': 'Hier ist nichts, was Sie als Kunde sehen sollten!',
-      'es': '¡Aquí no hay nada que debas ver como Cliente!',
-      'fr': 'Voici rien que vous devriez voir en tant que client !',
-    },
     'p942dt14': {
       'en': 'All',
       'de': 'Alle',
@@ -636,6 +630,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'nhxrq5ni': {
+      'en': 'ID#: ',
+      'de': 'ID#: ',
+      'es': '',
+      'fr': '',
+    },
+    'ati3ejso': {
       'en': 'ID#: ',
       'de': 'ID#: ',
       'es': '',
