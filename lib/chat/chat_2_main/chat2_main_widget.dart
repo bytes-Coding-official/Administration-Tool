@@ -181,10 +181,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                     }
                     List<ChatsRecord> listViewChatsRecordList = snapshot.data!;
                     return ListView.separated(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(vertical: 15.0),
                       scrollDirection: Axis.vertical,
                       itemCount: listViewChatsRecordList.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                      separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                       itemBuilder: (context, listViewIndex) {
                         final listViewChatsRecord =
                             listViewChatsRecordList[listViewIndex];

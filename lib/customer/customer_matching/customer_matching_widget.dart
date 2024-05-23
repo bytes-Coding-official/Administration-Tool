@@ -162,7 +162,6 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   .toList(),
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue1 = val),
-                              width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -254,7 +253,6 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   .toList(),
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue2 = val),
-                              width: MediaQuery.sizeOf(context).width * 0.7,
                               height: 56.0,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium

@@ -1115,12 +1115,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                   ),
                 ),
               Expanded(
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                   child: Container(
-                    constraints: const BoxConstraints(
-                      maxWidth: 1170.0,
-                    ),
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
                       primary: false,
