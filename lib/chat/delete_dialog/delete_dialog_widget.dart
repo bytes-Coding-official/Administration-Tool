@@ -339,7 +339,9 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                   logFirebaseEvent(
                                       'DELETE_DIALOG_COMP_Text_ucrm0qdq_ON_TAP');
                                   logFirebaseEvent('Text_navigate_to');
-
+                                  if (Navigator.of(context).canPop()) {
+                                    context.pop();
+                                  }
                                   context.pushNamed('chat_2_main');
 
                                   logFirebaseEvent('Text_backend_call');
