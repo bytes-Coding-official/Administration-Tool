@@ -183,7 +183,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             profileUserUsersRecord.photoUrl,
                             width: double.infinity,
                             height: 330.0,
-                            fit: BoxFit.fill,
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),

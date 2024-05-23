@@ -92,7 +92,7 @@ class _UserListSmall1WidgetState extends State<UserListSmall1Widget> {
                       widget.userRef!.photoUrl,
                       width: 32.0,
                       height: 32.0,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),

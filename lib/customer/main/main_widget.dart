@@ -1067,7 +1067,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.contain,
                                         ),
                                       ),
                                     ),
@@ -2775,7 +2775,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             height:
                                                                                 60.0,
                                                                             fit:
-                                                                                BoxFit.cover,
+                                                                                BoxFit.contain,
                                                                           ),
                                                                         ),
                                                                       ),

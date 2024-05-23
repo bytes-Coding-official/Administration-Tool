@@ -362,7 +362,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                             listViewUsersRecord.photoUrl,
                                             width: 60.0,
                                             height: 60.0,
-                                            fit: BoxFit.fill,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                         Expanded(

@@ -666,7 +666,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                       height:
                                                                           44.0,
                                                                       fit: BoxFit
-                                                                          .cover,
+                                                                          .contain,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -712,7 +712,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                   width: 44.0,
                                                                   height: 44.0,
                                                                   fit: BoxFit
-                                                                      .cover,
+                                                                      .contain,
                                                                 ),
                                                               ),
                                                             ),
