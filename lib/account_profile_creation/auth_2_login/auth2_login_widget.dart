@@ -270,6 +270,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         fontFamily: 'Inter',
                                         letterSpacing: 0.0,
                                       ),
+                                  maxLength: 100,
                                   keyboardType: TextInputType.emailAddress,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -358,6 +359,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         fontFamily: 'Inter',
                                         letterSpacing: 0.0,
                                       ),
+                                  maxLength: 35,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model

@@ -471,6 +471,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
+                                    maxLength: 35,
                                     validator: _model
                                         .newlangaugeTextControllerValidator
                                         .asValidator(context),

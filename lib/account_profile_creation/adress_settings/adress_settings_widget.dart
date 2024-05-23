@@ -231,6 +231,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
+                              maxLength: 50,
                               validator: _model.textController1Validator
                                   .asValidator(context),
                             ),
@@ -312,6 +313,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         .primaryText,
                                     letterSpacing: 0.0,
                                   ),
+                              maxLength: 35,
                               validator: _model.textController2Validator
                                   .asValidator(context),
                             ),
@@ -393,6 +395,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                                         .primaryText,
                                     letterSpacing: 0.0,
                                   ),
+                              maxLength: 10,
                               validator: _model.textController3Validator
                                   .asValidator(context),
                             ),

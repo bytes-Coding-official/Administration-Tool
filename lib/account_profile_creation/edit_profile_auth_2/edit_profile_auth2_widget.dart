@@ -350,6 +350,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
+                  maxLength: 35,
                   cursorColor: FlutterFlowTheme.of(context).primary,
                   validator: _model.yourNameTextControllerValidator
                       .asValidator(context),
@@ -425,6 +426,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
+                  maxLength: 25,
                   cursorColor: FlutterFlowTheme.of(context).primary,
                   validator: _model.phoneNumberTextControllerValidator
                       .asValidator(context),
@@ -496,6 +498,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       fontFamily: 'Inter',
                       letterSpacing: 0.0,
                     ),
+                maxLength: 100,
                 cursorColor: FlutterFlowTheme.of(context).primary,
                 validator: _model.emailAdressTextControllerValidator
                     .asValidator(context),
@@ -570,6 +573,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
                       ),
+                  maxLength: 25,
                   cursorColor: FlutterFlowTheme.of(context).primary,
                   validator: _model.yourRoleTextControllerValidator
                       .asValidator(context),
@@ -646,6 +650,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       ),
                   textAlign: TextAlign.start,
                   maxLines: 3,
+                  maxLength: 250,
                   cursorColor: FlutterFlowTheme.of(context).primary,
                   validator:
                       _model.myBioTextControllerValidator.asValidator(context),

@@ -315,6 +315,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                 letterSpacing: 0.0,
                               ),
                       textAlign: TextAlign.center,
+                      maxLength: 25,
                       cursorColor: FlutterFlowTheme.of(context).primary,
                       validator: _model.titleTextControllerValidator
                           .asValidator(context),
@@ -391,6 +392,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                       textAlign: TextAlign.center,
                       maxLines: 9,
                       minLines: 5,
+                      maxLength: 250,
                       cursorColor: FlutterFlowTheme.of(context).primary,
                       validator: _model.descriptionTextControllerValidator
                           .asValidator(context),
@@ -639,6 +641,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                   ),
                               textAlign: TextAlign.center,
                               minLines: 1,
+                              maxLength: 4,
                               cursorColor: FlutterFlowTheme.of(context).primary,
                               validator: _model.revenueTextControllerValidator
                                   .asValidator(context),

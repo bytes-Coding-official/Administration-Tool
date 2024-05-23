@@ -236,6 +236,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                       fontFamily: 'Inter',
                                       letterSpacing: 0.0,
                                     ),
+                                maxLength: 35,
                                 validator: _model.textController1Validator
                                     .asValidator(context),
                               ),
@@ -315,6 +316,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                     color: const Color(0xFFDBE2E7),
                                     letterSpacing: 0.0,
                                   ),
+                              maxLength: 100,
                               validator: _model.textController2Validator
                                   .asValidator(context),
                             ),
@@ -396,6 +398,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                       color: const Color(0xFFDBE2E7),
                                       letterSpacing: 0.0,
                                     ),
+                                maxLength: 25,
                                 validator: _model.textController3Validator
                                     .asValidator(context),
                               ),

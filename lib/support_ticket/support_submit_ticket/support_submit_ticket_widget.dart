@@ -653,6 +653,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             ),
                         maxLines: 16,
                         minLines: 6,
+                        maxLength: 350,
                         cursorColor: FlutterFlowTheme.of(context).primary,
                         validator: _model.textController2Validator
                             .asValidator(context),

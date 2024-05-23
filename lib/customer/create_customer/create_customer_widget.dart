@@ -220,6 +220,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 25,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator: _model.fullNameTextControllerValidator
                         .asValidator(context),
@@ -292,6 +293,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 25,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator: _model.phoneNumberTextControllerValidator
                         .asValidator(context),
@@ -364,6 +366,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 100,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator:
                         _model.mailTextControllerValidator.asValidator(context),
@@ -436,6 +439,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 50,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator: _model.streetTextControllerValidator
                         .asValidator(context),
@@ -508,6 +512,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 50,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator:
                         _model.cityTextControllerValidator.asValidator(context),
@@ -580,6 +585,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 10,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator:
                         _model.zipTextControllerValidator.asValidator(context),
@@ -652,6 +658,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLength: 50,
                     cursorColor: FlutterFlowTheme.of(context).primary,
                     validator: _model.countryTextControllerValidator
                         .asValidator(context),

@@ -471,6 +471,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
+                                    maxLength: 35,
                                     validator: _model
                                         .newskillTextControllerValidator
                                         .asValidator(context),
