@@ -1447,7 +1447,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                    maxLength: 35,
                                                     validator: _model
                                                         .textController1Validator
                                                         .asValidator(context),

@@ -359,7 +359,6 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         fontFamily: 'Inter',
                                         letterSpacing: 0.0,
                                       ),
-                                  maxLength: 35,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
                                   validator: _model

@@ -300,7 +300,6 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                         fontFamily: 'Inter',
                                         letterSpacing: 0.0,
                                       ),
-                                  maxLength: 100,
                                   keyboardType: TextInputType.emailAddress,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primary,
