@@ -363,38 +363,30 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'pu04pfxz' /* User-Description */,
+                        ),
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                              fontFamily: 'Inter',
+                              fontSize: 24.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'pu04pfxz' /* User-Description */,
-                          ),
+                          profileEmployeeUsersRecord.shortDescription,
                           textAlign: TextAlign.center,
                           style:
-                              FlutterFlowTheme.of(context).bodySmall.override(
+                              FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',
-                                    fontSize: 24.0,
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
                                   ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 12.0),
-                          child: Text(
-                            profileEmployeeUsersRecord.shortDescription,
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
                         ),
                       ),
                       SingleChildScrollView(
