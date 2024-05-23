@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -435,20 +436,27 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                       4.0,
                                                                       0.0,
                                                                       0.0),
-                                                          child: Text(
-                                                            listViewChatsRecord
-                                                                .lastMessage,
-                                                            textAlign:
-                                                                TextAlign.start,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                          child: Container(
+                                                            width: 850.0,
+                                                            height: 20.0,
+                                                            decoration:
+                                                                const BoxDecoration(),
+                                                            child: Text(
+                                                              listViewChatsRecord
+                                                                  .lastMessage,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
                                                           ),
                                                         ),
                                                         Row(
@@ -814,23 +822,31 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                       4.0,
                                                                       0.0,
                                                                       0.0),
-                                                          child: Text(
-                                                            listViewChatsRecord
-                                                                .lastMessage
-                                                                .maybeHandleOverflow(
-                                                                    maxChars:
-                                                                        150),
-                                                            textAlign:
-                                                                TextAlign.start,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                          child: Container(
+                                                            width: 900.0,
+                                                            height: 20.0,
+                                                            decoration:
+                                                                const BoxDecoration(),
+                                                            child: AutoSizeText(
+                                                              listViewChatsRecord
+                                                                  .lastMessage
+                                                                  .maybeHandleOverflow(
+                                                                      maxChars:
+                                                                          50),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              maxLines: 1,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
                                                           ),
                                                         ),
                                                         Row(
