@@ -816,7 +816,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                       0.0),
                                                           child: Text(
                                                             listViewChatsRecord
-                                                                .lastMessage,
+                                                                .lastMessage
+                                                                .maybeHandleOverflow(
+                                                                    maxChars:
+                                                                        150),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
