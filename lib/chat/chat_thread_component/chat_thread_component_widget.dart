@@ -386,6 +386,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                 _model.addToImagesUploaded(
                                     _model.uploadedFileUrl);
                               });
+                            } else {
+                              return;
                             }
                           },
                         ),
