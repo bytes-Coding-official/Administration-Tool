@@ -835,7 +835,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                       return Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                              .tertiary,
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
@@ -924,7 +924,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                       return Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                              .tertiary,
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(

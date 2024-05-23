@@ -435,7 +435,8 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
@@ -480,7 +481,8 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
@@ -525,7 +527,8 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
@@ -588,7 +591,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
-                          color: Colors.white,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,

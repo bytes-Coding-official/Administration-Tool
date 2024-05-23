@@ -2627,7 +2627,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondary,
+                                                                      .tertiary,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -2862,8 +2862,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                           fontFamily:
                                                                               'Inter',
                                                                           color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).primaryText
-                                                                              : FlutterFlowTheme.of(context).primary,
+                                                                              ? FlutterFlowTheme.of(context).success
+                                                                              : FlutterFlowTheme.of(context).error,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),

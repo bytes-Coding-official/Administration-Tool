@@ -731,6 +731,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,

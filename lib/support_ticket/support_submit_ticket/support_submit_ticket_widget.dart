@@ -1084,7 +1084,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',
-                                color: Colors.white,
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
                       elevation: 4.0,
