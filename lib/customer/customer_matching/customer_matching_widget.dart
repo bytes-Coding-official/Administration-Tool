@@ -289,7 +289,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -353,8 +353,8 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                       ),
                     ),
                   ]
-                      .divide(const SizedBox(height: 35.0))
-                      .around(const SizedBox(height: 35.0)),
+                      .divide(const SizedBox(height: 25.0))
+                      .around(const SizedBox(height: 25.0)),
                 ),
               ),
             ),

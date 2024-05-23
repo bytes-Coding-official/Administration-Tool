@@ -793,72 +793,79 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 30.0,
                         decoration: const BoxDecoration(),
-                        child: StreamBuilder<List<ItskillsRecord>>(
-                          stream: queryItskillsRecord(
-                            queryBuilder: (itskillsRecord) =>
-                                itskillsRecord.where(
-                              'users',
-                              arrayContains: widget.employee,
-                            ),
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            StreamBuilder<List<ItskillsRecord>>(
+                              stream: queryItskillsRecord(
+                                queryBuilder: (itskillsRecord) =>
+                                    itskillsRecord.where(
+                                  'users',
+                                  arrayContains: widget.employee,
                                 ),
-                              );
-                            }
-                            List<ItskillsRecord> rowItskillsRecordList =
-                                snapshot.data!;
-                            return SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children:
-                                    List.generate(rowItskillsRecordList.length,
-                                            (rowIndex) {
-                                  final rowItskillsRecord =
-                                      rowItskillsRecordList[rowIndex];
-                                  return Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
                                       ),
                                     ),
-                                    child: SelectionArea(
-                                        child: AutoSizeText(
-                                      rowItskillsRecord.name,
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    )),
                                   );
-                                })
+                                }
+                                List<ItskillsRecord> rowItskillsRecordList =
+                                    snapshot.data!;
+                                return SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(
+                                            rowItskillsRecordList.length,
+                                            (rowIndex) {
+                                      final rowItskillsRecord =
+                                          rowItskillsRecordList[rowIndex];
+                                      return Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: SelectionArea(
+                                            child: AutoSizeText(
+                                          rowItskillsRecord.name,
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        )),
+                                      );
+                                    })
                                         .divide(const SizedBox(width: 15.0))
                                         .around(const SizedBox(width: 15.0)),
-                              ),
-                            );
-                          },
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ),
                       Text(
@@ -875,72 +882,79 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 30.0,
                         decoration: const BoxDecoration(),
-                        child: StreamBuilder<List<LanguagesRecord>>(
-                          stream: queryLanguagesRecord(
-                            queryBuilder: (languagesRecord) =>
-                                languagesRecord.where(
-                              'users',
-                              arrayContains: widget.employee,
-                            ),
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            StreamBuilder<List<LanguagesRecord>>(
+                              stream: queryLanguagesRecord(
+                                queryBuilder: (languagesRecord) =>
+                                    languagesRecord.where(
+                                  'users',
+                                  arrayContains: widget.employee,
                                 ),
-                              );
-                            }
-                            List<LanguagesRecord> rowLanguagesRecordList =
-                                snapshot.data!;
-                            return SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children:
-                                    List.generate(rowLanguagesRecordList.length,
-                                            (rowIndex) {
-                                  final rowLanguagesRecord =
-                                      rowLanguagesRecordList[rowIndex];
-                                  return Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
                                       ),
                                     ),
-                                    child: SelectionArea(
-                                        child: AutoSizeText(
-                                      rowLanguagesRecord.name,
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    )),
                                   );
-                                })
+                                }
+                                List<LanguagesRecord> rowLanguagesRecordList =
+                                    snapshot.data!;
+                                return SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(
+                                            rowLanguagesRecordList.length,
+                                            (rowIndex) {
+                                      final rowLanguagesRecord =
+                                          rowLanguagesRecordList[rowIndex];
+                                      return Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: SelectionArea(
+                                            child: AutoSizeText(
+                                          rowLanguagesRecord.name,
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        )),
+                                      );
+                                    })
                                         .divide(const SizedBox(width: 15.0))
                                         .around(const SizedBox(width: 15.0)),
-                              ),
-                            );
-                          },
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
@@ -1180,151 +1194,172 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                       width: 1.0,
                                     ),
                                   ),
-                                  child: SingleChildScrollView(
-                                    scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text(
-                                          valueOrDefault<String>(
-                                            listViewCustomerMeetingRecord.date,
-                                            'null',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        Text(
-                                          valueOrDefault<String>(
-                                            listViewCustomerMeetingRecord
-                                                .duration
-                                                .toString(),
-                                            '0.0',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        Text(
-                                          listViewCustomerMeetingRecord.costs
-                                              .toString(),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 20.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                        Builder(
-                                          builder: (context) {
-                                            final assignees =
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text(
+                                              valueOrDefault<String>(
                                                 listViewCustomerMeetingRecord
-                                                    .assignee
-                                                    .toList();
-                                            return SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: List.generate(
-                                                    assignees.length,
-                                                    (assigneesIndex) {
-                                                  final assigneesItem =
-                                                      assignees[assigneesIndex];
-                                                  return StreamBuilder<
-                                                      UsersRecord>(
-                                                    stream:
-                                                        UsersRecord.getDocument(
-                                                            assigneesItem),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              valueColor:
-                                                                  AlwaysStoppedAnimation<
-                                                                      Color>(
-                                                                FlutterFlowTheme.of(
+                                                    .date,
+                                                'null',
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                            ),
+                                            Text(
+                                              valueOrDefault<String>(
+                                                listViewCustomerMeetingRecord
+                                                    .duration
+                                                    .toString(),
+                                                '0.0',
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                            ),
+                                            Text(
+                                              listViewCustomerMeetingRecord
+                                                  .costs
+                                                  .toString(),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                            ),
+                                            Builder(
+                                              builder: (context) {
+                                                final assignees =
+                                                    listViewCustomerMeetingRecord
+                                                        .assignee
+                                                        .toList();
+                                                return SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: List.generate(
+                                                        assignees.length,
+                                                        (assigneesIndex) {
+                                                      final assigneesItem =
+                                                          assignees[
+                                                              assigneesIndex];
+                                                      return StreamBuilder<
+                                                          UsersRecord>(
+                                                        stream: UsersRecord
+                                                            .getDocument(
+                                                                assigneesItem),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          final containerUsersRecord =
+                                                              snapshot.data!;
+                                                          return Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent1,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                width: 2.0,
                                                               ),
                                                             ),
-                                                          ),
-                                                        );
-                                                      }
-                                                      final containerUsersRecord =
-                                                          snapshot.data!;
-                                                      return Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets.all(
-                                                                  2.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                            child:
-                                                                Image.network(
-                                                              containerUsersRecord
-                                                                  .photoUrl,
-                                                              width: 60.0,
-                                                              height: 60.0,
-                                                              fit: BoxFit.cover,
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                      .all(2.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            40.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  containerUsersRecord
+                                                                      .photoUrl,
+                                                                  width: 60.0,
+                                                                  height: 60.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ),
+                                                          );
+                                                        },
                                                       );
-                                                    },
-                                                  );
-                                                }).divide(const SizedBox(width: 5.0)),
-                                              ),
-                                            );
-                                          },
+                                                    }).divide(
+                                                        const SizedBox(width: 5.0)),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ]
+                                              .divide(const SizedBox(width: 25.0))
+                                              .around(const SizedBox(width: 25.0)),
                                         ),
-                                      ]
-                                          .divide(const SizedBox(width: 25.0))
-                                          .around(const SizedBox(width: 25.0)),
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               );
