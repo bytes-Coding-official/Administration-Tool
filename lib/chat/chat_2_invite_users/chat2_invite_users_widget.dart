@@ -580,13 +580,13 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                     text:
                         widget.chatRef != null ? 'Add to Chat' : 'Send Invites',
                     options: FFButtonOptions(
-                      width: double.infinity,
+                      width: MediaQuery.sizeOf(context).width * 0.5,
                       height: 50.0,
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',

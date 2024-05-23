@@ -426,14 +426,13 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               'oaa48gll' /* Change Adress */,
                             ),
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.7,
+                              width: MediaQuery.sizeOf(context).width * 0.6,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -472,14 +471,13 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               'w9gnwzri' /* Change IT-Skills */,
                             ),
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.7,
+                              width: MediaQuery.sizeOf(context).width * 0.6,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -518,14 +516,13 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                               'ohebf1ur' /* Change Languages */,
                             ),
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.7,
+                              width: MediaQuery.sizeOf(context).width * 0.6,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -586,12 +583,12 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
                     'e9h4u4e3' /* Save Changes */,
                   ),
                   options: FFButtonOptions(
-                    width: MediaQuery.sizeOf(context).width * 0.7,
+                    width: MediaQuery.sizeOf(context).width * 0.6,
                     height: 50.0,
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: FlutterFlowTheme.of(context).primaryText,

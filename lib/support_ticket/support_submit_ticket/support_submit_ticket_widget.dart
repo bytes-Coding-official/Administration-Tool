@@ -1076,12 +1076,12 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       size: 15.0,
                     ),
                     options: FFButtonOptions(
-                      width: MediaQuery.sizeOf(context).width * 0.8,
+                      width: MediaQuery.sizeOf(context).width * 0.5,
                       height: 54.0,
                       padding: const EdgeInsets.all(0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',

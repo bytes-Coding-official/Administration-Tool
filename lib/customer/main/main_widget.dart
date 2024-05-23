@@ -1601,7 +1601,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primary,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -1645,7 +1645,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primary,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall

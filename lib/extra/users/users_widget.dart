@@ -200,7 +200,6 @@ class _UsersWidgetState extends State<UsersWidget>
                             ),
                         textAlign: TextAlign.center,
                         maxLines: null,
-                        maxLength: 35,
                         validator:
                             _model.textControllerValidator.asValidator(context),
                       ),
