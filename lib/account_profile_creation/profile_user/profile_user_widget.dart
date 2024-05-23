@@ -181,9 +181,9 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
                             profileUserUsersRecord.photoUrl,
-                            width: double.infinity,
-                            height: 330.0,
-                            fit: BoxFit.contain,
+                            width: 350.0,
+                            height: 350.0,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

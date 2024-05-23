@@ -327,7 +327,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                                   listViewUsersRecord.photoUrl,
                                               width: 44.0,
                                               height: 44.0,
-                                              fit: BoxFit.contain,
+                                              fit: BoxFit.cover,
                                             ),
                                           ),
                                         ),

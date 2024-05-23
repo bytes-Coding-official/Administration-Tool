@@ -173,7 +173,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                               imageUrl: _model.uploadedFileUrl,
                               width: 300.0,
                               height: 200.0,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),

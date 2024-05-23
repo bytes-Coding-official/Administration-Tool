@@ -685,7 +685,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   containerUsersRecord.photoUrl,
                                                   width: 60.0,
                                                   height: 60.0,
-                                                  fit: BoxFit.contain,
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
@@ -1267,7 +1267,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                       height:
                                                                           60.0,
                                                                       fit: BoxFit
-                                                                          .contain,
+                                                                          .cover,
                                                                     ),
                                                                   ),
                                                                 ),

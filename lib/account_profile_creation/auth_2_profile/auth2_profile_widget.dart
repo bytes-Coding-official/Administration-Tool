@@ -234,7 +234,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                         imageUrl: currentUserPhoto,
                                         width: 100.0,
                                         height: 100.0,
-                                        fit: BoxFit.contain,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
