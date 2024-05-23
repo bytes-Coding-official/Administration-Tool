@@ -817,6 +817,80 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       }.withoutNulls,
                                     );
                                   },
+                                  onLongPress: () async {
+                                    logFirebaseEvent(
+                                        'EMPLOYEE_BILLING_listContainer_ON_LONG_P');
+                                    if (valueOrDefault(
+                                            currentUserDocument?.role, '') ==
+                                        'Manager') {
+                                      logFirebaseEvent(
+                                          'listContainer_alert_dialog');
+                                      var confirmDialogResponse =
+                                          await showDialog<bool>(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text('Delete'),
+                                                    content: const Text(
+                                                        'Do you want to delete this case?'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                false),
+                                                        child: const Text('Cancel'),
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                true),
+                                                        child: const Text('Confirm'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ) ??
+                                              false;
+                                      if (confirmDialogResponse) {
+                                        logFirebaseEvent(
+                                            'listContainer_backend_call');
+                                        await listViewCustomerCaseRecord
+                                            .reference
+                                            .delete();
+                                        logFirebaseEvent(
+                                            'listContainer_alert_dialog');
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: const Text('Confirmation'),
+                                              content: const Text(
+                                                  'Deleted the selected customer-case'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: const Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else {
+                                        return;
+                                      }
+
+                                      logFirebaseEvent(
+                                          'listContainer_navigate_to');
+
+                                      context.pushNamed('Main');
+                                    } else {
+                                      return;
+                                    }
+                                  },
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
