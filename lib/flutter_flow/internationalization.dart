@@ -508,11 +508,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '12',
       'fr': '12',
     },
-    'mzevq165': {
-      'en': 'Calendar',
-      'de': 'Kalender',
-      'es': 'Calendario',
-      'fr': 'Calendrier',
+    '72kdiy21': {
+      'en': 'Customer Matching',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
     },
     '12tpf17h': {
       'en': 'Settings',
@@ -531,6 +531,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitglieder',
       'es': 'Miembros',
       'fr': 'Membres',
+    },
+    'mzevq165': {
+      'en': 'Calendar',
+      'de': 'Kalender',
+      'es': 'Calendario',
+      'fr': 'Calendrier',
     },
     'v3wuo8gh': {
       'en': 'Light-Mode',
@@ -1386,7 +1392,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
     },
     'dbqutbci': {
       'en': 'Customer-Information',
@@ -2059,6 +2065,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Miembros',
       'fr': 'Membres',
     },
+    '12w6659s': {
+      'en': 'Customer Matching',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
+    },
     '411g996a': {
       'en': 'Light Mode',
       'de': 'Lichtmodus',
@@ -2234,7 +2246,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
     },
     'j5z2op8x': {
       'en': 'Employee-Information',
@@ -2430,6 +2442,81 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Home',
       'es': '',
       'fr': '',
+    },
+  },
+  // CustomerMatching
+  {
+    'kgo53uqy': {
+      'en': 'Customer-User Matching',
+      'de': 'Kunden-Benutzer-Matching',
+      'es': 'Emparejamiento cliente-usuario',
+      'fr': 'Correspondance client-utilisateur',
+    },
+    'bp9agn7m': {
+      'en': 'Match Customer and User together',
+      'de': 'Kunde und Benutzer zusammenbringen',
+      'es': 'Unir cliente y usuario',
+      'fr': 'Associer le client et l\'utilisateur',
+    },
+    '0b6181i7': {
+      'en': 'Customer',
+      'de': 'Kunde',
+      'es': 'Cliente',
+      'fr': 'Client',
+    },
+    'qxm3fyf5': {
+      'en': 'Option 1',
+      'de': 'Option 1',
+      'es': 'Opción 1',
+      'fr': 'Option 1',
+    },
+    'p1u4kwv6': {
+      'en': 'Please select...',
+      'de': 'Bitte auswählen...',
+      'es': 'Por favor seleccione...',
+      'fr': 'Veuillez sélectionner...',
+    },
+    'v7plhg0s': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
+      'es': 'Buscar un artículo...',
+      'fr': 'Rechercher un article...',
+    },
+    '478sn2bp': {
+      'en': 'User',
+      'de': 'Benutzer',
+      'es': 'Usuario',
+      'fr': 'Utilisateur',
+    },
+    'zdkgd9i2': {
+      'en': 'Option 1',
+      'de': 'Option 1',
+      'es': 'Opción 1',
+      'fr': 'Option 1',
+    },
+    'oxhvu5uo': {
+      'en': 'Please select...',
+      'de': 'Bitte auswählen...',
+      'es': 'Por favor seleccione...',
+      'fr': 'Veuillez sélectionner...',
+    },
+    'w2j7a4li': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
+      'es': 'Buscar un artículo...',
+      'fr': 'Rechercher un article...',
+    },
+    'ofst3i3r': {
+      'en': 'Save',
+      'de': 'Speichern',
+      'es': 'Ahorrar',
+      'fr': 'Sauvegarder',
+    },
+    'sgcssqgt': {
+      'en': 'Home',
+      'de': 'Heim',
+      'es': 'Hogar',
+      'fr': 'Maison',
     },
   },
   // editProfile_auth_2

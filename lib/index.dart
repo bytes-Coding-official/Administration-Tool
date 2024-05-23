@@ -48,3 +48,5 @@ export '/account_profile_creation/profile_employee/profile_employee_widget.dart'
     show ProfileEmployeeWidget;
 export '/account_profile_creation/profile_user/profile_user_widget.dart'
     show ProfileUserWidget;
+export '/customer/customer_matching/customer_matching_widget.dart'
+    show CustomerMatchingWidget;

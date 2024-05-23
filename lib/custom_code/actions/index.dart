@@ -9,3 +9,4 @@ export 'get_i_t_skills_from_doc_refs.dart' show getITSkillsFromDocRefs;
 export 'get_languages_from_doc_refs.dart' show getLanguagesFromDocRefs;
 export 'total_revenue.dart' show totalRevenue;
 export 'format_date.dart' show formatDate;
+export 'get_user_from_doc_string.dart' show getUserFromDocString;

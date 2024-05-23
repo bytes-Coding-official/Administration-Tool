@@ -195,8 +195,6 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                     final selectedMedia =
                         await selectMediaWithSourceBottomSheet(
                       context: context,
-                      maxWidth: 1280.00,
-                      maxHeight: 720.00,
                       allowPhoto: true,
                     );
                     if (selectedMedia != null &&

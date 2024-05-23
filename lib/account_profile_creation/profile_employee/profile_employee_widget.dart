@@ -183,7 +183,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                             profileEmployeeUsersRecord.photoUrl,
                             width: double.infinity,
                             height: 330.0,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ),
