@@ -439,6 +439,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                         FFLocalizations.of(context).getText(
                                           'jxgl8tmv' /* Money Earned */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -494,6 +495,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                         FFLocalizations.of(context).getText(
                                           '1sovajv3' /* Average Billing */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -573,6 +575,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                         FFLocalizations.of(context).getText(
                                           'amq25o7c' /* Total Customers */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -606,49 +609,19 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    FutureBuilder<int>(
-                                      future: queryCustomerCaseRecordCount(
-                                        queryBuilder: (customerCaseRecord) =>
-                                            customerCaseRecord.where(
-                                          'assignee',
-                                          arrayContains: currentUserReference,
-                                        ),
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        int textCount = snapshot.data!;
-                                        return Text(
-                                          profileEmployeeUsersRecord
-                                              .revenuePercentage
-                                              .toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .success,
-                                                fontSize: 26.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        );
-                                      },
+                                    Text(
+                                      profileEmployeeUsersRecord
+                                          .revenuePercentage
+                                          .toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .success,
+                                            fontSize: 26.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -657,6 +630,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                         FFLocalizations.of(context).getText(
                                           'lyzzcc02' /* Revenue Percentage */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(

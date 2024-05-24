@@ -485,48 +485,19 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   AuthUserStreamWidget(
-                                    builder: (context) => FutureBuilder<int>(
-                                      future: queryCustomerCaseRecordCount(
-                                        queryBuilder: (customerCaseRecord) =>
-                                            customerCaseRecord.where(
-                                          'assignee',
-                                          arrayContains: currentUserReference,
-                                        ),
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        int textCount = snapshot.data!;
-                                        return Text(
-                                          valueOrDefault(
-                                                  currentUserDocument
-                                                      ?.revenuePercentage,
-                                                  0.0)
-                                              .toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 26.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        );
-                                      },
+                                    builder: (context) => Text(
+                                      valueOrDefault(
+                                              currentUserDocument
+                                                  ?.revenuePercentage,
+                                              0.0)
+                                          .toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            fontSize: 26.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                   Padding(
