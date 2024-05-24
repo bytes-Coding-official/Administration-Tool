@@ -50,3 +50,5 @@ export '/account_profile_creation/profile_user/profile_user_widget.dart'
     show ProfileUserWidget;
 export '/customer/customer_matching/customer_matching_widget.dart'
     show CustomerMatchingWidget;
+export '/customer/change_employee_percentage/change_employee_percentage_widget.dart'
+    show ChangeEmployeePercentageWidget;

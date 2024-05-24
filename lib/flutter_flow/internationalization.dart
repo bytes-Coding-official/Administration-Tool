@@ -514,6 +514,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
     },
+    '4tmi2f8n': {
+      'en': 'Employee Billing',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
+    },
     '12tpf17h': {
       'en': 'Settings',
       'de': 'Einstellungen',
@@ -1400,6 +1406,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Clientes totales',
       'fr': 'Clients totaux',
     },
+    '72k7zctj': {
+      'en': 'Revenue Percentage',
+      'de': 'Kunden gesamt',
+      'es': 'Clientes totales',
+      'fr': 'Clients totaux',
+    },
     'dbqutbci': {
       'en': 'Customer-Information',
       'de': 'Kundeninformation',
@@ -2077,6 +2089,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
     },
+    'urfpy2ae': {
+      'en': 'Employee Billing',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
+    },
     '411g996a': {
       'en': 'Light Mode',
       'de': 'Lichtmodus',
@@ -2250,6 +2268,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'amq25o7c': {
       'en': 'Total Customers',
+      'de': 'Kunden gesamt',
+      'es': 'Clientes totales',
+      'fr': 'Clients totaux',
+    },
+    'lyzzcc02': {
+      'en': 'Revenue Percentage',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
       'fr': 'Clients totaux',
@@ -2523,6 +2547,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Heim',
       'es': 'Hogar',
       'fr': 'Maison',
+    },
+  },
+  // ChangeEmployeePercentage
+  {
+    'j749hjez': {
+      'en': 'Option 1',
+      'de': 'Option 1',
+      'es': 'Opción 1',
+      'fr': 'Option 1',
+    },
+    'n8uqn2fk': {
+      'en': 'Tutor',
+      'de': 'Tutor',
+      'es': 'Tutor',
+      'fr': 'Tuteur',
+    },
+    '1etm02er': {
+      'en': 'Search for an element...',
+      'de': 'Suche nach einem Element...',
+      'es': 'Buscar un elemento...',
+      'fr': 'Rechercher un élément...',
+    },
+    'c66jsjsp': {
+      'en': 'percentage',
+      'de': 'Dauer',
+      'es': 'duración',
+      'fr': 'durée',
+    },
+    'yzq82ywb': {
+      'en': '0.7',
+      'de': '0,0',
+      'es': '0.0',
+      'fr': '0,0',
+    },
+    '6a35opug': {
+      'en': 'Save',
+      'de': 'Speichern',
+      'es': 'Ahorrar',
+      'fr': 'Sauvegarder',
+    },
+    'n9kwvokt': {
+      'en': 'Change Employee Percentage',
+      'de': 'Meeting hinzufügen',
+      'es': 'Agregar reunión',
+      'fr': 'Ajouter une réunion',
+    },
+    'a5i4kjxi': {
+      'en': 'Change the percentage the Employee recieves',
+      'de': 'Einem besonderen Kunden ein Meeting hinzufügen',
+      'es': 'Agregar una reunión a un cliente especial',
+      'fr': 'Ajouter une réunion à un client spécial',
+    },
+    '6hykvly4': {
+      'en': 'Home',
+      'de': 'Home',
+      'es': '',
+      'fr': '',
     },
   },
   // editProfile_auth_2

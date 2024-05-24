@@ -72,32 +72,6 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation4': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          TiltEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
-          ),
-        ],
-      ),
       'containerOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -150,6 +124,32 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
           ),
         ],
       ),
+      'containerOnPageLoadAnimation7': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.698, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -162,7 +162,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
           ),
         ],
       ),
-      'containerOnPageLoadAnimation7': AnimationInfo(
+      'containerOnPageLoadAnimation8': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -462,6 +462,91 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                             ),
                           ),
                         ),
+                        Container(
+                          width: 150.0,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(8.0),
+                            border: Border.all(
+                              color: const Color(0xFFE0E3E7),
+                              width: 2.0,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: SingleChildScrollView(
+                              primary: false,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  AuthUserStreamWidget(
+                                    builder: (context) => FutureBuilder<int>(
+                                      future: queryCustomerCaseRecordCount(
+                                        queryBuilder: (customerCaseRecord) =>
+                                            customerCaseRecord.where(
+                                          'assignee',
+                                          arrayContains: currentUserReference,
+                                        ),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        int textCount = snapshot.data!;
+                                        return Text(
+                                          valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.revenuePercentage,
+                                                  0.0)
+                                              .toString(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 26.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 4.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '72k7zctj' /* Revenue Percentage */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
                       ].divide(const SizedBox(width: 25.0)),
                     ),
                   ),
@@ -675,7 +760,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                       ),
                     ),
                   ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation4']!),
+                      animationsMap['containerOnPageLoadAnimation5']!),
                 ),
                 Padding(
                   padding:
@@ -1323,7 +1408,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                       ],
                     ),
                   ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation5']!),
+                      animationsMap['containerOnPageLoadAnimation6']!),
                 ),
                 Padding(
                   padding:
@@ -1810,7 +1895,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                       ),
                     ),
                   ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation6']!),
+                      animationsMap['containerOnPageLoadAnimation7']!),
                 ),
                 if (false)
                   Padding(
@@ -2110,7 +2195,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                         ),
                       ),
                     ).animateOnPageLoad(
-                        animationsMap['containerOnPageLoadAnimation7']!),
+                        animationsMap['containerOnPageLoadAnimation8']!),
                   ),
               ].divide(const SizedBox(height: 5.0)),
             ),
