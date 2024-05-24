@@ -50,10 +50,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
       logFirebaseEvent('EmployeeBilling_custom_action');
       _model.total = await actions.totalRevenue(
         _model.queryResult!.map((e) => e.reference).toList().toList(),
+        valueOrDefault(currentUserDocument?.revenuePercentage, 0.0),
       );
       logFirebaseEvent('EmployeeBilling_custom_action');
       _model.avg = await actions.avgCosts(
         _model.queryResult!.map((e) => e.reference).toList().toList(),
+        valueOrDefault(currentUserDocument?.revenuePercentage, 0.0),
       );
     });
 

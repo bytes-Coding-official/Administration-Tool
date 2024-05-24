@@ -6,6 +6,7 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class UsersRecord extends FirestoreRecord {
   UsersRecord._(
@@ -90,6 +91,11 @@ class UsersRecord extends FirestoreRecord {
   DocumentReference? get customer => _customer;
   bool hasCustomer() => _customer != null;
 
+  // "revenue_percentage" field.
+  double? _revenuePercentage;
+  double get revenuePercentage => _revenuePercentage ?? 0.0;
+  bool hasRevenuePercentage() => _revenuePercentage != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -106,6 +112,7 @@ class UsersRecord extends FirestoreRecord {
     _role = snapshotData['role'] as String?;
     _title = snapshotData['title'] as String?;
     _customer = snapshotData['customer'] as DocumentReference?;
+    _revenuePercentage = castToType<double>(snapshotData['revenue_percentage']);
   }
 
   static CollectionReference get collection =>
@@ -157,6 +164,7 @@ Map<String, dynamic> createUsersRecordData({
   String? role,
   String? title,
   DocumentReference? customer,
+  double? revenuePercentage,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -175,6 +183,7 @@ Map<String, dynamic> createUsersRecordData({
       'role': role,
       'title': title,
       'customer': customer,
+      'revenue_percentage': revenuePercentage,
     }.withoutNulls,
   );
 
@@ -200,7 +209,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.lastActiveTime == e2?.lastActiveTime &&
         e1?.role == e2?.role &&
         e1?.title == e2?.title &&
-        e1?.customer == e2?.customer;
+        e1?.customer == e2?.customer &&
+        e1?.revenuePercentage == e2?.revenuePercentage;
   }
 
   @override
@@ -219,7 +229,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.lastActiveTime,
         e?.role,
         e?.title,
-        e?.customer
+        e?.customer,
+        e?.revenuePercentage
       ]);
 
   @override

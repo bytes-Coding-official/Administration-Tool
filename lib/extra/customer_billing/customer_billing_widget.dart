@@ -48,10 +48,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
       logFirebaseEvent('CustomerBilling_custom_action');
       _model.avg = await actions.avgCosts(
         _model.query!.map((e) => e.reference).toList().toList(),
+        1.0,
       );
       logFirebaseEvent('CustomerBilling_custom_action');
       _model.total = await actions.totalRevenue(
         _model.query!.map((e) => e.reference).toList().toList(),
+        1.0,
       );
     });
 

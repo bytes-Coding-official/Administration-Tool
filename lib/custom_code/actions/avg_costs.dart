@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<double> avgCosts(List<DocumentReference> documents) async {
+Future<double> avgCosts(
+    List<DocumentReference> documents, double revPercent) async {
   // Add your function code here!
   double totalCosts = 0.0;
   int count = 0;
@@ -35,5 +36,7 @@ Future<double> avgCosts(List<DocumentReference> documents) async {
   }
 
   double averageCosts = count == 0 ? 0.0 : totalCosts / count;
-  return averageCosts;
+  double result = averageCosts * revPercent;
+  double roundedResult = (result * 100).round() / 100;
+  return roundedResult;
 }

@@ -51,13 +51,17 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
           arrayContains: widget.employee,
         ),
       );
+      logFirebaseEvent('ProfileEmployee_backend_call');
+      _model.emp = await UsersRecord.getDocumentOnce(widget.employee!);
       logFirebaseEvent('ProfileEmployee_custom_action');
       _model.total = await actions.totalRevenue(
         _model.query!.map((e) => e.reference).toList().toList(),
+        _model.emp!.revenuePercentage,
       );
       logFirebaseEvent('ProfileEmployee_custom_action');
       _model.avg = await actions.avgCosts(
         _model.query!.map((e) => e.reference).toList().toList(),
+        _model.emp!.revenuePercentage,
       );
     });
 

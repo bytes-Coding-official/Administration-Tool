@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<double> totalRevenue(List<DocumentReference> documents) async {
+Future<double> totalRevenue(
+    List<DocumentReference> documents, double revPercentage) async {
   // Add your function code here!
   double totalCosts = 0.0;
   int count = 0;
@@ -34,5 +35,7 @@ Future<double> totalRevenue(List<DocumentReference> documents) async {
     }
   }
 
-  return totalCosts;
+  double result = totalCosts * revPercentage;
+  double roundedResult = (result * 100).round() / 100;
+  return roundedResult;
 }
