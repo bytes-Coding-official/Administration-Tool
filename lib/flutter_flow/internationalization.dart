@@ -516,9 +516,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4tmi2f8n': {
       'en': 'Employee Billing',
-      'de': 'Kundenabgleich',
-      'es': 'Emparejamiento de clientes',
-      'fr': 'Correspondance client',
+      'de': 'Mitarbeiterabrechnung',
+      'es': 'Facturación de empleados',
+      'fr': 'Facturation des employés',
     },
     '12tpf17h': {
       'en': 'Settings',
@@ -711,7 +711,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Case ID',
       'de': 'Fall-ID',
       'es': 'Identificación del caso',
-      'fr': 'Numéro de cas',
+      'fr': 'ID du cas',
     },
     'q2qhf2ce': {
       'en': 'Case ID...',
@@ -1261,7 +1261,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del billete',
+      'es': 'Detalles del boleto',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -1408,9 +1408,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '72k7zctj': {
       'en': 'Revenue Percentage',
-      'de': 'Kunden gesamt',
-      'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'de': 'Umsatzprozentsatz',
+      'es': 'Porcentaje de ingresos',
+      'fr': 'Pourcentage de revenus',
     },
     'dbqutbci': {
       'en': 'Customer-Information',
@@ -2091,9 +2091,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'urfpy2ae': {
       'en': 'Employee Billing',
-      'de': 'Kundenabgleich',
-      'es': 'Emparejamiento de clientes',
-      'fr': 'Correspondance client',
+      'de': 'Mitarbeiterabrechnung',
+      'es': 'Facturación de empleados',
+      'fr': 'Facturation des employés',
     },
     '411g996a': {
       'en': 'Light Mode',
@@ -2274,9 +2274,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lyzzcc02': {
       'en': 'Revenue Percentage',
-      'de': 'Kunden gesamt',
-      'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'de': 'Umsatzprozentsatz',
+      'es': 'Porcentaje de ingresos',
+      'fr': 'Pourcentage de revenus',
     },
     'j5z2op8x': {
       'en': 'Employee-Information',
@@ -2571,15 +2571,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'c66jsjsp': {
       'en': 'percentage',
-      'de': 'Dauer',
-      'es': 'duración',
-      'fr': 'durée',
+      'de': 'Prozentsatz',
+      'es': 'porcentaje',
+      'fr': 'pourcentage',
     },
     'yzq82ywb': {
       'en': '0.7',
-      'de': '0,0',
-      'es': '0.0',
-      'fr': '0,0',
+      'de': '0,7',
+      'es': '0,7',
+      'fr': '0,7',
     },
     '6a35opug': {
       'en': 'Save',
@@ -2589,15 +2589,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n9kwvokt': {
       'en': 'Change Employee Percentage',
-      'de': 'Meeting hinzufügen',
-      'es': 'Agregar reunión',
-      'fr': 'Ajouter une réunion',
+      'de': 'Mitarbeiteranteil ändern',
+      'es': 'Cambiar porcentaje de empleados',
+      'fr': 'Modifier le pourcentage d\'employés',
     },
     'a5i4kjxi': {
       'en': 'Change the percentage the Employee recieves',
-      'de': 'Einem besonderen Kunden ein Meeting hinzufügen',
-      'es': 'Agregar una reunión a un cliente especial',
-      'fr': 'Ajouter une réunion à un client spécial',
+      'de': 'Ändern Sie den Prozentsatz, den der Mitarbeiter erhält',
+      'es': 'Cambiar el porcentaje que recibe el empleado',
+      'fr': 'Modifier le pourcentage que l\'employé reçoit',
     },
     '6hykvly4': {
       'en': 'Home',
