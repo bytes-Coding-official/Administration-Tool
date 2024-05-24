@@ -261,6 +261,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                         FFLocalizations.of(context).getText(
                                           'xxc5wt2v' /* Money Spend */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -316,6 +317,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                         FFLocalizations.of(context).getText(
                                           'xrcnzlbf' /* Average Costs */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -400,6 +402,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                         FFLocalizations.of(context).getText(
                                           'azw44sx6' /* Total Meetings */,
                                         ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(

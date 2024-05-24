@@ -441,6 +441,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           FFLocalizations.of(context).getText(
                                             '6111v0jh' /* Money Spend */,
                                           ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -498,6 +499,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           FFLocalizations.of(context).getText(
                                             'w1wt2vr6' /* Average Costs */,
                                           ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -588,6 +590,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           FFLocalizations.of(context).getText(
                                             'wxdt7dec' /* Total Meetings */,
                                           ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(

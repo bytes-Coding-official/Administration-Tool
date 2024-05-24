@@ -315,7 +315,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       FFLocalizations.of(context).getText(
                                         'joipmprf' /* Money Earned */,
                                       ),
-                                      textAlign: TextAlign.start,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -371,6 +371,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       FFLocalizations.of(context).getText(
                                         'bvrj937a' /* Average Billing */,
                                       ),
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -449,6 +450,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       FFLocalizations.of(context).getText(
                                         'ucngtba5' /* Total Customers */,
                                       ),
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -534,6 +536,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       FFLocalizations.of(context).getText(
                                         '72k7zctj' /* Revenue Percentage */,
                                       ),
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
