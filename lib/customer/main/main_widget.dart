@@ -1652,38 +1652,40 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                         if (valueOrDefault(currentUserDocument?.role, '') !=
                             'Kunde')
                           AuthUserStreamWidget(
-                            builder: (context) =>
-                                StreamBuilder<List<CustomerCaseRecord>>(
-                              stream: queryCustomerCaseRecord(
-                                queryBuilder: (customerCaseRecord) =>
-                                    customerCaseRecord.orderBy('caseid',
-                                        descending: true),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
+                            builder: (context) => Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 550.0,
+                              decoration: const BoxDecoration(),
+                              child: StreamBuilder<List<CustomerCaseRecord>>(
+                                stream: queryCustomerCaseRecord(
+                                  queryBuilder: (customerCaseRecord) =>
+                                      customerCaseRecord.orderBy('caseid',
+                                          descending: true),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  );
-                                }
-                                List<CustomerCaseRecord>
-                                    emCustomerCaseRecordList = snapshot.data!;
-                                return SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: List.generate(
-                                        emCustomerCaseRecordList.length,
-                                        (emIndex) {
+                                    );
+                                  }
+                                  List<CustomerCaseRecord>
+                                      emCustomerCaseRecordList = snapshot.data!;
+                                  return ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: emCustomerCaseRecordList.length,
+                                    itemBuilder: (context, emIndex) {
                                       final emCustomerCaseRecord =
                                           emCustomerCaseRecordList[emIndex];
                                       return InkWell(
@@ -2225,56 +2227,56 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       );
-                                    }),
-                                  ),
-                                );
-                              },
+                                    },
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         if (valueOrDefault(currentUserDocument?.role, '') ==
                             'Kunde')
                           AuthUserStreamWidget(
-                            builder: (context) =>
-                                StreamBuilder<List<CustomerCaseRecord>>(
-                              stream: queryCustomerCaseRecord(
-                                queryBuilder: (customerCaseRecord) =>
-                                    customerCaseRecord
-                                        .where(
-                                          'customer',
-                                          isEqualTo:
-                                              currentUserDocument?.customer,
-                                        )
-                                        .orderBy('caseid', descending: true),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
+                            builder: (context) => Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 550.0,
+                              decoration: const BoxDecoration(),
+                              child: StreamBuilder<List<CustomerCaseRecord>>(
+                                stream: queryCustomerCaseRecord(
+                                  queryBuilder: (customerCaseRecord) =>
+                                      customerCaseRecord
+                                          .where(
+                                            'customer',
+                                            isEqualTo:
+                                                currentUserDocument?.customer,
+                                          )
+                                          .orderBy('caseid', descending: true),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  );
-                                }
-                                List<CustomerCaseRecord>
-                                    columnCustomerCaseRecordList =
-                                    snapshot.data!;
-                                return SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: List.generate(
-                                        columnCustomerCaseRecordList.length,
-                                        (columnIndex) {
-                                      final columnCustomerCaseRecord =
-                                          columnCustomerCaseRecordList[
-                                              columnIndex];
+                                    );
+                                  }
+                                  List<CustomerCaseRecord>
+                                      emCustomerCaseRecordList = snapshot.data!;
+                                  return ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: emCustomerCaseRecordList.length,
+                                    itemBuilder: (context, emIndex) {
+                                      final emCustomerCaseRecord =
+                                          emCustomerCaseRecordList[emIndex];
                                       return InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -2293,8 +2295,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             'Customer',
                                             queryParameters: {
                                               'customercase': serializeParam(
-                                                columnCustomerCaseRecord
-                                                    .reference,
+                                                emCustomerCaseRecord.reference,
                                                 ParamType.DocumentReference,
                                               ),
                                             }.withoutNulls,
@@ -2353,7 +2354,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             if (confirmDialogResponse) {
                                               logFirebaseEvent(
                                                   'listContainer_backend_call');
-                                              await columnCustomerCaseRecord
+                                              await emCustomerCaseRecord
                                                   .reference
                                                   .delete();
                                               logFirebaseEvent(
@@ -2430,13 +2431,13 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'aztmcsvv' /* ID#:  */,
+                                                            'xpe9vzmw' /* ID#:  */,
                                                           ),
                                                           style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
-                                                              columnCustomerCaseRecord
+                                                              emCustomerCaseRecord
                                                                   .caseid,
                                                           style: TextStyle(
                                                             color: FlutterFlowTheme
@@ -2462,8 +2463,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
-                                                    columnCustomerCaseRecord
-                                                        .title,
+                                                    emCustomerCaseRecord.title,
                                                     textAlign: TextAlign.end,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2480,7 +2480,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .fromSTEB(12.0, 4.0, 12.0,
                                                           16.0),
                                                   child: Text(
-                                                    columnCustomerCaseRecord
+                                                    emCustomerCaseRecord
                                                         .description,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2498,7 +2498,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   child: Builder(
                                                     builder: (context) {
                                                       final topicsMobile =
-                                                          columnCustomerCaseRecord
+                                                          emCustomerCaseRecord
                                                               .topics
                                                               .toList();
                                                       return SingleChildScrollView(
@@ -2619,7 +2619,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         Builder(
                                                           builder: (context) {
                                                             final assigneesMobile =
-                                                                columnCustomerCaseRecord
+                                                                emCustomerCaseRecord
                                                                     .assignee
                                                                     .toList();
                                                             return SingleChildScrollView(
@@ -2728,7 +2728,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               height: 32.0,
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: columnCustomerCaseRecord
+                                                                color: emCustomerCaseRecord
                                                                         .assignee
                                                                         .contains(
                                                                             currentUserReference)
@@ -2744,7 +2744,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             12.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: columnCustomerCaseRecord
+                                                                  color: emCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)
@@ -2771,15 +2771,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                           0.0),
                                                                   child: Text(
                                                                     () {
-                                                                      if (columnCustomerCaseRecord
+                                                                      if (emCustomerCaseRecord
                                                                           .closed) {
                                                                         return 'closed';
-                                                                      } else if (columnCustomerCaseRecord
+                                                                      } else if (emCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)) {
                                                                         return 'Own';
-                                                                      } else if (columnCustomerCaseRecord
+                                                                      } else if (emCustomerCaseRecord
                                                                               .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else {
@@ -2795,7 +2795,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
-                                                                          color: columnCustomerCaseRecord.assignee.contains(currentUserReference)
+                                                                          color: emCustomerCaseRecord.assignee.contains(currentUserReference)
                                                                               ? FlutterFlowTheme.of(context).primaryText
                                                                               : FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
@@ -2816,10 +2816,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       );
-                                    }),
-                                  ),
-                                );
-                              },
+                                    },
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         if ((valueOrDefault(currentUserDocument?.role, '') !=

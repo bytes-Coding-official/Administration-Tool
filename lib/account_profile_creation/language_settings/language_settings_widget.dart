@@ -156,37 +156,41 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                       ),
                     ],
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                    child: StreamBuilder<List<LanguagesRecord>>(
-                      stream: queryLanguagesRecord(),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                  Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 300.0,
+                    decoration: const BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                      child: StreamBuilder<List<LanguagesRecord>>(
+                        stream: queryLanguagesRecord(),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        }
-                        List<LanguagesRecord> columnLanguagesRecordList =
-                            snapshot.data!;
-                        return SingleChildScrollView(
-                          primary: false,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children:
-                                List.generate(columnLanguagesRecordList.length,
-                                        (columnIndex) {
-                              final columnLanguagesRecord =
-                                  columnLanguagesRecordList[columnIndex];
+                            );
+                          }
+                          List<LanguagesRecord> listViewLanguagesRecordList =
+                              snapshot.data!;
+                          return ListView.separated(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewLanguagesRecordList.length,
+                            separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewLanguagesRecord =
+                                  listViewLanguagesRecordList[listViewIndex];
                               return InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -230,7 +234,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                     if (confirmDialogResponse) {
                                       logFirebaseEvent(
                                           'Container_backend_call');
-                                      await columnLanguagesRecord.reference
+                                      await listViewLanguagesRecord.reference
                                           .delete();
                                       logFirebaseEvent('Container_navigate_to');
                                       if (Navigator.of(context).canPop()) {
@@ -269,13 +273,13 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                             final usersElement =
                                                 currentUserReference;
                                             final usersUpdate =
-                                                columnLanguagesRecord.users
+                                                listViewLanguagesRecord.users
                                                         .contains(usersElement)
                                                     ? FieldValue.arrayRemove(
                                                         [usersElement])
                                                     : FieldValue.arrayUnion(
                                                         [usersElement]);
-                                            await columnLanguagesRecord
+                                            await listViewLanguagesRecord
                                                 .reference
                                                 .update({
                                               ...mapToFirestore(
@@ -285,7 +289,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                               ),
                                             });
                                           },
-                                          value: columnLanguagesRecord.users
+                                          value: listViewLanguagesRecord.users
                                               .contains(currentUserReference),
                                           onIcon: Icon(
                                             Icons.check_box,
@@ -305,7 +309,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          columnLanguagesRecord.name,
+                                          listViewLanguagesRecord.name,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -318,12 +322,10 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                   ),
                                 ),
                               );
-                            })
-                                    .divide(const SizedBox(height: 15.0))
-                                    .around(const SizedBox(height: 15.0)),
-                          ),
-                        );
-                      },
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                   Padding(

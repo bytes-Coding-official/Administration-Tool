@@ -158,37 +158,41 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                       ),
                     ],
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                    child: StreamBuilder<List<ItskillsRecord>>(
-                      stream: queryItskillsRecord(),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                  Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 300.0,
+                    decoration: const BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                      child: StreamBuilder<List<ItskillsRecord>>(
+                        stream: queryItskillsRecord(),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        }
-                        List<ItskillsRecord> columnItskillsRecordList =
-                            snapshot.data!;
-                        return SingleChildScrollView(
-                          primary: false,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children:
-                                List.generate(columnItskillsRecordList.length,
-                                        (columnIndex) {
-                              final columnItskillsRecord =
-                                  columnItskillsRecordList[columnIndex];
+                            );
+                          }
+                          List<ItskillsRecord> listViewItskillsRecordList =
+                              snapshot.data!;
+                          return ListView.separated(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewItskillsRecordList.length,
+                            separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewItskillsRecord =
+                                  listViewItskillsRecordList[listViewIndex];
                               return InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -232,7 +236,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                     if (confirmDialogResponse) {
                                       logFirebaseEvent(
                                           'Container_backend_call');
-                                      await columnItskillsRecord.reference
+                                      await listViewItskillsRecord.reference
                                           .delete();
                                     } else {
                                       return;
@@ -270,14 +274,14 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                             final usersElement =
                                                 currentUserReference;
                                             final usersUpdate =
-                                                columnItskillsRecord
-                                                        .users
+                                                listViewItskillsRecord.users
                                                         .contains(usersElement)
                                                     ? FieldValue.arrayRemove(
                                                         [usersElement])
                                                     : FieldValue.arrayUnion(
                                                         [usersElement]);
-                                            await columnItskillsRecord.reference
+                                            await listViewItskillsRecord
+                                                .reference
                                                 .update({
                                               ...mapToFirestore(
                                                 {
@@ -286,7 +290,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                               ),
                                             });
                                           },
-                                          value: columnItskillsRecord.users
+                                          value: listViewItskillsRecord.users
                                               .contains(currentUserReference),
                                           onIcon: Icon(
                                             Icons.check_box,
@@ -306,7 +310,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          columnItskillsRecord.name,
+                                          listViewItskillsRecord.name,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -319,12 +323,10 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                   ),
                                 ),
                               );
-                            })
-                                    .divide(const SizedBox(height: 15.0))
-                                    .around(const SizedBox(height: 15.0)),
-                          ),
-                        );
-                      },
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                   Padding(
