@@ -385,7 +385,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                       'Manager')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(25.0, 35.0, 25.0, 0.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => Container(
                           width: 500.0,

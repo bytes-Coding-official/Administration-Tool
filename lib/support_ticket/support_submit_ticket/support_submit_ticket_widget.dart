@@ -669,76 +669,6 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             ),
                       ).animateOnPageLoad(
                           animationsMap['textOnPageLoadAnimation2']!),
-                      FlutterFlowChoiceChips(
-                        options: [
-                          ChipData(FFLocalizations.of(context).getText(
-                            'nj4gxq7y' /* Emergency */,
-                          )),
-                          ChipData(FFLocalizations.of(context).getText(
-                            'nxn0qt7g' /* High */,
-                          )),
-                          ChipData(FFLocalizations.of(context).getText(
-                            '36ar5gt0' /* Medium */,
-                          )),
-                          ChipData(FFLocalizations.of(context).getText(
-                            'xbub19mw' /* Low */,
-                          ))
-                        ],
-                        onChanged: (val) => setState(
-                            () => _model.choiceChipsValue = val?.firstOrNull),
-                        selectedChipStyle: ChipStyle(
-                          backgroundColor: FlutterFlowTheme.of(context).accent1,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                  ),
-                          iconColor: FlutterFlowTheme.of(context).primary,
-                          iconSize: 18.0,
-                          labelPadding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 4.0, 12.0, 4.0),
-                          elevation: 0.0,
-                          borderColor: FlutterFlowTheme.of(context).primary,
-                          borderWidth: 2.0,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        unselectedChipStyle: ChipStyle(
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Inter',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                letterSpacing: 0.0,
-                              ),
-                          iconColor: FlutterFlowTheme.of(context).secondaryText,
-                          iconSize: 18.0,
-                          labelPadding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 4.0, 12.0, 4.0),
-                          elevation: 0.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2.0,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        chipSpacing: 8.0,
-                        rowSpacing: 8.0,
-                        multiselect: false,
-                        initialized: _model.choiceChipsValue != null,
-                        alignment: WrapAlignment.start,
-                        controller: _model.choiceChipsValueController ??=
-                            FormFieldController<List<String>>(
-                          [
-                            FFLocalizations.of(context).getText(
-                              'udk6s772' /* Low */,
-                            )
-                          ],
-                        ),
-                        wrapped: false,
-                      ).animateOnPageLoad(
-                          animationsMap['choiceChipsOnPageLoadAnimation']!),
                       if (_model.uploadedFileUrl != '')
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -749,6 +679,91 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             fit: BoxFit.cover,
                           ),
                         ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FlutterFlowChoiceChips(
+                              options: [
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'nj4gxq7y' /* Emergency */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'nxn0qt7g' /* High */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  '36ar5gt0' /* Medium */,
+                                )),
+                                ChipData(FFLocalizations.of(context).getText(
+                                  'xbub19mw' /* Low */,
+                                ))
+                              ],
+                              onChanged: (val) => setState(() =>
+                                  _model.choiceChipsValue = val?.firstOrNull),
+                              selectedChipStyle: ChipStyle(
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).accent1,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                    ),
+                                iconColor: FlutterFlowTheme.of(context).primary,
+                                iconSize: 18.0,
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 4.0, 12.0, 4.0),
+                                elevation: 0.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                borderWidth: 2.0,
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              unselectedChipStyle: ChipStyle(
+                                backgroundColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                    ),
+                                iconColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                iconSize: 18.0,
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 4.0, 12.0, 4.0),
+                                elevation: 0.0,
+                                borderColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                borderWidth: 2.0,
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              chipSpacing: 8.0,
+                              rowSpacing: 8.0,
+                              multiselect: false,
+                              initialized: _model.choiceChipsValue != null,
+                              alignment: WrapAlignment.start,
+                              controller: _model.choiceChipsValueController ??=
+                                  FormFieldController<List<String>>(
+                                [
+                                  FFLocalizations.of(context).getText(
+                                    'udk6s772' /* Low */,
+                                  )
+                                ],
+                              ),
+                              wrapped: false,
+                            ).animateOnPageLoad(animationsMap[
+                                'choiceChipsOnPageLoadAnimation']!),
+                          ],
+                        ),
+                      ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: InkWell(
