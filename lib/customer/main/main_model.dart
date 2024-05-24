@@ -23,13 +23,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for mobileView widget.
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      mobileViewPagingController;
-  Query? mobileViewPagingQuery;
-  List<StreamSubscription?> mobileViewStreamSubscriptions = [];
-
   // State field(s) for tablet_DesktopView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
@@ -56,11 +49,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    for (var s in mobileViewStreamSubscriptions) {
-      s?.cancel();
-    }
-    mobileViewPagingController?.dispose();
-
     for (var s in tabletDesktopViewStreamSubscriptions1) {
       s?.cancel();
     }
@@ -73,39 +61,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   }
 
   /// Additional helper methods.
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setMobileViewController(
-    Query query, {
-    DocumentReference<Object?>? parent,
-  }) {
-    mobileViewPagingController ??= _createMobileViewController(query, parent);
-    if (mobileViewPagingQuery != query) {
-      mobileViewPagingQuery = query;
-      mobileViewPagingController?.refresh();
-    }
-    return mobileViewPagingController!;
-  }
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createMobileViewController(
-    Query query,
-    DocumentReference<Object?>? parent,
-  ) {
-    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
-        firstPageKey: null);
-    return controller
-      ..addPageRequestListener(
-        (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => mobileViewPagingQuery ??= query,
-          nextPageMarker: nextPageMarker,
-          streamSubscriptions: mobileViewStreamSubscriptions,
-          controller: controller,
-          pageSize: 15,
-          isStream: true,
-        ),
-      );
-  }
-
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
       setTabletDesktopViewController1(
     Query query, {
