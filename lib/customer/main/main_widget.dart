@@ -1653,7 +1653,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 'Kunde') &&
                             responsiveVisibility(
                               context: context,
-                              tablet: false,
                               tabletLandscape: false,
                               desktop: false,
                             ))
@@ -2245,7 +2244,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 'Kunde') &&
                             responsiveVisibility(
                               context: context,
-                              tablet: false,
                               tabletLandscape: false,
                               desktop: false,
                             ))
