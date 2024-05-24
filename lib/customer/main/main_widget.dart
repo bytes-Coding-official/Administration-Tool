@@ -1681,10 +1681,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   }
                                   List<CustomerCaseRecord>
                                       emCustomerCaseRecordList = snapshot.data!;
-                                  return ListView.builder(
+                                  return ListView.separated(
                                     padding: EdgeInsets.zero,
                                     scrollDirection: Axis.vertical,
                                     itemCount: emCustomerCaseRecordList.length,
+                                    separatorBuilder: (_, __) =>
+                                        const SizedBox(height: 15.0),
                                     itemBuilder: (context, emIndex) {
                                       final emCustomerCaseRecord =
                                           emCustomerCaseRecordList[emIndex];
@@ -2270,10 +2272,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   }
                                   List<CustomerCaseRecord>
                                       emCustomerCaseRecordList = snapshot.data!;
-                                  return ListView.builder(
+                                  return ListView.separated(
                                     padding: EdgeInsets.zero,
                                     scrollDirection: Axis.vertical,
                                     itemCount: emCustomerCaseRecordList.length,
+                                    separatorBuilder: (_, __) =>
+                                        const SizedBox(height: 15.0),
                                     itemBuilder: (context, emIndex) {
                                       final emCustomerCaseRecord =
                                           emCustomerCaseRecordList[emIndex];

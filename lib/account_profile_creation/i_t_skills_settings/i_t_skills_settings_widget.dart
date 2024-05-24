@@ -189,7 +189,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewItskillsRecordList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                            separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewItskillsRecord =
                                   listViewItskillsRecordList[listViewIndex];

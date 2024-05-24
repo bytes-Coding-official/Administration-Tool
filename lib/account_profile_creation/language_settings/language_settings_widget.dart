@@ -187,7 +187,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewLanguagesRecordList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 10.0),
+                            separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewLanguagesRecord =
                                   listViewLanguagesRecordList[listViewIndex];
