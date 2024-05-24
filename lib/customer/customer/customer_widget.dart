@@ -174,6 +174,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   }
                   final containerCustomerRecord = snapshot.data!;
                   return Container(
+                    height: MediaQuery.sizeOf(context).height * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -966,8 +967,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ],
                               ),
                             ),
-                            SizedBox(
-                              height: 200.0,
+                            Container(
+                              height: 417.0,
+                              decoration: const BoxDecoration(),
                               child: StreamBuilder<List<CustomerMeetingRecord>>(
                                 stream: queryCustomerMeetingRecord(
                                   queryBuilder: (customerMeetingRecord) =>

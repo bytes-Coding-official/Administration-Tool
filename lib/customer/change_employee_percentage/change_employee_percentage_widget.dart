@@ -109,7 +109,7 @@ class _ChangeEmployeePercentageWidgetState
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(25.0, 25.0, 25.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,

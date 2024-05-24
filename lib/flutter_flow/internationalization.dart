@@ -1490,51 +1490,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Supervisor',
       'fr': 'Superviseur',
     },
-    'w0tdj7p3': {
-      'en': 'Recent Activity',
-      'de': 'Letzte Aktivität',
-      'es': 'Actividad reciente',
-      'fr': 'Activité récente',
-    },
-    '17ihzxhi': {
-      'en': 'Below is an overview of tasks & activity completed.',
-      'de':
-          'Nachfolgend finden Sie eine Übersicht über die abgeschlossenen Aufgaben und Aktivitäten.',
-      'es':
-          'A continuación se muestra una descripción general de las tareas y actividades completadas.',
-      'fr':
-          'Vous trouverez ci-dessous un aperçu des tâches et des activités réalisées.',
-    },
-    'fcxcsakp': {
-      'en': 'Tasks',
-      'de': 'Aufgaben',
-      'es': 'Tareas',
-      'fr': 'Tâches',
-    },
-    '0nc0tkvo': {
-      'en': 'Completed',
-      'de': 'Vollendet',
-      'es': 'Terminado',
-      'fr': 'Complété',
-    },
-    '2dixago6': {
-      'en': 'active',
-      'de': 'aktiv',
-      'es': 'activo',
-      'fr': 'actif',
-    },
-    'p31pafw5': {
-      'en': 'Last 30 Days',
-      'de': 'Letzte 30 Tage',
-      'es': 'Últimos 30 días',
-      'fr': 'Les 30 derniers jours',
-    },
-    't6p8ypnx': {
-      'en': 'average',
-      'de': 'Durchschnitt',
-      'es': 'promedio',
-      'fr': 'moyenne',
-    },
     'sauzmy7r': {
       'en': 'Home',
       'de': 'Home',
@@ -2181,51 +2136,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
-    },
-    '8c0dhi8u': {
-      'en': 'Recent Activity',
-      'de': 'Letzte Aktivität',
-      'es': 'Actividad reciente',
-      'fr': 'Activité récente',
-    },
-    '9l3zb0oq': {
-      'en': 'Below is an overview of tasks & activity completed.',
-      'de':
-          'Nachfolgend finden Sie eine Übersicht über die abgeschlossenen Aufgaben und Aktivitäten.',
-      'es':
-          'A continuación se muestra una descripción general de las tareas y actividades completadas.',
-      'fr':
-          'Vous trouverez ci-dessous un aperçu des tâches et des activités réalisées.',
-    },
-    'dcaewooa': {
-      'en': 'Tasks',
-      'de': 'Aufgaben',
-      'es': 'Tareas',
-      'fr': 'Tâches',
-    },
-    '52zat9vf': {
-      'en': 'Completed',
-      'de': 'Vollendet',
-      'es': 'Terminado',
-      'fr': 'Complété',
-    },
-    'mwnhrn33': {
-      'en': 'active',
-      'de': 'aktiv',
-      'es': 'activo',
-      'fr': 'actif',
-    },
-    'uxb09uyj': {
-      'en': 'Last 30 Days',
-      'de': 'Letzte 30 Tage',
-      'es': 'Últimos 30 días',
-      'fr': 'Les 30 derniers jours',
-    },
-    'd03ypani': {
-      'en': 'average',
-      'de': 'Durchschnitt',
-      'es': 'promedio',
-      'fr': 'moyenne',
     },
     'cddgguhy': {
       'en': 'Home',

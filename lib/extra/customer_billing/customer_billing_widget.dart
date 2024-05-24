@@ -1,12 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -105,32 +103,6 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
             duration: 600.0.ms,
             begin: const Offset(0.0, 0.0),
             end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation5': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          TiltEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -425,6 +397,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
+                      height: MediaQuery.sizeOf(context).height * 0.801,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         boxShadow: const [
@@ -481,94 +454,80 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                 ],
                               ),
                             ),
-                            Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 0.35,
-                              decoration: const BoxDecoration(),
-                              child: SingleChildScrollView(
-                                primary: false,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 5.0),
-                                      child: SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '72cuvxfy' /* Date */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                            SingleChildScrollView(
+                              primary: false,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '72cuvxfy' /* Date */,
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ff89rf83' /* Duration */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'ff89rf83' /* Duration */,
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '0drowsmc' /* Costs */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '0drowsmc' /* Costs */,
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'libsyzti' /* Supervisor */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'libsyzti' /* Supervisor */,
                                             ),
-                                          ].divide(const SizedBox(width: 15.0)),
-                                        ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                        ].divide(const SizedBox(width: 15.0)),
                                       ),
                                     ),
-                                    AuthUserStreamWidget(
+                                  ),
+                                  Container(
+                                    decoration: const BoxDecoration(),
+                                    child: AuthUserStreamWidget(
                                       builder: (context) => StreamBuilder<
                                           List<CustomerMeetingRecord>>(
                                         stream: queryCustomerMeetingRecord(
@@ -911,8 +870,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                         },
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ].divide(const SizedBox(height: 5.0)),
@@ -921,314 +880,6 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                     ).animateOnPageLoad(
                         animationsMap['containerOnPageLoadAnimation4']!),
                   ),
-                  if (false)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 16.0, 24.0),
-                      child: Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 3.0,
-                              color: Color(0x33000000),
-                              offset: Offset(
-                                0.0,
-                                1.0,
-                              ),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 12.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '8c0dhi8u' /* Recent Activity */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '9l3zb0oq' /* Below is an overview of tasks ... */,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 4.0, 16.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 32.0,
-                                      constraints: const BoxConstraints(
-                                        maxHeight: 32.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.radio_button_checked_sharp,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 20.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'dcaewooa' /* Tasks */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 32.0,
-                                      constraints: const BoxConstraints(
-                                        maxHeight: 32.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.radio_button_checked_sharp,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              size: 20.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '52zat9vf' /* Completed */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 32.0,
-                                      constraints: const BoxConstraints(
-                                        maxHeight: 32.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.radio_button_checked_sharp,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              size: 20.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'mwnhrn33' /* active */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 16.0, 0.0),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  height: 200.0,
-                                  child: FlutterFlowLineChart(
-                                    data: [
-                                      FFLineChartData(
-                                        xData: List.generate(
-                                            random_data.randomInteger(5, 5),
-                                            (index) => random_data
-                                                .randomInteger(0, 10)),
-                                        yData: List.generate(
-                                            random_data.randomInteger(5, 5),
-                                            (index) => random_data
-                                                .randomInteger(0, 10)),
-                                        settings: LineChartBarData(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          barWidth: 2.0,
-                                          isCurved: true,
-                                          preventCurveOverShooting: true,
-                                          dotData: FlDotData(show: false),
-                                          belowBarData: BarAreaData(
-                                            show: true,
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent1,
-                                          ),
-                                        ),
-                                      ),
-                                      FFLineChartData(
-                                        xData: List.generate(
-                                            random_data.randomInteger(5, 5),
-                                            (index) => random_data
-                                                .randomInteger(0, 200)),
-                                        yData: List.generate(
-                                            random_data.randomInteger(5, 5),
-                                            (index) => random_data
-                                                .randomInteger(0, 200)),
-                                        settings: LineChartBarData(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
-                                          barWidth: 2.0,
-                                          isCurved: true,
-                                          preventCurveOverShooting: true,
-                                          dotData: FlDotData(show: false),
-                                          belowBarData: BarAreaData(
-                                            show: true,
-                                            color: FlutterFlowTheme.of(context)
-                                                .accent2,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                    chartStylingInfo: ChartStylingInfo(
-                                      enableTooltip: true,
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      showBorder: false,
-                                    ),
-                                    axisBounds: const AxisBounds(),
-                                    xAxisLabelInfo: AxisLabelInfo(
-                                      title:
-                                          FFLocalizations.of(context).getText(
-                                        'uxb09uyj' /* Last 30 Days */,
-                                      ),
-                                      titleTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                    ),
-                                    yAxisLabelInfo: AxisLabelInfo(
-                                      title:
-                                          FFLocalizations.of(context).getText(
-                                        'd03ypani' /* average */,
-                                      ),
-                                      titleTextStyle:
-                                          FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation5']!),
-                    ),
                 ].divide(const SizedBox(height: 5.0)),
               ),
             ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),

@@ -158,7 +158,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                   ),
                   Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 300.0,
+                    height: MediaQuery.sizeOf(context).height * 0.55,
                     decoration: const BoxDecoration(),
                     child: Padding(
                       padding:
