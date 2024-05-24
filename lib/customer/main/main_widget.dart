@@ -1649,8 +1649,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               ),
                             ),
                           ),
-                        if (valueOrDefault(currentUserDocument?.role, '') !=
-                            'Kunde')
+                        if ((valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde') &&
+                            responsiveVisibility(
+                              context: context,
+                              tablet: false,
+                              tabletLandscape: false,
+                              desktop: false,
+                            ))
                           AuthUserStreamWidget(
                             builder: (context) => Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -2235,8 +2241,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               ),
                             ),
                           ),
-                        if (valueOrDefault(currentUserDocument?.role, '') ==
-                            'Kunde')
+                        if ((valueOrDefault(currentUserDocument?.role, '') ==
+                                'Kunde') &&
+                            responsiveVisibility(
+                              context: context,
+                              tablet: false,
+                              tabletLandscape: false,
+                              desktop: false,
+                            ))
                           AuthUserStreamWidget(
                             builder: (context) => Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
