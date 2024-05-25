@@ -1193,6 +1193,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   decoration: const BoxDecoration(),
                   child: SingleChildScrollView(
+                    primary: false,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
