@@ -514,17 +514,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
     },
-    'dyx62bdw': {
-      'en': 'Customers',
-      'de': 'Kundenabgleich',
-      'es': 'Emparejamiento de clientes',
-      'fr': 'Correspondance client',
-    },
     '4tmi2f8n': {
       'en': 'Employee Billing',
       'de': 'Mitarbeiterabrechnung',
       'es': 'Facturación de empleados',
       'fr': 'Facturation des employés',
+    },
+    'dyx62bdw': {
+      'en': 'Customers',
+      'de': 'Kunden',
+      'es': 'Clientes',
+      'fr': 'Clients',
     },
     '12tpf17h': {
       'en': 'Settings',
@@ -717,7 +717,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Case ID',
       'de': 'Fall-ID',
       'es': 'Identificación del caso',
-      'fr': 'ID du cas',
+      'fr': 'Numéro de cas',
     },
     'q2qhf2ce': {
       'en': 'Case ID...',
@@ -1267,7 +1267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del boleto',
+      'es': 'Detalles del billete',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -1410,7 +1410,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'fr': 'Nombre total de clients',
     },
     '72k7zctj': {
       'en': 'Revenue Percentage',
@@ -2058,9 +2058,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '565faqzv': {
       'en': 'Customers',
-      'de': 'Kundenabgleich',
-      'es': 'Emparejamiento de clientes',
-      'fr': 'Correspondance client',
+      'de': 'Kunden',
+      'es': 'Clientes',
+      'fr': 'Clients',
     },
     '411g996a': {
       'en': 'Light Mode',
@@ -2192,7 +2192,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Clients totaux',
+      'fr': 'Nombre total de clients',
     },
     'lyzzcc02': {
       'en': 'Revenue Percentage',
@@ -2532,27 +2532,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '0cb2nnht': {
       'en': 'Customers',
-      'de': 'Komplette Sprachen',
-      'es': 'Idiomas completos',
-      'fr': 'Langues complètes',
+      'de': 'Kunden',
+      'es': 'Clientes',
+      'fr': 'Clients',
     },
     '9bl7c0iu': {
       'en': 'Complete Customer-List',
-      'de': 'Vervollständigen Sie Ihre Sprachen',
-      'es': 'Completa tus idiomas',
-      'fr': 'Complétez vos langues',
+      'de': 'Komplette Kundenliste',
+      'es': 'Lista completa de clientes',
+      'fr': 'Liste complète des clients',
     },
     'iu78xj34': {
       'en': 'List of all Customers',
-      'de': 'Ihre Sprachen',
-      'es': 'Tus idiomas',
-      'fr': 'Vos langues',
+      'de': 'Liste aller Kunden',
+      'es': 'Lista de todos los clientes',
+      'fr': 'Liste de tous les clients',
     },
     'm0uzgktb': {
       'en': 'Add Customer',
-      'de': 'Änderungen speichern',
-      'es': 'Guardar cambios',
-      'fr': 'Sauvegarder les modifications',
+      'de': 'Kunden hinzufügen',
+      'es': 'Agregar cliente',
+      'fr': 'Ajouter un client',
     },
     'fn5cvial': {
       'en': 'Home',
