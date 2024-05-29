@@ -3,18 +3,12 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/support_ticket/empty_state_dynamic/empty_state_dynamic_widget.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'support_ticket_list_model.dart';
 export 'support_ticket_list_model.dart';
 
@@ -118,7 +112,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -135,7 +129,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                     SupportTicketsRecord.collection
                         .orderBy('lastActive', descending: true),
                   ),
-                  padding: EdgeInsets.fromLTRB(
+                  padding: const EdgeInsets.fromLTRB(
                     0,
                     12.0,
                     0,
@@ -143,7 +137,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                   ),
                   reverse: false,
                   scrollDirection: Axis.vertical,
-                  separatorBuilder: (_, __) => SizedBox(height: 12.0),
+                  separatorBuilder: (_, __) => const SizedBox(height: 12.0),
                   builderDelegate:
                       PagedChildBuilderDelegate<SupportTicketsRecord>(
                     // Customize what your widget looks like when it's loading the first page.
@@ -171,7 +165,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                       ),
                     ),
                     noItemsFoundIndicatorBuilder: (_) => Center(
-                      child: Container(
+                      child: SizedBox(
                         height: 330.0,
                         child: EmptyStateDynamicWidget(
                           icon: Icon(
@@ -197,7 +191,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                       final listViewSupportTicketsRecord = _model
                           .listViewPagingController!.itemList![listViewIndex];
                       return Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -230,19 +224,19 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: Text('Delete Support Ticket'),
-                                      content: Text(
+                                      title: const Text('Delete Support Ticket'),
+                                      content: const Text(
                                           'Do you want to delete the support ticket?'),
                                       actions: [
                                         TextButton(
                                           onPressed: () => Navigator.pop(
                                               alertDialogContext, false),
-                                          child: Text('Cancel'),
+                                          child: const Text('Cancel'),
                                         ),
                                         TextButton(
                                           onPressed: () => Navigator.pop(
                                               alertDialogContext, true),
-                                          child: Text('Confirm'),
+                                          child: const Text('Confirm'),
                                         ),
                                       ],
                                     );
@@ -262,7 +256,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                           },
                           child: Container(
                             width: double.infinity,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
@@ -275,7 +269,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -303,7 +297,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                     minFontSize: 12.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 4.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -318,7 +312,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                               if (listViewSupportTicketsRecord
                                                       .priorityLevel ==
                                                   'High') {
-                                                return Color(0x4CFF5963);
+                                                return const Color(0x4CFF5963);
                                               } else if (listViewSupportTicketsRecord
                                                       .priorityLevel ==
                                                   'Medium') {
@@ -371,9 +365,9 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                         Expanded(
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: Text(
                                                 listViewSupportTicketsRecord
@@ -391,13 +385,10 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                         ),
                                         if (listViewSupportTicketsRecord
                                                     .image !=
-                                                null &&
-                                            listViewSupportTicketsRecord
-                                                    .image !=
                                                 '')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 12.0, 0.0),
                                             child: Icon(
                                               Icons.attach_file_sharp,
@@ -468,9 +459,9 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
                                               child: Text(
@@ -523,7 +514,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 4.0, 4.0, 4.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -542,7 +533,7 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                                         .getText(
                                                       '8tf2yxr2' /* Ticket #:  */,
                                                     ),
-                                                    style: TextStyle(),
+                                                    style: const TextStyle(),
                                                   ),
                                                   TextSpan(
                                                     text:
@@ -638,18 +629,18 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               6.0),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     200),
                                                         fadeOutDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     200),
                                                         imageUrl:
@@ -664,11 +655,11 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                                 );
                                               },
                                             ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 8.0)),
+                                ].divide(const SizedBox(height: 8.0)),
                               ),
                             ),
                           ),

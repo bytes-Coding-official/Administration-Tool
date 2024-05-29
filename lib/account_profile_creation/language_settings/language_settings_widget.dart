@@ -6,15 +6,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'language_settings_model.dart';
 export 'language_settings_model.dart';
 
@@ -130,14 +125,14 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                 ),
               ],
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -148,7 +143,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -167,7 +162,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.55,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           LanguagesRecord>.separated(
                         pagingController: _model.setListViewController(
@@ -177,7 +172,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                         shrinkWrap: true,
                         reverse: false,
                         scrollDirection: Axis.vertical,
-                        separatorBuilder: (_, __) => SizedBox(height: 15.0),
+                        separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                         builderDelegate:
                             PagedChildBuilderDelegate<LanguagesRecord>(
                           // Customize what your widget looks like when it's loading the first page.
@@ -226,8 +221,8 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Delete Value'),
-                                                content: Text(
+                                                title: const Text('Delete Value'),
+                                                content: const Text(
                                                     'Do you really want to delete that value?'),
                                                 actions: [
                                                   TextButton(
@@ -235,14 +230,14 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('Cancel'),
+                                                    child: const Text('Cancel'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Confirm'),
+                                                    child: const Text('Confirm'),
                                                   ),
                                                 ],
                                               );
@@ -282,7 +277,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: ToggleIcon(
                                         onPressed: () async {
@@ -322,7 +317,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         listViewLanguagesRecord.name,
@@ -344,7 +339,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -363,7 +358,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              duration: Duration(milliseconds: 4000),
+                              duration: const Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -375,9 +370,9 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -399,7 +394,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     if (valueOrDefault(currentUserDocument?.role, '') ==
                         'Manager')
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             25.0, 35.0, 25.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
@@ -415,7 +410,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -496,7 +491,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -527,7 +522,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                                 ),
                                           ),
                                           duration:
-                                              Duration(milliseconds: 4000),
+                                              const Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
@@ -545,10 +540,10 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                     options: FFButtonOptions(
                                       width: 150.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,

@@ -5,15 +5,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'customers_model.dart';
 export 'customers_model.dart';
 
@@ -125,14 +120,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                 ),
               ],
             ),
-            actions: [],
+            actions: const [],
             centerTitle: true,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -143,7 +138,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -162,7 +157,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.55,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           CustomerRecord>.separated(
                         pagingController: _model.setListViewController(
@@ -172,7 +167,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                         shrinkWrap: true,
                         reverse: false,
                         scrollDirection: Axis.vertical,
-                        separatorBuilder: (_, __) => SizedBox(height: 15.0),
+                        separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                         builderDelegate:
                             PagedChildBuilderDelegate<CustomerRecord>(
                           // Customize what your widget looks like when it's loading the first page.
@@ -221,8 +216,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Delete Value'),
-                                                content: Text(
+                                                title: const Text('Delete Value'),
+                                                content: const Text(
                                                     'Do you really want to delete that value?'),
                                                 actions: [
                                                   TextButton(
@@ -230,14 +225,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('Cancel'),
+                                                    child: const Text('Cancel'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Confirm'),
+                                                    child: const Text('Confirm'),
                                                   ),
                                                 ],
                                               );
@@ -280,7 +275,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           listViewCustomerRecord.name,
@@ -293,7 +288,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           listViewCustomerRecord.email,
@@ -306,8 +301,8 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(width: 35.0))
-                                        .around(SizedBox(width: 35.0)),
+                                        .divide(const SizedBox(width: 35.0))
+                                        .around(const SizedBox(width: 35.0)),
                                   ),
                                 ),
                               ),
@@ -318,7 +313,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -333,9 +328,9 @@ class _CustomersWidgetState extends State<CustomersWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)

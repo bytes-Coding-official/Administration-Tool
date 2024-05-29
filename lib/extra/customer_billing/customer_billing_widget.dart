@@ -4,17 +4,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'customer_billing_model.dart';
 export 'customer_billing_model.dart';
 
@@ -89,15 +83,15 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.0, 20.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 20.0),
+            end: const Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: Offset(0.698, 0),
-            end: Offset(0, 0),
+            begin: const Offset(0.698, 0),
+            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -108,8 +102,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -177,16 +171,16 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(-1.0, -1.0),
+            alignment: const AlignmentDirectional(-1.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -194,7 +188,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -209,12 +203,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(8.0),
                                 border: Border.all(
-                                  color: Color(0xFFE0E3E7),
+                                  color: const Color(0xFFE0E3E7),
                                   width: 2.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: SingleChildScrollView(
                                   primary: false,
                                   child: Column(
@@ -239,7 +233,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -267,12 +261,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(8.0),
                                 border: Border.all(
-                                  color: Color(0xFFE0E3E7),
+                                  color: const Color(0xFFE0E3E7),
                                   width: 2.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: SingleChildScrollView(
                                   primary: false,
                                   child: Column(
@@ -297,7 +291,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -325,12 +319,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(8.0),
                                 border: Border.all(
-                                  color: Color(0xFFE0E3E7),
+                                  color: const Color(0xFFE0E3E7),
                                   width: 2.0,
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: SingleChildScrollView(
                                   primary: false,
                                   child: Column(
@@ -388,7 +382,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -408,20 +402,20 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(width: 25.0)),
+                          ].divide(const SizedBox(width: 25.0)),
                         ),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.801,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -440,7 +434,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -458,7 +452,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                           ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -481,7 +475,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
                                       child: SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
@@ -554,12 +548,12 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                             FontWeight.w600,
                                                       ),
                                             ),
-                                          ].divide(SizedBox(width: 15.0)),
+                                          ].divide(const SizedBox(width: 15.0)),
                                         ),
                                       ),
                                     ),
                                     Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => PagedListView<
                                             DocumentSnapshot<Object?>?,
@@ -578,7 +572,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                           reverse: false,
                                           scrollDirection: Axis.vertical,
                                           separatorBuilder: (_, __) =>
-                                              SizedBox(height: 15.0),
+                                              const SizedBox(height: 15.0),
                                           builderDelegate:
                                               PagedChildBuilderDelegate<
                                                   CustomerMeetingRecord>(
@@ -645,23 +639,23 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                               builder:
                                                                   (alertDialogContext) {
                                                                 return AlertDialog(
-                                                                  title: Text(
+                                                                  title: const Text(
                                                                       'Confirm Delete'),
-                                                                  content: Text(
+                                                                  content: const Text(
                                                                       'Do you really want to delete that Meeting?'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Cancel'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Confirm'),
                                                                     ),
                                                                   ],
@@ -686,15 +680,15 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Done'),
-                                                          content: Text(
+                                                          title: const Text('Done'),
+                                                          content: const Text(
                                                               'Meeting Deleted'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
                                                                   Navigator.pop(
                                                                       alertDialogContext),
-                                                              child: Text('Ok'),
+                                                              child: const Text('Ok'),
                                                             ),
                                                           ],
                                                         );
@@ -880,7 +874,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsets.all(2.0),
+                                                                              padding: const EdgeInsets.all(2.0),
                                                                               child: ClipRRect(
                                                                                 borderRadius: BorderRadius.circular(40.0),
                                                                                 child: Image.network(
@@ -894,7 +888,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                                           );
                                                                         },
                                                                       );
-                                                                    }).divide(SizedBox(
+                                                                    }).divide(const SizedBox(
                                                                         width:
                                                                             4.0)),
                                                                   ),
@@ -902,9 +896,9 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                               },
                                                             ),
                                                           ]
-                                                              .divide(SizedBox(
+                                                              .divide(const SizedBox(
                                                                   width: 15.0))
-                                                              .around(SizedBox(
+                                                              .around(const SizedBox(
                                                                   width: 15.0)),
                                                         ),
                                                       ),
@@ -921,13 +915,13 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                   ],
                                 ),
                               ),
-                            ].divide(SizedBox(height: 5.0)),
+                            ].divide(const SizedBox(height: 5.0)),
                           ),
                         ),
                       ).animateOnPageLoad(
                           animationsMap['containerOnPageLoadAnimation4']!),
                     ),
-                  ].divide(SizedBox(height: 5.0)),
+                  ].divide(const SizedBox(height: 5.0)),
                 ),
               ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
             ),

@@ -7,18 +7,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'main_model.dart';
 export 'main_model.dart';
 
@@ -106,13 +100,13 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -125,7 +119,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   size: 32.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -154,7 +148,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -169,7 +163,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -185,7 +179,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     context.pushNamed('Main');
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -196,7 +190,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -209,7 +203,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -238,10 +232,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   child: Text(
@@ -270,7 +264,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -286,7 +280,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     context.pushNamed('chat_2_main');
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -297,7 +291,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -310,7 +304,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -339,10 +333,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   child: Text(
@@ -374,7 +368,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       currentUserDocument?.role, '') ==
                                   'Manager')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -391,7 +385,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         context.pushNamed('support_TicketList');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -404,7 +398,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -418,7 +412,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -449,11 +443,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -493,7 +487,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       currentUserDocument?.role, '') ==
                                   'Manager')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -510,7 +504,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         context.pushNamed('CustomerMatching');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -523,7 +517,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -537,7 +531,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -566,7 +560,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       currentUserDocument?.role, '') ==
                                   'Manager')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -584,7 +578,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             'ChangeEmployeePercentage');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -597,7 +591,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -611,7 +605,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -640,7 +634,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       currentUserDocument?.role, '') ==
                                   'Manager')
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => InkWell(
@@ -657,7 +651,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         context.pushNamed('Customers');
                                       },
                                       child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
+                                        duration: const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -670,7 +664,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -684,7 +678,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -710,7 +704,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -725,7 +719,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -750,7 +744,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     }
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -761,7 +755,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -774,7 +768,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -797,7 +791,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -813,7 +807,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     context.pushNamed('Users');
                                   },
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     curve: Curves.easeInOut,
                                     width: double.infinity,
                                     height: 44.0,
@@ -824,7 +818,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 6.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -837,7 +831,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -861,7 +855,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               ),
                               if (false)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -877,7 +871,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       context.pushNamed('Calendar');
                                     },
                                     child: AnimatedContainer(
-                                      duration: Duration(milliseconds: 200),
+                                      duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -889,7 +883,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -903,7 +897,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -927,13 +921,13 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                 ),
-                            ].divide(SizedBox(height: 12.0)),
+                            ].divide(const SizedBox(height: 12.0)),
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 16.0),
                             child: Container(
                               width: 250.0,
@@ -948,7 +942,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
@@ -1018,7 +1012,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   size: 16.0,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: AutoSizeText(
@@ -1116,7 +1110,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   size: 16.0,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: AutoSizeText(
@@ -1151,7 +1145,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 5.0)),
+                                    ].divide(const SizedBox(width: 5.0)),
                                   ),
                                 ),
                               ),
@@ -1164,7 +1158,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -1178,7 +1172,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               context.pushNamed(
                                 'auth_2_Profile',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 350),
@@ -1194,7 +1188,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   height: 50.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0),
                                       topLeft: Radius.circular(10.0),
@@ -1207,16 +1201,16 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              Duration(milliseconds: 500),
+                                              const Duration(milliseconds: 500),
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
@@ -1228,7 +1222,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1270,9 +1264,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
               Expanded(
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: SingleChildScrollView(
                       primary: false,
                       child: Column(
@@ -1280,7 +1274,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1292,7 +1286,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor:
@@ -1302,7 +1296,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       buttonSize: 40.0,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.notes,
                                         color: Colors.white,
                                         size: 24.0,
@@ -1349,18 +1343,18 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     ],
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 15.0)),
+                              ].divide(const SizedBox(width: 15.0)),
                             ),
                           ),
                           if (valueOrDefault(currentUserDocument?.role, '') !=
                               'Kunde')
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 12.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Container(
                                   width: double.infinity,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: double.infinity,
                                   ),
                                   decoration: BoxDecoration(
@@ -1489,10 +1483,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               tablet: false,
                                             ))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 2.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
@@ -1505,7 +1499,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController1',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 150),
                                                       () => setState(() {}),
                                                     ),
@@ -1606,7 +1600,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(width: 15.0)),
+                                          ].divide(const SizedBox(width: 15.0)),
                                         ),
                                       ),
                                       if (responsiveVisibility(
@@ -1617,7 +1611,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 5.0, 2.0),
                                           child: TextFormField(
                                             controller: _model.textController2,
@@ -1626,7 +1620,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController2',
-                                              Duration(milliseconds: 150),
+                                              const Duration(milliseconds: 150),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -1719,7 +1713,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                           if (valueOrDefault(currentUserDocument?.role, '') ==
                               'Manager')
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => SingleChildScrollView(
@@ -1748,10 +1742,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   0.35,
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   15.0, 0.0, 15.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -1792,10 +1786,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   0.353,
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   15.0, 0.0, 15.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -1817,7 +1811,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               BorderRadius.circular(8.0),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 35.0)),
+                                    ].divide(const SizedBox(width: 35.0)),
                                   ),
                                 ),
                               ),
@@ -1833,7 +1827,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               builder: (context) => Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 550.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: PagedListView<DocumentSnapshot<Object?>?,
                                     CustomerCaseRecord>.separated(
                                   pagingController: _model.setEmController1(
@@ -1844,7 +1838,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(height: 15.0),
+                                      const SizedBox(height: 15.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -1906,7 +1900,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1931,8 +1925,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -1940,7 +1934,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -1948,7 +1942,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -1968,15 +1962,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -2000,7 +1994,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: Container(
                                           width: 700.0,
                                           height: 250.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -2016,14 +2010,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -2038,7 +2032,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               .getText(
                                                             'n9qnpbyi' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -2064,7 +2058,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -2081,7 +2075,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 4.0, 12.0,
                                                           16.0),
                                                   child: Text(
@@ -2097,7 +2091,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
@@ -2191,9 +2185,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               },
                                                             );
                                                           })
-                                                              .divide(SizedBox(
+                                                              .divide(const SizedBox(
                                                                   width: 15.0))
-                                                              .around(SizedBox(
+                                                              .around(const SizedBox(
                                                                   width: 15.0)),
                                                         ),
                                                       );
@@ -2208,7 +2202,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -2296,7 +2290,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(2.0),
+                                                                              const EdgeInsets.all(2.0),
                                                                           child:
                                                                               ClipRRect(
                                                                             borderRadius:
@@ -2313,8 +2307,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     },
                                                                   );
-                                                                }).divide(SizedBox(width: 5.0)).around(
-                                                                    SizedBox(
+                                                                }).divide(const SizedBox(width: 5.0)).around(
+                                                                    const SizedBox(
                                                                         width:
                                                                             5.0)),
                                                               ),
@@ -2323,11 +2317,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     6.0),
                                                             child: Container(
                                                               height: 32.0,
@@ -2364,11 +2358,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2385,9 +2379,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (emCustomerCaseRecord
-                                                                              .assignee
-                                                                              .length ==
-                                                                          0) {
+                                                                              .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else {
                                                                         return 'Other';
@@ -2439,7 +2431,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               builder: (context) => Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 550.0,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: PagedListView<DocumentSnapshot<Object?>?,
                                     CustomerCaseRecord>.separated(
                                   pagingController: _model.setEmController2(
@@ -2455,7 +2447,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(height: 15.0),
+                                      const SizedBox(height: 15.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -2517,7 +2509,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2542,8 +2534,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -2551,7 +2543,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -2559,7 +2551,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -2579,15 +2571,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -2611,7 +2603,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: Container(
                                           width: 700.0,
                                           height: 250.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -2627,14 +2619,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -2649,7 +2641,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               .getText(
                                                             'xpe9vzmw' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -2675,7 +2667,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -2692,7 +2684,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 4.0, 12.0,
                                                           16.0),
                                                   child: Text(
@@ -2708,7 +2700,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
@@ -2802,9 +2794,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               },
                                                             );
                                                           })
-                                                              .divide(SizedBox(
+                                                              .divide(const SizedBox(
                                                                   width: 15.0))
-                                                              .around(SizedBox(
+                                                              .around(const SizedBox(
                                                                   width: 15.0)),
                                                         ),
                                                       );
@@ -2819,7 +2811,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -2907,7 +2899,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(2.0),
+                                                                              const EdgeInsets.all(2.0),
                                                                           child:
                                                                               ClipRRect(
                                                                             borderRadius:
@@ -2924,8 +2916,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     },
                                                                   );
-                                                                }).divide(SizedBox(width: 5.0)).around(
-                                                                    SizedBox(
+                                                                }).divide(const SizedBox(width: 5.0)).around(
+                                                                    const SizedBox(
                                                                         width:
                                                                             5.0)),
                                                               ),
@@ -2934,11 +2926,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     6.0),
                                                             child: Container(
                                                               height: 32.0,
@@ -2975,11 +2967,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -2996,9 +2988,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (emCustomerCaseRecord
-                                                                              .assignee
-                                                                              .length ==
-                                                                          0) {
+                                                                              .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else {
                                                                         return 'Other';
@@ -3047,7 +3037,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 tablet: false,
                               ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedGridView<
@@ -3058,14 +3048,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     CustomerCaseRecord.collection
                                         .orderBy('caseid', descending: true),
                                   ),
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     0,
                                     15.0,
                                     0,
                                     15.0,
                                   ),
                                   gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -3134,7 +3124,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -3159,8 +3149,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -3168,7 +3158,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -3176,7 +3166,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -3196,15 +3186,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -3225,7 +3215,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: Container(
                                           width: 700.0,
                                           height: 350.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -3241,14 +3231,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -3263,7 +3253,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               .getText(
                                                             'nhxrq5ni' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -3289,7 +3279,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -3309,7 +3299,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 0.0, 16.0),
                                                     child: Text(
@@ -3417,7 +3407,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               );
                                                             },
                                                           );
-                                                        }).divide(SizedBox(
+                                                        }).divide(const SizedBox(
                                                             width: 10.0)),
                                                       ),
                                                     );
@@ -3431,7 +3421,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -3520,7 +3510,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(2.0),
+                                                                            const EdgeInsets.all(2.0),
                                                                         child:
                                                                             ClipRRect(
                                                                           borderRadius:
@@ -3541,7 +3531,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   },
                                                                 );
                                                               }).divide(
-                                                                  SizedBox(
+                                                                  const SizedBox(
                                                                       width:
                                                                           4.0)),
                                                             );
@@ -3586,11 +3576,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -3604,9 +3594,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (tabletDesktopViewCustomerCaseRecord
-                                                                              .assignee
-                                                                              .length ==
-                                                                          0) {
+                                                                              .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else if (tabletDesktopViewCustomerCaseRecord
                                                                           .closed) {
@@ -3633,7 +3621,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                             ),
                                                           ],
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 15.0)),
                                                     ),
                                                   ),
@@ -3656,7 +3644,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 tablet: false,
                               ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => PagedGridView<
@@ -3672,14 +3660,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         )
                                         .orderBy('caseid', descending: true),
                                   ),
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     0,
                                     15.0,
                                     0,
                                     15.0,
                                   ),
                                   gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -3748,7 +3736,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -3773,8 +3761,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Delete'),
-                                                          content: Text(
+                                                          title: const Text('Delete'),
+                                                          content: const Text(
                                                               'Do you want to delete this case?'),
                                                           actions: [
                                                             TextButton(
@@ -3782,7 +3770,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -3790,7 +3778,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -3810,15 +3798,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Confirmation'),
-                                                    content: Text(
+                                                    title: const Text('Confirmation'),
+                                                    content: const Text(
                                                         'Deleted the selected customer-case'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -3839,7 +3827,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: Container(
                                           width: 700.0,
                                           height: 350.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
                                           decoration: BoxDecoration(
@@ -3855,14 +3843,14 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 12.0, 0.0, 8.0),
                                                   child: RichText(
@@ -3877,7 +3865,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               .getText(
                                                             'ati3ejso' /* ID#:  */,
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
@@ -3903,7 +3891,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
@@ -3923,7 +3911,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 16.0),
                                                     child: Text(
@@ -4029,7 +4017,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               );
                                                             },
                                                           );
-                                                        }).divide(SizedBox(
+                                                        }).divide(const SizedBox(
                                                             width: 10.0)),
                                                       ),
                                                     );
@@ -4043,7 +4031,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .alternate,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 12.0,
                                                           12.0, 8.0),
                                                   child: SingleChildScrollView(
@@ -4132,7 +4120,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(2.0),
+                                                                            const EdgeInsets.all(2.0),
                                                                         child:
                                                                             ClipRRect(
                                                                           borderRadius:
@@ -4153,7 +4141,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   },
                                                                 );
                                                               }).divide(
-                                                                  SizedBox(
+                                                                  const SizedBox(
                                                                       width:
                                                                           4.0)),
                                                             );
@@ -4198,11 +4186,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -4216,9 +4204,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               currentUserReference)) {
                                                                         return 'Own';
                                                                       } else if (tabletDesktopViewCustomerCaseRecord
-                                                                              .assignee
-                                                                              .length ==
-                                                                          0) {
+                                                                              .assignee.isEmpty) {
                                                                         return 'Open';
                                                                       } else if (tabletDesktopViewCustomerCaseRecord
                                                                           .closed) {
@@ -4245,7 +4231,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                             ),
                                                           ],
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 15.0)),
                                                     ),
                                                   ),

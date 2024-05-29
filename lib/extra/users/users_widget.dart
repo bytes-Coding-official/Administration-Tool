@@ -4,15 +4,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'users_model.dart';
 export 'users_model.dart';
 
@@ -116,7 +111,7 @@ class _UsersWidgetState extends State<UsersWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -127,7 +122,7 @@ class _UsersWidgetState extends State<UsersWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
@@ -137,13 +132,13 @@ class _UsersWidgetState extends State<UsersWidget>
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
                     child: TextFormField(
                       controller: _model.textController,
                       focusNode: _model.textFieldFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.textController',
-                        Duration(milliseconds: 150),
+                        const Duration(milliseconds: 150),
                         () => setState(() {}),
                       ),
                       autofocus: true,
@@ -212,7 +207,7 @@ class _UsersWidgetState extends State<UsersWidget>
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
                   child: PagedListView<DocumentSnapshot<Object?>?,
                       UsersRecord>.separated(
                     pagingController: _model.setListViewController(
@@ -222,7 +217,7 @@ class _UsersWidgetState extends State<UsersWidget>
                     shrinkWrap: true,
                     reverse: false,
                     scrollDirection: Axis.vertical,
-                    separatorBuilder: (_, __) => SizedBox(height: 15.0),
+                    separatorBuilder: (_, __) => const SizedBox(height: 15.0),
                     builderDelegate: PagedChildBuilderDelegate<UsersRecord>(
                       // Customize what your widget looks like when it's loading the first page.
                       firstPageProgressIndicatorBuilder: (_) => Center(
@@ -253,7 +248,7 @@ class _UsersWidgetState extends State<UsersWidget>
                         final listViewUsersRecord = _model
                             .listViewPagingController!.itemList![listViewIndex];
                         return Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 1.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -301,8 +296,8 @@ class _UsersWidgetState extends State<UsersWidget>
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: Text('Delete User'),
-                                              content: Text(
+                                              title: const Text('Delete User'),
+                                              content: const Text(
                                                   'Do you relly want to delete this user'),
                                               actions: [
                                                 TextButton(
@@ -310,14 +305,14 @@ class _UsersWidgetState extends State<UsersWidget>
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           false),
-                                                  child: Text('Cancel'),
+                                                  child: const Text('Cancel'),
                                                 ),
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           true),
-                                                  child: Text('Confirm'),
+                                                  child: const Text('Confirm'),
                                                 ),
                                               ],
                                             );
@@ -351,7 +346,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                     blurRadius: 0.0,
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    offset: Offset(
+                                    offset: const Offset(
                                       0.0,
                                       1.0,
                                     ),
@@ -363,7 +358,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -384,7 +379,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               listViewUsersRecord.displayName,
@@ -399,7 +394,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: SingleChildScrollView(
                                               scrollDirection: Axis.horizontal,
@@ -408,7 +403,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -425,7 +420,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -448,7 +443,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: SingleChildScrollView(
                                               scrollDirection: Axis.horizontal,
@@ -457,7 +452,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -473,7 +468,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -508,7 +503,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                             BorderRadius.circular(40.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(4.0),
+                                        padding: const EdgeInsets.all(4.0),
                                         child: Icon(
                                           Icons.keyboard_arrow_right_rounded,
                                           color: FlutterFlowTheme.of(context)

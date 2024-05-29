@@ -1,20 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,33 +72,33 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? MainWidget() : Auth2LoginWidget(),
+          appStateNotifier.loggedIn ? const MainWidget() : const Auth2LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? MainWidget() : Auth2LoginWidget(),
+              appStateNotifier.loggedIn ? const MainWidget() : const Auth2LoginWidget(),
         ),
         FFRoute(
           name: 'ProfileSettings',
           path: '/profileSettings',
-          builder: (context, params) => ProfileSettingsWidget(),
+          builder: (context, params) => const ProfileSettingsWidget(),
         ),
         FFRoute(
           name: 'Adress-Settings',
           path: '/adressSettings',
-          builder: (context, params) => AdressSettingsWidget(),
+          builder: (context, params) => const AdressSettingsWidget(),
         ),
         FFRoute(
           name: 'IT-Skills-Settings',
           path: '/iTSkillsSettings',
-          builder: (context, params) => ITSkillsSettingsWidget(),
+          builder: (context, params) => const ITSkillsSettingsWidget(),
         ),
         FFRoute(
           name: 'Language-Settings',
           path: '/languageSettings',
-          builder: (context, params) => LanguageSettingsWidget(),
+          builder: (context, params) => const LanguageSettingsWidget(),
         ),
         FFRoute(
           name: 'Customer',
@@ -122,57 +115,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Main',
           path: '/main',
-          builder: (context, params) => MainWidget(),
+          builder: (context, params) => const MainWidget(),
         ),
         FFRoute(
           name: 'Users',
           path: '/users',
-          builder: (context, params) => UsersWidget(),
+          builder: (context, params) => const UsersWidget(),
         ),
         FFRoute(
           name: 'CreateCase',
           path: '/createCase',
-          builder: (context, params) => CreateCaseWidget(),
+          builder: (context, params) => const CreateCaseWidget(),
         ),
         FFRoute(
           name: 'auth_2_Create',
           path: '/auth2Create',
-          builder: (context, params) => Auth2CreateWidget(),
+          builder: (context, params) => const Auth2CreateWidget(),
         ),
         FFRoute(
           name: 'auth_2_Login',
           path: '/auth2Login',
-          builder: (context, params) => Auth2LoginWidget(),
+          builder: (context, params) => const Auth2LoginWidget(),
         ),
         FFRoute(
           name: 'auth_2_ForgotPassword',
           path: '/auth2ForgotPassword',
-          builder: (context, params) => Auth2ForgotPasswordWidget(),
+          builder: (context, params) => const Auth2ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'auth_2_createProfile',
           path: '/auth2CreateProfile',
-          builder: (context, params) => Auth2CreateProfileWidget(),
+          builder: (context, params) => const Auth2CreateProfileWidget(),
         ),
         FFRoute(
           name: 'auth_2_Profile',
           path: '/auth2Profile',
-          builder: (context, params) => Auth2ProfileWidget(),
+          builder: (context, params) => const Auth2ProfileWidget(),
         ),
         FFRoute(
           name: 'auth_2_EditProfile',
           path: '/auth2EditProfile',
-          builder: (context, params) => Auth2EditProfileWidget(),
+          builder: (context, params) => const Auth2EditProfileWidget(),
         ),
         FFRoute(
           name: 'support_TicketList',
           path: '/supportTicketList',
-          builder: (context, params) => SupportTicketListWidget(),
+          builder: (context, params) => const SupportTicketListWidget(),
         ),
         FFRoute(
           name: 'support_SubmitTicket',
           path: '/supportSubmitTicket',
-          builder: (context, params) => SupportSubmitTicketWidget(),
+          builder: (context, params) => const SupportSubmitTicketWidget(),
         ),
         FFRoute(
           name: 'support_TicketDetails',
@@ -191,12 +184,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'EmployeeBilling',
           path: '/employeeBilling',
-          builder: (context, params) => EmployeeBillingWidget(),
+          builder: (context, params) => const EmployeeBillingWidget(),
         ),
         FFRoute(
           name: 'Calendar',
           path: '/calendar',
-          builder: (context, params) => CalendarWidget(),
+          builder: (context, params) => const CalendarWidget(),
         ),
         FFRoute(
           name: 'chat_2_Details',
@@ -214,7 +207,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_2_main',
           path: '/chat2Main',
-          builder: (context, params) => Chat2MainWidget(),
+          builder: (context, params) => const Chat2MainWidget(),
         ),
         FFRoute(
           name: 'chat_2_InviteUsers',
@@ -246,7 +239,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'CreateCustomer',
           path: '/createCustomer',
-          builder: (context, params) => CreateCustomerWidget(),
+          builder: (context, params) => const CreateCustomerWidget(),
         ),
         FFRoute(
           name: 'AddMeetingToCustomer',
@@ -263,12 +256,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'SideNav',
           path: '/sideNav',
-          builder: (context, params) => SideNavWidget(),
+          builder: (context, params) => const SideNavWidget(),
         ),
         FFRoute(
           name: 'CustomerBilling',
           path: '/customerBilling',
-          builder: (context, params) => CustomerBillingWidget(),
+          builder: (context, params) => const CustomerBillingWidget(),
         ),
         FFRoute(
           name: 'ProfileEmployee',
@@ -297,17 +290,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'CustomerMatching',
           path: '/customerMatching',
-          builder: (context, params) => CustomerMatchingWidget(),
+          builder: (context, params) => const CustomerMatchingWidget(),
         ),
         FFRoute(
           name: 'ChangeEmployeePercentage',
           path: '/changeEmployeePercentage',
-          builder: (context, params) => ChangeEmployeePercentageWidget(),
+          builder: (context, params) => const ChangeEmployeePercentageWidget(),
         ),
         FFRoute(
           name: 'Customers',
           path: '/customers',
-          builder: (context, params) => CustomersWidget(),
+          builder: (context, params) => const CustomersWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -542,7 +535,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

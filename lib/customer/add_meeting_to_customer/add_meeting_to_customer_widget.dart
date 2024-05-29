@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,11 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_meeting_to_customer_model.dart';
 export 'add_meeting_to_customer_model.dart';
@@ -148,21 +143,21 @@ class _AddMeetingToCustomerWidgetState
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 2.0,
               ),
               body: SafeArea(
                 top: true,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -274,7 +269,7 @@ class _AddMeetingToCustomerWidgetState
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -446,7 +441,7 @@ class _AddMeetingToCustomerWidgetState
                             logFirebaseEvent(
                                 'ADD_MEETING_TO_CUSTOMER_SELECT_DATE_BTN_');
                             logFirebaseEvent('Button_date_time_picker');
-                            final _datePickedDate = await showDatePicker(
+                            final datePickedDate = await showDatePicker(
                               context: context,
                               initialDate: getCurrentTimestamp,
                               firstDate: DateTime(1900),
@@ -483,12 +478,12 @@ class _AddMeetingToCustomerWidgetState
                               },
                             );
 
-                            if (_datePickedDate != null) {
+                            if (datePickedDate != null) {
                               safeSetState(() {
                                 _model.datePicked = DateTime(
-                                  _datePickedDate.year,
-                                  _datePickedDate.month,
-                                  _datePickedDate.day,
+                                  datePickedDate.year,
+                                  datePickedDate.month,
+                                  datePickedDate.day,
                                 );
                               });
                             }
@@ -505,9 +500,9 @@ class _AddMeetingToCustomerWidgetState
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 0.5,
                             height: 48.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -550,7 +545,7 @@ class _AddMeetingToCustomerWidgetState
                                   _model.dateFormated,
                                   '00.00.00',
                                 ),
-                                style: TextStyle(),
+                                style: const TextStyle(),
                               )
                             ],
                             style: FlutterFlowTheme.of(context)
@@ -564,7 +559,7 @@ class _AddMeetingToCustomerWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 35.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -632,13 +627,13 @@ class _AddMeetingToCustomerWidgetState
                                 context: context,
                                 builder: (alertDialogContext) {
                                   return AlertDialog(
-                                    title: Text('Done'),
-                                    content: Text('Saved value to database'),
+                                    title: const Text('Done'),
+                                    content: const Text('Saved value to database'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
+                                        child: const Text('Ok'),
                                       ),
                                     ],
                                   );
@@ -666,9 +661,9 @@ class _AddMeetingToCustomerWidgetState
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 0.5,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -689,8 +684,8 @@ class _AddMeetingToCustomerWidgetState
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 25.0))
-                          .addToEnd(SizedBox(height: 32.0)),
+                          .divide(const SizedBox(height: 25.0))
+                          .addToEnd(const SizedBox(height: 32.0)),
                     ),
                   ),
                 ),

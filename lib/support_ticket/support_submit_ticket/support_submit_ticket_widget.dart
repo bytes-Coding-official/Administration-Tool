@@ -11,15 +11,10 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/support_ticket/user_list/user_list_widget.dart';
 import '/support_ticket/user_list_small/user_list_small_widget.dart';
-import 'dart:math';
 import '/flutter_flow/random_data_util.dart' as random_data;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'support_submit_ticket_model.dart';
 export 'support_submit_ticket_model.dart';
@@ -81,8 +76,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: Offset(-30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -100,8 +95,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,8 +114,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 50.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -139,8 +134,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -159,8 +154,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -179,8 +174,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 400.0.ms,
-            begin: Offset(-30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -199,8 +194,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -218,8 +213,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -238,8 +233,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -257,8 +252,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -277,8 +272,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.0, 110.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 110.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -348,7 +343,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -360,7 +355,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'vj2kin4a' /* Fill out the form below to sub... */,
@@ -373,7 +368,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       animationsMap['textOnPageLoadAnimation1']!),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -383,7 +378,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -404,7 +399,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 },
                                 child: Container(
                                   width: 120.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 500.0,
                                   ),
                                   decoration: BoxDecoration(
@@ -418,7 +413,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 16.0, 8.0, 16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -435,7 +430,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -460,7 +455,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -485,7 +480,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 },
                                 child: Container(
                                   width: 120.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 500.0,
                                   ),
                                   decoration: BoxDecoration(
@@ -499,7 +494,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 16.0, 8.0, 16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -516,7 +511,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -539,7 +534,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                   'containerOnPageLoadAnimation2']!),
                             ),
                           ),
-                        ].divide(SizedBox(width: 12.0)),
+                        ].divide(const SizedBox(width: 12.0)),
                       ),
                       TextFormField(
                         controller: _model.textController1,
@@ -588,7 +583,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             ),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -649,7 +644,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             ),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
-                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 24.0, 16.0, 12.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -674,8 +669,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             ),
                       ).animateOnPageLoad(
                           animationsMap['textOnPageLoadAnimation2']!),
-                      if (_model.uploadedFileUrl != null &&
-                          _model.uploadedFileUrl != '')
+                      if (_model.uploadedFileUrl != '')
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
@@ -721,7 +715,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     ),
                                 iconColor: FlutterFlowTheme.of(context).primary,
                                 iconSize: 18.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 4.0, 12.0, 4.0),
                                 elevation: 0.0,
                                 borderColor:
@@ -743,7 +737,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 iconColor:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 iconSize: 18.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 4.0, 12.0, 4.0),
                                 elevation: 0.0,
                                 borderColor:
@@ -771,7 +765,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -840,7 +834,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                           child: Container(
                             width: double.infinity,
                             height: 52.0,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 500.0,
                             ),
                             decoration: BoxDecoration(
@@ -853,7 +847,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -863,7 +857,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                     size: 32.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -888,7 +882,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       if (valueOrDefault(currentUserDocument?.role, '') ==
                           'Administrator')
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Column(
                               mainAxisSize: MainAxisSize.max,
@@ -906,7 +900,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -937,7 +931,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: UserListWidget(),
+                                              child: const UserListWidget(),
                                             ),
                                           );
                                         },
@@ -950,7 +944,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                       borderRadius: BorderRadius.circular(12.0),
                                       child: Container(
                                         width: double.infinity,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                           maxWidth: 500.0,
                                         ),
                                         decoration: BoxDecoration(
@@ -965,7 +959,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -994,7 +988,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1014,7 +1008,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                                   ),
                                                 ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 12.0, 0.0),
                                                 child: Icon(
@@ -1038,12 +1032,12 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                 animationsMap['columnOnPageLoadAnimation2']!),
                           ),
                         ),
-                    ].divide(SizedBox(height: 12.0)),
+                    ].divide(const SizedBox(height: 12.0)),
                   ),
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent(
@@ -1061,14 +1055,11 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                             priorityLevel: _model.choiceChipsValue,
                             status: 'Submitted',
                             lastActive: getCurrentTimestamp,
-                            image: _model.uploadedFileUrl != null &&
-                                    _model.uploadedFileUrl != ''
+                            image: _model.uploadedFileUrl != ''
                                 ? _model.uploadedFileUrl
                                 : null,
                             ticketID: random_data.randomInteger(10000, 19999),
-                            assignee: _model.userRefSelected?.reference != null
-                                ? _model.userRefSelected?.reference
-                                : null,
+                            assignee: _model.userRefSelected?.reference,
                           ));
                       // successMessage
                       logFirebaseEvent('Button_successMessage');
@@ -1084,7 +1075,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                                   letterSpacing: 0.0,
                                 ),
                           ),
-                          duration: Duration(milliseconds: 4000),
+                          duration: const Duration(milliseconds: 4000),
                           backgroundColor:
                               FlutterFlowTheme.of(context).secondary,
                         ),
@@ -1095,16 +1086,16 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                     text: FFLocalizations.of(context).getText(
                       '0sjmvj9o' /* Submit Ticket */,
                     ),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.receipt_long,
                       size: 15.0,
                     ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 0.5,
                       height: 54.0,
-                      padding: EdgeInsets.all(0.0),
+                      padding: const EdgeInsets.all(0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -1122,7 +1113,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                   ).animateOnPageLoad(
                       animationsMap['buttonOnPageLoadAnimation']!),
                 ),
-              ].addToEnd(SizedBox(height: 32.0)),
+              ].addToEnd(const SizedBox(height: 32.0)),
             ),
           ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation1']!),
         ),
