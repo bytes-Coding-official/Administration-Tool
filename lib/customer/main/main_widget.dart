@@ -2151,8 +2151,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 return Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
-                                                                        0x66EE8B60),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             15.0),
@@ -2756,8 +2757,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 return Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
-                                                                        0x66EE8B60),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             15.0),
@@ -3366,8 +3368,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               return Container(
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
-                                                                      0x66EE8B60),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -3975,8 +3978,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               return Container(
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: const Color(
-                                                                      0x66EE8B60),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(

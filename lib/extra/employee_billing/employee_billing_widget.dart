@@ -1099,8 +1099,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                           return Container(
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: const Color(
-                                                                  0x66EE8B60),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .alternate,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(

@@ -670,12 +670,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       return Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .tertiary,
+                                              .alternate,
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
                                             width: 2.0,
                                           ),
                                         ),
@@ -759,12 +757,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       return Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .tertiary,
+                                              .alternate,
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
                                             width: 2.0,
                                           ),
                                         ),

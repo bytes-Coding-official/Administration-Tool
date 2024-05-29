@@ -462,7 +462,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .alternate,
                                               borderRadius:
                                                   BorderRadius.circular(15.0),
                                             ),
@@ -574,7 +574,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .alternate,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15.0),
