@@ -181,7 +181,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 5.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                       child: SingleChildScrollView(
                         primary: false,
                         child: Column(
@@ -367,7 +367,47 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'pfk6zl6k' /* Themes */,
+                                'pfk6zl6k' /* Github */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'CUSTOMER_PAGE_Text_q1msvscm_ON_TAP');
+                                logFirebaseEvent('Text_launch_u_r_l');
+                                await launchURL(
+                                    customerCustomerCaseRecord.github);
+                              },
+                              child: Text(
+                                customerCustomerCaseRecord.github,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                's3b1jvke' /* Themes */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium

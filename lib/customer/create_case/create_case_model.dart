@@ -12,13 +12,17 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   TextEditingController? caseIDTextController;
   String? Function(BuildContext, String?)? caseIDTextControllerValidator;
   // State field(s) for title widget.
-  FocusNode? titleFocusNode;
-  TextEditingController? titleTextController;
-  String? Function(BuildContext, String?)? titleTextControllerValidator;
+  FocusNode? titleFocusNode1;
+  TextEditingController? titleTextController1;
+  String? Function(BuildContext, String?)? titleTextController1Validator;
   // State field(s) for description widget.
   FocusNode? descriptionFocusNode;
   TextEditingController? descriptionTextController;
   String? Function(BuildContext, String?)? descriptionTextControllerValidator;
+  // State field(s) for title widget.
+  FocusNode? titleFocusNode2;
+  TextEditingController? titleTextController2;
+  String? Function(BuildContext, String?)? titleTextController2Validator;
   // State field(s) for DropDown widget.
   List<String>? dropDownValue1;
   FormFieldController<List<String>>? dropDownValueController1;
@@ -43,11 +47,14 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
     caseIDFocusNode?.dispose();
     caseIDTextController?.dispose();
 
-    titleFocusNode?.dispose();
-    titleTextController?.dispose();
+    titleFocusNode1?.dispose();
+    titleTextController1?.dispose();
 
     descriptionFocusNode?.dispose();
     descriptionTextController?.dispose();
+
+    titleFocusNode2?.dispose();
+    titleTextController2?.dispose();
 
     revenueFocusNode?.dispose();
     revenueTextController?.dispose();

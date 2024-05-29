@@ -61,6 +61,11 @@ class CustomerCaseRecord extends FirestoreRecord {
   List<DocumentReference> get meetings => _meetings ?? const [];
   bool hasMeetings() => _meetings != null;
 
+  // "github" field.
+  String? _github;
+  String get github => _github ?? '';
+  bool hasGithub() => _github != null;
+
   void _initializeFields() {
     _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
@@ -71,6 +76,7 @@ class CustomerCaseRecord extends FirestoreRecord {
     _customer = snapshotData['customer'] as DocumentReference?;
     _closed = snapshotData['closed'] as bool?;
     _meetings = getDataList(snapshotData['meetings']);
+    _github = snapshotData['github'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -114,6 +120,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
   double? revenue,
   DocumentReference? customer,
   bool? closed,
+  String? github,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -123,6 +130,7 @@ Map<String, dynamic> createCustomerCaseRecordData({
       'revenue': revenue,
       'customer': customer,
       'closed': closed,
+      'github': github,
     }.withoutNulls,
   );
 
@@ -144,7 +152,8 @@ class CustomerCaseRecordDocumentEquality
         listEquality.equals(e1?.topics, e2?.topics) &&
         e1?.customer == e2?.customer &&
         e1?.closed == e2?.closed &&
-        listEquality.equals(e1?.meetings, e2?.meetings);
+        listEquality.equals(e1?.meetings, e2?.meetings) &&
+        e1?.github == e2?.github;
   }
 
   @override
@@ -157,7 +166,8 @@ class CustomerCaseRecordDocumentEquality
         e?.topics,
         e?.customer,
         e?.closed,
-        e?.meetings
+        e?.meetings,
+        e?.github
       ]);
 
   @override

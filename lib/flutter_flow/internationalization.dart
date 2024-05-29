@@ -392,6 +392,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Une robe',
     },
     'pfk6zl6k': {
+      'en': 'Github',
+      'de': 'Themen',
+      'es': 'Temas',
+      'fr': 'Thèmes',
+    },
+    's3b1jvke': {
       'en': 'Themes',
       'de': 'Themen',
       'es': 'Temas',
@@ -743,7 +749,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción...',
       'fr': 'Description...',
     },
+    'orutdw07': {
+      'en': 'Description...',
+      'de': '',
+      'es': '',
+      'fr': '',
+    },
     'zboepkw1': {
+      'en': 'Themes',
+      'de': 'Themen',
+      'es': 'Temas',
+      'fr': 'Thèmes',
+    },
+    'y2utkbqo': {
+      'en': 'Github Link',
+      'de': 'Titel...',
+      'es': 'Título...',
+      'fr': 'Titre...',
+    },
+    '01kliwsx': {
+      'en': 'Github Link',
+      'de': 'Titel...',
+      'es': 'Título...',
+      'fr': 'Titre...',
+    },
+    '3ymofq1p': {
       'en': 'Themes',
       'de': 'Themen',
       'es': 'Temas',

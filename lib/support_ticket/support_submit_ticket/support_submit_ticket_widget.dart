@@ -368,7 +368,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       animationsMap['textOnPageLoadAnimation1']!),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,

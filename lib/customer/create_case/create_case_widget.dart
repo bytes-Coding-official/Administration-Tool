@@ -32,11 +32,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
 
     _model.caseIDFocusNode ??= FocusNode();
 
-    _model.titleTextController ??= TextEditingController();
-    _model.titleFocusNode ??= FocusNode();
+    _model.titleTextController1 ??= TextEditingController();
+    _model.titleFocusNode1 ??= FocusNode();
 
     _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
+
+    _model.titleTextController2 ??= TextEditingController();
+    _model.titleFocusNode2 ??= FocusNode();
 
     _model.revenueTextController ??= TextEditingController();
     _model.revenueFocusNode ??= FocusNode();
@@ -113,7 +116,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -244,8 +247,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                     child: TextFormField(
-                      controller: _model.titleTextController,
-                      focusNode: _model.titleFocusNode,
+                      controller: _model.titleTextController1,
+                      focusNode: _model.titleFocusNode1,
                       autofocus: true,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
@@ -258,6 +261,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             .override(
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context).secondaryText,
+                              fontSize: 16.0,
                               letterSpacing: 0.0,
                             ),
                         hintText: FFLocalizations.of(context).getText(
@@ -317,7 +321,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                       textAlign: TextAlign.center,
                       maxLength: 25,
                       cursorColor: FlutterFlowTheme.of(context).primary,
-                      validator: _model.titleTextControllerValidator
+                      validator: _model.titleTextController1Validator
                           .asValidator(context),
                     ),
                   ),
@@ -339,9 +343,13 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         alignLabelWithHint: true,
+                        hintText: FFLocalizations.of(context).getText(
+                          'orutdw07' /* Description... */,
+                        ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   fontFamily: 'Inter',
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
                                 ),
                         errorStyle:
@@ -401,6 +409,96 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                   Text(
                     FFLocalizations.of(context).getText(
                       'zboepkw1' /* Themes */,
+                    ),
+                    style: FlutterFlowTheme.of(context).labelMedium.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    child: TextFormField(
+                      controller: _model.titleTextController2,
+                      focusNode: _model.titleFocusNode2,
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.words,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'y2utkbqo' /* Github Link */,
+                        ),
+                        labelStyle: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .override(
+                              fontFamily: 'Readex Pro',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                        hintText: FFLocalizations.of(context).getText(
+                          '01kliwsx' /* Github Link */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        errorStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context).error,
+                                  fontSize: 12.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 20.0, 16.0, 20.0),
+                      ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
+                      textAlign: TextAlign.center,
+                      cursorColor: FlutterFlowTheme.of(context).primary,
+                      validator: _model.titleTextController2Validator
+                          .asValidator(context),
+                    ),
+                  ),
+                  Text(
+                    FFLocalizations.of(context).getText(
+                      '3ymofq1p' /* Themes */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
@@ -697,11 +795,12 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                         await CustomerCaseRecord.collection.doc().set({
                           ...createCustomerCaseRecordData(
                             caseid: _model.caseIDTextController.text,
-                            title: _model.titleTextController.text,
+                            title: _model.titleTextController1.text,
                             description: _model.descriptionTextController.text,
                             revenue: double.tryParse(
                                 _model.revenueTextController.text),
                             customer: _model.customer,
+                            github: _model.titleTextController2.text,
                           ),
                           ...mapToFirestore(
                             {

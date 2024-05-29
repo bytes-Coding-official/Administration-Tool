@@ -141,7 +141,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(

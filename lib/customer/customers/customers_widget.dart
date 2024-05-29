@@ -126,39 +126,38 @@ class _CustomersWidgetState extends State<CustomersWidget>
           ),
           body: SafeArea(
             top: true,
-            child: SingleChildScrollView(
-              primary: false,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 10.0, 0.0, 10.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'iu78xj34' /* List of all Customers */,
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              child: SingleChildScrollView(
+                primary: false,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'iu78xj34' /* List of all Customers */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineMedium
-                              .override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 0.55,
-                    decoration: const BoxDecoration(),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                      ],
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: MediaQuery.sizeOf(context).height * 0.55,
+                      decoration: const BoxDecoration(),
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           CustomerRecord>.separated(
                         pagingController: _model.setListViewController(
@@ -312,48 +311,48 @@ class _CustomersWidgetState extends State<CustomersWidget>
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent(
-                            'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
-                        logFirebaseEvent('Button_navigate_to');
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
 
-                        context.pushNamed('CreateCustomer');
-                      },
-                      text: FFLocalizations.of(context).getText(
-                        'm0uzgktb' /* Add Customer */,
-                      ),
-                      options: FFButtonOptions(
-                        width: MediaQuery.sizeOf(context).width * 0.5,
-                        height: 50.0,
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .titleSmall
-                            .override(
-                              fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                            ),
-                        elevation: 3.0,
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
+                          context.pushNamed('CreateCustomer');
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'm0uzgktb' /* Add Customer */,
                         ),
-                        borderRadius: BorderRadius.circular(12.0),
+                        options: FFButtonOptions(
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          height: 50.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: 'Inter',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
+                  ],
+                ),
+              ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
+            ),
           ),
         ),
       ),

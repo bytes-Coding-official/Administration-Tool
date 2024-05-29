@@ -207,7 +207,7 @@ class _UsersWidgetState extends State<UsersWidget>
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
                   child: PagedListView<DocumentSnapshot<Object?>?,
                       UsersRecord>.separated(
                     pagingController: _model.setListViewController(
