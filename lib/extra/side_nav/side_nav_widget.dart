@@ -3,10 +3,15 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'side_nav_model.dart';
 export 'side_nav_model.dart';
 
@@ -109,7 +114,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -131,13 +136,13 @@ class _SideNavWidgetState extends State<SideNavWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -148,7 +153,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -177,7 +182,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -192,7 +197,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -208,7 +213,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       context.pushNamed('Main');
                                     },
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 200),
+                                      duration: Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -220,7 +225,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -234,7 +239,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -265,11 +270,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Text(
@@ -299,7 +304,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -315,7 +320,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       context.pushNamed('chat_2_main');
                                     },
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 200),
+                                      duration: Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -327,7 +332,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -341,7 +346,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -372,11 +377,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 ),
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 4.0,
                                                                 8.0, 4.0),
                                                     child: Text(
@@ -409,7 +414,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') ==
                                     'Manager')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -427,7 +432,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               .pushNamed('support_TicketList');
                                         },
                                         child: AnimatedContainer(
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -440,7 +445,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -455,7 +460,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -488,11 +493,11 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                     ),
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     4.0,
@@ -529,7 +534,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                                 if (false)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -545,7 +550,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         context.pushNamed('Calendar');
                                       },
                                       child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
+                                        duration: Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
                                         width: double.infinity,
                                         height: 44.0,
@@ -558,7 +563,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -586,7 +591,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -613,7 +618,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -631,7 +636,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') !=
                                     'Kunde')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -648,7 +653,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           context.pushNamed('EmployeeBilling');
                                         },
                                         child: AnimatedContainer(
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -661,7 +666,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -674,7 +679,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   size: 24.0,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -699,7 +704,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -715,7 +720,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       context.pushNamed('Users');
                                     },
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 200),
+                                      duration: Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                       width: double.infinity,
                                       height: 44.0,
@@ -727,7 +732,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -740,7 +745,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -767,7 +772,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') ==
                                     'Manager')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -784,7 +789,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           context.pushNamed('CustomerMatching');
                                         },
                                         child: AnimatedContainer(
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -797,7 +802,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -812,7 +817,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -842,7 +847,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') ==
                                     'Manager')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -860,7 +865,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               'ChangeEmployeePercentage');
                                         },
                                         child: AnimatedContainer(
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -873,7 +878,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -888,7 +893,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -918,7 +923,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         currentUserDocument?.role, '') ==
                                     'Manager')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => InkWell(
@@ -935,7 +940,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           context.pushNamed('Customers');
                                         },
                                         child: AnimatedContainer(
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
                                           width: double.infinity,
                                           height: 44.0,
@@ -948,7 +953,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -963,7 +968,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -989,14 +994,14 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       ),
                                     ),
                                   ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 16.0),
                             child: Container(
                               width: 250.0,
@@ -1011,7 +1016,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
@@ -1081,7 +1086,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   size: 16.0,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: AutoSizeText(
@@ -1179,7 +1184,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                   size: 16.0,
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: AutoSizeText(
@@ -1214,7 +1219,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 5.0)),
+                                    ].divide(SizedBox(width: 5.0)),
                                   ),
                                 ),
                               ),
@@ -1227,7 +1232,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -1249,7 +1254,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   height: 50.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0),
                                       topLeft: Radius.circular(10.0),
@@ -1262,16 +1267,16 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: CachedNetworkImage(
                                           fadeInDuration:
-                                              const Duration(milliseconds: 500),
+                                              Duration(milliseconds: 500),
                                           fadeOutDuration:
-                                              const Duration(milliseconds: 500),
+                                              Duration(milliseconds: 500),
                                           imageUrl: currentUserPhoto,
                                           width: 44.0,
                                           height: 44.0,
@@ -1283,7 +1288,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

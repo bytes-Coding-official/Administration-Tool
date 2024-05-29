@@ -6,13 +6,17 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'chat2_invite_users_model.dart';
 export 'chat2_invite_users_model.dart';
 
@@ -141,7 +145,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -152,14 +156,14 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -175,7 +179,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           ((valueOrDefault<int>(
@@ -193,7 +197,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'ql4fu98g' /* Selected */,
@@ -211,13 +215,13 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                 Expanded(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child:
                         PagedListView<DocumentSnapshot<Object?>?, UsersRecord>(
                       pagingController: _model.setListViewController(
                         UsersRecord.collection.orderBy('display_name'),
                       ),
-                      padding: const EdgeInsets.fromLTRB(
+                      padding: EdgeInsets.fromLTRB(
                         0,
                         0,
                         0,
@@ -268,7 +272,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                             visible: listViewUsersRecord.reference !=
                                 currentUserReference,
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Container(
                                 width: 100.0,
@@ -293,7 +297,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 44.0,
@@ -301,7 +305,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .accent1,
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -314,15 +318,15 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(2.0),
+                                          padding: EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: CachedNetworkImage(
                                               fadeInDuration:
-                                                  const Duration(milliseconds: 200),
+                                                  Duration(milliseconds: 200),
                                               fadeOutDuration:
-                                                  const Duration(milliseconds: 200),
+                                                  Duration(milliseconds: 200),
                                               imageUrl:
                                                   listViewUsersRecord.photoUrl,
                                               width: 44.0,
@@ -416,7 +420,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                           controlAffinity:
                                               ListTileControlAffinity.trailing,
                                           contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 8.0, 0.0),
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -439,7 +443,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
               ],
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 height: 140.0,
@@ -449,14 +453,14 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                       FlutterFlowTheme.of(context).accent4,
                       FlutterFlowTheme.of(context).secondaryBackground
                     ],
-                    stops: const [0.0, 1.0],
-                    begin: const AlignmentDirectional(0.0, -1.0),
-                    end: const AlignmentDirectional(0, 1.0),
+                    stops: [0.0, 1.0],
+                    begin: AlignmentDirectional(0.0, -1.0),
+                    end: AlignmentDirectional(0, 1.0),
                   ),
                 ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent(
@@ -568,7 +572,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                            duration: const Duration(milliseconds: 3000),
+                            duration: Duration(milliseconds: 3000),
                             backgroundColor:
                                 FlutterFlowTheme.of(context).primary,
                           ),
@@ -583,9 +587,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                       width: MediaQuery.sizeOf(context).width * 0.5,
                       height: 50.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(

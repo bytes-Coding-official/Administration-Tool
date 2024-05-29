@@ -3,9 +3,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'auth2_create_model.dart';
 export 'auth2_create_model.dart';
 
@@ -53,22 +58,22 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, -140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -102,31 +107,31 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                 FlutterFlowTheme.of(context).primary,
                 FlutterFlowTheme.of(context).tertiary
               ],
-              stops: const [0.0, 1.0],
-              begin: const AlignmentDirectional(0.87, -1.0),
-              end: const AlignmentDirectional(-0.87, 1.0),
+              stops: [0.0, 1.0],
+              begin: AlignmentDirectional(0.87, -1.0),
+              end: AlignmentDirectional(-0.87, 1.0),
             ),
           ),
-          alignment: const AlignmentDirectional(0.0, -1.0),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
                   child: Container(
                     height: 70.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 12.0, 0.0),
                           child: Icon(
                             Icons.flourescent_rounded,
@@ -152,15 +157,15 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Container(
                     width: double.infinity,
-                    constraints: const BoxConstraints(
+                    constraints: BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -173,9 +178,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsets.all(32.0),
+                        padding: EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -193,7 +198,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -209,15 +214,15 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.emailAddressTextController,
                                   focusNode: _model.emailAddressFocusNode,
                                   autofocus: true,
-                                  autofillHints: const [AutofillHints.email],
+                                  autofillHints: [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
@@ -283,15 +288,15 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: _model.passwordTextController,
                                   focusNode: _model.passwordFocusNode,
                                   autofocus: true,
-                                  autofillHints: const [AutofillHints.password],
+                                  autofillHints: [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText:
@@ -370,7 +375,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -400,9 +405,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 44.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -413,7 +418,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -423,9 +428,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                             ),
                             if (false)
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -443,7 +448,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               ),
                             if (false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -463,16 +468,16 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   text: FFLocalizations.of(context).getText(
                                     'zohwxmwa' /* Continue with Google */,
                                   ),
-                                  icon: const FaIcon(
+                                  icon: FaIcon(
                                     FontAwesomeIcons.google,
                                     size: 20.0,
                                   ),
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -500,7 +505,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               isAndroid
                                   ? Container()
                                   : Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -522,7 +527,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                             FFLocalizations.of(context).getText(
                                           'l8nmxfqe' /* Continue with Apple */,
                                         ),
-                                        icon: const FaIcon(
+                                        icon: FaIcon(
                                           FontAwesomeIcons.apple,
                                           size: 20.0,
                                         ),
@@ -530,10 +535,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           width: double.infinity,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -564,9 +569,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
 
                             // You will have to add an action on this rich text to go to your login page.
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -581,7 +586,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     context.pushNamed(
                                       'auth_2_Login',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -600,7 +605,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                               .getText(
                                             '4o69hz8n' /* Already have an account?  */,
                                           ),
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         ),
                                         TextSpan(
                                           text: FFLocalizations.of(context)

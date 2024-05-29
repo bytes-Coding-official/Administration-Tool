@@ -6,10 +6,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'i_t_skills_settings_model.dart';
 export 'i_t_skills_settings_model.dart';
 
@@ -127,14 +132,14 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: true,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -145,7 +150,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -164,7 +169,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.55,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           ItskillsRecord>.separated(
                         pagingController: _model.setListViewController(
@@ -174,7 +179,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                         shrinkWrap: true,
                         reverse: false,
                         scrollDirection: Axis.vertical,
-                        separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                        separatorBuilder: (_, __) => SizedBox(height: 15.0),
                         builderDelegate:
                             PagedChildBuilderDelegate<ItskillsRecord>(
                           // Customize what your widget looks like when it's loading the first page.
@@ -223,8 +228,8 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: const Text('Delete Value'),
-                                                content: const Text(
+                                                title: Text('Delete Value'),
+                                                content: Text(
                                                     'Do you really want to delete that value?'),
                                                 actions: [
                                                   TextButton(
@@ -232,14 +237,14 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: const Text('Cancel'),
+                                                    child: Text('Cancel'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: const Text('Confirm'),
+                                                    child: Text('Confirm'),
                                                   ),
                                                 ],
                                               );
@@ -278,7 +283,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: ToggleIcon(
                                         onPressed: () async {
@@ -318,7 +323,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         listViewItskillsRecord.name,
@@ -340,7 +345,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -359,7 +364,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -371,9 +376,9 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 50.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -395,7 +400,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                     if (valueOrDefault(currentUserDocument?.role, '') ==
                         'Manager')
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 35.0, 25.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
@@ -411,7 +416,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.newskillTextController,
@@ -491,7 +496,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -522,7 +527,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                                 ),
                                           ),
                                           duration:
-                                              const Duration(milliseconds: 4000),
+                                              Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
@@ -540,10 +545,10 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                     options: FFButtonOptions(
                                       width: 150.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,

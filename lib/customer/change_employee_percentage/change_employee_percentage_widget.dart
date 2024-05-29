@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -6,7 +7,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'change_employee_percentage_model.dart';
 export 'change_employee_percentage_model.dart';
@@ -102,14 +105,14 @@ class _ChangeEmployeePercentageWidgetState
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: true,
             elevation: 2.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 25.0, 5.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(5.0, 25.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -184,7 +187,7 @@ class _ChangeEmployeePercentageWidgetState
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -269,7 +272,7 @@ class _ChangeEmployeePercentageWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -294,7 +297,7 @@ class _ChangeEmployeePercentageWidgetState
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -308,9 +311,9 @@ class _ChangeEmployeePercentageWidgetState
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 48.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -330,8 +333,8 @@ class _ChangeEmployeePercentageWidgetState
                       ),
                     ),
                   ]
-                      .divide(const SizedBox(height: 25.0))
-                      .addToEnd(const SizedBox(height: 32.0)),
+                      .divide(SizedBox(height: 25.0))
+                      .addToEnd(SizedBox(height: 32.0)),
                 ),
               ),
             ),
