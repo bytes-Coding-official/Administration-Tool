@@ -367,7 +367,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'pfk6zl6k' /* Github */,
+                                'pfk6zl6k' /* GitHub-Link */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium

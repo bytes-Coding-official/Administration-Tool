@@ -392,10 +392,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Une robe',
     },
     'pfk6zl6k': {
-      'en': 'Github',
-      'de': 'Themen',
-      'es': 'Temas',
-      'fr': 'Thèmes',
+      'en': 'GitHub-Link',
+      'de': 'GitHub-Link',
+      'es': 'GitHub-Link',
+      'fr': 'GitHub-Link',
     },
     's3b1jvke': {
       'en': 'Themes',
