@@ -105,7 +105,9 @@ class _AddMeetingToCustomerWidgetState
                     logFirebaseEvent(
                         'ADD_MEETING_TO_CUSTOMER_arrow_back_round');
                     logFirebaseEvent('IconButton_navigate_to');
-
+                    if (Navigator.of(context).canPop()) {
+                      context.pop();
+                    }
                     context.pushNamed(
                       'Customer',
                       queryParameters: {

@@ -827,7 +827,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       logFirebaseEvent(
                                           'CUSTOMER_ADD_MEETING_TO_USER_BTN_ON_TAP');
                                       logFirebaseEvent('Button_navigate_to');
-
+                                      if (Navigator.of(context).canPop()) {
+                                        context.pop();
+                                      }
                                       context.pushNamed(
                                         'AddMeetingToCustomer',
                                         queryParameters: {
