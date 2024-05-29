@@ -470,6 +470,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                             .displaySmall
                                             .override(
                                               fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
                                               fontSize: 26.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -1096,9 +1099,8 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                           return Container(
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondary,
+                                                              color: const Color(
+                                                                  0x66EE8B60),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
