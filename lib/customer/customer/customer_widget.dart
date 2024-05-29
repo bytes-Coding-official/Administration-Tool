@@ -305,7 +305,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'igthvfrg' /* Adress */,
+                                            'igthvfrg' /* Location */,
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
@@ -393,6 +393,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               },
                               child: Text(
                                 customerCustomerCaseRecord.github,
+                                textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(

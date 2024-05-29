@@ -386,10 +386,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Mail',
     },
     'igthvfrg': {
-      'en': 'Adress',
-      'de': 'Ein Kleid',
-      'es': 'Dirección',
-      'fr': 'Une robe',
+      'en': 'Location',
+      'de': 'Standort',
+      'es': 'Ubicación',
+      'fr': 'Emplacement',
     },
     'pfk6zl6k': {
       'en': 'GitHub-Link',
