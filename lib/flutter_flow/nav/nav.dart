@@ -296,6 +296,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ChangeEmployeePercentage',
           path: '/changeEmployeePercentage',
           builder: (context, params) => const ChangeEmployeePercentageWidget(),
+        ),
+        FFRoute(
+          name: 'Customers',
+          path: '/customers',
+          builder: (context, params) => const CustomersWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

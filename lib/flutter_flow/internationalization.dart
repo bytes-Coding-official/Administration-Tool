@@ -514,6 +514,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
     },
+    'dyx62bdw': {
+      'en': 'Customers',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
+    },
     '4tmi2f8n': {
       'en': 'Employee Billing',
       'de': 'Mitarbeiterabrechnung',
@@ -2050,6 +2056,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Facturación de empleados',
       'fr': 'Facturation des employés',
     },
+    '565faqzv': {
+      'en': 'Customers',
+      'de': 'Kundenabgleich',
+      'es': 'Emparejamiento de clientes',
+      'fr': 'Correspondance client',
+    },
     '411g996a': {
       'en': 'Light Mode',
       'de': 'Lichtmodus',
@@ -2510,6 +2522,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Modifier le pourcentage que l\'employé reçoit',
     },
     '6hykvly4': {
+      'en': 'Home',
+      'de': 'Home',
+      'es': '',
+      'fr': '',
+    },
+  },
+  // Customers
+  {
+    '0cb2nnht': {
+      'en': 'Customers',
+      'de': 'Komplette Sprachen',
+      'es': 'Idiomas completos',
+      'fr': 'Langues complètes',
+    },
+    '9bl7c0iu': {
+      'en': 'Complete Customer-List',
+      'de': 'Vervollständigen Sie Ihre Sprachen',
+      'es': 'Completa tus idiomas',
+      'fr': 'Complétez vos langues',
+    },
+    'iu78xj34': {
+      'en': 'List of all Customers',
+      'de': 'Ihre Sprachen',
+      'es': 'Tus idiomas',
+      'fr': 'Vos langues',
+    },
+    'm0uzgktb': {
+      'en': 'Add Customer',
+      'de': 'Änderungen speichern',
+      'es': 'Guardar cambios',
+      'fr': 'Sauvegarder les modifications',
+    },
+    'fn5cvial': {
       'en': 'Home',
       'de': 'Home',
       'es': '',

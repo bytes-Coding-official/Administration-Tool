@@ -52,3 +52,4 @@ export '/customer/customer_matching/customer_matching_widget.dart'
     show CustomerMatchingWidget;
 export '/customer/change_employee_percentage/change_employee_percentage_widget.dart'
     show ChangeEmployeePercentageWidget;
+export '/customer/customers/customers_widget.dart' show CustomersWidget;
