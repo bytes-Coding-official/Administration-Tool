@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'i_t_skills_settings_model.dart';
 export 'i_t_skills_settings_model.dart';
 
@@ -165,167 +166,177 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                      child: StreamBuilder<List<ItskillsRecord>>(
-                        stream: queryItskillsRecord(),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
+                      child: PagedListView<DocumentSnapshot<Object?>?,
+                          ItskillsRecord>.separated(
+                        pagingController: _model.setListViewController(
+                          ItskillsRecord.collection,
+                        ),
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        reverse: false,
+                        scrollDirection: Axis.vertical,
+                        separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                        builderDelegate:
+                            PagedChildBuilderDelegate<ItskillsRecord>(
+                          // Customize what your widget looks like when it's loading the first page.
+                          firstPageProgressIndicatorBuilder: (_) => Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
                                 ),
                               ),
-                            );
-                          }
-                          List<ItskillsRecord> listViewItskillsRecordList =
-                              snapshot.data!;
-                          return ListView.separated(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: listViewItskillsRecordList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 15.0),
-                            itemBuilder: (context, listViewIndex) {
-                              final listViewItskillsRecord =
-                                  listViewItskillsRecordList[listViewIndex];
-                              return InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onLongPress: () async {
-                                  logFirebaseEvent(
-                                      'I_T_SKILLS_SETTINGS_Container_jqiu0oel_O');
-                                  if (valueOrDefault(
-                                          currentUserDocument?.role, '') ==
-                                      'Manager') {
-                                    logFirebaseEvent('Container_alert_dialog');
-                                    var confirmDialogResponse =
-                                        await showDialog<bool>(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: const Text('Delete Value'),
-                                                  content: const Text(
-                                                      'Do you really want to delete that value?'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              false),
-                                                      child: const Text('Cancel'),
-                                                    ),
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              true),
-                                                      child: const Text('Confirm'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ) ??
-                                            false;
-                                    if (confirmDialogResponse) {
-                                      logFirebaseEvent(
-                                          'Container_backend_call');
-                                      await listViewItskillsRecord.reference
-                                          .delete();
-                                    } else {
-                                      return;
-                                    }
+                            ),
+                          ),
+                          // Customize what your widget looks like when it's loading another page.
+                          newPageProgressIndicatorBuilder: (_) => Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          ),
 
-                                    logFirebaseEvent('Container_navigate_to');
-                                    if (Navigator.of(context).canPop()) {
-                                      context.pop();
-                                    }
-                                    context.pushNamed('IT-Skills-Settings');
+                          itemBuilder: (context, _, listViewIndex) {
+                            final listViewItskillsRecord = _model
+                                .listViewPagingController!
+                                .itemList![listViewIndex];
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onLongPress: () async {
+                                logFirebaseEvent(
+                                    'I_T_SKILLS_SETTINGS_Container_jqiu0oel_O');
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') ==
+                                    'Manager') {
+                                  logFirebaseEvent('Container_alert_dialog');
+                                  var confirmDialogResponse =
+                                      await showDialog<bool>(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: const Text('Delete Value'),
+                                                content: const Text(
+                                                    'Do you really want to delete that value?'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            false),
+                                                    child: const Text('Cancel'),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            true),
+                                                    child: const Text('Confirm'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ) ??
+                                          false;
+                                  if (confirmDialogResponse) {
+                                    logFirebaseEvent('Container_backend_call');
+                                    await listViewItskillsRecord.reference
+                                        .delete();
                                   } else {
                                     return;
                                   }
-                                },
-                                child: Container(
-                                  height: 50.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    border: Border.all(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 1.0,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: ToggleIcon(
-                                          onPressed: () async {
-                                            final usersElement =
-                                                currentUserReference;
-                                            final usersUpdate =
-                                                listViewItskillsRecord.users
-                                                        .contains(usersElement)
-                                                    ? FieldValue.arrayRemove(
-                                                        [usersElement])
-                                                    : FieldValue.arrayUnion(
-                                                        [usersElement]);
-                                            await listViewItskillsRecord
-                                                .reference
-                                                .update({
-                                              ...mapToFirestore(
-                                                {
-                                                  'users': usersUpdate,
-                                                },
-                                              ),
-                                            });
-                                          },
-                                          value: listViewItskillsRecord.users
-                                              .contains(currentUserReference),
-                                          onIcon: Icon(
-                                            Icons.check_box,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 25.0,
-                                          ),
-                                          offIcon: Icon(
-                                            Icons.check_box_outline_blank,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 25.0,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          listViewItskillsRecord.name,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
+
+                                  logFirebaseEvent('Container_navigate_to');
+                                  if (Navigator.of(context).canPop()) {
+                                    context.pop();
+                                  }
+                                  context.pushNamed('IT-Skills-Settings');
+                                } else {
+                                  return;
+                                }
+                              },
+                              child: Container(
+                                height: 50.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 1.0,
                                   ),
                                 ),
-                              );
-                            },
-                          );
-                        },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: ToggleIcon(
+                                        onPressed: () async {
+                                          final usersElement =
+                                              currentUserReference;
+                                          final usersUpdate =
+                                              listViewItskillsRecord
+                                                      .users
+                                                      .contains(usersElement)
+                                                  ? FieldValue.arrayRemove(
+                                                      [usersElement])
+                                                  : FieldValue.arrayUnion(
+                                                      [usersElement]);
+                                          await listViewItskillsRecord.reference
+                                              .update({
+                                            ...mapToFirestore(
+                                              {
+                                                'users': usersUpdate,
+                                              },
+                                            ),
+                                          });
+                                        },
+                                        value: listViewItskillsRecord.users
+                                            .contains(currentUserReference),
+                                        onIcon: Icon(
+                                          Icons.check_box,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 25.0,
+                                        ),
+                                        offIcon: Icon(
+                                          Icons.check_box_outline_blank,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 25.0,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        listViewItskillsRecord.name,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),

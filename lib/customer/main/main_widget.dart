@@ -1809,582 +1809,596 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 550.0,
                               decoration: const BoxDecoration(),
-                              child: StreamBuilder<List<CustomerCaseRecord>>(
-                                stream: queryCustomerCaseRecord(
-                                  queryBuilder: (customerCaseRecord) =>
-                                      customerCaseRecord.orderBy('caseid',
-                                          descending: true),
+                              child: PagedListView<DocumentSnapshot<Object?>?,
+                                  CustomerCaseRecord>.separated(
+                                pagingController: _model.setEmController1(
+                                  CustomerCaseRecord.collection
+                                      .orderBy('caseid', descending: true),
                                 ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                padding: EdgeInsets.zero,
+                                reverse: false,
+                                scrollDirection: Axis.vertical,
+                                separatorBuilder: (_, __) =>
+                                    const SizedBox(height: 15.0),
+                                builderDelegate: PagedChildBuilderDelegate<
+                                    CustomerCaseRecord>(
+                                  // Customize what your widget looks like when it's loading the first page.
+                                  firstPageProgressIndicatorBuilder: (_) =>
+                                      Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
                                         ),
                                       ),
-                                    );
-                                  }
-                                  List<CustomerCaseRecord>
-                                      emCustomerCaseRecordList = snapshot.data!;
-                                  return ListView.separated(
-                                    padding: EdgeInsets.zero,
-                                    scrollDirection: Axis.vertical,
-                                    itemCount: emCustomerCaseRecordList.length,
-                                    separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
-                                    itemBuilder: (context, emIndex) {
-                                      final emCustomerCaseRecord =
-                                          emCustomerCaseRecordList[emIndex];
-                                      return InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'MAIN_PAGE_listContainer_ON_TAP');
-                                          logFirebaseEvent(
-                                              'listContainer_update_app_state');
-                                          setState(() {});
-                                          logFirebaseEvent(
-                                              'listContainer_navigate_to');
+                                    ),
+                                  ),
+                                  // Customize what your widget looks like when it's loading another page.
+                                  newPageProgressIndicatorBuilder: (_) =>
+                                      Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
 
-                                          context.pushNamed(
-                                            'Customer',
-                                            queryParameters: {
-                                              'customercase': serializeParam(
-                                                emCustomerCaseRecord.reference,
-                                                ParamType.DocumentReference,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  const TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 350),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        onLongPress: () async {
+                                  itemBuilder: (context, _, emIndex) {
+                                    final emCustomerCaseRecord = _model
+                                        .emPagingController1!
+                                        .itemList![emIndex];
+                                    return InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_listContainer_ON_TAP');
+                                        logFirebaseEvent(
+                                            'listContainer_update_app_state');
+                                        setState(() {});
+                                        logFirebaseEvent(
+                                            'listContainer_navigate_to');
+
+                                        context.pushNamed(
+                                          'Customer',
+                                          queryParameters: {
+                                            'customercase': serializeParam(
+                                              emCustomerCaseRecord.reference,
+                                              ParamType.DocumentReference,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 350),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      onLongPress: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_listContainer_ON_LONG_PRESS');
+                                        if (valueOrDefault(
+                                                currentUserDocument?.role,
+                                                '') ==
+                                            'Manager') {
                                           logFirebaseEvent(
-                                              'MAIN_PAGE_listContainer_ON_LONG_PRESS');
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.role,
-                                                  '') ==
-                                              'Manager') {
+                                              'listContainer_alert_dialog');
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: const Text('Delete'),
+                                                        content: const Text(
+                                                            'Do you want to delete this case?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                const Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                const Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            logFirebaseEvent(
+                                                'listContainer_backend_call');
+                                            await emCustomerCaseRecord.reference
+                                                .delete();
                                             logFirebaseEvent(
                                                 'listContainer_alert_dialog');
-                                            var confirmDialogResponse =
-                                                await showDialog<bool>(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text('Delete'),
-                                                          content: const Text(
-                                                              'Do you want to delete this case?'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      false),
-                                                              child: const Text(
-                                                                  'Cancel'),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      true),
-                                                              child: const Text(
-                                                                  'Confirm'),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    ) ??
-                                                    false;
-                                            if (confirmDialogResponse) {
-                                              logFirebaseEvent(
-                                                  'listContainer_backend_call');
-                                              await emCustomerCaseRecord
-                                                  .reference
-                                                  .delete();
-                                              logFirebaseEvent(
-                                                  'listContainer_alert_dialog');
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text('Confirmation'),
-                                                    content: const Text(
-                                                        'Deleted the selected customer-case'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            } else {
-                                              return;
-                                            }
-
-                                            logFirebaseEvent(
-                                                'listContainer_navigate_to');
-                                            if (Navigator.of(context)
-                                                .canPop()) {
-                                              context.pop();
-                                            }
-                                            context.pushNamed('Main');
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('Confirmation'),
+                                                  content: const Text(
+                                                      'Deleted the selected customer-case'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
                                           } else {
                                             return;
                                           }
-                                        },
-                                        child: Container(
-                                          width: 700.0,
-                                          height: 250.0,
-                                          constraints: const BoxConstraints(
-                                            maxWidth: 570.0,
-                                          ),
-                                          decoration: BoxDecoration(
+
+                                          logFirebaseEvent(
+                                              'listContainer_navigate_to');
+                                          if (Navigator.of(context).canPop()) {
+                                            context.pop();
+                                          }
+                                          context.pushNamed('Main');
+                                        } else {
+                                          return;
+                                        }
+                                      },
+                                      child: Container(
+                                        width: 700.0,
+                                        height: 250.0,
+                                        constraints: const BoxConstraints(
+                                          maxWidth: 570.0,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 1.0,
-                                            ),
+                                                .primary,
+                                            width: 1.0,
                                           ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 12.0, 0.0, 8.0),
-                                                  child: RichText(
-                                                    textScaler:
-                                                        MediaQuery.of(context)
-                                                            .textScaler,
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text: FFLocalizations
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 12.0, 0.0, 8.0),
+                                                child: RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'n9qnpbyi' /* ID#:  */,
+                                                        ),
+                                                        style: const TextStyle(),
+                                                      ),
+                                                      TextSpan(
+                                                        text:
+                                                            emCustomerCaseRecord
+                                                                .caseid,
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .getText(
-                                                            'n9qnpbyi' /* ID#:  */,
-                                                          ),
-                                                          style: const TextStyle(),
+                                                              .primary,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                         ),
-                                                        TextSpan(
-                                                          text:
-                                                              emCustomerCaseRecord
-                                                                  .caseid,
-                                                          style: TextStyle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
-                                                        )
-                                                      ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 12.0, 0.0),
-                                                  child: Text(
-                                                    emCustomerCaseRecord.title,
-                                                    textAlign: TextAlign.end,
+                                                      )
+                                                    ],
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 4.0, 12.0,
-                                                          16.0),
-                                                  child: Text(
-                                                    emCustomerCaseRecord
-                                                        .description,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
+                                                        .bodyLarge
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
-                                                  child: Builder(
-                                                    builder: (context) {
-                                                      final topicsMobile =
-                                                          emCustomerCaseRecord
-                                                              .topics
-                                                              .toList();
-                                                      return SingleChildScrollView(
-                                                        scrollDirection:
-                                                            Axis.horizontal,
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: List.generate(
-                                                                  topicsMobile
-                                                                      .length,
-                                                                  (topicsMobileIndex) {
-                                                            final topicsMobileItem =
-                                                                topicsMobile[
-                                                                    topicsMobileIndex];
-                                                            return StreamBuilder<
-                                                                ItskillsRecord>(
-                                                              stream: ItskillsRecord
-                                                                  .getDocument(
-                                                                      topicsMobileItem),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                child: Text(
+                                                  emCustomerCaseRecord.title,
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 4.0, 12.0, 16.0),
+                                                child: Text(
+                                                  emCustomerCaseRecord
+                                                      .description,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    final topicsMobile =
+                                                        emCustomerCaseRecord
+                                                            .topics
+                                                            .toList();
+                                                    return SingleChildScrollView(
+                                                      scrollDirection:
+                                                          Axis.horizontal,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: List.generate(
+                                                                topicsMobile
+                                                                    .length,
+                                                                (topicsMobileIndex) {
+                                                          final topicsMobileItem =
+                                                              topicsMobile[
+                                                                  topicsMobileIndex];
+                                                          return StreamBuilder<
+                                                              ItskillsRecord>(
+                                                            stream: ItskillsRecord
+                                                                .getDocument(
+                                                                    topicsMobileItem),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
                                                                     child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      child:
-                                                                          CircularProgressIndicator(
-                                                                        valueColor:
-                                                                            AlwaysStoppedAnimation<Color>(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                        ),
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
                                                                       ),
                                                                     ),
-                                                                  );
-                                                                }
-                                                                final containerItskillsRecord =
-                                                                    snapshot
-                                                                        .data!;
-                                                                return Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            15.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      AutoSizeText(
-                                                                    containerItskillsRecord
-                                                                        .name,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 );
-                                                              },
-                                                            );
-                                                          })
-                                                              .divide(const SizedBox(
-                                                                  width: 15.0))
-                                                              .around(const SizedBox(
-                                                                  width: 15.0)),
-                                                        ),
-                                                      );
-                                                    },
-                                                  ),
+                                                              }
+                                                              final containerItskillsRecord =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return Container(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              15.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                  ),
+                                                                ),
+                                                                child:
+                                                                    AutoSizeText(
+                                                                  containerItskillsRecord
+                                                                      .name,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                        })
+                                                            .divide(const SizedBox(
+                                                                width: 15.0))
+                                                            .around(const SizedBox(
+                                                                width: 15.0)),
+                                                      ),
+                                                    );
+                                                  },
                                                 ),
-                                                Divider(
-                                                  height: 2.0,
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 8.0),
-                                                  child: SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Builder(
-                                                          builder: (context) {
-                                                            final assigneesMobile =
-                                                                emCustomerCaseRecord
-                                                                    .assignee
-                                                                    .toList();
-                                                            return SingleChildScrollView(
-                                                              scrollDirection:
-                                                                  Axis.horizontal,
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .end,
-                                                                children: List.generate(
-                                                                    assigneesMobile
-                                                                        .length,
-                                                                    (assigneesMobileIndex) {
-                                                                  final assigneesMobileItem =
-                                                                      assigneesMobile[
-                                                                          assigneesMobileIndex];
-                                                                  return StreamBuilder<
-                                                                      UsersRecord>(
-                                                                    stream: UsersRecord
-                                                                        .getDocument(
-                                                                            assigneesMobileItem),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
-                                                                          child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            child:
-                                                                                CircularProgressIndicator(
-                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      }
-                                                                      final containerUsersRecord =
-                                                                          snapshot
-                                                                              .data!;
-                                                                      return Container(
-                                                                        width:
-                                                                            40.0,
-                                                                        height:
-                                                                            40.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).accent1,
-                                                                          shape:
-                                                                              BoxShape.circle,
-                                                                          border:
-                                                                              Border.all(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                        ),
+                                              ),
+                                              Divider(
+                                                height: 2.0,
+                                                thickness: 1.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 12.0, 12.0, 8.0),
+                                                child: SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) {
+                                                          final assigneesMobile =
+                                                              emCustomerCaseRecord
+                                                                  .assignee
+                                                                  .toList();
+                                                          return SingleChildScrollView(
+                                                            scrollDirection:
+                                                                Axis.horizontal,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .end,
+                                                              children: List.generate(
+                                                                      assigneesMobile
+                                                                          .length,
+                                                                      (assigneesMobileIndex) {
+                                                                final assigneesMobileItem =
+                                                                    assigneesMobile[
+                                                                        assigneesMobileIndex];
+                                                                return StreamBuilder<
+                                                                    UsersRecord>(
+                                                                  stream: UsersRecord
+                                                                      .getDocument(
+                                                                          assigneesMobileItem),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.all(2.0),
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(40.0),
-                                                                            child:
-                                                                                Image.network(
-                                                                              containerUsersRecord.photoUrl,
-                                                                              width: 60.0,
-                                                                              height: 60.0,
-                                                                              fit: BoxFit.cover,
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       );
-                                                                    },
-                                                                  );
-                                                                }).divide(const SizedBox(width: 5.0)).around(
-                                                                    const SizedBox(
-                                                                        width:
-                                                                            5.0)),
-                                                              ),
-                                                            );
-                                                          },
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              const AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsets.all(
-                                                                    6.0),
-                                                            child: Container(
-                                                              height: 32.0,
-                                                              decoration:
-                                                                  BoxDecoration(
+                                                                    }
+                                                                    final containerUsersRecord =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Container(
+                                                                      width:
+                                                                          40.0,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .accent1,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        border:
+                                                                            Border.all(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(40.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            containerUsersRecord.photoUrl,
+                                                                            width:
+                                                                                60.0,
+                                                                            height:
+                                                                                60.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                );
+                                                              })
+                                                                  .divide(const SizedBox(
+                                                                      width:
+                                                                          5.0))
+                                                                  .around(const SizedBox(
+                                                                      width:
+                                                                          5.0)),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  6.0),
+                                                          child: Container(
+                                                            height: 32.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: emCustomerCaseRecord
+                                                                      .assignee
+                                                                      .contains(
+                                                                          currentUserReference)
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent1
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              border:
+                                                                  Border.all(
                                                                 color: emCustomerCaseRecord
                                                                         .assignee
                                                                         .contains(
                                                                             currentUserReference)
                                                                     ? FlutterFlowTheme.of(
                                                                             context)
-                                                                        .accent1
+                                                                        .primary
                                                                     : FlutterFlowTheme.of(
                                                                             context)
-                                                                        .alternate,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                border:
-                                                                    Border.all(
-                                                                  color: emCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                  width: 2.0,
-                                                                ),
+                                                                        .secondary,
+                                                                width: 2.0,
                                                               ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    const AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    () {
-                                                                      if (emCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'closed';
-                                                                      } else if (emCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)) {
-                                                                        return 'Own';
-                                                                      } else if (emCustomerCaseRecord
-                                                                              .assignee.isEmpty) {
-                                                                        return 'Open';
-                                                                      } else {
-                                                                        return 'Other';
-                                                                      }
-                                                                    }(),
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          color: emCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).primaryText
-                                                                              : FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  () {
+                                                                    if (emCustomerCaseRecord
+                                                                        .closed) {
+                                                                      return 'closed';
+                                                                    } else if (emCustomerCaseRecord
+                                                                        .assignee
+                                                                        .contains(
+                                                                            currentUserReference)) {
+                                                                      return 'Own';
+                                                                    } else if (emCustomerCaseRecord
+                                                                            .assignee.isEmpty) {
+                                                                      return 'Open';
+                                                                    } else {
+                                                                      return 'Other';
+                                                                    }
+                                                                  }(),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: emCustomerCaseRecord.assignee.contains(currentUserReference)
+                                                                            ? FlutterFlowTheme.of(context).primaryText
+                                                                            : FlutterFlowTheme.of(context).primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      );
-                                    },
-                                  );
-                                },
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
@@ -2400,587 +2414,601 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 550.0,
                               decoration: const BoxDecoration(),
-                              child: StreamBuilder<List<CustomerCaseRecord>>(
-                                stream: queryCustomerCaseRecord(
-                                  queryBuilder: (customerCaseRecord) =>
-                                      customerCaseRecord
-                                          .where(
-                                            'customer',
-                                            isEqualTo:
-                                                currentUserDocument?.customer,
-                                          )
-                                          .orderBy('caseid', descending: true),
+                              child: PagedListView<DocumentSnapshot<Object?>?,
+                                  CustomerCaseRecord>.separated(
+                                pagingController: _model.setEmController2(
+                                  CustomerCaseRecord.collection
+                                      .where(
+                                        'customer',
+                                        isEqualTo:
+                                            currentUserDocument?.customer,
+                                      )
+                                      .orderBy('caseid', descending: true),
                                 ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                padding: EdgeInsets.zero,
+                                reverse: false,
+                                scrollDirection: Axis.vertical,
+                                separatorBuilder: (_, __) =>
+                                    const SizedBox(height: 15.0),
+                                builderDelegate: PagedChildBuilderDelegate<
+                                    CustomerCaseRecord>(
+                                  // Customize what your widget looks like when it's loading the first page.
+                                  firstPageProgressIndicatorBuilder: (_) =>
+                                      Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
                                         ),
                                       ),
-                                    );
-                                  }
-                                  List<CustomerCaseRecord>
-                                      emCustomerCaseRecordList = snapshot.data!;
-                                  return ListView.separated(
-                                    padding: EdgeInsets.zero,
-                                    scrollDirection: Axis.vertical,
-                                    itemCount: emCustomerCaseRecordList.length,
-                                    separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
-                                    itemBuilder: (context, emIndex) {
-                                      final emCustomerCaseRecord =
-                                          emCustomerCaseRecordList[emIndex];
-                                      return InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'MAIN_PAGE_listContainer_ON_TAP');
-                                          logFirebaseEvent(
-                                              'listContainer_update_app_state');
-                                          setState(() {});
-                                          logFirebaseEvent(
-                                              'listContainer_navigate_to');
+                                    ),
+                                  ),
+                                  // Customize what your widget looks like when it's loading another page.
+                                  newPageProgressIndicatorBuilder: (_) =>
+                                      Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
 
-                                          context.pushNamed(
-                                            'Customer',
-                                            queryParameters: {
-                                              'customercase': serializeParam(
-                                                emCustomerCaseRecord.reference,
-                                                ParamType.DocumentReference,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  const TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 350),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        onLongPress: () async {
+                                  itemBuilder: (context, _, emIndex) {
+                                    final emCustomerCaseRecord = _model
+                                        .emPagingController2!
+                                        .itemList![emIndex];
+                                    return InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_listContainer_ON_TAP');
+                                        logFirebaseEvent(
+                                            'listContainer_update_app_state');
+                                        setState(() {});
+                                        logFirebaseEvent(
+                                            'listContainer_navigate_to');
+
+                                        context.pushNamed(
+                                          'Customer',
+                                          queryParameters: {
+                                            'customercase': serializeParam(
+                                              emCustomerCaseRecord.reference,
+                                              ParamType.DocumentReference,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: const TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 350),
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      onLongPress: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_listContainer_ON_LONG_PRESS');
+                                        if (valueOrDefault(
+                                                currentUserDocument?.role,
+                                                '') ==
+                                            'Manager') {
                                           logFirebaseEvent(
-                                              'MAIN_PAGE_listContainer_ON_LONG_PRESS');
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.role,
-                                                  '') ==
-                                              'Manager') {
+                                              'listContainer_alert_dialog');
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: const Text('Delete'),
+                                                        content: const Text(
+                                                            'Do you want to delete this case?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                const Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                const Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            logFirebaseEvent(
+                                                'listContainer_backend_call');
+                                            await emCustomerCaseRecord.reference
+                                                .delete();
                                             logFirebaseEvent(
                                                 'listContainer_alert_dialog');
-                                            var confirmDialogResponse =
-                                                await showDialog<bool>(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: const Text('Delete'),
-                                                          content: const Text(
-                                                              'Do you want to delete this case?'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      false),
-                                                              child: const Text(
-                                                                  'Cancel'),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      true),
-                                                              child: const Text(
-                                                                  'Confirm'),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    ) ??
-                                                    false;
-                                            if (confirmDialogResponse) {
-                                              logFirebaseEvent(
-                                                  'listContainer_backend_call');
-                                              await emCustomerCaseRecord
-                                                  .reference
-                                                  .delete();
-                                              logFirebaseEvent(
-                                                  'listContainer_alert_dialog');
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: const Text('Confirmation'),
-                                                    content: const Text(
-                                                        'Deleted the selected customer-case'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            } else {
-                                              return;
-                                            }
-
-                                            logFirebaseEvent(
-                                                'listContainer_navigate_to');
-                                            if (Navigator.of(context)
-                                                .canPop()) {
-                                              context.pop();
-                                            }
-                                            context.pushNamed('Main');
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('Confirmation'),
+                                                  content: const Text(
+                                                      'Deleted the selected customer-case'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: const Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
                                           } else {
                                             return;
                                           }
-                                        },
-                                        child: Container(
-                                          width: 700.0,
-                                          height: 250.0,
-                                          constraints: const BoxConstraints(
-                                            maxWidth: 570.0,
-                                          ),
-                                          decoration: BoxDecoration(
+
+                                          logFirebaseEvent(
+                                              'listContainer_navigate_to');
+                                          if (Navigator.of(context).canPop()) {
+                                            context.pop();
+                                          }
+                                          context.pushNamed('Main');
+                                        } else {
+                                          return;
+                                        }
+                                      },
+                                      child: Container(
+                                        width: 700.0,
+                                        height: 250.0,
+                                        constraints: const BoxConstraints(
+                                          maxWidth: 570.0,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 1.0,
-                                            ),
+                                                .primary,
+                                            width: 1.0,
                                           ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 12.0, 0.0, 8.0),
-                                                  child: RichText(
-                                                    textScaler:
-                                                        MediaQuery.of(context)
-                                                            .textScaler,
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text: FFLocalizations
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 12.0, 0.0, 8.0),
+                                                child: RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'xpe9vzmw' /* ID#:  */,
+                                                        ),
+                                                        style: const TextStyle(),
+                                                      ),
+                                                      TextSpan(
+                                                        text:
+                                                            emCustomerCaseRecord
+                                                                .caseid,
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .getText(
-                                                            'xpe9vzmw' /* ID#:  */,
-                                                          ),
-                                                          style: const TextStyle(),
+                                                              .primary,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                         ),
-                                                        TextSpan(
-                                                          text:
-                                                              emCustomerCaseRecord
-                                                                  .caseid,
-                                                          style: TextStyle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
-                                                        )
-                                                      ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 12.0, 0.0),
-                                                  child: Text(
-                                                    emCustomerCaseRecord.title,
-                                                    textAlign: TextAlign.end,
+                                                      )
+                                                    ],
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 4.0, 12.0,
-                                                          16.0),
-                                                  child: Text(
-                                                    emCustomerCaseRecord
-                                                        .description,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
+                                                        .bodyLarge
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
-                                                  child: Builder(
-                                                    builder: (context) {
-                                                      final topicsMobile =
-                                                          emCustomerCaseRecord
-                                                              .topics
-                                                              .toList();
-                                                      return SingleChildScrollView(
-                                                        scrollDirection:
-                                                            Axis.horizontal,
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: List.generate(
-                                                                  topicsMobile
-                                                                      .length,
-                                                                  (topicsMobileIndex) {
-                                                            final topicsMobileItem =
-                                                                topicsMobile[
-                                                                    topicsMobileIndex];
-                                                            return StreamBuilder<
-                                                                ItskillsRecord>(
-                                                              stream: ItskillsRecord
-                                                                  .getDocument(
-                                                                      topicsMobileItem),
-                                                              builder: (context,
-                                                                  snapshot) {
-                                                                // Customize what your widget looks like when it's loading.
-                                                                if (!snapshot
-                                                                    .hasData) {
-                                                                  return Center(
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                child: Text(
+                                                  emCustomerCaseRecord.title,
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 4.0, 12.0, 16.0),
+                                                child: Text(
+                                                  emCustomerCaseRecord
+                                                      .description,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    final topicsMobile =
+                                                        emCustomerCaseRecord
+                                                            .topics
+                                                            .toList();
+                                                    return SingleChildScrollView(
+                                                      scrollDirection:
+                                                          Axis.horizontal,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: List.generate(
+                                                                topicsMobile
+                                                                    .length,
+                                                                (topicsMobileIndex) {
+                                                          final topicsMobileItem =
+                                                              topicsMobile[
+                                                                  topicsMobileIndex];
+                                                          return StreamBuilder<
+                                                              ItskillsRecord>(
+                                                            stream: ItskillsRecord
+                                                                .getDocument(
+                                                                    topicsMobileItem),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
                                                                     child:
-                                                                        SizedBox(
-                                                                      width:
-                                                                          50.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      child:
-                                                                          CircularProgressIndicator(
-                                                                        valueColor:
-                                                                            AlwaysStoppedAnimation<Color>(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                        ),
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
                                                                       ),
                                                                     ),
-                                                                  );
-                                                                }
-                                                                final containerItskillsRecord =
-                                                                    snapshot
-                                                                        .data!;
-                                                                return Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            15.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      AutoSizeText(
-                                                                    containerItskillsRecord
-                                                                        .name,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 );
-                                                              },
-                                                            );
-                                                          })
-                                                              .divide(const SizedBox(
-                                                                  width: 15.0))
-                                                              .around(const SizedBox(
-                                                                  width: 15.0)),
-                                                        ),
-                                                      );
-                                                    },
-                                                  ),
+                                                              }
+                                                              final containerItskillsRecord =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return Container(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              15.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                                  ),
+                                                                ),
+                                                                child:
+                                                                    AutoSizeText(
+                                                                  containerItskillsRecord
+                                                                      .name,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                        })
+                                                            .divide(const SizedBox(
+                                                                width: 15.0))
+                                                            .around(const SizedBox(
+                                                                width: 15.0)),
+                                                      ),
+                                                    );
+                                                  },
                                                 ),
-                                                Divider(
-                                                  height: 2.0,
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 8.0),
-                                                  child: SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Builder(
-                                                          builder: (context) {
-                                                            final assigneesMobile =
-                                                                emCustomerCaseRecord
-                                                                    .assignee
-                                                                    .toList();
-                                                            return SingleChildScrollView(
-                                                              scrollDirection:
-                                                                  Axis.horizontal,
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .end,
-                                                                children: List.generate(
-                                                                    assigneesMobile
-                                                                        .length,
-                                                                    (assigneesMobileIndex) {
-                                                                  final assigneesMobileItem =
-                                                                      assigneesMobile[
-                                                                          assigneesMobileIndex];
-                                                                  return StreamBuilder<
-                                                                      UsersRecord>(
-                                                                    stream: UsersRecord
-                                                                        .getDocument(
-                                                                            assigneesMobileItem),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
-                                                                          child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            child:
-                                                                                CircularProgressIndicator(
-                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      }
-                                                                      final containerUsersRecord =
-                                                                          snapshot
-                                                                              .data!;
-                                                                      return Container(
-                                                                        width:
-                                                                            40.0,
-                                                                        height:
-                                                                            40.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).accent1,
-                                                                          shape:
-                                                                              BoxShape.circle,
-                                                                          border:
-                                                                              Border.all(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            width:
-                                                                                2.0,
-                                                                          ),
-                                                                        ),
+                                              ),
+                                              Divider(
+                                                height: 2.0,
+                                                thickness: 1.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 12.0, 12.0, 8.0),
+                                                child: SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) {
+                                                          final assigneesMobile =
+                                                              emCustomerCaseRecord
+                                                                  .assignee
+                                                                  .toList();
+                                                          return SingleChildScrollView(
+                                                            scrollDirection:
+                                                                Axis.horizontal,
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .end,
+                                                              children: List.generate(
+                                                                      assigneesMobile
+                                                                          .length,
+                                                                      (assigneesMobileIndex) {
+                                                                final assigneesMobileItem =
+                                                                    assigneesMobile[
+                                                                        assigneesMobileIndex];
+                                                                return StreamBuilder<
+                                                                    UsersRecord>(
+                                                                  stream: UsersRecord
+                                                                      .getDocument(
+                                                                          assigneesMobileItem),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.all(2.0),
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
                                                                           child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(40.0),
-                                                                            child:
-                                                                                Image.network(
-                                                                              containerUsersRecord.photoUrl,
-                                                                              width: 60.0,
-                                                                              height: 60.0,
-                                                                              fit: BoxFit.cover,
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
                                                                             ),
                                                                           ),
                                                                         ),
                                                                       );
-                                                                    },
-                                                                  );
-                                                                }).divide(const SizedBox(width: 5.0)).around(
-                                                                    const SizedBox(
-                                                                        width:
-                                                                            5.0)),
-                                                              ),
-                                                            );
-                                                          },
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              const AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsets.all(
-                                                                    6.0),
-                                                            child: Container(
-                                                              height: 32.0,
-                                                              decoration:
-                                                                  BoxDecoration(
+                                                                    }
+                                                                    final containerUsersRecord =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Container(
+                                                                      width:
+                                                                          40.0,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .accent1,
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        border:
+                                                                            Border.all(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          width:
+                                                                              2.0,
+                                                                        ),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(2.0),
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(40.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            containerUsersRecord.photoUrl,
+                                                                            width:
+                                                                                60.0,
+                                                                            height:
+                                                                                60.0,
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                );
+                                                              })
+                                                                  .divide(const SizedBox(
+                                                                      width:
+                                                                          5.0))
+                                                                  .around(const SizedBox(
+                                                                      width:
+                                                                          5.0)),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  6.0),
+                                                          child: Container(
+                                                            height: 32.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: emCustomerCaseRecord
+                                                                      .assignee
+                                                                      .contains(
+                                                                          currentUserReference)
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent1
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              border:
+                                                                  Border.all(
                                                                 color: emCustomerCaseRecord
                                                                         .assignee
                                                                         .contains(
                                                                             currentUserReference)
                                                                     ? FlutterFlowTheme.of(
                                                                             context)
-                                                                        .accent1
+                                                                        .primary
                                                                     : FlutterFlowTheme.of(
                                                                             context)
-                                                                        .alternate,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                border:
-                                                                    Border.all(
-                                                                  color: emCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                  width: 2.0,
-                                                                ),
+                                                                        .secondary,
+                                                                width: 2.0,
                                                               ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    const AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    () {
-                                                                      if (emCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'closed';
-                                                                      } else if (emCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)) {
-                                                                        return 'Own';
-                                                                      } else if (emCustomerCaseRecord
-                                                                              .assignee.isEmpty) {
-                                                                        return 'Open';
-                                                                      } else {
-                                                                        return 'Other';
-                                                                      }
-                                                                    }(),
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          color: emCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).primaryText
-                                                                              : FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  () {
+                                                                    if (emCustomerCaseRecord
+                                                                        .closed) {
+                                                                      return 'closed';
+                                                                    } else if (emCustomerCaseRecord
+                                                                        .assignee
+                                                                        .contains(
+                                                                            currentUserReference)) {
+                                                                      return 'Own';
+                                                                    } else if (emCustomerCaseRecord
+                                                                            .assignee.isEmpty) {
+                                                                      return 'Open';
+                                                                    } else {
+                                                                      return 'Other';
+                                                                    }
+                                                                  }(),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: emCustomerCaseRecord.assignee.contains(currentUserReference)
+                                                                            ? FlutterFlowTheme.of(context).primaryText
+                                                                            : FlutterFlowTheme.of(context).primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      );
-                                    },
-                                  );
-                                },
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),

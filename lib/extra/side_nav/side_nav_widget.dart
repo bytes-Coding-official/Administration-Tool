@@ -803,7 +803,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Icon(
-                                                  Icons.person,
+                                                  Icons.location_history,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,

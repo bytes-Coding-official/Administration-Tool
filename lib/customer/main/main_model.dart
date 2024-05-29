@@ -23,6 +23,18 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for em widget.
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>? emPagingController1;
+  Query? emPagingQuery1;
+  List<StreamSubscription?> emStreamSubscriptions1 = [];
+
+  // State field(s) for em widget.
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord>? emPagingController2;
+  Query? emPagingQuery2;
+  List<StreamSubscription?> emStreamSubscriptions2 = [];
+
   // State field(s) for tablet_DesktopView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
@@ -49,6 +61,16 @@ class MainModel extends FlutterFlowModel<MainWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
+    for (var s in emStreamSubscriptions1) {
+      s?.cancel();
+    }
+    emPagingController1?.dispose();
+
+    for (var s in emStreamSubscriptions2) {
+      s?.cancel();
+    }
+    emPagingController2?.dispose();
+
     for (var s in tabletDesktopViewStreamSubscriptions1) {
       s?.cancel();
     }
@@ -61,6 +83,68 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   }
 
   /// Additional helper methods.
+  PagingController<DocumentSnapshot?, CustomerCaseRecord> setEmController1(
+    Query query, {
+    DocumentReference<Object?>? parent,
+  }) {
+    emPagingController1 ??= _createEmController1(query, parent);
+    if (emPagingQuery1 != query) {
+      emPagingQuery1 = query;
+      emPagingController1?.refresh();
+    }
+    return emPagingController1!;
+  }
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord> _createEmController1(
+    Query query,
+    DocumentReference<Object?>? parent,
+  ) {
+    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
+        firstPageKey: null);
+    return controller
+      ..addPageRequestListener(
+        (nextPageMarker) => queryCustomerCaseRecordPage(
+          queryBuilder: (_) => emPagingQuery1 ??= query,
+          nextPageMarker: nextPageMarker,
+          streamSubscriptions: emStreamSubscriptions1,
+          controller: controller,
+          pageSize: 25,
+          isStream: true,
+        ),
+      );
+  }
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord> setEmController2(
+    Query query, {
+    DocumentReference<Object?>? parent,
+  }) {
+    emPagingController2 ??= _createEmController2(query, parent);
+    if (emPagingQuery2 != query) {
+      emPagingQuery2 = query;
+      emPagingController2?.refresh();
+    }
+    return emPagingController2!;
+  }
+
+  PagingController<DocumentSnapshot?, CustomerCaseRecord> _createEmController2(
+    Query query,
+    DocumentReference<Object?>? parent,
+  ) {
+    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
+        firstPageKey: null);
+    return controller
+      ..addPageRequestListener(
+        (nextPageMarker) => queryCustomerCaseRecordPage(
+          queryBuilder: (_) => emPagingQuery2 ??= query,
+          nextPageMarker: nextPageMarker,
+          streamSubscriptions: emStreamSubscriptions2,
+          controller: controller,
+          pageSize: 25,
+          isStream: true,
+        ),
+      );
+  }
+
   PagingController<DocumentSnapshot?, CustomerCaseRecord>
       setTabletDesktopViewController1(
     Query query, {
