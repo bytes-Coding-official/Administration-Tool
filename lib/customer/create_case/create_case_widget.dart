@@ -425,7 +425,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: FFLocalizations.of(context).getText(
-                          'y2utkbqo' /* Github Link */,
+                          'y2utkbqo' /* GitHub- Link */,
                         ),
                         labelStyle: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -437,7 +437,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                               fontWeight: FontWeight.w500,
                             ),
                         hintText: FFLocalizations.of(context).getText(
-                          '01kliwsx' /* Github Link */,
+                          '01kliwsx' /* GitHub- Link */,
                         ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(

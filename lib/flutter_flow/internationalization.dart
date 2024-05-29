@@ -751,9 +751,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'orutdw07': {
       'en': 'Description...',
-      'de': '',
-      'es': '',
-      'fr': '',
+      'de': 'Beschreibung...',
+      'es': 'Descripción...',
+      'fr': 'Description...',
     },
     'zboepkw1': {
       'en': 'Themes',
@@ -762,16 +762,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Thèmes',
     },
     'y2utkbqo': {
-      'en': 'Github Link',
-      'de': 'Titel...',
-      'es': 'Título...',
-      'fr': 'Titre...',
+      'en': 'GitHub- Link',
+      'de': 'GitHub- Link',
+      'es': 'GitHub- Link',
+      'fr': 'GitHub- Link',
     },
     '01kliwsx': {
-      'en': 'Github Link',
-      'de': 'Titel...',
-      'es': 'Título...',
-      'fr': 'Titre...',
+      'en': 'GitHub- Link',
+      'de': 'GitHub- Link',
+      'es': 'GitHub- Link',
+      'fr': 'GitHub- Link',
     },
     '3ymofq1p': {
       'en': 'Themes',
