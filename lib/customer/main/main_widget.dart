@@ -3373,9 +3373,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               return Container(
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary,
+                                                                  color: const Color(
+                                                                      0x66EE8B60),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -3983,9 +3982,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               return Container(
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
+                                                                  color: const Color(
+                                                                      0x66EE8B60),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
