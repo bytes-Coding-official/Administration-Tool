@@ -2372,6 +2372,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   child: Text(
                                                                     () {
                                                                       if (emCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
+                                                                      } else if (emCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)) {
@@ -2379,9 +2382,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       } else if (emCustomerCaseRecord
                                                                               .assignee.isEmpty) {
                                                                         return 'Open';
-                                                                      } else if (emCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'Closed';
                                                                       } else {
                                                                         return 'Other';
                                                                       }
@@ -2978,6 +2978,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   child: Text(
                                                                     () {
                                                                       if (emCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
+                                                                      } else if (emCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)) {
@@ -2985,9 +2988,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       } else if (emCustomerCaseRecord
                                                                               .assignee.isEmpty) {
                                                                         return 'Open';
-                                                                      } else if (emCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'Closed';
                                                                       } else {
                                                                         return 'Other';
                                                                       }
@@ -2998,9 +2998,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
-                                                                          color: emCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).success
-                                                                              : FlutterFlowTheme.of(context).error,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -3584,6 +3583,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   child: Text(
                                                                     () {
                                                                       if (tabletDesktopViewCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
+                                                                      } else if (tabletDesktopViewCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)) {
@@ -3591,9 +3593,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       } else if (tabletDesktopViewCustomerCaseRecord
                                                                               .assignee.isEmpty) {
                                                                         return 'Open';
-                                                                      } else if (tabletDesktopViewCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'Closed';
                                                                       } else {
                                                                         return 'Other';
                                                                       }
@@ -4177,6 +4176,44 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               context)
                                                                           .secondary,
                                                                   width: 2.0,
+                                                                ),
+                                                              ),
+                                                              child: Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    () {
+                                                                      if (tabletDesktopViewCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
+                                                                      } else if (tabletDesktopViewCustomerCaseRecord
+                                                                              .assignee.isEmpty) {
+                                                                        return 'Open';
+                                                                      } else {
+                                                                        return 'Own';
+                                                                      }
+                                                                    }(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Inter',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
