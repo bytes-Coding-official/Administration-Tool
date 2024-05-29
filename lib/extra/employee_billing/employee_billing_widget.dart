@@ -1317,9 +1317,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
+                                                                          8.0,
                                                                           0.0,
-                                                                          0.0,
+                                                                          8.0,
                                                                           0.0),
                                                               child: Text(
                                                                 () {
@@ -1333,14 +1333,11 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     return 'Open';
                                                                   } else if (listViewCustomerCaseRecord
                                                                       .closed) {
-                                                                    return 'closed';
+                                                                    return 'Closed';
                                                                   } else {
                                                                     return 'Other';
                                                                   }
                                                                 }(),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -1350,9 +1347,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                       color: listViewCustomerCaseRecord.assignee.contains(
                                                                               currentUserReference)
                                                                           ? FlutterFlowTheme.of(context)
-                                                                              .primaryText
+                                                                              .success
                                                                           : FlutterFlowTheme.of(context)
-                                                                              .primary,
+                                                                              .error,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),

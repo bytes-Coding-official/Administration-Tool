@@ -1296,9 +1296,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       buttonSize: 40.0,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.notes,
-                                        color: Colors.white,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         size: 24.0,
                                       ),
                                       onPressed: () async {
@@ -2150,9 +2151,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 return Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
+                                                                    color: const Color(
+                                                                        0x66EE8B60),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             15.0),
@@ -2759,9 +2759,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 return Container(
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
+                                                                    color: const Color(
+                                                                        0x66EE8B60),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             15.0),
@@ -2973,16 +2972,13 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 child: Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
+                                                                          8.0,
                                                                           0.0,
-                                                                          0.0,
+                                                                          8.0,
                                                                           0.0),
                                                                   child: Text(
                                                                     () {
                                                                       if (emCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'closed';
-                                                                      } else if (emCustomerCaseRecord
                                                                           .assignee
                                                                           .contains(
                                                                               currentUserReference)) {
@@ -2990,13 +2986,13 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                       } else if (emCustomerCaseRecord
                                                                               .assignee.isEmpty) {
                                                                         return 'Open';
+                                                                      } else if (emCustomerCaseRecord
+                                                                          .closed) {
+                                                                        return 'Closed';
                                                                       } else {
                                                                         return 'Other';
                                                                       }
                                                                     }(),
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -3004,8 +3000,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                           fontFamily:
                                                                               'Inter',
                                                                           color: emCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).primaryText
-                                                                              : FlutterFlowTheme.of(context).primary,
+                                                                              ? FlutterFlowTheme.of(context).success
+                                                                              : FlutterFlowTheme.of(context).error,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -4180,50 +4176,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               context)
                                                                           .secondary,
                                                                   width: 2.0,
-                                                                ),
-                                                              ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    const AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          8.0,
-                                                                          0.0,
-                                                                          8.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    () {
-                                                                      if (tabletDesktopViewCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)) {
-                                                                        return 'Own';
-                                                                      } else if (tabletDesktopViewCustomerCaseRecord
-                                                                              .assignee.isEmpty) {
-                                                                        return 'Open';
-                                                                      } else if (tabletDesktopViewCustomerCaseRecord
-                                                                          .closed) {
-                                                                        return 'Closed';
-                                                                      } else {
-                                                                        return 'Other';
-                                                                      }
-                                                                    }(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).primaryText
-                                                                              : FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
