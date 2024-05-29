@@ -711,6 +711,16 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             .map((e) => e.name)
                             .toList(),
                         height: 56.0,
+                        searchHintTextStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        searchTextStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Inter',
@@ -718,6 +728,9 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                                 ),
                         hintText: FFLocalizations.of(context).getText(
                           '7kfa0wi0' /* Customer Languages */,
+                        ),
+                        searchHintText: FFLocalizations.of(context).getText(
+                          'zwexgz3e' /* Search for an element... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -734,7 +747,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
-                        isSearchable: false,
+                        isSearchable: true,
                         isMultiSelect: true,
                         onMultiSelectChanged: (val) =>
                             setState(() => _model.dropDownValue = val),

@@ -445,6 +445,16 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             .map((e) => e.name)
                             .toList(),
                         height: 56.0,
+                        searchHintTextStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        searchTextStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Inter',
@@ -452,6 +462,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                 ),
                         hintText: FFLocalizations.of(context).getText(
                           'u3h0qui2' /* Topics */,
+                        ),
+                        searchHintText: FFLocalizations.of(context).getText(
+                          'h13kg7qr' /* Search for an item... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -468,7 +481,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
-                        isSearchable: false,
+                        isSearchable: true,
                         isMultiSelect: true,
                         onMultiSelectChanged: (val) =>
                             setState(() => _model.dropDownValue1 = val),
@@ -517,6 +530,16 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue2 = val),
                         height: 56.0,
+                        searchHintTextStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        searchTextStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Inter',
@@ -524,6 +547,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                 ),
                         hintText: FFLocalizations.of(context).getText(
                           'psh6ke1p' /* Customer Name */,
+                        ),
+                        searchHintText: FFLocalizations.of(context).getText(
+                          'jfcys0av' /* Search for an item... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -540,7 +566,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
-                        isSearchable: false,
+                        isSearchable: true,
                         isMultiSelect: false,
                       );
                     },

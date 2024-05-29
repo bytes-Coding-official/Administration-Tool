@@ -231,6 +231,18 @@ class _AddMeetingToCustomerWidgetState
                                   .map((e) => e.displayName)
                                   .toList(),
                               height: 56.0,
+                              searchHintTextStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              searchTextStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -239,6 +251,10 @@ class _AddMeetingToCustomerWidgetState
                                   ),
                               hintText: FFLocalizations.of(context).getText(
                                 'i5paqfsq' /* Tutor */,
+                              ),
+                              searchHintText:
+                                  FFLocalizations.of(context).getText(
+                                'ccl67tsf' /* Search for an element... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -257,7 +273,7 @@ class _AddMeetingToCustomerWidgetState
                                   0.0, 0.0, 0.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: true,
-                              isSearchable: false,
+                              isSearchable: true,
                               isMultiSelect: true,
                               onMultiSelectChanged: (val) =>
                                   setState(() => _model.tutorValue = val),

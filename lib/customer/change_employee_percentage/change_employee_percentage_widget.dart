@@ -152,6 +152,16 @@ class _ChangeEmployeePercentageWidgetState
                           onChanged: (val) =>
                               setState(() => _model.tutorValue = val),
                           height: 56.0,
+                          searchHintTextStyle:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                          searchTextStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
@@ -159,6 +169,9 @@ class _ChangeEmployeePercentageWidgetState
                                   ),
                           hintText: FFLocalizations.of(context).getText(
                             'n8uqn2fk' /* Tutor */,
+                          ),
+                          searchHintText: FFLocalizations.of(context).getText(
+                            '1etm02er' /* Search for an element... */,
                           ),
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
@@ -175,7 +188,7 @@ class _ChangeEmployeePercentageWidgetState
                               0.0, 0.0, 0.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: true,
-                          isSearchable: false,
+                          isSearchable: true,
                           isMultiSelect: false,
                         );
                       },

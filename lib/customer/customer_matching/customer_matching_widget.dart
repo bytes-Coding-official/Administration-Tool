@@ -163,6 +163,18 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue1 = val),
                               height: 56.0,
+                              searchHintTextStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              searchTextStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -171,6 +183,10 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   ),
                               hintText: FFLocalizations.of(context).getText(
                                 'p1u4kwv6' /* Please select... */,
+                              ),
+                              searchHintText:
+                                  FFLocalizations.of(context).getText(
+                                'v7plhg0s' /* Search for an item... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -189,7 +205,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   16.0, 4.0, 16.0, 4.0),
                               hidesUnderline: true,
                               isOverButton: true,
-                              isSearchable: false,
+                              isSearchable: true,
                               isMultiSelect: false,
                             );
                           },
@@ -254,6 +270,18 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue2 = val),
                               height: 56.0,
+                              searchHintTextStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              searchTextStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -262,6 +290,10 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   ),
                               hintText: FFLocalizations.of(context).getText(
                                 'oxhvu5uo' /* Please select... */,
+                              ),
+                              searchHintText:
+                                  FFLocalizations.of(context).getText(
+                                'w2j7a4li' /* Search for an item... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -280,7 +312,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   0.0, 0.0, 0.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: true,
-                              isSearchable: false,
+                              isSearchable: true,
                               isMultiSelect: false,
                             );
                           },
