@@ -587,6 +587,19 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       () => _model.dropDownValue = val),
                                   width: double.infinity,
                                   height: 50.0,
+                                  searchHintTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                  searchTextStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -595,6 +608,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
                                     '5g50y16u' /* Please select... */,
+                                  ),
+                                  searchHintText:
+                                      FFLocalizations.of(context).getText(
+                                    '74vmywjv' /* Search for a status... */,
                                   ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
@@ -612,7 +629,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   margin: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 4.0, 16.0, 4.0),
                                   hidesUnderline: true,
-                                  isSearchable: false,
+                                  isSearchable: true,
                                   isMultiSelect: false,
                                 ),
                               ),

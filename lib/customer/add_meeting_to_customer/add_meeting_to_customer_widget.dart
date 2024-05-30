@@ -256,7 +256,7 @@ class _AddMeetingToCustomerWidgetState
                               ),
                               searchHintText:
                                   FFLocalizations.of(context).getText(
-                                'ccl67tsf' /* Search for an element... */,
+                                'ccl67tsf' /* Search for an user... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -353,7 +353,7 @@ class _AddMeetingToCustomerWidgetState
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 2,
+                          maxLength: 3,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,
@@ -431,7 +431,7 @@ class _AddMeetingToCustomerWidgetState
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 4,
+                          maxLength: 7,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,

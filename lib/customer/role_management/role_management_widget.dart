@@ -126,92 +126,65 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
-                        StreamBuilder<List<CustomerRecord>>(
-                          stream: queryCustomerRecord(),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            List<CustomerRecord> dropDownCustomerRecordList =
-                                snapshot.data!;
-                            return FlutterFlowDropDown<String>(
-                              controller: _model.dropDownValueController1 ??=
-                                  FormFieldController<String>(
-                                _model.dropDownValue1 ??= 'Manager',
-                              ),
-                              options: List<String>.from(
-                                  ['Manager', 'Employee', 'Kunde']),
-                              optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  '0i081vq2' /* Leitung */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'hyd0rqkf' /* Mitarbeiter */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '7d66ojr1' /* Kunde */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue1 = val),
-                              height: 56.0,
-                              searchHintTextStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
+                        FlutterFlowDropDown<String>(
+                          controller: _model.dropDownValueController1 ??=
+                              FormFieldController<String>(
+                            _model.dropDownValue1 ??= 'Manager',
+                          ),
+                          options: List<String>.from(
+                              ['Manager', 'Employee', 'Kunde']),
+                          optionLabels: [
+                            FFLocalizations.of(context).getText(
+                              '0i081vq2' /* Leitung */,
+                            ),
+                            FFLocalizations.of(context).getText(
+                              'hyd0rqkf' /* Mitarbeiter */,
+                            ),
+                            FFLocalizations.of(context).getText(
+                              '7d66ojr1' /* Kunde */,
+                            )
+                          ],
+                          onChanged: (val) =>
+                              setState(() => _model.dropDownValue1 = val),
+                          height: 56.0,
+                          searchHintTextStyle:
+                              FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                              searchTextStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
+                          searchTextStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: FFLocalizations.of(context).getText(
-                                's6n2px50' /* Please select... */,
-                              ),
-                              searchHintText:
-                                  FFLocalizations.of(context).getText(
-                                '8zako0ac' /* Search for an user... */,
-                              ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              borderWidth: 2.0,
-                              borderRadius: 8.0,
-                              margin: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 4.0, 16.0, 4.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: true,
-                              isMultiSelect: false,
-                            );
-                          },
+                          hintText: FFLocalizations.of(context).getText(
+                            's6n2px50' /* Please select... */,
+                          ),
+                          searchHintText: FFLocalizations.of(context).getText(
+                            '8zako0ac' /* Search for a role... */,
+                          ),
+                          icon: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          elevation: 2.0,
+                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderWidth: 2.0,
+                          borderRadius: 8.0,
+                          margin: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 4.0, 16.0, 4.0),
+                          hidesUnderline: true,
+                          isOverButton: true,
+                          isSearchable: true,
+                          isMultiSelect: false,
                         ),
                       ].divide(const SizedBox(height: 15.0)),
                     ),
@@ -286,7 +259,7 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                               ),
                               searchHintText:
                                   FFLocalizations.of(context).getText(
-                                '7t0lr6t9' /* Search for an item... */,
+                                '7t0lr6t9' /* Search for an user... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,

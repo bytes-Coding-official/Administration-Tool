@@ -730,7 +730,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                           '7kfa0wi0' /* Customer Languages */,
                         ),
                         searchHintText: FFLocalizations.of(context).getText(
-                          'zwexgz3e' /* Search for an element... */,
+                          'zwexgz3e' /* Search for a language... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,

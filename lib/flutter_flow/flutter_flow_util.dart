@@ -45,6 +45,7 @@ void _setTimeagoLocales() {
   timeago.setLocaleMessages('es_short', timeago.EsShortMessages());
   timeago.setLocaleMessages('fr', timeago.FrMessages());
   timeago.setLocaleMessages('fr_short', timeago.FrShortMessages());
+  timeago.setLocaleMessages('zh_Hans', timeago.ZhCnMessages());
 }
 
 String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {

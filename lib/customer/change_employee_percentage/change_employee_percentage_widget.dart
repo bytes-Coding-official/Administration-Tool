@@ -171,7 +171,7 @@ class _ChangeEmployeePercentageWidgetState
                             'n8uqn2fk' /* Tutor */,
                           ),
                           searchHintText: FFLocalizations.of(context).getText(
-                            '1etm02er' /* Search for an element... */,
+                            '1etm02er' /* Search for an user... */,
                           ),
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,

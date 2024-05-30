@@ -186,7 +186,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                               ),
                               searchHintText:
                                   FFLocalizations.of(context).getText(
-                                'v7plhg0s' /* Search for an item... */,
+                                'v7plhg0s' /* Search for an user... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -293,7 +293,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                               ),
                               searchHintText:
                                   FFLocalizations.of(context).getText(
-                                'w2j7a4li' /* Search for an item... */,
+                                'w2j7a4li' /* Search for an user... */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,

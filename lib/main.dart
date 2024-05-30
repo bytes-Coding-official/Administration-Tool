@@ -106,6 +106,7 @@ class _MyAppState extends State<MyApp> {
         Locale('de'),
         Locale('es'),
         Locale('fr'),
+        Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'),
       ],
       theme: ThemeData(
         brightness: Brightness.light,

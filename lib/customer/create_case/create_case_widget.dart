@@ -562,7 +562,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                           'u3h0qui2' /* Topics */,
                         ),
                         searchHintText: FFLocalizations.of(context).getText(
-                          'h13kg7qr' /* Search for an item... */,
+                          'h13kg7qr' /* Search for a topic... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -647,7 +647,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                           'psh6ke1p' /* Customer Name */,
                         ),
                         searchHintText: FFLocalizations.of(context).getText(
-                          'jfcys0av' /* Search for an item... */,
+                          'jfcys0av' /* Search for an user... */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
