@@ -141,7 +141,7 @@ class _UsersWidgetState extends State<UsersWidget>
                         const Duration(milliseconds: 150),
                         () => setState(() {}),
                       ),
-                      autofocus: true,
+                      autofocus: false,
                       obscureText: false,
                       decoration: InputDecoration(
                         isDense: false,

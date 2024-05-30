@@ -1577,7 +1577,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           milliseconds: 150),
                                                       () => setState(() {}),
                                                     ),
-                                                    autofocus: true,
+                                                    autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText:
@@ -1697,7 +1697,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               const Duration(milliseconds: 150),
                                               () => setState(() {}),
                                             ),
-                                            autofocus: true,
+                                            autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText:

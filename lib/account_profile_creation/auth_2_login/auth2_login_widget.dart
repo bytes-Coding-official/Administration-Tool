@@ -214,7 +214,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 child: TextFormField(
                                   controller: _model.emailAddressTextController,
                                   focusNode: _model.emailAddressFocusNode,
-                                  autofocus: true,
+                                  autofocus: false,
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -288,7 +288,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 child: TextFormField(
                                   controller: _model.passwordTextController,
                                   focusNode: _model.passwordFocusNode,
-                                  autofocus: true,
+                                  autofocus: false,
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(

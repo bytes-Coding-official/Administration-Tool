@@ -173,7 +173,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                       .toString(),
                                 ),
                                 focusNode: _model.caseIDFocusNode,
-                                autofocus: true,
+                                autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText:
@@ -249,7 +249,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                     child: TextFormField(
                       controller: _model.titleTextController1,
                       focusNode: _model.titleFocusNode1,
-                      autofocus: true,
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
                       decoration: InputDecoration(
@@ -330,7 +330,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                     child: TextFormField(
                       controller: _model.descriptionTextController,
                       focusNode: _model.descriptionFocusNode,
-                      autofocus: true,
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
                       decoration: InputDecoration(
@@ -420,7 +420,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                     child: TextFormField(
                       controller: _model.titleTextController2,
                       focusNode: _model.titleFocusNode2,
-                      autofocus: true,
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
                       decoration: InputDecoration(
@@ -691,7 +691,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             TextFormField(
                               controller: _model.revenueTextController,
                               focusNode: _model.revenueFocusNode,
-                              autofocus: true,
+                              autofocus: false,
                               textCapitalization: TextCapitalization.words,
                               obscureText: false,
                               decoration: InputDecoration(

@@ -151,7 +151,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.fullNameTextController,
                     focusNode: _model.fullNameFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -228,7 +228,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.phoneNumberTextController,
                     focusNode: _model.phoneNumberFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -301,7 +301,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.mailTextController,
                     focusNode: _model.mailFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -374,7 +374,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.streetTextController,
                     focusNode: _model.streetFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -447,7 +447,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.cityTextController,
                     focusNode: _model.cityFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -520,7 +520,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.zipTextController,
                     focusNode: _model.zipFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -593,7 +593,7 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                   TextFormField(
                     controller: _model.countryTextController,
                     focusNode: _model.countryFocusNode,
-                    autofocus: true,
+                    autofocus: false,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(

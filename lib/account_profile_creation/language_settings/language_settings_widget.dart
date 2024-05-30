@@ -416,7 +416,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                       controller:
                                           _model.newlangaugeTextController,
                                       focusNode: _model.newlangaugeFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText:

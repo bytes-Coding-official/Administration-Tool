@@ -196,7 +196,7 @@ class _ChangeEmployeePercentageWidgetState
                     TextFormField(
                       controller: _model.percentageTextController,
                       focusNode: _model.percentageFocusNode,
-                      autofocus: true,
+                      autofocus: false,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
                       decoration: InputDecoration(

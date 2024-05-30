@@ -490,7 +490,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
 
                                       setState(() {});
                                     },
-                                    autofocus: true,
+                                    autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.sentences,
                                     textInputAction: TextInputAction.send,

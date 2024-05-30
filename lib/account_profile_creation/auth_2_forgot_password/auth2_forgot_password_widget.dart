@@ -244,7 +244,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                                 child: TextFormField(
                                   controller: _model.emailAddressTextController,
                                   focusNode: _model.emailAddressFocusNode,
-                                  autofocus: true,
+                                  autofocus: false,
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(

@@ -539,7 +539,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       TextFormField(
                         controller: _model.textController1,
                         focusNode: _model.textFieldFocusNode1,
-                        autofocus: true,
+                        autofocus: false,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
@@ -600,7 +600,7 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                       TextFormField(
                         controller: _model.textController2,
                         focusNode: _model.textFieldFocusNode2,
-                        autofocus: true,
+                        autofocus: false,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelStyle:

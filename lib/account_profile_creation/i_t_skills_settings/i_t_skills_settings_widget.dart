@@ -416,7 +416,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                                     child: TextFormField(
                                       controller: _model.newskillTextController,
                                       focusNode: _model.newskillFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText:

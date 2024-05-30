@@ -285,7 +285,7 @@ class _AddMeetingToCustomerWidgetState
                         TextFormField(
                           controller: _model.durationTextController,
                           focusNode: _model.durationFocusNode,
-                          autofocus: true,
+                          autofocus: false,
                           textCapitalization: TextCapitalization.words,
                           obscureText: false,
                           decoration: InputDecoration(
@@ -353,7 +353,7 @@ class _AddMeetingToCustomerWidgetState
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 3,
+                          maxLength: 10,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,
@@ -363,7 +363,7 @@ class _AddMeetingToCustomerWidgetState
                         TextFormField(
                           controller: _model.costsTextController,
                           focusNode: _model.costsFocusNode,
-                          autofocus: true,
+                          autofocus: false,
                           textCapitalization: TextCapitalization.words,
                           obscureText: false,
                           decoration: InputDecoration(
@@ -431,7 +431,7 @@ class _AddMeetingToCustomerWidgetState
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 7,
+                          maxLength: 10,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,
