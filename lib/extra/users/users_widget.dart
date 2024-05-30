@@ -148,11 +148,6 @@ class _UsersWidgetState extends State<UsersWidget>
                         labelText: FFLocalizations.of(context).getText(
                           'lefjjtu5' /* Search for people... */,
                         ),
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
                         hintText: FFLocalizations.of(context).getText(
                           'm4jj16bz' /* Search for people... */,
                         ),
