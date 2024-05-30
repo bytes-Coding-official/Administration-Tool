@@ -301,6 +301,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Customers',
           path: '/customers',
           builder: (context, params) => const CustomersWidget(),
+        ),
+        FFRoute(
+          name: 'RoleManagement',
+          path: '/roleManagement',
+          builder: (context, params) => const RoleManagementWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -520,6 +520,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
     },
+    'dm0y1b6g': {
+      'en': 'Role Management',
+      'de': 'Rollenverwaltung',
+      'es': 'Gestión de roles',
+      'fr': 'Gestion des rôles',
+    },
     '4tmi2f8n': {
       'en': 'Employee Billing',
       'de': 'Mitarbeiterabrechnung',
@@ -1297,7 +1303,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del billete',
+      'es': 'Detalles del boleto',
       'fr': 'Détails du billet',
     },
     'ss89pb28': {
@@ -1440,7 +1446,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
     },
     '72k7zctj': {
       'en': 'Revenue Percentage',
@@ -2075,6 +2081,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Membres',
     },
     '12w6659s': {
+      'en': 'Role Management',
+      'de': 'Rollenverwaltung',
+      'es': 'Gestión de roles',
+      'fr': 'Gestion des rôles',
+    },
+    'uhfmvqwm': {
       'en': 'Customer Matching',
       'de': 'Kundenabgleich',
       'es': 'Emparejamiento de clientes',
@@ -2222,7 +2234,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
     },
     'lyzzcc02': {
       'en': 'Revenue Percentage',
@@ -2589,6 +2601,93 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Home',
       'es': '',
       'fr': '',
+    },
+  },
+  // RoleManagement
+  {
+    '7cg8ao71': {
+      'en': 'Customer-User Matching',
+      'de': 'Kunden-Benutzer-Matching',
+      'es': 'Emparejamiento cliente-usuario',
+      'fr': 'Correspondance client-utilisateur',
+    },
+    'hpuyn1iy': {
+      'en': 'Match the Role and Permissions of the users',
+      'de': 'Passen Sie die Rolle und Berechtigungen der Benutzer an',
+      'es': 'Haga coincidir el rol y los permisos de los usuarios',
+      'fr': 'Faites correspondre le rôle et les autorisations des utilisateurs',
+    },
+    'd8m86qjj': {
+      'en': 'Role',
+      'de': 'Rolle',
+      'es': 'Role',
+      'fr': 'Rôle',
+    },
+    '0i081vq2': {
+      'en': 'Leitung',
+      'de': 'Leitung',
+      'es': 'Leitung',
+      'fr': 'Leitung',
+    },
+    'hyd0rqkf': {
+      'en': 'Mitarbeiter',
+      'de': 'Mitarbeiter',
+      'es': 'Mitarbeiter',
+      'fr': 'Mitarbeiter',
+    },
+    '7d66ojr1': {
+      'en': 'Kunde',
+      'de': 'Kunde',
+      'es': 'Kunde',
+      'fr': 'Kundé',
+    },
+    's6n2px50': {
+      'en': 'Please select...',
+      'de': 'Bitte auswählen...',
+      'es': 'Por favor seleccione...',
+      'fr': 'Veuillez sélectionner...',
+    },
+    '8zako0ac': {
+      'en': 'Search for an user...',
+      'de': 'Nach einem Benutzer suchen...',
+      'es': 'Buscar un usuario...',
+      'fr': 'Rechercher un utilisateur...',
+    },
+    '7izaew0u': {
+      'en': 'User',
+      'de': 'Benutzer',
+      'es': 'Usuario',
+      'fr': 'Utilisateur',
+    },
+    '101ho30t': {
+      'en': 'Option 1',
+      'de': 'Option 1',
+      'es': 'Opción 1',
+      'fr': 'Option 1',
+    },
+    '3lfjpdzd': {
+      'en': 'Please select...',
+      'de': 'Bitte auswählen...',
+      'es': 'Por favor seleccione...',
+      'fr': 'Veuillez sélectionner...',
+    },
+    '7t0lr6t9': {
+      'en': 'Search for an item...',
+      'de': 'Nach einem Artikel suchen...',
+      'es': 'Buscar un artículo...',
+      'fr': 'Rechercher un article...',
+    },
+    'cg5tzc49': {
+      'en': 'Save',
+      'de': 'Speichern',
+      'es': 'Ahorrar',
+      'fr': 'Sauvegarder',
+    },
+    'qx78yruu': {
+      'en': 'Home',
+      'de': 'Heim',
+      'es': 'Hogar',
+      'fr': 'Maison',
     },
   },
   // editProfile_auth_2

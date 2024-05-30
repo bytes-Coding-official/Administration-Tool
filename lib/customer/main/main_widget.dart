@@ -574,6 +574,79 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
+                                        context.pushNamed('RoleManagement');
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: const Duration(milliseconds: 200),
+                                        curve: Curves.easeInOut,
+                                        width: double.infinity,
+                                        height: 44.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 6.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.perm_device_info_sharp,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'dm0y1b6g' /* Role Management */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              if (valueOrDefault(
+                                      currentUserDocument?.role, '') ==
+                                  'Manager')
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_contentView_1_ON_TAP');
+                                        logFirebaseEvent(
+                                            'contentView_1_navigate_to');
+
                                         context.pushNamed(
                                             'ChangeEmployeePercentage');
                                       },
@@ -2081,7 +2154,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           16.0),
                                                   child: Text(
                                                     emCustomerCaseRecord
-                                                        .description,
+                                                        .description
+                                                        .maybeHandleOverflow(
+                                                            maxChars: 100),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
@@ -2687,7 +2762,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           16.0),
                                                   child: Text(
                                                     emCustomerCaseRecord
-                                                        .description,
+                                                        .description
+                                                        .maybeHandleOverflow(
+                                                            maxChars: 100),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
@@ -3300,7 +3377,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       tabletDesktopViewCustomerCaseRecord
                                                           .description
                                                           .maybeHandleOverflow(
-                                                              maxChars: 100),
+                                                              maxChars: 500),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .labelMedium
@@ -3910,7 +3987,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 12.0, 16.0),
                                                     child: Text(
                                                       tabletDesktopViewCustomerCaseRecord
-                                                          .description,
+                                                          .description
+                                                          .maybeHandleOverflow(
+                                                              maxChars: 500),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .labelMedium
