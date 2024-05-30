@@ -679,7 +679,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
 
                       await currentUserReference!.update(createUsersRecordData(
                         photoUrl:
-                            'https://firebasestorage.googleapis.com/v0/b/bytes-coding-admin-tool.appspot.com/o/LOGO%20SEGA.png?alt=media&token=2b9e2bb5-bacc-4bff-8831-6d1171cebb46',
+                            'https://firebasestorage.googleapis.com/v0/b/bytes-coding-admin-tool.appspot.com/o/Logo%20squared.png?alt=media&token=1cf89de6-012c-4b3c-afe3-8ade0cd6127e',
                       ));
                     }
                     logFirebaseEvent('Button-Login_show_snack_bar');
