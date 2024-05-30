@@ -674,6 +674,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget>
                       email: _model.emailAdressTextController.text,
                       phoneNumber: _model.phoneNumberTextController.text,
                     ));
+                    if (!(currentUserPhoto != '')) {
+                      logFirebaseEvent('Button-Login_backend_call');
+
+                      await currentUserReference!.update(createUsersRecordData(
+                        photoUrl:
+                            'https://firebasestorage.googleapis.com/v0/b/bytes-coding-admin-tool.appspot.com/o/LOGO%20SEGA.png?alt=media&token=2b9e2bb5-bacc-4bff-8831-6d1171cebb46',
+                      ));
+                    }
                     logFirebaseEvent('Button-Login_show_snack_bar');
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
