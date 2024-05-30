@@ -55,3 +55,4 @@ export '/customer/change_employee_percentage/change_employee_percentage_widget.d
 export '/customer/customers/customers_widget.dart' show CustomersWidget;
 export '/customer/role_management/role_management_widget.dart'
     show RoleManagementWidget;
+export '/customer/edit_case/edit_case_widget.dart' show EditCaseWidget;

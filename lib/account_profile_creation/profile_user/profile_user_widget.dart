@@ -998,6 +998,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
 
                                   logFirebaseEvent(
                                       'Container_update_app_state');
+
                                   FFAppState().update(() {});
                                   logFirebaseEvent('Container_navigate_to');
 

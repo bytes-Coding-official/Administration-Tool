@@ -382,10 +382,9 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                             if (_model.uploadedFileUrl != '') {
                               logFirebaseEvent(
                                   'IconButton_update_component_state');
-                              setState(() {
-                                _model.addToImagesUploaded(
-                                    _model.uploadedFileUrl);
-                              });
+                              _model
+                                  .addToImagesUploaded(_model.uploadedFileUrl);
+                              setState(() {});
                             } else {
                               return;
                             }
@@ -484,9 +483,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
 
                                       logFirebaseEvent(
                                           'TextField_update_component_state');
-                                      setState(() {
-                                        _model.imagesUploaded = [];
-                                      });
+                                      _model.imagesUploaded = [];
+                                      setState(() {});
 
                                       setState(() {});
                                     },
@@ -688,9 +686,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
 
                                         logFirebaseEvent(
                                             'IconButton_update_component_state');
-                                        setState(() {
-                                          _model.imagesUploaded = [];
-                                        });
+                                        _model.imagesUploaded = [];
+                                        setState(() {});
                                       } finally {
                                         await firestoreBatch.commit();
                                       }

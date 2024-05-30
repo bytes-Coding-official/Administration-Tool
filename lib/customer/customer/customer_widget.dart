@@ -781,6 +781,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
 
                                       logFirebaseEvent(
                                           'Button_update_app_state');
+
                                       setState(() {});
                                     },
                                     text: customerCustomerCaseRecord.assignee
@@ -886,6 +887,71 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 'Manager')
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'CUSTOMER_PAGE_EDIT_CASE_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_navigate_to');
+                                      if (Navigator.of(context).canPop()) {
+                                        context.pop();
+                                      }
+                                      context.pushNamed(
+                                        'EditCase',
+                                        queryParameters: {
+                                          'customercase': serializeParam(
+                                            customerCustomerCaseRecord
+                                                .reference,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.topToBottom,
+                                            duration:
+                                                Duration(milliseconds: 350),
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'sm949xko' /* Edit Case */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.5,
+                                      height: 50.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            if (valueOrDefault(currentUserDocument?.role, '') ==
+                                'Manager')
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
@@ -905,6 +971,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                         ));
                                         logFirebaseEvent(
                                             'Button_update_app_state');
+
                                         FFAppState().update(() {});
                                       },
                                       text: customerCustomerCaseRecord.closed
@@ -1146,6 +1213,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
 
                                         logFirebaseEvent(
                                             'Container_update_app_state');
+
                                         FFAppState().update(() {});
                                         logFirebaseEvent(
                                             'Container_navigate_to');

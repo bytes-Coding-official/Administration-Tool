@@ -1960,6 +1960,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               'MAIN_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
                                               'listContainer_update_app_state');
+
                                           setState(() {});
                                           logFirebaseEvent(
                                               'listContainer_navigate_to');
@@ -2568,6 +2569,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               'MAIN_PAGE_listContainer_ON_TAP');
                                           logFirebaseEvent(
                                               'listContainer_update_app_state');
+
                                           setState(() {});
                                           logFirebaseEvent(
                                               'listContainer_navigate_to');

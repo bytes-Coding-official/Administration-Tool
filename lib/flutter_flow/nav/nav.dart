@@ -306,6 +306,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'RoleManagement',
           path: '/roleManagement',
           builder: (context, params) => const RoleManagementWidget(),
+        ),
+        FFRoute(
+          name: 'EditCase',
+          path: '/editCase',
+          builder: (context, params) => EditCaseWidget(
+            customercase: params.getParam(
+              'customercase',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['customer-case'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

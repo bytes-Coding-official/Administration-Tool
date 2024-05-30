@@ -49,16 +49,14 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
       if (widget.chatRef != null) {
         // addChatUsers_ToList
         logFirebaseEvent('chat_2_InviteUsers_addChatUsers_ToList');
-        setState(() {
-          _model.friendsList =
-              widget.chatRef!.users.toList().cast<DocumentReference>();
-        });
+        _model.friendsList =
+            widget.chatRef!.users.toList().cast<DocumentReference>();
+        setState(() {});
       } else {
         // addUser_ToList
         logFirebaseEvent('chat_2_InviteUsers_addUser_ToList');
-        setState(() {
-          _model.addToFriendsList(currentUserReference!);
-        });
+        _model.addToFriendsList(currentUserReference!);
+        setState(() {});
       }
     });
 
@@ -359,22 +357,20 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                               // addUser
                                               logFirebaseEvent(
                                                   'CheckboxListTile_addUser');
-                                              setState(() {
-                                                _model.addToFriendsList(
-                                                    listViewUsersRecord
-                                                        .reference);
-                                              });
+                                              _model.addToFriendsList(
+                                                  listViewUsersRecord
+                                                      .reference);
+                                              setState(() {});
                                             } else {
                                               logFirebaseEvent(
                                                   'CHAT_2_INVITE_USERS_CheckboxListTile_rf5');
                                               // removeUsser
                                               logFirebaseEvent(
                                                   'CheckboxListTile_removeUsser');
-                                              setState(() {
-                                                _model.removeFromFriendsList(
-                                                    listViewUsersRecord
-                                                        .reference);
-                                              });
+                                              _model.removeFromFriendsList(
+                                                  listViewUsersRecord
+                                                      .reference);
+                                              setState(() {});
                                             }
                                           },
                                           title: Text(

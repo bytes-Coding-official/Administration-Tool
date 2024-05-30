@@ -45,9 +45,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       logFirebaseEvent('DELETE_DIALOG_deleteDialog_ON_INIT_STATE');
       logFirebaseEvent('deleteDialog_update_component_state');
-      setState(() {
-        _model.showDelete = false;
-      });
+      _model.showDelete = false;
+      setState(() {});
     });
 
     animationsMap.addAll({
@@ -205,9 +204,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     onTap: () async {
                       logFirebaseEvent('DELETE_DIALOG_COMP_component_ON_TAP');
                       logFirebaseEvent('component_update_component_state');
-                      setState(() {
-                        _model.showDelete = true;
-                      });
+                      _model.showDelete = true;
+                      setState(() {});
                     },
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 200),

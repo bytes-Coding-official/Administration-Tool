@@ -1228,6 +1228,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
 
                                   logFirebaseEvent(
                                       'Container_update_app_state');
+
                                   FFAppState().update(() {});
                                   logFirebaseEvent('Container_navigate_to');
 
