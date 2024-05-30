@@ -481,10 +481,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sm949xko': {
       'en': 'Edit Case',
-      'de': 'Meeting dem Benutzer hinzufügen',
-      'es': 'Agregar reunión al usuario',
-      'fr': 'Ajouter une réunion à l\'utilisateur',
-      'zh_Hans': '向用户添加会议',
+      'de': 'Fall bearbeiten',
+      'es': 'Editar caso',
+      'fr': 'Modifier le cas',
+      'zh_Hans': '編輯案例',
     },
     '955no1if': {
       'en': 'Date',
