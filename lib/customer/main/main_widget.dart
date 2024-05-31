@@ -1929,6 +1929,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             AuthUserStreamWidget(
                               builder: (context) => Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: const BoxDecoration(),
                                 child: PagedListView<DocumentSnapshot<Object?>?,
                                     CustomerCaseRecord>.separated(
@@ -1937,7 +1938,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         .orderBy('caseid', descending: true),
                                   ),
                                   padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
@@ -2096,8 +2096,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           }
                                         },
                                         child: Container(
-                                          width: 700.0,
-                                          height: 250.0,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
@@ -2319,8 +2320,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 8.0),
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 0.0),
                                                   child: SingleChildScrollView(
                                                     scrollDirection:
                                                         Axis.horizontal,
@@ -2544,6 +2545,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             AuthUserStreamWidget(
                               builder: (context) => Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: const BoxDecoration(),
                                 child: PagedListView<DocumentSnapshot<Object?>?,
                                     CustomerCaseRecord>.separated(
@@ -2557,7 +2559,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         .orderBy('caseid', descending: true),
                                   ),
                                   padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
@@ -2716,8 +2717,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                           }
                                         },
                                         child: Container(
-                                          width: 700.0,
-                                          height: 250.0,
                                           constraints: const BoxConstraints(
                                             maxWidth: 570.0,
                                           ),
@@ -2737,6 +2736,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding: const EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
@@ -2939,8 +2940,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 8.0),
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 0.0),
                                                   child: SingleChildScrollView(
                                                     scrollDirection:
                                                         Axis.horizontal,

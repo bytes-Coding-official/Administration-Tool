@@ -171,7 +171,6 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                           ItskillsRecord.collection,
                         ),
                         padding: EdgeInsets.zero,
-                        shrinkWrap: true,
                         reverse: false,
                         scrollDirection: Axis.vertical,
                         separatorBuilder: (_, __) => const SizedBox(height: 15.0),
