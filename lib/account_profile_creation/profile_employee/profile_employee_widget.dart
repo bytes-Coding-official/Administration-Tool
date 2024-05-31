@@ -66,6 +66,18 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
     });
 
     animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'listViewOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -908,19 +920,24 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                             width: 2.0,
                                           ),
                                         ),
-                                        child: SelectionArea(
-                                            child: AutoSizeText(
-                                          rowItskillsRecord.name,
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 16.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        )),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 3.0, 3.0, 3.0),
+                                          child: SelectionArea(
+                                              child: AutoSizeText(
+                                            rowItskillsRecord.name,
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          )),
+                                        ),
                                       );
                                     })
                                         .divide(const SizedBox(width: 15.0))
@@ -995,19 +1012,24 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                             width: 2.0,
                                           ),
                                         ),
-                                        child: SelectionArea(
-                                            child: AutoSizeText(
-                                          rowLanguagesRecord.name,
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                fontSize: 16.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        )),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 3.0, 3.0, 3.0),
+                                          child: SelectionArea(
+                                              child: AutoSizeText(
+                                            rowLanguagesRecord.name,
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 16.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          )),
+                                        ),
                                       );
                                     })
                                         .divide(const SizedBox(width: 15.0))
@@ -1433,7 +1455,8 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                       ),
                     ].divide(const SizedBox(height: 5.0)),
                   ),
-                ),
+                ).animateOnPageLoad(
+                    animationsMap['columnOnPageLoadAnimation']!),
               ),
             ),
           ),

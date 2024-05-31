@@ -1113,21 +1113,31 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     .secondary,
                                                               ),
                                                             ),
-                                                            child: AutoSizeText(
-                                                              containerItskillsRecord
-                                                                  .name,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0),
+                                                              child:
+                                                                  AutoSizeText(
+                                                                containerItskillsRecord
+                                                                    .name,
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
                                                             ),
                                                           );
                                                         },

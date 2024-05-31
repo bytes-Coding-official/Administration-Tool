@@ -32,7 +32,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'SideNav'});
     animationsMap.addAll({
-      'columnOnPageLoadAnimation': AnimationInfo(
+      'columnOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -41,6 +41,18 @@ class _SideNavWidgetState extends State<SideNavWidget>
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
+          ),
+        ],
+      ),
+      'columnOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -1066,7 +1078,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                   ),
                               ].divide(const SizedBox(height: 12.0)),
                             ),
-                          ),
+                          ).animateOnPageLoad(
+                              animationsMap['columnOnPageLoadAnimation2']!),
                         ),
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
@@ -1395,7 +1408,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                         ),
                       ],
                     ).animateOnPageLoad(
-                        animationsMap['columnOnPageLoadAnimation']!),
+                        animationsMap['columnOnPageLoadAnimation1']!),
                   ),
                 ),
               ),

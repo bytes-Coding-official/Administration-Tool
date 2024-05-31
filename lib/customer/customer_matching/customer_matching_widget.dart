@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'customer_matching_model.dart';
 export 'customer_matching_model.dart';
@@ -18,10 +20,13 @@ class CustomerMatchingWidget extends StatefulWidget {
   State<CustomerMatchingWidget> createState() => _CustomerMatchingWidgetState();
 }
 
-class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
+class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
+    with TickerProviderStateMixin {
   late CustomerMatchingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -30,6 +35,21 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'CustomerMatching'});
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -393,7 +413,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                       .divide(const SizedBox(height: 25.0))
                       .around(const SizedBox(height: 25.0)),
                 ),
-              ),
+              ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
             ),
           ),
         ),

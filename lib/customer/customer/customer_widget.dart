@@ -468,7 +468,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             ),
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 0.0),
+                                                  .fromSTEB(3.0, 3.0, 3.0, 3.0),
                                               child: Text(
                                                 containerItskillsRecord.name,
                                                 textAlign: TextAlign.center,
@@ -582,8 +582,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 3.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(3.0, 3.0,
+                                                                3.0, 3.0),
                                                     child: Text(
                                                       containerLanguagesRecord
                                                           .name,

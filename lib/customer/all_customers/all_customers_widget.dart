@@ -328,9 +328,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                               ),
                                         ),
                                       ),
-                                    ]
-                                        .divide(const SizedBox(width: 50.0))
-                                        .around(const SizedBox(width: 50.0)),
+                                    ].divide(const SizedBox(width: 50.0)),
                                   ),
                                 ),
                               ),

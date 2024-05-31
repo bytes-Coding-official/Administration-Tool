@@ -2163,7 +2163,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
                                                     emCustomerCaseRecord.title,
-                                                    textAlign: TextAlign.end,
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .headlineSmall
@@ -2183,6 +2183,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         .description
                                                         .maybeHandleOverflow(
                                                             maxChars: 100),
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
@@ -2267,21 +2268,30 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                     ),
                                                                   ),
                                                                   child:
-                                                                      AutoSizeText(
-                                                                    containerItskillsRecord
-                                                                        .name,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            3.0,
+                                                                            3.0,
+                                                                            3.0,
+                                                                            3.0),
+                                                                    child:
+                                                                        AutoSizeText(
+                                                                      containerItskillsRecord
+                                                                          .name,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Inter',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -2772,7 +2782,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Text(
                                                     emCustomerCaseRecord.title,
-                                                    textAlign: TextAlign.end,
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .headlineSmall
@@ -2792,6 +2802,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         .description
                                                         .maybeHandleOverflow(
                                                             maxChars: 100),
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
@@ -2876,21 +2887,30 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                     ),
                                                                   ),
                                                                   child:
-                                                                      AutoSizeText(
-                                                                    containerItskillsRecord
-                                                                        .name,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Inter',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            3.0,
+                                                                            3.0,
+                                                                            3.0,
+                                                                            3.0),
+                                                                    child:
+                                                                        AutoSizeText(
+                                                                      containerItskillsRecord
+                                                                          .name,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Inter',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -3485,22 +3505,30 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         .secondary,
                                                                   ),
                                                                 ),
-                                                                child:
-                                                                    AutoSizeText(
-                                                                  containerItskillsRecord
-                                                                      .name,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Inter',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0),
+                                                                  child:
+                                                                      AutoSizeText(
+                                                                    containerItskillsRecord
+                                                                        .name,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
@@ -4097,22 +4125,30 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         .secondary,
                                                                   ),
                                                                 ),
-                                                                child:
-                                                                    AutoSizeText(
-                                                                  containerItskillsRecord
-                                                                      .name,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Inter',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0,
+                                                                          3.0),
+                                                                  child:
+                                                                      AutoSizeText(
+                                                                    containerItskillsRecord
+                                                                        .name,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
