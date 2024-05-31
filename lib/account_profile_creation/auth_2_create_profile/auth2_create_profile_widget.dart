@@ -179,7 +179,7 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                                 'AUTH_2_CREATE_PROFILE_Container_ulq8ny8b');
                             logFirebaseEvent('editProfile_auth_2_navigate_to');
 
-                            context.pushNamed('auth_2_Profile');
+                            context.pushNamed('Main');
                           },
                         ),
                       ),
