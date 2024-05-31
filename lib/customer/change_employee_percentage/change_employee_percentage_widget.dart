@@ -299,6 +299,11 @@ class _ChangeEmployeePercentageWidgetState
                                   FlutterFlowTheme.of(context).secondary,
                             ),
                           );
+                          logFirebaseEvent('Button_navigate_to');
+                          if (Navigator.of(context).canPop()) {
+                            context.pop();
+                          }
+                          context.pushNamed('ChangeEmployeePercentage');
 
                           setState(() {});
                         },

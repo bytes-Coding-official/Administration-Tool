@@ -856,6 +856,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget>
                                 );
                               },
                             );
+                            logFirebaseEvent('Button_navigate_back');
+                            context.safePop();
 
                             setState(() {});
                           },

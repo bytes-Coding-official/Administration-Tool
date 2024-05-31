@@ -737,6 +737,8 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                       FlutterFlowTheme.of(context).secondary,
                                 ),
                               );
+                              logFirebaseEvent('Button_navigate_back');
+                              context.safePop();
 
                               setState(() {});
                             },

@@ -316,6 +316,11 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                                   FlutterFlowTheme.of(context).secondary,
                             ),
                           );
+                          logFirebaseEvent('Button_navigate_to');
+                          if (Navigator.of(context).canPop()) {
+                            context.pop();
+                          }
+                          context.pushNamed('RoleManagement');
 
                           setState(() {});
                         },

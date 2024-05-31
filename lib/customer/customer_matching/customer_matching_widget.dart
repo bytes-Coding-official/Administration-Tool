@@ -354,6 +354,11 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget> {
                                   FlutterFlowTheme.of(context).secondary,
                             ),
                           );
+                          logFirebaseEvent('Button_navigate_to');
+                          if (Navigator.of(context).canPop()) {
+                            context.pop();
+                          }
+                          context.pushNamed('CustomerMatching');
 
                           setState(() {});
                         },

@@ -646,7 +646,7 @@ class _AddMeetingToCustomerWidgetState
                                 context.pop();
                               }
                               context.pushNamed(
-                                'Customer',
+                                'AddMeetingToCustomer',
                                 queryParameters: {
                                   'customercase': serializeParam(
                                     widget.customercase,

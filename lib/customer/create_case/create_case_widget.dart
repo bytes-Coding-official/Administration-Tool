@@ -825,6 +825,11 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                             );
                           },
                         );
+                        logFirebaseEvent('Button_navigate_to');
+                        if (Navigator.of(context).canPop()) {
+                          context.pop();
+                        }
+                        context.pushNamed('CreateCase');
 
                         setState(() {});
                       },

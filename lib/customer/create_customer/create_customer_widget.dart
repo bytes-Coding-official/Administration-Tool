@@ -821,6 +821,11 @@ class _CreateCustomerWidgetState extends State<CreateCustomerWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button_navigate_to');
+                        if (Navigator.of(context).canPop()) {
+                          context.pop();
+                        }
+                        context.pushNamed('CreateCustomer');
 
                         setState(() {});
                       },
