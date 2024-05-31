@@ -175,6 +175,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   }
                   final containerCustomerRecord = snapshot.data!;
                   return Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
@@ -183,7 +184,6 @@ class _CustomerWidgetState extends State<CustomerWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                       child: SingleChildScrollView(
-                        primary: false,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -1080,9 +1080,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ],
                               ),
                             ),
-                            Container(
-                              height: 417.0,
-                              decoration: const BoxDecoration(),
+                            SizedBox(
+                              height: 200.0,
                               child: PagedListView<DocumentSnapshot<Object?>?,
                                   CustomerMeetingRecord>.separated(
                                 pagingController: _model.setListViewController(
@@ -1093,6 +1092,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                                 ),
                                 padding: EdgeInsets.zero,
+                                primary: false,
                                 shrinkWrap: true,
                                 reverse: false,
                                 scrollDirection: Axis.vertical,

@@ -233,7 +233,6 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
           child: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
-              primary: false,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -720,7 +719,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -1392,7 +1391,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -1547,6 +1546,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         ),
                                       ),
                                       padding: EdgeInsets.zero,
+                                      primary: false,
                                       shrinkWrap: true,
                                       reverse: false,
                                       scrollDirection: Axis.vertical,

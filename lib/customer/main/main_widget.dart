@@ -1673,6 +1673,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         fontFamily: 'Inter',
                                                         letterSpacing: 0.0,
                                                       ),
+                                                  textAlign: TextAlign.start,
                                                   validator: _model
                                                       .textController1Validator
                                                       .asValidator(context),

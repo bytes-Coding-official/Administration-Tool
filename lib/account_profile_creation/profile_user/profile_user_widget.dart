@@ -185,7 +185,6 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: SingleChildScrollView(
-                  primary: false,
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -935,6 +934,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               snapshot.data!;
                           return ListView.separated(
                             padding: EdgeInsets.zero,
+                            primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewCustomerMeetingRecordList.length,
