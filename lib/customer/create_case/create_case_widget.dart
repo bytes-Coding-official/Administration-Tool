@@ -164,7 +164,10 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                               child: TextFormField(
                                 controller: _model.caseIDTextController ??=
                                     TextEditingController(
-                                  text: caseIDCount.toString(),
+                                  text: valueOrDefault<String>(
+                                    caseIDCount.toString(),
+                                    '0',
+                                  ),
                                 ),
                                 focusNode: _model.caseIDFocusNode,
                                 autofocus: false,

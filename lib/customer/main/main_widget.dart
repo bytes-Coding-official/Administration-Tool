@@ -55,6 +55,30 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
           ),
         ],
       ),
+      'containerOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -1333,7 +1357,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                       ],
                     ),
                   ),
-                ),
+                ).animateOnPageLoad(
+                    animationsMap['containerOnPageLoadAnimation1']!),
               Expanded(
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -4319,7 +4344,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                ),
+                ).animateOnPageLoad(
+                    animationsMap['containerOnPageLoadAnimation2']!),
               ),
             ],
           ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),

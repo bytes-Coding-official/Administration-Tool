@@ -541,7 +541,9 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                           queryBuilder: (customerCaseRecord) =>
                                               customerCaseRecord.where(
                                             'assignee',
-                                            arrayContains: currentUserReference,
+                                            arrayContains:
+                                                profileEmployeeUsersRecord
+                                                    .reference,
                                           ),
                                         ),
                                         builder: (context, snapshot) {
