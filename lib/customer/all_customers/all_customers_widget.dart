@@ -54,6 +54,18 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
           ),
         ],
       ),
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -325,7 +337,8 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                             );
                           },
                         ),
-                      ),
+                      ).animateOnPageLoad(
+                          animationsMap['listViewOnPageLoadAnimation']!),
                     ),
                     Padding(
                       padding:
