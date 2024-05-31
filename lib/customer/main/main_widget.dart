@@ -829,6 +829,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     if (valueOrDefault(
                                             currentUserDocument?.role, '') ==
                                         'Kunde') {
+                                      if (!(currentUserDocument?.customer !=
+                                          null)) {
+                                        return;
+                                      }
                                       logFirebaseEvent(
                                           'contentView_1_navigate_to');
 

@@ -653,6 +653,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                       if (valueOrDefault(
                                               currentUserDocument?.role, '') ==
                                           'Kunde') {
+                                        if (!(currentUserDocument?.customer !=
+                                            null)) {
+                                          return;
+                                        }
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
