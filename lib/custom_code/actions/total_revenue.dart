@@ -11,7 +11,6 @@ Future<double> totalRevenue(
     List<DocumentReference> documents, double revPercentage) async {
   // Add your function code here!
   double totalCosts = 0.0;
-  int count = 0;
 
   print(
       'Starting to calculate average costs. Number of documents: ${documents.length}');
@@ -26,7 +25,6 @@ Future<double> totalRevenue(
           final cost = data['costs'] as double;
           final duration = data['duration'] as double;
           totalCosts += cost * duration;
-          count++;
         }
       }
     } catch (error) {
