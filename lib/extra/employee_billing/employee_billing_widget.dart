@@ -1017,7 +1017,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                               child: Text(
                                                 listViewCustomerCaseRecord
                                                     .title,
-                                                textAlign: TextAlign.end,
+                                                textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -1036,6 +1036,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                 child: Text(
                                                   listViewCustomerCaseRecord
                                                       .description,
+                                                  textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium

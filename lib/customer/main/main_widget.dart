@@ -3366,7 +3366,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               child: Text(
                                                 tabletDesktopViewCustomerCaseRecord
                                                     .title,
-                                                textAlign: TextAlign.end,
+                                                textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -3387,6 +3387,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .description
                                                       .maybeHandleOverflow(
                                                           maxChars: 500),
+                                                  textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -3971,7 +3972,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               child: Text(
                                                 tabletDesktopViewCustomerCaseRecord
                                                     .title,
-                                                textAlign: TextAlign.end,
+                                                textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -3992,6 +3993,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       .description
                                                       .maybeHandleOverflow(
                                                           maxChars: 500),
+                                                  textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium

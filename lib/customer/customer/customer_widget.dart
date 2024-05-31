@@ -192,6 +192,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 customerCustomerCaseRecord.title,
                                 'no title set',
                               ),
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -206,6 +207,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 customerCustomerCaseRecord.description,
                                 'no description set',
                               ),
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
