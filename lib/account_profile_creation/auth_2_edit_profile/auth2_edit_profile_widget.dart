@@ -139,8 +139,9 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
                           onPressed: () async {
                             logFirebaseEvent(
                                 'AUTH_2_EDIT_PROFILE_arrow_back_rounded_I');
-                            logFirebaseEvent('IconButton_navigate_back');
-                            context.safePop();
+                            logFirebaseEvent('IconButton_navigate_to');
+
+                            context.pushNamed('Main');
                           },
                         ),
                       ),
