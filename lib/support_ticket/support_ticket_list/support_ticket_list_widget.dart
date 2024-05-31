@@ -248,7 +248,9 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                               await listViewSupportTicketsRecord.reference
                                   .delete();
                               logFirebaseEvent('listContainer_navigate_to');
-
+                              if (Navigator.of(context).canPop()) {
+                                context.pop();
+                              }
                               context.pushNamed('support_TicketList');
                             } else {
                               return;

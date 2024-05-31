@@ -139,6 +139,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                 primary: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
