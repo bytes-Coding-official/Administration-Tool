@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
@@ -142,8 +141,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                         ),
                       ),
                       Expanded(
-                        child: StreamBuilder<List<CustomerCaseRecord>>(
-                          stream: queryCustomerCaseRecord(),
+                        child: FutureBuilder<int>(
+                          future: queryCustomerCaseRecordCount(),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
@@ -159,18 +158,13 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget> {
                                 ),
                               );
                             }
-                            List<CustomerCaseRecord>
-                                caseIDCustomerCaseRecordList = snapshot.data!;
+                            int caseIDCount = snapshot.data!;
                             return SizedBox(
                               width: 50.0,
                               child: TextFormField(
                                 controller: _model.caseIDTextController ??=
                                     TextEditingController(
-                                  text: random_data
-                                      .randomInteger(
-                                          caseIDCustomerCaseRecordList.length,
-                                          99999)
-                                      .toString(),
+                                  text: caseIDCount.toString(),
                                 ),
                                 focusNode: _model.caseIDFocusNode,
                                 autofocus: false,
