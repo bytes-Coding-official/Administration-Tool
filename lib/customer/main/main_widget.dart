@@ -1434,11 +1434,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(6.0),
                                     border: Border.all(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      width: 1.0,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: Column(
