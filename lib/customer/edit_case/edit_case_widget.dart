@@ -119,7 +119,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                   logFirebaseEvent('EDIT_CASE_arrow_back_rounded_ICN_ON_TAP');
                   logFirebaseEvent('IconButton_navigate_to');
 
-                  context.pushNamed('Customers');
+                  context.pushNamed('AllCustomers');
                 },
               ),
               title: Row(

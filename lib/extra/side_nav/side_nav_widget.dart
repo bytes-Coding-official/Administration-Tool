@@ -1007,7 +1007,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                           logFirebaseEvent(
                                               'contentView_1_navigate_to');
 
-                                          context.pushNamed('Customers');
+                                          context.pushNamed('AllCustomers');
                                         },
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),

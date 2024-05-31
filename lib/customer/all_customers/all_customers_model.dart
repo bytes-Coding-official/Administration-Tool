@@ -1,10 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'customers_widget.dart' show CustomersWidget;
+import 'all_customers_widget.dart' show AllCustomersWidget;
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-class CustomersModel extends FlutterFlowModel<CustomersWidget> {
+class AllCustomersModel extends FlutterFlowModel<AllCustomersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

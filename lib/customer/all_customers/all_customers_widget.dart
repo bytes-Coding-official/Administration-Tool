@@ -9,19 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'customers_model.dart';
-export 'customers_model.dart';
+import 'all_customers_model.dart';
+export 'all_customers_model.dart';
 
-class CustomersWidget extends StatefulWidget {
-  const CustomersWidget({super.key});
+class AllCustomersWidget extends StatefulWidget {
+  const AllCustomersWidget({super.key});
 
   @override
-  State<CustomersWidget> createState() => _CustomersWidgetState();
+  State<AllCustomersWidget> createState() => _AllCustomersWidgetState();
 }
 
-class _CustomersWidgetState extends State<CustomersWidget>
+class _AllCustomersWidgetState extends State<AllCustomersWidget>
     with TickerProviderStateMixin {
-  late CustomersModel _model;
+  late AllCustomersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,13 +30,14 @@ class _CustomersWidgetState extends State<CustomersWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CustomersModel());
+    _model = createModel(context, () => AllCustomersModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Customers'});
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'AllCustomers'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      logFirebaseEvent('CUSTOMERS_PAGE_Customers_ON_INIT_STATE');
-      logFirebaseEvent('Customers_firestore_query');
+      logFirebaseEvent('ALL_CUSTOMERS_AllCustomers_ON_INIT_STATE');
+      logFirebaseEvent('AllCustomers_firestore_query');
       await queryLanguagesRecordOnce();
     });
 
@@ -89,7 +90,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                 size: 30.0,
               ),
               onPressed: () async {
-                logFirebaseEvent('CUSTOMERS_arrow_back_rounded_ICN_ON_TAP');
+                logFirebaseEvent('ALL_CUSTOMERS_arrow_back_rounded_ICN_ON_');
                 logFirebaseEvent('IconButton_navigate_back');
                 context.safePop();
               },
@@ -204,9 +205,24 @@ class _CustomersWidgetState extends State<CustomersWidget>
                               focusColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
+                              onTap: () async {
+                                logFirebaseEvent(
+                                    'ALL_CUSTOMERS_Container_xwezjqjn_ON_TAP');
+                                logFirebaseEvent('Container_navigate_to');
+
+                                context.pushNamed(
+                                  'EditCustomer',
+                                  queryParameters: {
+                                    'customer': serializeParam(
+                                      listViewCustomerRecord.reference,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              },
                               onLongPress: () async {
                                 logFirebaseEvent(
-                                    'CUSTOMERS_Container_xwezjqjn_ON_LONG_PRE');
+                                    'ALL_CUSTOMERS_Container_xwezjqjn_ON_LONG');
                                 if (valueOrDefault(
                                         currentUserDocument?.role, '') ==
                                     'Manager') {
@@ -247,7 +263,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
-                                    context.pushNamed('Customers');
+                                    context.pushNamed('AllCustomers');
                                   } else {
                                     return;
                                   }
@@ -317,7 +333,7 @@ class _CustomersWidgetState extends State<CustomersWidget>
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
-                              'CUSTOMERS_PAGE_ADD_CUSTOMER_BTN_ON_TAP');
+                              'ALL_CUSTOMERS_ADD_CUSTOMER_BTN_ON_TAP');
                           logFirebaseEvent('Button_navigate_to');
 
                           context.pushNamed('CreateCustomer');

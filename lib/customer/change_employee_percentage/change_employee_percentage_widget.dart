@@ -209,7 +209,7 @@ class _ChangeEmployeePercentageWidgetState
                                   letterSpacing: 0.0,
                                 ),
                         hintText: FFLocalizations.of(context).getText(
-                          'yzq82ywb' /* 0.7 */,
+                          'yzq82ywb' /* 0.6 */,
                         ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(

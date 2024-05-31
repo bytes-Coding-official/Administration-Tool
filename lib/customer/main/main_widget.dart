@@ -721,7 +721,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
-                                        context.pushNamed('Customers');
+                                        context.pushNamed('AllCustomers');
                                       },
                                       child: AnimatedContainer(
                                         duration: const Duration(milliseconds: 200),

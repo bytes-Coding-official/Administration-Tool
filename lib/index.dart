@@ -52,7 +52,10 @@ export '/customer/customer_matching/customer_matching_widget.dart'
     show CustomerMatchingWidget;
 export '/customer/change_employee_percentage/change_employee_percentage_widget.dart'
     show ChangeEmployeePercentageWidget;
-export '/customer/customers/customers_widget.dart' show CustomersWidget;
+export '/customer/all_customers/all_customers_widget.dart'
+    show AllCustomersWidget;
 export '/customer/role_management/role_management_widget.dart'
     show RoleManagementWidget;
 export '/customer/edit_case/edit_case_widget.dart' show EditCaseWidget;
+export '/customer/edit_customer/edit_customer_widget.dart'
+    show EditCustomerWidget;

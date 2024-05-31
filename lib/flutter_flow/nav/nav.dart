@@ -298,9 +298,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ChangeEmployeePercentageWidget(),
         ),
         FFRoute(
-          name: 'Customers',
-          path: '/customers',
-          builder: (context, params) => const CustomersWidget(),
+          name: 'AllCustomers',
+          path: '/allCustomers',
+          builder: (context, params) => const AllCustomersWidget(),
         ),
         FFRoute(
           name: 'RoleManagement',
@@ -316,6 +316,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['customer-case'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'EditCustomer',
+          path: '/editCustomer',
+          builder: (context, params) => EditCustomerWidget(
+            customer: params.getParam(
+              'customer',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['customer'],
             ),
           ),
         )
