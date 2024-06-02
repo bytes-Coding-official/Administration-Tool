@@ -2432,7 +2432,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '411g996a': {
       'en': 'Light Mode',
-      'de': 'Lichtmodus',
+      'de': 'Licht Modus',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
       'zh_Hans': '灯光模式',
