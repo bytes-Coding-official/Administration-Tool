@@ -1374,11 +1374,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: FlutterFlowIconButton(
-                                    borderColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    borderRadius: 5.0,
-                                    borderWidth: 2.5,
-                                    buttonSize: 40.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderRadius: 8.0,
+                                    borderWidth: 2.0,
+                                    buttonSize: 45.0,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     icon: Icon(
