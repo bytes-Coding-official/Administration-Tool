@@ -121,7 +121,7 @@ class _UsersWidgetState extends State<UsersWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 25.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 25.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
@@ -338,7 +338,9 @@ class _UsersWidgetState extends State<UsersWidget>
                                   ],
                                   borderRadius: BorderRadius.circular(16.0),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: Padding(

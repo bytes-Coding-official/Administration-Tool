@@ -1274,9 +1274,9 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                         .secondaryBackground,
                                     borderRadius: BorderRadius.circular(16.0),
                                     border: Border.all(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 1.0,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: Column(

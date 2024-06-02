@@ -1349,7 +1349,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 1.0,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                  ),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     child: Column(
@@ -1372,8 +1374,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: FlutterFlowIconButton(
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    borderColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     borderRadius: 5.0,
                                     borderWidth: 2.5,
                                     buttonSize: 40.0,
@@ -1445,7 +1447,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       .primaryBackground,
                                   borderRadius: BorderRadius.circular(6.0),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     width: 2.0,
                                   ),
                                 ),
@@ -1624,7 +1627,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              16.0),
                                                     ),
                                                     focusedBorder:
                                                         UnderlineInputBorder(
@@ -1637,7 +1640,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              16.0),
                                                     ),
                                                     errorBorder:
                                                         UnderlineInputBorder(
@@ -1650,7 +1653,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              16.0),
                                                     ),
                                                     focusedErrorBorder:
                                                         UnderlineInputBorder(
@@ -1663,8 +1666,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              16.0),
                                                     ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1691,7 +1698,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     ))
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 5.0, 2.0),
+                                            5.0, 10.0, 5.0, 2.0),
                                         child: TextFormField(
                                           controller: _model.textController2,
                                           focusNode: _model.textFieldFocusNode2,
@@ -1736,7 +1743,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
@@ -1746,7 +1753,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                             errorBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
@@ -1756,7 +1763,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                             focusedErrorBorder:
                                                 UnderlineInputBorder(
@@ -1767,8 +1774,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(16.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1813,7 +1824,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.35,
+                                                0.3,
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 15.0, 0.0),
@@ -1853,7 +1864,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.353,
+                                                0.3,
                                         height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 15.0, 0.0),
@@ -1908,7 +1919,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 15.0),
+                                      const SizedBox(height: 20.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -2078,7 +2089,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
@@ -2532,7 +2543,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 15.0),
+                                      const SizedBox(height: 20.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerCaseRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -2699,7 +2710,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
@@ -3154,16 +3165,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               'caseid',
                                               descending: true),
                                         ),
-                                        padding: const EdgeInsets.fromLTRB(
-                                          0,
-                                          15.0,
-                                          0,
-                                          15.0,
-                                        ),
+                                        padding: EdgeInsets.zero,
                                         gridDelegate:
                                             const SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 3,
-                                          crossAxisSpacing: 10.0,
+                                          crossAxisSpacing: 15.0,
                                           mainAxisSpacing: 10.0,
                                           childAspectRatio: 1.0,
                                         ),
@@ -3801,12 +3807,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         0,
                                         15.0,
                                         0,
-                                        15.0,
+                                        0,
                                       ),
                                       gridDelegate:
                                           const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 3,
-                                        crossAxisSpacing: 10.0,
+                                        crossAxisSpacing: 15.0,
                                         mainAxisSpacing: 10.0,
                                         childAspectRatio: 1.0,
                                       ),

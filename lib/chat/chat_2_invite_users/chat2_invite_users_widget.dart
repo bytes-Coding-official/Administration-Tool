@@ -210,8 +210,8 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                    child:
-                        PagedListView<DocumentSnapshot<Object?>?, UsersRecord>(
+                    child: PagedListView<DocumentSnapshot<Object?>?,
+                        UsersRecord>.separated(
                       pagingController: _model.setListViewController(
                         UsersRecord.collection.orderBy('display_name'),
                       ),
@@ -223,6 +223,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                       ),
                       reverse: false,
                       scrollDirection: Axis.vertical,
+                      separatorBuilder: (_, __) => const SizedBox(height: 10.0),
                       builderDelegate: PagedChildBuilderDelegate<UsersRecord>(
                         // Customize what your widget looks like when it's loading the first page.
                         firstPageProgressIndicatorBuilder: (_) => Center(
@@ -429,7 +430,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                         },
                       ),
                     ).animateOnPageLoad(
-                            animationsMap['listViewOnPageLoadAnimation']!),
+                        animationsMap['listViewOnPageLoadAnimation']!),
                   ),
                 ),
               ],

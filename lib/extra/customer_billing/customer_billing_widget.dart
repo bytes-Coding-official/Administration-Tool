@@ -412,8 +412,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -731,7 +731,8 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
+                                                                .alternate,
+                                                        width: 2.0,
                                                       ),
                                                     ),
                                                     child: Column(

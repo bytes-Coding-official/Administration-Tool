@@ -1412,11 +1412,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                       );
                                                     },
                                                   ),
-                                                ]
-                                                    .divide(
-                                                        const SizedBox(width: 25.0))
-                                                    .around(
-                                                        const SizedBox(width: 25.0)),
+                                                ].divide(const SizedBox(width: 25.0)),
                                               ),
                                             ),
                                           ],

@@ -9,7 +9,7 @@ export '/account_profile_creation/language_settings/language_settings_widget.dar
     show LanguageSettingsWidget;
 export '/customer/customer/customer_widget.dart' show CustomerWidget;
 export '/customer/main/main_widget.dart' show MainWidget;
-export '/extra/users/users_widget.dart' show UsersWidget;
+export '/users/users_widget.dart' show UsersWidget;
 export '/customer/create_case/create_case_widget.dart' show CreateCaseWidget;
 export '/account_profile_creation/auth_2_create/auth2_create_widget.dart'
     show Auth2CreateWidget;

@@ -242,6 +242,9 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                     ),
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium

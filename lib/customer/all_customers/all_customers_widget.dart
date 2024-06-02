@@ -171,172 +171,181 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.55,
                       decoration: const BoxDecoration(),
-                      child: PagedListView<DocumentSnapshot<Object?>?,
-                          CustomerRecord>.separated(
-                        pagingController: _model.setListViewController(
-                          CustomerRecord.collection,
-                        ),
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        reverse: false,
-                        scrollDirection: Axis.vertical,
-                        separatorBuilder: (_, __) => const SizedBox(height: 15.0),
-                        builderDelegate:
-                            PagedChildBuilderDelegate<CustomerRecord>(
-                          // Customize what your widget looks like when it's loading the first page.
-                          firstPageProgressIndicatorBuilder: (_) => Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: PagedListView<DocumentSnapshot<Object?>?,
+                            CustomerRecord>.separated(
+                          pagingController: _model.setListViewController(
+                            CustomerRecord.collection,
+                          ),
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          reverse: false,
+                          scrollDirection: Axis.vertical,
+                          separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                          builderDelegate:
+                              PagedChildBuilderDelegate<CustomerRecord>(
+                            // Customize what your widget looks like when it's loading the first page.
+                            firstPageProgressIndicatorBuilder: (_) => Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          // Customize what your widget looks like when it's loading another page.
-                          newPageProgressIndicatorBuilder: (_) => Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
+                            // Customize what your widget looks like when it's loading another page.
+                            newPageProgressIndicatorBuilder: (_) => Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
 
-                          itemBuilder: (context, _, listViewIndex) {
-                            final listViewCustomerRecord = _model
-                                .listViewPagingController!
-                                .itemList![listViewIndex];
-                            return InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                logFirebaseEvent(
-                                    'ALL_CUSTOMERS_Container_xwezjqjn_ON_TAP');
-                                logFirebaseEvent('Container_navigate_to');
+                            itemBuilder: (context, _, listViewIndex) {
+                              final listViewCustomerRecord = _model
+                                  .listViewPagingController!
+                                  .itemList![listViewIndex];
+                              return InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  logFirebaseEvent(
+                                      'ALL_CUSTOMERS_Container_xwezjqjn_ON_TAP');
+                                  logFirebaseEvent('Container_navigate_to');
 
-                                context.pushNamed(
-                                  'EditCustomer',
-                                  queryParameters: {
-                                    'customer': serializeParam(
-                                      listViewCustomerRecord.reference,
-                                      ParamType.DocumentReference,
-                                    ),
-                                  }.withoutNulls,
-                                );
-                              },
-                              onLongPress: () async {
-                                logFirebaseEvent(
-                                    'ALL_CUSTOMERS_Container_xwezjqjn_ON_LONG');
-                                if (valueOrDefault(
-                                        currentUserDocument?.role, '') ==
-                                    'Manager') {
-                                  logFirebaseEvent('Container_alert_dialog');
-                                  var confirmDialogResponse =
-                                      await showDialog<bool>(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: const Text('Delete Value'),
-                                                content: const Text(
-                                                    'Do you really want to delete that value?'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            false),
-                                                    child: const Text('Cancel'),
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            true),
-                                                    child: const Text('Confirm'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          ) ??
-                                          false;
-                                  if (confirmDialogResponse) {
-                                    logFirebaseEvent('Container_backend_call');
-                                    await listViewCustomerRecord.reference
-                                        .delete();
-                                    logFirebaseEvent('Container_navigate_to');
-                                    if (Navigator.of(context).canPop()) {
-                                      context.pop();
+                                  context.pushNamed(
+                                    'EditCustomer',
+                                    queryParameters: {
+                                      'customer': serializeParam(
+                                        listViewCustomerRecord.reference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                onLongPress: () async {
+                                  logFirebaseEvent(
+                                      'ALL_CUSTOMERS_Container_xwezjqjn_ON_LONG');
+                                  if (valueOrDefault(
+                                          currentUserDocument?.role, '') ==
+                                      'Manager') {
+                                    logFirebaseEvent('Container_alert_dialog');
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: const Text('Delete Value'),
+                                                  content: const Text(
+                                                      'Do you really want to delete that value?'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: const Text('Cancel'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: const Text('Confirm'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      logFirebaseEvent(
+                                          'Container_backend_call');
+                                      await listViewCustomerRecord.reference
+                                          .delete();
+                                      logFirebaseEvent('Container_navigate_to');
+                                      if (Navigator.of(context).canPop()) {
+                                        context.pop();
+                                      }
+                                      context.pushNamed('AllCustomers');
+                                    } else {
+                                      return;
                                     }
-                                    context.pushNamed('AllCustomers');
+
+                                    return;
                                   } else {
                                     return;
                                   }
-
-                                  return;
-                                } else {
-                                  return;
-                                }
-                              },
-                              child: Container(
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 1.0,
+                                },
+                                child: Container(
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      width: 2.0,
+                                    ),
+                                  ),
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            listViewCustomerRecord.name,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            listViewCustomerRecord.email,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ].divide(const SizedBox(width: 50.0)),
+                                    ),
                                   ),
                                 ),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          listViewCustomerRecord.name,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          listViewCustomerRecord.email,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ].divide(const SizedBox(width: 50.0)),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['listViewOnPageLoadAnimation']!),
+                              );
+                            },
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['listViewOnPageLoadAnimation']!),
+                      ),
                     ),
                     Padding(
                       padding:

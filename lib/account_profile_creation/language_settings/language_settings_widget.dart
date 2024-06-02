@@ -268,8 +268,9 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(16.0),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 1.0,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: Row(

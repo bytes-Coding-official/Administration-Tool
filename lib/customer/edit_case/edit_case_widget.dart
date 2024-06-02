@@ -231,6 +231,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -316,6 +319,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -402,6 +408,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -581,6 +590,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
