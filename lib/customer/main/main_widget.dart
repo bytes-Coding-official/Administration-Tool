@@ -1074,8 +1074,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -1101,7 +1103,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   child: AutoSizeText(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'v3wuo8gh' /* Light-Mode */,
+                                                      'v3wuo8gh' /* Light Mode */,
                                                     ),
                                                     style:
                                                         FlutterFlowTheme.of(
@@ -1172,58 +1174,62 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.nightlight_round,
-                                                  color: Theme.of(context)
-                                                              .brightness ==
-                                                          Brightness.dark
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  size: 16.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 0.0, 0.0, 0.0),
-                                                  child: AutoSizeText(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '1m01zim9' /* Dark Mode */,
-                                                    ),
-                                                    style:
-                                                        FlutterFlowTheme.of(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.nightlight_round,
+                                                    color: Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                        ? FlutterFlowTheme.of(
                                                                 context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: Theme.of(context)
-                                                                          .brightness ==
-                                                                      Brightness
-                                                                          .dark
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
+                                                            .primaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                    size: 16.0,
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: AutoSizeText(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '1m01zim9' /* Dark Mode */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: Theme.of(context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .dark
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -2179,7 +2185,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
+                                                          3.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
                                                     builder: (context) {
                                                       final topicsMobile =
@@ -2281,9 +2287,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                             );
                                                           })
                                                               .divide(const SizedBox(
-                                                                  width: 15.0))
-                                                              .around(const SizedBox(
-                                                                  width: 15.0)),
+                                                                  width: 10.0))
+                                                              .addToStart(
+                                                                  const SizedBox(
+                                                                      width:
+                                                                          0.0)),
                                                         ),
                                                       );
                                                     },
@@ -2299,7 +2307,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 12.0, 0.0, 0.0),
+                                                          3.0, 12.0, 0.0, 0.0),
                                                   child: SingleChildScrollView(
                                                     scrollDirection:
                                                         Axis.horizontal,
@@ -2802,7 +2810,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
+                                                          3.0, 0.0, 0.0, 5.0),
                                                   child: Builder(
                                                     builder: (context) {
                                                       final topicsMobile =
@@ -2819,9 +2827,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               MainAxisAlignment
                                                                   .spaceEvenly,
                                                           children: List.generate(
-                                                                  topicsMobile
-                                                                      .length,
-                                                                  (topicsMobileIndex) {
+                                                              topicsMobile
+                                                                  .length,
+                                                              (topicsMobileIndex) {
                                                             final topicsMobileItem =
                                                                 topicsMobile[
                                                                     topicsMobileIndex];
@@ -2902,11 +2910,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 );
                                                               },
                                                             );
-                                                          })
-                                                              .divide(const SizedBox(
-                                                                  width: 15.0))
-                                                              .around(const SizedBox(
-                                                                  width: 15.0)),
+                                                          }).divide(const SizedBox(
+                                                              width: 10.0)),
                                                         ),
                                                       );
                                                     },
@@ -2922,7 +2927,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 12.0, 0.0, 0.0),
+                                                          3.0, 12.0, 0.0, 0.0),
                                                   child: SingleChildScrollView(
                                                     scrollDirection:
                                                         Axis.horizontal,

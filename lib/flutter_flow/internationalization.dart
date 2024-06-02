@@ -644,8 +644,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '日历',
     },
     'v3wuo8gh': {
-      'en': 'Light-Mode',
-      'de': 'Licht-Modus',
+      'en': 'Light Mode',
+      'de': 'Licht Modus',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
       'zh_Hans': '灯光模式',

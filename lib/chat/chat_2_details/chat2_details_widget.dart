@@ -109,8 +109,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
             ),
             onPressed: () async {
               logFirebaseEvent('CHAT_2_DETAILS_arrow_back_rounded_ICN_ON');
-              logFirebaseEvent('IconButton_navigate_back');
-              context.safePop();
+              logFirebaseEvent('IconButton_navigate_to');
+
+              context.pushNamed('chat_2_main');
             },
           ),
           title: FutureBuilder<UsersRecord>(

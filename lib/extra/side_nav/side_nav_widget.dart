@@ -1140,58 +1140,68 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.wb_sunny_rounded,
-                                                  color: Theme.of(context)
-                                                              .brightness ==
-                                                          Brightness.light
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  size: 16.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 0.0, 0.0, 0.0),
-                                                  child: AutoSizeText(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '411g996a' /* Light Mode */,
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(2.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Icon(
+                                                      Icons.wb_sunny_rounded,
+                                                      color: Theme.of(context)
+                                                                  .brightness ==
+                                                              Brightness.light
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 16.0,
                                                     ),
-                                                    style:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: Theme.of(context)
-                                                                          .brightness ==
-                                                                      Brightness
-                                                                          .light
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: AutoSizeText(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '411g996a' /* Light Mode */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: Theme.of(context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .light
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1238,58 +1248,62 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.nightlight_round,
-                                                  color: Theme.of(context)
-                                                              .brightness ==
-                                                          Brightness.dark
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  size: 16.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 0.0, 0.0, 0.0),
-                                                  child: AutoSizeText(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'mc7klcgc' /* Dark Mode */,
-                                                    ),
-                                                    style:
-                                                        FlutterFlowTheme.of(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.nightlight_round,
+                                                    color: Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                        ? FlutterFlowTheme.of(
                                                                 context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: Theme.of(context)
-                                                                          .brightness ==
-                                                                      Brightness
-                                                                          .dark
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
+                                                            .primaryText
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryText,
+                                                    size: 16.0,
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: AutoSizeText(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'mc7klcgc' /* Dark Mode */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: Theme.of(context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .dark
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),

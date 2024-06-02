@@ -124,7 +124,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 10.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('CHAT_2_MAIN_PAGE_ADD_CHAT_BTN_ON_TAP');

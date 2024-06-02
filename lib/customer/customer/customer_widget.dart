@@ -207,7 +207,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 customerCustomerCaseRecord.description,
                                 'no description set',
                               ),
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.justify,
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
