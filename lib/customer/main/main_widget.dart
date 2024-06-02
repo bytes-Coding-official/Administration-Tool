@@ -3353,7 +3353,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    width: 1.0,
+                                                    width: 2.0,
                                                   ),
                                                 ),
                                                 child: Padding(
@@ -3988,7 +3988,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  width: 1.0,
+                                                  width: 2.0,
                                                 ),
                                               ),
                                               child: Padding(
