@@ -470,6 +470,18 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       'AUTH_2_CREATE_CREATE_ACCOUNT_BTN_ON_TAP');
                                   logFirebaseEvent('Button_auth');
                                   GoRouter.of(context).prepareAuthEvent();
+                                  if (_model.passwordTextController.text !=
+                                      _model
+                                          .confirmpasswordTextController.text) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text(
+                                          'Passwords don\'t match!',
+                                        ),
+                                      ),
+                                    );
+                                    return;
+                                  }
 
                                   final user =
                                       await authManager.createAccountWithEmail(
