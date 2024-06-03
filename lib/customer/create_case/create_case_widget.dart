@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -6,9 +7,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'create_case_model.dart';
 export 'create_case_model.dart';
 
@@ -56,8 +62,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -128,14 +134,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -145,7 +151,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 0.0, 25.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -179,7 +185,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                               );
                             }
                             int caseIDCount = snapshot.data!;
-                            return SizedBox(
+                            return Container(
                               width: 50.0,
                               child: TextFormField(
                                 controller: _model.caseIDTextController ??=
@@ -265,7 +271,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                     child: TextFormField(
                       controller: _model.titleTextController1,
                       focusNode: _model.titleFocusNode1,
@@ -330,7 +336,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 20.0, 16.0, 20.0),
                       ),
                       style:
@@ -346,7 +352,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                     child: TextFormField(
                       controller: _model.descriptionTextController,
                       focusNode: _model.descriptionFocusNode,
@@ -410,7 +416,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -436,7 +442,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                     child: TextFormField(
                       controller: _model.titleTextController2,
                       focusNode: _model.titleFocusNode2,
@@ -502,7 +508,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 20.0, 16.0, 20.0),
                       ),
                       style:
@@ -595,7 +601,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -680,7 +686,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
@@ -774,7 +780,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                               ),
                               style: FlutterFlowTheme.of(context)
@@ -790,14 +796,14 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                               validator: _model.revenueTextControllerValidator
                                   .asValidator(context),
                             ),
-                          ].divide(const SizedBox(height: 4.0)),
+                          ].divide(SizedBox(height: 4.0)),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 12.0)),
+                    ].divide(SizedBox(width: 12.0)),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
@@ -833,13 +839,13 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: const Text('Case added'),
-                              content: const Text('Case was added to the database'),
+                              title: Text('Case added'),
+                              content: Text('Case was added to the database'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
+                                  child: Text('Ok'),
                                 ),
                               ],
                             );
@@ -859,10 +865,10 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: 48.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -880,7 +886,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 10.0)),
+                ].divide(SizedBox(height: 10.0)),
               ),
             ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
           ),

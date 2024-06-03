@@ -5,10 +5,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'all_customers_model.dart';
 export 'all_customers_model.dart';
 
@@ -61,8 +66,8 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -133,14 +138,14 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: true,
             elevation: 0.0,
           ),
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -151,7 +156,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -170,10 +175,10 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.55,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: PagedListView<DocumentSnapshot<Object?>?,
                             CustomerRecord>.separated(
                           pagingController: _model.setListViewController(
@@ -183,7 +188,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                           shrinkWrap: true,
                           reverse: false,
                           scrollDirection: Axis.vertical,
-                          separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                          separatorBuilder: (_, __) => SizedBox(height: 15.0),
                           builderDelegate:
                               PagedChildBuilderDelegate<CustomerRecord>(
                             // Customize what your widget looks like when it's loading the first page.
@@ -247,8 +252,8 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('Delete Value'),
-                                                  content: const Text(
+                                                  title: Text('Delete Value'),
+                                                  content: Text(
                                                       'Do you really want to delete that value?'),
                                                   actions: [
                                                     TextButton(
@@ -256,14 +261,14 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               false),
-                                                      child: const Text('Cancel'),
+                                                      child: Text('Cancel'),
                                                     ),
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               true),
-                                                      child: const Text('Confirm'),
+                                                      child: Text('Confirm'),
                                                     ),
                                                   ],
                                                 );
@@ -310,7 +315,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             listViewCustomerRecord.name,
@@ -324,7 +329,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             listViewCustomerRecord.email,
@@ -336,7 +341,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                                                 ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 50.0)),
+                                      ].divide(SizedBox(width: 50.0)),
                                     ),
                                   ),
                                 ),
@@ -349,7 +354,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -364,9 +369,9 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 50.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)

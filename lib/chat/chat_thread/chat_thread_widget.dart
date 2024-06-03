@@ -5,10 +5,14 @@ import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'chat_thread_model.dart';
 export 'chat_thread_model.dart';
 
@@ -74,7 +78,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
       children: [
         if (widget.chatMessagesRef?.user != currentUserReference)
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -83,7 +87,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                   BoxShadow(
                     blurRadius: 0.0,
                     color: FlutterFlowTheme.of(context).alternate,
-                    offset: const Offset(
+                    offset: Offset(
                       0.0,
                       1.0,
                     ),
@@ -92,7 +96,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                 borderRadius: BorderRadius.circular(0.0),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
                 child: FutureBuilder<UsersRecord>(
                   future: _model.chatUser(
                     uniqueQueryKey: widget.chatMessagesRef?.reference.id,
@@ -120,14 +124,14 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 8.0, 16.0),
                           child: Container(
                             width: 36.0,
                             height: 36.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).accent1,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(10.0),
                                 bottomRight: Radius.circular(10.0),
                                 topLeft: Radius.circular(10.0),
@@ -140,12 +144,12 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(2.0),
+                              padding: EdgeInsets.all(2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 200),
-                                  fadeOutDuration: const Duration(milliseconds: 200),
+                                  fadeInDuration: Duration(milliseconds: 200),
+                                  fadeOutDuration: Duration(milliseconds: 200),
                                   imageUrl: otherUserUsersRecord.photoUrl,
                                   width: 44.0,
                                   height: 44.0,
@@ -157,7 +161,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                         ),
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -180,7 +184,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                           ),
                                     )),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -202,10 +206,10 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 4.0)),
+                                  ].divide(SizedBox(width: 4.0)),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: SelectionArea(
                                       child: AutoSizeText(
@@ -226,7 +230,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                 if (widget.chatMessagesRef?.image != null &&
                                     widget.chatMessagesRef?.image != '')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 4.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -260,9 +264,9 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                               BorderRadius.circular(8.0),
                                           child: CachedNetworkImage(
                                             fadeInDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             fadeOutDuration:
-                                                const Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                             imageUrl: path,
                                             width: 300.0,
                                             fit: BoxFit.cover,
@@ -293,10 +297,10 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
             ),
           ),
         Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
           child: Container(
             width: double.infinity,
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: double.infinity,
             ),
             decoration: BoxDecoration(
@@ -305,7 +309,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                 BoxShadow(
                   blurRadius: 0.0,
                   color: FlutterFlowTheme.of(context).alternate,
-                  offset: const Offset(
+                  offset: Offset(
                     0.0,
                     1.0,
                   ),
@@ -316,7 +320,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
             child: Visibility(
               visible: widget.chatMessagesRef?.user == currentUserReference,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -324,13 +328,13 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 8.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 8.0, 16.0),
                       child: Container(
                         width: 36.0,
                         height: 36.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).accent1,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10.0),
                             bottomRight: Radius.circular(10.0),
                             topLeft: Radius.circular(10.0),
@@ -343,13 +347,13 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(2.0),
+                          padding: EdgeInsets.all(2.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 200),
-                                fadeOutDuration: const Duration(milliseconds: 200),
+                                fadeInDuration: Duration(milliseconds: 200),
+                                fadeOutDuration: Duration(milliseconds: 200),
                                 imageUrl: currentUserPhoto,
                                 width: 44.0,
                                 height: 44.0,
@@ -363,7 +367,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                     Expanded(
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -390,7 +394,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                   )),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -412,10 +416,10 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                         ),
                                   ),
                                 ),
-                              ].divide(const SizedBox(width: 4.0)),
+                              ].divide(SizedBox(width: 4.0)),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: SelectionArea(
                                   child: Text(
@@ -434,7 +438,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                             if (widget.chatMessagesRef?.image != null &&
                                 widget.chatMessagesRef?.image != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 4.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -466,9 +470,9 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: CachedNetworkImage(
                                         fadeInDuration:
-                                            const Duration(milliseconds: 500),
+                                            Duration(milliseconds: 500),
                                         fadeOutDuration:
-                                            const Duration(milliseconds: 500),
+                                            Duration(milliseconds: 500),
                                         imageUrl: path,
                                         width: 300.0,
                                         fit: BoxFit.cover,

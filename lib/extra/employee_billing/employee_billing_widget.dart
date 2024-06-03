@@ -4,12 +4,19 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'employee_billing_model.dart';
 export 'employee_billing_model.dart';
 
@@ -84,15 +91,15 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.698, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -110,15 +117,15 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.698, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -136,15 +143,15 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.698, 0),
-            end: const Offset(0, 0),
+            begin: Offset(0.698, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -155,8 +162,8 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -224,14 +231,14 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
@@ -240,7 +247,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -255,12 +262,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                   .secondaryBackground,
                               borderRadius: BorderRadius.circular(8.0),
                               border: Border.all(
-                                color: const Color(0xFFE0E3E7),
+                                color: Color(0xFFE0E3E7),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: SingleChildScrollView(
                                 primary: false,
                                 child: Column(
@@ -283,7 +290,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -311,12 +318,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                   .secondaryBackground,
                               borderRadius: BorderRadius.circular(8.0),
                               border: Border.all(
-                                color: const Color(0xFFE0E3E7),
+                                color: Color(0xFFE0E3E7),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: SingleChildScrollView(
                                 primary: false,
                                 child: Column(
@@ -339,7 +346,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -367,12 +374,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                   .secondaryBackground,
                               borderRadius: BorderRadius.circular(8.0),
                               border: Border.all(
-                                color: const Color(0xFFE0E3E7),
+                                color: Color(0xFFE0E3E7),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: SingleChildScrollView(
                                 primary: false,
                                 child: Column(
@@ -419,7 +426,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       },
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -447,12 +454,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                   .secondaryBackground,
                               borderRadius: BorderRadius.circular(8.0),
                               border: Border.all(
-                                color: const Color(0xFFE0E3E7),
+                                color: Color(0xFFE0E3E7),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: SingleChildScrollView(
                                 primary: false,
                                 child: Column(
@@ -479,7 +486,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -499,18 +506,18 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                               ),
                             ),
                           ),
-                        ].divide(const SizedBox(width: 25.0)),
+                        ].divide(SizedBox(width: 25.0)),
                       ),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -527,7 +534,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -545,7 +552,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -620,7 +627,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         },
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -692,7 +699,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         },
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -712,7 +719,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 5.0)),
+                          ].divide(SizedBox(height: 5.0)),
                         ),
                       ),
                     ).animateOnPageLoad(
@@ -720,12 +727,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -742,7 +749,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 12.0, 15.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
@@ -752,7 +759,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 12.0, 12.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -772,7 +779,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -796,9 +803,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                           Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 0.3,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
                               child: PagedListView<DocumentSnapshot<Object?>?,
                                   CustomerCaseRecord>.separated(
@@ -813,7 +820,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 reverse: false,
                                 scrollDirection: Axis.horizontal,
                                 separatorBuilder: (_, __) =>
-                                    const SizedBox(width: 10.0),
+                                    SizedBox(width: 10.0),
                                 builderDelegate: PagedChildBuilderDelegate<
                                     CustomerCaseRecord>(
                                   // Customize what your widget looks like when it's loading the first page.
@@ -886,8 +893,8 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text('Delete'),
-                                                        content: const Text(
+                                                        title: Text('Delete'),
+                                                        content: Text(
                                                             'Do you want to delete this case?'),
                                                         actions: [
                                                           TextButton(
@@ -896,7 +903,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     alertDialogContext,
                                                                     false),
                                                             child:
-                                                                const Text('Cancel'),
+                                                                Text('Cancel'),
                                                           ),
                                                           TextButton(
                                                             onPressed: () =>
@@ -904,7 +911,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     alertDialogContext,
                                                                     true),
                                                             child:
-                                                                const Text('Confirm'),
+                                                                Text('Confirm'),
                                                           ),
                                                         ],
                                                       );
@@ -923,15 +930,15 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('Confirmation'),
-                                                  content: const Text(
+                                                  title: Text('Confirmation'),
+                                                  content: Text(
                                                       'Deleted the selected customer-case'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 );
@@ -971,14 +978,14 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(4.0),
+                                          padding: EdgeInsets.all(4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 12.0, 0.0, 8.0),
                                                 child: RichText(
@@ -994,7 +1001,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                 .getText(
                                                           'msp77w1m' /* ID#:  */,
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       ),
                                                       TextSpan(
                                                         text:
@@ -1020,7 +1027,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 child: Text(
@@ -1039,7 +1046,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 4.0, 12.0,
                                                           16.0),
                                                   child: Text(
@@ -1057,7 +1064,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 0.0, 0.0, 0.0),
                                                 child: Builder(
@@ -1131,7 +1138,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                   ),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           3.0,
@@ -1158,7 +1165,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                               );
                                                             },
                                                           );
-                                                        }).divide(const SizedBox(
+                                                        }).divide(SizedBox(
                                                             width: 10.0)),
                                                       ),
                                                     );
@@ -1173,7 +1180,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                         .alternate,
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 12.0, 12.0, 8.0),
                                                 child: SingleChildScrollView(
@@ -1262,7 +1269,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(2.0),
+                                                                            EdgeInsets.all(2.0),
                                                                         child:
                                                                             ClipRRect(
                                                                           borderRadius:
@@ -1283,7 +1290,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                   },
                                                                 );
                                                               }).divide(
-                                                                  const SizedBox(
+                                                                  SizedBox(
                                                                       width:
                                                                           5.0)),
                                                             ),
@@ -1292,11 +1299,11 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   6.0),
                                                           child: Container(
                                                             height: 32.0,
@@ -1333,11 +1340,11 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -1351,7 +1358,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                             currentUserReference)) {
                                                                       return 'Own';
                                                                     } else if (listViewCustomerCaseRecord
-                                                                            .assignee.isEmpty) {
+                                                                            .assignee
+                                                                            .length ==
+                                                                        0) {
                                                                       return 'Open';
                                                                     } else if (listViewCustomerCaseRecord
                                                                         .closed) {
@@ -1379,7 +1388,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(width: 15.0)),
+                                                        SizedBox(width: 15.0)),
                                                   ),
                                                 ),
                                               ),
@@ -1400,12 +1409,12 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -1424,7 +1433,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 12.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -1442,7 +1451,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1461,14 +1470,14 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                             ),
                             Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: SingleChildScrollView(
                                 primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 5.0),
                                       child: SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
@@ -1541,7 +1550,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                             FontWeight.w600,
                                                       ),
                                             ),
-                                          ].divide(const SizedBox(width: 15.0)),
+                                          ].divide(SizedBox(width: 15.0)),
                                         ),
                                       ),
                                     ),
@@ -1560,7 +1569,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                       reverse: false,
                                       scrollDirection: Axis.vertical,
                                       separatorBuilder: (_, __) =>
-                                          const SizedBox(height: 15.0),
+                                          SizedBox(height: 15.0),
                                       builderDelegate:
                                           PagedChildBuilderDelegate<
                                               CustomerMeetingRecord>(
@@ -1620,9 +1629,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                           builder:
                                                               (alertDialogContext) {
                                                             return AlertDialog(
-                                                              title: const Text(
+                                                              title: Text(
                                                                   'Confirm Delete'),
-                                                              content: const Text(
+                                                              content: Text(
                                                                   'Do you really want to delete that Meeting?'),
                                                               actions: [
                                                                 TextButton(
@@ -1630,7 +1639,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                       Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Cancel'),
                                                                 ),
                                                                 TextButton(
@@ -1638,7 +1647,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                       Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                  child: const Text(
+                                                                  child: Text(
                                                                       'Confirm'),
                                                                 ),
                                                               ],
@@ -1663,15 +1672,15 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: const Text('Done'),
-                                                      content: const Text(
+                                                      title: Text('Done'),
+                                                      content: Text(
                                                           'Meeting Deleted'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     );
@@ -1860,7 +1869,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(2.0),
+                                                                              EdgeInsets.all(2.0),
                                                                           child:
                                                                               ClipRRect(
                                                                             borderRadius:
@@ -1878,7 +1887,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     },
                                                                   );
                                                                 }).divide(
-                                                                    const SizedBox(
+                                                                    SizedBox(
                                                                         width:
                                                                             4.0)),
                                                               ),
@@ -1886,9 +1895,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                           },
                                                         ),
                                                       ]
-                                                          .divide(const SizedBox(
+                                                          .divide(SizedBox(
                                                               width: 15.0))
-                                                          .around(const SizedBox(
+                                                          .around(SizedBox(
                                                               width: 15.0)),
                                                     ),
                                                   ),
@@ -1904,13 +1913,13 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 5.0)),
+                          ].divide(SizedBox(height: 5.0)),
                         ),
                       ),
                     ).animateOnPageLoad(
                         animationsMap['containerOnPageLoadAnimation7']!),
                   ),
-                ].divide(const SizedBox(height: 5.0)),
+                ].divide(SizedBox(height: 5.0)),
               ),
             ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
           ),

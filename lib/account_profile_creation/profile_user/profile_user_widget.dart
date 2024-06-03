@@ -4,12 +4,18 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'profile_user_model.dart';
 export 'profile_user_model.dart';
@@ -72,8 +78,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -84,8 +90,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -176,20 +182,20 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                   ),
                 ],
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
@@ -202,7 +208,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Text(
                           profileUserUsersRecord.displayName,
                           style: FlutterFlowTheme.of(context)
@@ -222,7 +228,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: RatingBar.builder(
                           onRatingUpdate: (newValue) =>
                               setState(() => _model.ratingBarValue = newValue),
@@ -239,7 +245,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 12.0),
                         child: Container(
                           width: double.infinity,
@@ -277,7 +283,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Icon(
                                           Icons.mail,
@@ -287,7 +293,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 12.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -340,7 +346,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Icon(
                                           Icons.call_rounded,
@@ -350,7 +356,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 12.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -389,7 +395,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
                         child: Text(
                           profileUserUsersRecord.shortDescription,
                           textAlign: TextAlign.center,
@@ -403,7 +409,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -418,12 +424,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
-                                    color: const Color(0xFFE0E3E7),
+                                    color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
+                                  padding: EdgeInsets.all(12.0),
                                   child: SingleChildScrollView(
                                     primary: false,
                                     child: Column(
@@ -449,7 +455,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -477,12 +483,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
-                                    color: const Color(0xFFE0E3E7),
+                                    color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
+                                  padding: EdgeInsets.all(12.0),
                                   child: SingleChildScrollView(
                                     primary: false,
                                     child: Column(
@@ -508,7 +514,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -536,12 +542,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                   border: Border.all(
-                                    color: const Color(0xFFE0E3E7),
+                                    color: Color(0xFFE0E3E7),
                                     width: 2.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
+                                  padding: EdgeInsets.all(12.0),
                                   child: SingleChildScrollView(
                                     primary: false,
                                     child: Column(
@@ -597,7 +603,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -617,7 +623,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 25.0)),
+                            ].divide(SizedBox(width: 25.0)),
                           ),
                         ),
                       ),
@@ -634,7 +640,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 30.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -686,7 +692,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 3.0, 3.0, 3.0),
                                           child: SelectionArea(
                                               child: AutoSizeText(
@@ -704,8 +710,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                       );
                                     })
-                                        .divide(const SizedBox(width: 15.0))
-                                        .around(const SizedBox(width: 15.0)),
+                                        .divide(SizedBox(width: 15.0))
+                                        .around(SizedBox(width: 15.0)),
                                   ),
                                 );
                               },
@@ -726,7 +732,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 30.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -778,7 +784,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 3.0, 3.0, 3.0),
                                           child: SelectionArea(
                                               child: AutoSizeText(
@@ -796,8 +802,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         ),
                                       );
                                     })
-                                        .divide(const SizedBox(width: 15.0))
-                                        .around(const SizedBox(width: 15.0)),
+                                        .divide(SizedBox(width: 15.0))
+                                        .around(SizedBox(width: 15.0)),
                                   ),
                                 );
                               },
@@ -806,7 +812,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 12.0, 12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -824,7 +830,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                   ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -843,7 +849,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -902,7 +908,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
-                            ].divide(const SizedBox(width: 15.0)),
+                            ].divide(SizedBox(width: 15.0)),
                           ),
                         ),
                       ),
@@ -938,13 +944,13 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewCustomerMeetingRecordList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 15.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewCustomerMeetingRecord =
                                   listViewCustomerMeetingRecordList[
                                       listViewIndex];
                               return Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -965,8 +971,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
                                                     title:
-                                                        const Text('Confirm Delete'),
-                                                    content: const Text(
+                                                        Text('Confirm Delete'),
+                                                    content: Text(
                                                         'Do you really want to delete that Meeting?'),
                                                     actions: [
                                                       TextButton(
@@ -974,14 +980,14 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 false),
-                                                        child: const Text('Cancel'),
+                                                        child: Text('Cancel'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 true),
-                                                        child: const Text('Confirm'),
+                                                        child: Text('Confirm'),
                                                       ),
                                                     ],
                                                   );
@@ -1004,13 +1010,13 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: const Text('Done'),
-                                            content: const Text('Meeting Deleted'),
+                                            title: Text('Done'),
+                                            content: Text('Meeting Deleted'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           );
@@ -1173,7 +1179,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -1198,14 +1204,14 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                           },
                                                         );
                                                       }).divide(
-                                                          const SizedBox(width: 5.0)),
+                                                          SizedBox(width: 5.0)),
                                                     ),
                                                   );
                                                 },
                                               ),
                                             ]
-                                                .divide(const SizedBox(width: 25.0))
-                                                .around(const SizedBox(width: 25.0)),
+                                                .divide(SizedBox(width: 25.0))
+                                                .around(SizedBox(width: 25.0)),
                                           ),
                                         ),
                                       ],
@@ -1218,7 +1224,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               animationsMap['listViewOnPageLoadAnimation']!);
                         },
                       ),
-                    ].divide(const SizedBox(height: 5.0)),
+                    ].divide(SizedBox(height: 5.0)),
                   ),
                 ).animateOnPageLoad(
                     animationsMap['columnOnPageLoadAnimation']!),

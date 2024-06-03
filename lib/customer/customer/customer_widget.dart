@@ -5,10 +5,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'customer_model.dart';
 export 'customer_model.dart';
 
@@ -58,8 +63,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -150,7 +155,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   ),
                 ],
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -183,7 +188,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 5.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -219,7 +224,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -227,7 +232,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -263,7 +268,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -299,7 +304,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -365,7 +370,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       ],
                                     ),
                                   ),
-                                ].divide(const SizedBox(height: 5.0)),
+                                ].divide(SizedBox(height: 5.0)),
                               ),
                             ),
                             Text(
@@ -470,7 +475,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   BorderRadius.circular(15.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(3.0, 3.0, 3.0, 3.0),
                                               child: Text(
                                                 containerItskillsRecord.name,
@@ -489,7 +494,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           );
                                         },
                                       );
-                                    }).divide(const SizedBox(width: 15.0)),
+                                    }).divide(SizedBox(width: 15.0)),
                                   ),
                                 );
                               },
@@ -529,7 +534,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 }
                                 final containerCustomerRecord = snapshot.data!;
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Builder(
                                     builder: (context) {
                                       final languages = containerCustomerRecord
@@ -584,7 +589,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(3.0, 3.0,
                                                                 3.0, 3.0),
                                                     child: Text(
@@ -606,7 +611,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                 );
                                               },
                                             );
-                                          }).divide(const SizedBox(width: 15.0)),
+                                          }).divide(SizedBox(width: 15.0)),
                                         ),
                                       );
                                     },
@@ -723,7 +728,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(2.0),
+                                              padding: EdgeInsets.all(2.0),
                                               child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(40.0),
@@ -738,7 +743,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           );
                                         },
                                       );
-                                    }).divide(const SizedBox(width: 15.0)),
+                                    }).divide(SizedBox(width: 15.0)),
                                   ),
                                 );
                               },
@@ -746,7 +751,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             if (valueOrDefault(currentUserDocument?.role, '') !=
                                 'Kunde')
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
@@ -797,10 +802,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       width: MediaQuery.sizeOf(context).width *
                                           0.5,
                                       height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -825,7 +830,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             if (valueOrDefault(currentUserDocument?.role, '') ==
                                 'Manager')
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
@@ -844,7 +849,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.topToBottom,
@@ -861,10 +866,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       width: MediaQuery.sizeOf(context).width *
                                           0.5,
                                       height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -889,7 +894,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             if (valueOrDefault(currentUserDocument?.role, '') ==
                                 'Manager')
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
@@ -909,7 +914,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.topToBottom,
@@ -926,10 +931,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       width: MediaQuery.sizeOf(context).width *
                                           0.5,
                                       height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -954,9 +959,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                             if (valueOrDefault(currentUserDocument?.role, '') ==
                                 'Manager')
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => FFButtonWidget(
@@ -985,10 +990,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 0.5,
                                         height: 50.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1019,7 +1024,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1081,10 +1086,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            Container(
                               height: 200.0,
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
                                 child: PagedListView<DocumentSnapshot<Object?>?,
                                     CustomerMeetingRecord>.separated(
@@ -1102,7 +1107,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 15.0),
+                                      SizedBox(height: 15.0),
                                   builderDelegate: PagedChildBuilderDelegate<
                                       CustomerMeetingRecord>(
                                     // Customize what your widget looks like when it's loading the first page.
@@ -1160,9 +1165,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: const Text(
+                                                          title: Text(
                                                               'Confirm Delete'),
-                                                          content: const Text(
+                                                          content: Text(
                                                               'Do you really want to delete that Meeting?'),
                                                           actions: [
                                                             TextButton(
@@ -1170,7 +1175,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -1178,7 +1183,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -1202,15 +1207,15 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('Done'),
+                                                  title: Text('Done'),
                                                   content:
-                                                      const Text('Meeting Deleted'),
+                                                      Text('Meeting Deleted'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 );
@@ -1398,7 +1403,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               2.0),
                                                                       child:
                                                                           ClipRRect(
@@ -1420,14 +1425,14 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                   );
                                                                 },
                                                               );
-                                                            }).divide(const SizedBox(
+                                                            }).divide(SizedBox(
                                                                 width: 4.0)),
                                                           ),
                                                         );
                                                       },
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(width: 25.0)),
+                                                      SizedBox(width: 25.0)),
                                                 ),
                                               ),
                                             ],
@@ -1441,8 +1446,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(height: 15.0))
-                              .around(const SizedBox(height: 15.0)),
+                              .divide(SizedBox(height: 15.0))
+                              .around(SizedBox(height: 15.0)),
                         ),
                       ).animateOnPageLoad(
                           animationsMap['columnOnPageLoadAnimation']!),
