@@ -5,13 +5,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'adress_settings_model.dart';
 export 'adress_settings_model.dart';
 
@@ -132,14 +127,14 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -149,7 +144,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 10.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -170,13 +165,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
                               controller: _model.textController1,
                               focusNode: _model.textFieldFocusNode1,
-                              autofillHints: [AutofillHints.fullStreetAddress],
+                              autofillHints: const [AutofillHints.fullStreetAddress],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -250,13 +245,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
                               controller: _model.textController2,
                               focusNode: _model.textFieldFocusNode2,
-                              autofillHints: [AutofillHints.addressCity],
+                              autofillHints: const [AutofillHints.addressCity],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -332,13 +327,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
                               controller: _model.textController3,
                               focusNode: _model.textFieldFocusNode3,
-                              autofillHints: [AutofillHints.email],
+                              autofillHints: const [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -414,13 +409,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
                               controller: _model.textController4,
                               focusNode: _model.textFieldFocusNode4,
-                              autofillHints: [AutofillHints.countryName],
+                              autofillHints: const [AutofillHints.countryName],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
@@ -492,7 +487,7 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
@@ -511,13 +506,13 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Success'),
-                              content: Text('Successfully saved new data!'),
+                              title: const Text('Success'),
+                              content: const Text('Successfully saved new data!'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -531,9 +526,9 @@ class _AdressSettingsWidgetState extends State<AdressSettingsWidget>
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall

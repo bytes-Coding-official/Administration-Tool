@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,10 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'role_management_model.dart';
 export 'role_management_model.dart';
 
@@ -97,7 +93,7 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -110,7 +106,7 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -183,14 +179,14 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
-                          margin: EdgeInsetsDirectional.fromSTEB(
+                          margin: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: true,
                           isMultiSelect: false,
                         ),
-                      ].divide(SizedBox(height: 15.0)),
+                      ].divide(const SizedBox(height: 15.0)),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -278,7 +274,7 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                               borderWidth: 2.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: true,
@@ -287,11 +283,11 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                             );
                           },
                         ),
-                      ].divide(SizedBox(height: 15.0)),
+                      ].divide(const SizedBox(height: 15.0)),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -315,7 +311,7 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: Duration(milliseconds: 4000),
+                              duration: const Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -334,9 +330,9 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -356,8 +352,8 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 25.0))
-                      .around(SizedBox(height: 25.0)),
+                      .divide(const SizedBox(height: 25.0))
+                      .around(const SizedBox(height: 25.0)),
                 ),
               ),
             ),

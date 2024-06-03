@@ -424,6 +424,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '姓名',
     },
     '6fgimpch': {
+      'en': 'Phone',
+      'de': 'Mail',
+      'es': 'Correo',
+      'fr': 'Mail',
+      'zh_Hans': '邮件',
+    },
+    '1svt6qwg': {
       'en': 'Mail',
       'de': 'Mail',
       'es': 'Correo',
@@ -1032,6 +1039,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '电子邮件',
     },
     'k3t8iv0d': {
+      'en': 'Password',
+      'de': 'Passwort',
+      'es': 'Contraseña',
+      'fr': 'Mot de passe',
+      'zh_Hans': '密码',
+    },
+    '758me7y0': {
       'en': 'Password',
       'de': 'Passwort',
       'es': 'Contraseña',
