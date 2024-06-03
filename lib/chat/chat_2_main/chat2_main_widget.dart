@@ -229,6 +229,41 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                 },
                               );
                             },
+                            onLongPress: () async {
+                              logFirebaseEvent(
+                                  'CHAT_2_MAIN_Container_o6k4e0od_ON_LONG_P');
+                              logFirebaseEvent('Container_alert_dialog');
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('Delete Chat'),
+                                            content: const Text(
+                                                'Do you want to delete that chat'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('Confirm'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              if (confirmDialogResponse) {
+                                logFirebaseEvent('Container_backend_call');
+                                await listViewChatsRecord.reference.delete();
+                              } else {
+                                return;
+                              }
+                            },
                             child: Material(
                               color: Colors.transparent,
                               elevation: 0.0,
