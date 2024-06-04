@@ -41,9 +41,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'AddMeetingToCustomer'});
-
-    _model.meetingidFocusNode ??= FocusNode();
-    _model.meetingidFocusNode!.addListener(() => setState(() {}));
     _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
     _model.durationFocusNode!.addListener(() => setState(() {}));
@@ -214,106 +211,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                               ),
                             ],
                           ),
-                        ),
-                        FutureBuilder<int>(
-                          future: queryCustomerMeetingRecordCount(),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            int meetingidCount = snapshot.data!;
-                            return TextFormField(
-                              controller: _model.meetingidTextController ??=
-                                  TextEditingController(
-                                text: meetingidCount.toString(),
-                              ),
-                              focusNode: _model.meetingidFocusNode,
-                              autofocus: false,
-                              textCapitalization: TextCapitalization.words,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: FFLocalizations.of(context).getText(
-                                  '4nfvrfrn' /* Meeting ID */,
-                                ),
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                errorStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: FlutterFlowTheme.of(context).error,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                              textAlign: TextAlign.center,
-                              keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                      decimal: true),
-                              cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.meetingidTextControllerValidator
-                                  .asValidator(context),
-                            );
-                          },
                         ),
                         StreamBuilder<List<UsersRecord>>(
                           stream: queryUsersRecord(
@@ -711,20 +608,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                               );
                               logFirebaseEvent('Button_backend_call');
 
-                              await addMeetingToCustomerCustomerCaseRecord
-                                  .reference
-                                  .update({
-                                ...mapToFirestore(
-                                  {
-                                    'meetings': FieldValue.arrayUnion([
-                                      int.tryParse(
-                                          _model.meetingidTextController.text)
-                                    ]),
-                                  },
-                                ),
-                              });
-                              logFirebaseEvent('Button_backend_call');
-
                               var customerMeetingRecordReference =
                                   CustomerMeetingRecord.collection.doc();
                               await customerMeetingRecordReference.set({
@@ -735,8 +618,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                       _model.durationTextController.text),
                                   costs: double.tryParse(
                                       _model.costsTextController.text),
-                                  id: int.tryParse(
-                                      _model.meetingidTextController.text),
+                                  customercase: widget.customercase,
                                 ),
                                 ...mapToFirestore(
                                   {
@@ -753,8 +635,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                       _model.durationTextController.text),
                                   costs: double.tryParse(
                                       _model.costsTextController.text),
-                                  id: int.tryParse(
-                                      _model.meetingidTextController.text),
+                                  customercase: widget.customercase,
                                 ),
                                 ...mapToFirestore(
                                   {

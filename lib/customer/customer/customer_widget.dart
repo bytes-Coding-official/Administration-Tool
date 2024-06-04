@@ -209,7 +209,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 customerCustomerCaseRecord.description,
                                 'no description set',
                               ),
-                              textAlign: TextAlign.justify,
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -1151,8 +1151,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            Container(
                               height: 200.0,
+                              decoration: const BoxDecoration(),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 0.0),
@@ -1160,9 +1161,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     CustomerMeetingRecord>.separated(
                                   pagingController:
                                       _model.setListViewController(
-                                    CustomerMeetingRecord.collection.whereIn(
-                                        'id',
-                                        customerCustomerCaseRecord.meetings),
+                                    CustomerMeetingRecord.collection.where(
+                                      'customercase',
+                                      isEqualTo: widget.customercase,
+                                    ),
                                   ),
                                   padding: EdgeInsets.zero,
                                   primary: false,

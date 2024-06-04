@@ -19,12 +19,12 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "closed",
-          "order": "ASCENDING"
-        },
-        {
           "fieldPath": "assignee",
           "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "closed",
+          "order": "ASCENDING"
         }
       ]
     },

@@ -9,10 +9,6 @@ class AddMeetingToCustomerModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for meetingid widget.
-  FocusNode? meetingidFocusNode;
-  TextEditingController? meetingidTextController;
-  String? Function(BuildContext, String?)? meetingidTextControllerValidator;
   // State field(s) for tutor widget.
   List<String>? tutorValue;
   FormFieldController<List<String>>? tutorValueController;
@@ -40,9 +36,6 @@ class AddMeetingToCustomerModel
   @override
   void dispose() {
     unfocusNode.dispose();
-    meetingidFocusNode?.dispose();
-    meetingidTextController?.dispose();
-
     durationFocusNode?.dispose();
     durationTextController?.dispose();
 

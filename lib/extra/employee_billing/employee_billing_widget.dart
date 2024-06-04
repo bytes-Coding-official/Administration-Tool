@@ -583,7 +583,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                   )
                                                   .where(
                                                     'closed',
-                                                    isEqualTo: false,
+                                                    isNotEqualTo: false,
                                                   ),
                                         ),
                                         builder: (context, snapshot) {

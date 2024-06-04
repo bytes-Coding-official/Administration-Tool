@@ -41,10 +41,10 @@ class CustomerMeetingRecord extends FirestoreRecord {
   String get date => _date ?? '';
   bool hasDate() => _date != null;
 
-  // "id" field.
-  int? _id;
-  int get id => _id ?? 0;
-  bool hasId() => _id != null;
+  // "customercase" field.
+  DocumentReference? _customercase;
+  DocumentReference? get customercase => _customercase;
+  bool hasCustomercase() => _customercase != null;
 
   void _initializeFields() {
     _assignee = getDataList(snapshotData['assignee']);
@@ -52,7 +52,7 @@ class CustomerMeetingRecord extends FirestoreRecord {
     _duration = castToType<double>(snapshotData['duration']);
     _costs = castToType<double>(snapshotData['costs']);
     _date = snapshotData['date'] as String?;
-    _id = castToType<int>(snapshotData['id']);
+    _customercase = snapshotData['customercase'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -94,7 +94,7 @@ Map<String, dynamic> createCustomerMeetingRecordData({
   double? duration,
   double? costs,
   String? date,
-  int? id,
+  DocumentReference? customercase,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -102,7 +102,7 @@ Map<String, dynamic> createCustomerMeetingRecordData({
       'duration': duration,
       'costs': costs,
       'date': date,
-      'id': id,
+      'customercase': customercase,
     }.withoutNulls,
   );
 
@@ -121,12 +121,18 @@ class CustomerMeetingRecordDocumentEquality
         e1?.duration == e2?.duration &&
         e1?.costs == e2?.costs &&
         e1?.date == e2?.date &&
-        e1?.id == e2?.id;
+        e1?.customercase == e2?.customercase;
   }
 
   @override
-  int hash(CustomerMeetingRecord? e) => const ListEquality()
-      .hash([e?.assignee, e?.customer, e?.duration, e?.costs, e?.date, e?.id]);
+  int hash(CustomerMeetingRecord? e) => const ListEquality().hash([
+        e?.assignee,
+        e?.customer,
+        e?.duration,
+        e?.costs,
+        e?.date,
+        e?.customercase
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is CustomerMeetingRecord;

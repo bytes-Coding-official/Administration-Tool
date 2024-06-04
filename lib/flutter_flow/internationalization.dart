@@ -2004,20 +2004,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'zh_Hans': '',
     },
-    '4nfvrfrn': {
-      'en': 'Meeting ID',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
-    'finik62l': {
-      'en': '',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
     'et2esaos': {
       'en': 'Option 1',
       'de': 'Option 1',
