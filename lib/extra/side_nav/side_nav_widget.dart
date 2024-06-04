@@ -1096,6 +1096,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                           .getText(
                                                         '411g996a' /* Light Mode */,
                                                       ),
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1113,6 +1115,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                                     .secondaryText,
                                                             letterSpacing: 0.0,
                                                           ),
+                                                      minFontSize: 12.0,
                                                     ),
                                                   ),
                                                 ],
@@ -1198,6 +1201,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                           .getText(
                                                         'mc7klcgc' /* Dark Mode */,
                                                       ),
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1215,6 +1220,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                                     .secondaryText,
                                                             letterSpacing: 0.0,
                                                           ),
+                                                      minFontSize: 12.0,
                                                     ),
                                                   ),
                                                 ],
