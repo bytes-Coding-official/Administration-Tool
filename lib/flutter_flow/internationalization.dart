@@ -2011,12 +2011,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'zh_Hans': '',
     },
-    'feq3hl8k': {
-      'en': 'Meeting ID:',
-      'de': 'ID:',
+    'se7z3zjp': {
+      'en': 'ID:',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
+    },
+    '4nfvrfrn': {
+      'en': 'Meeting ID',
+      'de': 'Dauer',
+      'es': 'duración',
+      'fr': 'durée',
+      'zh_Hans': '期间',
+    },
+    'finik62l': {
+      'en': '',
+      'de': '0,0',
+      'es': '0.0',
+      'fr': '0,0',
+      'zh_Hans': '0.0',
     },
     'et2esaos': {
       'en': 'Option 1',
@@ -2040,7 +2054,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '搜索用户...',
     },
     '4zfw8bwq': {
-      'en': 'duration',
+      'en': 'Duration',
       'de': 'Dauer',
       'es': 'duración',
       'fr': 'durée',

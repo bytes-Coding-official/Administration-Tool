@@ -9,6 +9,10 @@ class AddMeetingToCustomerModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for meetingid widget.
+  FocusNode? meetingidFocusNode;
+  TextEditingController? meetingidTextController;
+  String? Function(BuildContext, String?)? meetingidTextControllerValidator;
   // State field(s) for tutor widget.
   List<String>? tutorValue;
   FormFieldController<List<String>>? tutorValueController;
@@ -27,8 +31,6 @@ class AddMeetingToCustomerModel
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
   DocumentReference? customer;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  int? meetingsCount;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CustomerMeetingRecord? newmeeting;
 
@@ -38,6 +40,9 @@ class AddMeetingToCustomerModel
   @override
   void dispose() {
     unfocusNode.dispose();
+    meetingidFocusNode?.dispose();
+    meetingidTextController?.dispose();
+
     durationFocusNode?.dispose();
     durationTextController?.dispose();
 
