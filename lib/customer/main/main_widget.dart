@@ -1028,6 +1028,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                         .getText(
                                                       'v3wuo8gh' /* Light Mode */,
                                                     ),
+                                                    textAlign: TextAlign.center,
                                                     style:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1045,6 +1046,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   : FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                              fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
                                                             ),
@@ -1132,6 +1134,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           .getText(
                                                         '1m01zim9' /* Dark Mode */,
                                                       ),
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1147,6 +1151,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                 : FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
+                                                            fontSize: 12.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
