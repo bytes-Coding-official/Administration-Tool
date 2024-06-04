@@ -12,7 +12,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations)!;
 
-  static List<String> languages() => ['en', 'de', 'es', 'fr', 'zh_Hans'];
+  static List<String> languages() => ['en', 'de', 'fr', 'es', 'zh_Hans'];
 
   static late SharedPreferences _prefs;
   static Future initialize() async =>
@@ -39,11 +39,11 @@ class FFLocalizations {
   String getVariableText({
     String? enText = '',
     String? deText = '',
-    String? esText = '',
     String? frText = '',
+    String? esText = '',
     String? zh_HansText = '',
   }) =>
-      [enText, deText, esText, frText, zh_HansText][languageIndex] ?? '';
+      [enText, deText, frText, esText, zh_HansText][languageIndex] ?? '';
 
   static const Set<String> _languagesWithShortCode = {
     'ar',
@@ -290,7 +290,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dr5994wq': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -349,7 +349,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5ej9zapx': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -408,7 +408,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pi0dfjv1': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -446,9 +446,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pfk6zl6k': {
       'en': 'GitHub-Link',
-      'de': 'GitHub-Link',
-      'es': 'GitHub-Link',
-      'fr': 'GitHub-Link',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     's3b1jvke': {
@@ -523,14 +523,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w6upyuwo': {
       'en': 'ID:',
-      'de': 'ID:',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     '365ngbkk': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -540,7 +540,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '3xmp7l5l': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -688,35 +688,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n9qnpbyi': {
       'en': 'ID#: ',
-      'de': 'ID#: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'xpe9vzmw': {
       'en': 'ID#: ',
-      'de': 'ID#: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'nhxrq5ni': {
       'en': 'ID#: ',
-      'de': 'ID#: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'ati3ejso': {
       'en': 'ID#: ',
-      'de': 'ID#: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'u27w6351': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -754,7 +754,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'l72xtc1b': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -764,9 +764,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '63tpu80q': {
       'en': 'ID:',
-      'de': 'ID:',
-      'es': 'ID:',
-      'fr': 'ID:',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     '91f8nfh0': {
@@ -820,16 +820,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y2utkbqo': {
       'en': 'GitHub- Link',
-      'de': 'GitHub- Link',
-      'es': 'GitHub- Link',
-      'fr': 'GitHub- Link',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     '01kliwsx': {
       'en': 'GitHub- Link',
-      'de': 'GitHub- Link',
-      'es': 'GitHub- Link',
-      'fr': 'GitHub- Link',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     '3ymofq1p': {
@@ -932,7 +932,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vvddebob': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -942,7 +942,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '7g15vrub': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1026,7 +1026,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9fj3ed5h': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1036,7 +1036,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'b1a1m656': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1122,7 +1122,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vf342axe': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1132,7 +1132,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '2gddz9zm': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1171,7 +1171,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wlesa9ou': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1181,14 +1181,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'erspxmah': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'x7tuflp8': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1261,7 +1261,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bommisgd': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1271,7 +1271,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'xs06iv32': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1281,7 +1281,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '8tf2yxr2': {
       'en': 'Ticket #: ',
-      'de': 'Ticket #: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1303,7 +1303,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8bi66y39': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1433,7 +1433,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h5odabcw': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1450,7 +1450,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ss89pb28': {
       'en': 'Ticket #: ',
-      'de': 'Ticket #: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1563,7 +1563,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yqpe5xlu': {
       'en': 'Ticket',
-      'de': 'Ticket',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1610,7 +1610,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
       'zh_Hans': '客户总数',
     },
     '72k7zctj': {
@@ -1664,7 +1664,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'msp77w1m': {
       'en': 'ID#: ',
-      'de': 'ID#: ',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1713,7 +1713,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sauzmy7r': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1808,7 +1808,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jy4o2t2o': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1825,7 +1825,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'itj2r1tk': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1982,7 +1982,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jx8qgyjd': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -1992,7 +1992,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'fq1mmuz6': {
       'en': 'ID:',
-      'de': 'ID:',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2006,17 +2006,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4nfvrfrn': {
       'en': 'Meeting ID',
-      'de': 'Dauer',
-      'es': 'duración',
-      'fr': 'durée',
-      'zh_Hans': '期间',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
     },
     'finik62l': {
       'en': '',
-      'de': '0,0',
-      'es': '0.0',
-      'fr': '0,0',
-      'zh_Hans': '0.0',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
     },
     'et2esaos': {
       'en': 'Option 1',
@@ -2042,8 +2042,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4zfw8bwq': {
       'en': 'Duration',
       'de': 'Dauer',
-      'es': 'duración',
-      'fr': 'durée',
+      'es': 'Duración',
+      'fr': 'Durée',
       'zh_Hans': '期间',
     },
     '0zdzhdgd': {
@@ -2111,7 +2111,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h77ncpzt': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2135,7 +2135,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's5ry5cyk': {
       'en': 'bytes Coding',
-      'de': 'bytes Coding',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2149,7 +2149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ryazebh4': {
       'en': 'Main-Menu',
-      'de': 'Dashboard',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2254,7 +2254,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0qj8uewa': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2341,7 +2341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cddgguhy': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2388,7 +2388,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Customers',
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
-      'fr': 'Nombre total de clients',
+      'fr': 'Clients totaux',
       'zh_Hans': '客户总数',
     },
     'lyzzcc02': {
@@ -2498,7 +2498,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1byh2jsg': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2620,7 +2620,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't6mioyok': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2773,7 +2773,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6hykvly4': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2811,7 +2811,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fn5cvial': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -2912,9 +2912,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qx78yruu': {
       'en': 'Home',
-      'de': 'Home',
-      'es': 'Home',
-      'fr': 'Home',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
   },
@@ -2978,16 +2978,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cbw85193': {
       'en': 'GitHub-Link',
-      'de': 'GitHub-Link',
-      'es': 'GitHub-Link',
-      'fr': 'GitHub-Link',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     'gecpmalb': {
       'en': 'GitHub-Link',
-      'de': 'GitHub-Link',
-      'es': 'GitHub-Link',
-      'fr': 'GitHub-Link',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
     'tijh27c2': {
@@ -3083,14 +3083,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qmta97d7': {
       'en': 'ID:',
-      'de': 'ID:',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
     },
     'giqvfw1f': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -3247,7 +3247,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g5jy5gbr': {
       'en': 'Home',
-      'de': 'Home',
+      'de': '',
       'es': '',
       'fr': '',
       'zh_Hans': '',
@@ -3382,9 +3382,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '2lghugn7': {
       'en': 'ME',
-      'de': 'ICH',
-      'es': 'YO',
-      'fr': 'MOI',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
   },
@@ -3466,9 +3466,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'fh4ei39y': {
       'en': 'ME',
-      'de': 'ICH',
-      'es': 'YO',
-      'fr': 'MOI',
+      'de': '',
+      'es': '',
+      'fr': '',
       'zh_Hans': '',
     },
   },

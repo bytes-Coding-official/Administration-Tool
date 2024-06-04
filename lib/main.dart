@@ -104,8 +104,8 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'),
         Locale('de'),
-        Locale('es'),
         Locale('fr'),
+        Locale('es'),
         Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'),
       ],
       theme: ThemeData(

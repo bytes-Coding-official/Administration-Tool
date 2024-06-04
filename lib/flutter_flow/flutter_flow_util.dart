@@ -41,10 +41,10 @@ void _setTimeagoLocales() {
   timeago.setLocaleMessages('en_short', timeago.EnShortMessages());
   timeago.setLocaleMessages('de', timeago.DeMessages());
   timeago.setLocaleMessages('de_short', timeago.DeShortMessages());
-  timeago.setLocaleMessages('es', timeago.EsMessages());
-  timeago.setLocaleMessages('es_short', timeago.EsShortMessages());
   timeago.setLocaleMessages('fr', timeago.FrMessages());
   timeago.setLocaleMessages('fr_short', timeago.FrShortMessages());
+  timeago.setLocaleMessages('es', timeago.EsMessages());
+  timeago.setLocaleMessages('es_short', timeago.EsShortMessages());
   timeago.setLocaleMessages('zh_Hans', timeago.ZhCnMessages());
 }
 
