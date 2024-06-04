@@ -23,13 +23,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   // State field(s) for tablet_DesktopView widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>?
-      tabletDesktopViewPagingController1;
-  Query? tabletDesktopViewPagingQuery1;
-  List<StreamSubscription?> tabletDesktopViewStreamSubscriptions1 = [];
-
-  // State field(s) for tablet_DesktopView widget.
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>?
       tabletDesktopViewPagingController2;
   Query? tabletDesktopViewPagingQuery2;
   List<StreamSubscription?> tabletDesktopViewStreamSubscriptions2 = [];
@@ -49,11 +42,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
       s?.cancel();
     }
     emPagingController2?.dispose();
-
-    for (var s in tabletDesktopViewStreamSubscriptions1) {
-      s?.cancel();
-    }
-    tabletDesktopViewPagingController1?.dispose();
 
     for (var s in tabletDesktopViewStreamSubscriptions2) {
       s?.cancel();
@@ -117,40 +105,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
           queryBuilder: (_) => emPagingQuery2 ??= query,
           nextPageMarker: nextPageMarker,
           streamSubscriptions: emStreamSubscriptions2,
-          controller: controller,
-          pageSize: 25,
-          isStream: true,
-        ),
-      );
-  }
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      setTabletDesktopViewController1(
-    Query query, {
-    DocumentReference<Object?>? parent,
-  }) {
-    tabletDesktopViewPagingController1 ??=
-        _createTabletDesktopViewController1(query, parent);
-    if (tabletDesktopViewPagingQuery1 != query) {
-      tabletDesktopViewPagingQuery1 = query;
-      tabletDesktopViewPagingController1?.refresh();
-    }
-    return tabletDesktopViewPagingController1!;
-  }
-
-  PagingController<DocumentSnapshot?, CustomerCaseRecord>
-      _createTabletDesktopViewController1(
-    Query query,
-    DocumentReference<Object?>? parent,
-  ) {
-    final controller = PagingController<DocumentSnapshot?, CustomerCaseRecord>(
-        firstPageKey: null);
-    return controller
-      ..addPageRequestListener(
-        (nextPageMarker) => queryCustomerCaseRecordPage(
-          queryBuilder: (_) => tabletDesktopViewPagingQuery1 ??= query,
-          nextPageMarker: nextPageMarker,
-          streamSubscriptions: tabletDesktopViewStreamSubscriptions1,
           controller: controller,
           pageSize: 25,
           isStream: true,
