@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -34,9 +33,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
     _model = createModel(context, () => MainModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Main'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-
     animationsMap.addAll({
       'rowOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -1369,137 +1365,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             ].divide(const SizedBox(width: 15.0)),
                           ),
                         ),
-                        if (valueOrDefault(currentUserDocument?.role, '') !=
-                            'Kunde')
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 16.0, 12.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Container(
-                                width: double.infinity,
-                                constraints: const BoxConstraints(
-                                  maxWidth: double.infinity,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: BorderRadius.circular(6.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    if (responsiveVisibility(
-                                      context: context,
-                                      tablet: false,
-                                      tabletLandscape: false,
-                                      desktop: false,
-                                    ))
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 10.0, 5.0, 2.0),
-                                        child: TextFormField(
-                                          controller: _model.textController,
-                                          focusNode: _model.textFieldFocusNode,
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
-                                            '_model.textController',
-                                            const Duration(milliseconds: 150),
-                                            () => setState(() {}),
-                                          ),
-                                          autofocus: false,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              '73gv4wgu' /* Filter */,
-                                            ),
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'efbd6j4b' /* Filter here... */,
-                                            ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily: 'Inter',
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                            errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                            focusedErrorBorder:
-                                                UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                          validator: _model
-                                              .textControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
                         if (valueOrDefault(currentUserDocument?.role, '') ==
                             'Manager')
                           Padding(

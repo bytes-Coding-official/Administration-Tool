@@ -672,20 +672,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Consultez les détails ci-dessous de tous les projets en cours.',
       'zh_Hans': '查看以下所有当前项目的详细信息。',
     },
-    '73gv4wgu': {
-      'en': 'Filter',
-      'de': 'Filter',
-      'es': 'Filtrar',
-      'fr': 'Filtre',
-      'zh_Hans': '筛选',
-    },
-    'efbd6j4b': {
-      'en': 'Filter here...',
-      'de': 'Hier filtern...',
-      'es': 'Filtrar aquí...',
-      'fr': 'Filtrez ici...',
-      'zh_Hans': '在这里过滤...',
-    },
     'hv1ie1b8': {
       'en': 'Add Customer',
       'de': 'Kunden hinzufügen',

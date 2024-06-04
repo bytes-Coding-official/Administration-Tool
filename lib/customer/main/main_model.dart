@@ -8,10 +8,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for em widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>? emPagingController1;
@@ -44,9 +40,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
-
     for (var s in emStreamSubscriptions1) {
       s?.cancel();
     }
