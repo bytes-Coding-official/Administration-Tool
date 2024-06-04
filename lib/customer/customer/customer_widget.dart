@@ -1160,11 +1160,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     CustomerMeetingRecord>.separated(
                                   pagingController:
                                       _model.setListViewController(
-                                    CustomerMeetingRecord.collection.where(
-                                      'customer',
-                                      isEqualTo:
-                                          customerCustomerCaseRecord.customer,
-                                    ),
+                                    CustomerMeetingRecord.collection.whereIn(
+                                        'id',
+                                        customerCustomerCaseRecord.meetings),
                                   ),
                                   padding: EdgeInsets.zero,
                                   primary: false,

@@ -210,6 +210,60 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             ],
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'feq3hl8k' /* Meeting ID: */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              FutureBuilder<int>(
+                                future: queryCustomerMeetingRecordCount(),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  int caseidCount = snapshot.data!;
+                                  return Text(
+                                    caseidCount.toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
                         StreamBuilder<List<UsersRecord>>(
                           stream: queryUsersRecord(
                             queryBuilder: (usersRecord) => usersRecord.where(
@@ -604,6 +658,21 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 addMeetingToCustomerCustomerCaseRecord
                                     .customer!.id,
                               );
+                              logFirebaseEvent('Button_firestore_query');
+                              _model.meetingsCount =
+                                  await queryCustomerMeetingRecordCount();
+                              logFirebaseEvent('Button_backend_call');
+
+                              await addMeetingToCustomerCustomerCaseRecord
+                                  .reference
+                                  .update({
+                                ...mapToFirestore(
+                                  {
+                                    'meetings': FieldValue.arrayUnion(
+                                        [_model.meetingsCount]),
+                                  },
+                                ),
+                              });
                               logFirebaseEvent('Button_backend_call');
 
                               var customerMeetingRecordReference =
@@ -616,6 +685,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                       _model.durationTextController.text),
                                   costs: double.tryParse(
                                       _model.costsTextController.text),
+                                  id: _model.meetingsCount,
                                 ),
                                 ...mapToFirestore(
                                   {
@@ -632,6 +702,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                       _model.durationTextController.text),
                                   costs: double.tryParse(
                                       _model.costsTextController.text),
+                                  id: _model.meetingsCount,
                                 ),
                                 ...mapToFirestore(
                                   {
@@ -639,18 +710,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                   },
                                 ),
                               }, customerMeetingRecordReference);
-                              logFirebaseEvent('Button_backend_call');
-
-                              await addMeetingToCustomerCustomerCaseRecord
-                                  .reference
-                                  .update({
-                                ...mapToFirestore(
-                                  {
-                                    'meetings': FieldValue.arrayUnion(
-                                        [_model.newmeeting?.reference]),
-                                  },
-                                ),
-                              });
                               logFirebaseEvent('Button_alert_dialog');
                               await showDialog(
                                 context: context,

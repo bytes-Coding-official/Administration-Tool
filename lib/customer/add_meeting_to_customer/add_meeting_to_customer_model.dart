@@ -27,6 +27,8 @@ class AddMeetingToCustomerModel
   List<DocumentReference>? tutors;
   // Stores action output result for [Custom Action - getCustomerFromDocRef] action in Button widget.
   DocumentReference? customer;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  int? meetingsCount;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CustomerMeetingRecord? newmeeting;
 
