@@ -31,7 +31,6 @@ export '/support_ticket/support_ticket_details/support_ticket_details_widget.dar
     show SupportTicketDetailsWidget;
 export '/extra/employee_billing/employee_billing_widget.dart'
     show EmployeeBillingWidget;
-export '/extra/calendar/calendar_widget.dart' show CalendarWidget;
 export '/chat/chat_2_details/chat2_details_widget.dart' show Chat2DetailsWidget;
 export '/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
 export '/chat/chat_2_invite_users/chat2_invite_users_widget.dart'

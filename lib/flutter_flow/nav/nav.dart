@@ -187,11 +187,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const EmployeeBillingWidget(),
         ),
         FFRoute(
-          name: 'Calendar',
-          path: '/calendar',
-          builder: (context, params) => const CalendarWidget(),
-        ),
-        FFRoute(
           name: 'chat_2_Details',
           path: '/chat2Details',
           asyncParams: {

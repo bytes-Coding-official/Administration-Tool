@@ -31,8 +31,8 @@ class _UsersWidgetState extends State<UsersWidget>
     _model = createModel(context, () => UsersModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Users'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.searchTextController ??= TextEditingController();
+    _model.searchFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
@@ -121,89 +121,82 @@ class _UsersWidgetState extends State<UsersWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).secondary,
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                child: TextFormField(
+                  controller: _model.searchTextController,
+                  focusNode: _model.searchFocusNode,
+                  onChanged: (_) => EasyDebounce.debounce(
+                    '_model.searchTextController',
+                    const Duration(milliseconds: 150),
+                    () => setState(() {}),
+                  ),
+                  autofocus: false,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    isDense: false,
+                    labelText: FFLocalizations.of(context).getText(
+                      'lefjjtu5' /* Search for people... */,
+                    ),
+                    hintText: FFLocalizations.of(context).getText(
+                      'm4jj16bz' /* Search for people... */,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primary,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).error,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                    prefixIcon: Icon(
+                      Icons.search_outlined,
+                      color: FlutterFlowTheme.of(context).secondaryText,
                     ),
                   ),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
-                    child: TextFormField(
-                      controller: _model.textController,
-                      focusNode: _model.textFieldFocusNode,
-                      onChanged: (_) => EasyDebounce.debounce(
-                        '_model.textController',
-                        const Duration(milliseconds: 150),
-                        () => setState(() {}),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        letterSpacing: 0.0,
                       ),
-                      autofocus: false,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        isDense: false,
-                        labelText: FFLocalizations.of(context).getText(
-                          'lefjjtu5' /* Search for people... */,
-                        ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'm4jj16bz' /* Search for people... */,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 2.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
-                        prefixIcon: Icon(
-                          Icons.search_outlined,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                          ),
-                      textAlign: TextAlign.center,
-                      maxLines: null,
-                      validator:
-                          _model.textControllerValidator.asValidator(context),
-                    ),
-                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: null,
+                  validator:
+                      _model.searchTextControllerValidator.asValidator(context),
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
                   child: StreamBuilder<List<UsersRecord>>(
-                    stream: queryUsersRecord(),
+                    stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'display_name',
+                        isEqualTo: _model.searchTextController.text != ''
+                            ? _model.searchTextController.text
+                            : null,
+                      ),
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -223,7 +216,6 @@ class _UsersWidgetState extends State<UsersWidget>
                           snapshot.data!;
                       return ListView.separated(
                         padding: EdgeInsets.zero,
-                        shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         itemCount: listViewUsersRecordList.length,
                         separatorBuilder: (_, __) => const SizedBox(height: 15.0),

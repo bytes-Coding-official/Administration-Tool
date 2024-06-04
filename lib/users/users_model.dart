@@ -6,10 +6,10 @@ class UsersModel extends FlutterFlowModel<UsersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for search widget.
+  FocusNode? searchFocusNode;
+  TextEditingController? searchTextController;
+  String? Function(BuildContext, String?)? searchTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -17,7 +17,7 @@ class UsersModel extends FlutterFlowModel<UsersWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    searchFocusNode?.dispose();
+    searchTextController?.dispose();
   }
 }
