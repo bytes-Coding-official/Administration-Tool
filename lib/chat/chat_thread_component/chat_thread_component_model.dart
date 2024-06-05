@@ -43,8 +43,6 @@ class ChatThreadComponentModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Backend Call - Create Document] action in TextField widget.
-  ChatMessagesRecord? newChatCopy;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
   ChatMessagesRecord? newChat;
 

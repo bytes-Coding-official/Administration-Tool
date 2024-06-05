@@ -401,97 +401,9 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                   child: TextFormField(
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
-                                    onFieldSubmitted: (_) async {
-                                      logFirebaseEvent(
-                                          'CHAT_THREAD_COMPONENT_TextField_wr5s4gxy');
-                                      logFirebaseEvent(
-                                          'TextField_validate_form');
-                                      if (_model.formKey.currentState == null ||
-                                          !_model.formKey.currentState!
-                                              .validate()) {
-                                        return;
-                                      }
-                                      // newChatMessage
-                                      logFirebaseEvent(
-                                          'TextField_newChatMessage');
-
-                                      var chatMessagesRecordReference =
-                                          ChatMessagesRecord.collection.doc();
-                                      await chatMessagesRecordReference
-                                          .set(createChatMessagesRecordData(
-                                        user: currentUserReference,
-                                        chat: widget.chatRef?.reference,
-                                        text: _model.textController.text,
-                                        timestamp: getCurrentTimestamp,
-                                        image: _model.uploadedFileUrl,
-                                      ));
-                                      _model.newChatCopy = ChatMessagesRecord
-                                          .getDocumentFromData(
-                                              createChatMessagesRecordData(
-                                                user: currentUserReference,
-                                                chat: widget.chatRef?.reference,
-                                                text:
-                                                    _model.textController.text,
-                                                timestamp: getCurrentTimestamp,
-                                                image: _model.uploadedFileUrl,
-                                              ),
-                                              chatMessagesRecordReference);
-                                      // clearUsers
-                                      logFirebaseEvent('TextField_clearUsers');
-                                      _model.lastSeenBy = [];
-                                      // In order to add a single user reference to a list of user references we are adding our current user reference to a page state.
-                                      //
-                                      // We will then set the value of the user reference list from this page state.
-                                      // addMyUserToList
-                                      logFirebaseEvent(
-                                          'TextField_addMyUserToList');
-                                      _model.addToLastSeenBy(
-                                          currentUserReference!);
-                                      // updateChatDocument
-                                      logFirebaseEvent(
-                                          'TextField_updateChatDocument');
-
-                                      await widget.chatRef!.reference.update({
-                                        ...createChatsRecordData(
-                                          lastMessageTime: getCurrentTimestamp,
-                                          lastMessageSentBy:
-                                              currentUserReference,
-                                          lastMessage:
-                                              _model.textController.text,
-                                        ),
-                                        ...mapToFirestore(
-                                          {
-                                            'last_message_seen_by':
-                                                _model.lastSeenBy,
-                                          },
-                                        ),
-                                      });
-                                      logFirebaseEvent(
-                                          'TextField_clear_text_fields_pin_codes');
-                                      setState(() {
-                                        _model.textController?.clear();
-                                      });
-                                      logFirebaseEvent(
-                                          'TextField_clear_uploaded_data');
-                                      setState(() {
-                                        _model.isDataUploading = false;
-                                        _model.uploadedLocalFile =
-                                            FFUploadedFile(
-                                                bytes: Uint8List.fromList([]));
-                                        _model.uploadedFileUrl = '';
-                                      });
-
-                                      logFirebaseEvent(
-                                          'TextField_update_component_state');
-                                      _model.imagesUploaded = [];
-                                      setState(() {});
-
-                                      setState(() {});
-                                    },
                                     autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.sentences,
-                                    textInputAction: TextInputAction.send,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
