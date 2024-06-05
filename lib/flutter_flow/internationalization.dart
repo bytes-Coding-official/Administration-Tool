@@ -1444,7 +1444,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del boleto',
+      'es': 'Detalles del billete',
       'fr': 'Détails du billet',
       'zh_Hans': '票务详情',
     },
@@ -2121,10 +2121,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's5ry5cyk': {
       'en': 'bytes Coding',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
+      'de': 'bytes Coding',
+      'es': 'bytes Coding',
+      'fr': 'bytes Coding',
+      'zh_Hans': 'bytes Coding',
     },
     'naqnbvxd': {
       'en': 'Platform Navigation',
