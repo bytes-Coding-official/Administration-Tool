@@ -2135,10 +2135,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ryazebh4': {
       'en': 'Main-Menu',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
+      'de': 'Main-Menu',
+      'es': 'Main-Menu',
+      'fr': 'Main-Menu',
+      'zh_Hans': 'Main-Menu',
     },
     'pb71eaaj': {
       'en': '12',
