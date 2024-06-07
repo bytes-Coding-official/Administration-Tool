@@ -277,6 +277,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                         if (isWeb) {
                                           return;
                                         }
+
                                         logFirebaseEvent('Row_call_number');
                                         await launchUrl(Uri(
                                           scheme: 'tel',
