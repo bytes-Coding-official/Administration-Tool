@@ -481,8 +481,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                 ),
                               ),
                               if (valueOrDefault(
-                                      currentUserDocument?.role, '') ==
-                                  'Manager')
+                                      currentUserDocument?.role, '') !=
+                                  'Kunde')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -1370,8 +1370,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             ].divide(const SizedBox(width: 15.0)),
                           ),
                         ),
-                        if (valueOrDefault(currentUserDocument?.role, '') ==
-                            'Manager')
+                        if (valueOrDefault(currentUserDocument?.role, '') !=
+                            'Kunde')
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 10.0),
@@ -1570,8 +1570,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               'MAIN_PAGE_listContainer_ON_LONG_PRESS');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
-                                                  '') ==
-                                              'Manager') {
+                                                  '') !=
+                                              'Kunde') {
                                             logFirebaseEvent(
                                                 'listContainer_alert_dialog');
                                             var confirmDialogResponse =
@@ -2830,8 +2830,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                     if (valueOrDefault(
                                                             currentUserDocument
                                                                 ?.role,
-                                                            '') ==
-                                                        'Manager') {
+                                                            '') !=
+                                                        'Kunde') {
                                                       logFirebaseEvent(
                                                           'listContainer_alert_dialog');
                                                       var confirmDialogResponse =
@@ -3455,8 +3455,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 if (valueOrDefault(
                                                         currentUserDocument
                                                             ?.role,
-                                                        '') ==
-                                                    'Manager') {
+                                                        '') !=
+                                                    'Kunde') {
                                                   logFirebaseEvent(
                                                       'listContainer_alert_dialog');
                                                   var confirmDialogResponse =

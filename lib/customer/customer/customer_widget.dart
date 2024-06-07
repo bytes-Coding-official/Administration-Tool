@@ -892,8 +892,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                                 ),
                               ),
-                            if (valueOrDefault(currentUserDocument?.role, '') ==
-                                'Manager')
+                            if (valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde')
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: AuthUserStreamWidget(
@@ -956,8 +956,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                                 ),
                               ),
-                            if (valueOrDefault(currentUserDocument?.role, '') ==
-                                'Manager')
+                            if (valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde')
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: AuthUserStreamWidget(
@@ -1021,8 +1021,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                                 ),
                               ),
-                            if (valueOrDefault(currentUserDocument?.role, '') ==
-                                'Manager')
+                            if (valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde')
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
@@ -1220,8 +1220,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                               'CUSTOMER_Container_785ir75p_ON_LONG_PRES');
                                           if (valueOrDefault(
                                                   currentUserDocument?.role,
-                                                  '') ==
-                                              'Manager') {
+                                                  '') !=
+                                              'Kunde') {
                                             logFirebaseEvent(
                                                 'Container_alert_dialog');
                                             var confirmDialogResponse =
