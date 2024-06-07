@@ -379,107 +379,125 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MAIN_PAGE_contentView_1_ON_TAP');
-                                    logFirebaseEvent(
-                                        'contentView_1_navigate_to');
+                              if (valueOrDefault(
+                                      currentUserDocument?.role, '') !=
+                                  'Kunde')
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_PAGE_contentView_1_ON_TAP');
+                                        logFirebaseEvent(
+                                            'contentView_1_navigate_to');
 
-                                    context.pushNamed('support_TicketList');
-                                  },
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    curve: Curves.easeInOut,
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 6.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.support_agent,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
-                                          ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'uc1usyqa' /* Support Tickets */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          if (false)
-                                            Container(
-                                              height: 32.0,
-                                              decoration: BoxDecoration(
+                                        context.pushNamed('support_TicketList');
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: const Duration(milliseconds: 200),
+                                        curve: Curves.easeInOut,
+                                        width: double.infinity,
+                                        height: 44.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 6.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.support_agent,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
+                                              Expanded(
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          8.0, 4.0, 8.0, 4.0),
+                                                          12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'uuz9xwx4' /* 12 */,
+                                                      'uc1usyqa' /* Support Tickets */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                        ],
+                                              if (false)
+                                                Container(
+                                                  height: 32.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  4.0,
+                                                                  8.0,
+                                                                  4.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'uuz9xwx4' /* 12 */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
                               if (valueOrDefault(
                                       currentUserDocument?.role, '') !=
                                   'Kunde')
@@ -701,8 +719,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                               if (valueOrDefault(
-                                      currentUserDocument?.role, '') ==
-                                  'Manager')
+                                      currentUserDocument?.role, '') !=
+                                  'Kunde')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
