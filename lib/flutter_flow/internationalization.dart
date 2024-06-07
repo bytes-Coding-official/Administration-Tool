@@ -812,11 +812,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '描述...',
     },
     'zboepkw1': {
-      'en': 'Themes',
-      'de': 'Themen',
-      'es': 'Temas',
-      'fr': 'Thèmes',
-      'zh_Hans': '主题',
+      'en': 'Github Link',
+      'de': 'Github Link',
+      'es': 'Github Link',
+      'fr': 'Github Link',
+      'zh_Hans': 'Github Link',
     },
     'y2utkbqo': {
       'en': 'GitHub- Link',

@@ -428,7 +428,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'zboepkw1' /* Themes */,
+                      'zboepkw1' /* Github Link */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
