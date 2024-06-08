@@ -773,8 +773,8 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                     ),
                                   ),
                                 if (valueOrDefault(
-                                        currentUserDocument?.role, '') !=
-                                    'Kunde')
+                                        currentUserDocument?.role, '') ==
+                                    'Manager')
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),

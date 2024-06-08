@@ -499,8 +499,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                               if (valueOrDefault(
-                                      currentUserDocument?.role, '') !=
-                                  'Kunde')
+                                      currentUserDocument?.role, '') ==
+                                  'Manager')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
@@ -1388,8 +1388,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                             ].divide(const SizedBox(width: 15.0)),
                           ),
                         ),
-                        if (valueOrDefault(currentUserDocument?.role, '') !=
-                            'Kunde')
+                        if (valueOrDefault(currentUserDocument?.role, '') ==
+                            'Manager')
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 10.0),
