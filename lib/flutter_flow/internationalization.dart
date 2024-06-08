@@ -707,8 +707,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'zh_Hans': '',
     },
-    'ati3ejso': {
+    'sntf2ubj': {
       'en': 'ID#: ',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    's9jo3pju': {
+      'en': 'Own',
       'de': '',
       'es': '',
       'fr': '',
@@ -1662,8 +1669,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Un résumé de vos cas clients actuels',
       'zh_Hans': '当前客户案例摘要',
     },
-    'msp77w1m': {
+    '21mkfth2': {
       'en': 'ID#: ',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    '9iu97squ': {
+      'en': 'Own',
       'de': '',
       'es': '',
       'fr': '',
