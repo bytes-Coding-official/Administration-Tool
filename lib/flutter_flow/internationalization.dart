@@ -716,10 +716,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's9jo3pju': {
       'en': 'Own',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
+      'de': 'Eigen',
+      'es': 'Propio',
+      'fr': 'Propre',
+      'zh_Hans': '自己的',
     },
     'u27w6351': {
       'en': 'Home',
@@ -1678,10 +1678,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9iu97squ': {
       'en': 'Own',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
+      'de': 'Eigen',
+      'es': 'Propio',
+      'fr': 'Propre',
+      'zh_Hans': '自己的',
     },
     '1xsokerm': {
       'en': 'Customer-Meetings',
@@ -1693,7 +1693,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'bx7t1x0h': {
       'en': 'A summary of your meetings',
       'de': 'Eine Zusammenfassung Ihrer Meetings',
-      'es': 'Un resumen de sus reuniones',
+      'es': 'Un resumen de tus reuniones.',
       'fr': 'Un résumé de vos réunions',
       'zh_Hans': '会议摘要',
     },
@@ -1803,7 +1803,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewählt',
       'es': 'Seleccionado',
       'fr': 'Choisi',
-      'zh_Hans': '选定',
+      'zh_Hans': '已选定',
     },
     '2b5fgo9t': {
       'en': 'Invite Users',

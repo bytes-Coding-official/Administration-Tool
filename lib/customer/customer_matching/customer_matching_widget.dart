@@ -383,9 +383,9 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
 
                           logFirebaseEvent('Button_trigger_push_notification');
                           triggerPushNotification(
-                            notificationTitle: 'Nutzer gematched',
+                            notificationTitle: 'User connected',
                             notificationText:
-                                'Dein account wurde in dem System nun gematched',
+                                'your account has been connected in our system',
                             notificationSound: 'default',
                             userRefs: [_model.user!],
                             initialPageName: 'Main',
