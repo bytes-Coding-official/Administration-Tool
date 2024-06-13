@@ -1572,7 +1572,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         .orderBy('caseid', descending: true),
                                   ),
                                   padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
@@ -2199,7 +2198,6 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         .orderBy('caseid', descending: true),
                                   ),
                                   padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>

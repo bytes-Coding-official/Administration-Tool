@@ -168,7 +168,6 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                         LanguagesRecord.collection,
                       ),
                       padding: EdgeInsets.zero,
-                      shrinkWrap: true,
                       reverse: false,
                       scrollDirection: Axis.vertical,
                       separatorBuilder: (_, __) => const SizedBox(height: 15.0),

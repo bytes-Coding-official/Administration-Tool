@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "321124574130-2bgn5g2id0ag2gi8um41g16qg16ef492.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bytescoding.administration",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
           "client_id": "321124574130-stsajem6jdosnvisq2pjr6ep1egja34l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

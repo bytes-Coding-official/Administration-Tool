@@ -810,7 +810,6 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                 ),
                                 padding: EdgeInsets.zero,
                                 primary: false,
-                                shrinkWrap: true,
                                 reverse: false,
                                 scrollDirection: Axis.horizontal,
                                 separatorBuilder: (_, __) =>

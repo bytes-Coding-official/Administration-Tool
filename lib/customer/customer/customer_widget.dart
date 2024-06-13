@@ -242,14 +242,15 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 5.0),
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 100.0,
+                                          decoration: const BoxDecoration(),
+                                          child: Text(
                                             FFLocalizations.of(context).getText(
                                               'fwglq52i' /* Name */,
                                             ),
@@ -264,18 +265,28 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
-                                          Text(
-                                            containerCustomerRecord.name,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
+                                        ),
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                containerCustomerRecord.name,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
-                                        ].divide(const SizedBox(width: 50.0)),
-                                      ),
+                                        ),
+                                      ].divide(const SizedBox(width: 25.0)),
                                     ),
                                   ),
                                   Padding(
@@ -299,14 +310,15 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           path: containerCustomerRecord.phone,
                                         ));
                                       },
-                                      child: SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            width: 100.0,
+                                            decoration: const BoxDecoration(),
+                                            child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 '6fgimpch' /* Phone */,
@@ -323,10 +335,16 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            Text(
-                                              containerCustomerRecord.phone,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                          ),
+                                          SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  containerCustomerRecord.phone,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
@@ -334,9 +352,11 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
+                                                ),
+                                              ],
                                             ),
-                                          ].divide(const SizedBox(width: 50.0)),
-                                        ),
+                                          ),
+                                        ].divide(const SizedBox(width: 25.0)),
                                       ),
                                     ),
                                   ),
@@ -357,14 +377,15 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                           path: containerCustomerRecord.email,
                                         ));
                                       },
-                                      child: SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            width: 100.0,
+                                            decoration: const BoxDecoration(),
+                                            child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 '1svt6qwg' /* Mail */,
@@ -381,10 +402,16 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
-                                            Text(
-                                              containerCustomerRecord.email,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                          ),
+                                          SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  containerCustomerRecord.email,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
@@ -392,23 +419,26 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
+                                                ),
+                                              ],
                                             ),
-                                          ].divide(const SizedBox(width: 50.0)),
-                                        ),
+                                          ),
+                                        ].divide(const SizedBox(width: 25.0)),
                                       ),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 100.0,
+                                          decoration: const BoxDecoration(),
+                                          child: Text(
                                             FFLocalizations.of(context).getText(
                                               'igthvfrg' /* Location */,
                                             ),
@@ -424,48 +454,48 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
-                                          Text(
-                                            containerCustomerRecord.street,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          Text(
-                                            containerCustomerRecord.city,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          Text(
-                                            containerCustomerRecord.zip,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          Text(
-                                            containerCustomerRecord.country,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ].divide(const SizedBox(width: 50.0)),
-                                      ),
+                                        ),
+                                        Text(
+                                          containerCustomerRecord.street,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        Text(
+                                          containerCustomerRecord.city,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        Text(
+                                          containerCustomerRecord.zip,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                        Text(
+                                          containerCustomerRecord.country,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                      ].divide(const SizedBox(width: 25.0)),
                                     ),
                                   ),
                                 ].divide(const SizedBox(height: 5.0)),
@@ -611,111 +641,81 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                            StreamBuilder<CustomerRecord>(
-                              stream: CustomerRecord.getDocument(
-                                  customerCustomerCaseRecord.customer!),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
+                            Container(
+                              decoration: const BoxDecoration(),
+                              child: Builder(
+                                builder: (context) {
+                                  final languages =
+                                      containerCustomerRecord.language.toList();
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(languages.length,
+                                          (languagesIndex) {
+                                        final languagesItem =
+                                            languages[languagesIndex];
+                                        return StreamBuilder<LanguagesRecord>(
+                                          stream: LanguagesRecord.getDocument(
+                                              languagesItem),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            final containerLanguagesRecord =
+                                                snapshot.data!;
+                                            return Container(
+                                              width: 100.0,
+                                              height: 25.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 3.0, 3.0, 3.0),
+                                                child: Text(
+                                                  containerLanguagesRecord.name,
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      }).divide(const SizedBox(width: 15.0)),
                                     ),
                                   );
-                                }
-                                final containerCustomerRecord = snapshot.data!;
-                                return Container(
-                                  decoration: const BoxDecoration(),
-                                  child: Builder(
-                                    builder: (context) {
-                                      final languages = containerCustomerRecord
-                                          .language
-                                          .toList();
-                                      return SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children:
-                                              List.generate(languages.length,
-                                                  (languagesIndex) {
-                                            final languagesItem =
-                                                languages[languagesIndex];
-                                            return StreamBuilder<
-                                                LanguagesRecord>(
-                                              stream:
-                                                  LanguagesRecord.getDocument(
-                                                      languagesItem),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                final containerLanguagesRecord =
-                                                    snapshot.data!;
-                                                return Container(
-                                                  width: 100.0,
-                                                  height: 25.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(3.0, 3.0,
-                                                                3.0, 3.0),
-                                                    child: Text(
-                                                      containerLanguagesRecord
-                                                          .name,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                          }).divide(const SizedBox(width: 15.0)),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                );
-                              },
+                                },
+                              ),
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
@@ -1215,7 +1215,6 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                   ),
                                   padding: EdgeInsets.zero,
                                   primary: false,
-                                  shrinkWrap: true,
                                   reverse: false,
                                   scrollDirection: Axis.vertical,
                                   separatorBuilder: (_, __) =>
