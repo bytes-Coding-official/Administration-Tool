@@ -1347,16 +1347,9 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                 height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: listViewCustomerCaseRecord
-                                                                          .assignee
-                                                                          .contains(
-                                                                              currentUserReference)
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent1
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(

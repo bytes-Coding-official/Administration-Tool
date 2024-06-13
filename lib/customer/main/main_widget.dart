@@ -2037,16 +2037,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               height: 32.0,
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: emCustomerCaseRecord
-                                                                        .assignee
-                                                                        .contains(
-                                                                            currentUserReference)
-                                                                    ? FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent1
-                                                                    : FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
@@ -2101,9 +2094,17 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
-                                                                          color: emCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                              ? FlutterFlowTheme.of(context).success
-                                                                              : FlutterFlowTheme.of(context).error,
+                                                                          color:
+                                                                              () {
+                                                                            if (emCustomerCaseRecord.closed ==
+                                                                                true) {
+                                                                              return FlutterFlowTheme.of(context).error;
+                                                                            } else if (emCustomerCaseRecord.assignee.contains(currentUserReference)) {
+                                                                              return FlutterFlowTheme.of(context).success;
+                                                                            } else {
+                                                                              return FlutterFlowTheme.of(context).error;
+                                                                            }
+                                                                          }(),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -2657,16 +2658,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               height: 32.0,
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: emCustomerCaseRecord
-                                                                        .assignee
-                                                                        .contains(
-                                                                            currentUserReference)
-                                                                    ? FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent1
-                                                                    : FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
@@ -3280,7 +3274,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                 32.0,
                                                                             decoration:
                                                                                 BoxDecoration(
-                                                                              color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference) ? FlutterFlowTheme.of(context).accent1 : FlutterFlowTheme.of(context).alternate,
+                                                                              color: FlutterFlowTheme.of(context).alternate,
                                                                               borderRadius: BorderRadius.circular(12.0),
                                                                               border: Border.all(
                                                                                 color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference) ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
@@ -3306,7 +3300,15 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                   }(),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Inter',
-                                                                                        color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference) ? FlutterFlowTheme.of(context).success : FlutterFlowTheme.of(context).error,
+                                                                                        color: () {
+                                                                                          if (tabletDesktopViewCustomerCaseRecord.closed == true) {
+                                                                                            return FlutterFlowTheme.of(context).error;
+                                                                                          } else if (tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference)) {
+                                                                                            return FlutterFlowTheme.of(context).success;
+                                                                                          } else {
+                                                                                            return FlutterFlowTheme.of(context).error;
+                                                                                          }
+                                                                                        }(),
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
@@ -3902,9 +3904,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               32.0,
                                                                           decoration:
                                                                               BoxDecoration(
-                                                                            color: tabletDesktopViewCustomerCaseRecord.assignee.contains(currentUserReference)
-                                                                                ? FlutterFlowTheme.of(context).accent1
-                                                                                : FlutterFlowTheme.of(context).alternate,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).alternate,
                                                                             borderRadius:
                                                                                 BorderRadius.circular(12.0),
                                                                             border:
