@@ -27,7 +27,6 @@ class Chat2InviteUsersModel extends FlutterFlowModel<Chat2InviteUsersWidget> {
   Query? listViewPagingQuery;
 
   // State field(s) for CheckboxListTile widget.
-
   Map<UsersRecord, bool> checkboxListTileValueMap = {};
   List<UsersRecord> get checkboxListTileCheckedItems =>
       checkboxListTileValueMap.entries

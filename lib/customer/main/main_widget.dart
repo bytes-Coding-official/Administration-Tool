@@ -158,801 +158,831 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ugt68zzx' /* Platform Navigation */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MAIN_PAGE_contentView_1_ON_TAP');
-                                    logFirebaseEvent(
-                                        'contentView_1_navigate_to');
-
-                                    context.pushNamed('Main');
-                                  },
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    curve: Curves.easeInOut,
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).accent1,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      shape: BoxShape.rectangle,
+                          child: SingleChildScrollView(
+                            primary: false,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 12.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ugt68zzx' /* Platform Navigation */,
                                     ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 6.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.receipt_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
-                                          ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '15s2dq8x' /* Main-Menu */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          if (false)
-                                            Container(
-                                              height: 32.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 8.0, 4.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '6g8wo7v3' /* 12 */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MAIN_PAGE_contentView_1_ON_TAP');
-                                    logFirebaseEvent(
-                                        'contentView_1_navigate_to');
-
-                                    context.pushNamed('chat_2_main');
-                                  },
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    curve: Curves.easeInOut,
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 6.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.chat,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
-                                          ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'lusq685u' /* Chats */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          if (false)
-                                            Container(
-                                              height: 32.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              child: Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 8.0, 4.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '5zyogc9t' /* 12 */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.role, '') !=
-                                  'Kunde')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_PAGE_contentView_1_ON_TAP');
-                                        logFirebaseEvent(
-                                            'contentView_1_navigate_to');
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
 
-                                        context.pushNamed('support_TicketList');
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                        width: double.infinity,
-                                        height: 44.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.support_agent,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
+                                      context.pushNamed('Main');
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 200),
+                                      curve: Curves.easeInOut,
+                                      width: double.infinity,
+                                      height: 44.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent1,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 6.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Icon(
+                                              Icons.receipt_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                            Expanded(
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '15s2dq8x' /* Main-Menu */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
                                               ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'uc1usyqa' /* Support Tickets */,
+                                            ),
+                                            if (false)
+                                              Container(
+                                                height: 32.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 4.0,
+                                                                8.0, 4.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '6g8wo7v3' /* 12 */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
                                                   ),
                                                 ),
                                               ),
-                                              if (false)
-                                                Container(
-                                                  height: 32.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
+
+                                      context.pushNamed('chat_2_main');
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 200),
+                                      curve: Curves.easeInOut,
+                                      width: double.infinity,
+                                      height: 44.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 6.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Icon(
+                                              Icons.chat,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              size: 24.0,
+                                            ),
+                                            Expanded(
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'lusq685u' /* Chats */,
                                                   ),
-                                                  child: Align(
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8.0,
-                                                                  4.0,
-                                                                  8.0,
-                                                                  4.0),
-                                                      child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'uuz9xwx4' /* 12 */,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            if (false)
+                                              Container(
+                                                height: 32.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 4.0,
+                                                                8.0, 4.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '5zyogc9t' /* 12 */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') !=
+                                    'Kunde')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'MAIN_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context
+                                              .pushNamed('support_TicketList');
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 200),
+                                          curve: Curves.easeInOut,
+                                          width: double.infinity,
+                                          height: 44.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 6.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.support_agent,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'uc1usyqa' /* Support Tickets */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                if (false)
+                                                  Container(
+                                                    height: 32.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    8.0,
+                                                                    4.0,
+                                                                    8.0,
+                                                                    4.0),
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'uuz9xwx4' /* 12 */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') ==
+                                    'Manager')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'MAIN_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context.pushNamed('CustomerMatching');
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 200),
+                                          curve: Curves.easeInOut,
+                                          width: double.infinity,
+                                          height: 44.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 6.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.person,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '72kdiy21' /* Customer Matching */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') ==
+                                    'Manager')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'MAIN_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context.pushNamed('RoleManagement');
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 200),
+                                          curve: Curves.easeInOut,
+                                          width: double.infinity,
+                                          height: 44.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 6.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.perm_device_info_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dm0y1b6g' /* Role Management */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') ==
+                                    'Manager')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'MAIN_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context.pushNamed(
+                                              'ChangeEmployeePercentage');
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 200),
+                                          curve: Curves.easeInOut,
+                                          width: double.infinity,
+                                          height: 44.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 6.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.attach_money_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '4tmi2f8n' /* Employee Billing */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.role, '') !=
+                                    'Kunde')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'MAIN_PAGE_contentView_1_ON_TAP');
+                                          logFirebaseEvent(
+                                              'contentView_1_navigate_to');
+
+                                          context.pushNamed('AllCustomers');
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(milliseconds: 200),
+                                          curve: Curves.easeInOut,
+                                          width: double.infinity,
+                                          height: 44.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 6.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.location_history,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 24.0,
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dyx62bdw' /* Customers */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '12tpf17h' /* Settings */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
                                 ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.role, '') ==
-                                  'Manager')
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_PAGE_contentView_1_ON_TAP');
-                                        logFirebaseEvent(
-                                            'contentView_1_navigate_to');
-
-                                        context.pushNamed('CustomerMatching');
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                        width: double.infinity,
-                                        height: 44.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.person,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '72kdiy21' /* Customer Matching */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.role, '') ==
-                                  'Manager')
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_PAGE_contentView_1_ON_TAP');
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_PAGE_contentView_1_ON_TAP');
+                                      if (valueOrDefault(
+                                              currentUserDocument?.role, '') ==
+                                          'Kunde') {
+                                        if (!(currentUserDocument?.customer !=
+                                            null)) {
+                                          return;
+                                        }
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
-                                        context.pushNamed('RoleManagement');
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                        width: double.infinity,
-                                        height: 44.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.perm_device_info_sharp,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'dm0y1b6g' /* Role Management */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.role, '') ==
-                                  'Manager')
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_PAGE_contentView_1_ON_TAP');
+                                        context.pushNamed('CustomerBilling');
+                                      } else {
                                         logFirebaseEvent(
                                             'contentView_1_navigate_to');
 
-                                        context.pushNamed(
-                                            'ChangeEmployeePercentage');
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                        width: double.infinity,
-                                        height: 44.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.attach_money_sharp,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '4tmi2f8n' /* Employee Billing */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              if (valueOrDefault(
-                                      currentUserDocument?.role, '') !=
-                                  'Kunde')
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAIN_PAGE_contentView_1_ON_TAP');
-                                        logFirebaseEvent(
-                                            'contentView_1_navigate_to');
-
-                                        context.pushNamed('AllCustomers');
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                        width: double.infinity,
-                                        height: 44.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.location_history,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'dyx62bdw' /* Customers */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '12tpf17h' /* Settings */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MAIN_PAGE_contentView_1_ON_TAP');
-                                    if (valueOrDefault(
-                                            currentUserDocument?.role, '') ==
-                                        'Kunde') {
-                                      if (!(currentUserDocument?.customer !=
-                                          null)) {
-                                        return;
+                                        context.pushNamed('EmployeeBilling');
                                       }
-                                      logFirebaseEvent(
-                                          'contentView_1_navigate_to');
-
-                                      context.pushNamed('CustomerBilling');
-                                    } else {
-                                      logFirebaseEvent(
-                                          'contentView_1_navigate_to');
-
-                                      context.pushNamed('EmployeeBilling');
-                                    }
-                                  },
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    curve: Curves.easeInOut,
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 6.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.attach_money_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'xahmx4lz' /* Billing */,
-                                              ),
-                                              style:
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 200),
+                                      curve: Curves.easeInOut,
+                                      width: double.infinity,
+                                      height: 44.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 6.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Icon(
+                                              Icons.attach_money_rounded,
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .primaryText,
+                                              size: 24.0,
                                             ),
-                                          ),
-                                        ],
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'xahmx4lz' /* Billing */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    logFirebaseEvent(
-                                        'MAIN_PAGE_contentView_1_ON_TAP');
-                                    logFirebaseEvent(
-                                        'contentView_1_navigate_to');
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_PAGE_contentView_1_ON_TAP');
+                                      logFirebaseEvent(
+                                          'contentView_1_navigate_to');
 
-                                    context.pushNamed('Users');
-                                  },
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 200),
-                                    curve: Curves.easeInOut,
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 6.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Icon(
-                                            Icons.person_search,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'azmu0lbt' /* Members */,
-                                              ),
-                                              style:
+                                      context.pushNamed('Users');
+                                    },
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 200),
+                                      curve: Curves.easeInOut,
+                                      width: double.infinity,
+                                      height: 44.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 6.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Icon(
+                                              Icons.person_search,
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .primaryText,
+                                              size: 24.0,
                                             ),
-                                          ),
-                                        ],
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'azmu0lbt' /* Members */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ].divide(const SizedBox(height: 12.0)),
+                              ].divide(const SizedBox(height: 12.0)),
+                            ),
                           ),
                         ),
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 8.0, 0.0, 16.0),
+                                1.0, 8.0, 1.0, 16.0),
                             child: Container(
                               width: 250.0,
                               height: 50.0,
@@ -1015,63 +1045,56 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.wb_sunny_rounded,
-                                                  color: Theme.of(context)
-                                                              .brightness ==
-                                                          Brightness.light
-                                                      ? FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                  size: 16.0,
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 0.0, 0.0, 0.0),
-                                                  child: AutoSizeText(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'v3wuo8gh' /* Light Mode */,
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: Theme.of(context)
-                                                                          .brightness ==
-                                                                      Brightness
-                                                                          .light
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                              fontSize: 12.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.wb_sunny_rounded,
+                                                color: Theme.of(context)
+                                                            .brightness ==
+                                                        Brightness.light
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                size: 16.0,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        4.0, 0.0, 0.0, 0.0),
+                                                child: AutoSizeText(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'v3wuo8gh' /* Light Mode */,
                                                   ),
+                                                  textAlign: TextAlign.center,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: Theme.of(context)
+                                                                        .brightness ==
+                                                                    Brightness
+                                                                        .light
+                                                                ? FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                            fontSize: 12.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -1117,70 +1140,65 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.nightlight_round,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: AutoSizeText(
-                                                      FFLocalizations.of(
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.nightlight_round,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.dark
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        '1m01zim9' /* Dark Mode */,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Theme.of(context)
-                                                                        .brightness ==
-                                                                    Brightness
-                                                                        .dark
-                                                                ? FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                            fontSize: 12.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          4.0, 0.0, 0.0, 0.0),
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1m01zim9' /* Dark Mode */,
                                                     ),
+                                                    textAlign: TextAlign.center,
+                                                    style:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Inter',
+                                                              color: Theme.of(context)
+                                                                          .brightness ==
+                                                                      Brightness
+                                                                          .dark
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                              fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 5.0)),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -1259,32 +1277,36 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        AuthUserStreamWidget(
-                                          builder: (context) => Text(
-                                            currentUserDisplayName,
+                                    child: SingleChildScrollView(
+                                      primary: false,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              currentUserDisplayName,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                          Text(
+                                            currentUserEmail,
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
+                                                .labelMedium
                                                 .override(
                                                   fontFamily: 'Inter',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ),
-                                        Text(
-                                          currentUserEmail,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

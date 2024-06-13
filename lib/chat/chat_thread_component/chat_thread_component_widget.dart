@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/chat/chat_thread/chat_thread_widget.dart';
 import '/chat/empty_state_simple/empty_state_simple_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -96,30 +97,32 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                     )
                     .orderBy('timestamp', descending: true),
                 limit: 200,
-              )..listen((snapshot) async {
+              )..listen((snapshot) {
                   List<ChatMessagesRecord> listViewChatMessagesRecordList =
                       snapshot;
                   if (_model.listViewPreviousSnapshot != null &&
                       !const ListEquality(ChatMessagesRecordDocumentEquality())
                           .equals(listViewChatMessagesRecordList,
                               _model.listViewPreviousSnapshot)) {
-                    logFirebaseEvent(
-                        'CHAT_THREAD_COMPONENT_ListView_3pui1c5c_');
-                    if (!widget.chatRef!.lastMessageSeenBy
-                        .contains(currentUserReference)) {
-                      logFirebaseEvent('ListView_backend_call');
+                    () async {
+                      logFirebaseEvent(
+                          'CHAT_THREAD_COMPONENT_ListView_3pui1c5c_');
+                      if (!widget.chatRef!.lastMessageSeenBy
+                          .contains(currentUserReference)) {
+                        logFirebaseEvent('ListView_backend_call');
 
-                      await widget.chatRef!.reference.update({
-                        ...mapToFirestore(
-                          {
-                            'last_message_seen_by':
-                                FieldValue.arrayUnion([currentUserReference]),
-                          },
-                        ),
-                      });
-                    }
+                        await widget.chatRef!.reference.update({
+                          ...mapToFirestore(
+                            {
+                              'last_message_seen_by':
+                                  FieldValue.arrayUnion([currentUserReference]),
+                            },
+                          ),
+                        });
+                      }
 
-                    setState(() {});
+                      setState(() {});
+                    }();
                   }
                   _model.listViewPreviousSnapshot = snapshot;
                 }),
@@ -600,6 +603,18 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                             'IconButton_update_component_state');
                                         _model.imagesUploaded = [];
                                         setState(() {});
+                                        logFirebaseEvent(
+                                            'IconButton_trigger_push_notification');
+                                        triggerPushNotification(
+                                          notificationTitle: 'New chatmessage',
+                                          notificationText:
+                                              widget.chatRef!.lastMessage,
+                                          notificationSound: 'default',
+                                          userRefs:
+                                              widget.chatRef!.users.toList(),
+                                          initialPageName: 'chat_2_main',
+                                          parameterData: {},
+                                        );
                                       } finally {
                                         await firestoreBatch.commit();
                                       }

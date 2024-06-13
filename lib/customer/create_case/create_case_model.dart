@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'create_case_widget.dart' show CreateCaseWidget;
@@ -37,6 +38,8 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   DocumentReference? customer;
   // Stores action output result for [Custom Action - getITSkillsFromDocRefs] action in Button widget.
   List<DocumentReference>? itskills;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<UsersRecord>? employees;
 
   @override
   void initState(BuildContext context) {}

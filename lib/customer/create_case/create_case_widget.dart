@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -276,14 +277,11 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         labelText: FFLocalizations.of(context).getText(
                           'y00zbz7g' /* Title... */,
                         ),
-                        labelStyle: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                            ),
+                        labelStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                         hintText: FFLocalizations.of(context).getText(
                           'eaxq1etl' /* Title... */,
                         ),
@@ -333,11 +331,10 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 20.0, 16.0, 20.0),
                       ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
                       textAlign: TextAlign.center,
                       maxLength: 75,
                       cursorColor: FlutterFlowTheme.of(context).primary,
@@ -358,11 +355,11 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           'zrh50pvf' /* Description... */,
                         ),
                         labelStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
+                            FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                 ),
-                        alignLabelWithHint: true,
+                        alignLabelWithHint: false,
                         hintText: FFLocalizations.of(context).getText(
                           'orutdw07' /* Description... */,
                         ),
@@ -413,7 +410,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Inter',
                             letterSpacing: 0.0,
                           ),
@@ -447,15 +444,11 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         labelText: FFLocalizations.of(context).getText(
                           'y2utkbqo' /* GitHub- Link */,
                         ),
-                        labelStyle: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Readex Pro',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        labelStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                         hintText: FFLocalizations.of(context).getText(
                           '01kliwsx' /* GitHub- Link */,
                         ),
@@ -503,13 +496,12 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 20.0, 16.0, 20.0),
+                            16.0, 16.0, 16.0, 20.0),
                       ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
                       textAlign: TextAlign.center,
                       cursorColor: FlutterFlowTheme.of(context).primary,
                       validator: _model.titleTextController2Validator
@@ -719,7 +711,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                   'imvqflfb' /* Price per hour */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
-                                    .labelLarge
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
                                       letterSpacing: 0.0,
@@ -778,7 +770,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                     16.0, 16.0, 16.0, 16.0),
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
@@ -850,6 +842,25 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           context.pop();
                         }
                         context.pushNamed('CreateCase');
+
+                        logFirebaseEvent('Button_firestore_query');
+                        _model.employees = await queryUsersRecordOnce(
+                          queryBuilder: (usersRecord) => usersRecord.where(
+                            'role',
+                            isNotEqualTo: 'Kunde',
+                          ),
+                        );
+                        logFirebaseEvent('Button_trigger_push_notification');
+                        triggerPushNotification(
+                          notificationTitle: 'New Case',
+                          notificationText: 'A new case has been opened',
+                          notificationSound: 'default',
+                          userRefs: _model.employees!
+                              .map((e) => e.reference)
+                              .toList(),
+                          initialPageName: 'Main',
+                          parameterData: {},
+                        );
 
                         setState(() {});
                       },

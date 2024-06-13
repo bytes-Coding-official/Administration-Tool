@@ -224,7 +224,7 @@ class _ChangeEmployeePercentageWidgetState
                           'c66jsjsp' /* percentage */,
                         ),
                         labelStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
+                            FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                 ),

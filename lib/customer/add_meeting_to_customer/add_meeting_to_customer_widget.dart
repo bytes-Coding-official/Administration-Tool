@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -672,6 +673,17 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                     ParamType.DocumentReference,
                                   ),
                                 }.withoutNulls,
+                              );
+
+                              logFirebaseEvent(
+                                  'Button_trigger_push_notification');
+                              triggerPushNotification(
+                                notificationTitle: 'Meeting added',
+                                notificationText:
+                                    'A meeting has been added to your account',
+                                userRefs: _model.tutors!.toList(),
+                                initialPageName: 'Main',
+                                parameterData: {},
                               );
 
                               setState(() {});

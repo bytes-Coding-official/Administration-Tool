@@ -493,6 +493,8 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     return;
                                   }
 
+                                  logFirebaseEvent('Button_auth');
+                                  await authManager.sendEmailVerification();
                                   logFirebaseEvent('Button_navigate_to');
 
                                   context.goNamedAuth(

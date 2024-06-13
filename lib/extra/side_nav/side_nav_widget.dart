@@ -1009,7 +1009,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 16.0),
                             child: Container(
-                              width: 250.0,
+                              width: 300.0,
                               height: 50.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -1042,7 +1042,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               context, ThemeMode.light);
                                         },
                                         child: Container(
-                                          width: 115.0,
+                                          width: 150.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: Theme.of(context)
@@ -1070,51 +1070,42 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(2.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Icon(
-                                                      Icons.wb_sunny_rounded,
-                                                      color: Theme.of(context)
-                                                                  .brightness ==
-                                                              Brightness.light
-                                                          ? FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 16.0,
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: AutoSizeText(
-                                                      FFLocalizations.of(
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        2.0, 0.0, 0.0, 0.0),
+                                                child: Icon(
+                                                  Icons.wb_sunny_rounded,
+                                                  color: Theme.of(context)
+                                                              .brightness ==
+                                                          Brightness.light
+                                                      ? FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        '411g996a' /* Light Mode */,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
+                                                          .primaryText
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  size: 16.0,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        4.0, 0.0, 0.0, 0.0),
+                                                child: AutoSizeText(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '411g996a' /* Light Mode */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily: 'Inter',
@@ -1130,12 +1121,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                                     .secondaryText,
                                                             letterSpacing: 0.0,
                                                           ),
-                                                      minFontSize: 12.0,
-                                                    ),
-                                                  ),
-                                                ],
+                                                  minFontSize: 12.0,
+                                                ),
                                               ),
-                                            ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -1153,7 +1142,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               context, ThemeMode.dark);
                                         },
                                         child: Container(
-                                          width: 115.0,
+                                          width: 150.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
                                             color: Theme.of(context)
@@ -1181,45 +1170,37 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                               width: 1.0,
                                             ),
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 0.0, 0.0),
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.nightlight_round,
-                                                    color: Theme.of(context)
-                                                                .brightness ==
-                                                            Brightness.dark
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
-                                                    size: 16.0,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.nightlight_round,
+                                                color: Theme.of(context)
+                                                            .brightness ==
+                                                        Brightness.dark
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                size: 16.0,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        4.0, 0.0, 0.0, 0.0),
+                                                child: AutoSizeText(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mc7klcgc' /* Dark Mode */,
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: AutoSizeText(
-                                                      FFLocalizations.of(
+                                                  textAlign: TextAlign.center,
+                                                  style:
+                                                      FlutterFlowTheme.of(
                                                               context)
-                                                          .getText(
-                                                        'mc7klcgc' /* Dark Mode */,
-                                                      ),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily: 'Inter',
@@ -1235,12 +1216,10 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                                     .secondaryText,
                                                             letterSpacing: 0.0,
                                                           ),
-                                                      minFontSize: 12.0,
-                                                    ),
-                                                  ),
-                                                ],
+                                                  minFontSize: 12.0,
+                                                ),
                                               ),
-                                            ),
+                                            ],
                                           ),
                                         ),
                                       ),

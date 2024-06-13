@@ -122,31 +122,37 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                   context.pushNamed('AllCustomers');
                 },
               ),
-              title: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'qmta97d7' /* ID: */,
+              title: Container(
+                width: MediaQuery.sizeOf(context).width * 0.5,
+                decoration: const BoxDecoration(),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        'qmta97d7' /* ID: */,
+                      ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
                     ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                  Text(
-                    valueOrDefault<String>(
-                      editCaseCustomerCaseRecord.caseid,
-                      'NULL',
+                    Text(
+                      valueOrDefault<String>(
+                        editCaseCustomerCaseRecord.caseid,
+                        'NULL',
+                      ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primary,
+                                letterSpacing: 0.0,
+                              ),
                     ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).primary,
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               actions: const [],
               centerTitle: true,
@@ -275,11 +281,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 'fyo6vubk' /* Description */,
                               ),
                               labelStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
                                     letterSpacing: 0.0,
                                   ),
                               hintText: FFLocalizations.of(context).getText(
@@ -363,12 +367,9 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 'gecpmalb' /* GitHub-Link */,
                               ),
                               labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                   ),
                               hintText: FFLocalizations.of(context).getText(
@@ -557,7 +558,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 '2jz5dk2a' /* Price */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,

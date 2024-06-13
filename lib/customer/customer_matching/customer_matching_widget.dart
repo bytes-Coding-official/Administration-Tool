@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -379,6 +380,17 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
                             context.pop();
                           }
                           context.pushNamed('CustomerMatching');
+
+                          logFirebaseEvent('Button_trigger_push_notification');
+                          triggerPushNotification(
+                            notificationTitle: 'Nutzer gematched',
+                            notificationText:
+                                'Dein account wurde in dem System nun gematched',
+                            notificationSound: 'default',
+                            userRefs: [_model.user!],
+                            initialPageName: 'Main',
+                            parameterData: {},
+                          );
 
                           setState(() {});
                         },
