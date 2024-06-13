@@ -309,7 +309,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget>
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                         ),
                                         child: Padding(

@@ -198,7 +198,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     child: AnimatedContainer(
                                       duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
-                                      width: double.infinity,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height: 44.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -210,18 +211,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.receipt_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 24.0,
-                                            ),
-                                            Expanded(
-                                              child: Padding(
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.receipt_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 24.0,
+                                              ),
+                                              Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
@@ -239,48 +241,54 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                 ),
                                               ),
-                                            ),
-                                            if (false)
-                                              Container(
-                                                height: 32.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 4.0,
-                                                                8.0, 4.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '6g8wo7v3' /* 12 */,
+                                              if (false)
+                                                Container(
+                                                  height: 32.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  4.0,
+                                                                  8.0,
+                                                                  4.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '6g8wo7v3' /* 12 */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .info,
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -305,7 +313,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     child: AnimatedContainer(
                                       duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
-                                      width: double.infinity,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height: 44.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -317,18 +326,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.chat,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 24.0,
-                                            ),
-                                            Expanded(
-                                              child: Padding(
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.chat,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
+                                              ),
+                                              Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
@@ -346,48 +356,54 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                       ),
                                                 ),
                                               ),
-                                            ),
-                                            if (false)
-                                              Container(
-                                                height: 32.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 4.0,
-                                                                8.0, 4.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '5zyogc9t' /* 12 */,
+                                              if (false)
+                                                Container(
+                                                  height: 32.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  4.0,
+                                                                  8.0,
+                                                                  4.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '5zyogc9t' /* 12 */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .info,
-                                                            letterSpacing: 0.0,
-                                                          ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -417,7 +433,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
-                                          width: double.infinity,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: 44.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -430,18 +448,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.support_agent,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.support_agent,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
@@ -461,54 +480,54 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           ),
                                                     ),
                                                   ),
-                                                ),
-                                                if (false)
-                                                  Container(
-                                                    height: 32.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    8.0,
-                                                                    4.0,
-                                                                    8.0,
-                                                                    4.0),
-                                                        child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'uuz9xwx4' /* 12 */,
+                                                  if (false)
+                                                    Container(
+                                                      height: 32.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      8.0,
+                                                                      4.0,
+                                                                      8.0,
+                                                                      4.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'uuz9xwx4' /* 12 */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ),
                                                     ),
-                                                  ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -538,7 +557,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
-                                          width: double.infinity,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: 44.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -551,18 +572,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.person,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.person,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
@@ -582,8 +604,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -613,7 +635,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
-                                          width: double.infinity,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: 44.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -626,18 +650,20 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.perm_device_info_sharp,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons
+                                                        .perm_device_info_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
@@ -657,8 +683,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -689,7 +715,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
-                                          width: double.infinity,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: 44.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -702,18 +730,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.attach_money_sharp,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.attach_money_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
@@ -733,8 +762,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -764,7 +793,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
                                           curve: Curves.easeInOut,
-                                          width: double.infinity,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: 44.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -777,18 +808,19 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 6.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.location_history,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 24.0,
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.location_history,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                  Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
@@ -808,8 +840,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                           ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -863,7 +895,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     child: AnimatedContainer(
                                       duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
-                                      width: double.infinity,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height: 44.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -875,35 +908,38 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.attach_money_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 24.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'xahmx4lz' /* Billing */,
-                                                ),
-                                                style:
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.attach_money_rounded,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
-                                            ),
-                                          ],
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'xahmx4lz' /* Billing */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -928,7 +964,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                     child: AnimatedContainer(
                                       duration: const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
-                                      width: double.infinity,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height: 44.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -940,35 +977,38 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.person_search,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 24.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'azmu0lbt' /* Members */,
-                                                ),
-                                                style:
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.person_search,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
-                                            ),
-                                          ],
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'azmu0lbt' /* Members */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -1450,7 +1490,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
@@ -1490,7 +1532,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Inter',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 3.0,
@@ -1994,7 +2038,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             width:
-                                                                                2.0,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
@@ -2615,7 +2659,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             width:
-                                                                                2.0,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
@@ -3243,7 +3287,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                       shape: BoxShape.circle,
                                                                                       border: Border.all(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        width: 2.0,
+                                                                                        width: 1.0,
                                                                                       ),
                                                                                     ),
                                                                                     child: Padding(
@@ -3871,7 +3915,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                     shape: BoxShape.circle,
                                                                                     border: Border.all(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      width: 2.0,
+                                                                                      width: 1.0,
                                                                                     ),
                                                                                   ),
                                                                                   child: Padding(

@@ -136,7 +136,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                               shape: BoxShape.rectangle,
                               border: Border.all(
                                 color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
+                                width: 1.0,
                               ),
                             ),
                             child: Padding(
@@ -339,7 +339,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                           shape: BoxShape.rectangle,
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).primary,
-                            width: 2.0,
+                            width: 1.0,
                           ),
                         ),
                         child: Padding(

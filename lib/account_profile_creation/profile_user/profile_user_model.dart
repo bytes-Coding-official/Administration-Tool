@@ -15,8 +15,6 @@ class ProfileUserModel extends FlutterFlowModel<ProfileUserWidget> {
   double? avg;
   // Stores action output result for [Custom Action - totalRevenue] action in ProfileUser widget.
   double? total;
-  // State field(s) for RatingBar widget.
-  double? ratingBarValue;
 
   @override
   void initState(BuildContext context) {}

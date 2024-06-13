@@ -81,7 +81,7 @@ class _UserListSmall1WidgetState extends State<UserListSmall1Widget> {
                   ),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).primary,
-                    width: 2.0,
+                    width: 1.0,
                   ),
                 ),
                 child: Padding(

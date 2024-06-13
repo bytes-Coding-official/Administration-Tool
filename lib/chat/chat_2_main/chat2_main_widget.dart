@@ -367,7 +367,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        width: 2.0,
+                                                        width: 1.0,
                                                       ),
                                                     ),
                                                     child: Padding(
@@ -694,7 +694,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    width: 2.0,
+                                                                    width: 1.0,
                                                                   ),
                                                                 ),
                                                                 child: Padding(
@@ -743,14 +743,30 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .accent1,
+                                                              borderRadius:
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                bottomLeft: Radius
+                                                                    .circular(
+                                                                        10.0),
+                                                                bottomRight: Radius
+                                                                    .circular(
+                                                                        10.0),
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        10.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        10.0),
+                                                              ),
                                                               shape: BoxShape
-                                                                  .circle,
+                                                                  .rectangle,
                                                               border:
                                                                   Border.all(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 1.0,
                                                               ),
                                                             ),
                                                             child: Padding(

@@ -9,7 +9,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'profile_user_model.dart';
 export 'profile_user_model.dart';
@@ -221,24 +220,6 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                             ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: RatingBar.builder(
-                          onRatingUpdate: (newValue) =>
-                              setState(() => _model.ratingBarValue = newValue),
-                          itemBuilder: (context, index) => Icon(
-                            Icons.star_rounded,
-                            color: FlutterFlowTheme.of(context).warning,
-                          ),
-                          direction: Axis.horizontal,
-                          initialRating: _model.ratingBarValue ??= 5.0,
-                          unratedColor: FlutterFlowTheme.of(context).alternate,
-                          itemCount: 5,
-                          itemSize: 24.0,
-                          glowColor: FlutterFlowTheme.of(context).warning,
-                        ),
-                      ),
-                      Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 12.0),
                         child: Container(
@@ -387,18 +368,23 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
-                        child: Text(
-                          profileUserUsersRecord.shortDescription,
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 0.85,
+                        decoration: const BoxDecoration(),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 12.0),
+                          child: Text(
+                            profileUserUsersRecord.shortDescription,
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
                         ),
                       ),
                       Padding(

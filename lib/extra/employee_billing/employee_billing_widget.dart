@@ -583,7 +583,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                   )
                                                   .where(
                                                     'closed',
-                                                    isNotEqualTo: false,
+                                                    isEqualTo: false,
                                                   ),
                                         ),
                                         builder: (context, snapshot) {
@@ -1308,7 +1308,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             width:
-                                                                                2.0,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
@@ -1880,7 +1880,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             width:
-                                                                                2.0,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:

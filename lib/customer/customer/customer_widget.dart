@@ -822,7 +822,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                width: 2.0,
+                                                width: 1.0,
                                               ),
                                             ),
                                             child: Padding(
@@ -1509,7 +1509,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         width:
-                                                                            2.0,
+                                                                            1.0,
                                                                       ),
                                                                     ),
                                                                     child:

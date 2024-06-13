@@ -390,18 +390,23 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
-                        child: Text(
-                          profileEmployeeUsersRecord.shortDescription,
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 0.85,
+                        decoration: const BoxDecoration(),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 8.0, 0.0, 12.0),
+                          child: Text(
+                            profileEmployeeUsersRecord.shortDescription,
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
                         ),
                       ),
                       SingleChildScrollView(
