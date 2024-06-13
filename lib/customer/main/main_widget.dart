@@ -1771,7 +1771,18 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               .getText(
                                                             'n9qnpbyi' /* ID#:  */,
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                         TextSpan(
                                                           text:

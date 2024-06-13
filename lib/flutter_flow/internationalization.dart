@@ -522,6 +522,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '导师',
     },
     'w6upyuwo': {
+      'en': 'ID: ',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    'ip3q1bpk': {
       'en': 'ID:',
       'de': '',
       'es': '',
@@ -3082,6 +3089,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '节省',
     },
     'qmta97d7': {
+      'en': 'ID: ',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    'ukketqor': {
       'en': 'ID:',
       'de': '',
       'es': '',

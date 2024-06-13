@@ -126,41 +126,38 @@ class _CustomerWidgetState extends State<CustomerWidget>
                   context.pop();
                 },
               ),
-              title: Container(
-                width: MediaQuery.sizeOf(context).width * 0.5,
-                decoration: const BoxDecoration(),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              title: RichText(
+                textScaler: MediaQuery.of(context).textScaler,
+                text: TextSpan(
                   children: [
-                    Text(
-                      FFLocalizations.of(context).getText(
-                        'w6upyuwo' /* ID: */,
+                    TextSpan(
+                      text: FFLocalizations.of(context).getText(
+                        'w6upyuwo' /* ID:  */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
                                 fontFamily: 'Readex Pro',
+                                color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
                     ),
-                    Text(
-                      valueOrDefault<String>(
-                        customerCustomerCaseRecord.caseid,
-                        'NULL',
+                    TextSpan(
+                      text: customerCustomerCaseRecord.caseid,
+                      style: TextStyle(
+                        color: FlutterFlowTheme.of(context).primary,
                       ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context).primary,
-                                letterSpacing: 0.0,
-                              ),
-                    ),
+                    )
                   ],
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               actions: const [],
               centerTitle: true,
-              elevation: 2.0,
+              elevation: 1.0,
             ),
             body: SafeArea(
               top: true,

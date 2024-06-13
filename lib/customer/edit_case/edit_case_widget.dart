@@ -122,16 +122,13 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                   context.pushNamed('AllCustomers');
                 },
               ),
-              title: Container(
-                width: MediaQuery.sizeOf(context).width * 0.5,
-                decoration: const BoxDecoration(),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              title: RichText(
+                textScaler: MediaQuery.of(context).textScaler,
+                text: TextSpan(
                   children: [
-                    Text(
-                      FFLocalizations.of(context).getText(
-                        'qmta97d7' /* ID: */,
+                    TextSpan(
+                      text: FFLocalizations.of(context).getText(
+                        'qmta97d7' /* ID:  */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
@@ -139,19 +136,17 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 letterSpacing: 0.0,
                               ),
                     ),
-                    Text(
-                      valueOrDefault<String>(
-                        editCaseCustomerCaseRecord.caseid,
-                        'NULL',
+                    TextSpan(
+                      text: editCaseCustomerCaseRecord.caseid,
+                      style: TextStyle(
+                        color: FlutterFlowTheme.of(context).primary,
                       ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context).primary,
-                                letterSpacing: 0.0,
-                              ),
-                    ),
+                    )
                   ],
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               actions: const [],
