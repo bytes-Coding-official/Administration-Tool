@@ -454,7 +454,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                             return FlutterFlowDropDown<String>(
                               multiSelectController:
                                   _model.dropDownValueController1 ??=
-                                      FormFieldController<List<String>>(_model
+                                      FormListFieldController<String>(_model
                                           .dropDownValue1 ??= List<String>.from(
                                 dropDownItskillsRecordList
                                         .take(1)

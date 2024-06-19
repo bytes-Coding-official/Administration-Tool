@@ -745,7 +745,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget>
                           return FlutterFlowDropDown<String>(
                             multiSelectController: _model
                                     .dropDownValueController ??=
-                                FormFieldController<List<String>>(
+                                FormListFieldController<String>(
                                     _model.dropDownValue ??= List<String>.from(
                               dropDownLanguagesRecordList
                                       .take(1)

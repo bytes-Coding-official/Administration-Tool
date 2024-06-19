@@ -539,7 +539,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                       return FlutterFlowDropDown<String>(
                         multiSelectController:
                             _model.dropDownValueController1 ??=
-                                FormFieldController<List<String>>(
+                                FormListFieldController<String>(
                                     _model.dropDownValue1 ??= List<String>.from(
                           dropDownItskillsRecordList
                                   .take(1)

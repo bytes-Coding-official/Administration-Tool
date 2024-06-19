@@ -296,11 +296,6 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                           _model.user = await actions.getUserFromDocString(
                             _model.dropDownValue2!,
                           );
-                          logFirebaseEvent('Button_backend_call');
-
-                          await _model.user!.update(createUsersRecordData(
-                            role: _model.dropDownValue1,
-                          ));
                           logFirebaseEvent('Button_show_snack_bar');
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -316,6 +311,11 @@ class _RoleManagementWidgetState extends State<RoleManagementWidget> {
                                   FlutterFlowTheme.of(context).secondary,
                             ),
                           );
+                          logFirebaseEvent('Button_backend_call');
+
+                          await _model.user!.update(createUsersRecordData(
+                            role: _model.dropDownValue1,
+                          ));
                           logFirebaseEvent('Button_navigate_to');
                           if (Navigator.of(context).canPop()) {
                             context.pop();

@@ -2,65 +2,65 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{document} {
-      allow create: if request.auth.uid == document;
+      allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if request.auth.uid == document;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /languages/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /itskills/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /customer-case/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /customer/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /supportTickets/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /customer-meeting/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /chat_messages/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 
     match /chats/{document} {
       allow create: if request.auth != null;
       allow read: if request.auth != null;
-      allow write: if false;
+      allow write: if request.auth != null;
       allow delete: if false;
     }
 

@@ -240,7 +240,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                             return FlutterFlowDropDown<String>(
                               multiSelectController: _model
                                       .tutorValueController ??=
-                                  FormFieldController<List<String>>(
+                                  FormListFieldController<String>(
                                       _model.tutorValue ??= List<String>.from(
                                 tutorUsersRecordList
                                         .map((e) => e.reference.id)
