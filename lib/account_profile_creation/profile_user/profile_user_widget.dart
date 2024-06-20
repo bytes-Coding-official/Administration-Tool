@@ -895,10 +895,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       StreamBuilder<List<CustomerMeetingRecord>>(
                         stream: queryCustomerMeetingRecord(
                           queryBuilder: (customerMeetingRecord) =>
-                              customerMeetingRecord.where(
-                            'customer',
-                            isEqualTo: profileUserUsersRecord.customer,
-                          ),
+                              customerMeetingRecord
+                                  .where(
+                                    'customer',
+                                    isEqualTo: profileUserUsersRecord.customer,
+                                  )
+                                  .orderBy('costs', descending: true),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.

@@ -48,6 +48,7 @@ class AllCustomersModel extends FlutterFlowModel<AllCustomersWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryCustomerRecordPage(
+          queryBuilder: (_) => listViewPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
           streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,

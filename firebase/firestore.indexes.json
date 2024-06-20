@@ -1,6 +1,20 @@
 {
   "indexes": [
     {
+      "collectionGroup": "customer-meeting",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "customercase",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "duration",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "customer-case",
       "queryScope": "COLLECTION",
       "fields": [
@@ -29,6 +43,20 @@
       ]
     },
     {
+      "collectionGroup": "customer-meeting",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "assignee",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "costs",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "chats",
       "queryScope": "COLLECTION",
       "fields": [
@@ -52,6 +80,20 @@
         },
         {
           "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "customer-meeting",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "customer",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "costs",
           "order": "DESCENDING"
         }
       ]

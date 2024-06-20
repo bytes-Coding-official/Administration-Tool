@@ -1574,10 +1574,13 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                         CustomerMeetingRecord>.separated(
                                       pagingController:
                                           _model.setListViewController2(
-                                        CustomerMeetingRecord.collection.where(
-                                          'assignee',
-                                          arrayContains: currentUserReference,
-                                        ),
+                                        CustomerMeetingRecord.collection
+                                            .where(
+                                              'assignee',
+                                              arrayContains:
+                                                  currentUserReference,
+                                            )
+                                            .orderBy('costs', descending: true),
                                       ),
                                       padding: EdgeInsets.zero,
                                       primary: false,

@@ -58,6 +58,7 @@ class LanguageSettingsModel extends FlutterFlowModel<LanguageSettingsWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryLanguagesRecordPage(
+          queryBuilder: (_) => listViewPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
           streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,

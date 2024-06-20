@@ -176,7 +176,7 @@ class _AllCustomersWidgetState extends State<AllCustomersWidget>
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           CustomerRecord>.separated(
                         pagingController: _model.setListViewController(
-                          CustomerRecord.collection,
+                          CustomerRecord.collection.orderBy('name'),
                         ),
                         padding: EdgeInsets.zero,
                         reverse: false,

@@ -280,7 +280,6 @@ class _ChangeEmployeePercentageWidgetState
                             letterSpacing: 0.0,
                           ),
                       textAlign: TextAlign.center,
-                      maxLength: 10,
                       keyboardType:
                           const TextInputType.numberWithOptions(decimal: true),
                       cursorColor: FlutterFlowTheme.of(context).primary,

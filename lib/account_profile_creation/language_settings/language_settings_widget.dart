@@ -165,7 +165,7 @@ class _LanguageSettingsWidgetState extends State<LanguageSettingsWidget>
                     child: PagedListView<DocumentSnapshot<Object?>?,
                         LanguagesRecord>.separated(
                       pagingController: _model.setListViewController(
-                        LanguagesRecord.collection,
+                        LanguagesRecord.collection.orderBy('name'),
                       ),
                       padding: EdgeInsets.zero,
                       reverse: false,

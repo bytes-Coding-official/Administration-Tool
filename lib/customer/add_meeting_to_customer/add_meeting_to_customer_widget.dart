@@ -376,7 +376,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 10,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,
@@ -454,7 +453,6 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                     letterSpacing: 0.0,
                                   ),
                           textAlign: TextAlign.center,
-                          maxLength: 10,
                           keyboardType: const TextInputType.numberWithOptions(
                               decimal: true),
                           cursorColor: FlutterFlowTheme.of(context).primary,

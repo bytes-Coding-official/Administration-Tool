@@ -1150,10 +1150,12 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                       StreamBuilder<List<CustomerMeetingRecord>>(
                         stream: queryCustomerMeetingRecord(
                           queryBuilder: (customerMeetingRecord) =>
-                              customerMeetingRecord.where(
-                            'assignee',
-                            arrayContains: widget.employee,
-                          ),
+                              customerMeetingRecord
+                                  .where(
+                                    'assignee',
+                                    arrayContains: widget.employee,
+                                  )
+                                  .orderBy('costs', descending: true),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.

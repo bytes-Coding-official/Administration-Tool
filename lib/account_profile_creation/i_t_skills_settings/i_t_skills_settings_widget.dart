@@ -169,7 +169,7 @@ class _ITSkillsSettingsWidgetState extends State<ITSkillsSettingsWidget>
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           ItskillsRecord>.separated(
                         pagingController: _model.setListViewController(
-                          ItskillsRecord.collection,
+                          ItskillsRecord.collection.orderBy('name'),
                         ),
                         padding: EdgeInsets.zero,
                         reverse: false,

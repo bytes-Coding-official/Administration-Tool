@@ -56,6 +56,7 @@ class ITSkillsSettingsModel extends FlutterFlowModel<ITSkillsSettingsWidget> {
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryItskillsRecordPage(
+          queryBuilder: (_) => listViewPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
           streamSubscriptions: listViewStreamSubscriptions,
           controller: controller,
