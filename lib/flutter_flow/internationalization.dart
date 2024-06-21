@@ -479,20 +479,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Statut',
       'zh_Hans': '地位',
     },
-    'v8nemt80': {
-      'en': 'Download Files',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
-    'wj0qrpf3': {
-      'en': 'Upload Files',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
     'mzuncnhu': {
       'en': 'Add meeting to user',
       'de': 'Meeting dem Benutzer hinzufügen',
@@ -3563,6 +3549,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rreotz6t': {
       'en': '',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    'f10957fv': {
+      'en': 'We need to save and read external files',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'zh_Hans': '',
+    },
+    'qysum8cc': {
+      'en': 'We need to write to external storage',
       'de': '',
       'es': '',
       'fr': '',
