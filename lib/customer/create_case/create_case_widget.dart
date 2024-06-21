@@ -811,6 +811,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                 _model.revenueTextController.text),
                             customer: _model.customer,
                             github: _model.titleTextController2.text,
+                            closed: false,
                           ),
                           ...mapToFirestore(
                             {
