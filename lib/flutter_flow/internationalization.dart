@@ -479,13 +479,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Statut',
       'zh_Hans': '地位',
     },
-    'ycnn979f': {
-      'en': 'Uploaded Files',
-      'de': 'Einnahmen',
-      'es': 'Ganancia',
-      'fr': 'Revenu',
-      'zh_Hans': '收入',
-    },
     'v8nemt80': {
       'en': 'Download Files',
       'de': '',

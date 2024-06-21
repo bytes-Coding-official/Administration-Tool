@@ -846,20 +846,6 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                 );
                               },
                             ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'ycnn979f' /* Uploaded Files */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
@@ -868,7 +854,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       'CUSTOMER_PAGE_DOWNLOAD_FILES_BTN_ON_TAP');
                                   logFirebaseEvent('Button_custom_action');
                                   await actions.downloadAndStoreFiles(
-                                    _model.uploadedFileUrls.toList(),
+                                    customerCustomerCaseRecord.uploadedFiles
+                                        .toList(),
                                   );
                                   logFirebaseEvent('Button_show_snack_bar');
                                   ScaffoldMessenger.of(context).showSnackBar(
