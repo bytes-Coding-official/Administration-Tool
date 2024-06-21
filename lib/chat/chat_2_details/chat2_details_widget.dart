@@ -140,122 +140,158 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
               return Builder(
                 builder: (context) {
                   if (widget.chatRef!.users.length <= 2) {
-                    return Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        if (conditionalBuilderUsersRecord.photoUrl != '')
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, -1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 12.0, 0.0),
-                              child: Container(
-                                width: 44.0,
-                                height: 44.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).accent1,
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(10.0),
-                                    bottomRight: Radius.circular(10.0),
-                                    topLeft: Radius.circular(10.0),
-                                    topRight: Radius.circular(10.0),
+                    return InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        logFirebaseEvent(
+                            'CHAT_2_DETAILS_Row-singleUser_ON_TAP');
+                        if (conditionalBuilderUsersRecord.role == 'Kunde') {
+                          logFirebaseEvent('Row-singleUser_navigate_to');
+
+                          context.pushNamed(
+                            'ProfileUser',
+                            queryParameters: {
+                              'user': serializeParam(
+                                conditionalBuilderUsersRecord.reference,
+                                ParamType.DocumentReference,
+                              ),
+                            }.withoutNulls,
+                          );
+                        } else {
+                          logFirebaseEvent('Row-singleUser_navigate_to');
+
+                          context.pushNamed(
+                            'ProfileEmployee',
+                            queryParameters: {
+                              'employee': serializeParam(
+                                conditionalBuilderUsersRecord.reference,
+                                ParamType.DocumentReference,
+                              ),
+                            }.withoutNulls,
+                          );
+                        }
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          if (conditionalBuilderUsersRecord.photoUrl != '')
+                            Align(
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 12.0, 0.0),
+                                child: Container(
+                                  width: 44.0,
+                                  height: 44.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(10.0),
+                                      bottomRight: Radius.circular(10.0),
+                                      topLeft: Radius.circular(10.0),
+                                      topRight: Radius.circular(10.0),
+                                    ),
+                                    shape: BoxShape.rectangle,
+                                    border: Border.all(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 2.0,
+                                    ),
                                   ),
-                                  shape: BoxShape.rectangle,
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      conditionalBuilderUsersRecord.photoUrl,
-                                      width: 44.0,
-                                      height: 44.0,
-                                      fit: BoxFit.cover,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.network(
+                                        conditionalBuilderUsersRecord.photoUrl,
+                                        width: 44.0,
+                                        height: 44.0,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  conditionalBuilderUsersRecord.displayName,
-                                  'Ghost User',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: AutoSizeText(
-                                        valueOrDefault<String>(
-                                          conditionalBuilderUsersRecord.email,
-                                          'casper@ghost.io',
-                                        ).maybeHandleOverflow(
-                                          maxChars: 40,
-                                          replacement: '…',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        minFontSize: 10.0,
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  valueOrDefault<String>(
+                                    conditionalBuilderUsersRecord.displayName,
+                                    'Ghost User',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: AutoSizeText(
-                                        valueOrDefault<String>(
-                                          conditionalBuilderUsersRecord.role,
-                                          'casper@ghost.io',
-                                        ).maybeHandleOverflow(
-                                          maxChars: 40,
-                                          replacement: '…',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        minFontSize: 10.0,
-                                      ),
-                                    ),
-                                  ].divide(const SizedBox(width: 5.0)),
                                 ),
-                              ),
-                            ],
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: AutoSizeText(
+                                          valueOrDefault<String>(
+                                            conditionalBuilderUsersRecord.email,
+                                            'casper@ghost.io',
+                                          ).maybeHandleOverflow(
+                                            maxChars: 40,
+                                            replacement: '…',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minFontSize: 10.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: AutoSizeText(
+                                          valueOrDefault<String>(
+                                            conditionalBuilderUsersRecord.role,
+                                            'casper@ghost.io',
+                                          ).maybeHandleOverflow(
+                                            maxChars: 40,
+                                            replacement: '…',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minFontSize: 10.0,
+                                        ),
+                                      ),
+                                    ].divide(const SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   } else {
                     return Row(

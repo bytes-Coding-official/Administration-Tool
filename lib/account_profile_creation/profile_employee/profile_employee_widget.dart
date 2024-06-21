@@ -729,7 +729,9 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                           customerCaseRecord
                                               .where(
                                                 'assignee',
-                                                arrayContains: widget.employee,
+                                                arrayContains:
+                                                    profileEmployeeUsersRecord
+                                                        .reference,
                                               )
                                               .where(
                                                 'closed',
@@ -801,7 +803,9 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                           customerCaseRecord
                                               .where(
                                                 'assignee',
-                                                arrayContains: widget.employee,
+                                                arrayContains:
+                                                    profileEmployeeUsersRecord
+                                                        .reference,
                                               )
                                               .where(
                                                 'closed',
