@@ -61,6 +61,11 @@ class CustomerCaseRecord extends FirestoreRecord {
   String get github => _github ?? '';
   bool hasGithub() => _github != null;
 
+  // "uploaded_files" field.
+  List<String>? _uploadedFiles;
+  List<String> get uploadedFiles => _uploadedFiles ?? const [];
+  bool hasUploadedFiles() => _uploadedFiles != null;
+
   void _initializeFields() {
     _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
@@ -71,6 +76,7 @@ class CustomerCaseRecord extends FirestoreRecord {
     _customer = snapshotData['customer'] as DocumentReference?;
     _closed = snapshotData['closed'] as bool?;
     _github = snapshotData['github'] as String?;
+    _uploadedFiles = getDataList(snapshotData['uploaded_files']);
   }
 
   static CollectionReference get collection =>
@@ -146,7 +152,8 @@ class CustomerCaseRecordDocumentEquality
         listEquality.equals(e1?.topics, e2?.topics) &&
         e1?.customer == e2?.customer &&
         e1?.closed == e2?.closed &&
-        e1?.github == e2?.github;
+        e1?.github == e2?.github &&
+        listEquality.equals(e1?.uploadedFiles, e2?.uploadedFiles);
   }
 
   @override
@@ -159,7 +166,8 @@ class CustomerCaseRecordDocumentEquality
         e?.topics,
         e?.customer,
         e?.closed,
-        e?.github
+        e?.github,
+        e?.uploadedFiles
       ]);
 
   @override

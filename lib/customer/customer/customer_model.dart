@@ -8,6 +8,10 @@ class CustomerModel extends FlutterFlowModel<CustomerWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  bool isDataUploading = false;
+  List<FFUploadedFile> uploadedLocalFiles = [];
+  List<String> uploadedFileUrls = [];
+
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, CustomerMeetingRecord>?
