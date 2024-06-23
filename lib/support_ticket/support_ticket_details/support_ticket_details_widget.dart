@@ -441,7 +441,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'lfdcxd03' /* Duration */,
+                              'lfdcxd03' /* Description */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
