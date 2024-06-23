@@ -181,6 +181,7 @@ final parametersBuilderMap =
           'customer': getParameter<DocumentReference>(data, 'customer'),
         },
       ),
+  'support_SubmitPaymentTicket': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -327,6 +327,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['customer'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'support_SubmitPaymentTicket',
+          path: '/supportSubmitPaymentTicket',
+          builder: (context, params) => const SupportSubmitPaymentTicketWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -65,6 +65,16 @@ class SupportTicketsRecord extends FirestoreRecord {
   int get ticketID => _ticketID ?? 0;
   bool hasTicketID() => _ticketID != null;
 
+  // "duration" field.
+  int? _duration;
+  int get duration => _duration ?? 0;
+  bool hasDuration() => _duration != null;
+
+  // "cost" field.
+  int? _cost;
+  int get cost => _cost ?? 0;
+  bool hasCost() => _cost != null;
+
   void _initializeFields() {
     _owner = snapshotData['owner'] as DocumentReference?;
     _assignee = snapshotData['assignee'] as DocumentReference?;
@@ -76,6 +86,8 @@ class SupportTicketsRecord extends FirestoreRecord {
     _lastActive = snapshotData['lastActive'] as DateTime?;
     _image = snapshotData['image'] as String?;
     _ticketID = castToType<int>(snapshotData['ticketID']);
+    _duration = castToType<int>(snapshotData['duration']);
+    _cost = castToType<int>(snapshotData['cost']);
   }
 
   static CollectionReference get collection =>
@@ -123,6 +135,8 @@ Map<String, dynamic> createSupportTicketsRecordData({
   DateTime? lastActive,
   String? image,
   int? ticketID,
+  int? duration,
+  int? cost,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -136,6 +150,8 @@ Map<String, dynamic> createSupportTicketsRecordData({
       'lastActive': lastActive,
       'image': image,
       'ticketID': ticketID,
+      'duration': duration,
+      'cost': cost,
     }.withoutNulls,
   );
 
@@ -157,7 +173,9 @@ class SupportTicketsRecordDocumentEquality
         e1?.status == e2?.status &&
         e1?.lastActive == e2?.lastActive &&
         e1?.image == e2?.image &&
-        e1?.ticketID == e2?.ticketID;
+        e1?.ticketID == e2?.ticketID &&
+        e1?.duration == e2?.duration &&
+        e1?.cost == e2?.cost;
   }
 
   @override
@@ -171,7 +189,9 @@ class SupportTicketsRecordDocumentEquality
         e?.status,
         e?.lastActive,
         e?.image,
-        e?.ticketID
+        e?.ticketID,
+        e?.duration,
+        e?.cost
       ]);
 
   @override

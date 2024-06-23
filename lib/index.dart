@@ -58,3 +58,5 @@ export '/customer/role_management/role_management_widget.dart'
 export '/customer/edit_case/edit_case_widget.dart' show EditCaseWidget;
 export '/customer/edit_customer/edit_customer_widget.dart'
     show EditCustomerWidget;
+export '/support_ticket/support_submit_payment_ticket/support_submit_payment_ticket_widget.dart'
+    show SupportSubmitPaymentTicketWidget;
