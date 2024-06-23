@@ -23,6 +23,7 @@
 		<string>fr</string>
 		<string>es</string>
 		<string>zh_Hans</string>
+		<string>ru</string>
 	</array>
 
 	<key>CFBundleShortVersionString</key>

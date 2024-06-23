@@ -31,7 +31,7 @@ class SupportSubmitPaymentTicketModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // Stores action output result for [Bottom Sheet - user_List] action in Container widget.
+  // Stores action output result for [Bottom Sheet - user_ListEmployee] action in Container widget.
   UsersRecord? userRefSelected;
   // Model for user_ListSmall component.
   late UserListSmallModel userListSmallModel;

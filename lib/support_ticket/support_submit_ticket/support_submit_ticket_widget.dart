@@ -879,8 +879,8 @@ class _SupportSubmitTicketWidgetState extends State<SupportSubmitTicketWidget>
                         ).animateOnPageLoad(
                             animationsMap['containerOnPageLoadAnimation3']!),
                       ),
-                      if (valueOrDefault(currentUserDocument?.role, '') !=
-                          'Kunde')
+                      if (valueOrDefault(currentUserDocument?.role, '') ==
+                          'Administrator')
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: AuthUserStreamWidget(

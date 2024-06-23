@@ -593,7 +593,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         TextSpan(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            '8pwvx02e' /* Don't have an account?   */,
+                                            '8pwvx02e' /* Don't have an account?  */,
                                           ),
                                           style: const TextStyle(),
                                         ),

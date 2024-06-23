@@ -7,13 +7,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/support_ticket/user_list/user_list_widget.dart';
+import '/support_ticket/user_list_employee/user_list_employee_widget.dart';
 import '/support_ticket/user_list_small/user_list_small_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'support_submit_payment_ticket_model.dart';
 export 'support_submit_payment_ticket_model.dart';
 
@@ -82,44 +81,6 @@ class _SupportSubmitPaymentTicketWidgetState
             delay: 100.0.ms,
             duration: 400.0.ms,
             begin: const Offset(-30.0, 0.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(0.0, 110.0),
-            end: const Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-      'containerOnPageLoadAnimation2': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 50.0.ms,
-            duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 50.0.ms,
-            duration: 400.0.ms,
-            begin: const Offset(0.0, 110.0),
             end: const Offset(0.0, 0.0),
           ),
         ],
@@ -244,7 +205,7 @@ class _SupportSubmitPaymentTicketWidgetState
           ),
         ],
       ),
-      'containerOnPageLoadAnimation3': AnimationInfo(
+      'containerOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -283,7 +244,7 @@ class _SupportSubmitPaymentTicketWidgetState
           ),
         ],
       ),
-      'containerOnPageLoadAnimation4': AnimationInfo(
+      'containerOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -367,7 +328,7 @@ class _SupportSubmitPaymentTicketWidgetState
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  '0mvgad0l' /* Ticket-Creation */,
+                  '0mvgad0l' /* Billing-Ticket-Creation */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Readex Pro',
@@ -378,7 +339,7 @@ class _SupportSubmitPaymentTicketWidgetState
               ),
               Text(
                 FFLocalizations.of(context).getText(
-                  'k3p6hey8' /* Create a Support-Ticket here */,
+                  'k3p6hey8' /* Create a Billing-Ticket here */,
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -418,169 +379,6 @@ class _SupportSubmitPaymentTicketWidgetState
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  logFirebaseEvent(
-                                      'SUPPORT_SUBMIT_PAYMENT_TICKET_Container_');
-                                  if (isWeb) {
-                                    return;
-                                  }
-                                  logFirebaseEvent('Container_call_number');
-                                  await launchUrl(Uri(
-                                    scheme: 'tel',
-                                    path: '(049) 175 5738757',
-                                  ));
-                                },
-                                child: Container(
-                                  width: 120.0,
-                                  constraints: const BoxConstraints(
-                                    maxWidth: 500.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 16.0, 8.0, 16.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.local_phone,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 36.0,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'vmfa0tg6' /* Call Us */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(animationsMap[
-                                  'containerOnPageLoadAnimation1']!),
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 16.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  logFirebaseEvent(
-                                      'SUPPORT_SUBMIT_PAYMENT_TICKET_Container_');
-                                  logFirebaseEvent('Container_send_email');
-                                  await launchUrl(Uri(
-                                      scheme: 'mailto',
-                                      path: 'info@bytes-coding.com',
-                                      query: {
-                                        'subject':
-                                            'I am in need of support for your application.',
-                                      }
-                                          .entries
-                                          .map((MapEntry<String, String> e) =>
-                                              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                          .join('&')));
-                                },
-                                child: Container(
-                                  width: 120.0,
-                                  constraints: const BoxConstraints(
-                                    maxWidth: 500.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 16.0, 8.0, 16.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.email_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 36.0,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '53hdmmhe' /* Email Us */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(animationsMap[
-                                  'containerOnPageLoadAnimation2']!),
-                            ),
-                          ),
-                        ].divide(const SizedBox(width: 12.0)),
-                      ),
                       TextFormField(
                         controller: _model.textController1,
                         focusNode: _model.textFieldFocusNode1,
@@ -714,16 +512,6 @@ class _SupportSubmitPaymentTicketWidgetState
                             ),
                       ).animateOnPageLoad(
                           animationsMap['textOnPageLoadAnimation2']!),
-                      if (_model.uploadedFileUrl != '')
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            _model.uploadedFileUrl,
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
                       TextFormField(
                         controller: _model.textController3,
                         focusNode: _model.textFieldFocusNode3,
@@ -787,7 +575,7 @@ class _SupportSubmitPaymentTicketWidgetState
                           animationsMap['textFieldOnPageLoadAnimation3']!),
                       Text(
                         FFLocalizations.of(context).getText(
-                          'wycjt6yy' /* Cost */,
+                          'jxsdz4h4' /* Cost */,
                         ),
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Inter',
@@ -856,6 +644,16 @@ class _SupportSubmitPaymentTicketWidgetState
                             .asValidator(context),
                       ).animateOnPageLoad(
                           animationsMap['textFieldOnPageLoadAnimation4']!),
+                      if (_model.uploadedFileUrl != '')
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            _model.uploadedFileUrl,
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: InkWell(
@@ -969,10 +767,10 @@ class _SupportSubmitPaymentTicketWidgetState
                             ),
                           ),
                         ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation3']!),
+                            animationsMap['containerOnPageLoadAnimation1']!),
                       ),
-                      if (valueOrDefault(currentUserDocument?.role, '') ==
-                          'Administrator')
+                      if (valueOrDefault(currentUserDocument?.role, '') !=
+                          'Kunde')
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: AuthUserStreamWidget(
@@ -1023,7 +821,7 @@ class _SupportSubmitPaymentTicketWidgetState
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: const UserListWidget(),
+                                              child: const UserListEmployeeWidget(),
                                             ),
                                           );
                                         },
@@ -1117,14 +915,14 @@ class _SupportSubmitPaymentTicketWidgetState
                                       ),
                                     ),
                                   ).animateOnPageLoad(animationsMap[
-                                      'containerOnPageLoadAnimation4']!),
+                                      'containerOnPageLoadAnimation2']!),
                                 ),
                               ],
                             ).animateOnPageLoad(
                                 animationsMap['columnOnPageLoadAnimation2']!),
                           ),
                         ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(const SizedBox(height: 10.0)),
                   ),
                 ),
                 Padding(

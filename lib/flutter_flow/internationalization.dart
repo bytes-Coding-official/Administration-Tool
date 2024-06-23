@@ -12,7 +12,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations)!;
 
-  static List<String> languages() => ['en', 'de', 'fr', 'es', 'zh_Hans'];
+  static List<String> languages() => ['en', 'de', 'fr', 'es', 'zh_Hans', 'ru'];
 
   static late SharedPreferences _prefs;
   static Future initialize() async =>
@@ -42,8 +42,10 @@ class FFLocalizations {
     String? frText = '',
     String? esText = '',
     String? zh_HansText = '',
+    String? ruText = '',
   }) =>
-      [enText, deText, frText, esText, zh_HansText][languageIndex] ?? '';
+      [enText, deText, frText, esText, zh_HansText, ruText][languageIndex] ??
+      '';
 
   static const Set<String> _languagesWithShortCode = {
     'ar',
@@ -115,6 +117,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständiges Profil',
       'es': 'Perfil completo',
       'fr': 'Profil complet',
+      'ru': 'Полный профиль',
       'zh_Hans': '完整简介',
     },
     '50p3dqj6': {
@@ -122,6 +125,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vervollständige deine Profileinstellungen',
       'es': 'Complete la configuración de su perfil',
       'fr': 'Complétez vos paramètres de profil',
+      'ru': 'Заполните настройки профиля',
       'zh_Hans': '完成您的个人资料设置',
     },
     'dkq1ryfg': {
@@ -129,6 +133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihre Informationen',
       'es': 'Tu información',
       'fr': 'Vos informations',
+      'ru': 'Ваша информация',
       'zh_Hans': '你的资料',
     },
     'xt634rup': {
@@ -136,6 +141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihr Name',
       'es': 'Su nombre',
       'fr': 'votre nom',
+      'ru': 'Ваше имя',
       'zh_Hans': '你的名字',
     },
     'zx5xaek7': {
@@ -143,6 +149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'svckxjk7': {
@@ -150,6 +157,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'ka02yxp3': {
@@ -157,6 +165,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefon',
       'es': 'Teléfono',
       'fr': 'Téléphone',
+      'ru': 'Телефон',
       'zh_Hans': '电话',
     },
     '58pt8dru': {
@@ -164,6 +173,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefon',
       'es': 'Teléfono',
       'fr': 'Téléphone',
+      'ru': 'Телефон',
       'zh_Hans': '电话',
     },
     'oaa48gll': {
@@ -171,6 +181,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Adresse ändern',
       'es': 'Cambiar dirección',
       'fr': 'Changer d\'adresse',
+      'ru': 'Изменить адрес',
       'zh_Hans': '更改地址',
     },
     'w9gnwzri': {
@@ -178,6 +189,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'IT-Kenntnisse ändern',
       'es': 'Cambiar las habilidades de TI',
       'fr': 'Changer les compétences informatiques',
+      'ru': 'Изменить ИТ-навыки',
       'zh_Hans': '改变 IT 技能',
     },
     'ohebf1ur': {
@@ -185,6 +197,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sprachen ändern',
       'es': 'Cambiar idiomas',
       'fr': 'Changer de langue',
+      'ru': 'Изменить языки',
       'zh_Hans': '更改语言',
     },
     'e9h4u4e3': {
@@ -192,6 +205,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Änderungen speichern',
       'es': 'Guardar cambios',
       'fr': 'Sauvegarder les modifications',
+      'ru': 'Сохранить изменения',
       'zh_Hans': '保存更改',
     },
     'yfmi94wv': {
@@ -199,6 +213,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -209,6 +224,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständige Adresse',
       'es': 'Dirección completa',
       'fr': 'Adresse complète',
+      'ru': 'Полный адрес',
       'zh_Hans': '完整地址',
     },
     'ivwsse2p': {
@@ -216,6 +232,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vervollständigen Sie Ihre Adressdaten',
       'es': 'Completa los datos de tu dirección',
       'fr': 'Complétez vos informations d\'adresse',
+      'ru': 'Заполните информацию об адресе',
       'zh_Hans': '填写您的地址信息',
     },
     'pqv49jgr': {
@@ -223,6 +240,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihre Informationen',
       'es': 'Tu información',
       'fr': 'Vos informations',
+      'ru': 'Ваша информация',
       'zh_Hans': '你的资料',
     },
     '0e9c64ob': {
@@ -230,6 +248,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße und Nummer',
       'es': 'Calle y número',
       'fr': 'Rue et numéro',
+      'ru': 'Улица и номер',
       'zh_Hans': '街道和门牌号',
     },
     '4kvp5cnu': {
@@ -237,6 +256,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße',
       'es': 'Calle',
       'fr': 'Rue',
+      'ru': 'Улица',
       'zh_Hans': '街道',
     },
     'vv98yz02': {
@@ -244,6 +264,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '镇',
     },
     'tl7vy8f9': {
@@ -251,6 +272,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '镇',
     },
     'sqb1k3ec': {
@@ -258,6 +280,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     'yxwo7j7o': {
@@ -265,6 +288,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     's6h1wnxo': {
@@ -272,6 +296,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     '0g14koc1': {
@@ -279,6 +304,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     'mpk8lics': {
@@ -286,6 +312,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Änderungen speichern',
       'es': 'Guardar cambios',
       'fr': 'Sauvegarder les modifications',
+      'ru': 'Сохранить изменения',
       'zh_Hans': '保存更改',
     },
     'dr5994wq': {
@@ -293,6 +320,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -303,6 +331,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Umfassende IT-Kenntnisse',
       'es': 'Completas habilidades de TI',
       'fr': 'Compétences informatiques complètes',
+      'ru': 'Полные IT-навыки',
       'zh_Hans': '完整的 IT 技能',
     },
     'zwdp76ds': {
@@ -310,6 +339,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vervollständigen Sie Ihre IT-Kenntnisse',
       'es': 'Complete sus habilidades de TI',
       'fr': 'Complétez vos compétences informatiques',
+      'ru': 'Завершите свои IT-навыки',
       'zh_Hans': '完善你的 IT 技能',
     },
     'shhe1ydw': {
@@ -317,6 +347,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Deine IT-Kenntnisse',
       'es': 'Tus habilidades de TI',
       'fr': 'Vos compétences informatiques',
+      'ru': 'Ваши IT-навыки',
       'zh_Hans': '您的 IT 技能',
     },
     'o9puwj76': {
@@ -324,6 +355,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Änderungen speichern',
       'es': 'Guardar cambios',
       'fr': 'Sauvegarder les modifications',
+      'ru': 'Сохранить изменения',
       'zh_Hans': '保存更改',
     },
     'w70117by': {
@@ -331,6 +363,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'neue IT-Kenntnisse',
       'es': 'nuevas habilidades de TI',
       'fr': 'nouvelles compétences informatiques',
+      'ru': 'новые IT-навыки',
       'zh_Hans': '新的 IT 技能',
     },
     'awk15nmc': {
@@ -338,6 +371,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fügen Sie hier IT-Kenntnisse hinzu',
       'es': 'Agregue habilidades de TI aquí',
       'fr': 'Ajoutez des compétences informatiques ici',
+      'ru': 'Добавьте сюда ИТ-навыки',
       'zh_Hans': '在此处添加 IT 技能',
     },
     'ocq5kvbi': {
@@ -345,6 +379,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hinzufügen',
       'es': 'Agregar',
       'fr': 'Ajouter',
+      'ru': 'Добавлять',
       'zh_Hans': '添加',
     },
     '5ej9zapx': {
@@ -352,6 +387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -362,6 +398,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Komplette Sprachen',
       'es': 'Idiomas completos',
       'fr': 'Langues complètes',
+      'ru': 'Полные языки',
       'zh_Hans': '完整语言',
     },
     'whlv0la7': {
@@ -369,6 +406,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vervollständigen Sie Ihre Sprachen',
       'es': 'Completa tus idiomas',
       'fr': 'Complétez vos langues',
+      'ru': 'Заполните свои языки',
       'zh_Hans': '完成你的语言',
     },
     'z797zvs5': {
@@ -376,6 +414,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihre Sprachen',
       'es': 'Tus idiomas',
       'fr': 'Vos langues',
+      'ru': 'Ваши языки',
       'zh_Hans': '你的语言',
     },
     '9umukc55': {
@@ -383,6 +422,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Änderungen speichern',
       'es': 'Guardar cambios',
       'fr': 'Sauvegarder les modifications',
+      'ru': 'Сохранить изменения',
       'zh_Hans': '保存更改',
     },
     'pnbjiyri': {
@@ -390,6 +430,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'neue Sprache',
       'es': 'nuevo idioma',
       'fr': 'nouveau langage',
+      'ru': 'новый язык',
       'zh_Hans': '新语言',
     },
     'ujxa03re': {
@@ -397,6 +438,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fügen Sie hier eine Sprache hinzu',
       'es': 'Añadir idioma aquí',
       'fr': 'Ajouter une langue ici',
+      'ru': 'Добавить язык здесь',
       'zh_Hans': '在此处添加语言',
     },
     'rfcncdh0': {
@@ -404,6 +446,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hinzufügen',
       'es': 'Agregar',
       'fr': 'Ajouter',
+      'ru': 'Добавлять',
       'zh_Hans': '添加',
     },
     'pi0dfjv1': {
@@ -411,6 +454,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -421,6 +465,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Name',
       'es': 'Nombre',
       'fr': 'Nom',
+      'ru': 'Имя',
       'zh_Hans': '姓名',
     },
     '6fgimpch': {
@@ -428,6 +473,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefon',
       'es': 'Teléfono',
       'fr': 'Téléphone',
+      'ru': 'Телефон',
       'zh_Hans': '电话',
     },
     '1svt6qwg': {
@@ -435,6 +481,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mail',
       'es': 'Correo',
       'fr': 'Mail',
+      'ru': 'Почта',
       'zh_Hans': '邮件',
     },
     'igthvfrg': {
@@ -442,6 +489,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Standort',
       'es': 'Ubicación',
       'fr': 'Emplacement',
+      'ru': 'Расположение',
       'zh_Hans': '地点',
     },
     'pfk6zl6k': {
@@ -449,6 +497,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     's3b1jvke': {
@@ -456,6 +505,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Themen',
       'es': 'Temas',
       'fr': 'Thèmes',
+      'ru': 'Темы',
       'zh_Hans': '主题',
     },
     'w9rexsje': {
@@ -463,6 +513,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sprachen',
       'es': 'Idiomas',
       'fr': 'Langues',
+      'ru': 'Языки',
       'zh_Hans': '语言',
     },
     '91qmu550': {
@@ -470,6 +521,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einnahmen',
       'es': 'Ganancia',
       'fr': 'Revenu',
+      'ru': 'Доход',
       'zh_Hans': '收入',
     },
     'xf3hox2c': {
@@ -477,6 +529,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Status',
       'es': 'Estado',
       'fr': 'Statut',
+      'ru': 'Положение дел',
       'zh_Hans': '地位',
     },
     'mzuncnhu': {
@@ -484,6 +537,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Meeting dem Benutzer hinzufügen',
       'es': 'Agregar reunión al usuario',
       'fr': 'Ajouter une réunion à l\'utilisateur',
+      'ru': 'Добавить встречу пользователю',
       'zh_Hans': '向用户添加会议',
     },
     'sm949xko': {
@@ -491,6 +545,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall bearbeiten',
       'es': 'Editar caso',
       'fr': 'Modifier le cas',
+      'ru': 'Редактировать обращение',
       'zh_Hans': '編輯案例',
     },
     '955no1if': {
@@ -498,6 +553,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum',
       'es': 'Fecha',
       'fr': 'Date',
+      'ru': 'Дата',
       'zh_Hans': '日期',
     },
     'uwi3huii': {
@@ -505,6 +561,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     '8c86p3v1': {
@@ -512,6 +569,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'Costos',
       'fr': 'Frais',
+      'ru': 'Расходы',
       'zh_Hans': '成本',
     },
     'g13pqfbb': {
@@ -519,6 +577,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
+      'ru': 'Руководитель',
       'zh_Hans': '导师',
     },
     'w6upyuwo': {
@@ -526,6 +585,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ip3q1bpk': {
@@ -533,6 +593,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '365ngbkk': {
@@ -540,6 +601,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -550,6 +612,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ugt68zzx': {
@@ -557,6 +620,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Platform Navigation',
       'es': 'Navegación de plataforma',
       'fr': 'Navigation sur la plateforme',
+      'ru': 'Навигация по платформе',
       'zh_Hans': '平台导航',
     },
     '15s2dq8x': {
@@ -564,6 +628,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hauptmenü',
       'es': 'Menú principal',
       'fr': 'Menu principal',
+      'ru': 'Главное меню',
       'zh_Hans': '主菜单',
     },
     'lusq685u': {
@@ -571,6 +636,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Chats',
       'es': 'Charlas',
       'fr': 'Discussions',
+      'ru': 'Чаты',
       'zh_Hans': '聊天',
     },
     'uuz9xwx4': {
@@ -578,6 +644,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '12',
       'es': '12',
       'fr': '12',
+      'ru': '12',
       'zh_Hans': '12',
     },
     '72kdiy21': {
@@ -585,6 +652,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundenabgleich',
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
+      'ru': 'Поиск клиентов',
       'zh_Hans': '客户匹配',
     },
     'dm0y1b6g': {
@@ -592,6 +660,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Rollenverwaltung',
       'es': 'Gestión de roles',
       'fr': 'Gestion des rôles',
+      'ru': 'Управление ролями',
       'zh_Hans': '角色管理',
     },
     '4tmi2f8n': {
@@ -599,6 +668,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiterabrechnung',
       'es': 'Facturación de empleados',
       'fr': 'Facturation des employés',
+      'ru': 'Выставление счетов сотрудникам',
       'zh_Hans': '员工账单',
     },
     'dyx62bdw': {
@@ -606,6 +676,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden',
       'es': 'Clientes',
       'fr': 'Clients',
+      'ru': 'Клиенты',
       'zh_Hans': '顾客',
     },
     '12tpf17h': {
@@ -613,6 +684,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einstellungen',
       'es': 'Ajustes',
       'fr': 'Paramètres',
+      'ru': 'Настройки',
       'zh_Hans': '设置',
     },
     'xahmx4lz': {
@@ -620,6 +692,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Abrechnung',
       'es': 'Facturación',
       'fr': 'Facturation',
+      'ru': 'Биллинг',
       'zh_Hans': '计费',
     },
     'azmu0lbt': {
@@ -627,6 +700,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitglieder',
       'es': 'Miembros',
       'fr': 'Membres',
+      'ru': 'Члены',
       'zh_Hans': '成员',
     },
     'v3wuo8gh': {
@@ -634,6 +708,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Lichtmodus',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
+      'ru': 'Светлый режим',
       'zh_Hans': '灯光模式',
     },
     '1m01zim9': {
@@ -641,6 +716,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dunkler Modus',
       'es': 'Modo oscuro',
       'fr': 'Mode sombre',
+      'ru': 'Темный режим',
       'zh_Hans': '暗黑模式',
     },
     'tmoj32d1': {
@@ -648,6 +724,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Projekte Übersicht',
       'es': 'Resumen de proyectos',
       'fr': 'Aperçu des projets',
+      'ru': 'Обзор проектов',
       'zh_Hans': '项目概况',
     },
     'ohbxki3q': {
@@ -656,6 +733,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Revise los detalles a continuación de todos los proyectos actuales.',
       'fr': 'Consultez les détails ci-dessous de tous les projets en cours.',
+      'ru':
+          'Ознакомьтесь с подробной информацией обо всех текущих проектах ниже.',
       'zh_Hans': '查看以下所有当前项目的详细信息。',
     },
     'hv1ie1b8': {
@@ -663,6 +742,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden hinzufügen',
       'es': 'Agregar cliente',
       'fr': 'Ajouter un client',
+      'ru': 'Добавить клиента',
       'zh_Hans': '添加客户',
     },
     'aaep28x3': {
@@ -670,6 +750,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall hinzufügen',
       'es': 'Agregar caso',
       'fr': 'Ajouter un cas',
+      'ru': 'Добавить дело',
       'zh_Hans': '添加案例',
     },
     'n9qnpbyi': {
@@ -677,6 +758,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'xpe9vzmw': {
@@ -684,6 +766,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'nhxrq5ni': {
@@ -691,6 +774,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'sntf2ubj': {
@@ -698,6 +782,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     's9jo3pju': {
@@ -705,6 +790,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eigen',
       'es': 'Propio',
       'fr': 'Propre',
+      'ru': 'Собственный',
       'zh_Hans': '自己的',
     },
     'u27w6351': {
@@ -712,6 +798,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -722,6 +809,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach Personen...',
       'es': 'Búsqueda de personas...',
       'fr': 'Recherche de personnes...',
+      'ru': 'Ищите людей...',
       'zh_Hans': '搜尋人...',
     },
     'm4jj16bz': {
@@ -729,6 +817,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach Personen...',
       'es': 'Búsqueda de personas...',
       'fr': 'Recherche de personnes...',
+      'ru': 'Ищите людей...',
       'zh_Hans': '搜尋人...',
     },
     'j34sl75v': {
@@ -736,6 +825,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Team-Mitglieder',
       'es': 'Miembros del equipo',
       'fr': 'Membres de l\'équipe',
+      'ru': 'Члены команды',
       'zh_Hans': '团队成员',
     },
     '73o0o7i4': {
@@ -743,6 +833,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Alle unsere Kunden und Mitarbeiter',
       'es': 'Todos nuestros clientes y empleados',
       'fr': 'Tous nos clients et employés',
+      'ru': 'Все наши клиенты и сотрудники',
       'zh_Hans': '我们所有的客户和员工',
     },
     'l72xtc1b': {
@@ -750,6 +841,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -760,6 +852,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '91f8nfh0': {
@@ -767,6 +860,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall-ID',
       'es': 'Identificación del caso',
       'fr': 'Numéro de cas',
+      'ru': 'Идентификатор дела',
       'zh_Hans': '案例ID',
     },
     'q2qhf2ce': {
@@ -774,6 +868,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall-ID...',
       'es': 'Identificación del caso...',
       'fr': 'Numéro d\'identification du cas...',
+      'ru': 'Идентификатор дела...',
       'zh_Hans': '案例ID...',
     },
     'y00zbz7g': {
@@ -781,6 +876,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Titel...',
       'es': 'Título...',
       'fr': 'Titre...',
+      'ru': 'Заголовок...',
       'zh_Hans': '标题...',
     },
     'eaxq1etl': {
@@ -788,6 +884,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Titel...',
       'es': 'Título...',
       'fr': 'Titre...',
+      'ru': 'Заголовок...',
       'zh_Hans': '标题...',
     },
     'zrh50pvf': {
@@ -795,6 +892,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beschreibung...',
       'es': 'Descripción...',
       'fr': 'Description...',
+      'ru': 'Описание...',
       'zh_Hans': '描述...',
     },
     'orutdw07': {
@@ -802,6 +900,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beschreibung...',
       'es': 'Descripción...',
       'fr': 'Description...',
+      'ru': 'Описание...',
       'zh_Hans': '描述...',
     },
     'zboepkw1': {
@@ -809,6 +908,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Github Link',
       'es': 'Github Link',
       'fr': 'Github Link',
+      'ru': '',
       'zh_Hans': 'Github Link',
     },
     'y2utkbqo': {
@@ -816,6 +916,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '01kliwsx': {
@@ -823,6 +924,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '3ymofq1p': {
@@ -830,6 +932,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Themen',
       'es': 'Temas',
       'fr': 'Thèmes',
+      'ru': 'Темы',
       'zh_Hans': '主题',
     },
     'nh1r0238': {
@@ -837,6 +940,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'u3h0qui2': {
@@ -844,6 +948,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Themen',
       'es': 'Temas',
       'fr': 'Les sujets',
+      'ru': 'Темы',
       'zh_Hans': '主题',
     },
     'h13kg7qr': {
@@ -851,6 +956,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach einem Thema...',
       'es': 'Busca un tema...',
       'fr': 'Rechercher un sujet...',
+      'ru': 'Ищите тему...',
       'zh_Hans': '搜索主题...',
     },
     'sx3ty69v': {
@@ -858,6 +964,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunde',
       'es': 'Cliente',
       'fr': 'Client',
+      'ru': 'Клиент',
       'zh_Hans': '顾客',
     },
     'osvnesbh': {
@@ -865,6 +972,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'psh6ke1p': {
@@ -872,6 +980,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundenname',
       'es': 'Nombre del cliente',
       'fr': 'Nom du client',
+      'ru': 'Имя Клиента',
       'zh_Hans': '顾客姓名',
     },
     'jfcys0av': {
@@ -879,6 +988,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     '1m1enuc4': {
@@ -886,6 +996,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einnahmen',
       'es': 'Ganancia',
       'fr': 'Revenu',
+      'ru': 'Доход',
       'zh_Hans': '收入',
     },
     'imvqflfb': {
@@ -893,6 +1004,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Preis pro Stunde',
       'es': 'Precio por hora',
       'fr': 'Prix ​​par heure',
+      'ru': 'Цена за час',
       'zh_Hans': '每小时价格',
     },
     'zy0j4m21': {
@@ -900,6 +1012,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '50',
       'es': '50',
       'fr': '50',
+      'ru': '50',
       'zh_Hans': '50',
     },
     'p25f6cpa': {
@@ -907,6 +1020,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall hinzufügen',
       'es': 'Agregar caso',
       'fr': 'Ajouter un cas',
+      'ru': 'Добавить дело',
       'zh_Hans': '添加案例',
     },
     '0rdy80es': {
@@ -914,6 +1028,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Fall erstellen',
       'es': 'Crear caso',
       'fr': 'Créer un cas',
+      'ru': 'Создать дело',
       'zh_Hans': '创建案例',
     },
     'brd4f1fu': {
@@ -921,6 +1036,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Erstellen Sie mit diesem Formular einen neuen Fall',
       'es': 'Crear un nuevo caso con este formulario',
       'fr': 'Créez un nouveau dossier avec ce formulaire',
+      'ru': 'Создайте новый запрос с помощью этой формы',
       'zh_Hans': '使用此表单创建新案例',
     },
     'vvddebob': {
@@ -928,6 +1044,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -938,6 +1055,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'yuf6qyzb': {
@@ -945,6 +1063,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Loslegen',
       'es': 'Empezar',
       'fr': 'Commencer',
+      'ru': 'Начать',
       'zh_Hans': '立即开始',
     },
     'n8xp8945': {
@@ -952,6 +1071,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Erstellen Sie mithilfe des untenstehenden Formulars ein Konto.',
       'es': 'Cree una cuenta utilizando el siguiente formulario.',
       'fr': 'Créez un compte en utilisant le formulaire ci-dessous.',
+      'ru': 'Создайте учетную запись, используя форму ниже.',
       'zh_Hans': '使用下面的表格创建一个帐户。',
     },
     'hxdqv67a': {
@@ -959,6 +1079,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'k3t8iv0d': {
@@ -966,6 +1087,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passwort',
       'es': 'Contraseña',
       'fr': 'Mot de passe',
+      'ru': 'Пароль',
       'zh_Hans': '密码',
     },
     '758me7y0': {
@@ -973,6 +1095,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passwort',
       'es': 'Contraseña',
       'fr': 'Mot de passe',
+      'ru': 'Пароль',
       'zh_Hans': '密码',
     },
     'am9thlup': {
@@ -980,6 +1103,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzerkonto erstellen',
       'es': 'Crear una cuenta',
       'fr': 'Créer un compte',
+      'ru': 'Зарегистрироваться',
       'zh_Hans': '创建账户',
     },
     'cp9wwxhh': {
@@ -987,6 +1111,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Oder registrieren Sie sich mit',
       'es': 'O regístrate con',
       'fr': 'Ou inscrivez-vous avec',
+      'ru': 'Или зарегистрируйтесь через',
       'zh_Hans': '或注册',
     },
     'zohwxmwa': {
@@ -994,6 +1119,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Weiter mit Google',
       'es': 'Continuar con Google',
       'fr': 'Continuer avec Google',
+      'ru': 'Продолжить с Google',
       'zh_Hans': '继续使用 Google',
     },
     'l8nmxfqe': {
@@ -1001,6 +1127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Weiter mit Apple',
       'es': 'Continuar con Apple',
       'fr': 'Continuer avec Apple',
+      'ru': 'Продолжить с Apple',
       'zh_Hans': '继续使用 Apple',
     },
     '4o69hz8n': {
@@ -1008,6 +1135,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sie haben bereits ein Konto?',
       'es': '¿Ya tienes una cuenta?',
       'fr': 'Vous avez déjà un compte?',
+      'ru': 'У вас уже есть аккаунт?',
       'zh_Hans': '已有账户？',
     },
     'p5d43lji': {
@@ -1015,6 +1143,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hier anmelden',
       'es': 'Firme aquí',
       'fr': 'Se connecter ici',
+      'ru': 'Войдите здесь',
       'zh_Hans': '在此登录',
     },
     '9fj3ed5h': {
@@ -1022,6 +1151,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1032,6 +1162,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'wc6vlb88': {
@@ -1039,6 +1170,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Willkommen zurück',
       'es': 'Bienvenido de nuevo',
       'fr': 'Content de te revoir',
+      'ru': 'Добро пожаловать',
       'zh_Hans': '欢迎回来',
     },
     '8yhirh5p': {
@@ -1048,6 +1180,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Complete la información a continuación para acceder a su cuenta.',
       'fr':
           'Remplissez les informations ci-dessous afin d\'accéder à votre compte.',
+      'ru':
+          'Заполните информацию ниже, чтобы получить доступ к своей учетной записи.',
       'zh_Hans': '填写以下信息以访问您的帐户。',
     },
     '8ucnopf5': {
@@ -1055,6 +1189,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'petfhqha': {
@@ -1062,6 +1197,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passwort',
       'es': 'Contraseña',
       'fr': 'Mot de passe',
+      'ru': 'Пароль',
       'zh_Hans': '密码',
     },
     'p3xaauvg': {
@@ -1069,6 +1205,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Anmelden',
       'es': 'Iniciar sesión',
       'fr': 'Se connecter',
+      'ru': 'Войти',
       'zh_Hans': '登入',
     },
     '08btyait': {
@@ -1076,6 +1213,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Oder melden Sie sich an mit',
       'es': 'O inicia sesión con',
       'fr': 'Ou connectez-vous avec',
+      'ru': 'Или войдите через',
       'zh_Hans': '或使用以下方式登录',
     },
     'pmg4jacf': {
@@ -1083,6 +1221,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Weiter mit Google',
       'es': 'Continuar con Google',
       'fr': 'Continuer avec Google',
+      'ru': 'Продолжить с Google',
       'zh_Hans': '继续使用 Google',
     },
     'lhcickgn': {
@@ -1090,13 +1229,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Weiter mit Apple',
       'es': 'Continuar con Apple',
       'fr': 'Continuer avec Apple',
+      'ru': 'Продолжить с Apple',
       'zh_Hans': '继续使用 Apple',
     },
     '8pwvx02e': {
-      'en': 'Don\'t have an account?  ',
+      'en': 'Don\'t have an account? ',
       'de': 'Sie haben noch kein Konto?',
       'es': '¿No tienes una cuenta?',
       'fr': 'Vous n\'avez pas de compte ?',
+      'ru': 'У вас нет учетной записи?',
       'zh_Hans': '沒有帳戶？',
     },
     'mk06lsbv': {
@@ -1104,6 +1245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzerkonto erstellen',
       'es': 'Crear una cuenta',
       'fr': 'Créer un compte',
+      'ru': 'Зарегистрироваться',
       'zh_Hans': '创建账户',
     },
     'ak2gtbko': {
@@ -1111,6 +1253,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passwort vergessen?',
       'es': '¿Has olvidado tu contraseña?',
       'fr': 'Mot de passe oublié?',
+      'ru': 'Забыли пароль?',
       'zh_Hans': '忘记密码？',
     },
     'vf342axe': {
@@ -1118,6 +1261,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1128,6 +1272,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ngxwdtah': {
@@ -1135,6 +1280,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passwort vergessen',
       'es': 'Has olvidado tu contraseña',
       'fr': 'Mot de passe oublié',
+      'ru': 'Забыли пароль',
       'zh_Hans': '忘记密码',
     },
     'rcdhs0gf': {
@@ -1146,6 +1292,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Complete su correo electrónico a continuación para recibir un enlace para restablecer la contraseña.',
       'fr':
           'Veuillez remplir votre e-mail ci-dessous afin de recevoir un lien de réinitialisation du mot de passe.',
+      'ru':
+          'Пожалуйста, заполните свой адрес электронной почты ниже, чтобы получить ссылку для сброса пароля.',
       'zh_Hans': '请填写下面的电子邮件以便接收重置密码链接。',
     },
     'mzhbas81': {
@@ -1153,6 +1301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'cw6tl9xj': {
@@ -1160,6 +1309,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Link zum Zurücksetzen senden',
       'es': 'Enviar enlace de reinicio',
       'fr': 'Envoyer le lien de réinitialisation',
+      'ru': 'Отправить ссылку для сброса',
       'zh_Hans': '发送重置链接',
     },
     'wlesa9ou': {
@@ -1167,6 +1317,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1177,6 +1328,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'x7tuflp8': {
@@ -1184,6 +1336,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1194,6 +1347,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihr Konto',
       'es': 'Su cuenta',
       'fr': 'Votre compte',
+      'ru': 'Ваш счет',
       'zh_Hans': '你的帐户',
     },
     'od94gyfg': {
@@ -1201,6 +1355,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Profil bearbeiten',
       'es': 'Editar perfil',
       'fr': 'Editer le profil',
+      'ru': 'Редактировать профиль',
       'zh_Hans': '编辑个人资料',
     },
     '3bqy4rph': {
@@ -1208,6 +1363,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Adresse bearbeiten',
       'es': 'Editar dirección',
       'fr': 'Modifier l\'adresse',
+      'ru': 'Изменить адрес',
       'zh_Hans': '編輯地址',
     },
     'v8wpgdwz': {
@@ -1215,6 +1371,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sprachen bearbeiten',
       'es': 'Editar idiomas',
       'fr': 'Modifier les langues',
+      'ru': 'Изменить языки',
       'zh_Hans': '编辑语言',
     },
     'k9gh52ok': {
@@ -1222,6 +1379,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'IT-Kenntnisse bearbeiten',
       'es': 'Editar habilidades de TI',
       'fr': 'Modifier les compétences informatiques',
+      'ru': 'Редактировать ИТ-навыки',
       'zh_Hans': '编辑 IT 技能',
     },
     'yf1kh2jt': {
@@ -1229,6 +1387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'App Einstellungen',
       'es': 'Ajustes de Aplicacion',
       'fr': 'Paramètres de l\'application',
+      'ru': 'Настройки приложения',
       'zh_Hans': '应用程序设置',
     },
     'z84qmaed': {
@@ -1236,6 +1395,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Unterstützung',
       'es': 'Apoyo',
       'fr': 'Soutien',
+      'ru': 'Поддерживать',
       'zh_Hans': '支持',
     },
     'dodyl2fx': {
@@ -1243,6 +1403,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nutzungsbedingungen',
       'es': 'Términos de servicio',
       'fr': 'Conditions d\'utilisation',
+      'ru': 'Условия использования',
       'zh_Hans': '服务条款',
     },
     'zhg4cl4u': {
@@ -1250,6 +1411,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausloggen',
       'es': 'Cerrar sesión',
       'fr': 'Se déconnecter',
+      'ru': 'Выйти',
       'zh_Hans': '登出',
     },
     'bommisgd': {
@@ -1257,6 +1419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1267,6 +1430,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1277,6 +1441,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'b5m54jpy': {
@@ -1284,6 +1449,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Support-Tickets',
       'es': 'Boletos de soporte',
       'fr': 'Billets d\'assistance',
+      'ru': 'Билеты в службу поддержки',
       'zh_Hans': '支持票',
     },
     'y1cphusm': {
@@ -1292,6 +1458,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'A continuación se muestra una lista de tickets creados recientemente.',
       'fr': 'Vous trouverez ci-dessous une liste des tickets récemment créés',
+      'ru': 'Ниже приведен список последних созданных билетов.',
       'zh_Hans': '以下是最近创建的票证列表',
     },
     '8bi66y39': {
@@ -1299,6 +1466,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1309,6 +1477,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ticket-Erstellung',
       'es': 'Creación de entradas',
       'fr': 'Création de tickets',
+      'ru': 'Создание билетов',
       'zh_Hans': '票务创建',
     },
     'th2f4v4n': {
@@ -1316,6 +1485,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hier Support-Ticket erstellen',
       'es': 'Cree un ticket de soporte aquí',
       'fr': 'Créez un ticket de support ici',
+      'ru': 'Создайте заявку в службу поддержки здесь',
       'zh_Hans': '在此创建支持单',
     },
     'vj2kin4a': {
@@ -1324,6 +1494,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Füllen Sie das untenstehende Formular aus, um ein Ticket einzureichen.',
       'es': 'Complete el siguiente formulario para enviar un ticket.',
       'fr': 'Remplissez le formulaire ci-dessous pour soumettre un ticket.',
+      'ru': 'Заполните форму ниже, чтобы отправить билет.',
       'zh_Hans': '填写下面的表格来提交票证。',
     },
     '8a83o12g': {
@@ -1331,6 +1502,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Rufen Sie uns an',
       'es': 'Llámanos',
       'fr': 'Appelez-nous',
+      'ru': 'Позвоните нам',
       'zh_Hans': '致电我们',
     },
     'txl8rzat': {
@@ -1338,6 +1510,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Schreiben Sie uns eine E-Mail',
       'es': 'Envíanos un correo electrónico',
       'fr': 'Envoyez-nous un email',
+      'ru': 'Свяжитесь с нами по электронной почте',
       'zh_Hans': '发邮件给我们',
     },
     'ricp38cm': {
@@ -1345,6 +1518,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Was ist los?',
       'es': '¿Qué está pasando?',
       'fr': 'Que se passe-t-il?',
+      'ru': 'Что происходит?',
       'zh_Hans': '到底是怎么回事？',
     },
     '0l26gje2': {
@@ -1352,6 +1526,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kurze Beschreibung dessen, was los ist ...',
       'es': 'Breve descripción de lo que está pasando...',
       'fr': 'Brève description de ce qui se passe...',
+      'ru': 'Краткое описание происходящего...',
       'zh_Hans': '简要描述正在发生的事情...',
     },
     'eyq6jort': {
@@ -1359,6 +1534,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Wählen Sie eine Prioritätsstufe',
       'es': 'Elija un nivel de prioridad',
       'fr': 'Choisissez un niveau de priorité',
+      'ru': 'Выберите уровень приоритета',
       'zh_Hans': '选择优先级别',
     },
     'nj4gxq7y': {
@@ -1366,6 +1542,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Notfall',
       'es': 'Emergencia',
       'fr': 'Urgence',
+      'ru': 'Чрезвычайная ситуация',
       'zh_Hans': '紧急情况',
     },
     'nxn0qt7g': {
@@ -1373,6 +1550,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hoch',
       'es': 'Alto',
       'fr': 'Haut',
+      'ru': 'Высокий',
       'zh_Hans': '高的',
     },
     '36ar5gt0': {
@@ -1380,6 +1558,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mittel',
       'es': 'Medio',
       'fr': 'Moyen',
+      'ru': 'Середина',
       'zh_Hans': '中等的',
     },
     'xbub19mw': {
@@ -1387,6 +1566,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Niedrig',
       'es': 'Bajo',
       'fr': 'Faible',
+      'ru': 'Низкий',
       'zh_Hans': '低的',
     },
     'udk6s772': {
@@ -1394,6 +1574,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Niedrig',
       'es': 'Bajo',
       'fr': 'Faible',
+      'ru': 'Низкий',
       'zh_Hans': '低的',
     },
     'ngxigtui': {
@@ -1401,6 +1582,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Screenshot hochladen',
       'es': 'Cargar captura de pantalla',
       'fr': 'Télécharger une capture d\'écran',
+      'ru': 'Загрузить скриншот',
       'zh_Hans': '上传截图',
     },
     '9furp0rw': {
@@ -1408,6 +1590,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer zuweisen',
       'es': 'Asignar usuario',
       'fr': 'Attribuer un utilisateur',
+      'ru': 'Назначить пользователя',
       'zh_Hans': '分配用户',
     },
     'zdl3izxa': {
@@ -1415,6 +1598,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer hinzufügen',
       'es': 'Agregar usuario',
       'fr': 'Ajouter un utilisateur',
+      'ru': 'Добавить пользователя',
       'zh_Hans': '添加用户',
     },
     '0sjmvj9o': {
@@ -1422,6 +1606,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ticket übermitteln',
       'es': 'Enviar ticket',
       'fr': 'Envoyer le ticket',
+      'ru': 'Отправить билет',
       'zh_Hans': '提交工单',
     },
     'h5odabcw': {
@@ -1429,6 +1614,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1437,8 +1623,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mscspqqu': {
       'en': 'Ticket Details',
       'de': 'Ticketdetails',
-      'es': 'Detalles del billete',
+      'es': 'Detalles del boleto',
       'fr': 'Détails du billet',
+      'ru': 'Детали билета',
       'zh_Hans': '票务详情',
     },
     'ss89pb28': {
@@ -1446,6 +1633,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'istektt5': {
@@ -1454,34 +1642,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'A continuación se detallan los detalles de este ticket de soporte.',
       'fr': 'Vous trouverez ci-dessous les détails de ce ticket d\'assistance.',
+      'ru':
+          'Ниже приведены подробные сведения об этом билете в службу поддержки.',
       'zh_Hans': '以下是此支持票的详细信息。',
     },
     'zuqhc7rn': {
       'en': 'Cost',
-      'de': 'Beschreibung',
-      'es': 'Descripción',
-      'fr': 'Description',
-      'zh_Hans': '描述',
+      'de': 'Kosten',
+      'es': 'Costo',
+      'fr': 'Coût',
+      'ru': 'Расходы',
+      'zh_Hans': '成本',
     },
     '9sjj2a75': {
       'en': 'Duration',
-      'de': 'Beschreibung',
-      'es': 'Descripción',
-      'fr': 'Description',
-      'zh_Hans': '描述',
+      'de': 'Dauer',
+      'es': 'Duración',
+      'fr': 'Durée',
+      'ru': 'Продолжительность',
+      'zh_Hans': '期间',
     },
     'lfdcxd03': {
       'en': 'Duration',
-      'de': 'Beschreibung',
-      'es': 'Descripción',
-      'fr': 'Description',
-      'zh_Hans': '描述',
+      'de': 'Dauer',
+      'es': 'Duración',
+      'fr': 'Durée',
+      'ru': 'Продолжительность',
+      'zh_Hans': '期间',
     },
     '2a7z81xx': {
       'en': 'Submitted on',
       'de': 'Eingereicht am',
       'es': 'Presentado el',
       'fr': 'Soumis le',
+      'ru': 'Представлены на',
       'zh_Hans': '提交日期',
     },
     '3b2i6hgq': {
@@ -1489,6 +1683,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zuletzt bearbeitet',
       'es': 'Última edición',
       'fr': 'Dernière modification',
+      'ru': 'Последнее редактирование',
       'zh_Hans': '最后编辑',
     },
     'h1lawcol': {
@@ -1496,6 +1691,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Status',
       'es': 'Estado',
       'fr': 'Statut',
+      'ru': 'Положение дел',
       'zh_Hans': '地位',
     },
     '915sp9a8': {
@@ -1503,6 +1699,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausstehend',
       'es': 'Pendiente',
       'fr': 'En attente',
+      'ru': 'В ожидании',
       'zh_Hans': '待办的',
     },
     'zv37t5tt': {
@@ -1510,6 +1707,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Im Gange',
       'es': 'En curso',
       'fr': 'En cours',
+      'ru': 'В ходе выполнения',
       'zh_Hans': '进行中',
     },
     'fbik18u7': {
@@ -1517,6 +1715,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständig',
       'es': 'Completo',
       'fr': 'Complet',
+      'ru': 'Полный',
       'zh_Hans': '完全的',
     },
     'l9ecv4xv': {
@@ -1524,6 +1723,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gesendet',
       'es': 'Enviado',
       'fr': 'Soumis',
+      'ru': 'Поданный',
       'zh_Hans': '已提交',
     },
     '5g50y16u': {
@@ -1531,6 +1731,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte auswählen...',
       'es': 'Por favor seleccione...',
       'fr': 'Veuillez sélectionner...',
+      'ru': 'Пожалуйста выберите...',
       'zh_Hans': '请选择...',
     },
     '74vmywjv': {
@@ -1538,6 +1739,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Status suchen ...',
       'es': 'Buscar un estado...',
       'fr': 'Rechercher un statut...',
+      'ru': 'Поиск статуса...',
       'zh_Hans': '搜索状态...',
     },
     'yy7xpy7w': {
@@ -1545,6 +1747,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zugewiesen an',
       'es': 'Asignado a',
       'fr': 'Assigné à',
+      'ru': 'Назначено',
       'zh_Hans': '分配给',
     },
     'jvimk02l': {
@@ -1552,6 +1755,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eingereicht von',
       'es': 'Presentado por',
       'fr': 'Proposé par',
+      'ru': 'Представленный',
       'zh_Hans': '由...所提交',
     },
     'sacl5x8e': {
@@ -1559,6 +1763,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zuordnen',
       'es': 'Asignar',
       'fr': 'Attribuer',
+      'ru': 'Назначать',
       'zh_Hans': '分配',
     },
     'x5s786v4': {
@@ -1566,6 +1771,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ticket aktualisieren',
       'es': 'Boleto de actualización',
       'fr': 'Mettre à jour le ticket',
+      'ru': 'Обновить билет',
       'zh_Hans': '更新票证',
     },
     'yqpe5xlu': {
@@ -1573,6 +1779,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'x6ddm1u4': {
@@ -1580,6 +1787,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aktuelles Support-Ticket',
       'es': 'Ticket de soporte actual',
       'fr': 'Ticket de support actuel',
+      'ru': 'Текущий запрос поддержки',
       'zh_Hans': '当前支持单',
     },
   },
@@ -1590,6 +1798,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundeninformation',
       'es': 'Información al cliente',
       'fr': 'Informations client',
+      'ru': 'Информация для клиентов',
       'zh_Hans': '客户信息',
     },
     '2mghmw6b': {
@@ -1597,6 +1806,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivitäten',
       'es': 'A continuación se muestra un resumen de su actividad.',
       'fr': 'Ci-dessous un résumé de votre activité',
+      'ru': 'Ниже представлена ​​сводная информация о вашей деятельности.',
       'zh_Hans': '以下是您的活动摘要',
     },
     'joipmprf': {
@@ -1604,6 +1814,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Verdientes Geld',
       'es': 'Dinero ganado',
       'fr': 'L\'argent gagné',
+      'ru': 'Заработанные деньги',
       'zh_Hans': '赚到的钱',
     },
     'bvrj937a': {
@@ -1611,6 +1822,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Durchschnittliche Abrechnung',
       'es': 'Facturación promedio',
       'fr': 'Facturation moyenne',
+      'ru': 'Средний биллинг',
       'zh_Hans': '平均账单',
     },
     'ucngtba5': {
@@ -1618,6 +1830,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
       'fr': 'Clients totaux',
+      'ru': 'Всего клиентов',
       'zh_Hans': '客户总数',
     },
     '72k7zctj': {
@@ -1625,6 +1838,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Umsatzprozentsatz',
       'es': 'Porcentaje de ingresos',
       'fr': 'Pourcentage de revenus',
+      'ru': 'Процент дохода',
       'zh_Hans': '收入百分比',
     },
     'dbqutbci': {
@@ -1632,6 +1846,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundeninformation',
       'es': 'Información al cliente',
       'fr': 'Informations client',
+      'ru': 'Информация для клиентов',
       'zh_Hans': '客户信息',
     },
     'llfx7g5q': {
@@ -1639,6 +1854,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Übersicht Ihrer Kundenaufträge.',
       'es': 'Una descripción general de los trabajos de sus clientes.',
       'fr': 'Un aperçu de vos tâches clients.',
+      'ru': 'Обзор вакансий ваших клиентов.',
       'zh_Hans': '您的客户工作概述。',
     },
     'fxfdsogo': {
@@ -1646,6 +1862,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'derzeitige Kunden',
       'es': 'clientes actuales',
       'fr': 'clients actuels',
+      'ru': 'текущие клиенты',
       'zh_Hans': '现有客户',
     },
     '6l634rov': {
@@ -1653,6 +1870,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'abgeschlossene Kunden',
       'es': 'clientes completados',
       'fr': 'clients complétés',
+      'ru': 'завершенные клиенты',
       'zh_Hans': '已完成的客户',
     },
     '82u69mor': {
@@ -1660,6 +1878,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Cases',
       'es': 'Casos de clientes',
       'fr': 'Cas clients',
+      'ru': 'Клиентские случаи',
       'zh_Hans': '客户案例',
     },
     'fnw01e3l': {
@@ -1667,6 +1886,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Zusammenfassung Ihrer aktuellen Kundenfälle',
       'es': 'Un resumen de los casos de sus clientes actuales',
       'fr': 'Un résumé de vos cas clients actuels',
+      'ru': 'Краткое изложение ваших текущих обращений к клиентам',
       'zh_Hans': '当前客户案例摘要',
     },
     '21mkfth2': {
@@ -1674,6 +1894,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '9iu97squ': {
@@ -1681,6 +1902,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eigen',
       'es': 'Propio',
       'fr': 'Propre',
+      'ru': 'Собственный',
       'zh_Hans': '自己的',
     },
     '1xsokerm': {
@@ -1688,13 +1910,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Meetings',
       'es': 'Reuniones con clientes',
       'fr': 'Rendez-vous clients',
+      'ru': 'Встречи с клиентами',
       'zh_Hans': '客户会议',
     },
     'bx7t1x0h': {
       'en': 'A summary of your meetings',
       'de': 'Eine Zusammenfassung Ihrer Meetings',
-      'es': 'Un resumen de tus reuniones.',
+      'es': 'Un resumen de sus reuniones',
       'fr': 'Un résumé de vos réunions',
+      'ru': 'Итог ваших встреч',
       'zh_Hans': '会议摘要',
     },
     'ymj55p09': {
@@ -1702,6 +1926,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum',
       'es': 'Fecha',
       'fr': 'Date',
+      'ru': 'Дата',
       'zh_Hans': '日期',
     },
     '9jkwcq7p': {
@@ -1709,6 +1934,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     'o52da1js': {
@@ -1716,6 +1942,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'Costos',
       'fr': 'Frais',
+      'ru': 'Расходы',
       'zh_Hans': '成本',
     },
     'phi510ca': {
@@ -1723,6 +1950,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
+      'ru': 'Руководитель',
       'zh_Hans': '导师',
     },
     'sauzmy7r': {
@@ -1730,6 +1958,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1740,6 +1969,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gruppenchat',
       'es': 'Grupo de chat',
       'fr': 'Discussion de groupe',
+      'ru': 'Групповой чат',
       'zh_Hans': '群聊',
     },
     'z9dcgfkq': {
@@ -1747,6 +1977,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1757,6 +1988,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Chat hinzufügen',
       'es': 'Agregar chat',
       'fr': 'Ajouter une discussion',
+      'ru': 'Добавить чат',
       'zh_Hans': '添加聊天',
     },
     'j81ilpuq': {
@@ -1764,6 +1996,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gruppenchat',
       'es': 'Grupo de chat',
       'fr': 'Discussion de groupe',
+      'ru': 'Групповой чат',
       'zh_Hans': '群聊',
     },
     'oq6hlue0': {
@@ -1771,6 +2004,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Meine Chats',
       'es': 'Mis Chats',
       'fr': 'Mes discussions',
+      'ru': 'Мои чаты',
       'zh_Hans': '我的聊天',
     },
     'qwk0a6ke': {
@@ -1779,6 +2013,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'A continuación se muestran tus chats y chats grupales.',
       'fr':
           'Vous trouverez ci-dessous vos discussions et discussions de groupe',
+      'ru': 'Ниже представлены ваши чаты и групповые чаты',
       'zh_Hans': '以下是您的聊天和群聊',
     },
     'wfh3loj4': {
@@ -1786,6 +2021,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '__',
       'es': '__',
       'fr': '__',
+      'ru': '__',
       'zh_Hans': '__',
     },
   },
@@ -1796,6 +2032,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer einladen',
       'es': 'Invitar usuarios',
       'fr': 'Inviter des utilisateurs',
+      'ru': 'Пригласить пользователей',
       'zh_Hans': '邀请用户',
     },
     'ql4fu98g': {
@@ -1803,13 +2040,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewählt',
       'es': 'Seleccionado',
       'fr': 'Choisi',
-      'zh_Hans': '已选定',
+      'ru': 'Выбрано',
+      'zh_Hans': '选定',
     },
     '2b5fgo9t': {
       'en': 'Invite Users',
       'de': 'Benutzer einladen',
       'es': 'Invitar usuarios',
       'fr': 'Inviter des utilisateurs',
+      'ru': 'Пригласить пользователей',
       'zh_Hans': '邀请用户',
     },
     'pdl3903c': {
@@ -1818,6 +2057,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Seleccione usuarios de abajo para iniciar un chat.',
       'fr':
           'Sélectionnez les utilisateurs ci-dessous pour démarrer une discussion.',
+      'ru': 'Выберите пользователей снизу, чтобы начать чат.',
       'zh_Hans': '从下面选择用户开始聊天。',
     },
     'jy4o2t2o': {
@@ -1825,6 +2065,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1835,6 +2076,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bilddetails',
       'es': 'Detalles de la imagen',
       'fr': 'Détails de l\'image',
+      'ru': 'Детали изображения',
       'zh_Hans': '图片细节',
     },
     'itj2r1tk': {
@@ -1842,6 +2084,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -1852,6 +2095,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständiger Name',
       'es': 'Nombre completo',
       'fr': 'Nom et prénom',
+      'ru': 'Полное имя',
       'zh_Hans': '全名',
     },
     'wl53zgkt': {
@@ -1859,6 +2103,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Name',
       'es': 'Nombre',
       'fr': 'Nom',
+      'ru': 'Имя',
       'zh_Hans': '姓名',
     },
     '1qwq52s2': {
@@ -1866,6 +2111,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefonnummer',
       'es': 'Número de teléfono',
       'fr': 'Numéro de téléphone',
+      'ru': 'Номер телефона',
       'zh_Hans': '电话号码',
     },
     'k42rx09i': {
@@ -1873,6 +2119,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefonnummer',
       'es': 'Número de teléfono',
       'fr': 'Numéro de téléphone',
+      'ru': 'Номер телефона',
       'zh_Hans': '电话号码',
     },
     'vdzc35iz': {
@@ -1880,6 +2127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'cu1rz8hq': {
@@ -1887,6 +2135,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'w83v5p9g': {
@@ -1894,6 +2143,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße',
       'es': 'Calle',
       'fr': 'Rue',
+      'ru': 'Улица',
       'zh_Hans': '街道',
     },
     'dz8s1veo': {
@@ -1901,6 +2151,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße',
       'es': 'Calle',
       'fr': 'Rue',
+      'ru': 'Улица',
       'zh_Hans': '街道',
     },
     '8m7j9wso': {
@@ -1908,6 +2159,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '城市',
     },
     'vl5t2xru': {
@@ -1915,6 +2167,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '城市',
     },
     'vkwdzh8z': {
@@ -1922,6 +2175,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     'as64pn2v': {
@@ -1929,6 +2183,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     'hgyxigwg': {
@@ -1936,6 +2191,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     'naeu1u2u': {
@@ -1943,6 +2199,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     'qzvdq8bg': {
@@ -1950,6 +2207,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sprachen',
       'es': 'Idiomas',
       'fr': 'Langues',
+      'ru': 'Языки',
       'zh_Hans': '语言',
     },
     'xf9ydg3j': {
@@ -1957,6 +2215,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     '7kfa0wi0': {
@@ -1964,6 +2223,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundensprachen',
       'es': 'Idiomas del cliente',
       'fr': 'Langues du client',
+      'ru': 'Языки клиентов',
       'zh_Hans': '客户语言',
     },
     'zwexgz3e': {
@@ -1971,6 +2231,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach einer Sprache...',
       'es': 'Buscar un idioma...',
       'fr': 'Rechercher une langue...',
+      'ru': 'Поиск языка...',
       'zh_Hans': '搜索语言...',
     },
     'hb047u9p': {
@@ -1978,6 +2239,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden hinzufügen',
       'es': 'Agregar cliente',
       'fr': 'Ajouter un client',
+      'ru': 'Добавить клиента',
       'zh_Hans': '添加客户',
     },
     'the8au5f': {
@@ -1985,6 +2247,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden anlegen',
       'es': 'Crear cliente',
       'fr': 'Créer un client',
+      'ru': 'Создать клиента',
       'zh_Hans': '创建客户',
     },
     'ic0u8pqs': {
@@ -1992,6 +2255,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Erstellen Sie mit diesem Formular einen neuen Kunden',
       'es': 'Crear nuevo Cliente con este Formulario',
       'fr': 'Créer un nouveau client avec ce formulaire',
+      'ru': 'Создайте нового клиента с помощью этой формы',
       'zh_Hans': '使用此表单创建新客户',
     },
     'jx8qgyjd': {
@@ -1999,6 +2263,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2009,6 +2274,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'se7z3zjp': {
@@ -2016,6 +2282,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'et2esaos': {
@@ -2023,6 +2290,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'i5paqfsq': {
@@ -2030,6 +2298,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Tutor',
       'es': 'Tutor',
       'fr': 'Tuteur',
+      'ru': 'Репетитор',
       'zh_Hans': '导师',
     },
     'ccl67tsf': {
@@ -2037,6 +2306,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     '4zfw8bwq': {
@@ -2044,6 +2314,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     '0zdzhdgd': {
@@ -2051,6 +2322,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '0,0',
       'es': '0.0',
       'fr': '0,0',
+      'ru': '0,0',
       'zh_Hans': '0.0',
     },
     'cc3dpdox': {
@@ -2058,6 +2330,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'costos',
       'fr': 'frais',
+      'ru': 'расходы',
       'zh_Hans': '成本',
     },
     'dw97hdcg': {
@@ -2065,6 +2338,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '0,0',
       'es': '0.0',
       'fr': '0,0',
+      'ru': '0,0',
       'zh_Hans': '0.0',
     },
     'h3i1xjk3': {
@@ -2072,6 +2346,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum auswählen',
       'es': 'Seleccione fecha',
       'fr': 'Sélectionner une date',
+      'ru': 'Выберите дату',
       'zh_Hans': '选择日期',
     },
     'xe9lqz5y': {
@@ -2079,6 +2354,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewähltes Datum:',
       'es': 'Fecha seleccionada:',
       'fr': 'Date sélectionnée :',
+      'ru': 'Выбранная дата:',
       'zh_Hans': '選擇日期:',
     },
     'f7685vfe': {
@@ -2086,6 +2362,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hallo Welt',
       'es': 'Hola Mundo',
       'fr': 'Bonjour le monde',
+      'ru': 'Привет, мир',
       'zh_Hans': '你好世界',
     },
     '0hi0scef': {
@@ -2093,6 +2370,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
+      'ru': 'Сохранять',
       'zh_Hans': '节省',
     },
     '142c9phq': {
@@ -2100,6 +2378,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Meeting hinzufügen',
       'es': 'Agregar reunión',
       'fr': 'Ajouter une réunion',
+      'ru': 'Добавить встречу',
       'zh_Hans': '添加会议',
     },
     '6ak09n8d': {
@@ -2107,6 +2386,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einem besonderen Kunden ein Meeting hinzufügen',
       'es': 'Agregar una reunión a un cliente especial',
       'fr': 'Ajouter une réunion à un client spécial',
+      'ru': 'Добавить встречу специальному клиенту',
       'zh_Hans': '为特殊客户添加会议',
     },
     'h77ncpzt': {
@@ -2114,6 +2394,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2124,6 +2405,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Navigation',
       'es': 'Navegación',
       'fr': 'La navigation',
+      'ru': 'Навигация',
       'zh_Hans': '导航',
     },
     'r60f84h5': {
@@ -2131,6 +2413,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Zur Navigation zwischen Bildschirmen',
       'es': 'Para navegar entre pantallas',
       'fr': 'Pour naviguer entre les écrans',
+      'ru': 'Для навигации между экранами',
       'zh_Hans': '用于屏幕间导航',
     },
     's5ry5cyk': {
@@ -2138,6 +2421,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'bytes Coding',
       'es': 'bytes Coding',
       'fr': 'bytes Coding',
+      'ru': '',
       'zh_Hans': 'bytes Coding',
     },
     'naqnbvxd': {
@@ -2145,6 +2429,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Platform Navigation',
       'es': 'Navegación de plataforma',
       'fr': 'Navigation sur la plateforme',
+      'ru': 'Навигация по платформе',
       'zh_Hans': '平台导航',
     },
     'ryazebh4': {
@@ -2152,6 +2437,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hauptmenü',
       'es': 'Menú principal',
       'fr': 'Menu principal',
+      'ru': 'Главное меню',
       'zh_Hans': '主菜单',
     },
     '9q77itrm': {
@@ -2159,6 +2445,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Chats',
       'es': 'Charlas',
       'fr': 'Discussions',
+      'ru': 'Чаты',
       'zh_Hans': '聊天',
     },
     '8tlki912': {
@@ -2166,6 +2453,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einstellungen',
       'es': 'Ajustes',
       'fr': 'Paramètres',
+      'ru': 'Настройки',
       'zh_Hans': '设置',
     },
     '5zra02cb': {
@@ -2173,6 +2461,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Abrechnung',
       'es': 'Facturación',
       'fr': 'Facturation',
+      'ru': 'Биллинг',
       'zh_Hans': '计费',
     },
     'm9ww17s0': {
@@ -2180,6 +2469,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitglieder',
       'es': 'Miembros',
       'fr': 'Membres',
+      'ru': 'Члены',
       'zh_Hans': '成员',
     },
     '12w6659s': {
@@ -2187,6 +2477,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Rollenverwaltung',
       'es': 'Gestión de roles',
       'fr': 'Gestion des rôles',
+      'ru': 'Управление ролями',
       'zh_Hans': '角色管理',
     },
     'uhfmvqwm': {
@@ -2194,6 +2485,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundenabgleich',
       'es': 'Emparejamiento de clientes',
       'fr': 'Correspondance client',
+      'ru': 'Поиск клиентов',
       'zh_Hans': '客户匹配',
     },
     'urfpy2ae': {
@@ -2201,6 +2493,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiterabrechnung',
       'es': 'Facturación de empleados',
       'fr': 'Facturation des employés',
+      'ru': 'Выставление счетов сотрудникам',
       'zh_Hans': '员工账单',
     },
     '565faqzv': {
@@ -2208,6 +2501,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden',
       'es': 'Clientes',
       'fr': 'Clients',
+      'ru': 'Клиенты',
       'zh_Hans': '顾客',
     },
     '411g996a': {
@@ -2215,6 +2509,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Lichtmodus',
       'es': 'Modo de luz',
       'fr': 'Mode lumière',
+      'ru': 'Светлый режим',
       'zh_Hans': '灯光模式',
     },
     'mc7klcgc': {
@@ -2222,6 +2517,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dunkler Modus',
       'es': 'Modo oscuro',
       'fr': 'Mode sombre',
+      'ru': 'Темный режим',
       'zh_Hans': '暗黑模式',
     },
     '0qj8uewa': {
@@ -2229,6 +2525,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2239,6 +2536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundeninformation',
       'es': 'Información al cliente',
       'fr': 'Informations client',
+      'ru': 'Информация для клиентов',
       'zh_Hans': '客户信息',
     },
     'odno4o2l': {
@@ -2246,6 +2544,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nachfolgend finden Sie eine Zusammenfassung Ihrer Aktivitäten',
       'es': 'A continuación se muestra un resumen de su actividad.',
       'fr': 'Ci-dessous un résumé de votre activité',
+      'ru': 'Ниже представлена ​​сводная информация о вашей деятельности.',
       'zh_Hans': '以下是您的活动摘要',
     },
     'xxc5wt2v': {
@@ -2253,6 +2552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Geld ausgeben',
       'es': 'Gasto de dinero',
       'fr': 'Dépense d\'argent',
+      'ru': 'Деньги тратят',
       'zh_Hans': '花钱',
     },
     'xrcnzlbf': {
@@ -2260,6 +2560,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Durchschnittliche Kosten',
       'es': 'Costos promedio',
       'fr': 'Coûts moyens',
+      'ru': 'Средние затраты',
       'zh_Hans': '平均成本',
     },
     'azw44sx6': {
@@ -2267,6 +2568,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gesamtzahl der Meetings',
       'es': 'Total de reuniones',
       'fr': 'Total des réunions',
+      'ru': 'Всего встреч',
       'zh_Hans': '会议总数',
     },
     'd35fb2ze': {
@@ -2274,6 +2576,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Meetings',
       'es': 'Reuniones con clientes',
       'fr': 'Rendez-vous clients',
+      'ru': 'Встречи с клиентами',
       'zh_Hans': '客户会议',
     },
     '4stawemd': {
@@ -2281,6 +2584,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Zusammenfassung Ihrer Meetings',
       'es': 'Un resumen de sus reuniones',
       'fr': 'Un résumé de vos réunions',
+      'ru': 'Итог ваших встреч',
       'zh_Hans': '会议摘要',
     },
     '72cuvxfy': {
@@ -2288,6 +2592,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum',
       'es': 'Fecha',
       'fr': 'Date',
+      'ru': 'Дата',
       'zh_Hans': '日期',
     },
     'ff89rf83': {
@@ -2295,6 +2600,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     '0drowsmc': {
@@ -2302,6 +2608,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'Costos',
       'fr': 'Frais',
+      'ru': 'Расходы',
       'zh_Hans': '成本',
     },
     'libsyzti': {
@@ -2309,6 +2616,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
+      'ru': 'Руководитель',
       'zh_Hans': '导师',
     },
     'cddgguhy': {
@@ -2316,6 +2624,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2326,6 +2635,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mail',
       'es': 'Correo',
       'fr': 'Mail',
+      'ru': 'Почта',
       'zh_Hans': '邮件',
     },
     'kmtjql97': {
@@ -2333,6 +2643,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Anruf',
       'es': 'Llamar',
       'fr': 'Appel',
+      'ru': 'Вызов',
       'zh_Hans': '称呼',
     },
     'pu04pfxz': {
@@ -2340,6 +2651,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer-Beschreibung',
       'es': 'Descripción de usuario',
       'fr': 'Description de l\'utilisateur',
+      'ru': 'Описание пользователя',
       'zh_Hans': '用户描述',
     },
     'jxgl8tmv': {
@@ -2347,6 +2659,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Verdientes Geld',
       'es': 'Dinero ganado',
       'fr': 'L\'argent gagné',
+      'ru': 'Заработанные деньги',
       'zh_Hans': '赚到的钱',
     },
     '1sovajv3': {
@@ -2354,6 +2667,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Durchschnittliche Abrechnung',
       'es': 'Facturación promedio',
       'fr': 'Facturation moyenne',
+      'ru': 'Средний биллинг',
       'zh_Hans': '平均账单',
     },
     'amq25o7c': {
@@ -2361,6 +2675,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden gesamt',
       'es': 'Clientes totales',
       'fr': 'Clients totaux',
+      'ru': 'Всего клиентов',
       'zh_Hans': '客户总数',
     },
     'lyzzcc02': {
@@ -2368,6 +2683,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Umsatzprozentsatz',
       'es': 'Porcentaje de ingresos',
       'fr': 'Pourcentage de revenus',
+      'ru': 'Процент дохода',
       'zh_Hans': '收入百分比',
     },
     'j5z2op8x': {
@@ -2375,6 +2691,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiterinformation',
       'es': 'Información del empleado',
       'fr': 'Informations sur les employés',
+      'ru': 'Информация о сотрудниках',
       'zh_Hans': '员工信息',
     },
     'yv1tophe': {
@@ -2382,6 +2699,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Übersicht ihrer Kundenjobs.',
       'es': 'Una visión general de los trabajos de sus clientes.',
       'fr': 'Un aperçu de leurs tâches clients.',
+      'ru': 'Обзор их работы с клиентами.',
       'zh_Hans': '他们的客户工作概述。',
     },
     'nxmksly7': {
@@ -2389,6 +2707,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'derzeitige Kunden',
       'es': 'clientes actuales',
       'fr': 'clients actuels',
+      'ru': 'текущие клиенты',
       'zh_Hans': '现有客户',
     },
     'jj0tni5e': {
@@ -2396,6 +2715,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'abgeschlossene Kunden',
       'es': 'clientes completados',
       'fr': 'clients complétés',
+      'ru': 'завершенные клиенты',
       'zh_Hans': '已完成的客户',
     },
     'ymhq664h': {
@@ -2403,6 +2723,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiter-Skills',
       'es': 'Habilidades de los empleados',
       'fr': 'Compétences des employés',
+      'ru': 'Навыки сотрудников',
       'zh_Hans': '员工技能',
     },
     '3fkffaue': {
@@ -2410,6 +2731,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiter-Sprachen',
       'es': 'Idiomas de los empleados',
       'fr': 'Langues des employés',
+      'ru': 'Языки сотрудников',
       'zh_Hans': '员工语言',
     },
     'f49vqwjs': {
@@ -2417,6 +2739,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Meetings',
       'es': 'Reuniones con clientes',
       'fr': 'Rendez-vous clients',
+      'ru': 'Встречи с клиентами',
       'zh_Hans': '客户会议',
     },
     '77i9y8d1': {
@@ -2424,6 +2747,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Zusammenfassung ihrer Treffen',
       'es': 'Un resumen de sus reuniones.',
       'fr': 'Un résumé de leurs réunions',
+      'ru': 'Итог их встреч',
       'zh_Hans': '会议纪要',
     },
     'j8agtzis': {
@@ -2431,6 +2755,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum',
       'es': 'Fecha',
       'fr': 'Date',
+      'ru': 'Дата',
       'zh_Hans': '日期',
     },
     'tn9ygrs2': {
@@ -2438,6 +2763,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     'fl675kqg': {
@@ -2445,6 +2771,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'Costos',
       'fr': 'Frais',
+      'ru': 'Расходы',
       'zh_Hans': '成本',
     },
     '5tnjst8t': {
@@ -2452,6 +2779,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
+      'ru': 'Руководитель',
       'zh_Hans': '导师',
     },
     '79sv2fvf': {
@@ -2459,6 +2787,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzerprofil',
       'es': 'Perfil del usuario',
       'fr': 'Profil de l\'utilisateur',
+      'ru': 'Профиль пользователя',
       'zh_Hans': '用户资料',
     },
     'np02awzv': {
@@ -2466,6 +2795,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewähltes Benutzerprofil vervollständigen',
       'es': 'Completar el perfil de usuario seleccionado',
       'fr': 'Compléter le profil utilisateur sélectionné',
+      'ru': 'Завершить выбранный профиль пользователя',
       'zh_Hans': '完成选定的用户个人资料',
     },
     '1byh2jsg': {
@@ -2473,6 +2803,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2483,6 +2814,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mail',
       'es': 'Correo',
       'fr': 'Mail',
+      'ru': 'Почта',
       'zh_Hans': '邮件',
     },
     't8vz9hvc': {
@@ -2490,6 +2822,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Anruf',
       'es': 'Llamar',
       'fr': 'Appel',
+      'ru': 'Вызов',
       'zh_Hans': '称呼',
     },
     '0boaf6k3': {
@@ -2497,6 +2830,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer-Beschreibung',
       'es': 'Descripción de usuario',
       'fr': 'Description de l\'utilisateur',
+      'ru': 'Описание пользователя',
       'zh_Hans': '用户描述',
     },
     '6111v0jh': {
@@ -2504,6 +2838,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Geld ausgeben',
       'es': 'Gasto de dinero',
       'fr': 'Dépense d\'argent',
+      'ru': 'Деньги тратят',
       'zh_Hans': '花钱',
     },
     'w1wt2vr6': {
@@ -2511,6 +2846,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Durchschnittliche Kosten',
       'es': 'Costos promedio',
       'fr': 'Coûts moyens',
+      'ru': 'Средние затраты',
       'zh_Hans': '平均成本',
     },
     'wxdt7dec': {
@@ -2518,6 +2854,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gesamtzahl der Meetings',
       'es': 'Total de reuniones',
       'fr': 'Total des réunions',
+      'ru': 'Всего встреч',
       'zh_Hans': '会议总数',
     },
     '0wr4a1s4': {
@@ -2525,6 +2862,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Skills',
       'es': 'Habilidades del cliente',
       'fr': 'Compétences client',
+      'ru': 'Навыки работы с клиентами',
       'zh_Hans': '顾客技巧',
     },
     'gzahnh8h': {
@@ -2532,6 +2870,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundensprachen',
       'es': 'Idiomas del cliente',
       'fr': 'Langues du client',
+      'ru': 'Языки клиента',
       'zh_Hans': '客户语言',
     },
     'dpos0v43': {
@@ -2539,6 +2878,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Meetings',
       'es': 'Reuniones con clientes',
       'fr': 'Rendez-vous clients',
+      'ru': 'Встречи с клиентами',
       'zh_Hans': '客户会议',
     },
     'cpabnexa': {
@@ -2546,6 +2886,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Eine Zusammenfassung ihrer Treffen',
       'es': 'Un resumen de sus reuniones.',
       'fr': 'Un résumé de leurs réunions',
+      'ru': 'Итог их встреч',
       'zh_Hans': '会议纪要',
     },
     'rtwqlk4h': {
@@ -2553,6 +2894,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Datum',
       'es': 'Fecha',
       'fr': 'Date',
+      'ru': 'Дата',
       'zh_Hans': '日期',
     },
     '3e8hb6wh': {
@@ -2560,6 +2902,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Dauer',
       'es': 'Duración',
       'fr': 'Durée',
+      'ru': 'Продолжительность',
       'zh_Hans': '期间',
     },
     'tmkn04zx': {
@@ -2567,6 +2910,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kosten',
       'es': 'Costos',
       'fr': 'Frais',
+      'ru': 'Расходы',
       'zh_Hans': '成本',
     },
     'dt34ieih': {
@@ -2574,6 +2918,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Aufsicht',
       'es': 'Supervisor',
       'fr': 'Superviseur',
+      'ru': 'Руководитель',
       'zh_Hans': '导师',
     },
     'ersuo796': {
@@ -2581,6 +2926,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzerprofil',
       'es': 'Perfil del usuario',
       'fr': 'Profil de l\'utilisateur',
+      'ru': 'Профиль пользователя',
       'zh_Hans': '用户资料',
     },
     'nrav9y19': {
@@ -2588,6 +2934,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ausgewähltes Benutzerprofil vervollständigen',
       'es': 'Completar el perfil de usuario seleccionado',
       'fr': 'Compléter le profil utilisateur sélectionné',
+      'ru': 'Завершить выбранный профиль пользователя',
       'zh_Hans': '完成选定的用户个人资料',
     },
     't6mioyok': {
@@ -2595,6 +2942,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2605,6 +2953,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Benutzer-Matching',
       'es': 'Emparejamiento cliente-usuario',
       'fr': 'Correspondance client-utilisateur',
+      'ru': 'Сопоставление клиентов и пользователей',
       'zh_Hans': '客户-用户匹配',
     },
     'bp9agn7m': {
@@ -2612,6 +2961,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunde und Benutzer zusammenbringen',
       'es': 'Unir cliente y usuario',
       'fr': 'Associer le client et l\'utilisateur',
+      'ru': 'Сопоставьте клиента и пользователя вместе',
       'zh_Hans': '将客户和用户匹配在一起',
     },
     '0b6181i7': {
@@ -2619,6 +2969,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunde',
       'es': 'Cliente',
       'fr': 'Client',
+      'ru': 'Клиент',
       'zh_Hans': '顾客',
     },
     'qxm3fyf5': {
@@ -2626,6 +2977,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'p1u4kwv6': {
@@ -2633,6 +2985,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte auswählen...',
       'es': 'Por favor seleccione...',
       'fr': 'Veuillez sélectionner...',
+      'ru': 'Пожалуйста выберите...',
       'zh_Hans': '请选择...',
     },
     'v7plhg0s': {
@@ -2640,6 +2993,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     '478sn2bp': {
@@ -2647,6 +3001,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer',
       'es': 'Usuario',
       'fr': 'Utilisateur',
+      'ru': 'Пользователь',
       'zh_Hans': '用户',
     },
     'zdkgd9i2': {
@@ -2654,6 +3009,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'oxhvu5uo': {
@@ -2661,6 +3017,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte auswählen...',
       'es': 'Por favor seleccione...',
       'fr': 'Veuillez sélectionner...',
+      'ru': 'Пожалуйста выберите...',
       'zh_Hans': '请选择...',
     },
     'w2j7a4li': {
@@ -2668,6 +3025,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     'ofst3i3r': {
@@ -2675,6 +3033,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
+      'ru': 'Сохранять',
       'zh_Hans': '节省',
     },
     'sgcssqgt': {
@@ -2682,6 +3041,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Heim',
       'es': 'Hogar',
       'fr': 'Maison',
+      'ru': 'Дом',
       'zh_Hans': '家',
     },
   },
@@ -2692,6 +3052,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'n8uqn2fk': {
@@ -2699,6 +3060,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Tutor',
       'es': 'Tutor',
       'fr': 'Tuteur',
+      'ru': 'Репетитор',
       'zh_Hans': '导师',
     },
     '1etm02er': {
@@ -2706,6 +3068,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     'c66jsjsp': {
@@ -2713,6 +3076,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Prozentsatz',
       'es': 'porcentaje',
       'fr': 'pourcentage',
+      'ru': 'процент',
       'zh_Hans': '百分比',
     },
     'yzq82ywb': {
@@ -2720,6 +3084,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '0,6',
       'es': '0,6',
       'fr': '0,6',
+      'ru': '0,6',
       'zh_Hans': '0.6',
     },
     '6a35opug': {
@@ -2727,6 +3092,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
+      'ru': 'Сохранять',
       'zh_Hans': '节省',
     },
     'n9kwvokt': {
@@ -2734,6 +3100,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiteranteil ändern',
       'es': 'Cambiar porcentaje de empleados',
       'fr': 'Modifier le pourcentage d\'employés',
+      'ru': 'Изменить процент сотрудников',
       'zh_Hans': '更改员工百分比',
     },
     'a5i4kjxi': {
@@ -2741,6 +3108,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ändern Sie den Prozentsatz, den der Mitarbeiter erhält',
       'es': 'Cambiar el porcentaje que recibe el empleado',
       'fr': 'Modifier le pourcentage que l\'employé reçoit',
+      'ru': 'Изменить процент, который получает сотрудник',
       'zh_Hans': '更改员工收到的百分比',
     },
     '6hykvly4': {
@@ -2748,6 +3116,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2758,6 +3127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden',
       'es': 'Clientes',
       'fr': 'Clients',
+      'ru': 'Клиенты',
       'zh_Hans': '顾客',
     },
     '9bl7c0iu': {
@@ -2765,6 +3135,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Komplette Kundenliste',
       'es': 'Lista completa de clientes',
       'fr': 'Liste complète des clients',
+      'ru': 'Полный список клиентов',
       'zh_Hans': '完整的客户名单',
     },
     'iu78xj34': {
@@ -2772,6 +3143,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Liste aller Kunden',
       'es': 'Lista de todos los clientes',
       'fr': 'Liste de tous les clients',
+      'ru': 'Список всех клиентов',
       'zh_Hans': '所有客户列表',
     },
     'm0uzgktb': {
@@ -2779,6 +3151,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden hinzufügen',
       'es': 'Agregar cliente',
       'fr': 'Ajouter un client',
+      'ru': 'Добавить клиента',
       'zh_Hans': '添加客户',
     },
     'fn5cvial': {
@@ -2786,6 +3159,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2796,6 +3170,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden-Benutzer-Matching',
       'es': 'Emparejamiento cliente-usuario',
       'fr': 'Correspondance client-utilisateur',
+      'ru': 'Сопоставление клиентов и пользователей',
       'zh_Hans': '客户-用户匹配',
     },
     'hpuyn1iy': {
@@ -2803,6 +3178,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passen Sie die Rolle und Berechtigungen der Benutzer an',
       'es': 'Haga coincidir el rol y los permisos de los usuarios',
       'fr': 'Faites correspondre le rôle et les autorisations des utilisateurs',
+      'ru': 'Сопоставьте роли и разрешения пользователей',
       'zh_Hans': '匹配用户的角色和权限',
     },
     'd8m86qjj': {
@@ -2810,6 +3186,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Rolle',
       'es': 'Role',
       'fr': 'Rôle',
+      'ru': 'Роль',
       'zh_Hans': '角色',
     },
     '0i081vq2': {
@@ -2817,6 +3194,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Leitung',
       'es': 'Leitung',
       'fr': 'Leitung',
+      'ru': 'Лейтунг',
       'zh_Hans': '利通',
     },
     'hyd0rqkf': {
@@ -2824,6 +3202,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mitarbeiter',
       'es': 'Mitarbeiter',
       'fr': 'Mitarbeiter',
+      'ru': 'Митарбайтер',
       'zh_Hans': '雇员',
     },
     '7d66ojr1': {
@@ -2831,6 +3210,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunde',
       'es': 'Kunde',
       'fr': 'Kundé',
+      'ru': 'Кунде',
       'zh_Hans': '昆德',
     },
     's6n2px50': {
@@ -2838,6 +3218,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte auswählen...',
       'es': 'Por favor seleccione...',
       'fr': 'Veuillez sélectionner...',
+      'ru': 'Пожалуйста выберите...',
       'zh_Hans': '请选择...',
     },
     '8zako0ac': {
@@ -2845,6 +3226,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach einer Rolle ...',
       'es': 'Busca un rol...',
       'fr': 'Rechercher un rôle...',
+      'ru': 'Искать роль...',
       'zh_Hans': '搜索角色...',
     },
     '7izaew0u': {
@@ -2852,6 +3234,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer',
       'es': 'Usuario',
       'fr': 'Utilisateur',
+      'ru': 'Пользователь',
       'zh_Hans': '用户',
     },
     '101ho30t': {
@@ -2859,6 +3242,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     '3lfjpdzd': {
@@ -2866,6 +3250,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte auswählen...',
       'es': 'Por favor seleccione...',
       'fr': 'Veuillez sélectionner...',
+      'ru': 'Пожалуйста выберите...',
       'zh_Hans': '请选择...',
     },
     '7t0lr6t9': {
@@ -2873,6 +3258,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     'cg5tzc49': {
@@ -2880,6 +3266,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
+      'ru': 'Сохранять',
       'zh_Hans': '节省',
     },
     'qx78yruu': {
@@ -2887,6 +3274,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -2897,6 +3285,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Titel',
       'es': 'Título',
       'fr': 'Titre',
+      'ru': 'Заголовок',
       'zh_Hans': '标题',
     },
     'bnh81boa': {
@@ -2904,6 +3293,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Titel...',
       'es': 'Título...',
       'fr': 'Titre...',
+      'ru': 'Заголовок...',
       'zh_Hans': '标题...',
     },
     'swr6pd8d': {
@@ -2911,6 +3301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Titel...',
       'es': 'Título...',
       'fr': 'Titre...',
+      'ru': 'Заголовок...',
       'zh_Hans': '标题...',
     },
     'jew392jw': {
@@ -2918,6 +3309,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beschreibung',
       'es': 'Descripción',
       'fr': 'Description',
+      'ru': 'Описание',
       'zh_Hans': '描述',
     },
     'jla8sb73': {
@@ -2925,6 +3317,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'fyo6vubk': {
@@ -2932,6 +3325,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beschreibung',
       'es': 'Descripción',
       'fr': 'Description',
+      'ru': 'Описание',
       'zh_Hans': '描述',
     },
     'uydg8e62': {
@@ -2939,6 +3333,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beschreibung',
       'es': 'Descripción',
       'fr': 'Description',
+      'ru': 'Описание',
       'zh_Hans': '描述',
     },
     'pgz945qy': {
@@ -2946,6 +3341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Github',
       'es': 'GitHub',
       'fr': 'GitHub',
+      'ru': 'Гитхаб',
       'zh_Hans': 'Github',
     },
     'cbw85193': {
@@ -2953,6 +3349,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'gecpmalb': {
@@ -2960,6 +3357,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'tijh27c2': {
@@ -2967,6 +3365,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Github-Link',
       'es': 'Enlace Github',
       'fr': 'Lien Github',
+      'ru': 'Github-ссылка',
       'zh_Hans': 'Github 链接',
     },
     'ukvtcog7': {
@@ -2974,6 +3373,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Themen',
       'es': 'Temas',
       'fr': 'Thèmes',
+      'ru': 'Темы',
       'zh_Hans': '主题',
     },
     'mqoo2ht3': {
@@ -2981,6 +3381,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'u20quxri': {
@@ -2988,6 +3389,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Themen',
       'es': 'Temas',
       'fr': 'Les sujets',
+      'ru': 'Темы',
       'zh_Hans': '主题',
     },
     'a4rik57b': {
@@ -2995,6 +3397,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach einem Thema...',
       'es': 'Busca un tema...',
       'fr': 'Rechercher un sujet...',
+      'ru': 'Ищите тему...',
       'zh_Hans': '搜索主题...',
     },
     'e0660ag3': {
@@ -3002,6 +3405,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einnahmen',
       'es': 'Ganancia',
       'fr': 'Revenu',
+      'ru': 'Доход',
       'zh_Hans': '收入',
     },
     'jif9r69p': {
@@ -3009,6 +3413,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Einnahmen',
       'es': 'Ganancia',
       'fr': 'Revenu',
+      'ru': 'Доход',
       'zh_Hans': '收入',
     },
     '2jz5dk2a': {
@@ -3016,6 +3421,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Preis',
       'es': 'Precio',
       'fr': 'Prix',
+      'ru': 'Цена',
       'zh_Hans': '价格',
     },
     '4kk0zsz3': {
@@ -3023,6 +3429,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundenname',
       'es': 'Nombre del cliente',
       'fr': 'Nom du client',
+      'ru': 'Имя Клиента',
       'zh_Hans': '顾客姓名',
     },
     'q3cw3e2u': {
@@ -3030,6 +3437,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     'q2ma1w3x': {
@@ -3037,6 +3445,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundenname',
       'es': 'Nombre del cliente',
       'fr': 'Nom du client',
+      'ru': 'Имя Клиента',
       'zh_Hans': '顾客姓名',
     },
     '6nsyd1pt': {
@@ -3044,6 +3453,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Nach einem Benutzer suchen...',
       'es': 'Buscar un usuario...',
       'fr': 'Rechercher un utilisateur...',
+      'ru': 'Поиск пользователя...',
       'zh_Hans': '搜索用户...',
     },
     '5t6xxn6o': {
@@ -3051,6 +3461,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Speichern',
       'es': 'Ahorrar',
       'fr': 'Sauvegarder',
+      'ru': 'Сохранять',
       'zh_Hans': '节省',
     },
     'qmta97d7': {
@@ -3058,6 +3469,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ukketqor': {
@@ -3065,6 +3477,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'giqvfw1f': {
@@ -3072,6 +3485,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -3082,6 +3496,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständiger Name',
       'es': 'Nombre completo',
       'fr': 'Nom et prénom',
+      'ru': 'Полное имя',
       'zh_Hans': '全名',
     },
     '3815prlo': {
@@ -3089,6 +3504,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Name',
       'es': 'Nombre',
       'fr': 'Nom',
+      'ru': 'Имя',
       'zh_Hans': '姓名',
     },
     'wipky3mf': {
@@ -3096,6 +3512,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefonnummer',
       'es': 'Número de teléfono',
       'fr': 'Numéro de téléphone',
+      'ru': 'Номер телефона',
       'zh_Hans': '电话号码',
     },
     'i9ekz8ml': {
@@ -3103,6 +3520,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefonnummer',
       'es': 'Número de teléfono',
       'fr': 'Numéro de téléphone',
+      'ru': 'Номер телефона',
       'zh_Hans': '电话号码',
     },
     'q8ftjy4e': {
@@ -3110,6 +3528,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'jgeclrna': {
@@ -3117,6 +3536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Email',
       'es': 'Correo electrónico',
       'fr': 'E-mail',
+      'ru': 'Электронная почта',
       'zh_Hans': '电子邮件',
     },
     'c50gx8rc': {
@@ -3124,6 +3544,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße',
       'es': 'Calle',
       'fr': 'Rue',
+      'ru': 'Улица',
       'zh_Hans': '街道',
     },
     'v37jjend': {
@@ -3131,6 +3552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Straße',
       'es': 'Calle',
       'fr': 'Rue',
+      'ru': 'Улица',
       'zh_Hans': '街道',
     },
     'tzug8jlu': {
@@ -3138,6 +3560,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '城市',
     },
     'hqnc2guy': {
@@ -3145,6 +3568,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Stadt',
       'es': 'Ciudad',
       'fr': 'Ville',
+      'ru': 'Город',
       'zh_Hans': '城市',
     },
     '69i5j1xm': {
@@ -3152,6 +3576,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     'hswr904i': {
@@ -3159,6 +3584,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Postleitzahl',
       'es': 'Código Postal',
       'fr': 'Code Postal',
+      'ru': 'Почтовый индекс',
       'zh_Hans': '邮政编码',
     },
     't8mfivzm': {
@@ -3166,6 +3592,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     'gmxp1212': {
@@ -3173,6 +3600,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Land',
       'es': 'País',
       'fr': 'Pays',
+      'ru': 'Страна',
       'zh_Hans': '国家',
     },
     'hmk4k09k': {
@@ -3180,6 +3608,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sprachen',
       'es': 'Idiomas',
       'fr': 'Langues',
+      'ru': 'Языки',
       'zh_Hans': '语言',
     },
     'dpu6rl4e': {
@@ -3187,6 +3616,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Option 1',
       'es': 'Opción 1',
       'fr': 'Option 1',
+      'ru': 'Опция 1',
       'zh_Hans': '选项1',
     },
     '62nvphkd': {
@@ -3194,6 +3624,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kundensprachen',
       'es': 'Idiomas del cliente',
       'fr': 'Langues du client',
+      'ru': 'Языки клиентов',
       'zh_Hans': '客户语言',
     },
     'beeg1rl4': {
@@ -3201,6 +3632,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Suche nach einer Sprache...',
       'es': 'Buscar un idioma...',
       'fr': 'Rechercher une langue...',
+      'ru': 'Поиск языка...',
       'zh_Hans': '搜索语言...',
     },
     'la0zinmb': {
@@ -3208,6 +3640,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden speichern',
       'es': 'Guardar cliente',
       'fr': 'Enregistrer le client',
+      'ru': 'Сохранить клиента',
       'zh_Hans': '保存客户',
     },
     '7wjp85ls': {
@@ -3215,6 +3648,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kunden bearbeiten',
       'es': 'Editar cliente',
       'fr': 'Modifier le client',
+      'ru': 'Редактировать клиента',
       'zh_Hans': '編輯客戶',
     },
     'gxvsleyb': {
@@ -3222,6 +3656,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bearbeiten Sie bestehende Kunden mit diesem Formular',
       'es': 'Editar cliente existente con este formulario',
       'fr': 'Modifier un client existant avec ce formulaire',
+      'ru': 'Измените существующего клиента с помощью этой формы',
       'zh_Hans': '使用此表单编辑现有客户',
     },
     'g5jy5gbr': {
@@ -3229,52 +3664,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
   // support_SubmitPaymentTicket
   {
     '0mvgad0l': {
-      'en': 'Ticket-Creation',
-      'de': 'Ticket-Erstellung',
-      'es': 'Creación de entradas',
-      'fr': 'Création de tickets',
-      'zh_Hans': '票务创建',
+      'en': 'Billing-Ticket-Creation',
+      'de': 'Abrechnungs-Ticket-Erstellung',
+      'es': 'Creación-de-ticket-de-facturación',
+      'fr': 'Facturation-Ticket-Création',
+      'ru': 'Биллинг-Создание билетов',
+      'zh_Hans': '帐单创建',
     },
     'k3p6hey8': {
-      'en': 'Create a Support-Ticket here',
-      'de': 'Hier Support-Ticket erstellen',
-      'es': 'Cree un ticket de soporte aquí',
-      'fr': 'Créez un ticket de support ici',
-      'zh_Hans': '在此创建支持单',
+      'en': 'Create a Billing-Ticket here',
+      'de': 'Erstellen Sie hier ein Abrechnungsticket',
+      'es': 'Cree un ticket de facturación aquí',
+      'fr': 'Créez un ticket de facturation ici',
+      'ru': 'Создайте биллинг-тикет здесь',
+      'zh_Hans': '在此创建账单',
     },
     '0mk3duyo': {
-      'en': 'Fill out the form below to submit a ticket.',
+      'en': 'Fill out the form below to submit a billing- ticket.',
       'de':
-          'Füllen Sie das untenstehende Formular aus, um ein Ticket einzureichen.',
-      'es': 'Complete el siguiente formulario para enviar un ticket.',
-      'fr': 'Remplissez le formulaire ci-dessous pour soumettre un ticket.',
-      'zh_Hans': '填写下面的表格来提交票证。',
-    },
-    'vmfa0tg6': {
-      'en': 'Call Us',
-      'de': 'Rufen Sie uns an',
-      'es': 'Llámanos',
-      'fr': 'Appelez-nous',
-      'zh_Hans': '致电我们',
-    },
-    '53hdmmhe': {
-      'en': 'Email Us',
-      'de': 'Schreiben Sie uns eine E-Mail',
-      'es': 'Envíanos un correo electrónico',
-      'fr': 'Envoyez-nous un email',
-      'zh_Hans': '发邮件给我们',
+          'Füllen Sie das untenstehende Formular aus, um ein Rechnungsticket einzureichen.',
+      'es':
+          'Complete el siguiente formulario para enviar un ticket de facturación.',
+      'fr':
+          'Remplissez le formulaire ci-dessous pour soumettre un ticket de facturation.',
+      'ru': 'Заполните форму ниже, чтобы отправить биллинг-тикет.',
+      'zh_Hans': '填写下面的表格来提交账单。',
     },
     '794ioyqa': {
       'en': 'What is going on?',
       'de': 'Was ist los?',
       'es': '¿Qué está pasando?',
       'fr': 'Que se passe-t-il?',
+      'ru': 'Что происходит?',
       'zh_Hans': '到底是怎么回事？',
     },
     '1lawcdx0': {
@@ -3282,41 +3710,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Kurze Beschreibung dessen, was los ist ...',
       'es': 'Breve descripción de lo que está pasando...',
       'fr': 'Brève description de ce qui se passe...',
+      'ru': 'Краткое описание происходящего...',
       'zh_Hans': '简要描述正在发生的事情...',
     },
     '1y00hyf9': {
       'en': 'Duration',
-      'de': 'Wählen Sie eine Prioritätsstufe',
-      'es': 'Elija un nivel de prioridad',
-      'fr': 'Choisissez un niveau de priorité',
-      'zh_Hans': '选择优先级别',
+      'de': 'Dauer',
+      'es': 'Duración',
+      'fr': 'Durée',
+      'ru': 'Продолжительность',
+      'zh_Hans': '期间',
     },
     '00swq0hk': {
       'en': 'What was the duration?',
-      'de': 'Was ist los?',
-      'es': '¿Qué está pasando?',
-      'fr': 'Que se passe-t-il?',
-      'zh_Hans': '到底是怎么回事？',
+      'de': 'Wie lange dauerte es?',
+      'es': '¿Cuál fue la duración?',
+      'fr': 'Quelle a été la durée ?',
+      'ru': 'Какова была продолжительность?',
+      'zh_Hans': '持續了多長的时间？',
     },
-    'wycjt6yy': {
+    'jxsdz4h4': {
       'en': 'Cost',
-      'de': 'Wählen Sie eine Prioritätsstufe',
-      'es': 'Elija un nivel de prioridad',
-      'fr': 'Choisissez un niveau de priorité',
-      'zh_Hans': '选择优先级别',
+      'de': 'Kosten',
+      'es': 'Costo',
+      'fr': 'Coût',
+      'ru': 'Расходы',
+      'zh_Hans': '成本',
     },
     'jrolqd9b': {
       'en': 'What was the price per hour?',
-      'de': 'Was ist los?',
-      'es': '¿Qué está pasando?',
-      'fr': 'Que se passe-t-il?',
-      'zh_Hans': '到底是怎么回事？',
+      'de': 'Wie hoch war der Preis pro Stunde?',
+      'es': '¿Cuál fue el precio por hora?',
+      'fr': 'Quel était le prix de l\'heure ?',
+      'ru': 'Какова была цена за час?',
+      'zh_Hans': '每小时的价格是多少？',
     },
     '6nvnthdj': {
       'en': 'Upload Screenshot',
       'de': 'Screenshot hochladen',
       'es': 'Cargar captura de pantalla',
       'fr': 'Télécharger une capture d\'écran',
+      'ru': 'Загрузить скриншот',
       'zh_Hans': '上传截图',
     },
     '6m0i0pp5': {
@@ -3324,20 +3758,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer zuweisen',
       'es': 'Asignar usuario',
       'fr': 'Attribuer un utilisateur',
+      'ru': 'Назначить пользователя',
       'zh_Hans': '分配用户',
     },
     '8iu2pwb8': {
       'en': 'Select the Assignees',
-      'de': 'Benutzer hinzufügen',
-      'es': 'Agregar usuario',
-      'fr': 'Ajouter un utilisateur',
-      'zh_Hans': '添加用户',
+      'de': 'Wählen Sie die Beauftragten aus',
+      'es': 'Seleccione los asignatarios',
+      'fr': 'Sélectionnez les destinataires',
+      'ru': 'Выберите правопреемников',
+      'zh_Hans': '选择受让人',
     },
     'y2wnm5e4': {
       'en': 'Submit Ticket',
       'de': 'Ticket übermitteln',
       'es': 'Enviar ticket',
       'fr': 'Envoyer le ticket',
+      'ru': 'Отправить билет',
       'zh_Hans': '提交工单',
     },
     'o8kxe2ow': {
@@ -3345,6 +3782,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -3355,6 +3793,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Passen Sie den Inhalt unten an, um Ihr Profil zu aktualisieren.',
       'es': 'Ajuste el contenido a continuación para actualizar su perfil.',
       'fr': 'Ajustez le contenu ci-dessous pour mettre à jour votre profil.',
+      'ru': 'Отредактируйте содержимое ниже, чтобы обновить свой профиль.',
       'zh_Hans': '调整下面的内容来更新您的个人资料。',
     },
     'cb6me508': {
@@ -3362,6 +3801,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Foto ändern',
       'es': 'Cambiar foto',
       'fr': 'Changer la photo',
+      'ru': 'Измени фотографию',
       'zh_Hans': '更改照片',
     },
     'kzae2g7n': {
@@ -3369,6 +3809,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Vollständiger Name',
       'es': 'Nombre completo',
       'fr': 'Nom et prénom',
+      'ru': 'Полное имя',
       'zh_Hans': '全名',
     },
     '7vgor3b8': {
@@ -3376,6 +3817,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ihr vollständiger Name...',
       'es': 'Tu nombre completo...',
       'fr': 'Ton nom complet...',
+      'ru': 'Ваше полное имя...',
       'zh_Hans': '你的全名...',
     },
     'zmpduv5f': {
@@ -3383,6 +3825,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Telefonnummer',
       'es': 'Número de teléfono',
       'fr': 'Numéro de téléphone',
+      'ru': 'Номер телефона',
       'zh_Hans': '电话号码',
     },
     'ylu1rmoi': {
@@ -3390,6 +3833,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Deine Telefonnummer...',
       'es': 'Su número de teléfono...',
       'fr': 'Votre numéro de téléphone...',
+      'ru': 'Ваш номер телефона...',
       'zh_Hans': '你的电话号码...',
     },
     '9kyh4fuc': {
@@ -3397,6 +3841,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'E-Mail-Adresse',
       'es': 'Dirección de correo electrónico',
       'fr': 'Adresse email',
+      'ru': 'Электронный адрес',
       'zh_Hans': '邮箱地址',
     },
     '1pkkrkac': {
@@ -3404,6 +3849,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Deine Telefonnummer...',
       'es': 'Su número de teléfono...',
       'fr': 'Votre numéro de téléphone...',
+      'ru': 'Ваш номер телефона...',
       'zh_Hans': '你的电话号码...',
     },
     'kmiy5qxl': {
@@ -3411,6 +3857,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer-Rolle',
       'es': 'Rol del usuario',
       'fr': 'Rôle d\'utilisateur',
+      'ru': 'Роль пользователя',
       'zh_Hans': '用户角色',
     },
     'wkjljldr': {
@@ -3418,6 +3865,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Deine Rolle...',
       'es': 'Tu rol...',
       'fr': 'Ton rôle...',
+      'ru': 'Ваша роль...',
       'zh_Hans': '你的角色...',
     },
     'mv1hv80o': {
@@ -3425,6 +3873,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'kurze Beschreibung',
       'es': 'Breve descripción',
       'fr': 'brève description',
+      'ru': 'Краткое описание',
       'zh_Hans': '简短的介绍',
     },
     'bc8lb6wd': {
@@ -3432,6 +3881,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Ein bisschen über Sie …',
       'es': 'Un poco sobre ti...',
       'fr': 'Un peu de toi...',
+      'ru': 'Немного о тебе...',
       'zh_Hans': '关于您一些信息...',
     },
   },
@@ -3442,6 +3892,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Prioritätsstufe festlegen',
       'es': 'Establecer nivel de prioridad',
       'fr': 'Définir le niveau de priorité',
+      'ru': 'Установить уровень приоритета',
       'zh_Hans': '设置优先级',
     },
     'ceeouso2': {
@@ -3449,6 +3900,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Notfall',
       'es': 'Emergencia',
       'fr': 'Urgence',
+      'ru': 'Чрезвычайная ситуация',
       'zh_Hans': '紧急情况',
     },
     'jnz7a7nx': {
@@ -3456,6 +3908,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Hoch',
       'es': 'Alto',
       'fr': 'Haut',
+      'ru': 'Высокий',
       'zh_Hans': '高的',
     },
     'oorxhq9x': {
@@ -3463,6 +3916,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Mittel',
       'es': 'Medio',
       'fr': 'Moyen',
+      'ru': 'Середина',
       'zh_Hans': '中等的',
     },
     'na0320sa': {
@@ -3470,6 +3924,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Niedrig',
       'es': 'Bajo',
       'fr': 'Faible',
+      'ru': 'Низкий',
       'zh_Hans': '低的',
     },
   },
@@ -3480,6 +3935,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -3490,6 +3946,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer zuweisen',
       'es': 'Asignar usuario',
       'fr': 'Attribuer un utilisateur',
+      'ru': 'Назначить пользователя',
       'zh_Hans': '分配用户',
     },
     '1fert8cu': {
@@ -3499,6 +3956,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Seleccione un usuario de la lista a continuación para continuar.',
       'fr':
           'Sélectionnez un utilisateur dans la liste ci-dessous pour continuer.',
+      'ru': 'Выберите пользователя из списка ниже, чтобы продолжить.',
       'zh_Hans': '从下面的列表中选择一个用户以继续。',
     },
     't9l5esbd': {
@@ -3506,6 +3964,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Schließen',
       'es': 'Cerca',
       'fr': 'Fermer',
+      'ru': 'Закрывать',
       'zh_Hans': '关闭',
     },
   },
@@ -3516,6 +3975,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Gruppenchat-ID:',
       'es': 'ID de chat grupal:',
       'fr': 'Identifiant de discussion de groupe :',
+      'ru': 'Идентификатор группового чата:',
       'zh_Hans': '群聊ID：',
     },
     'hspne3ym': {
@@ -3523,6 +3983,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'In diesem Chat',
       'es': 'en esta charla',
       'fr': 'Dans cette discussion',
+      'ru': 'В этом чате',
       'zh_Hans': '在此聊天中',
     },
     '50akzqka': {
@@ -3530,6 +3991,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Schließen',
       'es': 'Cerca',
       'fr': 'Fermer',
+      'ru': 'Закрывать',
       'zh_Hans': '关闭',
     },
   },
@@ -3540,6 +4002,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Beginnen Sie hier mit der Eingabe ...',
       'es': 'Empieza a escribir aquí...',
       'fr': 'Commencez à taper ici...',
+      'ru': 'Начните печатать здесь...',
       'zh_Hans': '从这里开始输入...',
     },
     'ur37thf2': {
@@ -3547,6 +4010,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sie müssen eine Nachricht eingeben...',
       'es': 'Debes ingresar un mensaje...',
       'fr': 'Vous devez saisir un message...',
+      'ru': 'Вам необходимо ввести сообщение...',
       'zh_Hans': '您必须输入一条消息...',
     },
     '907lm1aq': {
@@ -3554,6 +4018,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Bitte wählen Sie eine Option aus der Dropdown-Liste',
       'es': 'Por favor elija una opción del menú desplegable',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
+      'ru': 'Пожалуйста, выберите вариант из раскрывающегося списка',
       'zh_Hans': '请从下拉列表中选择一个选项',
     },
   },
@@ -3564,6 +4029,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
@@ -3574,6 +4040,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Optionen',
       'es': 'Opciones',
       'fr': 'Possibilités',
+      'ru': 'Параметры',
       'zh_Hans': '选项',
     },
     '73scs9a0': {
@@ -3581,6 +4048,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Benutzer einladen',
       'es': 'Invitar usuarios',
       'fr': 'Inviter des utilisateurs',
+      'ru': 'Пригласить пользователей',
       'zh_Hans': '邀请用户',
     },
     'av9xz4qx': {
@@ -3588,6 +4056,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Chat löschen',
       'es': 'Eliminar chat',
       'fr': 'Supprimer le chat',
+      'ru': 'Удалить чат',
       'zh_Hans': '删除聊天',
     },
     '41tv38n3': {
@@ -3595,6 +4064,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Löschen bestätigen',
       'es': 'Confirmar eliminación',
       'fr': 'Confirmation de la suppression',
+      'ru': 'Подтвердите удаление',
       'zh_Hans': '确认删除',
     },
     's2cbswob': {
@@ -3602,6 +4072,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Sie können diese Aktion nicht rückgängig machen.',
       'es': 'No puedes deshacer esta acción.',
       'fr': 'Vous ne pouvez pas annuler cette action.',
+      'ru': 'Вы не можете отменить это действие.',
       'zh_Hans': '您无法撤消此操作。',
     },
     'z54qbopv': {
@@ -3609,7 +4080,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Löschen',
       'es': 'Borrar',
       'fr': 'Supprimer',
+      'ru': 'Удалить',
       'zh_Hans': '删除',
+    },
+  },
+  // user_ListEmployee
+  {
+    't7laxvw2': {
+      'en': 'Assign User',
+      'de': 'Benutzer zuweisen',
+      'es': 'Asignar usuario',
+      'fr': 'Attribuer un utilisateur',
+      'ru': 'Назначить пользователя',
+      'zh_Hans': '分配用户',
+    },
+    'no8legsw': {
+      'en': 'Select a user from the list below to continue.',
+      'de':
+          'Wählen Sie einen Benutzer aus der Liste unten aus, um fortzufahren.',
+      'es': 'Seleccione un usuario de la lista a continuación para continuar.',
+      'fr':
+          'Sélectionnez un utilisateur dans la liste ci-dessous pour continuer.',
+      'ru': 'Выберите пользователя из списка ниже, чтобы продолжить.',
+      'zh_Hans': '从下面的列表中选择一个用户以继续。',
+    },
+    'wnv9td9n': {
+      'en': 'Close',
+      'de': 'Schließen',
+      'es': 'Cerca',
+      'fr': 'Fermer',
+      'ru': 'Закрывать',
+      'zh_Hans': '关闭',
     },
   },
   // Miscellaneous
@@ -3619,6 +4120,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'xmayfjdy': {
@@ -3626,6 +4128,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'rreotz6t': {
@@ -3633,6 +4136,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '4hucjyt3': {
@@ -3640,6 +4144,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'pe8bwhny': {
@@ -3647,6 +4152,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ayl7ml95': {
@@ -3654,6 +4160,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'cj4pi052': {
@@ -3661,6 +4168,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'p3lm87a3': {
@@ -3668,6 +4176,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'hac7gowh': {
@@ -3675,6 +4184,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'hq7117qt': {
@@ -3682,6 +4192,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'iej24wiy': {
@@ -3689,6 +4200,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '4dk1neen': {
@@ -3696,6 +4208,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'oymp1cmr': {
@@ -3703,6 +4216,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'tezxva0s': {
@@ -3710,6 +4224,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '3fjb95pu': {
@@ -3717,6 +4232,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'ybkbd0h9': {
@@ -3724,6 +4240,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'tsufngwo': {
@@ -3731,6 +4248,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '0uulr27y': {
@@ -3738,6 +4256,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'lieon019': {
@@ -3745,6 +4264,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'waotbjhx': {
@@ -3752,6 +4272,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'pbn6f25j': {
@@ -3759,6 +4280,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '804gd7i9': {
@@ -3766,6 +4288,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'j4z3yl1s': {
@@ -3773,6 +4296,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     '525aerw5': {
@@ -3780,6 +4304,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'xm7jo5yr': {
@@ -3787,6 +4312,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'guzgv3lj': {
@@ -3794,6 +4320,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'vodnos5o': {
@@ -3801,6 +4328,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
     'fwchmphj': {
@@ -3808,6 +4336,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': '',
       'es': '',
       'fr': '',
+      'ru': '',
       'zh_Hans': '',
     },
   },
