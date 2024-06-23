@@ -521,7 +521,7 @@ class FFRoute {
                   color: Colors.transparent,
                   child: Image.asset(
                     'assets/images/Logo_squared.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.scaleDown,
                   ),
                 )
               : PushNotificationsHandler(child: page);
