@@ -547,61 +547,61 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   ),
                                 ),
                               ),
-                            if (false)
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 16.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'AUTH_2_CREATE_CONTINUE_WITH_GOOGLE_BTN_O');
-                                    logFirebaseEvent('Button_auth');
-                                    GoRouter.of(context).prepareAuthEvent();
-                                    final user = await authManager
-                                        .signInWithGoogle(context);
-                                    if (user == null) {
-                                      return;
-                                    }
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 16.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'AUTH_2_CREATE_CONTINUE_WITH_GOOGLE_BTN_O');
+                                  logFirebaseEvent('Button_auth');
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  final user = await authManager
+                                      .signInWithGoogle(context);
+                                  if (user == null) {
+                                    return;
+                                  }
+                                  logFirebaseEvent('Button_navigate_to');
 
-                                    context.goNamedAuth(
-                                        'Main', context.mounted);
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'zohwxmwa' /* Continue with Google */,
+                                  context.goNamedAuth(
+                                      'auth_2_createProfile', context.mounted);
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'zohwxmwa' /* Continue with Google */,
+                                ),
+                                icon: const FaIcon(
+                                  FontAwesomeIcons.google,
+                                  size: 20.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 44.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 2.0,
                                   ),
-                                  icon: const FaIcon(
-                                    FontAwesomeIcons.google,
-                                    size: 20.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 0.0,
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    hoverColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  hoverColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                 ),
                               ),
+                            ),
                             if (false)
                               isAndroid
                                   ? Container()
@@ -620,9 +620,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           if (user == null) {
                                             return;
                                           }
+                                          logFirebaseEvent(
+                                              'Button_navigate_to');
 
                                           context.goNamedAuth(
-                                              'Main', context.mounted);
+                                              'auth_2_createProfile',
+                                              context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
