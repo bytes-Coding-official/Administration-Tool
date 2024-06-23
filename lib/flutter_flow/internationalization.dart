@@ -3554,20 +3554,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'zh_Hans': '',
     },
-    'f10957fv': {
-      'en': 'We need to save and read external files',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
-    'qysum8cc': {
-      'en': 'We need to write to external storage',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'zh_Hans': '',
-    },
     '4hucjyt3': {
       'en': '',
       'de': '',
