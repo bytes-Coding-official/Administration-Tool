@@ -631,76 +631,75 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                     ),
                                   ),
                                 ),
-                                if (false)
-                                  isAndroid
-                                      ? Container()
-                                      : Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 16.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              logFirebaseEvent(
-                                                  'AUTH_2_CREATE_CONTINUE_WITH_APPLE_BTN_ON');
-                                              logFirebaseEvent('Button_auth');
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              final user = await authManager
-                                                  .signInWithApple(context);
-                                              if (user == null) {
-                                                return;
-                                              }
-                                              logFirebaseEvent(
-                                                  'Button_navigate_to');
+                                isAndroid
+                                    ? Container()
+                                    : Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            logFirebaseEvent(
+                                                'AUTH_2_CREATE_CONTINUE_WITH_APPLE_BTN_ON');
+                                            logFirebaseEvent('Button_auth');
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            final user = await authManager
+                                                .signInWithApple(context);
+                                            if (user == null) {
+                                              return;
+                                            }
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
 
-                                              context.goNamedAuth(
-                                                  'auth_2_createProfile',
-                                                  context.mounted);
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'l8nmxfqe' /* Continue with Apple */,
-                                            ),
-                                            icon: const FaIcon(
-                                              FontAwesomeIcons.apple,
-                                              size: 20.0,
-                                            ),
-                                            options: FFButtonOptions(
-                                              width: double.infinity,
-                                              height: 44.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                            context.goNamedAuth(
+                                                'auth_2_createProfile',
+                                                context.mounted);
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'l8nmxfqe' /* Continue with Apple */,
+                                          ),
+                                          icon: const FaIcon(
+                                            FontAwesomeIcons.apple,
+                                            size: 20.0,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: double.infinity,
+                                            height: 44.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              hoverColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .alternate,
+                                              width: 2.0,
                                             ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                           ),
                                         ),
+                                      ),
 
                                 // You will have to add an action on this rich text to go to your login page.
                                 Align(
