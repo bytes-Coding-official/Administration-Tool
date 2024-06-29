@@ -258,6 +258,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                                 maxChars: 40,
                                                 replacement: '…',
                                               ),
+                                              minFontSize: 10.0,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmall
@@ -269,7 +270,6 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                                                 .primary,
                                                         letterSpacing: 0.0,
                                                       ),
-                                              minFontSize: 10.0,
                                             ),
                                           ),
                                           Padding(
@@ -285,6 +285,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                                 maxChars: 40,
                                                 replacement: '…',
                                               ),
+                                              minFontSize: 10.0,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmall
@@ -296,7 +297,6 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                                                 .primary,
                                                         letterSpacing: 0.0,
                                                       ),
-                                              minFontSize: 10.0,
                                             ),
                                           ),
                                         ].divide(const SizedBox(width: 5.0)),

@@ -1057,6 +1057,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       '411g996a' /* Light Mode */,
                                                     ),
                                                     textAlign: TextAlign.center,
+                                                    minFontSize: 12.0,
                                                     style:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1077,7 +1078,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                               letterSpacing:
                                                                   0.0,
                                                             ),
-                                                    minFontSize: 12.0,
                                                   ),
                                                 ),
                                               ],
@@ -1155,6 +1155,7 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                       'mc7klcgc' /* Dark Mode */,
                                                     ),
                                                     textAlign: TextAlign.center,
+                                                    minFontSize: 12.0,
                                                     style:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1175,7 +1176,6 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                                               letterSpacing:
                                                                   0.0,
                                                             ),
-                                                    minFontSize: 12.0,
                                                   ),
                                                 ),
                                               ],

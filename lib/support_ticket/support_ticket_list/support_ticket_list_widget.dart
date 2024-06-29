@@ -298,13 +298,13 @@ class _SupportTicketListWidgetState extends State<SupportTicketListWidget>
                                         listViewSupportTicketsRecord.description
                                             .maybeHandleOverflow(maxChars: 140),
                                         maxLines: 3,
+                                        minFontSize: 12.0,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Inter',
                                               letterSpacing: 0.0,
                                             ),
-                                        minFontSize: 12.0,
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
