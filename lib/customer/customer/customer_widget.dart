@@ -148,7 +148,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                               ),
                         ),
                         TextSpan(
-                          text: customerCustomerCaseRecord.caseid,
+                          text: customerCustomerCaseRecord.caseid.toString(),
                           style: TextStyle(
                             color: FlutterFlowTheme.of(context).primary,
                           ),

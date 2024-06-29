@@ -854,7 +854,8 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
 
                             await CustomerCaseRecord.collection.doc().set({
                               ...createCustomerCaseRecordData(
-                                caseid: _model.caseIDTextController.text,
+                                caseid: int.tryParse(
+                                    _model.caseIDTextController.text),
                                 title: _model.titleTextController1.text,
                                 description:
                                     _model.descriptionTextController.text,

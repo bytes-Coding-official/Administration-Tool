@@ -1075,7 +1075,8 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                   ),
                                                                   TextSpan(
                                                                     text: listViewCustomerCaseRecord
-                                                                        .caseid,
+                                                                        .caseid
+                                                                        .toString(),
                                                                     style:
                                                                         TextStyle(
                                                                       color: FlutterFlowTheme.of(

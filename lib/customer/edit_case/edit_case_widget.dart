@@ -143,7 +143,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                               ),
                         ),
                         TextSpan(
-                          text: editCaseCustomerCaseRecord.caseid,
+                          text: editCaseCustomerCaseRecord.caseid.toString(),
                           style: TextStyle(
                             color: FlutterFlowTheme.of(context).primary,
                           ),

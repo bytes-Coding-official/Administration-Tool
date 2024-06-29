@@ -1847,9 +1847,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   ),
                                                             ),
                                                             TextSpan(
-                                                              text:
-                                                                  emCustomerCaseRecord
-                                                                      .caseid,
+                                                              text: emCustomerCaseRecord
+                                                                  .caseid
+                                                                  .toString(),
                                                               style: TextStyle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
@@ -2490,9 +2490,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                   const TextStyle(),
                                                             ),
                                                             TextSpan(
-                                                              text:
-                                                                  emCustomerCaseRecord
-                                                                      .caseid,
+                                                              text: emCustomerCaseRecord
+                                                                  .caseid
+                                                                  .toString(),
                                                               style: TextStyle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
@@ -3148,7 +3148,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                 style: const TextStyle(),
                                                                               ),
                                                                               TextSpan(
-                                                                                text: tabletDesktopViewCustomerCaseRecord.caseid,
+                                                                                text: tabletDesktopViewCustomerCaseRecord.caseid.toString(),
                                                                                 style: TextStyle(
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   fontWeight: FontWeight.bold,
@@ -3744,7 +3744,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               style: const TextStyle(),
                                                                             ),
                                                                             TextSpan(
-                                                                              text: tabletDesktopViewCustomerCaseRecord.caseid,
+                                                                              text: tabletDesktopViewCustomerCaseRecord.caseid.toString(),
                                                                               style: TextStyle(
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 fontWeight: FontWeight.bold,

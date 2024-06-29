@@ -16,11 +16,6 @@ class CustomerCaseRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "caseid" field.
-  String? _caseid;
-  String get caseid => _caseid ?? '';
-  bool hasCaseid() => _caseid != null;
-
   // "title" field.
   String? _title;
   String get title => _title ?? '';
@@ -66,8 +61,12 @@ class CustomerCaseRecord extends FirestoreRecord {
   List<String> get uploadedFiles => _uploadedFiles ?? const [];
   bool hasUploadedFiles() => _uploadedFiles != null;
 
+  // "caseid" field.
+  int? _caseid;
+  int get caseid => _caseid ?? 0;
+  bool hasCaseid() => _caseid != null;
+
   void _initializeFields() {
-    _caseid = snapshotData['caseid'] as String?;
     _title = snapshotData['title'] as String?;
     _description = snapshotData['description'] as String?;
     _revenue = castToType<double>(snapshotData['revenue']);
@@ -77,6 +76,7 @@ class CustomerCaseRecord extends FirestoreRecord {
     _closed = snapshotData['closed'] as bool?;
     _github = snapshotData['github'] as String?;
     _uploadedFiles = getDataList(snapshotData['uploaded_files']);
+    _caseid = castToType<int>(snapshotData['caseid']);
   }
 
   static CollectionReference get collection =>
@@ -114,23 +114,23 @@ class CustomerCaseRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createCustomerCaseRecordData({
-  String? caseid,
   String? title,
   String? description,
   double? revenue,
   DocumentReference? customer,
   bool? closed,
   String? github,
+  int? caseid,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'caseid': caseid,
       'title': title,
       'description': description,
       'revenue': revenue,
       'customer': customer,
       'closed': closed,
       'github': github,
+      'caseid': caseid,
     }.withoutNulls,
   );
 
@@ -144,8 +144,7 @@ class CustomerCaseRecordDocumentEquality
   @override
   bool equals(CustomerCaseRecord? e1, CustomerCaseRecord? e2) {
     const listEquality = ListEquality();
-    return e1?.caseid == e2?.caseid &&
-        e1?.title == e2?.title &&
+    return e1?.title == e2?.title &&
         e1?.description == e2?.description &&
         e1?.revenue == e2?.revenue &&
         listEquality.equals(e1?.assignee, e2?.assignee) &&
@@ -153,12 +152,12 @@ class CustomerCaseRecordDocumentEquality
         e1?.customer == e2?.customer &&
         e1?.closed == e2?.closed &&
         e1?.github == e2?.github &&
-        listEquality.equals(e1?.uploadedFiles, e2?.uploadedFiles);
+        listEquality.equals(e1?.uploadedFiles, e2?.uploadedFiles) &&
+        e1?.caseid == e2?.caseid;
   }
 
   @override
   int hash(CustomerCaseRecord? e) => const ListEquality().hash([
-        e?.caseid,
         e?.title,
         e?.description,
         e?.revenue,
@@ -167,7 +166,8 @@ class CustomerCaseRecordDocumentEquality
         e?.customer,
         e?.closed,
         e?.github,
-        e?.uploadedFiles
+        e?.uploadedFiles,
+        e?.caseid
       ]);
 
   @override
