@@ -89,9 +89,8 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget>
               ),
               onPressed: () async {
                 logFirebaseEvent('PROFILE_SETTINGS_arrow_back_rounded_ICN_');
-                logFirebaseEvent('IconButton_navigate_to');
-
-                context.pushNamed('auth_2_Profile');
+                logFirebaseEvent('IconButton_navigate_back');
+                context.safePop();
               },
             ),
             title: Column(
