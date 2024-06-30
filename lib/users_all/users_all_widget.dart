@@ -7,20 +7,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:provider/provider.dart';
-import 'users_model.dart';
-export 'users_model.dart';
+import 'users_all_model.dart';
+export 'users_all_model.dart';
 
-class UsersWidget extends StatefulWidget {
-  const UsersWidget({super.key});
+class UsersAllWidget extends StatefulWidget {
+  const UsersAllWidget({super.key});
 
   @override
-  State<UsersWidget> createState() => _UsersWidgetState();
+  State<UsersAllWidget> createState() => _UsersAllWidgetState();
 }
 
-class _UsersWidgetState extends State<UsersWidget>
+class _UsersAllWidgetState extends State<UsersAllWidget>
     with TickerProviderStateMixin {
-  late UsersModel _model;
+  late UsersAllModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -29,9 +28,9 @@ class _UsersWidgetState extends State<UsersWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UsersModel());
+    _model = createModel(context, () => UsersAllModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Users'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'UsersAll'});
     _model.searchTextController ??= TextEditingController();
     _model.searchFocusNode ??= FocusNode();
 
@@ -62,10 +61,8 @@ class _UsersWidgetState extends State<UsersWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
-        title: 'Users',
+        title: 'UsersAll',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -88,7 +85,7 @@ class _UsersWidgetState extends State<UsersWidget>
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  logFirebaseEvent('USERS_PAGE_arrow_back_rounded_ICN_ON_TAP');
+                  logFirebaseEvent('USERS_ALL_arrow_back_rounded_ICN_ON_TAP');
                   logFirebaseEvent('IconButton_navigate_back');
                   context.safePop();
                 },
@@ -98,7 +95,7 @@ class _UsersWidgetState extends State<UsersWidget>
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'j34sl75v' /* Team-Members */,
+                      'bw6cwbpr' /* Team-Members */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Readex Pro',
@@ -107,7 +104,7 @@ class _UsersWidgetState extends State<UsersWidget>
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      '73o0o7i4' /* All of our Customers & Employe... */,
+                      '3w5ivvus' /* All of our Customers & Employe... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Inter',
@@ -142,10 +139,10 @@ class _UsersWidgetState extends State<UsersWidget>
                       decoration: InputDecoration(
                         isDense: false,
                         labelText: FFLocalizations.of(context).getText(
-                          'lefjjtu5' /* Search for people... */,
+                          '5o2hod3w' /* Search for people... */,
                         ),
                         hintText: FFLocalizations.of(context).getText(
-                          'm4jj16bz' /* Search for people... */,
+                          't9d1tuw3' /* Search for people... */,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -200,21 +197,12 @@ class _UsersWidgetState extends State<UsersWidget>
                           const EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
                       child: StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
-                          queryBuilder: (usersRecord) =>
-                              usersRecord.where(Filter.or(
-                            Filter(
-                              'display_name',
-                              isEqualTo: _model.searchTextController.text != ''
-                                  ? _model.searchTextController.text
-                                  : null,
-                            ),
-                            Filter(
-                              'role',
-                              isNotEqualTo: FFAppState().Kunde != ''
-                                  ? FFAppState().Kunde
-                                  : null,
-                            ),
-                          )),
+                          queryBuilder: (usersRecord) => usersRecord.where(
+                            'display_name',
+                            isEqualTo: _model.searchTextController.text != ''
+                                ? _model.searchTextController.text
+                                : null,
+                          ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -251,7 +239,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     logFirebaseEvent(
-                                        'USERS_PAGE_Container_d6fdwkqn_ON_TAP');
+                                        'USERS_ALL_PAGE_Container_uf5wh2fe_ON_TAP');
                                     if (listViewUsersRecord.role == 'Kunde') {
                                       logFirebaseEvent('Container_navigate_to');
 
@@ -280,7 +268,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                   },
                                   onLongPress: () async {
                                     logFirebaseEvent(
-                                        'USERS_Container_d6fdwkqn_ON_LONG_PRESS');
+                                        'USERS_ALL_Container_uf5wh2fe_ON_LONG_PRE');
                                     if (valueOrDefault(
                                             currentUserDocument?.role, '') ==
                                         'Manager') {
@@ -324,7 +312,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                         if (Navigator.of(context).canPop()) {
                                           context.pop();
                                         }
-                                        context.pushNamed('Users');
+                                        context.pushNamed('UsersAll');
                                       } else {
                                         return;
                                       }

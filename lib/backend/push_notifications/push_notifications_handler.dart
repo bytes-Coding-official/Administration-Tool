@@ -103,7 +103,6 @@ class ParameterData {
 
 final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
-  'ProfileSettings': ParameterData.none(),
   'Adress-Settings': ParameterData.none(),
   'IT-Skills-Settings': ParameterData.none(),
   'Language-Settings': ParameterData.none(),
@@ -188,6 +187,7 @@ final parametersBuilderMap =
               data, 'chatRef', ChatsRecord.fromSnapshot),
         },
       ),
+  'UsersAll': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

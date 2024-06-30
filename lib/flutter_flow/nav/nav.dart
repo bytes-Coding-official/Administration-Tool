@@ -83,11 +83,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const MainWidget() : const Auth2LoginWidget(),
         ),
         FFRoute(
-          name: 'ProfileSettings',
-          path: '/profileSettings',
-          builder: (context, params) => const ProfileSettingsWidget(),
-        ),
-        FFRoute(
           name: 'Adress-Settings',
           path: '/adressSettings',
           builder: (context, params) => const AdressSettingsWidget(),
@@ -345,6 +340,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'UsersAll',
+          path: '/usersAll',
+          builder: (context, params) => const UsersAllWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

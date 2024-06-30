@@ -557,10 +557,20 @@ class _SideNavWidgetState extends State<SideNavWidget>
                                         onTap: () async {
                                           logFirebaseEvent(
                                               'SIDE_NAV_PAGE_contentView_1_ON_TAP');
-                                          logFirebaseEvent(
-                                              'contentView_1_navigate_to');
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.role,
+                                                  '') ==
+                                              'Kunde') {
+                                            logFirebaseEvent(
+                                                'contentView_1_navigate_to');
 
-                                          context.pushNamed('Users');
+                                            context.pushNamed('Users');
+                                          } else {
+                                            logFirebaseEvent(
+                                                'contentView_1_navigate_to');
+
+                                            context.pushNamed('UsersAll');
+                                          }
                                         },
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),

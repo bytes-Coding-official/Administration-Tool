@@ -951,10 +951,20 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                         onTap: () async {
                                           logFirebaseEvent(
                                               'MAIN_PAGE_contentView_1_ON_TAP');
-                                          logFirebaseEvent(
-                                              'contentView_1_navigate_to');
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.role,
+                                                  '') ==
+                                              'Kunde') {
+                                            logFirebaseEvent(
+                                                'contentView_1_navigate_to');
 
-                                          context.pushNamed('Users');
+                                            context.pushNamed('Users');
+                                          } else {
+                                            logFirebaseEvent(
+                                                'contentView_1_navigate_to');
+
+                                            context.pushNamed('UsersAll');
+                                          }
                                         },
                                         child: AnimatedContainer(
                                           duration: const Duration(milliseconds: 200),
