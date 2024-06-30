@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -126,58 +127,67 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   onExit: ((event) async {
                     setState(() => _model.mouseRegionHovered1 = false);
                   }),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      logFirebaseEvent('DELETE_DIALOG_COMP_wrapWidget_ON_TAP');
-                      logFirebaseEvent('wrapWidget_execute_callback');
-                      await widget.action?.call();
-                    },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered1
-                            ? FlutterFlowTheme.of(context).primaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 0.0, 0.0),
-                              child: Icon(
-                                Icons.group_add_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 20.0,
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '73scs9a0' /* Invite Users */,
+                  child: Visibility(
+                    visible: valueOrDefault(currentUserDocument?.role, '') !=
+                        'Kunde',
+                    child: AuthUserStreamWidget(
+                      builder: (context) => InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          logFirebaseEvent(
+                              'DELETE_DIALOG_COMP_wrapWidget_ON_TAP');
+                          logFirebaseEvent('wrapWidget_execute_callback');
+                          await widget.action?.call();
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          curve: Curves.easeInOut,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: _model.mouseRegionHovered1
+                                ? FlutterFlowTheme.of(context).primaryBackground
+                                : FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 8.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 0.0, 0.0),
+                                  child: Icon(
+                                    Icons.group_add_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 20.0,
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
                                 ),
-                              ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '73scs9a0' /* Invite Users */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),

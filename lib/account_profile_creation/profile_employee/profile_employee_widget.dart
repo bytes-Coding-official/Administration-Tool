@@ -788,20 +788,95 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                       ],
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 10.0, 0.0, 5.0),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 5.0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                width: 100.0,
+                                                decoration: const BoxDecoration(),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mwwx6zl8' /* Name */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                              SingleChildScrollView(
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      profileEmployeeUsersRecord
+                                                          .displayName,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ].divide(const SizedBox(width: 25.0)),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            logFirebaseEvent(
+                                                'PROFILE_EMPLOYEE_Row_b4nn0dc1_ON_TAP');
+                                            if (isWeb) {
+                                              return;
+                                            }
+
+                                            logFirebaseEvent('Row_call_number');
+                                            await launchUrl(Uri(
+                                              scheme: 'tel',
+                                              path: profileEmployeeUsersRecord
+                                                  .phoneNumber,
+                                            ));
+                                          },
                                           child: SingleChildScrollView(
                                             scrollDirection: Axis.horizontal,
                                             child: Row(
@@ -815,7 +890,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'mwwx6zl8' /* Name */,
+                                                      '7xv8x6cz' /* Phone */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -840,7 +915,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                     children: [
                                                       Text(
                                                         profileEmployeeUsersRecord
-                                                            .displayName,
+                                                            .phoneNumber,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -862,176 +937,25 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                             ),
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 5.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'PROFILE_EMPLOYEE_Row_b4nn0dc1_ON_TAP');
-                                              if (isWeb) {
-                                                return;
-                                              }
-
-                                              logFirebaseEvent(
-                                                  'Row_call_number');
-                                              await launchUrl(Uri(
-                                                scheme: 'tel',
-                                                path: profileEmployeeUsersRecord
-                                                    .phoneNumber,
-                                              ));
-                                            },
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                    width: 100.0,
-                                                    decoration: const BoxDecoration(),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7xv8x6cz' /* Phone */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          profileEmployeeUsersRecord
-                                                              .phoneNumber,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ].divide(const SizedBox(width: 25.0)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 5.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              logFirebaseEvent(
-                                                  'PROFILE_EMPLOYEE_Row_ttzxjd7n_ON_TAP');
-                                              logFirebaseEvent(
-                                                  'Row_send_email');
-                                              await launchUrl(Uri(
-                                                scheme: 'mailto',
-                                                path: profileEmployeeUsersRecord
-                                                    .email,
-                                              ));
-                                            },
-                                            child: SingleChildScrollView(
-                                              scrollDirection: Axis.horizontal,
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                    width: 100.0,
-                                                    decoration: const BoxDecoration(),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'q4t6qn19' /* Mail */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          profileEmployeeUsersRecord
-                                                              .email,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ].divide(const SizedBox(width: 25.0)),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 5.0),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 5.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            logFirebaseEvent(
+                                                'PROFILE_EMPLOYEE_Row_ttzxjd7n_ON_TAP');
+                                            logFirebaseEvent('Row_send_email');
+                                            await launchUrl(Uri(
+                                              scheme: 'mailto',
+                                              path: profileEmployeeUsersRecord
+                                                  .email,
+                                            ));
+                                          },
                                           child: SingleChildScrollView(
                                             scrollDirection: Axis.horizontal,
                                             child: Row(
@@ -1045,9 +969,8 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '07y0m02s' /* Location */,
+                                                      'q4t6qn19' /* Mail */,
                                                     ),
-                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1062,64 +985,127 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                         ),
                                                   ),
                                                 ),
-                                                Text(
-                                                  profileEmployeeUsersRecord
-                                                      .street,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                                SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Text(
+                                                        profileEmployeeUsersRecord
+                                                            .email,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
                                                       ),
-                                                ),
-                                                Text(
-                                                  profileEmployeeUsersRecord
-                                                      .town,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Text(
-                                                  profileEmployeeUsersRecord
-                                                      .zip,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                                Text(
-                                                  profileEmployeeUsersRecord
-                                                      .country,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ].divide(const SizedBox(width: 25.0)),
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 5.0)),
-                                    ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 5.0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                width: 100.0,
+                                                decoration: const BoxDecoration(),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '07y0m02s' /* Location */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
+                                                profileEmployeeUsersRecord
+                                                    .street,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              Text(
+                                                profileEmployeeUsersRecord.town,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              Text(
+                                                profileEmployeeUsersRecord.zip,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              Text(
+                                                profileEmployeeUsersRecord
+                                                    .country,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ].divide(const SizedBox(width: 25.0)),
+                                          ),
+                                        ),
+                                      ),
+                                    ].divide(const SizedBox(height: 5.0)),
                                   ),
                                 ],
                               ),
