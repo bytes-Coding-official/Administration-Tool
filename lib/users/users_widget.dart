@@ -200,21 +200,20 @@ class _UsersWidgetState extends State<UsersWidget>
                           const EdgeInsetsDirectional.fromSTEB(5.0, 8.0, 5.0, 0.0),
                       child: StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
-                          queryBuilder: (usersRecord) =>
-                              usersRecord.where(Filter.or(
-                            Filter(
-                              'display_name',
-                              isEqualTo: _model.searchTextController.text != ''
-                                  ? _model.searchTextController.text
-                                  : null,
-                            ),
-                            Filter(
-                              'role',
-                              isNotEqualTo: FFAppState().Kunde != ''
-                                  ? FFAppState().Kunde
-                                  : null,
-                            ),
-                          )),
+                          queryBuilder: (usersRecord) => usersRecord
+                              .where(
+                                'display_name',
+                                isEqualTo:
+                                    _model.searchTextController.text != ''
+                                        ? _model.searchTextController.text
+                                        : null,
+                              )
+                              .where(
+                                'role',
+                                isNotEqualTo: FFAppState().Kunde != ''
+                                    ? FFAppState().Kunde
+                                    : null,
+                              ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
