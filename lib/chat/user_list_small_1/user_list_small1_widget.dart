@@ -121,24 +121,28 @@ class _UserListSmall1WidgetState extends State<UserListSmall1Widget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Text(
-                                valueOrDefault<String>(
-                                  widget.userRef?.email,
-                                  '--',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
+                            if (valueOrDefault(currentUserDocument?.role, '') !=
+                                'Kunde')
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 4.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    valueOrDefault<String>(
+                                      widget.userRef?.email,
+                                      '--',
                                     ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
                               ),
-                            ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),

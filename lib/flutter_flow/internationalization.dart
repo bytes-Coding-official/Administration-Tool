@@ -3818,6 +3818,50 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '',
     },
   },
+  // chat_2_InviteUsersKunde
+  {
+    '9xg97l71': {
+      'en': 'Invite Users',
+      'de': 'Benutzer einladen',
+      'es': 'Invitar usuarios',
+      'fr': 'Inviter des utilisateurs',
+      'ru': 'Пригласить пользователей',
+      'zh_Hans': '邀请用户',
+    },
+    '72smvczm': {
+      'en': 'Selected',
+      'de': 'Ausgewählt',
+      'es': 'Seleccionado',
+      'fr': 'Choisi',
+      'ru': 'Выбрано',
+      'zh_Hans': '选定',
+    },
+    '6qv1zcr9': {
+      'en': 'Invite Users',
+      'de': 'Benutzer einladen',
+      'es': 'Invitar usuarios',
+      'fr': 'Inviter des utilisateurs',
+      'ru': 'Пригласить пользователей',
+      'zh_Hans': '邀请用户',
+    },
+    'v4apm1on': {
+      'en': 'Select users from below to start a chat.',
+      'de': 'Wählen Sie unten Benutzer aus, um einen Chat zu starten.',
+      'es': 'Seleccione usuarios de abajo para iniciar un chat.',
+      'fr':
+          'Sélectionnez les utilisateurs ci-dessous pour démarrer une discussion.',
+      'ru': 'Выберите пользователей снизу, чтобы начать чат.',
+      'zh_Hans': '从下面选择用户开始聊天。',
+    },
+    'swfnbbkh': {
+      'en': 'Home',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'ru': '',
+      'zh_Hans': '',
+    },
+  },
   // editProfile_auth_2
   {
     'i42hhvws': {

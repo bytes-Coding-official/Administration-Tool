@@ -134,9 +134,16 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                       onPressed: () async {
                         logFirebaseEvent(
                             'CHAT_2_MAIN_PAGE_ADD_CHAT_BTN_ON_TAP');
-                        logFirebaseEvent('Button_navigate_to');
+                        if (valueOrDefault(currentUserDocument?.role, '') ==
+                            'Kunde') {
+                          logFirebaseEvent('Button_navigate_to');
 
-                        context.pushNamed('chat_2_InviteUsers');
+                          context.pushNamed('chat_2_InviteUsersKunde');
+                        } else {
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed('chat_2_InviteUsers');
+                        }
                       },
                       text: FFLocalizations.of(context).getText(
                         '3nlz1j90' /* Add Chat */,

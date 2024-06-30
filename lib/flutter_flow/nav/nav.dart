@@ -332,6 +332,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'support_SubmitPaymentTicket',
           path: '/supportSubmitPaymentTicket',
           builder: (context, params) => const SupportSubmitPaymentTicketWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_InviteUsersKunde',
+          path: '/chat2InviteUsersKunde',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2InviteUsersKundeWidget(
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

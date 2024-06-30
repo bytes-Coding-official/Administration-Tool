@@ -182,6 +182,12 @@ final parametersBuilderMap =
         },
       ),
   'support_SubmitPaymentTicket': ParameterData.none(),
+  'chat_2_InviteUsersKunde': (data) async => ParameterData(
+        allParams: {
+          'chatRef': await getDocumentParameter<ChatsRecord>(
+              data, 'chatRef', ChatsRecord.fromSnapshot),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

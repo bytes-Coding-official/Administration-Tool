@@ -60,3 +60,5 @@ export '/customer/edit_customer/edit_customer_widget.dart'
     show EditCustomerWidget;
 export '/support_ticket/support_submit_payment_ticket/support_submit_payment_ticket_widget.dart'
     show SupportSubmitPaymentTicketWidget;
+export '/chat/chat_2_invite_users_kunde/chat2_invite_users_kunde_widget.dart'
+    show Chat2InviteUsersKundeWidget;
