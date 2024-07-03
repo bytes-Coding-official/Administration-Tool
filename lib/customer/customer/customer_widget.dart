@@ -1013,8 +1013,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     ),
                                   ),
                                 if (valueOrDefault(
-                                        currentUserDocument?.role, '') !=
-                                    'Kunde')
+                                        currentUserDocument?.role, '') ==
+                                    'Administrator')
                                   Align(
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: AuthUserStreamWidget(
@@ -1160,8 +1160,8 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                     ),
                                   ),
                                 if (valueOrDefault(
-                                        currentUserDocument?.role, '') !=
-                                    'Kunde')
+                                        currentUserDocument?.role, '') ==
+                                    'Administrator')
                                   Align(
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
