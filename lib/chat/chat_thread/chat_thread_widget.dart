@@ -114,7 +114,9 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                         ),
                       );
                     }
+
                     final otherUserUsersRecord = snapshot.data!;
+
                     return Row(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,7 +187,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                       child: Text(
                                         valueOrDefault<String>(
                                           dateTimeFormat(
-                                            'relative',
+                                            "relative",
                                             widget.chatMessagesRef?.timestamp,
                                             locale: FFLocalizations.of(context)
                                                     .languageShortCode ??
@@ -395,7 +397,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget>
                                   child: Text(
                                     valueOrDefault<String>(
                                       dateTimeFormat(
-                                        'relative',
+                                        "relative",
                                         widget.chatMessagesRef?.timestamp,
                                         locale: FFLocalizations.of(context)
                                                 .languageShortCode ??

@@ -21,7 +21,6 @@ class Chat2InviteUsersKundeModel
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, UsersRecord>? listViewPagingController;
@@ -45,8 +44,6 @@ class Chat2InviteUsersKundeModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
-
     listViewPagingController?.dispose();
   }
 

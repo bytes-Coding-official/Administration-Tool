@@ -94,14 +94,14 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
             ),
           );
         }
+
         final editCaseCustomerCaseRecord = snapshot.data!;
+
         return Title(
             title: 'EditCase',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -475,6 +475,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 }
                                 List<ItskillsRecord>
                                     dropDownItskillsRecordList = snapshot.data!;
+
                                 return FlutterFlowDropDown<String>(
                                   multiSelectController:
                                       _model.dropDownValueController1 ??=
@@ -666,6 +667,7 @@ class _EditCaseWidgetState extends State<EditCaseWidget>
                                 }
                                 List<CustomerRecord>
                                     dropDownCustomerRecordList = snapshot.data!;
+
                                 return FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=

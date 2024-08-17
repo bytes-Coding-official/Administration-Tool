@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class ProfileUserModel extends FlutterFlowModel<ProfileUserWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - Read Document] action in ProfileUser widget.
   UsersRecord? userReference;
   // Stores action output result for [Firestore Query - Query a collection] action in ProfileUser widget.
@@ -20,7 +19,5 @@ class ProfileUserModel extends FlutterFlowModel<ProfileUserWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

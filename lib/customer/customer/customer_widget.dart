@@ -99,14 +99,14 @@ class _CustomerWidgetState extends State<CustomerWidget>
             ),
           );
         }
+
         final customerCustomerCaseRecord = snapshot.data!;
+
         return Title(
             title: 'Customer',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -186,7 +186,9 @@ class _CustomerWidgetState extends State<CustomerWidget>
                           ),
                         );
                       }
+
                       final containerCustomerRecord = snapshot.data!;
+
                       return Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 1.0,
@@ -616,6 +618,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                         .topics
                                         .map((e) => e)
                                         .toList();
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -647,8 +650,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   ),
                                                 );
                                               }
+
                                               final containerItskillsRecord =
                                                   snapshot.data!;
+
                                               return Container(
                                                 width: 100.0,
                                                 height: 25.0,
@@ -708,6 +713,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                       final languages = containerCustomerRecord
                                           .language
                                           .toList();
+
                                       return SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                         child: Row(
@@ -742,8 +748,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                     ),
                                                   );
                                                 }
+
                                                 final containerLanguagesRecord =
                                                     snapshot.data!;
+
                                                 return Container(
                                                   width: 100.0,
                                                   height: 25.0,
@@ -846,6 +854,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                         customerCustomerCaseRecord.assignee
                                             .map((e) => e)
                                             .toList();
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -881,8 +890,10 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                   ),
                                                 );
                                               }
+
                                               final containerUsersRecord =
                                                   snapshot.data!;
+
                                               return Container(
                                                 width: 40.0,
                                                 height: 40.0,
@@ -1578,6 +1589,7 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                 listViewCustomerMeetingRecord
                                                                     .assignee
                                                                     .toList();
+
                                                             return SingleChildScrollView(
                                                               scrollDirection:
                                                                   Axis.horizontal,
@@ -1622,9 +1634,11 @@ class _CustomerWidgetState extends State<CustomerWidget>
                                                                           ),
                                                                         );
                                                                       }
+
                                                                       final containerUsersRecord =
                                                                           snapshot
                                                                               .data!;
+
                                                                       return Container(
                                                                         width:
                                                                             40.0,

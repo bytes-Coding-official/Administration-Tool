@@ -88,9 +88,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
         title: 'Main',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1948,6 +1946,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               emCustomerCaseRecord
                                                                   .topics
                                                                   .toList();
+
                                                           return SingleChildScrollView(
                                                             scrollDirection:
                                                                 Axis.horizontal,
@@ -1992,9 +1991,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       );
                                                                     }
+
                                                                     final containerItskillsRecord =
                                                                         snapshot
                                                                             .data!;
+
                                                                     return Container(
                                                                       decoration:
                                                                           BoxDecoration(
@@ -2079,6 +2080,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                     emCustomerCaseRecord
                                                                         .assignee
                                                                         .toList();
+
                                                                 return SingleChildScrollView(
                                                                   scrollDirection:
                                                                       Axis.horizontal,
@@ -2118,8 +2120,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return Container(
                                                                             width:
                                                                                 40.0,
@@ -2591,6 +2595,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                               emCustomerCaseRecord
                                                                   .topics
                                                                   .toList();
+
                                                           return SingleChildScrollView(
                                                             scrollDirection:
                                                                 Axis.horizontal,
@@ -2635,9 +2640,11 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       );
                                                                     }
+
                                                                     final containerItskillsRecord =
                                                                         snapshot
                                                                             .data!;
+
                                                                     return Container(
                                                                       decoration:
                                                                           BoxDecoration(
@@ -2716,6 +2723,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                     emCustomerCaseRecord
                                                                         .assignee
                                                                         .toList();
+
                                                                 return SingleChildScrollView(
                                                                   scrollDirection:
                                                                       Axis.horizontal,
@@ -2755,8 +2763,10 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return Container(
                                                                             width:
                                                                                 40.0,
@@ -2944,6 +2954,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                 List<CustomerCaseRecord>
                                                     tabletDesktopViewCustomerCaseRecordList =
                                                     snapshot.data!;
+
                                                 return GridView.builder(
                                                   padding: EdgeInsets.zero,
                                                   gridDelegate:
@@ -3243,6 +3254,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             .map((e) =>
                                                                                 e)
                                                                             .toList();
+
                                                                         return SingleChildScrollView(
                                                                           scrollDirection:
                                                                               Axis.horizontal,
@@ -3272,7 +3284,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                       ),
                                                                                     );
                                                                                   }
+
                                                                                   final containerItskillsRecord = snapshot.data!;
+
                                                                                   return Container(
                                                                                     decoration: BoxDecoration(
                                                                                       color: FlutterFlowTheme.of(context).alternate,
@@ -3332,6 +3346,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                             builder:
                                                                                 (context) {
                                                                               final assignees = tabletDesktopViewCustomerCaseRecord.assignee.map((e) => e).toList().take(3).toList();
+
                                                                               return Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -3354,7 +3369,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                           ),
                                                                                         );
                                                                                       }
+
                                                                                       final containerUsersRecord = snapshot.data!;
+
                                                                                       return Container(
                                                                                         width: 40.0,
                                                                                         height: 40.0,
@@ -3841,6 +3858,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                           .map((e) =>
                                                                               e)
                                                                           .toList();
+
                                                                       return SingleChildScrollView(
                                                                         scrollDirection:
                                                                             Axis.horizontal,
@@ -3872,7 +3890,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                     ),
                                                                                   );
                                                                                 }
+
                                                                                 final containerItskillsRecord = snapshot.data!;
+
                                                                                 return Container(
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -3935,6 +3955,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                               (context) {
                                                                             final assignees =
                                                                                 tabletDesktopViewCustomerCaseRecord.assignee.map((e) => e).toList().take(3).toList();
+
                                                                             return Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -3957,7 +3978,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
                                                                                         ),
                                                                                       );
                                                                                     }
+
                                                                                     final containerUsersRecord = snapshot.data!;
+
                                                                                     return Container(
                                                                                       width: 40.0,
                                                                                       height: 40.0,

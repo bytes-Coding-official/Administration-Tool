@@ -72,9 +72,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
         title: 'support_TicketDetails',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -284,7 +282,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                       height: 12.0,
                                       decoration: BoxDecoration(
                                         color: () {
-                                          if (widget.ticketRef?.priorityLevel ==
+                                          if (widget
+                                                  .ticketRef?.priorityLevel ==
                                               'High') {
                                             return const Color(0x4CFF5963);
                                           } else if (widget
@@ -557,7 +556,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                 Text(
                                   valueOrDefault<String>(
                                     dateTimeFormat(
-                                      'MMMEd',
+                                      "MMMEd",
                                       widget.ticketRef?.createdTime,
                                       locale: FFLocalizations.of(context)
                                           .languageCode,
@@ -595,7 +594,7 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                   Text(
                                     valueOrDefault<String>(
                                       dateTimeFormat(
-                                        'relative',
+                                        "relative",
                                         widget.ticketRef?.lastActive,
                                         locale: FFLocalizations.of(context)
                                                 .languageShortCode ??
@@ -773,8 +772,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                   ),
                                                 );
                                               }
+
                                               final containerUsersRecord =
                                                   snapshot.data!;
+
                                               return Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -942,8 +943,10 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                             ),
                                           );
                                         }
+
                                         final containerUsersRecord =
                                             snapshot.data!;
+
                                         return Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
@@ -1084,13 +1087,8 @@ class _SupportTicketDetailsWidgetState extends State<SupportTicketDetailsWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () => _model
-                                                            .unfocusNode
-                                                            .canRequestFocus
-                                                        ? FocusScope.of(context)
-                                                            .requestFocus(_model
-                                                                .unfocusNode)
-                                                        : FocusScope.of(context)
+                                                    onTap: () =>
+                                                        FocusScope.of(context)
                                                             .unfocus(),
                                                     child: Padding(
                                                       padding: MediaQuery

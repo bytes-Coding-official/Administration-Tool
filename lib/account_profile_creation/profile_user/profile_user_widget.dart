@@ -122,14 +122,14 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
             ),
           );
         }
+
         final profileUserUsersRecord = snapshot.data!;
+
         return Title(
             title: 'ProfileUser',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -614,6 +614,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                     }
                                                     int textCount =
                                                         snapshot.data!;
+
                                                     return Text(
                                                       textCount.toString(),
                                                       style: FlutterFlowTheme
@@ -1066,6 +1067,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                     }
                                     List<ItskillsRecord> rowItskillsRecordList =
                                         snapshot.data!;
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1163,6 +1165,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                     }
                                     List<LanguagesRecord>
                                         rowLanguagesRecordList = snapshot.data!;
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1346,6 +1349,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               List<CustomerMeetingRecord>
                                   listViewCustomerMeetingRecordList =
                                   snapshot.data!;
+
                               return ListView.separated(
                                 padding: EdgeInsets.zero,
                                 primary: false,
@@ -1534,6 +1538,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                           listViewCustomerMeetingRecord
                                                               .assignee
                                                               .toList();
+
                                                       return SingleChildScrollView(
                                                         scrollDirection:
                                                             Axis.horizontal,
@@ -1577,9 +1582,11 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                     ),
                                                                   );
                                                                 }
+
                                                                 final containerUsersRecord =
                                                                     snapshot
                                                                         .data!;
+
                                                                 return Container(
                                                                   width: 40.0,
                                                                   height: 40.0,

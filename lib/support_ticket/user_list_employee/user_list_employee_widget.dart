@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/support_ticket/user_list_small/user_list_small_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'user_list_employee_model.dart';
 export 'user_list_employee_model.dart';
 
@@ -39,6 +40,8 @@ class _UserListEmployeeWidgetState extends State<UserListEmployeeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.end,
@@ -106,13 +109,9 @@ class _UserListEmployeeWidgetState extends State<UserListEmployeeWidget> {
                       future: queryUsersRecordOnce(
                         queryBuilder: (usersRecord) => usersRecord.where(
                           'role',
-                          isNotEqualTo: true
-                              ? 'Kunde'
-                              : 'Kunde' != ''
-                                  ? true
-                                      ? 'Kunde'
-                                      : 'Kunde'
-                                  : null,
+                          isEqualTo: FFAppState().Kunde != ''
+                              ? FFAppState().Kunde
+                              : null,
                         ),
                       ),
                       builder: (context, snapshot) {
@@ -132,6 +131,7 @@ class _UserListEmployeeWidgetState extends State<UserListEmployeeWidget> {
                         }
                         List<UsersRecord> listViewUsersRecordList =
                             snapshot.data!;
+
                         return ListView.builder(
                           padding: EdgeInsets.zero,
                           scrollDirection: Axis.vertical,

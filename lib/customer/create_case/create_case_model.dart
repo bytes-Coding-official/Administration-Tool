@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for CaseID widget.
   FocusNode? caseIDFocusNode;
   TextEditingController? caseIDTextController;
@@ -46,7 +45,6 @@ class CreateCaseModel extends FlutterFlowModel<CreateCaseWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     caseIDFocusNode?.dispose();
     caseIDTextController?.dispose();
 

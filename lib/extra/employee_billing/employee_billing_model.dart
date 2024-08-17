@@ -7,7 +7,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 class EmployeeBillingModel extends FlutterFlowModel<EmployeeBillingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in EmployeeBilling widget.
   List<CustomerMeetingRecord>? queryResult;
   // Stores action output result for [Custom Action - totalRevenue] action in EmployeeBilling widget.
@@ -33,7 +32,6 @@ class EmployeeBillingModel extends FlutterFlowModel<EmployeeBillingWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     for (var s in listViewStreamSubscriptions1) {
       s?.cancel();
     }

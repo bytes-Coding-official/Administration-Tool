@@ -65,9 +65,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
         title: 'chat_2_main',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -353,8 +351,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                     ),
                                                   );
                                                 }
+
                                                 final rowUsersRecord =
                                                     snapshot.data!;
+
                                                 return Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -557,7 +557,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                           0.0),
                                                                   child: Text(
                                                                     dateTimeFormat(
-                                                                      'relative',
+                                                                      "relative",
                                                                       listViewChatsRecord
                                                                           .lastMessageTime!,
                                                                       locale: FFLocalizations.of(context)
@@ -639,8 +639,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                     ),
                                                   );
                                                 }
+
                                                 final rowUsersRecord =
                                                     snapshot.data!;
+
                                                 return Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -696,9 +698,11 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                       ),
                                                                     );
                                                                   }
+
                                                                   final containerUsersRecord =
                                                                       snapshot
                                                                           .data!;
+
                                                                   return Container(
                                                                     width: 32.0,
                                                                     height:
@@ -970,7 +974,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget>
                                                                     valueOrDefault<
                                                                         String>(
                                                                       dateTimeFormat(
-                                                                        'relative',
+                                                                        "relative",
                                                                         listViewChatsRecord
                                                                             .lastMessageTime,
                                                                         locale: FFLocalizations.of(context).languageShortCode ??

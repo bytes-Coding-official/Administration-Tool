@@ -7,7 +7,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 class MainModel extends FlutterFlowModel<MainWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for em widget.
 
   PagingController<DocumentSnapshot?, CustomerCaseRecord>? emPagingController1;
@@ -32,7 +31,6 @@ class MainModel extends FlutterFlowModel<MainWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     for (var s in emStreamSubscriptions1) {
       s?.cancel();
     }

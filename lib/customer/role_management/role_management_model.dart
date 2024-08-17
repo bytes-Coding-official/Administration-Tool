@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class RoleManagementModel extends FlutterFlowModel<RoleManagementWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -20,7 +19,5 @@ class RoleManagementModel extends FlutterFlowModel<RoleManagementWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -124,14 +124,14 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
             ),
           );
         }
+
         final profileEmployeeUsersRecord = snapshot.data!;
+
         return Title(
             title: 'ProfileEmployee',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -635,6 +635,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                 );
                                               }
                                               int textCount = snapshot.data!;
+
                                               return Text(
                                                 textCount.toString(),
                                                 style:
@@ -1194,6 +1195,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                             );
                                           }
                                           int textCount = snapshot.data!;
+
                                           return Text(
                                             textCount.toString(),
                                             textAlign: TextAlign.center,
@@ -1271,6 +1273,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                             );
                                           }
                                           int textCount = snapshot.data!;
+
                                           return Text(
                                             textCount.toString(),
                                             textAlign: TextAlign.center,
@@ -1351,6 +1354,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     }
                                     List<ItskillsRecord> rowItskillsRecordList =
                                         snapshot.data!;
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1448,6 +1452,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                     }
                                     List<LanguagesRecord>
                                         rowLanguagesRecordList = snapshot.data!;
+
                                     return SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -1631,6 +1636,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                               List<CustomerMeetingRecord>
                                   listViewCustomerMeetingRecordList =
                                   snapshot.data!;
+
                               return ListView.separated(
                                 padding: EdgeInsets.zero,
                                 primary: false,
@@ -1822,6 +1828,7 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                         listViewCustomerMeetingRecord
                                                             .assignee
                                                             .toList();
+
                                                     return SingleChildScrollView(
                                                       scrollDirection:
                                                           Axis.horizontal,
@@ -1865,9 +1872,11 @@ class _ProfileEmployeeWidgetState extends State<ProfileEmployeeWidget>
                                                                   ),
                                                                 );
                                                               }
+
                                                               final containerUsersRecord =
                                                                   snapshot
                                                                       .data!;
+
                                                               return Container(
                                                                 width: 40.0,
                                                                 height: 40.0,

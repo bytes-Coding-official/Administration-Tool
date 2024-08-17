@@ -7,7 +7,6 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 class AllCustomersModel extends FlutterFlowModel<AllCustomersWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, CustomerRecord>? listViewPagingController;
@@ -19,7 +18,6 @@ class AllCustomersModel extends FlutterFlowModel<AllCustomersWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     for (var s in listViewStreamSubscriptions) {
       s?.cancel();
     }

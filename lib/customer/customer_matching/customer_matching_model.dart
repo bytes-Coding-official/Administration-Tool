@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class CustomerMatchingModel extends FlutterFlowModel<CustomerMatchingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -22,7 +21,5 @@ class CustomerMatchingModel extends FlutterFlowModel<CustomerMatchingWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -3687,7 +3687,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zh_Hans': '分配用户',
     },
     '8iu2pwb8': {
-      'en': 'Select the Assignees',
+      'en': 'Select the Kunde',
       'de': 'Wählen Sie die Beauftragten aus',
       'es': 'Seleccione los asignatarios',
       'fr': 'Sélectionnez les destinataires',

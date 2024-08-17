@@ -128,11 +128,11 @@ class _SetPriorityMenuWidgetState extends State<SetPriorityMenuWidget> {
                             ),
                             Icon(
                               Icons.check_rounded,
-                              color:
-                                  widget.ticketRef?.priorityLevel == 'Emergency'
-                                      ? FlutterFlowTheme.of(context).primaryText
-                                      : FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                              color: widget.ticketRef?.priorityLevel ==
+                                      'Emergency'
+                                  ? FlutterFlowTheme.of(context).primaryText
+                                  : FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                               size: 20.0,
                             ),
                           ],

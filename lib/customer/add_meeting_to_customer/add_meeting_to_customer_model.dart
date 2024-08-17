@@ -8,7 +8,6 @@ class AddMeetingToCustomerModel
     extends FlutterFlowModel<AddMeetingToCustomerWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for tutor widget.
   List<String>? tutorValue;
   FormFieldController<List<String>>? tutorValueController;
@@ -35,7 +34,6 @@ class AddMeetingToCustomerModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     durationFocusNode?.dispose();
     durationTextController?.dispose();
 

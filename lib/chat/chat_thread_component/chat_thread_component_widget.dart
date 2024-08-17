@@ -154,6 +154,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                     body: 'You have not sent any messages in this chat yet.',
                   );
                 }
+
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(
                     0,
@@ -541,8 +542,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                             .getDocumentFromData(
                                                 createChatMessagesRecordData(
                                                   user: currentUserReference,
-                                                  chat:
-                                                      widget.chatRef?.reference,
+                                                  chat: widget
+                                                      .chatRef?.reference,
                                                   text: _model
                                                       .textController.text,
                                                   timestamp:
@@ -566,8 +567,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget>
                                         logFirebaseEvent(
                                             'IconButton_updateChatDocument');
 
-                                        firestoreBatch
-                                            .update(widget.chatRef!.reference, {
+                                        firestoreBatch.update(
+                                            widget.chatRef!.reference, {
                                           ...createChatsRecordData(
                                             lastMessageTime:
                                                 getCurrentTimestamp,

@@ -145,6 +145,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                   child: Builder(
                     builder: (context) {
                       final chatUsers = widget.chatRef?.users.toList() ?? [];
+
                       return ListView.separated(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
@@ -170,7 +171,9 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                                   ),
                                 );
                               }
+
                               final userListSmall1UsersRecord = snapshot.data!;
+
                               return wrapWithModel(
                                 model: _model.userListSmall1Models.getModel(
                                   chatUsersItem.id,
@@ -211,7 +214,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget>
                             logFirebaseEvent(
                                 'CHAT_DETAILS_OVERLAY_Container_3qg1tygj_');
                             logFirebaseEvent(
-                                'deleteDialog_close_dialog,_drawer,_etc');
+                                'deleteDialog_close_dialog_drawer_etc');
                             Navigator.pop(context);
                             logFirebaseEvent('deleteDialog_navigate_to');
 

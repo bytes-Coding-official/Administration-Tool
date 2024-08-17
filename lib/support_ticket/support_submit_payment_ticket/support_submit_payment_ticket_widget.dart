@@ -301,9 +301,7 @@ class _SupportSubmitPaymentTicketWidgetState
         title: 'support_SubmitPaymentTicket',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -843,12 +841,8 @@ class _SupportSubmitPaymentTicketWidgetState
                                             context: context,
                                             builder: (context) {
                                               return GestureDetector(
-                                                onTap: () => _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
+                                                onTap: () =>
+                                                    FocusScope.of(context)
                                                         .unfocus(),
                                                 child: Padding(
                                                   padding:
@@ -926,7 +920,7 @@ class _SupportSubmitPaymentTicketWidgetState
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            '8iu2pwb8' /* Select the Assignees */,
+                                                            '8iu2pwb8' /* Select the Kunde */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

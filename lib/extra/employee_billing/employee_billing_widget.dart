@@ -178,9 +178,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
         title: 'EmployeeBilling',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -421,6 +419,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                               );
                                             }
                                             int textCount = snapshot.data!;
+
                                             return Text(
                                               textCount.toString(),
                                               style:
@@ -632,6 +631,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                 );
                                               }
                                               int textCount = snapshot.data!;
+
                                               return Text(
                                                 textCount.toString(),
                                                 textAlign: TextAlign.center,
@@ -712,6 +712,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                 );
                                               }
                                               int textCount = snapshot.data!;
+
                                               return Text(
                                                 textCount.toString(),
                                                 textAlign: TextAlign.center,
@@ -1180,6 +1181,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     .map((e) =>
                                                                         e)
                                                                     .toList();
+
                                                             return SingleChildScrollView(
                                                               scrollDirection:
                                                                   Axis.horizontal,
@@ -1224,9 +1226,11 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                           ),
                                                                         );
                                                                       }
+
                                                                       final containerItskillsRecord =
                                                                           snapshot
                                                                               .data!;
+
                                                                       return Container(
                                                                         decoration:
                                                                             BoxDecoration(
@@ -1308,6 +1312,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                       .toList()
                                                                       .take(3)
                                                                       .toList();
+
                                                                   return Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1344,8 +1349,10 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return Container(
                                                                             width:
                                                                                 40.0,
@@ -1879,6 +1886,7 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                     listViewCustomerMeetingRecord
                                                                         .assignee
                                                                         .toList();
+
                                                                 return SingleChildScrollView(
                                                                   scrollDirection:
                                                                       Axis.horizontal,
@@ -1918,8 +1926,10 @@ class _EmployeeBillingWidgetState extends State<EmployeeBillingWidget>
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return Container(
                                                                             width:
                                                                                 40.0,

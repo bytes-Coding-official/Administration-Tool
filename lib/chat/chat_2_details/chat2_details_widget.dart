@@ -91,9 +91,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
         title: 'chat_2_Details',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -139,7 +137,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                       ),
                     );
                   }
+
                   final conditionalBuilderUsersRecord = snapshot.data!;
+
                   return Builder(
                     builder: (context) {
                       if (widget.chatRef!.users.length <= 2) {
@@ -348,8 +348,10 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                                               ),
                                             );
                                           }
+
                                           final secondUserUsersRecord =
                                               snapshot.data!;
+
                                           return Container(
                                             width: 32.0,
                                             height: 32.0,
@@ -514,10 +516,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget>
                         context: context,
                         builder: (context) {
                           return GestureDetector(
-                            onTap: () => _model.unfocusNode.canRequestFocus
-                                ? FocusScope.of(context)
-                                    .requestFocus(_model.unfocusNode)
-                                : FocusScope.of(context).unfocus(),
+                            onTap: () => FocusScope.of(context).unfocus(),
                             child: Padding(
                               padding: MediaQuery.viewInsetsOf(context),
                               child: ChatDetailsOverlayWidget(

@@ -69,9 +69,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
         title: 'CustomerMatching',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -174,6 +172,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
                                 }
                                 List<CustomerRecord>
                                     dropDownCustomerRecordList = snapshot.data!;
+
                                 return FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController1 ??=
@@ -286,6 +285,7 @@ class _CustomerMatchingWidgetState extends State<CustomerMatchingWidget>
                                 }
                                 List<UsersRecord> dropDownUsersRecordList =
                                     snapshot.data!;
+
                                 return FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=

@@ -125,9 +125,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
         title: 'CustomerBilling',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -375,6 +373,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                   );
                                                 }
                                                 int textCount = snapshot.data!;
+
                                                 return Text(
                                                   textCount.toString(),
                                                   style: FlutterFlowTheme.of(
@@ -846,6 +845,7 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                                       final assignees = listViewCustomerMeetingRecord
                                                                           .assignee
                                                                           .toList();
+
                                                                       return SingleChildScrollView(
                                                                         scrollDirection:
                                                                             Axis.horizontal,
@@ -877,7 +877,9 @@ class _CustomerBillingWidgetState extends State<CustomerBillingWidget>
                                                                                     ),
                                                                                   );
                                                                                 }
+
                                                                                 final containerUsersRecord = snapshot.data!;
+
                                                                                 return Container(
                                                                                   width: 40.0,
                                                                                   height: 40.0,

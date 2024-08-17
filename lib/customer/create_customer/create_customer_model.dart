@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for fullName widget.
   FocusNode? fullNameFocusNode;
   TextEditingController? fullNameTextController;
@@ -49,7 +48,6 @@ class CreateCustomerModel extends FlutterFlowModel<CreateCustomerWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     fullNameFocusNode?.dispose();
     fullNameTextController?.dispose();
 

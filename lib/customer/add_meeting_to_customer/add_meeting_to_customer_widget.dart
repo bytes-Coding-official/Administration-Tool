@@ -97,14 +97,14 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
             ),
           );
         }
+
         final addMeetingToCustomerCustomerCaseRecord = snapshot.data!;
+
         return Title(
             title: 'AddMeetingToCustomer',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -247,6 +247,7 @@ class _AddMeetingToCustomerWidgetState extends State<AddMeetingToCustomerWidget>
                                 }
                                 List<UsersRecord> tutorUsersRecordList =
                                     snapshot.data!;
+
                                 return FlutterFlowDropDown<String>(
                                   multiSelectController:
                                       _model.tutorValueController ??=

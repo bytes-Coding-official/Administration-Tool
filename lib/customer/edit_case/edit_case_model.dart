@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class EditCaseModel extends FlutterFlowModel<EditCaseWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for productName widget.
   FocusNode? productNameFocusNode;
   TextEditingController? productNameTextController;
@@ -39,7 +38,6 @@ class EditCaseModel extends FlutterFlowModel<EditCaseWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     productNameFocusNode?.dispose();
     productNameTextController?.dispose();
 

@@ -89,9 +89,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
         title: 'auth_2_Login',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -511,7 +509,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       logFirebaseEvent(
-                                          'AUTH_2_LOGIN_FORGOT_PASSWORD?_BTN_ON_TAP');
+                                          'AUTH_2_LOGIN_FORGOT_PASSWORD_BTN_ON_TAP');
                                       logFirebaseEvent('Button_navigate_to');
 
                                       context

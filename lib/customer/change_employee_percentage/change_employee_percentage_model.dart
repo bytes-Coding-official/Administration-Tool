@@ -8,7 +8,6 @@ class ChangeEmployeePercentageModel
     extends FlutterFlowModel<ChangeEmployeePercentageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for tutor widget.
   String? tutorValue;
   FormFieldController<String>? tutorValueController;
@@ -24,7 +23,6 @@ class ChangeEmployeePercentageModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     percentageFocusNode?.dispose();
     percentageTextController?.dispose();
   }

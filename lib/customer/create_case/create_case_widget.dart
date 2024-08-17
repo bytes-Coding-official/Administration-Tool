@@ -80,9 +80,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
         title: 'CreateCase',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -185,6 +183,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                                   );
                                 }
                                 int caseIDCount = snapshot.data!;
+
                                 return SizedBox(
                                   width: 50.0,
                                   child: TextFormField(
@@ -565,6 +564,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           }
                           List<ItskillsRecord> dropDownItskillsRecordList =
                               snapshot.data!;
+
                           return FlutterFlowDropDown<String>(
                             multiSelectController: _model
                                     .dropDownValueController1 ??=
@@ -660,6 +660,7 @@ class _CreateCaseWidgetState extends State<CreateCaseWidget>
                           }
                           List<CustomerRecord> dropDownCustomerRecordList =
                               snapshot.data!;
+
                           return FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController2 ??=
                                 FormFieldController<String>(
